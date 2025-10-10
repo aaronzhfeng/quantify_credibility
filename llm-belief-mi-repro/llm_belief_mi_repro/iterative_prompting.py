@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from typing import List
+from typing import List, Callable, Optional
 
 from .llm_client import OpenAICompatibleLLMClient
 
@@ -33,12 +33,45 @@ def run_chain_for_query(
     chain_length: int,
     temperature: float,
     max_tokens: int,
+    on_request: Optional[Callable[[], None]] = None,
 ) -> List[str]:
     answers: List[str] = []
     for _ in range(max(1, chain_length)):
         messages = compose_prompt(query, answers)
         ans = client.chat_completion(messages, temperature=temperature, max_tokens=max_tokens)
+        if on_request is not None:
+            on_request()
         answers.append(ans)
     return answers
+
+
+
+def run_k_chains_for_query(
+    client: OpenAICompatibleLLMClient,
+    query: str,
+    chain_length: int,
+    k: int,
+    temperature: float,
+    max_tokens: int,
+    on_request: Optional[Callable[[], None]] = None,
+) -> List[List[str]]:
+    """Run K independent chains for a single question.
+
+    Each chain conditions subsequent answers on previous ones, but chains are
+    independent across K repetitions.
+    """
+    chains: List[List[str]] = []
+    for _ in range(max(1, k)):
+        chains.append(
+            run_chain_for_query(
+                client=client,
+                query=query,
+                chain_length=chain_length,
+                temperature=temperature,
+                max_tokens=max_tokens,
+                on_request=on_request,
+            )
+        )
+    return chains
 
 

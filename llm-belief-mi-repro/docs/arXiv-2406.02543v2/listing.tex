@@ -1,0 +1,239 @@
+%
+\section{Implementation and usage examples of \Cref{alg:MI} and \Cref{alg:MI-se}}
+\label{sec:listing}
+%
+\lstset{
+language=Python,
+upquote=true,
+columns=fullflexible,
+keywordstyle=\bfseries\color{blue},
+stringstyle=\color{olive},
+commentstyle=\color{gray},
+basicstyle=\scriptsize\ttfamily,
+literate={*}{{\char42}}1
+         {-}{{\char45}}1
+         {\ }{{ }}1
+       }
+
+
+In this section we present an implementation of \Cref{alg:MI} and \Cref{alg:MI-se} in Python with a simple usage example.
+In particular, the code given in \Cref{lst:MI} generates a synthetic joint distribution over binary tuples with correlated elements (function \verb!create_synthetic_distribution!).
+Then, we compute an exact mutual information of the distribution (function \verb!compute_MI_exactly!) and use implementation of our estimator (function \verb!MI_estimator!) to estimate a mutual information.
+This is done for various sample sizes, number of random variables, and levels of correlation (a single experiment is implemented by \verb!run_experiment!)
+The results of these multiple experiments are eventually presented in as plots showing convergence of the estimate to the exact value of the mutual information.
+In practical applications, synthetic joint distribution (function \verb!create_synthetic_distribution!) can be replaced by an LLM-derived pseudo-joint distribution (see \Cref{def:pseudo-joint}).
+More detailed description of each function is given in \Cref{sec:listing-doc}.
+~\\~\\
+The example can be easily copied from \verb!listing.tex! within \url{https://arxiv.org/src/2406.02543}.
+%       
+\begin{lstlisting}[language=Python, caption={Implementation and usage examples of \Cref{alg:MI} and \Cref{alg:MI-se} on a synthetic joint distribution}, label={lst:MI}]
+# Copyright 2024 DeepMind Technologies Limited.
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+# https://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+#
+from itertools import product, combinations
+import numpy as np
+from matplotlib import pyplot as plt
+
+def create_synthetic_distribution(space, temp):
+  potential = lambda z: np.mean([x * y for x, y in combinations(z, 2)])
+  y = np.array([-np.exp(potential(x) / temp) for x in space])
+  return y / y.sum()
+
+def sample_from_joint_distribution(space, joint_dist, k):
+  indices = np.arange(len(joint_dist))
+  sampled_indices = np.random.choice(indices, p=joint_dist, size=k)
+  sampled_tuples = space[sampled_indices]
+  return sampled_tuples, sampled_indices
+
+def cluster(tuples, joint_dist):
+  return tuples, joint_dist
+
+def sample_from_joint_distribution_and_cluster(space, joint_dist, k):
+  sampled_tuples, sampled_tuple_indices = sample_from_joint_distribution(space, joint_dist, k)
+  _, indices_of_uniques_in_sample = np.unique(sampled_tuples, axis=0, return_index=True)
+  sampled_tuples = sampled_tuples[indices_of_uniques_in_sample]
+  sampled_tuple_indices = sampled_tuple_indices[indices_of_uniques_in_sample]
+  joint_dist_on_sample = joint_dist[sampled_tuple_indices]
+  sampled_tuples, joint_dist_on_sample = cluster(sampled_tuples, joint_dist_on_sample)
+  return joint_dist_on_sample, sampled_tuples
+
+def compute_MI_exactly(space, mu):
+  total = 0
+  for (x_i, x) in enumerate(space):
+    mu_x = mu[x_i]
+    mu_x_prod = 1
+    for i in range(len(x)):
+      marg_indices = [j for (j, z) in enumerate(space) if z[i] == x[i]]
+      mu_x_prod *= mu[marg_indices].sum()
+    total += mu_x * np.log(mu_x/mu_x_prod)
+
+  return total
+
+def MI_estimator(sampled_tuples, mu_on_sample, gamma_1, gamma_2):
+  """Implements MI estimator (Algorithm 1).
+
+  Args:
+    sampled_tuples: A numpy array of tuples sampled from the distribution after deduplication and clustering.
+    mu_on_sample: A numpy array of probabilities of the clusters.
+    gamma_1: stabilization parameter.
+    gamma_2: stabilization parameter.
+
+  Returns: (float) mutual information.
+  """
+
+  # Constructing empirical distribution (\hat{\mu})
+  hat_mu_on_sample = mu_on_sample / mu_on_sample.sum()
+
+  # Constructing empirical product distribution (\hat{\mu}^{\otimes})
+  hat_mu_prod_on_sample = np.zeros((len(hat_mu_on_sample),))
+  for (x_i, x) in enumerate(sampled_tuples):
+    hat_mu_x_prod = 1
+    for i in range(len(x)):
+      marg_indices = [j for (j, z) in enumerate(sampled_tuples) if z[i] == x[i]]
+      hat_mu_x_prod *= hat_mu_on_sample[marg_indices].sum()
+
+    hat_mu_prod_on_sample[x_i] = hat_mu_x_prod
+
+  # Computing MI estimate
+  mi_estimate = hat_mu_on_sample * np.log((hat_mu_on_sample + gamma_1) / (hat_mu_prod_on_sample + gamma_2) )
+  mi_estimate = mi_estimate.sum()
+  return mi_estimate
+
+def run_experiment(n, temp, ax):
+  np.random.seed(1)
+  space = np.array(list(product([-1, 1], repeat=n)))
+  mu = create_synthetic_distribution(space, temp=temp)
+  mi_exact = compute_MI_exactly(space, mu)
+  k_range = np.linspace(10, 1000, 20, dtype=int)
+
+  all_mi_estimate = []
+  for k in k_range:
+    mu_on_sample, sampled_tuples = sample_from_joint_distribution_and_cluster(space=space, joint_dist=mu, k=k)
+
+    gamma_1 = gamma_2 = 1/k
+    mi_estimate = MI_estimator(sampled_tuples, mu_on_sample, gamma_1, gamma_2)
+    all_mi_estimate.append(mi_estimate)
+
+  ax.axhline(mi_exact, linewidth=3, label="MI (exact value)", color="black")
+  ax.plot(k_range, all_mi_estimate, linewidth=3, label="MI estimator")
+  ax.grid(); ax.legend(); ax.set_xlabel("k"); ax.set_ylabel("MI estimate"); ax.set_title(r"$n=$"+str(n)+r", $\tau=$"+str(temp))
+
+temp_range = [0.01, 0.1, 1, 10]
+n_range = [2, 4, 8]
+
+fig, axs = plt.subplots(len(temp_range), len(n_range), figsize=(5*len(temp_range), 5*len(n_range)), squeeze=False)
+fig.suptitle(r"""MI estimation of $n$-dimensional distribution $\propto \exp(-\sum_{i < j}^n x_i x_j / \tau)$""")
+
+for (i, temp) in enumerate(temp_range):
+  for (j, n) in enumerate(n_range):
+    ax = axs[i,j]
+    run_experiment(n=n, temp=temp, ax=ax)
+plt.subplots_adjust(wspace=0.4, hspace=0.4)
+plt.show()
+\end{lstlisting}
+%
+\subsection{Additional documentation for functions in \Cref{lst:MI}}
+\label{sec:listing-doc}
+%
+{\footnotesize
+  \begin{itemize}
+  \item \verb!def create_synthetic_distribution(space, temp)!
+    \begin{verbatim}
+Creates synthetic distribution which introduces dependendencies between variables.
+
+  Args:
+    space: a list of tuples that the joint distribution is supported on (e.g. a cartesian product).
+    temp: temperature parameter.
+
+  Returns:
+    A numpy array of probabilities (same length as space).  
+\end{verbatim}
+  \item \verb!def sample_from_joint_distribution(space, joint_dist, k)!
+\begin{verbatim}
+Samples k tuples from a joint distribution.
+
+  Args:
+    space: a list of tuples that the joint distribution is supported on (e.g. a cartesian product).
+    joint_dist: probability distribution (1-D numpy array) where each entry is a probability of a tuple.
+    k: sample size.
+
+  Returns:
+    A numpy array of tuples sampled from the distribution.
+    A numpy array of indices of sampled tuples in space.
+\end{verbatim}
+  \item \verb!def cluster(tuples, joint_dist)!
+\begin{verbatim}
+  Clusters tuples and aggregates probabilities of them in the same cluster.
+
+  Args:
+    tuples: A numpy array of tuples sampled from the distribution
+    after deduplication.
+    joint_dist: probability distribution (1-D numpy array) where each entry
+    is a probability of a tuple.
+
+  Returns:
+    A numpy array of tuples sampled from the distribution each represening
+    a cluster.
+    A numpy array of probabilities of clusters. Each probability is the
+    aggregate of probabilities of all tuples in the cluster.
+\end{verbatim}
+  \item \verb!def sample_from_joint_distribution_and_cluster(space, joint_dist, k)!
+\begin{verbatim}
+Samples k tuples from a joint distribution and retains only
+  representative elements (removes all duplicates).
+
+  Args:
+    space: a list of tuples that the joint distribution is supported on (e.g. a cartesian product).
+    joint_dist: probability distribution (1-D numpy array) where each entry is a probability of a tuple.
+    k: sample size.
+
+  Returns:
+    A numpy array of tuples sampled from the distribution after deduplication.
+    A numpy array of probabilities of deduplicated tuples.
+\end{verbatim}
+  \item \verb!def compute_MI_exactly(space, mu)!
+\begin{verbatim}
+Computes mutual information of probability distribution mu exactly
+  Args:
+    space: Tuple space (cartesian product).
+    mu: probability distribution (1-D numpy array).
+
+  Returns: (float) mutual information.
+\end{verbatim}
+  \item \verb!def MI_estimator(sampled_tuples, mu_on_sample, gamma_1, gamma_2)!
+\begin{verbatim}
+Implements MI estimator (Algorithm 1).
+
+  Args:
+    sampled_tuples: A numpy array of tuples sampled from the distribution after deduplication and clustering.
+    mu_on_sample: A numpy array of probabilities of the clusters.
+    gamma_1: stabilization parameter.
+    gamma_2: stabilization parameter.
+
+  Returns: (float) mutual information.
+\end{verbatim}
+  \item \verb!def run_experiment(n, temp, ax)!
+\begin{verbatim}
+Runs one experiment comparing exact mutual information estimation with
+  Algorithm 1.  Plots results.
+
+  Args:
+    n: number of variables in a joint distribution.
+    temp: temperature of a Gibbs distribution (joint distribution). Higher
+    temperature typically means smaller MI.
+    ax: pyplot axis object for plotting.
+\end{verbatim}
+  \end{itemize}
+}
+

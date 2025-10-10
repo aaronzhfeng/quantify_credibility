@@ -2,11 +2,27 @@
 
 Reproduction scaffold for the paper "To Believe or Not to Believe Your LLM" (DeepMind, 2024). It implements the iterative prompting procedure and a simple finite-sample mutual information (MI) estimator to flag likely hallucinations based on epistemic uncertainty.
 
+## What this repo currently supports
+
+- Iterative prompting chains with length `t`, repeated `K` times per question
+- Two MI estimators
+  - `plugin`: Σ H(Y_i) − H(Y_1..Y_t) via empirical counts
+  - `listing`: paper-inspired Algorithm 1 from `listing.tex` with γ-smoothing
+- Baselines (per question)
+  - Agreement (self-consistency fraction across K finals)
+  - Entropy of final answers (in bits)
+  - Optional: Greedy logprob (requires backend token logprobs)
+  - Optional: Self-verification confidence (one verify call per chain)
+- Calibration/evaluation on a validation split; prints Accuracy/ROC AUC on test
+- CSV outputs with per-question scores; ROC plotting utility with optional save
+- TQDM progress bars for questions and total API calls
+
 ## Prerequisites
 
 - Python 3.10+
 - LM Studio app installed (for a local OpenAI-compatible API): `http://localhost:1234/v1`
 - A local model available in LM Studio, e.g., `Llama-3.1-8B-Instruct`
+- Optional: `datasets` (to download TriviaQA), `matplotlib` (to save/show plots)
 
 ## Quickstart (LM Studio)
 
@@ -35,7 +51,7 @@ The script prints the estimated MI of the response chain (nats and bits). The ou
 ## Notes
 
 -- Base URL and API key can be overridden with `--base-url` and `--api-key`, or via env vars `LLM_API_BASE` and `LLM_API_KEY`.
--- This scaffold focuses on the paper's core idea: iterative prompting and MI-based detection. You can add calibration and evaluation pipelines (e.g., TriviaQA/AmbigQA) as needed.
+-- Request count for dataset runs is roughly `#examples × K × t` plus any enabled baselines (see below).
 
 ## LM Studio setup details
 
@@ -68,5 +84,72 @@ The script prints the estimated MI of the response chain (nats and bits). The ou
 ## Docs
 
 - Condensed summaries of the two PDFs: see `docs/paper_summary.md`.
+
+
+## Dataset: TriviaQA validation subset (optional helper)
+
+Download a small validation subset to CSV using Hugging Face Datasets:
+
+```bash
+pip install datasets
+python -m llm_belief_mi_repro.scripts.download_triviaqa_subset \
+  --output triviaqa_val_subset.csv \
+  --n 200 \
+  --config rc
+```
+
+The CSV has columns: `question`, `answers` (pipe-separated aliases). You can also supply your own CSV or JSONL; see `llm_belief_mi_repro/datasets.py` for the expected fields.
+
+## Run per-question MI on a subset
+
+```bash
+python -m llm_belief_mi_repro.cli run_dataset \
+  --input triviaqa_val_subset.csv \
+  --limit 10 --k 20 --t 3 --mi listing \
+  --model meta-llama-3.1-8b-instruct --base-url http://127.0.0.1:1234/v1 \
+  --temperature 0.5 --max-tokens 64 \
+  --output results_triviaqa_10_k20_t3_listing.csv
+```
+
+During the run you will see two progress bars: one for questions, one for total API calls.
+
+### Default baselines (no extra API calls)
+
+- Agreement: fraction of identical final answers across the K chains (self-consistency).
+- Semantic entropy: entropy of the final answers across chains (reported in bits as `entropy_bits`).
+
+### Optional baselines
+
+- `--baseline-greedy`: greedy decode with token logprobs (one extra call per question). Requires backend support for logprobs; values are omitted if unavailable.
+- `--baseline-verify`: self-verification confidence (one extra call per chain). Prompts the model to output a numeric 0–1 confidence for each final answer and averages the scores.
+
+Example with baselines:
+
+```bash
+python -m llm_belief_mi_repro.cli run_dataset \
+  --input triviaqa_val_subset.csv \
+  --limit 10 --k 20 --t 3 --mi listing \
+  --baseline-greedy --baseline-verify \
+  --model meta-llama-3.1-8b-instruct --base-url http://127.0.0.1:1234/v1 \
+  --temperature 0.5 --max-tokens 64 \
+  --output results_triviaqa_10_k20_t3_listing_baselines.csv
+```
+
+### Outputs and metrics
+
+- Per-question CSV includes: `mi_bits`, `agreement`, `entropy_bits`, and (if enabled) `greedy_logprob`, `verify_score`, plus run settings.
+- After the run, the script prints test metrics for MI and baselines (accuracy, precision/recall/F1, ROC AUC) with thresholds chosen on a validation split.
+
+## Plot ROC (and save files)
+
+```bash
+pip install matplotlib  # if not already installed
+python -m llm_belief_mi_repro.cli plot_roc \
+  --input results_triviaqa_10_k20_t3_listing.csv \
+  --score-col mi_bits \
+  --save plots/roc_mi_bits_listing.png
+```
+
+Use `--score-col agreement` or `--score-col entropy_bits` to plot baselines. The plot will be saved if `--save` is provided and also displayed on screen.
 
 
