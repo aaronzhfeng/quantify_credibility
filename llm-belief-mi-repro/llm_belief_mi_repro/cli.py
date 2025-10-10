@@ -238,33 +238,50 @@ def cmd_run_dataset(args: argparse.Namespace) -> None:
             **({"verify_score": f"{verify_score:.6f}"} if verify_score is not None else {}),
         })
 
-    # Calibration: split and choose threshold on val
+    # Calibration: positive class = hallucination (incorrect). Orient scores accordingly.
+    labels_err = [1 - y for y in labels]
     val_idx, test_idx = split_indices(len(mi_scores), val_fraction=args.val_frac, seed=args.seed)
+
+    # MI (already uncertainty)
     val_scores = [mi_scores[i] for i in val_idx]
-    val_labels = [labels[i] for i in val_idx]
+    val_labels = [labels_err[i] for i in val_idx]
     thr = choose_threshold(val_scores, val_labels, maximize="youden")
-    thr_agree = choose_threshold([agree_scores[i] for i in val_idx], [labels[i] for i in val_idx], maximize="youden")
-    thr_ent = choose_threshold([entropy_scores_bits[i] for i in val_idx], [labels[i] for i in val_idx], maximize="youden")
 
     test_scores = [mi_scores[i] for i in test_idx]
-    test_labels = [labels[i] for i in test_idx]
+    test_labels = [labels_err[i] for i in test_idx]
     metrics = evaluate_at_threshold(test_scores, test_labels, thr)
-    metrics_agree = evaluate_at_threshold([agree_scores[i] for i in test_idx], [labels[i] for i in test_idx], thr_agree)
-    metrics_ent = evaluate_at_threshold([entropy_scores_bits[i] for i in test_idx], [labels[i] for i in test_idx], thr_ent)
+
+    # Agreement (invert to uncertainty)
+    agree_unc_val = [1.0 - agree_scores[i] for i in val_idx]
+    agree_unc_test = [1.0 - agree_scores[i] for i in test_idx]
+    thr_agree = choose_threshold(agree_unc_val, [labels_err[i] for i in val_idx], maximize="youden")
+    metrics_agree = evaluate_at_threshold(agree_unc_test, [labels_err[i] for i in test_idx], thr_agree)
+
+    # Entropy bits (already uncertainty)
+    thr_ent = choose_threshold([entropy_scores_bits[i] for i in val_idx], [labels_err[i] for i in val_idx], maximize="youden")
+    metrics_ent = evaluate_at_threshold([entropy_scores_bits[i] for i in test_idx], [labels_err[i] for i in test_idx], thr_ent)
+
+    # Greedy logprob baseline (if available): invert sign so higher=worse
     if any("greedy_logprob" in r for r in rows):
-        val_greedy = [float(rows[i]["greedy_logprob"]) for i in val_idx if "greedy_logprob" in rows[i]]
-        test_greedy = [float(rows[i]["greedy_logprob"]) for i in test_idx if "greedy_logprob" in rows[i]]
-        labels_val = [labels[i] for i in val_idx][: len(val_greedy)]
-        labels_test = [labels[i] for i in test_idx][: len(test_greedy)]
+        val_greedy_raw = [float(rows[i]["greedy_logprob"]) for i in val_idx if "greedy_logprob" in rows[i]]
+        test_greedy_raw = [float(rows[i]["greedy_logprob"]) for i in test_idx if "greedy_logprob" in rows[i]]
+        val_greedy = [-x for x in val_greedy_raw]
+        test_greedy = [-x for x in test_greedy_raw]
+        labels_val = [labels_err[i] for i in val_idx if "greedy_logprob" in rows[i]]
+        labels_test = [labels_err[i] for i in test_idx if "greedy_logprob" in rows[i]]
         thr_greedy = choose_threshold(val_greedy, labels_val, maximize="youden") if val_greedy else 0.0
         metrics_greedy = evaluate_at_threshold(test_greedy, labels_test, thr_greedy) if test_greedy else None
     else:
         metrics_greedy = None
+
+    # Self-verify baseline (invert to uncertainty)
     if any("verify_score" in r for r in rows):
-        val_ver = [float(rows[i]["verify_score"]) for i in val_idx if "verify_score" in rows[i]]
-        test_ver = [float(rows[i]["verify_score"]) for i in test_idx if "verify_score" in rows[i]]
-        labels_val2 = [labels[i] for i in val_idx][: len(val_ver)]
-        labels_test2 = [labels[i] for i in test_idx][: len(test_ver)]
+        val_ver_raw = [float(rows[i]["verify_score"]) for i in val_idx if "verify_score" in rows[i]]
+        test_ver_raw = [float(rows[i]["verify_score"]) for i in test_idx if "verify_score" in rows[i]]
+        val_ver = [1.0 - x for x in val_ver_raw]
+        test_ver = [1.0 - x for x in test_ver_raw]
+        labels_val2 = [labels_err[i] for i in val_idx if "verify_score" in rows[i]]
+        labels_test2 = [labels_err[i] for i in test_idx if "verify_score" in rows[i]]
         thr_ver = choose_threshold(val_ver, labels_val2, maximize="youden") if val_ver else 0.0
         metrics_ver = evaluate_at_threshold(test_ver, labels_test2, thr_ver) if test_ver else None
     else:
@@ -308,8 +325,15 @@ def cmd_plot_roc(args: argparse.Namespace) -> None:
                 continue
             if not (s == s):
                 continue
+            # Orient score so higher = more likely hallucination
+            if args.score_col == "agreement":
+                s = 1.0 - s
+            elif args.score_col == "verify_score":
+                s = 1.0 - s
+            elif args.score_col == "greedy_logprob":
+                s = -s
             scores.append(s)
-            labels.append(y)
+            labels.append(1 - y)
     fpr, tpr = roc_curve_points(scores, labels)
     save_path = args.save if getattr(args, "save", "") else None
     try_plot_roc_curve(fpr, tpr, title=f"ROC for {args.score_col}", save_path=save_path)
@@ -330,13 +354,22 @@ def cmd_plot_pr(args: argparse.Namespace) -> None:
         ("S.V. score", "verify_score"),
     ]
     series = []
-    labels_list = [int(r.get("label_any_correct", 0)) for r in rows]
+    labels_list = [1 - int(r.get("label_any_correct", 0)) for r in rows]  # 1 = hallucination
     for label, col in candidate_cols:
         if rows and col in rows[0]:
             try:
-                scores = [float(r.get(col, "nan")) for r in rows]
+                raw_scores = [float(r.get(col, "nan")) for r in rows]
             except Exception:
                 continue
+            # Orient scores so higher = more likely hallucination
+            if col == "agreement":
+                scores = [1.0 - s for s in raw_scores]
+            elif col == "verify_score":
+                scores = [1.0 - s for s in raw_scores]
+            elif col == "greedy_logprob":
+                scores = [-s for s in raw_scores]
+            else:
+                scores = raw_scores
             pairs = [(s, y) for s, y in zip(scores, labels_list) if s == s]
             if not pairs:
                 continue
