@@ -78,6 +78,17 @@ def parse_args() -> argparse.Namespace:
     pr_p.add_argument("--input", type=str, required=True, help="Per-question results CSV")
     pr_p.add_argument("--save", type=str, default="", help="Path to save the figure (optional)")
 
+    dump_p = sub.add_parser("dump_prompts", help="Create an example prompt transcript for a subset using iterative prompting")
+    dump_p.add_argument("--input", type=str, required=True, help="Path to TriviaQA subset (.jsonl/.csv)")
+    dump_p.add_argument("--limit", type=int, default=3, help="How many questions to include")
+    dump_p.add_argument("--t", type=int, default=3, help="Chain length")
+    dump_p.add_argument("--base-url", type=str, default=os.environ.get("LLM_API_BASE", "http://localhost:1234/v1"))
+    dump_p.add_argument("--api-key", type=str, default=os.environ.get("LLM_API_KEY", "lm-studio"))
+    dump_p.add_argument("--model", type=str, required=True)
+    dump_p.add_argument("--temperature", type=float, default=0.5)
+    dump_p.add_argument("--max-tokens", type=int, default=128)
+    dump_p.add_argument("--output", type=str, required=True, help="Output transcript path (e.g., prompts/prompt_example.txt)")
+
     return parser.parse_args()
 
 
@@ -386,6 +397,44 @@ def cmd_plot_pr(args: argparse.Namespace) -> None:
     try_plot_pr_curves(series, title="Precision-Recall (all scores)", save_path=save_path)
 
 
+def cmd_dump_prompts(args: argparse.Namespace) -> None:
+    examples: List[QAExample] = load_triviaqa_subset(args.input, limit=args.limit)
+    client = OpenAICompatibleLLMClient(
+        base_url=args.base_url,
+        api_key=args.api_key,
+        model=args.model,
+        request_timeout_s=120,
+    )
+
+    lines: List[str] = []
+    lines.append("SYSTEM:\nYou are a helpful, concise assistant. Answer accurately. If unsure, say so briefly.\n")
+    for idx, ex in enumerate(examples, start=1):
+        answers: List[str] = []
+        for step in range(max(1, args.t)):
+            history = "".join(f"\nAnother answer to question Q is: {a}" for a in answers)
+            user = (
+                "Consider the following question (Q) and previous answers if any." +
+                history +
+                f"\nProvide an answer to the following question:\nQ: {ex.question}\nA:"
+            )
+            lines.append("---\n")
+            lines.append(f"Q{idx} (step {step+1}):\nUSER:\n{user}\n")
+            # Optionally query the model to fill the chain for demonstration
+            resp = client.chat_completion(
+                messages=[{"role": "system", "content": "You are a helpful, concise assistant. Answer accurately. If unsure, say so briefly."}, {"role": "user", "content": user}],
+                temperature=args.temperature,
+                max_tokens=args.max_tokens,
+            )
+            answers.append(resp)
+            lines.append(f"ASSISTANT:\n{resp}\n")
+
+    out_dir = os.path.dirname(args.output) or "."
+    os.makedirs(out_dir, exist_ok=True)
+    with open(args.output, "w", encoding="utf-8") as f:
+        f.write("".join(lines))
+    print(f"Wrote prompt transcript: {args.output}")
+
+
 def main() -> None:
     args = parse_args()
     if args.command == "run":
@@ -399,6 +448,9 @@ def main() -> None:
         return
     if args.command == "plot_pr":
         cmd_plot_pr(args)
+        return
+    if args.command == "dump_prompts":
+        cmd_dump_prompts(args)
         return
     raise SystemExit("Unknown command")
 
