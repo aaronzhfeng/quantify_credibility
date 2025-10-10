@@ -1,0 +1,46 @@
+%
+\section{Omitted proofs}
+\label{sec:omitted-proofs}
+\begin{proof}[Proof of \Cref{thm:MI}]
+\label{sec:proof:thm:MI}
+In the following we will use abbreviations
+\begin{align*}
+  \sum_{y} = \sum_{y_1 ,\ldots, y_n }~, \qquad
+  \sum_{y\deli} = \sum_{y_1 ,\ldots, y_{i-1}, y_{i+1}, \ldots,  y_n }
+\end{align*}
+where each coordinate belongs to $\cX$.
+Now,
+\begin{align*}
+  D_{\KL}(\widetilde Q, \widetilde P)
+  &=
+    - H(\widetilde Q) + \sum_{y} \widetilde Q(y_1, \ldots, y_n) \, \ln \frac{1}{\widetilde P(y_1, \ldots, y_n)}\\
+  &=
+    - H(\widetilde Q) + \sum_{y} \widetilde Q(y_1, \ldots, y_n) \, \ln \frac{1}{\prod_i P\big(y_i \mid F_{i-1}(y_1, \ldots, y_{i-1}) \big)} \tag{using \Cref{def:pseudo-joint}}\\
+  &=
+    - H(\widetilde Q) + \sum_{y} \widetilde Q(y_1, \ldots, y_n) \, \ln \frac{1}{\prod_i P(y_i)}~. \tag{by the independence assumption}
+\end{align*}
+%
+Focusing on the last (cross-entropy) term
+\begin{align*}
+  &\sum_{y} \widetilde Q(y_1, \ldots, y_n)  \, \ln \frac{1}{\prod_i P(y_i)}\\
+  &\quad=
+    \sum_{y} \widetilde Q(y_1, \ldots, y_n) \, \sum_i \ln \frac{1}{P(y_i)}\\
+  &\quad=
+    \sum_i \sum_{y_i} \sum_{y\deli} \widetilde Q(y_1, \ldots, y_n) \, \ln \frac{1}{P(y_i)}\\
+  &\quad\stackrel{(a)}{\geq}
+    \sum_i \sum_{y_i} \sum_{y\deli} \widetilde Q(y_1, \ldots, y_n) \, \ln \frac{1}{\sum_{y \deli}\widetilde Q(y_1, \ldots, y_n)}\\
+  &\quad=
+    \sum_{y} \widetilde Q(y_1, \ldots, y_n) \, \ln \frac{1}{\prod_i \sum_{y \deli}\widetilde Q(y_1, \ldots, y_n)}
+\end{align*}
+where in $(a)$ we used the fact that entropy is no larger than cross-entropy.
+Thus,
+%
+\begin{align*}
+  D_{\KL}(\widetilde Q, \widetilde P)
+  \geq
+  \sum_{y} \widetilde Q(y_1, \ldots, y_n) \ln \frac{\widetilde Q(y_1, \ldots, y_n)}{\prod_i \sum_{y \deli} \widetilde Q(y_1, \ldots, y_n)}
+  =
+  I(\widetilde \LM; Y_1,\ldots, Y_n)~.
+\end{align*}
+%
+\end{proof}

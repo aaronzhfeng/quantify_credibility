@@ -1,0 +1,32 @@
+\section{Usage example of \cref{alg:MI2}}
+\label{app:alg-MI2}
+
+\Cref{alg:MI2} is a slight modification of \Cref{alg:MI-se} that we use in our experiments. We first explain \Cref{alg:MI2} via an example and then highlight the differences with \Cref{alg:MI-se}. In order to explain the implementation, we consider a running example with query $x=$\textit{``What is the capital of the UK?''}, F1 score as the similarity function $s$, similarity threshold $\tau=0.25$, and number of samples $k=5$. \Cref{alg:MI2} also takes the LLM distribution $\LM$ as input $\mu=\LM$.  
+
+Given the query, in step (2) of \Cref{alg:MI2}, we  sample $k$ outputs from $\LM$. Let's assume these samples are $X_1=$\textit{``London''}, $X_2=$\textit{``London''}, $X_3=$\textit{``London, UK''}, $X_4=$\textit{``Paris''}, and $X_5=$\textit{``Berlin''}. In step (3), we construct a set of indices of unique elements. In our example, we would have $U=\{1,3,4,5\}$. In step (4), we cluster responses and aggregate probabilities of each cluster. More precisely, if the F1 score of two responses is above 0.25, then they are in the same cluster. In our example, we have that $\text{F1}(X_1,X_3) > 0.666 > 0.25$ and $\text{F1}(X_1,X_4)=\text{F1}(X_1,X_5)=0$, and therefore cluster centers are $S=\{1,4,5\}$. For query $x$, let's assume LLM probabilities are
+\[
+    Q(X_1\,|\, x) = 0.5,\quad Q(X_3\,|\, x) = 0.2,\quad Q(X_4\,|\, x) = 0.1,\quad Q(X_5\,|\, x) = 0.05, \quad \cdots
+\]
+Also assume conditional distributions are 
+\[
+    Q(X_1\,|\, F_1(x,X_1)) = 0.6,\, Q(X_3\,|\, F_1(x,X_1)) = 0.15,\, Q(X_4\,|\, F_1(x,X_1)) = 0.05,\, Q(X_5\,|\, F_1(x,X_1)) = 0.04, \, \cdots
+\]
+and so on (we have omitted writing $Q(.\,|\, F_1(x,X_4))$ and $Q(.\,|\, F_1(x,X_5))$). Then after step (4), the aggregated probabilities are 
+\[
+    Q'(X_1\,|\, x) = 0.7,\quad Q'(X_4\,|\, x) = 0.1,\quad Q'(X_5\,|\, x) = 0.05, \quad \cdots
+\]
+and aggregated conditional probabilities are
+\[
+    Q'(X_1\,|\, F_1(x,X_1)) = 0.75,\quad Q'(X_4\,|\, F_1(x,X_1)) = 0.05,\quad Q'(X_5\,|\, F_1(x,X_1)) = 0.04, \, \cdots
+\]
+and so on (we have similar aggregations for $Q'(.\,|\, F_1(x,X_4))$ and $Q'(.\,|\, F_1(x,X_5))$). Next, in step (5), we construct empirical estimates. We will have that $Z=0.85$ and     
+\[
+    \widehat Q_1(X_1\,|\, x) \approx 0.82,\quad \widehat Q_1(X_4\,|\, x) \approx 0.11,\quad \widehat Q_1(X_5\,|\, x) \approx 0.05, \quad \cdots
+\]
+For estimated conditional distributions, we will have $Z_1=0.84$, and
+\[
+    \widehat Q_2(X_1\,|\, F_1(x,X_1)) \approx 0.89,\quad \widehat Q_2(X_4\,|\, F_1(x,X_1)) \approx 0.06,\quad \widehat Q_2(X_5\,|\, F_1(x,X_1)) = 0.04, \, \cdots
+\]
+and so on. The joint distribution $\widehat Q(.,.\,|\,x)$, the product of marginals $\widehat Q^\otimes(.,.\,|\,x)$, and the estimated mutual information $\widehat I_k$ are trivially obtained by the equations in steps (5) and (6).  
+
+Next, we highlight the differences between \Cref{alg:MI-se} (with the choice of $n=2$) and \Cref{alg:MI2}. The input distribution to \Cref{alg:MI-se} is the pseudo-joint distribution $\widetilde Q$, while the input to \Cref{alg:MI2} is the LLM distribution $\LM$. So in step (2) of \Cref{alg:MI-se}, each sample is a tuple such as (\textit{``London''}, \textit{``Paris''}), while a sample in step (2) of \Cref{alg:MI2} is an LLM  output such as \textit{``London''}. Steps (3) and (4) of \Cref{alg:MI-se} are similarly modified, and now the similarity function is defined over tuples.   
