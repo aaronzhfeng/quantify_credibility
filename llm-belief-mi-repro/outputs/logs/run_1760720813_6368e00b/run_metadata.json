@@ -1,0 +1,63 @@
+{
+  "run_id": "run_1760720813_6368e00b",
+  "base_url": "https://itjufncm4jaicprw.us-east-1.aws.endpoints.huggingface.cloud",
+  "model": "",
+  "dataset": "ambigqa",
+  "split": "validation",
+  "limit": 50,
+  "k": 10,
+  "t": 3,
+  "temperature": 0.7,
+  "max_tokens": 64,
+  "prompt_style": "naive",
+  "mi": "listing",
+  "baselines": {
+    "greedy": false,
+    "self_verify": true
+  },
+  "async": true,
+  "concurrency": 20,
+  "cache_path": ".cache/llm_cache.sqlite",
+  "cache_mode": "off",
+  "log_dir": "outputs/logs/run_1760720813_6368e00b",
+  "results_csv": "outputs/results/ambigqa_50_k10_t3_sampled.csv",
+  "metrics": {
+    "mi": {
+      "accuracy": 0.975,
+      "precision": 0.975,
+      "recall": 1.0,
+      "f1": 0.9873417721518987,
+      "roc_auc": 0.5,
+      "threshold": 0.9856447070229303,
+      "n": 40
+    },
+    "agreement": {
+      "accuracy": 0.975,
+      "precision": 0.975,
+      "recall": 1.0,
+      "f1": 0.9873417721518987,
+      "roc_auc": 0.5,
+      "threshold": 0.9,
+      "n": 40
+    },
+    "entropy": {
+      "accuracy": 0.975,
+      "precision": 0.975,
+      "recall": 1.0,
+      "f1": 0.9873417721518987,
+      "roc_auc": 0.5,
+      "threshold": 3.321928094887362,
+      "n": 40
+    },
+    "greedy": null,
+    "self_verify": {
+      "accuracy": 0.975,
+      "precision": 0.975,
+      "recall": 1.0,
+      "f1": 0.9873417721518987,
+      "roc_auc": 0.5,
+      "threshold": 1.0,
+      "n": 40
+    }
+  }
+}
