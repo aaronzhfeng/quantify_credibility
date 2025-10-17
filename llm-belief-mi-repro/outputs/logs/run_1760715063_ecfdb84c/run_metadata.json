@@ -1,0 +1,63 @@
+{
+  "run_id": "run_1760715063_ecfdb84c",
+  "base_url": "https://itjufncm4jaicprw.us-east-1.aws.endpoints.huggingface.cloud",
+  "model": "",
+  "dataset": "triviaqa",
+  "split": "validation",
+  "limit": 200,
+  "k": 10,
+  "t": 3,
+  "temperature": 0.5,
+  "max_tokens": 64,
+  "prompt_style": "naive",
+  "mi": "listing",
+  "baselines": {
+    "greedy": true,
+    "self_verify": true
+  },
+  "async": true,
+  "concurrency": 50,
+  "cache_path": ".cache/llm_cache.sqlite",
+  "cache_mode": "readwrite",
+  "log_dir": "outputs/logs/run_1760715063_ecfdb84c",
+  "results_csv": "outputs/results/triviaqa_200_k10_t3_naive_listing_metrics.csv",
+  "metrics": {
+    "mi": {
+      "accuracy": 0.90625,
+      "precision": 0.90625,
+      "recall": 1.0,
+      "f1": 0.9508196721311475,
+      "roc_auc": 0.46206896551724136,
+      "threshold": 0.0,
+      "n": 160
+    },
+    "agreement": {
+      "accuracy": 0.90625,
+      "precision": 0.90625,
+      "recall": 1.0,
+      "f1": 0.9508196721311475,
+      "roc_auc": 0.4586206896551724,
+      "threshold": 0.0,
+      "n": 160
+    },
+    "entropy": {
+      "accuracy": 0.90625,
+      "precision": 0.90625,
+      "recall": 1.0,
+      "f1": 0.9508196721311475,
+      "roc_auc": 0.4586206896551724,
+      "threshold": 0.0,
+      "n": 160
+    },
+    "greedy": null,
+    "self_verify": {
+      "accuracy": 0.9080459770114943,
+      "precision": 0.9080459770114943,
+      "recall": 1.0,
+      "f1": 0.9518072289156626,
+      "roc_auc": 0.5,
+      "threshold": 1.0,
+      "n": 87
+    }
+  }
+}
