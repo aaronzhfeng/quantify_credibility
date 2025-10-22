@@ -153,3 +153,46 @@ python -m llm_belief_mi_repro.cli plot_roc \
 Use `--score-col agreement` or `--score-col entropy_bits` to plot baselines. The plot will be saved if `--save` is provided and also displayed on screen.
 
 
+## Cloud provider (Fireworks AI) and async concurrency
+
+For large runs, use an OpenAI-compatible cloud endpoint (e.g., Fireworks) that supports token logprobs and high concurrency.
+
+```bash
+export LLM_API_BASE="https://api.fireworks.ai/inference/v1"
+export LLM_API_KEY="YOUR_FIREWORKS_KEY"
+
+python -m llm_belief_mi_repro.cli run_dataset \
+  --dataset ambigqa --split validation --input "" \
+  --limit 1000 --k 10 --t 3 --prompt-style naive \
+  --mi listing --model meta-llama/Llama-3.1-8B-Instruct \
+  --async --concurrency 50 \
+  --temperature 0.5 --max-tokens 64 \
+  --baseline-greedy --baseline-verify \
+  --output results_ambigqa_1000_k10_t3_async.csv
+```
+
+- `--async` enables the async client; `--concurrency` caps in-flight requests.
+- `--baseline-greedy` relies on token logprobs returned by the provider; `greedy_logprob` will be added to the CSV if available.
+
+## Prompt variants
+
+Control prompt behavior during iterative prompting with `--prompt-style`:
+- `naive`: "Another answer to question Q is: …"
+- `wrong_prev`: "A wrong answer sometimes given is: … Please answer correctly."
+- `critique`: "Earlier answers may contain mistakes: … Provide a corrected answer and a brief rationale."
+
+## Experiment grid helper
+
+Use the scripted sweep for datasets × prompt styles:
+
+```bash
+python -m llm_belief_mi_repro.scripts.experiment_grid \
+  --model meta-llama/Llama-3.1-8B-Instruct \
+  --base-url "$LLM_API_BASE" --api-key "$LLM_API_KEY" \
+  --datasets triviaqa,ambigqa --prompt-styles naive,wrong_prev,critique \
+  --limit 1000 --k 10 --t 3 --mi listing \
+  --async --concurrency 50 --baseline-greedy --baseline-verify \
+  --input-triviaqa triviaqa_val_subset.csv --outdir results
+```
+
+

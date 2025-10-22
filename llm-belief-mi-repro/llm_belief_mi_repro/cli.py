@@ -5,12 +5,19 @@ import random
 from typing import List, Optional
 from tqdm import tqdm
 
-from .llm_client import OpenAICompatibleLLMClient
+from .llm_client import (
+    OpenAICompatibleLLMClient,
+    AsyncOpenAICompatibleLLMClient,
+    HuggingFaceInferenceClient,
+    AsyncHuggingFaceInferenceClient,
+)
 from .iterative_prompting import compose_prompt, run_chain_for_query, run_k_chains_for_query
 from .mi_estimator import estimate_mi_nats, nats_to_bits, entropy_nats, estimate_mi_listing_nats
-from .datasets import load_toy_questions, load_triviaqa_subset, answers_match, QAExample
+from .datasets import load_toy_questions, load_triviaqa_subset, load_ambigqa_subset, answers_match, QAExample
 from .evaluation import (
     compute_agreement_fraction,
+    label_any_correct,
+    label_majority_correct,
     split_indices,
     choose_threshold,
     evaluate_at_threshold,
@@ -41,7 +48,13 @@ def parse_args() -> argparse.Namespace:
         default=os.environ.get("LLM_API_KEY", "lm-studio"),
         help="API key (often unused for local servers)",
     )
-    run_p.add_argument("--model", type=str, required=True, help="Model name/identifier.")
+    run_p.add_argument(
+        "--model",
+        type=str,
+        required=False,
+        default=os.environ.get("LLM_MODEL", ""),
+        help="Model name/identifier (or set env LLM_MODEL)",
+    )
     run_p.add_argument("--temperature", type=float, default=0.0, help="Sampling temperature.")
     run_p.add_argument("--max-tokens", type=int, default=128, help="Max tokens per response.")
     run_p.add_argument("--seed", type=int, default=0, help="Random seed.")
@@ -54,7 +67,13 @@ def parse_args() -> argparse.Namespace:
     run_ds.add_argument("--t", type=int, default=3, help="Chain length")
     run_ds.add_argument("--base-url", type=str, default=os.environ.get("LLM_API_BASE", "http://localhost:1234/v1"))
     run_ds.add_argument("--api-key", type=str, default=os.environ.get("LLM_API_KEY", "lm-studio"))
-    run_ds.add_argument("--model", type=str, required=True)
+    run_ds.add_argument(
+        "--model",
+        type=str,
+        required=False,
+        default=os.environ.get("LLM_MODEL", ""),
+        help="Model name/identifier (or set env LLM_MODEL)",
+    )
     run_ds.add_argument("--temperature", type=float, default=0.0)
     run_ds.add_argument("--max-tokens", type=int, default=64)
     run_ds.add_argument("--val-frac", type=float, default=0.2, help="Validation fraction for threshold selection")
@@ -63,6 +82,18 @@ def parse_args() -> argparse.Namespace:
     run_ds.add_argument("--mi", type=str, default="plugin", choices=["plugin", "listing"], help="MI estimator to use")
     run_ds.add_argument("--baseline-greedy", action="store_true", help="Compute greedy logprob baseline (requires logprobs)")
     run_ds.add_argument("--baseline-verify", action="store_true", help="Compute self-verification baseline (extra calls)")
+    run_ds.add_argument("--dataset", type=str, default="triviaqa", choices=["triviaqa", "ambigqa"], help="Dataset source")
+    run_ds.add_argument("--split", type=str, default="validation", help="Dataset split (if using HF)")
+    run_ds.add_argument("--prompt-style", type=str, default="naive", choices=["naive", "wrong_prev", "critique"], help="Prompt variant for iterative prompting")
+    run_ds.add_argument("--async", dest="do_async", action="store_true", help="Use async client for concurrency")
+    run_ds.add_argument("--concurrency", type=int, default=50, help="Max concurrent requests when async is enabled")
+    import os as _os_env
+    run_ds.add_argument("--provider", type=str, default=_os_env.environ.get("PROVIDER", "openai"), choices=["openai", "hf"], help="Backend provider: openai-compatible or Hugging Face Inference endpoint")
+    run_ds.add_argument("--cache-path", type=str, default=".cache/llm_cache.sqlite", help="SQLite cache path")
+    run_ds.add_argument("--cache-mode", type=str, default="readwrite", choices=["readwrite", "read", "write", "off"], help="Cache mode")
+    run_ds.add_argument("--log-dir", type=str, default="logs", help="Directory to write logs for this run")
+    run_ds.add_argument("--log-verbosity", type=str, default="minimal", choices=["minimal", "full"], help="Logging verbosity")
+    run_ds.add_argument("--label-policy", type=str, default="any", choices=["any", "majority"], help="Ground-truth labeling: any correct vs majority correct")
 
     plot_p = sub.add_parser("plot_roc", help="Plot ROC from a results CSV (requires matplotlib)")
     plot_p.add_argument("--input", type=str, required=True, help="Per-question results CSV")
@@ -77,6 +108,9 @@ def parse_args() -> argparse.Namespace:
     pr_p = sub.add_parser("plot_pr", help="Plot PR curves for all available scores in a CSV")
     pr_p.add_argument("--input", type=str, required=True, help="Per-question results CSV")
     pr_p.add_argument("--save", type=str, default="", help="Path to save the figure (optional)")
+
+    cfg_p = sub.add_parser("from_config", help="Run from a YAML config")
+    cfg_p.add_argument("--config", type=str, required=True, help="Path to YAML config")
 
     dump_p = sub.add_parser("dump_prompts", help="Create an example prompt transcript for a subset using iterative prompting")
     dump_p.add_argument("--input", type=str, required=True, help="Path to TriviaQA subset (.jsonl/.csv)")
@@ -146,14 +180,53 @@ def cmd_run(args: argparse.Namespace) -> None:
 
 def cmd_run_dataset(args: argparse.Namespace) -> None:
     random.seed(args.seed)
-    examples: List[QAExample] = load_triviaqa_subset(args.input, limit=args.limit)
+    if args.dataset == "ambigqa":
+        src_path = args.input if args.input and args.input.strip() else None
+        examples = load_ambigqa_subset(src_path, split=args.split, limit=args.limit)
+    else:
+        examples = load_triviaqa_subset(args.input, limit=args.limit)
 
-    client = OpenAICompatibleLLMClient(
-        base_url=args.base_url,
-        api_key=args.api_key,
-        model=args.model,
-        request_timeout_s=120,
-    )
+    # init cache
+    from .cache import SQLiteCache
+    cache = SQLiteCache(args.cache_path, mode=args.cache_mode)
+
+    if args.do_async:
+        import asyncio
+        if args.provider == "hf":
+            async_client = AsyncHuggingFaceInferenceClient(
+                base_url=args.base_url,
+                api_key=args.api_key,
+                model=args.model,
+                request_timeout_s=120,
+                semaphore=asyncio.Semaphore(max(1, int(args.concurrency))),
+                cache=cache,
+            )
+        else:
+            async_client = AsyncOpenAICompatibleLLMClient(
+                base_url=args.base_url,
+                api_key=args.api_key,
+                model=args.model,
+                request_timeout_s=120,
+                semaphore=asyncio.Semaphore(max(1, int(args.concurrency))),
+                cache=cache,
+            )
+    else:
+        if args.provider == "hf":
+            client = HuggingFaceInferenceClient(
+                base_url=args.base_url,
+                api_key=args.api_key,
+                model=args.model,
+                request_timeout_s=120,
+                cache=cache,
+            )
+        else:
+            client = OpenAICompatibleLLMClient(
+                base_url=args.base_url,
+                api_key=args.api_key,
+                model=args.model,
+                request_timeout_s=120,
+                cache=cache,
+            )
 
     # Per-question K chains and per-question MI
     rows = []
@@ -161,6 +234,18 @@ def cmd_run_dataset(args: argparse.Namespace) -> None:
     agree_scores: List[float] = []
     entropy_scores_bits: List[float] = []
     labels: List[int] = []
+
+    # logging setup
+    import uuid, json, time, os as _os
+    run_id = f"run_{int(time.time())}_{uuid.uuid4().hex[:8]}"
+    _os.makedirs(args.log_dir, exist_ok=True)
+    run_dir = _os.path.join(args.log_dir, run_id)
+    _os.makedirs(run_dir, exist_ok=True)
+    prompts_path = _os.path.join(run_dir, "prompts.jsonl")
+    prompts_f = open(prompts_path, "w", encoding="utf-8")
+    # raw responses folder
+    raw_dir = _os.path.join(run_dir, "raw")
+    _os.makedirs(raw_dir, exist_ok=True)
 
     q_bar = tqdm(examples, total=len(examples), desc="Questions", unit="q")
     extra_per_q = 1 if args.baseline_greedy else 0
@@ -170,16 +255,79 @@ def cmd_run_dataset(args: argparse.Namespace) -> None:
     def on_call():
         call_bar.update(1)
 
+    greedy_capable: Optional[bool] = None  # None=unknown, True=supported, False=unsupported
+    verify_capable: Optional[bool] = None  # None=unknown, True=supported, False=unsupported
     for ex in q_bar:
-        chains = run_k_chains_for_query(
-            client=client,
-            query=ex.question,
-            chain_length=args.t,
-            k=args.k,
-            temperature=args.temperature,
-            max_tokens=args.max_tokens,
-            on_request=on_call,
-        )
+        if args.do_async:
+            # Async: run K chains concurrently but steps sequentially per chain
+            import asyncio
+
+            async def run_one_chain(prev: list[str]) -> list[str]:
+                answers: list[str] = []
+                for _ in range(max(1, args.t)):
+                    messages = compose_prompt(ex.question, answers, prompt_style=args.prompt_style)
+                    t0 = time.time()
+                    # save raw response as a JSON file per step
+                    def _save_raw(data):
+                        try:
+                            fname = f"{int(time.time()*1000)}_{uuid.uuid4().hex[:6]}.json"
+                            with open(_os.path.join(raw_dir, fname), "w", encoding="utf-8") as rf:
+                                json.dump(data, rf, ensure_ascii=False)
+                        except Exception:
+                            pass
+                    text, token_lps = await async_client.chat_completion(
+                        messages=messages,
+                        temperature=args.temperature,
+                        max_tokens=args.max_tokens,
+                        logprobs=False,
+                        top_logprobs=1,
+                        on_raw=_save_raw,
+                    )
+                    on_call()
+                    answers.append(text)
+                    rec = {
+                        "run_id": run_id,
+                        "dataset": args.dataset,
+                        "question": ex.question,
+                        "chain_step": len(answers),
+                        "messages": messages if args.log_verbosity == "full" else {"user": messages[-1]["content"]},
+                        "response_text": text,
+                        "token_logprobs": token_lps if args.log_verbosity == "full" else None,
+                        "latency_ms": int((time.time() - t0) * 1000),
+                    }
+                    prompts_f.write(json.dumps(rec, ensure_ascii=False) + "\n")
+                return answers
+
+            tasks = [run_one_chain([]) for _ in range(max(1, args.k))]
+            chains = asyncio.get_event_loop().run_until_complete(asyncio.gather(*tasks))
+        else:
+            chains = run_k_chains_for_query(
+                client=client,
+                query=ex.question,
+                chain_length=args.t,
+                k=args.k,
+                temperature=args.temperature,
+                max_tokens=args.max_tokens,
+                on_request=on_call,
+                prompt_style=args.prompt_style,
+            )
+            # log sync path
+            # Only log the last step per chain to limit volume in minimal mode
+            if args.log_verbosity == "full":
+                pass
+            else:
+                for ch in chains:
+                    rec = {
+                        "run_id": run_id,
+                        "dataset": args.dataset,
+                        "question": ex.question,
+                        "chain_step": len(ch),
+                        "messages": {"user": compose_prompt(ex.question, ch[:-1], prompt_style=args.prompt_style)[-1]["content"]},
+                        "response_text": ch[-1] if ch else "",
+                        "token_logprobs": None,
+                        "latency_ms": None,
+                    }
+                    prompts_f.write(json.dumps(rec, ensure_ascii=False) + "\n")
         # Final answers are the last step y_t of each chain
         finals = [ch[-1] if ch else "" for ch in chains]
         if args.mi == "listing":
@@ -190,23 +338,82 @@ def cmd_run_dataset(args: argparse.Namespace) -> None:
         agree = compute_agreement_fraction(finals)
         ent_n = entropy_nats(finals)
         ent_b = nats_to_bits(ent_n)
-        # Simple label: any final answers match any gold
-        from .datasets import normalize_answer  # local import to avoid cycle
-
-        lab = 1 if any(normalize_answer(a) in {normalize_answer(g) for g in ex.answers} for a in finals) else 0
+        # Label policy: any correct (default) or majority correct
+        if args.label_policy == "majority":
+            lab = label_majority_correct(finals, ex.answers, normalizer=lambda s: s.strip().lower())
+        else:
+            from .datasets import normalize_answer  # local import to avoid cycle
+            lab = 1 if any(normalize_answer(a) in {normalize_answer(g) for g in ex.answers} for a in finals) else 0
 
         greedy_lp = None
+        greedy_lp_avg = None
         if args.baseline_greedy:
             # Greedy decode with logprobs for the last step only
-            messages = compose_prompt(ex.question, [])
-            text, token_lps = client.chat_completion_with_logprobs(
-                messages,
-                temperature=0.0,
-                max_tokens=args.max_tokens,
-            )
-            if token_lps is not None:
-                greedy_lp = sum(token_lps)
-            on_call()
+            if greedy_capable is not False:
+                msg = compose_prompt(ex.question, [], prompt_style=args.prompt_style)
+                token_lps = None
+                try:
+                    if args.do_async:
+                        import asyncio
+                        def _save_raw_g(d):
+                            try:
+                                fname = f"greedy_{int(time.time()*1000)}_{uuid.uuid4().hex[:6]}.json"
+                                with open(_os.path.join(raw_dir, fname), "w", encoding="utf-8") as rf:
+                                    json.dump(d, rf, ensure_ascii=False)
+                            except Exception:
+                                pass
+                        text, token_lps = asyncio.get_event_loop().run_until_complete(
+                            async_client.chat_completion(
+                                messages=msg,
+                                temperature=0.0,
+                                max_tokens=args.max_tokens,
+                                logprobs=True,
+                                top_logprobs=1,
+                                on_raw=_save_raw_g,
+                            )
+                        )
+                    else:
+                        # Prefer provider-specific logprob API when available
+                        if args.provider == "hf":
+                            def _save_raw_g2(d):
+                                try:
+                                    fname = f"greedy_{int(time.time()*1000)}_{uuid.uuid4().hex[:6]}.json"
+                                    with open(_os.path.join(raw_dir, fname), "w", encoding="utf-8") as rf:
+                                        json.dump(d, rf, ensure_ascii=False)
+                                except Exception:
+                                    pass
+                            text, token_lps = client.chat_completion_with_logprobs(
+                                msg,
+                                temperature=0.0,
+                                max_tokens=args.max_tokens,
+                                top_logprobs=1,
+                                on_raw=_save_raw_g2,
+                            )
+                        else:
+                            def _save_raw_g3(d):
+                                try:
+                                    fname = f"greedy_{int(time.time()*1000)}_{uuid.uuid4().hex[:6]}.json"
+                                    with open(_os.path.join(raw_dir, fname), "w", encoding="utf-8") as rf:
+                                        json.dump(d, rf, ensure_ascii=False)
+                                except Exception:
+                                    pass
+                            text, token_lps = client.chat_completion_with_logprobs(
+                                msg,
+                                temperature=0.0,
+                                max_tokens=args.max_tokens,
+                                top_logprobs=1,
+                                on_raw=_save_raw_g3,
+                            )
+                except Exception:
+                    token_lps = None
+                if token_lps is not None:
+                    greedy_lp = sum(token_lps)
+                    greedy_lp_avg = greedy_lp / max(1, len(token_lps))
+                    greedy_capable = True
+                else:
+                    # Auto-skip T0 for subsequent questions if unsupported
+                    greedy_capable = False
+                on_call()
 
         verify_score = None
         if args.baseline_verify:
@@ -216,17 +423,45 @@ def cmd_run_dataset(args: argparse.Namespace) -> None:
                 "representing confidence that the answer is correct. No text, just the number."
             )
             scores = []
-            for ans in finals:
-                messages = [
-                    {"role": "system", "content": prompt},
-                    {"role": "user", "content": f"Question: {ex.question}\nAnswer: {ans}\nConfidence (0-1):"},
-                ]
-                resp = client.chat_completion(messages, temperature=0.0, max_tokens=8)
-                try:
-                    scores.append(float(resp.strip().split()[0]))
-                except Exception:
-                    scores.append(0.0)
-                on_call()
+            if verify_capable is not False:
+                if args.do_async:
+                    import asyncio
+
+                    async def get_score_async(ans: str) -> float:
+                        messages = [
+                            {"role": "system", "content": prompt},
+                            {"role": "user", "content": f"Question: {ex.question}\nAnswer: {ans}\nConfidence (0-1):"},
+                        ]
+                        text, _ = await async_client.chat_completion(messages=messages, temperature=0.0, max_tokens=8)
+                        try:
+                            return float(text.strip().split()[0])
+                        except Exception:
+                            return 0.0
+                    try:
+                        scores = asyncio.get_event_loop().run_until_complete(asyncio.gather(*(get_score_async(a) for a in finals)))
+                        for _ in finals:
+                            on_call()
+                        verify_capable = True
+                    except Exception:
+                        verify_capable = False
+                        scores = []
+                else:
+                    try:
+                        for ans in finals:
+                            messages = [
+                                {"role": "system", "content": prompt},
+                                {"role": "user", "content": f"Question: {ex.question}\nAnswer: {ans}\nConfidence (0-1):"},
+                            ]
+                            resp = client.chat_completion(messages, temperature=0.0, max_tokens=8)
+                            try:
+                                scores.append(float(resp.strip().split()[0]))
+                            except Exception:
+                                scores.append(0.0)
+                            on_call()
+                        verify_capable = True
+                    except Exception:
+                        verify_capable = False
+                        scores = []
             if scores:
                 verify_score = sum(scores) / len(scores)
 
@@ -246,6 +481,7 @@ def cmd_run_dataset(args: argparse.Namespace) -> None:
             "label_any_correct": lab,
             "gold_answers": " | ".join(ex.answers),
             **({"greedy_logprob": f"{greedy_lp:.6f}"} if greedy_lp is not None else {}),
+            **({"greedy_logprob_avg": f"{greedy_lp_avg:.6f}"} if greedy_lp_avg is not None else {}),
             **({"verify_score": f"{verify_score:.6f}"} if verify_score is not None else {}),
         })
 
@@ -298,15 +534,47 @@ def cmd_run_dataset(args: argparse.Namespace) -> None:
     else:
         metrics_ver = None
 
-    # Write per-question rows
+    # Write per-question rows (ensure header includes union of all keys)
     with open(args.output, "w", newline="", encoding="utf-8") as f:
-        fieldnames = list(rows[0].keys()) if rows else ["question"]
+        if rows:
+            all_keys = set()
+            for r in rows:
+                all_keys.update(r.keys())
+            fieldnames = list(all_keys)
+        else:
+            fieldnames = ["question"]
         w = csv.DictWriter(f, fieldnames=fieldnames)
         w.writeheader()
         for r in rows:
             w.writerow(r)
     call_bar.close(); q_bar.close()
     print(f"Wrote per-question results: {args.output}")
+    # write run metadata and close logs
+    meta = {
+        "run_id": run_id,
+        "base_url": args.base_url,
+        "model": args.model,
+        "dataset": args.dataset,
+        "split": args.split,
+        "limit": args.limit,
+        "k": args.k,
+        "t": args.t,
+        "temperature": args.temperature,
+        "max_tokens": args.max_tokens,
+        "prompt_style": args.prompt_style,
+        "mi": args.mi,
+        "baselines": {"greedy": bool(args.baseline_greedy), "self_verify": bool(args.baseline_verify)},
+        "async": bool(args.do_async),
+        "concurrency": args.concurrency,
+        "cache_path": args.cache_path,
+        "cache_mode": args.cache_mode,
+        "log_dir": run_dir,
+        "results_csv": args.output,
+        "metrics": {"mi": metrics, "agreement": metrics_agree, "entropy": metrics_ent, "greedy": metrics_greedy, "self_verify": metrics_ver},
+    }
+    with open(os.path.join(run_dir, "run_metadata.json"), "w", encoding="utf-8") as f:
+        json.dump(meta, f, ensure_ascii=False, indent=2)
+    prompts_f.close()
     print("Test metrics (MI bits):", metrics)
     print("Test metrics (Agreement):", metrics_agree)
     print("Test metrics (Entropy bits):", metrics_ent)
@@ -435,6 +703,51 @@ def cmd_dump_prompts(args: argparse.Namespace) -> None:
     print(f"Wrote prompt transcript: {args.output}")
 
 
+def cmd_from_config(args: argparse.Namespace) -> None:
+    import yaml, sys, os
+    with open(args.config, "r", encoding="utf-8") as f:
+        cfg = yaml.safe_load(f)
+    provider = cfg.get("provider", {})
+    dataset = cfg.get("dataset", {})
+    prompting = cfg.get("prompting", {})
+    estimators = cfg.get("estimators", {})
+    execution = cfg.get("execution", {})
+
+    # Expand environment variables in provider fields if present
+    base_url = os.path.expandvars(str(provider.get("base_url", "")))
+    api_key = os.path.expandvars(str(provider.get("api_key", "")))
+
+    argv = [
+        "run_dataset",
+        "--dataset", str(dataset.get("name", "triviaqa")),
+        "--split", str(dataset.get("split", "validation")),
+        "--input", str(dataset.get("input", "")),
+        "--limit", str(dataset.get("limit", 1000)),
+        "--k", str(prompting.get("K", 10)),
+        "--t", str(prompting.get("t", 3)),
+        "--prompt-style", str(prompting.get("style", "naive")),
+        "--mi", str(estimators.get("mi", "listing")),
+        "--model", str(provider.get("model", "")),
+        "--base-url", base_url,
+        "--api-key", api_key,
+        "--temperature", str(prompting.get("temperature", 0.5)),
+        "--max-tokens", str(prompting.get("max_tokens", 64)),
+        "--output", str(execution.get("output_csv", "results.csv")),
+        "--cache-path", str(execution.get("cache_path", ".cache/llm_cache.sqlite")),
+        "--cache-mode", str(execution.get("cache_mode", "readwrite")),
+        "--log-dir", str(execution.get("log_dir", "logs")),
+        "--log-verbosity", str(execution.get("log_verbosity", "minimal")),
+    ]
+    if bool(execution.get("async", True)):
+        argv.extend(["--async", "--concurrency", str(execution.get("concurrency", 50))])
+    if "greedy" in (estimators.get("baselines", []) or []):
+        argv.append("--baseline-greedy")
+    if "self_verify" in (estimators.get("baselines", []) or []):
+        argv.append("--baseline-verify")
+    sys.argv = [sys.argv[0]] + argv
+    main()
+
+
 def main() -> None:
     args = parse_args()
     if args.command == "run":
@@ -448,6 +761,9 @@ def main() -> None:
         return
     if args.command == "plot_pr":
         cmd_plot_pr(args)
+        return
+    if args.command == "from_config":
+        cmd_from_config(args)
         return
     if args.command == "dump_prompts":
         cmd_dump_prompts(args)

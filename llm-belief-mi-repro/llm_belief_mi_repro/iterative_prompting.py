@@ -10,17 +10,40 @@ SYSTEM_PROMPT = (
 )
 
 
-def compose_prompt(query: str, previous_answers: List[str]) -> List[dict]:
+def compose_prompt(query: str, previous_answers: List[str], *, prompt_style: str = "naive") -> List[dict]:
     """Compose messages for OpenAI-style chat with iterative previous answers in context.
 
     The paper's construction adds previous responses into the prompt. Here we place them
     in the user message as a short list of previously given answers to encourage (or test)
     sensitivity to prior outputs.
     """
-    history = "".join(
-        f"\nAnother answer to question Q is: {ans.strip()}" for ans in previous_answers
-    )
-    user = f"Consider the following question (Q) and previous answers if any.{history}\nProvide an answer to the following question:\nQ: {query}\nA:"
+    previous = [ans.strip() for ans in previous_answers]
+
+    if prompt_style == "wrong_prev":
+        history = "".join(
+            f"\nA wrong answer sometimes given is: {ans}" for ans in previous
+        )
+        user = (
+            "Consider the following question (Q) and previous answers if any." +
+            history +
+            "\nPlease answer correctly." +
+            f"\nQ: {query}\nA:"
+        )
+    elif prompt_style == "critique":
+        history = "".join(
+            f"\nEarlier answers may contain mistakes: {ans}" for ans in previous
+        )
+        user = (
+            "Consider the following question (Q) and previous answers if any." +
+            history +
+            "\nProvide a corrected answer and a brief rationale." +
+            f"\nQ: {query}\nA:"
+        )
+    else:
+        history = "".join(
+            f"\nAnother answer to question Q is: {ans}" for ans in previous
+        )
+        user = f"Consider the following question (Q) and previous answers if any.{history}\nProvide an answer to the following question:\nQ: {query}\nA:"
     return [
         {"role": "system", "content": SYSTEM_PROMPT},
         {"role": "user", "content": user},
@@ -34,10 +57,11 @@ def run_chain_for_query(
     temperature: float,
     max_tokens: int,
     on_request: Optional[Callable[[], None]] = None,
+    prompt_style: str = "naive",
 ) -> List[str]:
     answers: List[str] = []
     for _ in range(max(1, chain_length)):
-        messages = compose_prompt(query, answers)
+        messages = compose_prompt(query, answers, prompt_style=prompt_style)
         ans = client.chat_completion(messages, temperature=temperature, max_tokens=max_tokens)
         if on_request is not None:
             on_request()
@@ -54,6 +78,7 @@ def run_k_chains_for_query(
     temperature: float,
     max_tokens: int,
     on_request: Optional[Callable[[], None]] = None,
+    prompt_style: str = "naive",
 ) -> List[List[str]]:
     """Run K independent chains for a single question.
 
@@ -70,6 +95,7 @@ def run_k_chains_for_query(
                 temperature=temperature,
                 max_tokens=max_tokens,
                 on_request=on_request,
+                prompt_style=prompt_style,
             )
         )
     return chains
