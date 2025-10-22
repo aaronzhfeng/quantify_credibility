@@ -1,0 +1,102 @@
+\section{Related work}
+
+
+In this section we present an overview of the related literature.
+
+\subsection{Bayesian neural networks}
+
+In a Bayesian framework, we can estimate the epistemic uncertainty by the uncertainty in the posterior distribution~\citep{Neal2012, Gal-2016, wang2024subjectiveuncertainty}. Implementing a Bayesian neural network however can be very challenging.
+
+\subsection{Iterative prompting}
+
+A number of iterative prompting strategies are developed to improve the factuality of LLMs~\citep{chen2023universalselfconsistencylargelanguage,krishna2023intersectionselfcorrectiontrustlanguage,laban2024surechallengingllmsleads}. The idea is to follow-up the LLM response with another question such as \textit{``Are you sure?''}. \citet{krishna2024understanding} show that such strategies might in fact degrade LLM truthfulness due to a pattern of apologetic responses. \citet{krishna2024understanding} propose improved iterative prompting strategies, where instead of asking the LLM to re-think its response, the same question is posed again. They also propose strategies to collect more supporting facts and refine the final response accordingly. \citet{li2024thinktwice} propose an iterative prompting that instructs LLM to generate
+justifications for each answer before evaluating the correctness of the final answer. Different from these works, we assess hallucinations by measuring how LLM response changes with our iterative prompting scheme.  
+
+Perhaps the most related work to ours is the parallel and independent work of \citet{ahdritz2024}. Similar to us, \citet{ahdritz2024} observe that in presence of high epistemic uncertainty, an LLM is more likely to copy the information provided in its context. For a given query, \citet{ahdritz2024} propose considering top-$k$ completions of the model, and then computing the entropy of the model conditioned on an iterative prompt composed of the original query and each completion. The minimum of these entropies is considered as a measure of the epistemic uncertainty. The method as it is, might fail on single-response queries where the model has low uncertainty. 
+Nevertheless, we can design a two-stage process where we only consider completions that have probability higher than certain threshold in the first stage, and then compute the entropy of the model conditioned on an iterative prompt composed of the original query and each candidate completion in the second stage. By a proper tuning of the threshold of the first stage, we can potentially avoid mis-classification of low-uncertainty single-response queries. Tuning this threshold, however, would introduce extra complications. In contrast, we propose a principled test using a mutual information score that is guaranteed to be a lower bound on the KL-divergence between the LLM and the ground-truth. Further, we provide a mechanistic explanations for why LLMs behave as described in the presence of high epistemic uncertainty. 
+
+
+\subsection{Training models with pairs of responses}
+
+\citet{wen2022predictions,osband2023epistemic,johnson2024experts} show that we can decouple epistemic and aleatoric uncertainty if we train a model with paired observations. 
+
+We discuss the more recent work of \citet{johnson2024experts} in more detail. The proposed approach first estimates a model $\hat{p}_{Y_1,Y_2|\inp}(y_1,y_2|x)$ over pairs using a training dataset of the form ``query, first observation, second observation''. 
+At test time, for a prompt $x$ and response $y$, \citet{johnson2024experts} consider 
+\begin{align*}
+\hat{V}(y\mid x) &= \hat{p}_{Y_1}(y\mid x) \left( \hat{p}_{Y_2|Y_1}(y\mid y,x) - \hat{p}_{Y_1}(y\mid x) \right) \\
+&= \hat{p}_{Y_1,Y_2}(y_1,y_2\mid x) - \hat{p}_{Y_1}(y\mid x) \hat{p}_{Y_1}(y\mid x) 
+\end{align*}
+as a measure of epistemic uncertainty. Assume that an equivalence class $\Phi$ (that maps a prompt to the set of equivalent prompts) is given, and let $\nu(.\mid \Phi(x))$ be a distribution (say, uniform) over class $\Phi(x)$. If the trained model is second order calibrated with respect to the equivalence class and the distribution $\nu$, i.e. 
+\begin{align*}
+\hat{p}_{Y_1}(y_1\mid x) &= \sum_{x'\in \Phi(x)} \nu(x'\mid \Phi(x))  p(y_1\mid x')\,,\\
+\hat{p}_{Y_1,Y_2}(y_1,y_2\mid x) &= \sum_{x'\in \Phi(x)} \nu(x'\mid \Phi(x))  p(y_1\mid x') p(y_2\mid x')\,,
+\end{align*}
+then it follows from definitions that in the class associated with $x$,
+\[
+\sum_{x'\in \Phi(x)} \nu(x'\mid \Phi(x)) (\hat{p}_{Y_1} (y\mid x') - p(y\mid x'))^2  = \sum_{x'\in \Phi(x)} \nu(x'\mid \Phi(x)) \hat{V}(y\mid x') \;.
+\]
+The quantity on the right-hand side is a measure of epistemic uncertainty. Notice that the equality states a coverage result, and it is not point-wise. Requiring the model to be second order calibrated is also a strong condition and ensuring it is highly non-trivial. 
+
+
+\subsection{Epistemic neural nets}
+%
+\emph{Ensemble methods} are based on the classical idea of bootstrap for confidence estimation \citep{tibshirani1993introduction}, where multiple estimators for the regression function, each computed on a perturbed version of the data (e.g., by drawing samples from the empirical distribution over the data), are combined.
+
+The empirical distribution of the resulting estimates is then used to construct confidence intervals.
+While many of these methods can be interpreted as sample-based approximations to Bayesian methods, model-hyperparameter selection (e.g., scale of perturbations, learning) for ensemble methods is typically done using a validation on holdout data (a subset of the training data).
+Many recent papers have studied ensemble methods in the context of deep learning and reinforcement learning \citep{OV2015,LPB2017,MG2020}.
+In the context of LLMs, the methods require training multiple language models, which is very expensive. \citet{osband2023epistemic} introduces epistemic neural networks (epinets), which approximate ensemble methods by training a single network with an artificially injected (controlled) source of randomness.
+\citet{rabanser2022selective} proposes to use intermediate model checkpoints to quantify the uncertainty of the final model in its responses.
+While these approaches aim to mimic the bootstrap procedure during prediction, their validity is not justified by theoretical considerations, and hence remain heuristic approximations.
+
+
+\subsection{Hallucination detection using first-order methods}
+\label{sec:related-hallucination-detection-first-order}
+
+First-order methods consider variance in the response distribution as a measure of hallucination~\citep{KCAHD2022,CZGEDE2023,MLG2023,LTS2023,KuhnARXIV2023,wang2023selfconsistency,JRHLPGB-2023,ZLDMK-2023,zhao2024knowing,conformal-abstention-2024}.
+%
+A common limitation of these approaches is that
+they are only applicable to prompts where there exists a \emph{single} correct
+response, as they aim for detecting if one response (or multiple responses with the same
+meaning) is dominant.
+%
+%
+On the other hand, when multiple responses are correct, there is an
+\emph{aleatoric uncertainty} in the ground truth: If an LLM \emph{correctly}
+assigns non-negligible scores to multiple correct responses, most of these (if
+not all) will be declared as hallucination since, by design, only very few
+(typically at most one) responses can have scores higher than the threshold at
+the same time.
+Thus, hallucination detectors unaware of aleatoric uncertainty will invalidate
+most of the correct answers.
+
+\citet{Yona2024narrowing} design a method that generates multiple responses, and then aggregates them into a single response at a (typically higher) granularity level where no further uncertainty (contradiction) is left compared to the generated responses. Although not a strictly first order method, it does not differentiate between aleatoric and epistemic uncertainty.
+
+
+\subsubsection{Asking language models to quantify uncertainty (self-verification)}
+
+\citet{KCAHD2022} propose to use LLM self-prompting to measure a model's uncertainty in its responses. More specifically, for a given query, a number of responses are generated, and then the model is queried if the responses are correct. For this query, the log-probability of ``True" is returned as a measure of uncertainty. Related approaches are studied by \citet{mielke2022reducing}. 
+
+
+
+\subsection{Uncertainty estimation based on sensitivity to contexts}
+
+\citet{KS-2020,Zhao-2021} show that an LLM's responses can be influenced by irrelevant contexts. \citet{LPCRDS-2021,neeman2022disentqa} study two sources of knowledge: parametric knowledge stored in the network weights, and contextual knowledge retrieved from external sources. They view reliance of the model on its parametric knowledge and ignoring relevant contextual information as hallucination. These works are mainly motivated by situations where the LLM's knowledge is outdated and it is instructed to use the (new) contextual information. Accordingly, they design strategies to prioritize contextual information over parametric knowledge. \citet{LPCRDS-2021} also show that larger models are more likely to ignore in-context information in favor of in-weight information. They propose creating training data with modified contextual information so that the model learns to favor the contextual information. \citet{neeman2022disentqa} propose to train a model that predicts two answers: one based on parametric knowledge and one based on contextual information. 
+
+Similarly to \citet{neeman2022disentqa}, \citet{LRZWLVYK-2023} aims to design a mechanism such that the model's behavior is influenced more by relevant context than by its parametric knowledge (controllability), while the model is robust to irrelevant contexts (robustness). 
+They improve controllability and robustness using finetuning. 
+
+\citet{hou2023decomposing} study an approach to estimate model uncertainty due to ambiguity in a question. 
+For a given question, their method generates multiple input clarification questions, and a new question is formed by augmenting the original question with each clarification question. The clarification questions are generated using an LLM with the aim of removing ambiguity in the question. 
+This is different than the problem we study as the model can be uncertain about the answer even if the query itself has no ambiguity. 
+For such queries, the method of \citet{hou2023decomposing} might decide that no clarification is needed, and therefore there is no uncertainty. 
+
+
+\subsection{Hallucination detection using internal states of LLMs}
+
+There are a number of papers that try to extract knowledge/truthfulness by inspecting hidden-layer activations of LLMs~\citep{BYKS-2023,azaria2023internal,chen2024inside,chen2024incontext,yin2024characterizing}. Such methods clearly require access to the LLM's internal states, which is not always possible, and severely limits the applicability of these methods.
+
+
+
+
+
