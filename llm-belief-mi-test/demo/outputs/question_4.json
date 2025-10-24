@@ -1,0 +1,1601 @@
+{
+  "question_id": 4,
+  "question_text": "An electric car runs on electricity via",
+  "choices": [
+    "A: gasoline",
+    "B: a power station",
+    "C: electrical conductors",
+    "D: fuel"
+  ],
+  "gold_answer": "C",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are a helpful, concise assistant. Answer accurately. If unsure, say so briefly."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: An electric car runs on electricity via\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 30
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "An electric car runs on electricity via a battery and electric motor.",
+          "logprob": -3.714425678655971,
+          "probability": 0.024369432982228698
+        }
+      ],
+      "decision_process": {
+        "selected_text": "An electric car runs on electricity via a battery and electric motor.",
+        "matched_choice": "A",
+        "confidence_computation": "exp(logprob) = exp(-3.7144) = 0.0244"
+      },
+      "final_metrics": {
+        "predicted": "A",
+        "correct": false,
+        "confidence": 0.024369432982228698,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    },
+    "self_consistency": {
+      "description": "k=10 samples, majority voting",
+      "raw_inputs": [
+        {
+          "sample_id": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are a helpful, concise assistant. Answer accurately. If unsure, say so briefly."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: An electric car runs on electricity via\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 30
+        },
+        {
+          "sample_id": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are a helpful, concise assistant. Answer accurately. If unsure, say so briefly."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: An electric car runs on electricity via\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 30
+        },
+        {
+          "sample_id": 2,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are a helpful, concise assistant. Answer accurately. If unsure, say so briefly."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: An electric car runs on electricity via\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 30
+        },
+        {
+          "sample_id": 3,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are a helpful, concise assistant. Answer accurately. If unsure, say so briefly."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: An electric car runs on electricity via\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 30
+        },
+        {
+          "sample_id": 4,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are a helpful, concise assistant. Answer accurately. If unsure, say so briefly."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: An electric car runs on electricity via\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 30
+        },
+        {
+          "sample_id": 5,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are a helpful, concise assistant. Answer accurately. If unsure, say so briefly."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: An electric car runs on electricity via\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 30
+        },
+        {
+          "sample_id": 6,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are a helpful, concise assistant. Answer accurately. If unsure, say so briefly."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: An electric car runs on electricity via\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 30
+        },
+        {
+          "sample_id": 7,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are a helpful, concise assistant. Answer accurately. If unsure, say so briefly."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: An electric car runs on electricity via\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 30
+        },
+        {
+          "sample_id": 8,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are a helpful, concise assistant. Answer accurately. If unsure, say so briefly."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: An electric car runs on electricity via\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 30
+        },
+        {
+          "sample_id": 9,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are a helpful, concise assistant. Answer accurately. If unsure, say so briefly."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: An electric car runs on electricity via\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 30
+        }
+      ],
+      "raw_outputs": [
+        {
+          "sample_id": 0,
+          "text": "A: Electricity stored in rechargeable batteries.",
+          "logprob": -7.866172984242439,
+          "probability": 0.00038349921494352347
+        },
+        {
+          "sample_id": 1,
+          "text": "The electric car runs on electricity via electric motors powered by a rechargeable battery, which is charged through an external power source, typically a wall socket or",
+          "logprob": -18.223872609436512,
+          "probability": 1.2175104200685569e-08
+        },
+        {
+          "sample_id": 2,
+          "text": "An electric car runs on electricity via electricity stored in its battery and used by an electric motor.",
+          "logprob": -7.586846888065338,
+          "probability": 0.0005070774077266562
+        },
+        {
+          "sample_id": 3,
+          "text": "The correct answer is not provided in your question, but I'll give you the information.\n\nAn electric car runs on electricity via an electric motor, powered",
+          "logprob": -21.30497758090496,
+          "probability": 5.589407837211713e-10
+        },
+        {
+          "sample_id": 4,
+          "text": "An electric car runs on electricity via batteries, which power an electric motor.",
+          "logprob": -6.921548396348953,
+          "probability": 0.0009863015718235468
+        },
+        {
+          "sample_id": 5,
+          "text": "An electric car runs on electricity via a battery.",
+          "logprob": -3.439718931913376,
+          "probability": 0.0320736989542761
+        },
+        {
+          "sample_id": 6,
+          "text": "An electric car runs on electricity via a battery-powered electric motor.",
+          "logprob": -3.995274156332016,
+          "probability": 0.018402400584431693
+        },
+        {
+          "sample_id": 7,
+          "text": "An electric car runs on electricity via a battery, which powers an electric motor.",
+          "logprob": -4.407226409763098,
+          "probability": 0.01218893861080874
+        },
+        {
+          "sample_id": 8,
+          "text": "A: An electric car runs on electricity via a battery and electric motor.",
+          "logprob": -4.8533802181482315,
+          "probability": 0.007801960598044632
+        },
+        {
+          "sample_id": 9,
+          "text": "An electric car runs on electricity via a battery, which stores electrical energy. The battery powers an electric motor that propels the vehicle.",
+          "logprob": -8.16811704263091,
+          "probability": 0.0002835514293432342
+        }
+      ],
+      "decision_process": {
+        "all_responses": [
+          "A: Electricity stored in rechargeable batteries.",
+          "The electric car runs on electricity via electric motors powered by a rechargeable battery, which is charged through an external power source, typically a wall socket or",
+          "An electric car runs on electricity via electricity stored in its battery and used by an electric motor.",
+          "The correct answer is not provided in your question, but I'll give you the information.\n\nAn electric car runs on electricity via an electric motor, powered",
+          "An electric car runs on electricity via batteries, which power an electric motor.",
+          "An electric car runs on electricity via a battery.",
+          "An electric car runs on electricity via a battery-powered electric motor.",
+          "An electric car runs on electricity via a battery, which powers an electric motor.",
+          "A: An electric car runs on electricity via a battery and electric motor.",
+          "An electric car runs on electricity via a battery, which stores electrical energy. The battery powers an electric motor that propels the vehicle."
+        ],
+        "vote_counts": {
+          "A: Electricity stored in rechargeable batteries.": 1,
+          "The electric car runs on electricity via electric motors powered by a rechargeable battery, which is charged through an external power source, typically a wall socket or": 1,
+          "An electric car runs on electricity via electricity stored in its battery and used by an electric motor.": 1,
+          "The correct answer is not provided in your question, but I'll give you the information.\n\nAn electric car runs on electricity via an electric motor, powered": 1,
+          "An electric car runs on electricity via batteries, which power an electric motor.": 1,
+          "An electric car runs on electricity via a battery.": 1,
+          "An electric car runs on electricity via a battery-powered electric motor.": 1,
+          "An electric car runs on electricity via a battery, which powers an electric motor.": 1,
+          "A: An electric car runs on electricity via a battery and electric motor.": 1,
+          "An electric car runs on electricity via a battery, which stores electrical energy. The battery powers an electric motor that propels the vehicle.": 1
+        },
+        "majority": "A: Electricity stored in rechargeable batteries.",
+        "matched_choice": "A",
+        "confidence_computation": "1/10 = 0.1000"
+      },
+      "final_metrics": {
+        "predicted": "A",
+        "correct": false,
+        "confidence": 0.1,
+        "mi_score": 0.0,
+        "agreement": 0.1
+      }
+    },
+    "semantic_entropy": {
+      "description": "k=10 samples, entropy-based confidence with F1 similarity",
+      "raw_inputs": [
+        {
+          "sample_id": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are a helpful, concise assistant. Answer accurately. If unsure, say so briefly."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: An electric car runs on electricity via\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 30
+        },
+        {
+          "sample_id": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are a helpful, concise assistant. Answer accurately. If unsure, say so briefly."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: An electric car runs on electricity via\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 30
+        },
+        {
+          "sample_id": 2,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are a helpful, concise assistant. Answer accurately. If unsure, say so briefly."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: An electric car runs on electricity via\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 30
+        },
+        {
+          "sample_id": 3,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are a helpful, concise assistant. Answer accurately. If unsure, say so briefly."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: An electric car runs on electricity via\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 30
+        },
+        {
+          "sample_id": 4,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are a helpful, concise assistant. Answer accurately. If unsure, say so briefly."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: An electric car runs on electricity via\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 30
+        },
+        {
+          "sample_id": 5,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are a helpful, concise assistant. Answer accurately. If unsure, say so briefly."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: An electric car runs on electricity via\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 30
+        },
+        {
+          "sample_id": 6,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are a helpful, concise assistant. Answer accurately. If unsure, say so briefly."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: An electric car runs on electricity via\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 30
+        },
+        {
+          "sample_id": 7,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are a helpful, concise assistant. Answer accurately. If unsure, say so briefly."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: An electric car runs on electricity via\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 30
+        },
+        {
+          "sample_id": 8,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are a helpful, concise assistant. Answer accurately. If unsure, say so briefly."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: An electric car runs on electricity via\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 30
+        },
+        {
+          "sample_id": 9,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are a helpful, concise assistant. Answer accurately. If unsure, say so briefly."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: An electric car runs on electricity via\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 30
+        }
+      ],
+      "raw_outputs": [
+        {
+          "sample_id": 0,
+          "text": "An electric car runs on electricity via a battery that stores electrical energy, which is then used to power electric motors to propel the vehicle.",
+          "logprob": -9.392087798565626,
+          "probability": 8.338119125406691e-05
+        },
+        {
+          "sample_id": 1,
+          "text": "An electric car runs on electricity via a battery and electric motor.",
+          "logprob": -2.9738578498363495,
+          "probability": 0.0511057711478035
+        },
+        {
+          "sample_id": 2,
+          "text": "An electric car runs on electricity via an electric motor powered by a battery.",
+          "logprob": -4.911327511072159,
+          "probability": 0.007362707764820298
+        },
+        {
+          "sample_id": 3,
+          "text": "An electric car runs on electricity via batteries and a motor.",
+          "logprob": -5.58810169249773,
+          "probability": 0.0037421248300849174
+        },
+        {
+          "sample_id": 4,
+          "text": "A: An electric car runs on electricity via a battery pack that powers an electric motor.",
+          "logprob": -8.514365494251251,
+          "probability": 0.00020056633977431944
+        },
+        {
+          "sample_id": 5,
+          "text": "An electric car runs on electricity via a battery and electric motor.",
+          "logprob": -2.9738578498363495,
+          "probability": 0.0511057711478035
+        },
+        {
+          "sample_id": 6,
+          "text": "An electric car runs on electricity via a battery.",
+          "logprob": -3.439718931913376,
+          "probability": 0.0320736989542761
+        },
+        {
+          "sample_id": 7,
+          "text": "An electric car runs on electricity via its electric motor, which is powered by a battery.",
+          "logprob": -6.793424427509308,
+          "probability": 0.001121122988722388
+        },
+        {
+          "sample_id": 8,
+          "text": "A: Electric cars run on electricity via a battery, which powers an electric motor. The battery is typically charged by an external power source, such as",
+          "logprob": -11.098819747567177,
+          "probability": 1.5130170706653085e-05
+        },
+        {
+          "sample_id": 9,
+          "text": "An electric car runs on electricity via a battery and electric motor.",
+          "logprob": -2.9738578498363495,
+          "probability": 0.0511057711478035
+        }
+      ],
+      "decision_process": {
+        "similarity_matrix": [
+          [
+            1.0,
+            0.5405405405405406,
+            0.4615384615384615,
+            0.4444444444444444,
+            0.5365853658536586,
+            0.5405405405405406,
+            0.47058823529411764,
+            0.5365853658536586,
+            0.47058823529411764,
+            0.5405405405405406
+          ],
+          [
+            0.5405405405405406,
+            1.0,
+            0.6923076923076924,
+            0.8695652173913043,
+            0.7857142857142857,
+            1.0,
+            0.761904761904762,
+            0.6428571428571429,
+            0.4736842105263157,
+            1.0
+          ],
+          [
+            0.4615384615384615,
+            0.6923076923076924,
+            1.0,
+            0.64,
+            0.6666666666666666,
+            0.6923076923076924,
+            0.782608695652174,
+            0.7999999999999999,
+            0.45,
+            0.6923076923076924
+          ],
+          [
+            0.4444444444444444,
+            0.8695652173913043,
+            0.64,
+            1.0,
+            0.6666666666666666,
+            0.8695652173913043,
+            0.7999999999999999,
+            0.5925925925925926,
+            0.37837837837837834,
+            0.8695652173913043
+          ],
+          [
+            0.5365853658536586,
+            0.7857142857142857,
+            0.6666666666666666,
+            0.6666666666666666,
+            1.0,
+            0.7857142857142857,
+            0.64,
+            0.5625,
+            0.5714285714285714,
+            0.7857142857142857
+          ],
+          [
+            0.5405405405405406,
+            1.0,
+            0.6923076923076924,
+            0.8695652173913043,
+            0.7857142857142857,
+            1.0,
+            0.761904761904762,
+            0.6428571428571429,
+            0.4736842105263157,
+            1.0
+          ],
+          [
+            0.47058823529411764,
+            0.761904761904762,
+            0.782608695652174,
+            0.7999999999999999,
+            0.64,
+            0.761904761904762,
+            1.0,
+            0.72,
+            0.3428571428571429,
+            0.761904761904762
+          ],
+          [
+            0.5365853658536586,
+            0.6428571428571429,
+            0.7999999999999999,
+            0.5925925925925926,
+            0.5625,
+            0.6428571428571429,
+            0.72,
+            1.0,
+            0.4761904761904762,
+            0.6428571428571429
+          ],
+          [
+            0.47058823529411764,
+            0.4736842105263157,
+            0.45,
+            0.37837837837837834,
+            0.5714285714285714,
+            0.4736842105263157,
+            0.3428571428571429,
+            0.4761904761904762,
+            1.0,
+            0.4736842105263157
+          ],
+          [
+            0.5405405405405406,
+            1.0,
+            0.6923076923076924,
+            0.8695652173913043,
+            0.7857142857142857,
+            1.0,
+            0.761904761904762,
+            0.6428571428571429,
+            0.4736842105263157,
+            1.0
+          ]
+        ],
+        "similarity_threshold": 0.25,
+        "semantic_clusters": {
+          "cluster_0": {
+            "representative": "An electric car runs on electricity via a battery that stores electrical energy, which is then used to power electric motors to propel the vehicle.",
+            "texts": [
+              "An electric car runs on electricity via a battery that stores electrical energy, which is then used to power electric motors to propel the vehicle.",
+              "An electric car runs on electricity via a battery and electric motor.",
+              "An electric car runs on electricity via an electric motor powered by a battery.",
+              "An electric car runs on electricity via batteries and a motor.",
+              "A: An electric car runs on electricity via a battery pack that powers an electric motor.",
+              "An electric car runs on electricity via a battery and electric motor.",
+              "An electric car runs on electricity via a battery.",
+              "An electric car runs on electricity via its electric motor, which is powered by a battery.",
+              "A: Electric cars run on electricity via a battery, which powers an electric motor. The battery is typically charged by an external power source, such as",
+              "An electric car runs on electricity via a battery and electric motor."
+            ],
+            "probs": [
+              8.338119125406691e-05,
+              0.0511057711478035,
+              0.007362707764820298,
+              0.0037421248300849174,
+              0.00020056633977431944,
+              0.0511057711478035,
+              0.0320736989542761,
+              0.001121122988722388,
+              1.5130170706653085e-05,
+              0.0511057711478035
+            ],
+            "total_prob": 0.19791604568304924
+          }
+        },
+        "aggregated_distribution": {
+          "An electric car runs on electricity via a battery that stores electrical energy, which is then used to power electric motors to propel the vehicle.": 1.0
+        },
+        "entropy_nats": 0.0,
+        "entropy_bits": 0.0,
+        "confidence_computation": "exp(-entropy_nats) = exp(-0.0000) = 1.0000"
+      },
+      "final_metrics": {
+        "predicted": "A",
+        "correct": false,
+        "confidence": 1.0,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    },
+    "self_verification": {
+      "description": "k=10 samples + verification query",
+      "raw_inputs": [
+        {
+          "sample_id": 0,
+          "step": "initial_generation",
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are a helpful, concise assistant. Answer accurately. If unsure, say so briefly."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: An electric car runs on electricity via\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 30
+        },
+        {
+          "sample_id": 1,
+          "step": "initial_generation",
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are a helpful, concise assistant. Answer accurately. If unsure, say so briefly."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: An electric car runs on electricity via\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 30
+        },
+        {
+          "sample_id": 2,
+          "step": "initial_generation",
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are a helpful, concise assistant. Answer accurately. If unsure, say so briefly."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: An electric car runs on electricity via\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 30
+        },
+        {
+          "sample_id": 3,
+          "step": "initial_generation",
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are a helpful, concise assistant. Answer accurately. If unsure, say so briefly."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: An electric car runs on electricity via\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 30
+        },
+        {
+          "sample_id": 4,
+          "step": "initial_generation",
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are a helpful, concise assistant. Answer accurately. If unsure, say so briefly."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: An electric car runs on electricity via\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 30
+        },
+        {
+          "sample_id": 5,
+          "step": "initial_generation",
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are a helpful, concise assistant. Answer accurately. If unsure, say so briefly."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: An electric car runs on electricity via\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 30
+        },
+        {
+          "sample_id": 6,
+          "step": "initial_generation",
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are a helpful, concise assistant. Answer accurately. If unsure, say so briefly."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: An electric car runs on electricity via\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 30
+        },
+        {
+          "sample_id": 7,
+          "step": "initial_generation",
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are a helpful, concise assistant. Answer accurately. If unsure, say so briefly."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: An electric car runs on electricity via\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 30
+        },
+        {
+          "sample_id": 8,
+          "step": "initial_generation",
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are a helpful, concise assistant. Answer accurately. If unsure, say so briefly."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: An electric car runs on electricity via\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 30
+        },
+        {
+          "sample_id": 9,
+          "step": "initial_generation",
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are a helpful, concise assistant. Answer accurately. If unsure, say so briefly."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: An electric car runs on electricity via\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 30
+        },
+        {
+          "sample_id": 10,
+          "step": "verification",
+          "prompt": [
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: An electric car runs on electricity via\n\nOne answer to question Q is: A: An electric car runs on electricity via an electric motor, which is powered by a battery pack that stores electrical energy. The battery is charged through\n\nIs the above answer to question Q correct? Answer True or False.\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 5
+        }
+      ],
+      "raw_outputs": [
+        {
+          "sample_id": 0,
+          "step": "initial_generation",
+          "text": "A: An electric car runs on electricity via an electric motor, which is powered by a battery pack that stores electrical energy. The battery is charged through",
+          "logprob": -13.932150602340698,
+          "probability": 8.899054619941656e-07
+        },
+        {
+          "sample_id": 1,
+          "step": "initial_generation",
+          "text": "Electricity is stored in a battery and then used to power an electric motor, which propels the car forward.",
+          "logprob": -10.305702114477754,
+          "probability": 3.344186116402077e-05
+        },
+        {
+          "sample_id": 2,
+          "step": "initial_generation",
+          "text": "Electric car runs on electricity via an electric motor.",
+          "logprob": -8.609405517578125,
+          "probability": 0.00018238230126358773
+        },
+        {
+          "sample_id": 3,
+          "step": "initial_generation",
+          "text": "An electric car runs on electricity via batteries.",
+          "logprob": -2.753318876028061,
+          "probability": 0.063716044252159
+        },
+        {
+          "sample_id": 4,
+          "step": "initial_generation",
+          "text": "An electric car runs on electricity via batteries and an electric motor.",
+          "logprob": -4.512991786003113,
+          "probability": 0.010965604309964022
+        },
+        {
+          "sample_id": 5,
+          "step": "initial_generation",
+          "text": "An electric car runs on electricity via an electric motor, typically powered by a rechargeable battery pack.",
+          "logprob": -7.346355974674225,
+          "probability": 0.0006449382548443958
+        },
+        {
+          "sample_id": 6,
+          "step": "initial_generation",
+          "text": "A: Batteries.",
+          "logprob": -2.972880259156227,
+          "probability": 0.05115575610180983
+        },
+        {
+          "sample_id": 7,
+          "step": "initial_generation",
+          "text": "The electric car runs on electricity via a battery, which stores electrical energy.",
+          "logprob": -7.544700056314468,
+          "probability": 0.0005289058832930578
+        },
+        {
+          "sample_id": 8,
+          "step": "initial_generation",
+          "text": "A: Electric motors powered by batteries, which store electrical energy.",
+          "logprob": -9.958649214357138,
+          "probability": 4.731660749041099e-05
+        },
+        {
+          "sample_id": 9,
+          "step": "initial_generation",
+          "text": "An electric car runs on electricity via electricity stored in a battery and transmitted to an electric motor, which propels the vehicle.",
+          "logprob": -11.94348768889904,
+          "probability": 6.501434657366672e-06
+        },
+        {
+          "sample_id": 10,
+          "step": "verification",
+          "text": "The answer is True.",
+          "logprob": -2.105698589235544,
+          "parsed_verdict": "True"
+        }
+      ],
+      "decision_process": {
+        "initial_selection": {
+          "choice_probabilities": {
+            "A": 0.126537050866387,
+            "C": 0.0007447300457206663
+          },
+          "selected_choice": "A",
+          "selected_text": "A: An electric car runs on electricity via an electric motor, which is powered by a battery pack that stores electrical energy. The battery is charged through"
+        },
+        "verification_prompt": "Consider the following question:\nQ: An electric car runs on electricity via\n\nOne answer to question Q is: A: An electric car runs on electricity via an electric motor, which is powered by a battery pack that stores electrical energy. The battery is charged through\n\nIs the above answer to question Q correct? Answer True or False.\nA:",
+        "verification_response": {
+          "raw_text": "The answer is True.",
+          "parsed_verdict": "True",
+          "logprob": -2.105698589235544
+        },
+        "confidence_computation": "Based on verdict 'True': 0.9000"
+      },
+      "final_metrics": {
+        "predicted": "A",
+        "correct": false,
+        "confidence": 0.9,
+        "mi_score": 0.0,
+        "agreement": 0.9941489658583977
+      }
+    },
+    "mi_method": {
+      "description": "k=10 chains of length n=2, MI estimation",
+      "raw_inputs": [
+        {
+          "chain_id": 0,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are a helpful, concise assistant. Answer accurately. If unsure, say so briefly."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: An electric car runs on electricity via\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 30
+        },
+        {
+          "chain_id": 0,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are a helpful, concise assistant. Answer accurately. If unsure, say so briefly."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nAnother answer to question Q is: The correct answer is not provided in the previous answers. However, the answer to the question is: electricity via a battery.\nProvide an answer to the following question:\nQ: An electric car runs on electricity via\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 30
+        },
+        {
+          "chain_id": 1,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are a helpful, concise assistant. Answer accurately. If unsure, say so briefly."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: An electric car runs on electricity via\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 30
+        },
+        {
+          "chain_id": 1,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are a helpful, concise assistant. Answer accurately. If unsure, say so briefly."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nAnother answer to question Q is: An electric car runs on electricity via a battery, which stores electrical energy.\nProvide an answer to the following question:\nQ: An electric car runs on electricity via\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 30
+        },
+        {
+          "chain_id": 2,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are a helpful, concise assistant. Answer accurately. If unsure, say so briefly."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: An electric car runs on electricity via\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 30
+        },
+        {
+          "chain_id": 2,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are a helpful, concise assistant. Answer accurately. If unsure, say so briefly."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nAnother answer to question Q is: An electric car runs on electricity via its battery and electric motor.\nProvide an answer to the following question:\nQ: An electric car runs on electricity via\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 30
+        },
+        {
+          "chain_id": 3,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are a helpful, concise assistant. Answer accurately. If unsure, say so briefly."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: An electric car runs on electricity via\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 30
+        },
+        {
+          "chain_id": 3,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are a helpful, concise assistant. Answer accurately. If unsure, say so briefly."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nAnother answer to question Q is: An electric car runs on electricity via electric motors powered by a battery, typically charged from an external power source such as an electrical outlet or a charging station\nProvide an answer to the following question:\nQ: An electric car runs on electricity via\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 30
+        },
+        {
+          "chain_id": 4,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are a helpful, concise assistant. Answer accurately. If unsure, say so briefly."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: An electric car runs on electricity via\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 30
+        },
+        {
+          "chain_id": 4,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are a helpful, concise assistant. Answer accurately. If unsure, say so briefly."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nAnother answer to question Q is: An electric car runs on electricity via electric motors powered by a battery pack, typically charged from an external power source such as an electrical outlet or charging station\nProvide an answer to the following question:\nQ: An electric car runs on electricity via\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 30
+        },
+        {
+          "chain_id": 5,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are a helpful, concise assistant. Answer accurately. If unsure, say so briefly."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: An electric car runs on electricity via\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 30
+        },
+        {
+          "chain_id": 5,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are a helpful, concise assistant. Answer accurately. If unsure, say so briefly."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nAnother answer to question Q is: A: Electric cars run on electricity via an electric motor, powered by a battery that is typically charged by an external power source, such as a wall\nProvide an answer to the following question:\nQ: An electric car runs on electricity via\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 30
+        },
+        {
+          "chain_id": 6,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are a helpful, concise assistant. Answer accurately. If unsure, say so briefly."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: An electric car runs on electricity via\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 30
+        },
+        {
+          "chain_id": 6,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are a helpful, concise assistant. Answer accurately. If unsure, say so briefly."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nAnother answer to question Q is: A: An electric car runs on electricity via a battery-powered electric motor, which uses electrical energy to propel the vehicle.\nProvide an answer to the following question:\nQ: An electric car runs on electricity via\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 30
+        },
+        {
+          "chain_id": 7,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are a helpful, concise assistant. Answer accurately. If unsure, say so briefly."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: An electric car runs on electricity via\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 30
+        },
+        {
+          "chain_id": 7,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are a helpful, concise assistant. Answer accurately. If unsure, say so briefly."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nAnother answer to question Q is: A battery.\nProvide an answer to the following question:\nQ: An electric car runs on electricity via\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 30
+        },
+        {
+          "chain_id": 8,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are a helpful, concise assistant. Answer accurately. If unsure, say so briefly."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: An electric car runs on electricity via\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 30
+        },
+        {
+          "chain_id": 8,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are a helpful, concise assistant. Answer accurately. If unsure, say so briefly."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nAnother answer to question Q is: A: An electric car runs on electricity via electricity stored in a battery and converted into motion by an electric motor.\nProvide an answer to the following question:\nQ: An electric car runs on electricity via\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 30
+        },
+        {
+          "chain_id": 9,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are a helpful, concise assistant. Answer accurately. If unsure, say so briefly."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: An electric car runs on electricity via\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 30
+        },
+        {
+          "chain_id": 9,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are a helpful, concise assistant. Answer accurately. If unsure, say so briefly."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nAnother answer to question Q is: A: An electric car runs on electricity via a battery and an electric motor. The battery stores electrical energy, which is then used to power the electric\nProvide an answer to the following question:\nQ: An electric car runs on electricity via\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 30
+        }
+      ],
+      "raw_outputs": [
+        {
+          "chain_id": 0,
+          "step": 0,
+          "text": "The correct answer is not provided in the previous answers. However, the answer to the question is: electricity via a battery.",
+          "logprob": -20.73575884103775,
+          "probability": 9.875847095221366e-10
+        },
+        {
+          "chain_id": 0,
+          "step": 1,
+          "text": "The correct answer is not provided in the previous answers. However, the answer to the question is: electricity via a battery.",
+          "logprob": -0.9504728838801384,
+          "probability": 0.3865581830932583
+        },
+        {
+          "chain_id": 1,
+          "step": 0,
+          "text": "An electric car runs on electricity via a battery, which stores electrical energy.",
+          "logprob": -6.158062543720007,
+          "probability": 0.0021163496370819644
+        },
+        {
+          "chain_id": 1,
+          "step": 1,
+          "text": "A: A battery, which stores electrical energy.",
+          "logprob": -1.5887084528803825,
+          "probability": 0.2041891614274531
+        },
+        {
+          "chain_id": 2,
+          "step": 0,
+          "text": "An electric car runs on electricity via its battery and electric motor.",
+          "logprob": -5.2757528424263,
+          "probability": 0.005114105143319364
+        },
+        {
+          "chain_id": 2,
+          "step": 1,
+          "text": "A: its battery and electric motor.",
+          "logprob": -0.5871569067239761,
+          "probability": 0.5559055313985874
+        },
+        {
+          "chain_id": 3,
+          "step": 0,
+          "text": "An electric car runs on electricity via electric motors powered by a battery, typically charged from an external power source such as an electrical outlet or a charging station",
+          "logprob": -8.306745447218418,
+          "probability": 0.00024684611116584926
+        },
+        {
+          "chain_id": 3,
+          "step": 1,
+          "text": "electric motors powered by a battery, typically charged from an external power source such as an electrical outlet or a charging station",
+          "logprob": -0.7053926289081573,
+          "probability": 0.4939146110263976
+        },
+        {
+          "chain_id": 4,
+          "step": 0,
+          "text": "An electric car runs on electricity via electric motors powered by a battery pack, typically charged from an external power source such as an electrical outlet or charging station",
+          "logprob": -8.958200946450233,
+          "probability": 0.00012867754341199818
+        },
+        {
+          "chain_id": 4,
+          "step": 1,
+          "text": "electric motors powered by a battery pack, typically charged from an external power source such as an electrical outlet or charging station.",
+          "logprob": -1.1624594330787659,
+          "probability": 0.31271612993215425
+        },
+        {
+          "chain_id": 5,
+          "step": 0,
+          "text": "A: Electric cars run on electricity via an electric motor, powered by a battery that is typically charged by an external power source, such as a wall",
+          "logprob": -11.053383581340313,
+          "probability": 1.5833484609704358e-05
+        },
+        {
+          "chain_id": 5,
+          "step": 1,
+          "text": "A: an electric motor, powered by a battery that is typically charged by an external power source, such as a wall",
+          "logprob": -2.1751835644245148,
+          "probability": 0.11358730116936225
+        },
+        {
+          "chain_id": 6,
+          "step": 0,
+          "text": "A: An electric car runs on electricity via a battery-powered electric motor, which uses electrical energy to propel the vehicle.",
+          "logprob": -11.091902792453766,
+          "probability": 1.5235188200227077e-05
+        },
+        {
+          "chain_id": 6,
+          "step": 1,
+          "text": "A: A battery-powered electric motor.",
+          "logprob": -1.2164988964796066,
+          "probability": 0.2962656098394954
+        },
+        {
+          "chain_id": 7,
+          "step": 0,
+          "text": "A battery.",
+          "logprob": -4.223232269287109,
+          "probability": 0.014651211227566052
+        },
+        {
+          "chain_id": 7,
+          "step": 1,
+          "text": "A battery.",
+          "logprob": -0.37318217754364014,
+          "probability": 0.6885397849306892
+        },
+        {
+          "chain_id": 8,
+          "step": 0,
+          "text": "A: An electric car runs on electricity via electricity stored in a battery and converted into motion by an electric motor.",
+          "logprob": -10.459432661533356,
+          "probability": 2.867649783230711e-05
+        },
+        {
+          "chain_id": 8,
+          "step": 1,
+          "text": "A: electricity stored in a battery and converted into motion by an electric motor.",
+          "logprob": -0.07888974994421005,
+          "probability": 0.9241418055144026
+        },
+        {
+          "chain_id": 9,
+          "step": 0,
+          "text": "A: An electric car runs on electricity via a battery and an electric motor. The battery stores electrical energy, which is then used to power the electric",
+          "logprob": -8.179350711405277,
+          "probability": 0.0002803839311286034
+        },
+        {
+          "chain_id": 9,
+          "step": 1,
+          "text": "A: a battery and an electric motor.",
+          "logprob": -1.1270886659622192,
+          "probability": 0.323975084459788
+        }
+      ],
+      "decision_process": {
+        "chains": [
+          [
+            {
+              "text": "The correct answer is not provided in the previous answers. However, the answer to the question is: electricity via a battery.",
+              "logprob": -20.73575884103775
+            },
+            {
+              "text": "The correct answer is not provided in the previous answers. However, the answer to the question is: electricity via a battery.",
+              "logprob": -0.9504728838801384
+            }
+          ],
+          [
+            {
+              "text": "An electric car runs on electricity via a battery, which stores electrical energy.",
+              "logprob": -6.158062543720007
+            },
+            {
+              "text": "A: A battery, which stores electrical energy.",
+              "logprob": -1.5887084528803825
+            }
+          ],
+          [
+            {
+              "text": "An electric car runs on electricity via its battery and electric motor.",
+              "logprob": -5.2757528424263
+            },
+            {
+              "text": "A: its battery and electric motor.",
+              "logprob": -0.5871569067239761
+            }
+          ],
+          [
+            {
+              "text": "An electric car runs on electricity via electric motors powered by a battery, typically charged from an external power source such as an electrical outlet or a charging station",
+              "logprob": -8.306745447218418
+            },
+            {
+              "text": "electric motors powered by a battery, typically charged from an external power source such as an electrical outlet or a charging station",
+              "logprob": -0.7053926289081573
+            }
+          ],
+          [
+            {
+              "text": "An electric car runs on electricity via electric motors powered by a battery pack, typically charged from an external power source such as an electrical outlet or charging station",
+              "logprob": -8.958200946450233
+            },
+            {
+              "text": "electric motors powered by a battery pack, typically charged from an external power source such as an electrical outlet or charging station.",
+              "logprob": -1.1624594330787659
+            }
+          ],
+          [
+            {
+              "text": "A: Electric cars run on electricity via an electric motor, powered by a battery that is typically charged by an external power source, such as a wall",
+              "logprob": -11.053383581340313
+            },
+            {
+              "text": "A: an electric motor, powered by a battery that is typically charged by an external power source, such as a wall",
+              "logprob": -2.1751835644245148
+            }
+          ],
+          [
+            {
+              "text": "A: An electric car runs on electricity via a battery-powered electric motor, which uses electrical energy to propel the vehicle.",
+              "logprob": -11.091902792453766
+            },
+            {
+              "text": "A: A battery-powered electric motor.",
+              "logprob": -1.2164988964796066
+            }
+          ],
+          [
+            {
+              "text": "A battery.",
+              "logprob": -4.223232269287109
+            },
+            {
+              "text": "A battery.",
+              "logprob": -0.37318217754364014
+            }
+          ],
+          [
+            {
+              "text": "A: An electric car runs on electricity via electricity stored in a battery and converted into motion by an electric motor.",
+              "logprob": -10.459432661533356
+            },
+            {
+              "text": "A: electricity stored in a battery and converted into motion by an electric motor.",
+              "logprob": -0.07888974994421005
+            }
+          ],
+          [
+            {
+              "text": "A: An electric car runs on electricity via a battery and an electric motor. The battery stores electrical energy, which is then used to power the electric",
+              "logprob": -8.179350711405277
+            },
+            {
+              "text": "A: a battery and an electric motor.",
+              "logprob": -1.1270886659622192
+            }
+          ]
+        ],
+        "pseudo_joint": {
+          "('The correct answer is not provided in the previous answers. However, the answer to the question is: electricity via a battery.', 'The correct answer is not provided in the previous answers. However, the answer to the question is: electricity via a battery.')": 2.7970048542960014e-08,
+          "('An electric car runs on electricity via a battery, which stores electrical energy.', 'A: A battery, which stores electrical energy.')": 0.031660961169428826,
+          "('An electric car runs on electricity via its battery and electric motor.', 'A: its battery and electric motor.')": 0.20829298296724783,
+          "('An electric car runs on electricity via electric motors powered by a battery, typically charged from an external power source such as an electrical outlet or a charging station', 'electric motors powered by a battery, typically charged from an external power source such as an electrical outlet or a charging station')": 0.008932687786889876,
+          "('An electric car runs on electricity via electric motors powered by a battery pack, typically charged from an external power source such as an electrical outlet or charging station', 'electric motors powered by a battery pack, typically charged from an external power source such as an electrical outlet or charging station.')": 0.002948200635462714,
+          "('A: Electric cars run on electricity via an electric motor, powered by a battery that is typically charged by an external power source, such as a wall', 'A: an electric motor, powered by a battery that is typically charged by an external power source, such as a wall')": 0.00013176809782981206,
+          "('A: An electric car runs on electricity via a battery-powered electric motor, which uses electrical energy to propel the vehicle.', 'A: A battery-powered electric motor.')": 0.0003306991334889714,
+          "('A battery.', 'A battery.')": 0.739105715542291,
+          "('A: An electric car runs on electricity via electricity stored in a battery and converted into motion by an electric motor.', 'A: electricity stored in a battery and converted into motion by an electric motor.')": 0.001941640041631274,
+          "('A: An electric car runs on electricity via a battery and an electric motor. The battery stores electrical energy, which is then used to power the electric', 'A: a battery and an electric motor.')": 0.006655316655681244
+        },
+        "marginal_distribution": {
+          "The correct answer is not provided in the previous answers. However, the answer to the question is: electricity via a battery.": 2.7970048542960014e-08,
+          "A: A battery, which stores electrical energy.": 0.031660961169428826,
+          "A: its battery and electric motor.": 0.20829298296724783,
+          "electric motors powered by a battery, typically charged from an external power source such as an electrical outlet or a charging station": 0.008932687786889876,
+          "electric motors powered by a battery pack, typically charged from an external power source such as an electrical outlet or charging station.": 0.002948200635462714,
+          "A: an electric motor, powered by a battery that is typically charged by an external power source, such as a wall": 0.00013176809782981206,
+          "A: A battery-powered electric motor.": 0.0003306991334889714,
+          "A battery.": 0.739105715542291,
+          "A: electricity stored in a battery and converted into motion by an electric motor.": 0.001941640041631274,
+          "A: a battery and an electric motor.": 0.006655316655681244
+        },
+        "mi_estimation": {
+          "method": "listing",
+          "mi_nats": 0.5978370007556204,
+          "mi_bits": 0.8624964762500651
+        },
+        "confidence_computation": "1/(1 + mi_nats) = 1/(1 + 0.5978) = 0.6258"
+      },
+      "final_metrics": {
+        "predicted": "A",
+        "correct": false,
+        "confidence": 0.6258460653540368,
+        "mi_score": 0.8624964762500651,
+        "agreement": 0.1
+      }
+    }
+  },
+  "comparison_summary": {
+    "all_predictions": {
+      "greedy": "A",
+      "self_consistency": "A",
+      "semantic_entropy": "A",
+      "self_verification": "A",
+      "mi_method": "A"
+    },
+    "all_correct": {
+      "greedy": false,
+      "self_consistency": false,
+      "semantic_entropy": false,
+      "self_verification": false,
+      "mi_method": false
+    },
+    "all_confidences": {
+      "greedy": 0.024369432982228698,
+      "self_consistency": 0.1,
+      "semantic_entropy": 1.0,
+      "self_verification": 0.9,
+      "mi_method": 0.6258460653540368
+    },
+    "agreement_across_methods": 0
+  }
+}

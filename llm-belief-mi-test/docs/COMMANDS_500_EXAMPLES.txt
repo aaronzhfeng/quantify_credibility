@@ -1,0 +1,182 @@
+================================================================================
+BASELINE COMPARISON - 500 EXAMPLES PER DATASET
+================================================================================
+
+Copy and paste these commands to run all baseline comparisons.
+Total: 9 runs (3 datasets × 3 methods) = ~12 hours
+
+OPTION 1: Run all at once
+--------------------------
+bash RUN_BASELINE_COMPARISON_500.sh
+
+
+OPTION 2: Run commands individually
+------------------------------------
+
+================================================================================
+ARC-CHALLENGE (500 examples)
+================================================================================
+
+# Greedy baseline (~15 min)
+python -m llm_belief_mi_test.cli \
+  --method greedy \
+  --dataset arc-challenge --limit 500 \
+  --load-in-4bit \
+  --max-tokens 30 \
+  --output outputs/results/arc_challenge_greedy_500.csv
+
+# Self-consistency baseline (~3 hours)
+python -m llm_belief_mi_test.cli \
+  --method self-consistency \
+  --dataset arc-challenge --limit 500 \
+  --k 10 --temperature 0.9 \
+  --load-in-4bit \
+  --max-tokens 30 \
+  --output outputs/results/arc_challenge_selfcons_500.csv
+
+# MI method (~3.5 hours)
+python -m llm_belief_mi_test.cli \
+  --method mi \
+  --dataset arc-challenge --limit 500 \
+  --k 10 --n 2 \
+  --load-in-4bit \
+  --temperature 0.9 --max-tokens 30 \
+  --output outputs/results/arc_challenge_mi_500.csv
+
+# Compare results
+python compare_results.py outputs/results/arc_challenge_*_500.json
+
+
+================================================================================
+ARC-EASY (500 examples)
+================================================================================
+
+# Greedy baseline (~15 min)
+python -m llm_belief_mi_test.cli \
+  --method greedy \
+  --dataset arc-easy --limit 500 \
+  --load-in-4bit \
+  --max-tokens 30 \
+  --output outputs/results/arc_easy_greedy_500.csv
+
+# Self-consistency baseline (~3 hours)
+python -m llm_belief_mi_test.cli \
+  --method self-consistency \
+  --dataset arc-easy --limit 500 \
+  --k 10 --temperature 0.9 \
+  --load-in-4bit \
+  --max-tokens 30 \
+  --output outputs/results/arc_easy_selfcons_500.csv
+
+# MI method (~3.5 hours)
+python -m llm_belief_mi_test.cli \
+  --method mi \
+  --dataset arc-easy --limit 500 \
+  --k 10 --n 2 \
+  --load-in-4bit \
+  --temperature 0.9 --max-tokens 30 \
+  --output outputs/results/arc_easy_mi_500.csv
+
+# Compare results
+python compare_results.py outputs/results/arc_easy_*_500.json
+
+
+================================================================================
+OPENBOOKQA (500 examples - full dataset)
+================================================================================
+
+# Greedy baseline (~15 min)
+python -m llm_belief_mi_test.cli \
+  --method greedy \
+  --dataset openbookqa \
+  --load-in-4bit \
+  --max-tokens 30 \
+  --output outputs/results/openbookqa_greedy_500.csv
+
+# Self-consistency baseline (~3 hours)
+python -m llm_belief_mi_test.cli \
+  --method self-consistency \
+  --dataset openbookqa \
+  --k 10 --temperature 0.9 \
+  --load-in-4bit \
+  --max-tokens 30 \
+  --output outputs/results/openbookqa_selfcons_500.csv
+
+# MI method (~3.5 hours)
+python -m llm_belief_mi_test.cli \
+  --method mi \
+  --dataset openbookqa \
+  --k 10 --n 2 \
+  --load-in-4bit \
+  --temperature 0.9 --max-tokens 30 \
+  --output outputs/results/openbookqa_mi_500.csv
+
+# Compare results
+python scripts/compare_results.py outputs/results/openbookqa_*_500.json
+
+
+================================================================================
+ADDITIONAL METHODS (Semantic Entropy & Self-Verification)
+================================================================================
+
+These additional baseline methods from the paper can be run on OpenBookQA:
+
+# Semantic Entropy (S.E.) - Kuhn et al. 2023 (~3 hours)
+python -m llm_belief_mi_test.cli \
+  --method semantic-entropy \
+  --dataset openbookqa \
+  --k 10 --temperature 0.9 \
+  --load-in-4bit \
+  --max-tokens 30 \
+  --output outputs/results/openbookqa_semantic_entropy_500.csv
+
+# Self-Verification (S.V.) - KCAHD 2022 (~3.5 hours)
+python -m llm_belief_mi_test.cli \
+  --method self-verification \
+  --dataset openbookqa \
+  --k 10 --temperature 0.9 \
+  --load-in-4bit \
+  --max-tokens 30 \
+  --output outputs/results/openbookqa_self_verification_500.csv
+
+# Compare all 5 methods on OpenBookQA
+python scripts/compare_results.py outputs/results/openbookqa_*_500.json
+
+Expected ranking (from paper): MI ≥ S.E. > Self-Cons > S.V. > Greedy (on ECE)
+
+
+================================================================================
+DEMO: DETAILED METHOD TRACES
+================================================================================
+
+Generate comprehensive traces showing how each method works:
+
+# Generate demo for first 5 OpenBookQA questions (~30-45 min)
+python demo/scripts/generate_demo.py
+
+# View all methods for question 0
+python demo/scripts/view_demo.py --question 0 --method all
+
+# View detailed MI method trace
+python demo/scripts/view_demo.py --question 0 --method mi_method --verbose
+
+# Export markdown report
+python demo/scripts/view_demo.py --export-markdown demo/demo_report.md
+
+See demo/README.md for full documentation.
+
+
+================================================================================
+SUMMARY
+================================================================================
+
+Total runs: 9 (3 datasets × 3 methods)
+Total time: ~12 hours
+Sample size: 500 examples per dataset (fair comparison!)
+
+Expected outcome:
+- Similar accuracy across methods (~50-65%)
+- Lower ECE for MI method (better calibration) ✅
+
+Results location: outputs/results/*_500.csv and *_500.json
+

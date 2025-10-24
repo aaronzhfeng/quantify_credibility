@@ -1,0 +1,1621 @@
+{
+  "question_id": 1,
+  "question_text": "There is most likely going to be fog around:",
+  "choices": [
+    "A: a marsh",
+    "B: a tundra",
+    "C: the plains",
+    "D: a desert"
+  ],
+  "gold_answer": "A",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are a helpful, concise assistant. Answer accurately. If unsure, say so briefly."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: There is most likely going to be fog around:\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 30
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "I don't have any previous answers to this question.",
+          "logprob": -5.2980109964555595,
+          "probability": 0.005001532085142936
+        }
+      ],
+      "decision_process": {
+        "selected_text": "I don't have any previous answers to this question.",
+        "matched_choice": "A",
+        "confidence_computation": "exp(logprob) = exp(-5.2980) = 0.0050"
+      },
+      "final_metrics": {
+        "predicted": "A",
+        "correct": true,
+        "confidence": 0.005001532085142936,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    },
+    "self_consistency": {
+      "description": "k=10 samples, majority voting",
+      "raw_inputs": [
+        {
+          "sample_id": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are a helpful, concise assistant. Answer accurately. If unsure, say so briefly."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: There is most likely going to be fog around:\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 30
+        },
+        {
+          "sample_id": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are a helpful, concise assistant. Answer accurately. If unsure, say so briefly."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: There is most likely going to be fog around:\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 30
+        },
+        {
+          "sample_id": 2,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are a helpful, concise assistant. Answer accurately. If unsure, say so briefly."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: There is most likely going to be fog around:\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 30
+        },
+        {
+          "sample_id": 3,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are a helpful, concise assistant. Answer accurately. If unsure, say so briefly."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: There is most likely going to be fog around:\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 30
+        },
+        {
+          "sample_id": 4,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are a helpful, concise assistant. Answer accurately. If unsure, say so briefly."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: There is most likely going to be fog around:\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 30
+        },
+        {
+          "sample_id": 5,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are a helpful, concise assistant. Answer accurately. If unsure, say so briefly."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: There is most likely going to be fog around:\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 30
+        },
+        {
+          "sample_id": 6,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are a helpful, concise assistant. Answer accurately. If unsure, say so briefly."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: There is most likely going to be fog around:\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 30
+        },
+        {
+          "sample_id": 7,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are a helpful, concise assistant. Answer accurately. If unsure, say so briefly."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: There is most likely going to be fog around:\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 30
+        },
+        {
+          "sample_id": 8,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are a helpful, concise assistant. Answer accurately. If unsure, say so briefly."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: There is most likely going to be fog around:\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 30
+        },
+        {
+          "sample_id": 9,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are a helpful, concise assistant. Answer accurately. If unsure, say so briefly."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: There is most likely going to be fog around:\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 30
+        }
+      ],
+      "raw_outputs": [
+        {
+          "sample_id": 0,
+          "text": "I don't see any previous answers. However, to answer your question, there is most likely going to be fog around:\n\n Bodies of water, particularly",
+          "logprob": -17.305585227906704,
+          "probability": 3.0498594757876625e-08
+        },
+        {
+          "sample_id": 1,
+          "text": "I'm not seeing a previous answer for this question.",
+          "logprob": -9.520561948418617,
+          "probability": 7.332844596603847e-05
+        },
+        {
+          "sample_id": 2,
+          "text": "There is no previous answer provided.",
+          "logprob": -5.413847595453262,
+          "probability": 0.00445446820545294
+        },
+        {
+          "sample_id": 3,
+          "text": "There is not enough information in the question to determine a location, but I can provide a general answer. Fog is most likely to occur near large bodies",
+          "logprob": -16.295342199504375,
+          "probability": 8.375732565958311e-08
+        },
+        {
+          "sample_id": 4,
+          "text": "I don't have enough information to provide an accurate answer.",
+          "logprob": -8.259953439235687,
+          "probability": 0.0002586710348627695
+        },
+        {
+          "sample_id": 5,
+          "text": "There is no previous answer to the question.",
+          "logprob": -6.498748004436493,
+          "probability": 0.001505322670984209
+        },
+        {
+          "sample_id": 6,
+          "text": "I'm not aware of any previous answers. To provide an answer to your question, I would need more context or information about the specific scenario you're",
+          "logprob": -14.44704456627369,
+          "probability": 5.31775427080909e-07
+        },
+        {
+          "sample_id": 7,
+          "text": "I don't have any previous answer to this question. However, I can provide a general answer. \n\nThere is most likely going to be fog around",
+          "logprob": -9.358563473448157,
+          "probability": 8.622387267526673e-05
+        },
+        {
+          "sample_id": 8,
+          "text": "There is not enough information in the provided question to give a specific answer. However, the answer would generally be around bodies of water or in areas with",
+          "logprob": -28.84962847828865,
+          "probability": 2.9564160199038967e-13
+        },
+        {
+          "sample_id": 9,
+          "text": "I don't have a previous answer to this question. I'd need more information about the context or location to provide an accurate answer.",
+          "logprob": -12.789577912539244,
+          "probability": 2.7896960449193156e-06
+        }
+      ],
+      "decision_process": {
+        "all_responses": [
+          "I don't see any previous answers. However, to answer your question, there is most likely going to be fog around:\n\n Bodies of water, particularly",
+          "I'm not seeing a previous answer for this question.",
+          "There is no previous answer provided.",
+          "There is not enough information in the question to determine a location, but I can provide a general answer. Fog is most likely to occur near large bodies",
+          "I don't have enough information to provide an accurate answer.",
+          "There is no previous answer to the question.",
+          "I'm not aware of any previous answers. To provide an answer to your question, I would need more context or information about the specific scenario you're",
+          "I don't have any previous answer to this question. However, I can provide a general answer. \n\nThere is most likely going to be fog around",
+          "There is not enough information in the provided question to give a specific answer. However, the answer would generally be around bodies of water or in areas with",
+          "I don't have a previous answer to this question. I'd need more information about the context or location to provide an accurate answer."
+        ],
+        "vote_counts": {
+          "I don't see any previous answers. However, to answer your question, there is most likely going to be fog around:\n\n Bodies of water, particularly": 1,
+          "I'm not seeing a previous answer for this question.": 1,
+          "There is no previous answer provided.": 1,
+          "There is not enough information in the question to determine a location, but I can provide a general answer. Fog is most likely to occur near large bodies": 1,
+          "I don't have enough information to provide an accurate answer.": 1,
+          "There is no previous answer to the question.": 1,
+          "I'm not aware of any previous answers. To provide an answer to your question, I would need more context or information about the specific scenario you're": 1,
+          "I don't have any previous answer to this question. However, I can provide a general answer. \n\nThere is most likely going to be fog around": 1,
+          "There is not enough information in the provided question to give a specific answer. However, the answer would generally be around bodies of water or in areas with": 1,
+          "I don't have a previous answer to this question. I'd need more information about the context or location to provide an accurate answer.": 1
+        },
+        "majority": "I don't see any previous answers. However, to answer your question, there is most likely going to be fog around:\n\n Bodies of water, particularly",
+        "matched_choice": "D",
+        "confidence_computation": "1/10 = 0.1000"
+      },
+      "final_metrics": {
+        "predicted": "D",
+        "correct": false,
+        "confidence": 0.1,
+        "mi_score": 0.0,
+        "agreement": 0.1
+      }
+    },
+    "semantic_entropy": {
+      "description": "k=10 samples, entropy-based confidence with F1 similarity",
+      "raw_inputs": [
+        {
+          "sample_id": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are a helpful, concise assistant. Answer accurately. If unsure, say so briefly."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: There is most likely going to be fog around:\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 30
+        },
+        {
+          "sample_id": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are a helpful, concise assistant. Answer accurately. If unsure, say so briefly."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: There is most likely going to be fog around:\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 30
+        },
+        {
+          "sample_id": 2,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are a helpful, concise assistant. Answer accurately. If unsure, say so briefly."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: There is most likely going to be fog around:\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 30
+        },
+        {
+          "sample_id": 3,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are a helpful, concise assistant. Answer accurately. If unsure, say so briefly."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: There is most likely going to be fog around:\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 30
+        },
+        {
+          "sample_id": 4,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are a helpful, concise assistant. Answer accurately. If unsure, say so briefly."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: There is most likely going to be fog around:\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 30
+        },
+        {
+          "sample_id": 5,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are a helpful, concise assistant. Answer accurately. If unsure, say so briefly."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: There is most likely going to be fog around:\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 30
+        },
+        {
+          "sample_id": 6,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are a helpful, concise assistant. Answer accurately. If unsure, say so briefly."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: There is most likely going to be fog around:\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 30
+        },
+        {
+          "sample_id": 7,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are a helpful, concise assistant. Answer accurately. If unsure, say so briefly."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: There is most likely going to be fog around:\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 30
+        },
+        {
+          "sample_id": 8,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are a helpful, concise assistant. Answer accurately. If unsure, say so briefly."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: There is most likely going to be fog around:\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 30
+        },
+        {
+          "sample_id": 9,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are a helpful, concise assistant. Answer accurately. If unsure, say so briefly."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: There is most likely going to be fog around:\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 30
+        }
+      ],
+      "raw_outputs": [
+        {
+          "sample_id": 0,
+          "text": "I'm not seeing any previous answers to refer to. This conversation just started.",
+          "logprob": -11.843505151569843,
+          "probability": 7.185071037465003e-06
+        },
+        {
+          "sample_id": 1,
+          "text": "I don't have any previous answers to this question. However, to answer your question, there is most likely going to be fog around:\n\n1.",
+          "logprob": -12.688997846096754,
+          "probability": 3.0848798555034296e-06
+        },
+        {
+          "sample_id": 2,
+          "text": "I don't see any previous answer provided for the question \"There is most likely going to be fog around.\" However, I can provide a general answer",
+          "logprob": -13.742728620767593,
+          "probability": 1.0754959856725878e-06
+        },
+        {
+          "sample_id": 3,
+          "text": "I don't see a previous answer (A) provided. To answer your question, fog is most likely to form in low-lying areas or near",
+          "logprob": -17.90646857023239,
+          "probability": 1.6723204846549926e-08
+        },
+        {
+          "sample_id": 4,
+          "text": "I don't have any previous answers. I'm ready to assist you. To answer your question, I'll need more context about the location and time",
+          "logprob": -21.296764329075813,
+          "probability": 5.635504092302356e-10
+        },
+        {
+          "sample_id": 5,
+          "text": "There is not enough information to provide an accurate answer.",
+          "logprob": -5.981744408607483,
+          "probability": 0.0025244188312023835
+        },
+        {
+          "sample_id": 6,
+          "text": "I don't have any previous answers to consider. Please provide the question you are referring to.",
+          "logprob": -12.207818478345871,
+          "probability": 4.991278451319683e-06
+        },
+        {
+          "sample_id": 7,
+          "text": "I don't see any previous answers. This is the start of our conversation.",
+          "logprob": -7.449083581566811,
+          "probability": 0.0005819747002335382
+        },
+        {
+          "sample_id": 8,
+          "text": "There is not enough information to provide a specific answer. However, based on common weather patterns, fog is most likely to occur near bodies of water,",
+          "logprob": -16.17255560308695,
+          "probability": 9.469964332897731e-08
+        },
+        {
+          "sample_id": 9,
+          "text": "There is not enough information to provide a specific answer to the question.",
+          "logprob": -8.262887418270111,
+          "probability": 0.00025791321173188476
+        }
+      ],
+      "decision_process": {
+        "similarity_matrix": [
+          [
+            1.0,
+            0.2702702702702703,
+            0.15384615384615388,
+            0.1111111111111111,
+            0.21621621621621623,
+            0.17391304347826086,
+            0.3448275862068966,
+            0.23076923076923078,
+            0.10256410256410257,
+            0.15384615384615385
+          ],
+          [
+            0.2702702702702703,
+            1.0,
+            0.52,
+            0.5106382978723404,
+            0.4166666666666667,
+            0.17647058823529413,
+            0.35000000000000003,
+            0.32432432432432434,
+            0.32,
+            0.32432432432432434
+          ],
+          [
+            0.15384615384615388,
+            0.52,
+            1.0,
+            0.4897959183673469,
+            0.27999999999999997,
+            0.16666666666666669,
+            0.380952380952381,
+            0.3589743589743589,
+            0.3076923076923077,
+            0.30769230769230776
+          ],
+          [
+            0.1111111111111111,
+            0.5106382978723404,
+            0.4897959183673469,
+            1.0,
+            0.3404255319148936,
+            0.12121212121212122,
+            0.20512820512820512,
+            0.27777777777777773,
+            0.32653061224489793,
+            0.27777777777777773
+          ],
+          [
+            0.21621621621621623,
+            0.4166666666666667,
+            0.27999999999999997,
+            0.3404255319148936,
+            1.0,
+            0.058823529411764705,
+            0.35000000000000003,
+            0.32432432432432434,
+            0.08,
+            0.21621621621621623
+          ],
+          [
+            0.17391304347826086,
+            0.17647058823529413,
+            0.16666666666666669,
+            0.12121212121212122,
+            0.058823529411764705,
+            1.0,
+            0.15384615384615385,
+            0.08695652173913043,
+            0.4444444444444444,
+            0.608695652173913
+          ],
+          [
+            0.3448275862068966,
+            0.35000000000000003,
+            0.380952380952381,
+            0.20512820512820512,
+            0.35000000000000003,
+            0.15384615384615385,
+            1.0,
+            0.3448275862068966,
+            0.09523809523809525,
+            0.20689655172413793
+          ],
+          [
+            0.23076923076923078,
+            0.32432432432432434,
+            0.3589743589743589,
+            0.27777777777777773,
+            0.32432432432432434,
+            0.08695652173913043,
+            0.3448275862068966,
+            1.0,
+            0.10256410256410257,
+            0.15384615384615385
+          ],
+          [
+            0.10256410256410257,
+            0.32,
+            0.3076923076923077,
+            0.32653061224489793,
+            0.08,
+            0.4444444444444444,
+            0.09523809523809525,
+            0.10256410256410257,
+            1.0,
+            0.5128205128205128
+          ],
+          [
+            0.15384615384615385,
+            0.32432432432432434,
+            0.30769230769230776,
+            0.27777777777777773,
+            0.21621621621621623,
+            0.608695652173913,
+            0.20689655172413793,
+            0.15384615384615385,
+            0.5128205128205128,
+            1.0
+          ]
+        ],
+        "similarity_threshold": 0.25,
+        "semantic_clusters": {
+          "cluster_0": {
+            "representative": "I'm not seeing any previous answers to refer to. This conversation just started.",
+            "texts": [
+              "I'm not seeing any previous answers to refer to. This conversation just started.",
+              "I don't have any previous answers to this question. However, to answer your question, there is most likely going to be fog around:\n\n1.",
+              "I don't have any previous answers to consider. Please provide the question you are referring to."
+            ],
+            "probs": [
+              7.185071037465003e-06,
+              3.0848798555034296e-06,
+              4.991278451319683e-06
+            ],
+            "total_prob": 1.5261229344288117e-05
+          },
+          "cluster_1": {
+            "representative": "I don't see any previous answer provided for the question \"There is most likely going to be fog around.\" However, I can provide a general answer",
+            "texts": [
+              "I don't see any previous answer provided for the question \"There is most likely going to be fog around.\" However, I can provide a general answer",
+              "I don't see a previous answer (A) provided. To answer your question, fog is most likely to form in low-lying areas or near",
+              "I don't have any previous answers. I'm ready to assist you. To answer your question, I'll need more context about the location and time",
+              "I don't see any previous answers. This is the start of our conversation.",
+              "There is not enough information to provide a specific answer. However, based on common weather patterns, fog is most likely to occur near bodies of water,",
+              "There is not enough information to provide a specific answer to the question."
+            ],
+            "probs": [
+              1.0754959856725878e-06,
+              1.6723204846549926e-08,
+              5.635504092302356e-10,
+              0.0005819747002335382,
+              9.469964332897731e-08,
+              0.00025791321173188476
+            ],
+            "total_prob": 0.0008410753943496803
+          },
+          "cluster_2": {
+            "representative": "There is not enough information to provide an accurate answer.",
+            "texts": [
+              "There is not enough information to provide an accurate answer."
+            ],
+            "probs": [
+              0.0025244188312023835
+            ],
+            "total_prob": 0.0025244188312023835
+          }
+        },
+        "aggregated_distribution": {
+          "I'm not seeing any previous answers to refer to. This conversation just started.": 0.004514147665482655,
+          "I don't see any previous answer provided for the question \"There is most likely going to be fog around.\" However, I can provide a general answer": 0.24878326917480822,
+          "There is not enough information to provide an accurate answer.": 0.7467025831597092
+        },
+        "entropy_nats": 0.5885825425391991,
+        "entropy_bits": 0.8491451152751198,
+        "confidence_computation": "exp(-entropy_nats) = exp(-0.5886) = 0.5551"
+      },
+      "final_metrics": {
+        "predicted": "C",
+        "correct": false,
+        "confidence": 0.5551135772164013,
+        "mi_score": 0.8491451152751198,
+        "agreement": 0.7467025831597092
+      }
+    },
+    "self_verification": {
+      "description": "k=10 samples + verification query",
+      "raw_inputs": [
+        {
+          "sample_id": 0,
+          "step": "initial_generation",
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are a helpful, concise assistant. Answer accurately. If unsure, say so briefly."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: There is most likely going to be fog around:\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 30
+        },
+        {
+          "sample_id": 1,
+          "step": "initial_generation",
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are a helpful, concise assistant. Answer accurately. If unsure, say so briefly."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: There is most likely going to be fog around:\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 30
+        },
+        {
+          "sample_id": 2,
+          "step": "initial_generation",
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are a helpful, concise assistant. Answer accurately. If unsure, say so briefly."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: There is most likely going to be fog around:\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 30
+        },
+        {
+          "sample_id": 3,
+          "step": "initial_generation",
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are a helpful, concise assistant. Answer accurately. If unsure, say so briefly."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: There is most likely going to be fog around:\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 30
+        },
+        {
+          "sample_id": 4,
+          "step": "initial_generation",
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are a helpful, concise assistant. Answer accurately. If unsure, say so briefly."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: There is most likely going to be fog around:\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 30
+        },
+        {
+          "sample_id": 5,
+          "step": "initial_generation",
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are a helpful, concise assistant. Answer accurately. If unsure, say so briefly."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: There is most likely going to be fog around:\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 30
+        },
+        {
+          "sample_id": 6,
+          "step": "initial_generation",
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are a helpful, concise assistant. Answer accurately. If unsure, say so briefly."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: There is most likely going to be fog around:\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 30
+        },
+        {
+          "sample_id": 7,
+          "step": "initial_generation",
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are a helpful, concise assistant. Answer accurately. If unsure, say so briefly."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: There is most likely going to be fog around:\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 30
+        },
+        {
+          "sample_id": 8,
+          "step": "initial_generation",
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are a helpful, concise assistant. Answer accurately. If unsure, say so briefly."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: There is most likely going to be fog around:\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 30
+        },
+        {
+          "sample_id": 9,
+          "step": "initial_generation",
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are a helpful, concise assistant. Answer accurately. If unsure, say so briefly."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: There is most likely going to be fog around:\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 30
+        },
+        {
+          "sample_id": 10,
+          "step": "verification",
+          "prompt": [
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: There is most likely going to be fog around:\n\nOne answer to question Q is: I'm not aware of any previous answers to this question. However, I can provide some general information about the conditions that often lead to fog formation.\n\nIs the above answer to question Q correct? Answer True or False.\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 5
+        }
+      ],
+      "raw_outputs": [
+        {
+          "sample_id": 0,
+          "step": "initial_generation",
+          "text": "I'm not aware of any previous answers to this question. However, I can provide some general information about the conditions that often lead to fog formation.",
+          "logprob": -13.998129189014435,
+          "probability": 8.330858082216513e-07
+        },
+        {
+          "sample_id": 1,
+          "step": "initial_generation",
+          "text": "I don't have any previous answers to the question.",
+          "logprob": -6.402024328708649,
+          "probability": 0.0016581971372420607
+        },
+        {
+          "sample_id": 2,
+          "step": "initial_generation",
+          "text": "There is no previous answer to this question, so I'll be happy to help. To answer this question, I would need more information about the specific",
+          "logprob": -18.915720514953136,
+          "probability": 6.095466645333679e-09
+        },
+        {
+          "sample_id": 3,
+          "step": "initial_generation",
+          "text": "There is no previous answer provided. I'll be happy to help. However, I'd like to know more about the question. Could you please provide",
+          "logprob": -19.827765434980392,
+          "probability": 2.4485607475630257e-09
+        },
+        {
+          "sample_id": 4,
+          "step": "initial_generation",
+          "text": "I don't have any previous answer to this question.",
+          "logprob": -5.801855495199561,
+          "probability": 0.0030219423405846635
+        },
+        {
+          "sample_id": 5,
+          "step": "initial_generation",
+          "text": "I don't see any previous answers to consider. To answer your question, there isn't enough information to determine the likelihood of fog. However, fog",
+          "logprob": -12.99499586224556,
+          "probability": 2.2716687548706954e-06
+        },
+        {
+          "sample_id": 6,
+          "step": "initial_generation",
+          "text": "I don't see any previous answers. Please provide the previous answers to Q, so I can give a comprehensive response.",
+          "logprob": -18.98946936428547,
+          "probability": 5.6621091982221214e-09
+        },
+        {
+          "sample_id": 7,
+          "step": "initial_generation",
+          "text": "There is insufficient information to determine the answer to the question about the likelihood of fog.",
+          "logprob": -11.099564634263515,
+          "probability": 1.511890464027277e-05
+        },
+        {
+          "sample_id": 8,
+          "step": "initial_generation",
+          "text": "I don't see any previous answers for this question. This conversation has just started.",
+          "logprob": -10.174617536365986,
+          "probability": 3.812586875171886e-05
+        },
+        {
+          "sample_id": 9,
+          "step": "initial_generation",
+          "text": "I'm not aware of a previous question (Q) and answer (A) being provided. If you'd like to provide the question and answer,",
+          "logprob": -13.691540017724037,
+          "probability": 1.1319825225747881e-06
+        },
+        {
+          "sample_id": 10,
+          "step": "verification",
+          "text": "False.\n\nFog is",
+          "logprob": -2.7271245741285384,
+          "parsed_verdict": "False"
+        }
+      ],
+      "decision_process": {
+        "initial_selection": {
+          "choice_probabilities": {
+            "A": 0.004682104546157521,
+            "B": 6.095466645333679e-09,
+            "C": 2.4485607475630257e-09,
+            "D": 5.5522104256060546e-05
+          },
+          "selected_choice": "A",
+          "selected_text": "I'm not aware of any previous answers to this question. However, I can provide some general information about the conditions that often lead to fog formation."
+        },
+        "verification_prompt": "Consider the following question:\nQ: There is most likely going to be fog around:\n\nOne answer to question Q is: I'm not aware of any previous answers to this question. However, I can provide some general information about the conditions that often lead to fog formation.\n\nIs the above answer to question Q correct? Answer True or False.\nA:",
+        "verification_response": {
+          "raw_text": "False.\n\nFog is",
+          "parsed_verdict": "False",
+          "logprob": -2.7271245741285384
+        },
+        "confidence_computation": "Based on verdict 'False': 0.1000"
+      },
+      "final_metrics": {
+        "predicted": "A",
+        "correct": true,
+        "confidence": 0.1,
+        "mi_score": 0.0,
+        "agreement": 0.9882788256156548
+      }
+    },
+    "mi_method": {
+      "description": "k=10 chains of length n=2, MI estimation",
+      "raw_inputs": [
+        {
+          "chain_id": 0,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are a helpful, concise assistant. Answer accurately. If unsure, say so briefly."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: There is most likely going to be fog around:\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 30
+        },
+        {
+          "chain_id": 0,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are a helpful, concise assistant. Answer accurately. If unsure, say so briefly."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nAnother answer to question Q is: I'm not aware of any previous answers to this question.\nProvide an answer to the following question:\nQ: There is most likely going to be fog around:\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 30
+        },
+        {
+          "chain_id": 1,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are a helpful, concise assistant. Answer accurately. If unsure, say so briefly."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: There is most likely going to be fog around:\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 30
+        },
+        {
+          "chain_id": 1,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are a helpful, concise assistant. Answer accurately. If unsure, say so briefly."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nAnother answer to question Q is: I don't have the information about the question you're referring to.\nProvide an answer to the following question:\nQ: There is most likely going to be fog around:\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 30
+        },
+        {
+          "chain_id": 2,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are a helpful, concise assistant. Answer accurately. If unsure, say so briefly."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: There is most likely going to be fog around:\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 30
+        },
+        {
+          "chain_id": 2,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are a helpful, concise assistant. Answer accurately. If unsure, say so briefly."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nAnother answer to question Q is: I'm not aware of the specific location or conditions for the question about fog. I would need more information to provide an accurate answer.\nProvide an answer to the following question:\nQ: There is most likely going to be fog around:\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 30
+        },
+        {
+          "chain_id": 3,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are a helpful, concise assistant. Answer accurately. If unsure, say so briefly."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: There is most likely going to be fog around:\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 30
+        },
+        {
+          "chain_id": 3,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are a helpful, concise assistant. Answer accurately. If unsure, say so briefly."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nAnother answer to question Q is: There is not enough information in the question to provide an accurate answer.\nProvide an answer to the following question:\nQ: There is most likely going to be fog around:\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 30
+        },
+        {
+          "chain_id": 4,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are a helpful, concise assistant. Answer accurately. If unsure, say so briefly."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: There is most likely going to be fog around:\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 30
+        },
+        {
+          "chain_id": 4,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are a helpful, concise assistant. Answer accurately. If unsure, say so briefly."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nAnother answer to question Q is: There isn't enough information provided to determine the answer.\nProvide an answer to the following question:\nQ: There is most likely going to be fog around:\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 30
+        },
+        {
+          "chain_id": 5,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are a helpful, concise assistant. Answer accurately. If unsure, say so briefly."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: There is most likely going to be fog around:\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 30
+        },
+        {
+          "chain_id": 5,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are a helpful, concise assistant. Answer accurately. If unsure, say so briefly."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nAnother answer to question Q is: I don't see any previous answers. This conversation has just started. I'm happy to help you, but I need the question to be provided.\nProvide an answer to the following question:\nQ: There is most likely going to be fog around:\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 30
+        },
+        {
+          "chain_id": 6,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are a helpful, concise assistant. Answer accurately. If unsure, say so briefly."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: There is most likely going to be fog around:\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 30
+        },
+        {
+          "chain_id": 6,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are a helpful, concise assistant. Answer accurately. If unsure, say so briefly."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nAnother answer to question Q is: I don't have enough information to provide a definitive answer. Could you please provide more context or clarify the conditions you're asking about (e.g.,\nProvide an answer to the following question:\nQ: There is most likely going to be fog around:\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 30
+        },
+        {
+          "chain_id": 7,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are a helpful, concise assistant. Answer accurately. If unsure, say so briefly."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: There is most likely going to be fog around:\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 30
+        },
+        {
+          "chain_id": 7,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are a helpful, concise assistant. Answer accurately. If unsure, say so briefly."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nAnother answer to question Q is: I don't have enough information to answer this question. I don't know the specific location or time period being referred to.\nProvide an answer to the following question:\nQ: There is most likely going to be fog around:\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 30
+        },
+        {
+          "chain_id": 8,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are a helpful, concise assistant. Answer accurately. If unsure, say so briefly."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: There is most likely going to be fog around:\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 30
+        },
+        {
+          "chain_id": 8,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are a helpful, concise assistant. Answer accurately. If unsure, say so briefly."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nAnother answer to question Q is: There is not enough information to provide an answer to this question.\nProvide an answer to the following question:\nQ: There is most likely going to be fog around:\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 30
+        },
+        {
+          "chain_id": 9,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are a helpful, concise assistant. Answer accurately. If unsure, say so briefly."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: There is most likely going to be fog around:\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 30
+        },
+        {
+          "chain_id": 9,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are a helpful, concise assistant. Answer accurately. If unsure, say so briefly."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nAnother answer to question Q is: I don't see any previous answer to the question \"A\" about fog.\nProvide an answer to the following question:\nQ: There is most likely going to be fog around:\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 30
+        }
+      ],
+      "raw_outputs": [
+        {
+          "chain_id": 0,
+          "step": 0,
+          "text": "I'm not aware of any previous answers to this question.",
+          "logprob": -6.245138585567474,
+          "probability": 0.0019398617223867355
+        },
+        {
+          "chain_id": 0,
+          "step": 1,
+          "text": "I'm not aware of any previous answers to this question.",
+          "logprob": 0.0,
+          "probability": 1.0
+        },
+        {
+          "chain_id": 1,
+          "step": 0,
+          "text": "I don't have the information about the question you're referring to.",
+          "logprob": -11.2090512663126,
+          "probability": 1.3550985721469214e-05
+        },
+        {
+          "chain_id": 1,
+          "step": 1,
+          "text": "I don't have the information about the question you're referring to. Could you please provide the question you'd like me to answer?",
+          "logprob": -4.475660942494869,
+          "probability": 0.011382696330017945
+        },
+        {
+          "chain_id": 2,
+          "step": 0,
+          "text": "I'm not aware of the specific location or conditions for the question about fog. I would need more information to provide an accurate answer.",
+          "logprob": -13.600153736770153,
+          "probability": 1.2403043849085257e-06
+        },
+        {
+          "chain_id": 2,
+          "step": 1,
+          "text": "I'm not aware of the specific location or conditions for the question about fog. I would need more information to provide an accurate answer.",
+          "logprob": 0.0,
+          "probability": 1.0
+        },
+        {
+          "chain_id": 3,
+          "step": 0,
+          "text": "There is not enough information in the question to provide an accurate answer.",
+          "logprob": -5.669881574809551,
+          "probability": 0.0034482736143833827
+        },
+        {
+          "chain_id": 3,
+          "step": 1,
+          "text": "There is not enough information in the question to provide an accurate answer.",
+          "logprob": -0.09012874960899353,
+          "probability": 0.9138135245630251
+        },
+        {
+          "chain_id": 4,
+          "step": 0,
+          "text": "There isn't enough information provided to determine the answer.",
+          "logprob": -9.521110102534294,
+          "probability": 7.328826169118002e-05
+        },
+        {
+          "chain_id": 4,
+          "step": 1,
+          "text": "There isn't enough information provided to determine the answer.",
+          "logprob": -0.09012897312641144,
+          "probability": 0.9138133203098086
+        },
+        {
+          "chain_id": 5,
+          "step": 0,
+          "text": "I don't see any previous answers. This conversation has just started. I'm happy to help you, but I need the question to be provided.",
+          "logprob": -18.58385719358921,
+          "probability": 8.494412915829374e-09
+        },
+        {
+          "chain_id": 5,
+          "step": 1,
+          "text": "I don't have enough information to provide a specific location or context. However, generally speaking, fog is more likely to occur in low-lying areas",
+          "logprob": -9.562505934387445,
+          "probability": 7.031636948617963e-05
+        },
+        {
+          "chain_id": 6,
+          "step": 0,
+          "text": "I don't have enough information to provide a definitive answer. Could you please provide more context or clarify the conditions you're asking about (e.g.,",
+          "logprob": -17.581306532025337,
+          "probability": 2.314917875416862e-08
+        },
+        {
+          "chain_id": 6,
+          "step": 1,
+          "text": "I don't have enough information to provide a definitive answer. Could you please provide more context or clarify the location (e.g., a specific city or",
+          "logprob": -6.405817613005638,
+          "probability": 0.0016519190389139133
+        },
+        {
+          "chain_id": 7,
+          "step": 0,
+          "text": "I don't have enough information to answer this question. I don't know the specific location or time period being referred to.",
+          "logprob": -21.86687235534191,
+          "probability": 3.186676660716999e-10
+        },
+        {
+          "chain_id": 7,
+          "step": 1,
+          "text": "I don't have enough information to answer this question.",
+          "logprob": -0.8416497111320496,
+          "probability": 0.4309989129100434
+        },
+        {
+          "chain_id": 8,
+          "step": 0,
+          "text": "There is not enough information to provide an answer to this question.",
+          "logprob": -5.383877798914909,
+          "probability": 0.004589988323030866
+        },
+        {
+          "chain_id": 8,
+          "step": 1,
+          "text": "There is not enough information to provide an answer to this question.",
+          "logprob": -0.07888974994421005,
+          "probability": 0.9241418055144026
+        },
+        {
+          "chain_id": 9,
+          "step": 0,
+          "text": "I don't see any previous answer to the question \"A\" about fog.",
+          "logprob": -15.623426631093025,
+          "probability": 1.6399553565755114e-07
+        },
+        {
+          "chain_id": 9,
+          "step": 1,
+          "text": "I don't see any previous answer to the question \"A\" about fog.",
+          "logprob": -0.36941097676754,
+          "probability": 0.6911413090536622
+        }
+      ],
+      "decision_process": {
+        "chains": [
+          [
+            {
+              "text": "I'm not aware of any previous answers to this question.",
+              "logprob": -6.245138585567474
+            },
+            {
+              "text": "I'm not aware of any previous answers to this question.",
+              "logprob": 0.0
+            }
+          ],
+          [
+            {
+              "text": "I don't have the information about the question you're referring to.",
+              "logprob": -11.2090512663126
+            },
+            {
+              "text": "I don't have the information about the question you're referring to. Could you please provide the question you'd like me to answer?",
+              "logprob": -4.475660942494869
+            }
+          ],
+          [
+            {
+              "text": "I'm not aware of the specific location or conditions for the question about fog. I would need more information to provide an accurate answer.",
+              "logprob": -13.600153736770153
+            },
+            {
+              "text": "I'm not aware of the specific location or conditions for the question about fog. I would need more information to provide an accurate answer.",
+              "logprob": 0.0
+            }
+          ],
+          [
+            {
+              "text": "There is not enough information in the question to provide an accurate answer.",
+              "logprob": -5.669881574809551
+            },
+            {
+              "text": "There is not enough information in the question to provide an accurate answer.",
+              "logprob": -0.09012874960899353
+            }
+          ],
+          [
+            {
+              "text": "There isn't enough information provided to determine the answer.",
+              "logprob": -9.521110102534294
+            },
+            {
+              "text": "There isn't enough information provided to determine the answer.",
+              "logprob": -0.09012897312641144
+            }
+          ],
+          [
+            {
+              "text": "I don't see any previous answers. This conversation has just started. I'm happy to help you, but I need the question to be provided.",
+              "logprob": -18.58385719358921
+            },
+            {
+              "text": "I don't have enough information to provide a specific location or context. However, generally speaking, fog is more likely to occur in low-lying areas",
+              "logprob": -9.562505934387445
+            }
+          ],
+          [
+            {
+              "text": "I don't have enough information to provide a definitive answer. Could you please provide more context or clarify the conditions you're asking about (e.g.,",
+              "logprob": -17.581306532025337
+            },
+            {
+              "text": "I don't have enough information to provide a definitive answer. Could you please provide more context or clarify the location (e.g., a specific city or",
+              "logprob": -6.405817613005638
+            }
+          ],
+          [
+            {
+              "text": "I don't have enough information to answer this question. I don't know the specific location or time period being referred to.",
+              "logprob": -21.86687235534191
+            },
+            {
+              "text": "I don't have enough information to answer this question.",
+              "logprob": -0.8416497111320496
+            }
+          ],
+          [
+            {
+              "text": "There is not enough information to provide an answer to this question.",
+              "logprob": -5.383877798914909
+            },
+            {
+              "text": "There is not enough information to provide an answer to this question.",
+              "logprob": -0.07888974994421005
+            }
+          ],
+          [
+            {
+              "text": "I don't see any previous answer to the question \"A\" about fog.",
+              "logprob": -15.623426631093025
+            },
+            {
+              "text": "I don't see any previous answer to the question \"A\" about fog.",
+              "logprob": -0.36941097676754
+            }
+          ]
+        ],
+        "pseudo_joint": {
+          "(\"I'm not aware of any previous answers to this question.\", \"I'm not aware of any previous answers to this question.\")": 0.206341471498511,
+          "(\"I don't have the information about the question you're referring to.\", \"I don't have the information about the question you're referring to. Could you please provide the question you'd like me to answer?\")": 1.640709856998421e-05,
+          "(\"I'm not aware of the specific location or conditions for the question about fog. I would need more information to provide an accurate answer.\", \"I'm not aware of the specific location or conditions for the question about fog. I would need more information to provide an accurate answer.\")": 0.00013193014168721181,
+          "('There is not enough information in the question to provide an accurate answer.', 'There is not enough information in the question to provide an accurate answer.')": 0.33517764880948436,
+          "(\"There isn't enough information provided to determine the answer.\", \"There isn't enough information provided to determine the answer.\")": 0.007123733350482411,
+          "(\"I don't see any previous answers. This conversation has just started. I'm happy to help you, but I need the question to be provided.\", \"I don't have enough information to provide a specific location or context. However, generally speaking, fog is more likely to occur in low-lying areas\")": 6.353390621969189e-11,
+          "(\"I don't have enough information to provide a definitive answer. Could you please provide more context or clarify the conditions you're asking about (e.g.,\", \"I don't have enough information to provide a definitive answer. Could you please provide more context or clarify the location (e.g., a specific city or\")": 4.0676174038295105e-09,
+          "(\"I don't have enough information to answer this question. I don't know the specific location or time period being referred to.\", \"I don't have enough information to answer this question.\")": 1.4609317383688449e-08,
+          "('There is not enough information to provide an answer to this question.', 'There is not enough information to provide an answer to this question.')": 0.45119673404467864,
+          "('I don\\'t see any previous answer to the question \"A\" about fog.', 'I don\\'t see any previous answer to the question \"A\" about fog.')": 1.2056316117744802e-05
+        },
+        "marginal_distribution": {
+          "I'm not aware of any previous answers to this question.": 0.206341471498511,
+          "I don't have the information about the question you're referring to. Could you please provide the question you'd like me to answer?": 1.640709856998421e-05,
+          "I'm not aware of the specific location or conditions for the question about fog. I would need more information to provide an accurate answer.": 0.00013193014168721181,
+          "There is not enough information in the question to provide an accurate answer.": 0.33517764880948436,
+          "There isn't enough information provided to determine the answer.": 0.007123733350482411,
+          "I don't have enough information to provide a specific location or context. However, generally speaking, fog is more likely to occur in low-lying areas": 6.353390621969189e-11,
+          "I don't have enough information to provide a definitive answer. Could you please provide more context or clarify the location (e.g., a specific city or": 4.0676174038295105e-09,
+          "I don't have enough information to answer this question.": 1.4609317383688449e-08,
+          "There is not enough information to provide an answer to this question.": 0.45119673404467864,
+          "I don't see any previous answer to the question \"A\" about fog.": 1.2056316117744802e-05
+        },
+        "mi_estimation": {
+          "method": "listing",
+          "mi_nats": 0.5978370007556204,
+          "mi_bits": 0.8624964762500651
+        },
+        "confidence_computation": "1/(1 + mi_nats) = 1/(1 + 0.5978) = 0.6258"
+      },
+      "final_metrics": {
+        "predicted": "C",
+        "correct": false,
+        "confidence": 0.6258460653540368,
+        "mi_score": 0.8624964762500651,
+        "agreement": 0.1
+      }
+    }
+  },
+  "comparison_summary": {
+    "all_predictions": {
+      "greedy": "A",
+      "self_consistency": "D",
+      "semantic_entropy": "C",
+      "self_verification": "A",
+      "mi_method": "C"
+    },
+    "all_correct": {
+      "greedy": true,
+      "self_consistency": false,
+      "semantic_entropy": false,
+      "self_verification": true,
+      "mi_method": false
+    },
+    "all_confidences": {
+      "greedy": 0.005001532085142936,
+      "self_consistency": 0.1,
+      "semantic_entropy": 0.5551135772164013,
+      "self_verification": 0.1,
+      "mi_method": 0.6258460653540368
+    },
+    "agreement_across_methods": 2
+  }
+}

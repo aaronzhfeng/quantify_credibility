@@ -1,0 +1,1603 @@
+{
+  "question_id": 2,
+  "question_text": "Predators eat",
+  "choices": [
+    "A: lions",
+    "B: humans",
+    "C: bunnies",
+    "D: grass"
+  ],
+  "gold_answer": "C",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are a helpful, concise assistant. Answer accurately. If unsure, say so briefly."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: Predators eat\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 30
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "Prey.",
+          "logprob": -1.0915905592846684,
+          "probability": 0.33568214650911044
+        }
+      ],
+      "decision_process": {
+        "selected_text": "Prey.",
+        "matched_choice": "D",
+        "confidence_computation": "exp(logprob) = exp(-1.0916) = 0.3357"
+      },
+      "final_metrics": {
+        "predicted": "D",
+        "correct": false,
+        "confidence": 0.33568214650911044,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    },
+    "self_consistency": {
+      "description": "k=10 samples, majority voting",
+      "raw_inputs": [
+        {
+          "sample_id": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are a helpful, concise assistant. Answer accurately. If unsure, say so briefly."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: Predators eat\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 30
+        },
+        {
+          "sample_id": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are a helpful, concise assistant. Answer accurately. If unsure, say so briefly."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: Predators eat\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 30
+        },
+        {
+          "sample_id": 2,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are a helpful, concise assistant. Answer accurately. If unsure, say so briefly."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: Predators eat\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 30
+        },
+        {
+          "sample_id": 3,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are a helpful, concise assistant. Answer accurately. If unsure, say so briefly."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: Predators eat\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 30
+        },
+        {
+          "sample_id": 4,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are a helpful, concise assistant. Answer accurately. If unsure, say so briefly."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: Predators eat\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 30
+        },
+        {
+          "sample_id": 5,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are a helpful, concise assistant. Answer accurately. If unsure, say so briefly."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: Predators eat\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 30
+        },
+        {
+          "sample_id": 6,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are a helpful, concise assistant. Answer accurately. If unsure, say so briefly."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: Predators eat\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 30
+        },
+        {
+          "sample_id": 7,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are a helpful, concise assistant. Answer accurately. If unsure, say so briefly."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: Predators eat\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 30
+        },
+        {
+          "sample_id": 8,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are a helpful, concise assistant. Answer accurately. If unsure, say so briefly."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: Predators eat\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 30
+        },
+        {
+          "sample_id": 9,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are a helpful, concise assistant. Answer accurately. If unsure, say so briefly."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: Predators eat\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 30
+        }
+      ],
+      "raw_outputs": [
+        {
+          "sample_id": 0,
+          "text": "Prey.",
+          "logprob": -0.7450227737426758,
+          "probability": 0.4747234885862342
+        },
+        {
+          "sample_id": 1,
+          "text": "Prey.",
+          "logprob": -0.7450227737426758,
+          "probability": 0.4747234885862342
+        },
+        {
+          "sample_id": 2,
+          "text": "Prey.",
+          "logprob": -0.7450227737426758,
+          "probability": 0.4747234885862342
+        },
+        {
+          "sample_id": 3,
+          "text": "Predators eat prey.",
+          "logprob": -1.1616907119750977,
+          "probability": 0.31295661384137613
+        },
+        {
+          "sample_id": 4,
+          "text": "Other animals.",
+          "logprob": -3.070134647190571,
+          "probability": 0.04641490480013243
+        },
+        {
+          "sample_id": 5,
+          "text": "Prey.",
+          "logprob": -0.7450227737426758,
+          "probability": 0.4747234885862342
+        },
+        {
+          "sample_id": 6,
+          "text": "Prey.",
+          "logprob": -0.7450227737426758,
+          "probability": 0.4747234885862342
+        },
+        {
+          "sample_id": 7,
+          "text": "I don't see any previous answers.",
+          "logprob": -7.169574722647667,
+          "probability": 0.0007696499763413624
+        },
+        {
+          "sample_id": 8,
+          "text": "Prey.",
+          "logprob": -0.7450227737426758,
+          "probability": 0.4747234885862342
+        },
+        {
+          "sample_id": 9,
+          "text": "Predators eat prey.",
+          "logprob": -1.1616907119750977,
+          "probability": 0.31295661384137613
+        }
+      ],
+      "decision_process": {
+        "all_responses": [
+          "Prey.",
+          "Prey.",
+          "Prey.",
+          "Predators eat prey.",
+          "Other animals.",
+          "Prey.",
+          "Prey.",
+          "I don't see any previous answers.",
+          "Prey.",
+          "Predators eat prey."
+        ],
+        "vote_counts": {
+          "Prey.": 6,
+          "Predators eat prey.": 2,
+          "Other animals.": 1,
+          "I don't see any previous answers.": 1
+        },
+        "majority": "Prey.",
+        "matched_choice": "D",
+        "confidence_computation": "6/10 = 0.6000"
+      },
+      "final_metrics": {
+        "predicted": "D",
+        "correct": false,
+        "confidence": 0.6,
+        "mi_score": 0.0,
+        "agreement": 0.6
+      }
+    },
+    "semantic_entropy": {
+      "description": "k=10 samples, entropy-based confidence with F1 similarity",
+      "raw_inputs": [
+        {
+          "sample_id": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are a helpful, concise assistant. Answer accurately. If unsure, say so briefly."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: Predators eat\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 30
+        },
+        {
+          "sample_id": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are a helpful, concise assistant. Answer accurately. If unsure, say so briefly."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: Predators eat\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 30
+        },
+        {
+          "sample_id": 2,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are a helpful, concise assistant. Answer accurately. If unsure, say so briefly."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: Predators eat\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 30
+        },
+        {
+          "sample_id": 3,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are a helpful, concise assistant. Answer accurately. If unsure, say so briefly."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: Predators eat\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 30
+        },
+        {
+          "sample_id": 4,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are a helpful, concise assistant. Answer accurately. If unsure, say so briefly."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: Predators eat\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 30
+        },
+        {
+          "sample_id": 5,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are a helpful, concise assistant. Answer accurately. If unsure, say so briefly."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: Predators eat\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 30
+        },
+        {
+          "sample_id": 6,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are a helpful, concise assistant. Answer accurately. If unsure, say so briefly."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: Predators eat\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 30
+        },
+        {
+          "sample_id": 7,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are a helpful, concise assistant. Answer accurately. If unsure, say so briefly."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: Predators eat\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 30
+        },
+        {
+          "sample_id": 8,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are a helpful, concise assistant. Answer accurately. If unsure, say so briefly."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: Predators eat\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 30
+        },
+        {
+          "sample_id": 9,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are a helpful, concise assistant. Answer accurately. If unsure, say so briefly."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: Predators eat\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 30
+        }
+      ],
+      "raw_outputs": [
+        {
+          "sample_id": 0,
+          "text": "Animals.",
+          "logprob": -3.1194375455379486,
+          "probability": 0.044182011802082775
+        },
+        {
+          "sample_id": 1,
+          "text": "Predators eat prey.",
+          "logprob": -1.1616907119750977,
+          "probability": 0.31295661384137613
+        },
+        {
+          "sample_id": 2,
+          "text": "Prey.",
+          "logprob": -0.7450227737426758,
+          "probability": 0.4747234885862342
+        },
+        {
+          "sample_id": 3,
+          "text": "Animals.",
+          "logprob": -3.1194375455379486,
+          "probability": 0.044182011802082775
+        },
+        {
+          "sample_id": 4,
+          "text": "Predators eat prey.",
+          "logprob": -1.1616907119750977,
+          "probability": 0.31295661384137613
+        },
+        {
+          "sample_id": 5,
+          "text": "I don't have any previous answers to this question.",
+          "logprob": -6.928953863680363,
+          "probability": 0.0009790245259737877
+        },
+        {
+          "sample_id": 6,
+          "text": "Other animals.",
+          "logprob": -3.070134647190571,
+          "probability": 0.04641490480013243
+        },
+        {
+          "sample_id": 7,
+          "text": "Prey.",
+          "logprob": -0.7450227737426758,
+          "probability": 0.4747234885862342
+        },
+        {
+          "sample_id": 8,
+          "text": "Prey.",
+          "logprob": -0.7450227737426758,
+          "probability": 0.4747234885862342
+        },
+        {
+          "sample_id": 9,
+          "text": "Prey.",
+          "logprob": -0.7450227737426758,
+          "probability": 0.4747234885862342
+        }
+      ],
+      "decision_process": {
+        "similarity_matrix": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            1.0,
+            0.0,
+            0.0,
+            0.6666666666666666,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.5,
+            0.0,
+            1.0,
+            0.0,
+            0.0,
+            0.5,
+            0.5,
+            0.5
+          ],
+          [
+            0.0,
+            0.5,
+            1.0,
+            0.0,
+            0.5,
+            0.0,
+            0.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          [
+            1.0,
+            0.0,
+            0.0,
+            1.0,
+            0.0,
+            0.0,
+            0.6666666666666666,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.5,
+            0.0,
+            1.0,
+            0.0,
+            0.0,
+            0.5,
+            0.5,
+            0.5
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.6666666666666666,
+            0.0,
+            0.0,
+            0.6666666666666666,
+            0.0,
+            0.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.5,
+            1.0,
+            0.0,
+            0.5,
+            0.0,
+            0.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          [
+            0.0,
+            0.5,
+            1.0,
+            0.0,
+            0.5,
+            0.0,
+            0.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          [
+            0.0,
+            0.5,
+            1.0,
+            0.0,
+            0.5,
+            0.0,
+            0.0,
+            1.0,
+            1.0,
+            1.0
+          ]
+        ],
+        "similarity_threshold": 0.25,
+        "semantic_clusters": {
+          "cluster_0": {
+            "representative": "Animals.",
+            "texts": [
+              "Animals.",
+              "Animals.",
+              "Other animals."
+            ],
+            "probs": [
+              0.044182011802082775,
+              0.044182011802082775,
+              0.04641490480013243
+            ],
+            "total_prob": 0.13477892840429798
+          },
+          "cluster_1": {
+            "representative": "Predators eat prey.",
+            "texts": [
+              "Predators eat prey.",
+              "Prey.",
+              "Predators eat prey.",
+              "Prey.",
+              "Prey.",
+              "Prey."
+            ],
+            "probs": [
+              0.31295661384137613,
+              0.4747234885862342,
+              0.31295661384137613,
+              0.4747234885862342,
+              0.4747234885862342,
+              0.4747234885862342
+            ],
+            "total_prob": 2.524807182027689
+          },
+          "cluster_2": {
+            "representative": "I don't have any previous answers to this question.",
+            "texts": [
+              "I don't have any previous answers to this question."
+            ],
+            "probs": [
+              0.0009790245259737877
+            ],
+            "total_prob": 0.0009790245259737877
+          }
+        },
+        "aggregated_distribution": {
+          "Animals.": 0.05065800744112495,
+          "Predators eat prey.": 0.9489740164048203,
+          "I don't have any previous answers to this question.": 0.000367976154054675
+        },
+        "entropy_nats": 0.20370671110770155,
+        "entropy_bits": 0.29388666191088175,
+        "confidence_computation": "exp(-entropy_nats) = exp(-0.2037) = 0.8157"
+      },
+      "final_metrics": {
+        "predicted": "A",
+        "correct": false,
+        "confidence": 0.815701572318652,
+        "mi_score": 0.29388666191088175,
+        "agreement": 0.9489740164048203
+      }
+    },
+    "self_verification": {
+      "description": "k=10 samples + verification query",
+      "raw_inputs": [
+        {
+          "sample_id": 0,
+          "step": "initial_generation",
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are a helpful, concise assistant. Answer accurately. If unsure, say so briefly."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: Predators eat\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 30
+        },
+        {
+          "sample_id": 1,
+          "step": "initial_generation",
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are a helpful, concise assistant. Answer accurately. If unsure, say so briefly."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: Predators eat\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 30
+        },
+        {
+          "sample_id": 2,
+          "step": "initial_generation",
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are a helpful, concise assistant. Answer accurately. If unsure, say so briefly."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: Predators eat\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 30
+        },
+        {
+          "sample_id": 3,
+          "step": "initial_generation",
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are a helpful, concise assistant. Answer accurately. If unsure, say so briefly."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: Predators eat\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 30
+        },
+        {
+          "sample_id": 4,
+          "step": "initial_generation",
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are a helpful, concise assistant. Answer accurately. If unsure, say so briefly."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: Predators eat\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 30
+        },
+        {
+          "sample_id": 5,
+          "step": "initial_generation",
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are a helpful, concise assistant. Answer accurately. If unsure, say so briefly."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: Predators eat\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 30
+        },
+        {
+          "sample_id": 6,
+          "step": "initial_generation",
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are a helpful, concise assistant. Answer accurately. If unsure, say so briefly."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: Predators eat\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 30
+        },
+        {
+          "sample_id": 7,
+          "step": "initial_generation",
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are a helpful, concise assistant. Answer accurately. If unsure, say so briefly."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: Predators eat\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 30
+        },
+        {
+          "sample_id": 8,
+          "step": "initial_generation",
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are a helpful, concise assistant. Answer accurately. If unsure, say so briefly."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: Predators eat\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 30
+        },
+        {
+          "sample_id": 9,
+          "step": "initial_generation",
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are a helpful, concise assistant. Answer accurately. If unsure, say so briefly."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: Predators eat\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 30
+        },
+        {
+          "sample_id": 10,
+          "step": "verification",
+          "prompt": [
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Predators eat\n\nOne answer to question Q is: Prey.\n\nIs the above answer to question Q correct? Answer True or False.\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 5
+        }
+      ],
+      "raw_outputs": [
+        {
+          "sample_id": 0,
+          "step": "initial_generation",
+          "text": "Prey.",
+          "logprob": -0.7450227737426758,
+          "probability": 0.4747234885862342
+        },
+        {
+          "sample_id": 1,
+          "step": "initial_generation",
+          "text": "Prey.",
+          "logprob": -0.7450227737426758,
+          "probability": 0.4747234885862342
+        },
+        {
+          "sample_id": 2,
+          "step": "initial_generation",
+          "text": "Animals.",
+          "logprob": -3.1194375455379486,
+          "probability": 0.044182011802082775
+        },
+        {
+          "sample_id": 3,
+          "step": "initial_generation",
+          "text": "Predators eat prey.",
+          "logprob": -1.1616907119750977,
+          "probability": 0.31295661384137613
+        },
+        {
+          "sample_id": 4,
+          "step": "initial_generation",
+          "text": "Prey.",
+          "logprob": -0.7450227737426758,
+          "probability": 0.4747234885862342
+        },
+        {
+          "sample_id": 5,
+          "step": "initial_generation",
+          "text": "Predators eat prey.",
+          "logprob": -1.1616907119750977,
+          "probability": 0.31295661384137613
+        },
+        {
+          "sample_id": 6,
+          "step": "initial_generation",
+          "text": "I'm not able to locate an answer to Q: Predators eat",
+          "logprob": -18.3584266602993,
+          "probability": 1.064232714514122e-08
+        },
+        {
+          "sample_id": 7,
+          "step": "initial_generation",
+          "text": "Predators eat prey.",
+          "logprob": -1.1616907119750977,
+          "probability": 0.31295661384137613
+        },
+        {
+          "sample_id": 8,
+          "step": "initial_generation",
+          "text": "Predators eat prey.",
+          "logprob": -1.1616907119750977,
+          "probability": 0.31295661384137613
+        },
+        {
+          "sample_id": 9,
+          "step": "initial_generation",
+          "text": "prey",
+          "logprob": -4.029161691665649,
+          "probability": 0.017789236569894427
+        },
+        {
+          "sample_id": 10,
+          "step": "verification",
+          "text": "True. Predators eat",
+          "logprob": -2.3673217519499303,
+          "parsed_verdict": "True"
+        }
+      ],
+      "decision_process": {
+        "initial_selection": {
+          "choice_probabilities": {
+            "D": 1.441959702328597,
+            "A": 1.2960084778099143
+          },
+          "selected_choice": "D",
+          "selected_text": "Prey."
+        },
+        "verification_prompt": "Consider the following question:\nQ: Predators eat\n\nOne answer to question Q is: Prey.\n\nIs the above answer to question Q correct? Answer True or False.\nA:",
+        "verification_response": {
+          "raw_text": "True. Predators eat",
+          "parsed_verdict": "True",
+          "logprob": -2.3673217519499303
+        },
+        "confidence_computation": "Based on verdict 'True': 0.9000"
+      },
+      "final_metrics": {
+        "predicted": "D",
+        "correct": false,
+        "confidence": 0.9,
+        "mi_score": 0.0,
+        "agreement": 0.5266531995472823
+      }
+    },
+    "mi_method": {
+      "description": "k=10 chains of length n=2, MI estimation",
+      "raw_inputs": [
+        {
+          "chain_id": 0,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are a helpful, concise assistant. Answer accurately. If unsure, say so briefly."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: Predators eat\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 30
+        },
+        {
+          "chain_id": 0,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are a helpful, concise assistant. Answer accurately. If unsure, say so briefly."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nAnother answer to question Q is: Prey.\nProvide an answer to the following question:\nQ: Predators eat\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 30
+        },
+        {
+          "chain_id": 1,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are a helpful, concise assistant. Answer accurately. If unsure, say so briefly."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: Predators eat\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 30
+        },
+        {
+          "chain_id": 1,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are a helpful, concise assistant. Answer accurately. If unsure, say so briefly."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nAnother answer to question Q is: Prey.\nProvide an answer to the following question:\nQ: Predators eat\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 30
+        },
+        {
+          "chain_id": 2,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are a helpful, concise assistant. Answer accurately. If unsure, say so briefly."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: Predators eat\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 30
+        },
+        {
+          "chain_id": 2,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are a helpful, concise assistant. Answer accurately. If unsure, say so briefly."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nAnother answer to question Q is: I don't see any previous answers. This conversation just started.\nProvide an answer to the following question:\nQ: Predators eat\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 30
+        },
+        {
+          "chain_id": 3,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are a helpful, concise assistant. Answer accurately. If unsure, say so briefly."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: Predators eat\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 30
+        },
+        {
+          "chain_id": 3,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are a helpful, concise assistant. Answer accurately. If unsure, say so briefly."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nAnother answer to question Q is: Predators eat prey.\nProvide an answer to the following question:\nQ: Predators eat\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 30
+        },
+        {
+          "chain_id": 4,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are a helpful, concise assistant. Answer accurately. If unsure, say so briefly."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: Predators eat\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 30
+        },
+        {
+          "chain_id": 4,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are a helpful, concise assistant. Answer accurately. If unsure, say so briefly."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nAnother answer to question Q is: prey.\nProvide an answer to the following question:\nQ: Predators eat\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 30
+        },
+        {
+          "chain_id": 5,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are a helpful, concise assistant. Answer accurately. If unsure, say so briefly."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: Predators eat\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 30
+        },
+        {
+          "chain_id": 5,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are a helpful, concise assistant. Answer accurately. If unsure, say so briefly."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nAnother answer to question Q is: Prey.\nProvide an answer to the following question:\nQ: Predators eat\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 30
+        },
+        {
+          "chain_id": 6,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are a helpful, concise assistant. Answer accurately. If unsure, say so briefly."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: Predators eat\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 30
+        },
+        {
+          "chain_id": 6,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are a helpful, concise assistant. Answer accurately. If unsure, say so briefly."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nAnother answer to question Q is: Predators eat prey.\nProvide an answer to the following question:\nQ: Predators eat\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 30
+        },
+        {
+          "chain_id": 7,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are a helpful, concise assistant. Answer accurately. If unsure, say so briefly."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: Predators eat\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 30
+        },
+        {
+          "chain_id": 7,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are a helpful, concise assistant. Answer accurately. If unsure, say so briefly."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nAnother answer to question Q is: Predators eat prey.\nProvide an answer to the following question:\nQ: Predators eat\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 30
+        },
+        {
+          "chain_id": 8,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are a helpful, concise assistant. Answer accurately. If unsure, say so briefly."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: Predators eat\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 30
+        },
+        {
+          "chain_id": 8,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are a helpful, concise assistant. Answer accurately. If unsure, say so briefly."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nAnother answer to question Q is: Prey.\nProvide an answer to the following question:\nQ: Predators eat\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 30
+        },
+        {
+          "chain_id": 9,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are a helpful, concise assistant. Answer accurately. If unsure, say so briefly."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: Predators eat\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 30
+        },
+        {
+          "chain_id": 9,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are a helpful, concise assistant. Answer accurately. If unsure, say so briefly."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nAnother answer to question Q is: Prey.\nProvide an answer to the following question:\nQ: Predators eat\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 30
+        }
+      ],
+      "raw_outputs": [
+        {
+          "chain_id": 0,
+          "step": 0,
+          "text": "Prey.",
+          "logprob": -0.7450227737426758,
+          "probability": 0.4747234885862342
+        },
+        {
+          "chain_id": 0,
+          "step": 1,
+          "text": "Prey.",
+          "logprob": -0.06900407373905182,
+          "probability": 0.9333228779566016
+        },
+        {
+          "chain_id": 1,
+          "step": 0,
+          "text": "Prey.",
+          "logprob": -0.7450227737426758,
+          "probability": 0.4747234885862342
+        },
+        {
+          "chain_id": 1,
+          "step": 1,
+          "text": "Prey.",
+          "logprob": -0.06900407373905182,
+          "probability": 0.9333228779566016
+        },
+        {
+          "chain_id": 2,
+          "step": 0,
+          "text": "I don't see any previous answers. This conversation just started.",
+          "logprob": -8.14551830291748,
+          "probability": 0.00029003228809653634
+        },
+        {
+          "chain_id": 2,
+          "step": 1,
+          "text": "Prey.",
+          "logprob": -0.6172534823417664,
+          "probability": 0.5394239423045462
+        },
+        {
+          "chain_id": 3,
+          "step": 0,
+          "text": "Predators eat prey.",
+          "logprob": -1.1616907119750977,
+          "probability": 0.31295661384137613
+        },
+        {
+          "chain_id": 3,
+          "step": 1,
+          "text": "Prey.",
+          "logprob": -1.8466742038726807,
+          "probability": 0.15776097563110625
+        },
+        {
+          "chain_id": 4,
+          "step": 0,
+          "text": "prey.",
+          "logprob": -3.6124956607818604,
+          "probability": 0.026984418806828014
+        },
+        {
+          "chain_id": 4,
+          "step": 1,
+          "text": "prey",
+          "logprob": -0.9117973744869232,
+          "probability": 0.40180138706195195
+        },
+        {
+          "chain_id": 5,
+          "step": 0,
+          "text": "Prey.",
+          "logprob": -0.7450227737426758,
+          "probability": 0.4747234885862342
+        },
+        {
+          "chain_id": 5,
+          "step": 1,
+          "text": "Prey.",
+          "logprob": -0.06900407373905182,
+          "probability": 0.9333228779566016
+        },
+        {
+          "chain_id": 6,
+          "step": 0,
+          "text": "Predators eat prey.",
+          "logprob": -1.1616907119750977,
+          "probability": 0.31295661384137613
+        },
+        {
+          "chain_id": 6,
+          "step": 1,
+          "text": "prey.",
+          "logprob": -0.987492561340332,
+          "probability": 0.3725095658565903
+        },
+        {
+          "chain_id": 7,
+          "step": 0,
+          "text": "Predators eat prey.",
+          "logprob": -1.1616907119750977,
+          "probability": 0.31295661384137613
+        },
+        {
+          "chain_id": 7,
+          "step": 1,
+          "text": "A: prey.",
+          "logprob": -1.3827532231807709,
+          "probability": 0.2508868537938511
+        },
+        {
+          "chain_id": 8,
+          "step": 0,
+          "text": "Prey.",
+          "logprob": -0.7450227737426758,
+          "probability": 0.4747234885862342
+        },
+        {
+          "chain_id": 8,
+          "step": 1,
+          "text": "Prey.",
+          "logprob": -0.06900407373905182,
+          "probability": 0.9333228779566016
+        },
+        {
+          "chain_id": 9,
+          "step": 0,
+          "text": "Prey.",
+          "logprob": -0.7450227737426758,
+          "probability": 0.4747234885862342
+        },
+        {
+          "chain_id": 9,
+          "step": 1,
+          "text": "Prey.",
+          "logprob": -0.06900407373905182,
+          "probability": 0.9333228779566016
+        }
+      ],
+      "decision_process": {
+        "chains": [
+          [
+            {
+              "text": "Prey.",
+              "logprob": -0.7450227737426758
+            },
+            {
+              "text": "Prey.",
+              "logprob": -0.06900407373905182
+            }
+          ],
+          [
+            {
+              "text": "Prey.",
+              "logprob": -0.7450227737426758
+            },
+            {
+              "text": "Prey.",
+              "logprob": -0.06900407373905182
+            }
+          ],
+          [
+            {
+              "text": "I don't see any previous answers. This conversation just started.",
+              "logprob": -8.14551830291748
+            },
+            {
+              "text": "Prey.",
+              "logprob": -0.6172534823417664
+            }
+          ],
+          [
+            {
+              "text": "Predators eat prey.",
+              "logprob": -1.1616907119750977
+            },
+            {
+              "text": "Prey.",
+              "logprob": -1.8466742038726807
+            }
+          ],
+          [
+            {
+              "text": "prey.",
+              "logprob": -3.6124956607818604
+            },
+            {
+              "text": "prey",
+              "logprob": -0.9117973744869232
+            }
+          ],
+          [
+            {
+              "text": "Prey.",
+              "logprob": -0.7450227737426758
+            },
+            {
+              "text": "Prey.",
+              "logprob": -0.06900407373905182
+            }
+          ],
+          [
+            {
+              "text": "Predators eat prey.",
+              "logprob": -1.1616907119750977
+            },
+            {
+              "text": "prey.",
+              "logprob": -0.987492561340332
+            }
+          ],
+          [
+            {
+              "text": "Predators eat prey.",
+              "logprob": -1.1616907119750977
+            },
+            {
+              "text": "A: prey.",
+              "logprob": -1.3827532231807709
+            }
+          ],
+          [
+            {
+              "text": "Prey.",
+              "logprob": -0.7450227737426758
+            },
+            {
+              "text": "Prey.",
+              "logprob": -0.06900407373905182
+            }
+          ],
+          [
+            {
+              "text": "Prey.",
+              "logprob": -0.7450227737426758
+            },
+            {
+              "text": "Prey.",
+              "logprob": -0.06900407373905182
+            }
+          ]
+        ],
+        "pseudo_joint": {
+          "('Prey.', 'Prey.')": 0.8966062526819636,
+          "(\"I don't see any previous answers. This conversation just started.\", 'Prey.')": 6.331924011545399e-05,
+          "('Predators eat prey.', 'Prey.')": 0.019982178966703058,
+          "('prey.', 'prey')": 0.004388171849874661,
+          "('Predators eat prey.', 'prey.')": 0.047182471976850375,
+          "('Predators eat prey.', 'A: prey.')": 0.031777605284492895
+        },
+        "marginal_distribution": {
+          "Prey.": 0.9166517508887821,
+          "prey": 0.004388171849874661,
+          "prey.": 0.047182471976850375,
+          "A: prey.": 0.031777605284492895
+        },
+        "mi_estimation": {
+          "method": "listing",
+          "mi_nats": 0.26220771937660536,
+          "mi_bits": 0.37828577642743355
+        },
+        "confidence_computation": "1/(1 + mi_nats) = 1/(1 + 0.2622) = 0.7923"
+      },
+      "final_metrics": {
+        "predicted": "D",
+        "correct": false,
+        "confidence": 0.792262624169255,
+        "mi_score": 0.37828577642743355,
+        "agreement": 0.7
+      }
+    }
+  },
+  "comparison_summary": {
+    "all_predictions": {
+      "greedy": "D",
+      "self_consistency": "D",
+      "semantic_entropy": "A",
+      "self_verification": "D",
+      "mi_method": "D"
+    },
+    "all_correct": {
+      "greedy": false,
+      "self_consistency": false,
+      "semantic_entropy": false,
+      "self_verification": false,
+      "mi_method": false
+    },
+    "all_confidences": {
+      "greedy": 0.33568214650911044,
+      "self_consistency": 0.6,
+      "semantic_entropy": 0.815701572318652,
+      "self_verification": 0.9,
+      "mi_method": 0.792262624169255
+    },
+    "agreement_across_methods": 0
+  }
+}
