@@ -1,0 +1,51 @@
+{
+  "question_id": 326,
+  "question_text": "A light was off because the cord was",
+  "choices": [
+    "A: sitting on the table",
+    "B: attached to the wall",
+    "C: attached to an extension cord",
+    "D: attached to a battery pack"
+  ],
+  "gold_answer": "A",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: A light was off because the cord was\n\nChoices:\nA) sitting on the table\nB) attached to the wall\nC) attached to an extension cord\nD) attached to a battery pack\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "A",
+          "logprob": -0.577567512053065,
+          "probability": 0.5612619703961523
+        }
+      ],
+      "decision_process": {
+        "selected_text": "A",
+        "matched_choice": "A",
+        "confidence_computation": "exp(logprob) = exp(-0.5776) = 0.5613"
+      },
+      "final_metrics": {
+        "predicted": "A",
+        "correct": true,
+        "confidence": 0.5612619703961523,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

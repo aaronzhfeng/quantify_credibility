@@ -1,0 +1,51 @@
+{
+  "question_id": 214,
+  "question_text": "a large cluster of humans, dogs, apple trees, atmosphere and more can be called",
+  "choices": [
+    "A: army of ants",
+    "B: a community",
+    "C: a toy store",
+    "D: a shopping mall"
+  ],
+  "gold_answer": "B",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: a large cluster of humans, dogs, apple trees, atmosphere and more can be called\n\nChoices:\nA) army of ants\nB) a community\nC) a toy store\nD) a shopping mall\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "A",
+          "logprob": -0.7175517930591013,
+          "probability": 0.4879453861303529
+        }
+      ],
+      "decision_process": {
+        "selected_text": "A",
+        "matched_choice": "A",
+        "confidence_computation": "exp(logprob) = exp(-0.7176) = 0.4879"
+      },
+      "final_metrics": {
+        "predicted": "A",
+        "correct": false,
+        "confidence": 0.4879453861303529,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

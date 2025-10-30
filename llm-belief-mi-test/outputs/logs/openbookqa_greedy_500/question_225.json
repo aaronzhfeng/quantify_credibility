@@ -1,0 +1,51 @@
+{
+  "question_id": 225,
+  "question_text": "Members of rock bands often perform with",
+  "choices": [
+    "A: flutes",
+    "B: sandals",
+    "C: earplugs",
+    "D: gloves"
+  ],
+  "gold_answer": "C",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: Members of rock bands often perform with\n\nChoices:\nA) flutes\nB) sandals\nC) earplugs\nD) gloves\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "A",
+          "logprob": -0.6453736471012235,
+          "probability": 0.5244665400886874
+        }
+      ],
+      "decision_process": {
+        "selected_text": "A",
+        "matched_choice": "A",
+        "confidence_computation": "exp(logprob) = exp(-0.6454) = 0.5245"
+      },
+      "final_metrics": {
+        "predicted": "A",
+        "correct": false,
+        "confidence": 0.5244665400886874,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

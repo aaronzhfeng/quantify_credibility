@@ -1,0 +1,51 @@
+{
+  "question_id": 307,
+  "question_text": "The moon is known for having what feature?",
+  "choices": [
+    "A: frozen streams of water",
+    "B: large bowl shaped cavities",
+    "C: caves formed by solar winds",
+    "D: groups of large trees"
+  ],
+  "gold_answer": "B",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: The moon is known for having what feature?\n\nChoices:\nA) frozen streams of water\nB) large bowl shaped cavities\nC) caves formed by solar winds\nD) groups of large trees\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "A",
+          "logprob": -0.152296027779812,
+          "probability": 0.8587340339813998
+        }
+      ],
+      "decision_process": {
+        "selected_text": "A",
+        "matched_choice": "A",
+        "confidence_computation": "exp(logprob) = exp(-0.1523) = 0.8587"
+      },
+      "final_metrics": {
+        "predicted": "A",
+        "correct": false,
+        "confidence": 0.8587340339813998,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "question_id": 3,
+  "question_text": "Oak tree seeds are planted and a sidewalk is paved right next to that spot, until eventually, the tree is tall and the roots must extend past the sidewalk, which means",
+  "choices": [
+    "A: roots may be split",
+    "B: roots may begin to die",
+    "C: parts may break the concrete",
+    "D: roots may fall apart"
+  ],
+  "gold_answer": "C",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: Oak tree seeds are planted and a sidewalk is paved right next to that spot, until eventually, the tree is tall and the roots must extend past the sidewalk, which means\n\nChoices:\nA) roots may be split\nB) roots may begin to die\nC) parts may break the concrete\nD) roots may fall apart\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "C",
+          "logprob": -0.5614088930888101,
+          "probability": 0.5704048579995518
+        }
+      ],
+      "decision_process": {
+        "selected_text": "C",
+        "matched_choice": "C",
+        "confidence_computation": "exp(logprob) = exp(-0.5614) = 0.5704"
+      },
+      "final_metrics": {
+        "predicted": "C",
+        "correct": true,
+        "confidence": 0.5704048579995518,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "question_id": 273,
+  "question_text": "Fruit comes from what source",
+  "choices": [
+    "A: an organism that releases carbon dioxide",
+    "B: an organism that absorbs water through it's branches",
+    "C: an organism that absorbs oxygen",
+    "D: an organism that absorbs water through it's roots"
+  ],
+  "gold_answer": "D",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: Fruit comes from what source\n\nChoices:\nA) an organism that releases carbon dioxide\nB) an organism that absorbs water through it's branches\nC) an organism that absorbs oxygen\nD) an organism that absorbs water through it's roots\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "D",
+          "logprob": -0.2639059991852264,
+          "probability": 0.7680457331882307
+        }
+      ],
+      "decision_process": {
+        "selected_text": "D",
+        "matched_choice": "D",
+        "confidence_computation": "exp(logprob) = exp(-0.2639) = 0.7680"
+      },
+      "final_metrics": {
+        "predicted": "D",
+        "correct": true,
+        "confidence": 0.7680457331882307,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

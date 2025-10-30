@@ -1,0 +1,51 @@
+{
+  "question_id": 104,
+  "question_text": "What type of characteristics are people not born with?",
+  "choices": [
+    "A: genetics",
+    "B: skills",
+    "C: physical attributes",
+    "D: height"
+  ],
+  "gold_answer": "B",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: What type of characteristics are people not born with?\n\nChoices:\nA) genetics\nB) skills\nC) physical attributes\nD) height\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "A",
+          "logprob": -0.7405899842269719,
+          "probability": 0.47683250885731737
+        }
+      ],
+      "decision_process": {
+        "selected_text": "A",
+        "matched_choice": "A",
+        "confidence_computation": "exp(logprob) = exp(-0.7406) = 0.4768"
+      },
+      "final_metrics": {
+        "predicted": "A",
+        "correct": false,
+        "confidence": 0.47683250885731737,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "question_id": 89,
+  "question_text": "Some animals have behaviors that help them find food when little is available. Which best describes an animal with this type of behavior?",
+  "choices": [
+    "A: a robin that builds a nest",
+    "B: an owl that calls at night",
+    "C: a duck that swims in water",
+    "D: a goose that migrates in winter"
+  ],
+  "gold_answer": "D",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: Some animals have behaviors that help them find food when little is available. Which best describes an animal with this type of behavior?\n\nChoices:\nA) a robin that builds a nest\nB) an owl that calls at night\nC) a duck that swims in water\nD) a goose that migrates in winter\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "A",
+          "logprob": -0.4651564315208816,
+          "probability": 0.628036852744907
+        }
+      ],
+      "decision_process": {
+        "selected_text": "A",
+        "matched_choice": "A",
+        "confidence_computation": "exp(logprob) = exp(-0.4652) = 0.6280"
+      },
+      "final_metrics": {
+        "predicted": "A",
+        "correct": false,
+        "confidence": 0.628036852744907,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

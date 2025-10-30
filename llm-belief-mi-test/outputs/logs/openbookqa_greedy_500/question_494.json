@@ -1,0 +1,51 @@
+{
+  "question_id": 494,
+  "question_text": "A woman, with a pale complexion, wants to spend the bright, sunny day at the beach. She makes sure that she stops at the store to pick up some sunblock before she begins to enjoy her day filled with sand and surf. She applies the sunblock carefully and thoroughly, because she knows that",
+  "choices": [
+    "A: UV rays are harmful",
+    "B: sunlight will be fun",
+    "C: the sun is close",
+    "D: the sun is in space"
+  ],
+  "gold_answer": "A",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: A woman, with a pale complexion, wants to spend the bright, sunny day at the beach. She makes sure that she stops at the store to pick up some sunblock before she begins to enjoy her day filled with sand and surf. She applies the sunblock carefully and thoroughly, because she knows that\n\nChoices:\nA) UV rays are harmful\nB) sunlight will be fun\nC) the sun is close\nD) the sun is in space\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "A",
+          "logprob": -0.004195554414764047,
+          "probability": 0.995813234627728
+        }
+      ],
+      "decision_process": {
+        "selected_text": "A",
+        "matched_choice": "A",
+        "confidence_computation": "exp(logprob) = exp(-0.0042) = 0.9958"
+      },
+      "final_metrics": {
+        "predicted": "A",
+        "correct": true,
+        "confidence": 0.995813234627728,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

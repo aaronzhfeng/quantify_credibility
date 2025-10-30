@@ -1,0 +1,51 @@
+{
+  "question_id": 379,
+  "question_text": "Which animal is hiding from a predator?",
+  "choices": [
+    "A: a tadpole losing its tail as it grows",
+    "B: an angler fish using its Esca to lure another fish",
+    "C: an octopus mimicking the color and texture of a rocky outcrop",
+    "D: a great white shark breaching the water's surface"
+  ],
+  "gold_answer": "C",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: Which animal is hiding from a predator?\n\nChoices:\nA) a tadpole losing its tail as it grows\nB) an angler fish using its Esca to lure another fish\nC) an octopus mimicking the color and texture of a rocky outcrop\nD) a great white shark breaching the water's surface\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "C",
+          "logprob": -0.2926474178675562,
+          "probability": 0.7462852211504469
+        }
+      ],
+      "decision_process": {
+        "selected_text": "C",
+        "matched_choice": "C",
+        "confidence_computation": "exp(logprob) = exp(-0.2926) = 0.7463"
+      },
+      "final_metrics": {
+        "predicted": "C",
+        "correct": true,
+        "confidence": 0.7462852211504469,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

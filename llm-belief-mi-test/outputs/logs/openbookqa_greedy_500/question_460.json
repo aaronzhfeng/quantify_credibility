@@ -1,0 +1,51 @@
+{
+  "question_id": 460,
+  "question_text": "An increase in an object's temperature occurs when",
+  "choices": [
+    "A: an orange is placed in a refrigerator",
+    "B: a steak is removed from the freezer to defrost",
+    "C: a glass of water is moved from counter top to dinner table",
+    "D: an ice tray is placed in a freezer"
+  ],
+  "gold_answer": "B",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: An increase in an object's temperature occurs when\n\nChoices:\nA) an orange is placed in a refrigerator\nB) a steak is removed from the freezer to defrost\nC) a glass of water is moved from counter top to dinner table\nD) an ice tray is placed in a freezer\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "B",
+          "logprob": -0.7597967359179165,
+          "probability": 0.4677614964586915
+        }
+      ],
+      "decision_process": {
+        "selected_text": "B",
+        "matched_choice": "B",
+        "confidence_computation": "exp(logprob) = exp(-0.7598) = 0.4678"
+      },
+      "final_metrics": {
+        "predicted": "B",
+        "correct": true,
+        "confidence": 0.4677614964586915,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

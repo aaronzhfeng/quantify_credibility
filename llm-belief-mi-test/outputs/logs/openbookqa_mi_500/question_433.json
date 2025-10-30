@@ -1,0 +1,499 @@
+{
+  "question_id": 433,
+  "question_text": "A car has the least speed if it",
+  "choices": [
+    "A: is heavy",
+    "B: is large",
+    "C: is turned off",
+    "D: is small"
+  ],
+  "gold_answer": "C",
+  "methods": {
+    "mi_method": {
+      "description": "k=10 chains of length n=2, MI estimation",
+      "raw_inputs": [
+        {
+          "chain_id": 0,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A car has the least speed if it\n\n\nChoices:\nA) is heavy\nB) is large\nC) is turned off\nD) is small\n\nProvide an answer to the following question:\n\nQ: A car has the least speed if it\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 0,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A car has the least speed if it\n\n\nOne answer to question Q is D) is small.\n\n\nChoices:\nA) is heavy\nB) is large\nC) is turned off\nD) is small\n\nProvide an answer to the following question:\n\nQ: A car has the least speed if it\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 1,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A car has the least speed if it\n\n\nChoices:\nA) is heavy\nB) is large\nC) is turned off\nD) is small\n\nProvide an answer to the following question:\n\nQ: A car has the least speed if it\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 1,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A car has the least speed if it\n\n\nOne answer to question Q is C) is turned off.\n\n\nChoices:\nA) is heavy\nB) is large\nC) is turned off\nD) is small\n\nProvide an answer to the following question:\n\nQ: A car has the least speed if it\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 2,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A car has the least speed if it\n\n\nChoices:\nA) is heavy\nB) is large\nC) is turned off\nD) is small\n\nProvide an answer to the following question:\n\nQ: A car has the least speed if it\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 2,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A car has the least speed if it\n\n\nOne answer to question Q is C) is turned off.\n\n\nChoices:\nA) is heavy\nB) is large\nC) is turned off\nD) is small\n\nProvide an answer to the following question:\n\nQ: A car has the least speed if it\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 3,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A car has the least speed if it\n\n\nChoices:\nA) is heavy\nB) is large\nC) is turned off\nD) is small\n\nProvide an answer to the following question:\n\nQ: A car has the least speed if it\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 3,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A car has the least speed if it\n\n\nOne answer to question Q is A) is heavy.\n\n\nChoices:\nA) is heavy\nB) is large\nC) is turned off\nD) is small\n\nProvide an answer to the following question:\n\nQ: A car has the least speed if it\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 4,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A car has the least speed if it\n\n\nChoices:\nA) is heavy\nB) is large\nC) is turned off\nD) is small\n\nProvide an answer to the following question:\n\nQ: A car has the least speed if it\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 4,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A car has the least speed if it\n\n\nOne answer to question Q is C) is turned off.\n\n\nChoices:\nA) is heavy\nB) is large\nC) is turned off\nD) is small\n\nProvide an answer to the following question:\n\nQ: A car has the least speed if it\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 5,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A car has the least speed if it\n\n\nChoices:\nA) is heavy\nB) is large\nC) is turned off\nD) is small\n\nProvide an answer to the following question:\n\nQ: A car has the least speed if it\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 5,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A car has the least speed if it\n\n\nOne answer to question Q is D) is small.\n\n\nChoices:\nA) is heavy\nB) is large\nC) is turned off\nD) is small\n\nProvide an answer to the following question:\n\nQ: A car has the least speed if it\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 6,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A car has the least speed if it\n\n\nChoices:\nA) is heavy\nB) is large\nC) is turned off\nD) is small\n\nProvide an answer to the following question:\n\nQ: A car has the least speed if it\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 6,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A car has the least speed if it\n\n\nOne answer to question Q is D) is small.\n\n\nChoices:\nA) is heavy\nB) is large\nC) is turned off\nD) is small\n\nProvide an answer to the following question:\n\nQ: A car has the least speed if it\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 7,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A car has the least speed if it\n\n\nChoices:\nA) is heavy\nB) is large\nC) is turned off\nD) is small\n\nProvide an answer to the following question:\n\nQ: A car has the least speed if it\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 7,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A car has the least speed if it\n\n\nOne answer to question Q is C) is turned off.\n\n\nChoices:\nA) is heavy\nB) is large\nC) is turned off\nD) is small\n\nProvide an answer to the following question:\n\nQ: A car has the least speed if it\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 8,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A car has the least speed if it\n\n\nChoices:\nA) is heavy\nB) is large\nC) is turned off\nD) is small\n\nProvide an answer to the following question:\n\nQ: A car has the least speed if it\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 8,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A car has the least speed if it\n\n\nOne answer to question Q is C) is turned off.\n\n\nChoices:\nA) is heavy\nB) is large\nC) is turned off\nD) is small\n\nProvide an answer to the following question:\n\nQ: A car has the least speed if it\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 9,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A car has the least speed if it\n\n\nChoices:\nA) is heavy\nB) is large\nC) is turned off\nD) is small\n\nProvide an answer to the following question:\n\nQ: A car has the least speed if it\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 9,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A car has the least speed if it\n\n\nOne answer to question Q is C) is turned off.\n\n\nChoices:\nA) is heavy\nB) is large\nC) is turned off\nD) is small\n\nProvide an answer to the following question:\n\nQ: A car has the least speed if it\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "chain_id": 0,
+          "step": 0,
+          "text": "D",
+          "logprob": -1.0133421421051025,
+          "probability": 0.36300373986748785
+        },
+        {
+          "chain_id": 0,
+          "step": 1,
+          "text": "A",
+          "logprob": -1.2346545457839966,
+          "probability": 0.2909352498185793
+        },
+        {
+          "chain_id": 1,
+          "step": 0,
+          "text": "C",
+          "logprob": -0.7355635166168213,
+          "probability": 0.47923532580031997
+        },
+        {
+          "chain_id": 1,
+          "step": 1,
+          "text": "C",
+          "logprob": -0.4534628391265869,
+          "probability": 0.6354239664819746
+        },
+        {
+          "chain_id": 2,
+          "step": 0,
+          "text": "C",
+          "logprob": -0.7355635166168213,
+          "probability": 0.47923532580031997
+        },
+        {
+          "chain_id": 2,
+          "step": 1,
+          "text": "C",
+          "logprob": -0.4534628391265869,
+          "probability": 0.6354239664819746
+        },
+        {
+          "chain_id": 3,
+          "step": 0,
+          "text": "A",
+          "logprob": -1.8466742038726807,
+          "probability": 0.15776097563110625
+        },
+        {
+          "chain_id": 3,
+          "step": 1,
+          "text": "A",
+          "logprob": -1.1223630905151367,
+          "probability": 0.3255096762232025
+        },
+        {
+          "chain_id": 4,
+          "step": 0,
+          "text": "C",
+          "logprob": -0.7355635166168213,
+          "probability": 0.47923532580031997
+        },
+        {
+          "chain_id": 4,
+          "step": 1,
+          "text": "C",
+          "logprob": -0.4534628391265869,
+          "probability": 0.6354239664819746
+        },
+        {
+          "chain_id": 5,
+          "step": 0,
+          "text": "D",
+          "logprob": -1.0133421421051025,
+          "probability": 0.36300373986748785
+        },
+        {
+          "chain_id": 5,
+          "step": 1,
+          "text": "A",
+          "logprob": -1.2346545457839966,
+          "probability": 0.2909352498185793
+        },
+        {
+          "chain_id": 6,
+          "step": 0,
+          "text": "D",
+          "logprob": -1.0133421421051025,
+          "probability": 0.36300373986748785
+        },
+        {
+          "chain_id": 6,
+          "step": 1,
+          "text": "D",
+          "logprob": -0.5402117967605591,
+          "probability": 0.5826248412514147
+        },
+        {
+          "chain_id": 7,
+          "step": 0,
+          "text": "C",
+          "logprob": -0.7355635166168213,
+          "probability": 0.47923532580031997
+        },
+        {
+          "chain_id": 7,
+          "step": 1,
+          "text": "A",
+          "logprob": -1.0090200901031494,
+          "probability": 0.3645760562771524
+        },
+        {
+          "chain_id": 8,
+          "step": 0,
+          "text": "C",
+          "logprob": -0.7355635166168213,
+          "probability": 0.47923532580031997
+        },
+        {
+          "chain_id": 8,
+          "step": 1,
+          "text": "A",
+          "logprob": -1.0090200901031494,
+          "probability": 0.3645760562771524
+        },
+        {
+          "chain_id": 9,
+          "step": 0,
+          "text": "C",
+          "logprob": -0.7355635166168213,
+          "probability": 0.47923532580031997
+        },
+        {
+          "chain_id": 9,
+          "step": 1,
+          "text": "A",
+          "logprob": -1.0090200901031494,
+          "probability": 0.3645760562771524
+        }
+      ],
+      "decision_process": {
+        "num_chains": 10,
+        "chain_length": 2,
+        "total_inferences": 20,
+        "mi_method": "listing",
+        "mi_nats": 0.14426512150712875,
+        "mi_bits": 0.2081305753715784,
+        "selected_answer": "C",
+        "matched_choice": "C",
+        "confidence_computation": "1/(1 + mi_nats) = 1/(1 + 0.1443) = 0.8739",
+        "agreement": "60.00% (6/10 chains agree on final answer)"
+      },
+      "final_metrics": {
+        "predicted": "C",
+        "correct": true,
+        "confidence": 0.8739233427677014,
+        "mi_score": 0.2081305753715784,
+        "agreement": 0.6
+      }
+    }
+  }
+}

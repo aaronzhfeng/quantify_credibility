@@ -1,0 +1,51 @@
+{
+  "question_id": 433,
+  "question_text": "A car has the least speed if it",
+  "choices": [
+    "A: is heavy",
+    "B: is large",
+    "C: is turned off",
+    "D: is small"
+  ],
+  "gold_answer": "C",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: A car has the least speed if it\n\nChoices:\nA) is heavy\nB) is large\nC) is turned off\nD) is small\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "D",
+          "logprob": -0.5279473053014954,
+          "probability": 0.5898144368879122
+        }
+      ],
+      "decision_process": {
+        "selected_text": "D",
+        "matched_choice": "D",
+        "confidence_computation": "exp(logprob) = exp(-0.5279) = 0.5898"
+      },
+      "final_metrics": {
+        "predicted": "D",
+        "correct": false,
+        "confidence": 0.5898144368879122,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

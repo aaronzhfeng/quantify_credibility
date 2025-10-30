@@ -1,0 +1,51 @@
+{
+  "question_id": 79,
+  "question_text": "Earth orbiting the Sun causes",
+  "choices": [
+    "A: the changing of the seasons.",
+    "B: daily tidal cycles.",
+    "C: day to become night.",
+    "D: the phases of the Moon."
+  ],
+  "gold_answer": "A",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: Earth orbiting the Sun causes\n\nChoices:\nA) the changing of the seasons.\nB) daily tidal cycles.\nC) day to become night.\nD) the phases of the Moon.\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "A",
+          "logprob": -0.0016030376718845218,
+          "probability": 0.998398246506717
+        }
+      ],
+      "decision_process": {
+        "selected_text": "A",
+        "matched_choice": "A",
+        "confidence_computation": "exp(logprob) = exp(-0.0016) = 0.9984"
+      },
+      "final_metrics": {
+        "predicted": "A",
+        "correct": true,
+        "confidence": 0.998398246506717,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

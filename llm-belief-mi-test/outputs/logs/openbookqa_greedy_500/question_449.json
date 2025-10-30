@@ -1,0 +1,51 @@
+{
+  "question_id": 449,
+  "question_text": "When does the first quarter phase of the moon occur?",
+  "choices": [
+    "A: when you cannot see the moon in the sky at night",
+    "B: after the first phase of the lunar month",
+    "C: after a blue moon",
+    "D: during the full moon"
+  ],
+  "gold_answer": "B",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: When does the first quarter phase of the moon occur?\n\nChoices:\nA) when you cannot see the moon in the sky at night\nB) after the first phase of the lunar month\nC) after a blue moon\nD) during the full moon\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "A",
+          "logprob": -0.1423199257988017,
+          "probability": 0.8673437264592503
+        }
+      ],
+      "decision_process": {
+        "selected_text": "A",
+        "matched_choice": "A",
+        "confidence_computation": "exp(logprob) = exp(-0.1423) = 0.8673"
+      },
+      "final_metrics": {
+        "predicted": "A",
+        "correct": false,
+        "confidence": 0.8673437264592503,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

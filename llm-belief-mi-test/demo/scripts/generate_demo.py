@@ -29,9 +29,10 @@ from llm_belief_mi_test.calibration import (
 from llm_belief_mi_test.mi_estimator import estimate_mi_listing_nats, nats_to_bits
 
 
-def run_greedy_method(client, example, max_tokens=30) -> Dict[str, Any]:
+def run_greedy_method(client, example, max_tokens=100) -> Dict[str, Any]:
     """Run greedy method and capture all details."""
-    messages = compose_prompt(example.question, [], prompt_style="naive")
+    messages = compose_prompt(example.question, [], prompt_style="naive",
+                             choices=example.choices, choice_texts=example.choice_texts)
     
     # Capture raw input
     raw_input = {
@@ -82,7 +83,7 @@ def run_greedy_method(client, example, max_tokens=30) -> Dict[str, Any]:
     }
 
 
-def run_self_consistency_method(client, example, k=10, temperature=0.9, max_tokens=30) -> Dict[str, Any]:
+def run_self_consistency_method(client, example, k=10, temperature=0.9, max_tokens=100) -> Dict[str, Any]:
     """Run self-consistency method and capture all details."""
     raw_inputs = []
     raw_outputs = []
@@ -90,7 +91,8 @@ def run_self_consistency_method(client, example, k=10, temperature=0.9, max_toke
     
     # Generate k samples
     for i in range(k):
-        messages = compose_prompt(example.question, [], prompt_style="naive")
+        messages = compose_prompt(example.question, [], prompt_style="naive",
+                                 choices=example.choices, choice_texts=example.choice_texts)
         
         raw_inputs.append({
             "sample_id": i,
@@ -148,7 +150,7 @@ def run_self_consistency_method(client, example, k=10, temperature=0.9, max_toke
     }
 
 
-def run_semantic_entropy_method(client, example, k=10, temperature=0.9, max_tokens=30, threshold=0.25) -> Dict[str, Any]:
+def run_semantic_entropy_method(client, example, k=10, temperature=0.9, max_tokens=100, threshold=0.25) -> Dict[str, Any]:
     """Run semantic entropy method and capture all details."""
     raw_inputs = []
     raw_outputs = []
@@ -156,7 +158,8 @@ def run_semantic_entropy_method(client, example, k=10, temperature=0.9, max_toke
     
     # Generate k samples
     for i in range(k):
-        messages = compose_prompt(example.question, [], prompt_style="naive")
+        messages = compose_prompt(example.question, [], prompt_style="naive",
+                                 choices=example.choices, choice_texts=example.choice_texts)
         
         raw_inputs.append({
             "sample_id": i,
@@ -255,7 +258,7 @@ def run_semantic_entropy_method(client, example, k=10, temperature=0.9, max_toke
     }
 
 
-def run_self_verification_method(client, example, k=10, temperature=0.9, max_tokens=30) -> Dict[str, Any]:
+def run_self_verification_method(client, example, k=10, temperature=0.9, max_tokens=100) -> Dict[str, Any]:
     """Run self-verification method and capture all details."""
     raw_inputs = []
     raw_outputs = []
@@ -263,7 +266,8 @@ def run_self_verification_method(client, example, k=10, temperature=0.9, max_tok
     
     # Step 1: Generate k samples
     for i in range(k):
-        messages = compose_prompt(example.question, [], prompt_style="naive")
+        messages = compose_prompt(example.question, [], prompt_style="naive",
+                                 choices=example.choices, choice_texts=example.choice_texts)
         
         raw_inputs.append({
             "sample_id": i,
@@ -389,7 +393,7 @@ A:"""
     }
 
 
-def run_mi_method(client, example, k=10, n=2, temperature=0.9, max_tokens=30) -> Dict[str, Any]:
+def run_mi_method(client, example, k=10, n=2, temperature=0.9, max_tokens=100) -> Dict[str, Any]:
     """Run MI method and capture all details."""
     raw_inputs = []
     raw_outputs = []
@@ -401,7 +405,8 @@ def run_mi_method(client, example, k=10, n=2, temperature=0.9, max_tokens=30) ->
         previous_answers = []
         
         for step in range(n):
-            messages = compose_prompt(example.question, previous_answers, prompt_style="naive")
+            messages = compose_prompt(example.question, previous_answers, prompt_style="naive",
+                                     choices=example.choices, choice_texts=example.choice_texts)
             
             raw_inputs.append({
                 "chain_id": chain_id,

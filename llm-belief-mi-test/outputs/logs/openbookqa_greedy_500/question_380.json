@@ -1,0 +1,51 @@
+{
+  "question_id": 380,
+  "question_text": "Which best demonstrates the concept of force causing an increase in speed?",
+  "choices": [
+    "A: skating on a rough surface",
+    "B: a full bag swung in circles",
+    "C: a computer powering on",
+    "D: a baker stirring batter"
+  ],
+  "gold_answer": "B",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: Which best demonstrates the concept of force causing an increase in speed?\n\nChoices:\nA) skating on a rough surface\nB) a full bag swung in circles\nC) a computer powering on\nD) a baker stirring batter\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "A",
+          "logprob": -0.4271112019487191,
+          "probability": 0.6523910010434159
+        }
+      ],
+      "decision_process": {
+        "selected_text": "A",
+        "matched_choice": "A",
+        "confidence_computation": "exp(logprob) = exp(-0.4271) = 0.6524"
+      },
+      "final_metrics": {
+        "predicted": "A",
+        "correct": false,
+        "confidence": 0.6523910010434159,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

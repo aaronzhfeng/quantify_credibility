@@ -1,0 +1,51 @@
+{
+  "question_id": 399,
+  "question_text": "which of these is the quickest to go visiting from our world?",
+  "choices": [
+    "A: none of these",
+    "B: a trip to mars",
+    "C: a trip to the moon",
+    "D: a trip to the northern star"
+  ],
+  "gold_answer": "C",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: which of these is the quickest to go visiting from our world?\n\nChoices:\nA) none of these\nB) a trip to mars\nC) a trip to the moon\nD) a trip to the northern star\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "C",
+          "logprob": -0.3129206011071801,
+          "probability": 0.7313079753073427
+        }
+      ],
+      "decision_process": {
+        "selected_text": "C",
+        "matched_choice": "C",
+        "confidence_computation": "exp(logprob) = exp(-0.3129) = 0.7313"
+      },
+      "final_metrics": {
+        "predicted": "C",
+        "correct": true,
+        "confidence": 0.7313079753073427,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

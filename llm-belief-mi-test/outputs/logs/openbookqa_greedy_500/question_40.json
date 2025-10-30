@@ -1,0 +1,51 @@
+{
+  "question_id": 40,
+  "question_text": "A recyclable material can be",
+  "choices": [
+    "A: transformed",
+    "B: traded",
+    "C: thrown away",
+    "D: used more times"
+  ],
+  "gold_answer": "D",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: A recyclable material can be\n\nChoices:\nA) transformed\nB) traded\nC) thrown away\nD) used more times\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "A",
+          "logprob": -0.24388626456493512,
+          "probability": 0.7835767496375052
+        }
+      ],
+      "decision_process": {
+        "selected_text": "A",
+        "matched_choice": "A",
+        "confidence_computation": "exp(logprob) = exp(-0.2439) = 0.7836"
+      },
+      "final_metrics": {
+        "predicted": "A",
+        "correct": false,
+        "confidence": 0.7835767496375052,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

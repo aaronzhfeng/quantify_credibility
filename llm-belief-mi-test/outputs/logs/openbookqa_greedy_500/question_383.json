@@ -1,0 +1,51 @@
+{
+  "question_id": 383,
+  "question_text": "Two fridge decorations when touched back to back",
+  "choices": [
+    "A: shove each other away",
+    "B: are attracted to each other",
+    "C: have very little reaction",
+    "D: are reflective when together"
+  ],
+  "gold_answer": "A",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: Two fridge decorations when touched back to back\n\nChoices:\nA) shove each other away\nB) are attracted to each other\nC) have very little reaction\nD) are reflective when together\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "A",
+          "logprob": -0.5947007767099421,
+          "probability": 0.5517276309278851
+        }
+      ],
+      "decision_process": {
+        "selected_text": "A",
+        "matched_choice": "A",
+        "confidence_computation": "exp(logprob) = exp(-0.5947) = 0.5517"
+      },
+      "final_metrics": {
+        "predicted": "A",
+        "correct": true,
+        "confidence": 0.5517276309278851,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

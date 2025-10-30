@@ -1,0 +1,51 @@
+{
+  "question_id": 359,
+  "question_text": "A star, burning far, far away, has enormous pressure and temperature. This allows for",
+  "choices": [
+    "A: a room to have overhead lights",
+    "B: night on Earth to be dimly lit",
+    "C: plastic stars to decorate a ceiling",
+    "D: a person to be the star of a show"
+  ],
+  "gold_answer": "B",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: A star, burning far, far away, has enormous pressure and temperature. This allows for\n\nChoices:\nA) a room to have overhead lights\nB) night on Earth to be dimly lit\nC) plastic stars to decorate a ceiling\nD) a person to be the star of a show\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "A",
+          "logprob": -0.339691870554816,
+          "probability": 0.7119896739498053
+        }
+      ],
+      "decision_process": {
+        "selected_text": "A",
+        "matched_choice": "A",
+        "confidence_computation": "exp(logprob) = exp(-0.3397) = 0.7120"
+      },
+      "final_metrics": {
+        "predicted": "A",
+        "correct": false,
+        "confidence": 0.7119896739498053,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

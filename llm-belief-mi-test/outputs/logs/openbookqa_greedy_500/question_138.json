@@ -1,0 +1,51 @@
+{
+  "question_id": 138,
+  "question_text": "A small creek absorbing heat energy can result in",
+  "choices": [
+    "A: the creek water getting colder",
+    "B: a parched creek bed",
+    "C: tributaries branching off from the creek",
+    "D: a runoff of extra water"
+  ],
+  "gold_answer": "B",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: A small creek absorbing heat energy can result in\n\nChoices:\nA) the creek water getting colder\nB) a parched creek bed\nC) tributaries branching off from the creek\nD) a runoff of extra water\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "A",
+          "logprob": -0.03522316129237879,
+          "probability": 0.9653899545471976
+        }
+      ],
+      "decision_process": {
+        "selected_text": "A",
+        "matched_choice": "A",
+        "confidence_computation": "exp(logprob) = exp(-0.0352) = 0.9654"
+      },
+      "final_metrics": {
+        "predicted": "A",
+        "correct": false,
+        "confidence": 0.9653899545471976,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "question_id": 464,
+  "question_text": "Carnivores",
+  "choices": [
+    "A: eat foliage and vegetables exclusively",
+    "B: are the bottom of the food chain",
+    "C: require prey to survive",
+    "D: require carbon dioxide to survive"
+  ],
+  "gold_answer": "C",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: Carnivores\n\nChoices:\nA) eat foliage and vegetables exclusively\nB) are the bottom of the food chain\nC) require prey to survive\nD) require carbon dioxide to survive\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "C",
+          "logprob": -0.2383667768081068,
+          "probability": 0.7879136496366816
+        }
+      ],
+      "decision_process": {
+        "selected_text": "C",
+        "matched_choice": "C",
+        "confidence_computation": "exp(logprob) = exp(-0.2384) = 0.7879"
+      },
+      "final_metrics": {
+        "predicted": "C",
+        "correct": true,
+        "confidence": 0.7879136496366816,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

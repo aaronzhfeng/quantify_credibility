@@ -1,0 +1,51 @@
+{
+  "question_id": 386,
+  "question_text": "Are deserts characterized by high sunshine?",
+  "choices": [
+    "A: they get low sunlight",
+    "B: deserts get surplus sun",
+    "C: deserts get little sun",
+    "D: deserts are always cloudy"
+  ],
+  "gold_answer": "B",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: Are deserts characterized by high sunshine?\n\nChoices:\nA) they get low sunlight\nB) deserts get surplus sun\nC) deserts get little sun\nD) deserts are always cloudy\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "B",
+          "logprob": -0.3863777033984661,
+          "probability": 0.6795138225244735
+        }
+      ],
+      "decision_process": {
+        "selected_text": "B",
+        "matched_choice": "B",
+        "confidence_computation": "exp(logprob) = exp(-0.3864) = 0.6795"
+      },
+      "final_metrics": {
+        "predicted": "B",
+        "correct": true,
+        "confidence": 0.6795138225244735,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

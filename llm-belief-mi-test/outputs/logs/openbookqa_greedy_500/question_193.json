@@ -1,0 +1,51 @@
+{
+  "question_id": 193,
+  "question_text": "Erosion could lead to",
+  "choices": [
+    "A: a change in the direction of a stream",
+    "B: a change in ocean temperatures",
+    "C: an increase in rainy weather",
+    "D: an increase in plants and animals"
+  ],
+  "gold_answer": "A",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: Erosion could lead to\n\nChoices:\nA) a change in the direction of a stream\nB) a change in ocean temperatures\nC) an increase in rainy weather\nD) an increase in plants and animals\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "A",
+          "logprob": -0.031603360366716515,
+          "probability": 0.9688908063689995
+        }
+      ],
+      "decision_process": {
+        "selected_text": "A",
+        "matched_choice": "A",
+        "confidence_computation": "exp(logprob) = exp(-0.0316) = 0.9689"
+      },
+      "final_metrics": {
+        "predicted": "A",
+        "correct": true,
+        "confidence": 0.9688908063689995,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "question_id": 310,
+  "question_text": "A bird that takes off flying is",
+  "choices": [
+    "A: using heat to produce motion",
+    "B: using calories to produce motion",
+    "C: using wings to produce heat",
+    "D: using calories to produce energy"
+  ],
+  "gold_answer": "B",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: A bird that takes off flying is\n\nChoices:\nA) using heat to produce motion\nB) using calories to produce motion\nC) using wings to produce heat\nD) using calories to produce energy\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "B",
+          "logprob": -0.5982732609845698,
+          "probability": 0.5497601092052891
+        }
+      ],
+      "decision_process": {
+        "selected_text": "B",
+        "matched_choice": "B",
+        "confidence_computation": "exp(logprob) = exp(-0.5983) = 0.5498"
+      },
+      "final_metrics": {
+        "predicted": "B",
+        "correct": true,
+        "confidence": 0.5497601092052891,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

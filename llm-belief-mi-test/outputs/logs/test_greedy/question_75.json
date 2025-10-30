@@ -1,0 +1,51 @@
+{
+  "question_id": 75,
+  "question_text": "In the oxygen cycle, which group of organisms replenishes a large portion of the atmospheric oxygen supply?",
+  "choices": [
+    "A: mammals",
+    "B: fungi",
+    "C: insects",
+    "D: plants"
+  ],
+  "gold_answer": "D",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: In the oxygen cycle, which group of organisms replenishes a large portion of the atmospheric oxygen supply?\n\nChoices:\nA) mammals\nB) fungi\nC) insects\nD) plants\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "D",
+          "logprob": -0.044750401691999286,
+          "probability": 0.9562361269684905
+        }
+      ],
+      "decision_process": {
+        "selected_text": "D",
+        "matched_choice": "D",
+        "confidence_computation": "exp(logprob) = exp(-0.0448) = 0.9562"
+      },
+      "final_metrics": {
+        "predicted": "D",
+        "correct": true,
+        "confidence": 0.9562361269684905,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

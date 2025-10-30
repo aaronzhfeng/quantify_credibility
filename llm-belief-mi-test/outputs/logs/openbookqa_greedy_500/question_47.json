@@ -1,0 +1,51 @@
+{
+  "question_id": 47,
+  "question_text": "A balloon is filled with helium for a party. After the party, the balloons are left in the living room, where a fireplace is heating the room. The balloons",
+  "choices": [
+    "A: expand",
+    "B: melt",
+    "C: shrink",
+    "D: fall"
+  ],
+  "gold_answer": "A",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: A balloon is filled with helium for a party. After the party, the balloons are left in the living room, where a fireplace is heating the room. The balloons\n\nChoices:\nA) expand\nB) melt\nC) shrink\nD) fall\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "C",
+          "logprob": -0.3596022370547871,
+          "probability": 0.6979538910601686
+        }
+      ],
+      "decision_process": {
+        "selected_text": "C",
+        "matched_choice": "C",
+        "confidence_computation": "exp(logprob) = exp(-0.3596) = 0.6980"
+      },
+      "final_metrics": {
+        "predicted": "C",
+        "correct": false,
+        "confidence": 0.6979538910601686,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

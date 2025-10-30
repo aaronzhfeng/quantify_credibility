@@ -78,20 +78,133 @@ This will:
 - ✅ Demo pseudo joint selection
 - ✅ Show performance estimates
 
-### 4. Run Quick Test (5 examples)
+### 4. Understanding CLI Arguments
+
+Before running evaluations, let's understand all the arguments for `python -m llm_belief_mi_test.cli`:
+
+#### **Method Selection**
+- `--method {mi,greedy,self-consistency,semantic-entropy,self-verification}` 
+  - Choose evaluation method (default: `mi`)
+  - `mi`: MI-based uncertainty quantification (paper's main method)
+  - `greedy`: Single greedy decode baseline (temperature=0)
+  - `self-consistency`: k samples with majority voting
+  - `semantic-entropy`: k samples with F1 clustering + entropy confidence
+  - `self-verification`: k samples + verification query
+
+#### **Dataset Selection**
+- `--dataset {arc-challenge,arc-easy,openbookqa}` **[REQUIRED]**
+  - Benchmark dataset to evaluate
+- `--split {test,validation}` (default: `test`)
+  - Dataset split to use
+- `--limit N`
+  - Limit to first N examples (useful for testing)
+
+#### **Model Configuration**
+- `--model MODEL_NAME` (default: `meta-llama/Llama-3.1-8B-Instruct`)
+  - HuggingFace model name or local path
+- `--load-in-4bit` **[RECOMMENDED]**
+  - Use 4-bit quantization (saves memory, faster)
+- `--load-in-8bit`
+  - Use 8-bit quantization (alternative to 4-bit)
+
+#### **Generation Parameters**
+- `--temperature TEMP` (default: 0.5)
+  - Sampling temperature
+  - **Use 0.9 for MI/sampling methods** (paper's value)
+  - Use 0.0 for greedy baseline
+- `--max-tokens N` (default: 64)
+  - Maximum tokens per generation
+  - **Use 10 with `--answer-format strict`** for efficiency
+  - Use 30-100 for default format
+- `--answer-format {default,strict,codeblock}` (default: `default`)
+  - **`strict`** ✅ **[RECOMMENDED]**: Model outputs only "A", "B", "C", or "D"
+    - Clean, fast (1-5 tokens), no parsing errors
+    - Use with `--max-tokens 10`
+  - `default`: Verbose natural language responses
+    - Use with `--max-tokens 30-100`
+  - `codeblock`: Answer in triple backticks like `\`\`\`A\`\`\``
+
+#### **MI-Specific Parameters** (only for `--method mi`)
+- `--k N` (default: 10)
+  - Number of independent chains per question (paper's value)
+- `--n N` (default: 2)
+  - Chain length / pseudo joint dimension (paper's value)
+- `--mi-method {plugin,listing}` (default: `listing`)
+  - MI estimator to use
+- `--confidence-method {inverse,exp,normalized}` (default: `inverse`)
+  - How to convert MI to confidence score
+
+#### **Sampling Parameters** (for self-consistency, semantic-entropy, self-verification)
+- `--k N` (default: 10)
+  - Number of samples to generate per question
+
+#### **Output**
+- `--output PATH` **[REQUIRED]**
+  - Output CSV file path
+  - Also creates: `{output}.json` (metrics) and `logs/{run_name}/question_*.json` (detailed traces)
+  - Example: `--output outputs/results/test.csv`
+    - Creates: `outputs/results/test.csv`, `outputs/results/test.json`
+    - Creates: `outputs/logs/test/question_0.json`, `question_1.json`, ...
+
+#### **Caching**
+- `--cache-path PATH` (default: `.cache/llm_cache.sqlite`)
+  - SQLite cache file location
+- `--cache-mode {readwrite,read,write,off}` (default: `readwrite`)
+  - Cache mode (auto-disabled for temperature > 0)
+
+#### **Other**
+- `--verbose`
+  - Enable verbose logging
+
+#### **Example Commands**
+
+**Quick test with strict mode (RECOMMENDED):**
+```bash
+python -m llm_belief_mi_test.cli \
+  --method mi \
+  --dataset openbookqa --limit 5 \
+  --k 10 --n 2 --temperature 0.9 \
+  --load-in-4bit --max-tokens 10 \
+  --answer-format strict \
+  --output outputs/results/test_mi.csv
+```
+
+**Greedy baseline:**
+```bash
+python -m llm_belief_mi_test.cli \
+  --method greedy \
+  --dataset arc-easy --limit 100 \
+  --load-in-4bit --max-tokens 10 \
+  --answer-format strict \
+  --output outputs/results/test_greedy.csv
+```
+
+**Self-consistency with 20 samples:**
+```bash
+python -m llm_belief_mi_test.cli \
+  --method self-consistency \
+  --dataset arc-challenge \
+  --k 20 --temperature 0.9 \
+  --load-in-4bit --max-tokens 10 \
+  --answer-format strict \
+  --output outputs/results/test_selfcons.csv
+```
+
+### 5. Run Quick Test (5 examples)
 
 ```bash
 python -m llm_belief_mi_test.cli \
   --dataset arc-easy --limit 5 \
   --k 10 --n 2 \
   --load-in-4bit \
-  --temperature 0.9 --max-tokens 30 \
+  --temperature 0.9 --max-tokens 10 \
+  --answer-format strict \
   --output outputs/results/test_quick.csv
 ```
 
-**Note**: Using **temperature=0.9** (from paper) for proper diversity in chains. Cache is automatically disabled during sampling to preserve diversity!
+**Note**: Using **`--answer-format strict`** for clean single-letter responses and **temperature=0.9** (from paper) for proper diversity in chains. Detailed logs automatically saved to `outputs/logs/test_quick/`.
 
-### 5. Run Baseline Comparisons (RECOMMENDED!)
+### 6. Run Baseline Comparisons (RECOMMENDED!)
 
 To properly evaluate the MI method, compare it against baselines:
 
@@ -102,7 +215,8 @@ To properly evaluate the MI method, compare it against baselines:
 python -m llm_belief_mi_test.cli \
   --method greedy \
   --dataset arc-easy --limit 5 \
-  --load-in-4bit --max-tokens 30 \
+  --load-in-4bit --max-tokens 10 \
+  --answer-format strict \
   --output outputs/results/baseline_greedy_5.csv
 
 # Self-consistency baseline (~2 min)
@@ -110,7 +224,8 @@ python -m llm_belief_mi_test.cli \
   --method self-consistency \
   --dataset arc-easy --limit 5 \
   --k 10 --temperature 0.9 \
-  --load-in-4bit --max-tokens 30 \
+  --load-in-4bit --max-tokens 10 \
+  --answer-format strict \
   --output outputs/results/baseline_selfcons_5.csv
 
 # MI method (~3 min)
@@ -118,7 +233,8 @@ python -m llm_belief_mi_test.cli \
   --method mi \
   --dataset arc-easy --limit 5 \
   --k 10 --n 2 --temperature 0.9 \
-  --load-in-4bit --max-tokens 30 \
+  --load-in-4bit --max-tokens 10 \
+  --answer-format strict \
   --output outputs/results/mi_method_5.csv
 
 # Compare results
@@ -129,94 +245,103 @@ python scripts/compare_results.py outputs/results/*_5.json
 
 See **[docs/BASELINE_COMPARISON_GUIDE.md](docs/BASELINE_COMPARISON_GUIDE.md)** for detailed comparison guide.
 
-### 6. Run Full Baseline Comparison (RECOMMENDED - 500 examples per dataset)
+### 7. Run Full Baseline Comparison (RECOMMENDED - 500 examples per dataset)
 
 For fair comparison, run all 3 methods on 500 examples from each dataset:
 
 **ARC-Challenge (500 examples)**
 ```bash
-# Greedy baseline (~15 min)
+# Greedy baseline (~10 min)
 python -m llm_belief_mi_test.cli \
   --method greedy \
   --dataset arc-challenge --limit 500 \
   --load-in-4bit \
-  --max-tokens 30 \
+  --max-tokens 10 \
+  --answer-format strict \
   --output outputs/results/arc_challenge_greedy_500.csv
 
-# Self-consistency baseline (~3 hours)
+# Self-consistency baseline (~2 hours)
 python -m llm_belief_mi_test.cli \
   --method self-consistency \
   --dataset arc-challenge --limit 500 \
   --k 10 --temperature 0.9 \
   --load-in-4bit \
-  --max-tokens 30 \
+  --max-tokens 10 \
+  --answer-format strict \
   --output outputs/results/arc_challenge_selfcons_500.csv
 
-# MI method (~3.5 hours)
+# MI method (~2.5 hours)
 python -m llm_belief_mi_test.cli \
   --method mi \
   --dataset arc-challenge --limit 500 \
   --k 10 --n 2 \
   --load-in-4bit \
-  --temperature 0.9 --max-tokens 30 \
+  --temperature 0.9 --max-tokens 10 \
+  --answer-format strict \
   --output outputs/results/arc_challenge_mi_500.csv
 ```
 
 **ARC-Easy (500 examples)**
 ```bash
-# Greedy baseline (~15 min)
+# Greedy baseline (~10 min)
 python -m llm_belief_mi_test.cli \
   --method greedy \
   --dataset arc-easy --limit 500 \
   --load-in-4bit \
-  --max-tokens 30 \
+  --max-tokens 10 \
+  --answer-format strict \
   --output outputs/results/arc_easy_greedy_500.csv
 
-# Self-consistency baseline (~3 hours)
+# Self-consistency baseline (~2 hours)
 python -m llm_belief_mi_test.cli \
   --method self-consistency \
   --dataset arc-easy --limit 500 \
   --k 10 --temperature 0.9 \
   --load-in-4bit \
-  --max-tokens 30 \
+  --max-tokens 10 \
+  --answer-format strict \
   --output outputs/results/arc_easy_selfcons_500.csv
 
-# MI method (~3.5 hours)
+# MI method (~2.5 hours)
 python -m llm_belief_mi_test.cli \
   --method mi \
   --dataset arc-easy --limit 500 \
   --k 10 --n 2 \
   --load-in-4bit \
-  --temperature 0.9 --max-tokens 30 \
+  --temperature 0.9 --max-tokens 10 \
+  --answer-format strict \
   --output outputs/results/arc_easy_mi_500.csv
 ```
 
 **OpenBookQA (500 examples - full dataset)**
 ```bash
-# Greedy baseline (~15 min)
+# Greedy baseline (~10 min)
 python -m llm_belief_mi_test.cli \
   --method greedy \
   --dataset openbookqa \
   --load-in-4bit \
-  --max-tokens 30 \
+  --max-tokens 10 \
+  --answer-format strict \
   --output outputs/results/openbookqa_greedy_500.csv
 
-# Self-consistency baseline (~3 hours)
+# Self-consistency baseline (~2 hours)
 python -m llm_belief_mi_test.cli \
   --method self-consistency \
   --dataset openbookqa \
   --k 10 --temperature 0.9 \
   --load-in-4bit \
-  --max-tokens 30 \
+  --max-tokens 10 \
+  --answer-format strict \
   --output outputs/results/openbookqa_selfcons_500.csv
 
-# MI method (~3.5 hours)
+# MI method (~2.5 hours)
 python -m llm_belief_mi_test.cli \
   --method mi \
   --dataset openbookqa \
   --k 10 --n 2 \
   --load-in-4bit \
-  --temperature 0.9 --max-tokens 30 \
+  --temperature 0.9 --max-tokens 10 \
+  --answer-format strict \
   --output outputs/results/openbookqa_mi_500.csv
 ```
 
@@ -233,33 +358,37 @@ python scripts/compare_results.py outputs/results/openbookqa_*_500.json
 bash scripts/RUN_BASELINE_COMPARISON_500.sh
 ```
 
-**Total time: ~12 hours (3 datasets × 4 hours each) | Fair comparison on same sample size! ✅**
+**Total time: ~8 hours (3 datasets × ~2.7 hours each) | Fair comparison on same sample size! ✅**
+
+**Note**: With `--answer-format strict` and `--max-tokens 10`, evaluation is ~30% faster than default format!
 
 **Note**: Using **temperature=0.9** from paper (line 799) for proper diversity.
 
-### 7. Additional Methods: Semantic Entropy & Self-Verification (NEW!)
+### 8. Additional Methods: Semantic Entropy & Self-Verification (NEW!)
 
 Two additional baseline methods from the paper are now available:
 
 **Semantic Entropy (S.E.)** - Kuhn et al. 2023:
 ```bash
-# Run on OpenBookQA (500 examples, ~3 hours)
+# Run on OpenBookQA (500 examples, ~2 hours)
 python -m llm_belief_mi_test.cli \
   --method semantic-entropy \
   --dataset openbookqa \
   --k 10 --temperature 0.9 \
-  --load-in-4bit --max-tokens 30 \
+  --load-in-4bit --max-tokens 10 \
+  --answer-format strict \
   --output outputs/results/openbookqa_semantic_entropy_500.csv
 ```
 
 **Self-Verification (S.V.)** - KCAHD 2022:
 ```bash
-# Run on OpenBookQA (500 examples, ~3.5 hours - includes verification step)
+# Run on OpenBookQA (500 examples, ~2.5 hours - includes verification step)
 python -m llm_belief_mi_test.cli \
   --method self-verification \
   --dataset openbookqa \
   --k 10 --temperature 0.9 \
-  --load-in-4bit --max-tokens 30 \
+  --load-in-4bit --max-tokens 10 \
+  --answer-format strict \
   --output outputs/results/openbookqa_self_verification_500.csv
 ```
 
@@ -270,7 +399,7 @@ python scripts/compare_results.py outputs/results/openbookqa_*_500.json
 
 **Expected ranking (from paper):** MI ≥ S.E. > Self-Consistency > S.V. > Greedy (on ECE)
 
-### 8. Detailed Demo: Understand How Methods Work
+### 9. Detailed Demo: Understand How Methods Work
 
 Generate comprehensive trace data showing exactly how each method works:
 
@@ -297,7 +426,7 @@ python demo/scripts/view_demo.py --export-markdown demo/demo_report.md
 
 See [`demo/README.md`](demo/README.md) for full documentation.
 
-### 9. Visualize Results
+### 10. Visualize Results
 
 Generate plots and summaries from your evaluation results:
 
@@ -329,11 +458,17 @@ python scripts/summarize_results.py --dataset openbookqa
 💡 **Incremental Runs:**
 ```bash
 # First: Run 100 examples
-python -m llm_belief_mi_test.cli --dataset arc-challenge --limit 100 --k 10 --n 2 --load-in-4bit --temperature 0.9 --max-tokens 30 --output outputs/results/arc_challenge_100.csv
+python -m llm_belief_mi_test.cli --dataset arc-challenge --limit 100 --k 10 --n 2 --load-in-4bit --temperature 0.9 --max-tokens 10 --answer-format strict --output outputs/results/arc_challenge_100.csv
 
 # Later: Run full dataset (same questions, new chains)
-python -m llm_belief_mi_test.cli --dataset arc-challenge --k 10 --n 2 --load-in-4bit --temperature 0.9 --max-tokens 30 --output outputs/results/arc_challenge_full.csv
+python -m llm_belief_mi_test.cli --dataset arc-challenge --k 10 --n 2 --load-in-4bit --temperature 0.9 --max-tokens 10 --answer-format strict --output outputs/results/arc_challenge_full.csv
 ```
+
+💡 **Detailed Logging:**
+- All evaluations automatically save detailed per-question logs to `outputs/logs/{run_name}/question_*.json`
+- Includes prompts, raw outputs, decision process, and metrics for debugging
+- Example: `--output results/test.csv` creates logs at `logs/test/question_0.json`, etc.
+- See `LOGGING_STATUS_FINAL.md` for details
 
 ⚠️ **Note**: Cache doesn't help with sampling (temp>0) to preserve diversity. But incremental runs help verify correctness before committing to full evaluation!
 
@@ -343,16 +478,16 @@ python -m llm_belief_mi_test.cli --dataset arc-challenge --k 10 --n 2 --load-in-
 
 ### Example Workflow:
 ```bash
-# Day 1: Test with 50 examples (~30 min)
-python -m llm_belief_mi_test.cli --dataset arc-challenge --limit 50 --k 10 --n 2 --load-in-4bit --temperature 0.9 --max-tokens 30 --output outputs/results/arc_50.csv
+# Day 1: Test with 50 examples (~20 min)
+python -m llm_belief_mi_test.cli --dataset arc-challenge --limit 50 --k 10 --n 2 --load-in-4bit --temperature 0.9 --max-tokens 10 --answer-format strict --output outputs/results/arc_50.csv
 
-# Day 2: Expand to 200 examples (~2 hours)
+# Day 2: Expand to 200 examples (~1.5 hours)
 # Chains regenerated (temp=0.9), but same questions
-python -m llm_belief_mi_test.cli --dataset arc-challenge --limit 200 --k 10 --n 2 --load-in-4bit --temperature 0.9 --max-tokens 30 --output outputs/results/arc_200.csv
+python -m llm_belief_mi_test.cli --dataset arc-challenge --limit 200 --k 10 --n 2 --load-in-4bit --temperature 0.9 --max-tokens 10 --answer-format strict --output outputs/results/arc_200.csv
 
-# Day 3: Full dataset (~5 hours)
+# Day 3: Full dataset (~3.5 hours)
 # Processes all questions (cache doesn't apply with temp=0.9)
-python -m llm_belief_mi_test.cli --dataset arc-challenge --k 10 --n 2 --load-in-4bit --temperature 0.9 --max-tokens 30 --output outputs/results/arc_full.csv
+python -m llm_belief_mi_test.cli --dataset arc-challenge --k 10 --n 2 --load-in-4bit --temperature 0.9 --max-tokens 10 --answer-format strict --output outputs/results/arc_full.csv
 ```
 
 **Note**: With temperature=0.9 (sampling mode), cache is disabled to preserve chain diversity. Incremental runs still help verify correctness before committing to full evaluation!
@@ -599,31 +734,32 @@ python scripts/test_gpu_setup.py  # Verify GPU and model loading
 
 ### Incremental Evaluation (Recommended!)
 
-**Day 1: Quick Test** (5 examples, ~3 minutes)
+**Day 1: Quick Test** (5 examples, ~2 minutes)
 ```bash
-python -m llm_belief_mi_test.cli --dataset arc-easy --limit 5 --k 10 --n 2 --load-in-4bit --temperature 0.9 --max-tokens 30 --output outputs/results/arc_easy_5.csv
+python -m llm_belief_mi_test.cli --dataset arc-easy --limit 5 --k 10 --n 2 --load-in-4bit --temperature 0.9 --max-tokens 10 --answer-format strict --output outputs/results/arc_easy_5.csv
 # ✅ Verify results: MI>0, agreement<1.0, accuracy>0.2
+# ✅ Check logs: ls outputs/logs/arc_easy_5/
 ```
 
-**Day 2: Small Test** (50 examples, ~30 minutes)
+**Day 2: Small Test** (50 examples, ~20 minutes)
 ```bash
-python -m llm_belief_mi_test.cli --dataset arc-challenge --limit 50 --k 10 --n 2 --load-in-4bit --temperature 0.9 --max-tokens 30 --output outputs/results/arc_challenge_50.csv
+python -m llm_belief_mi_test.cli --dataset arc-challenge --limit 50 --k 10 --n 2 --load-in-4bit --temperature 0.9 --max-tokens 10 --answer-format strict --output outputs/results/arc_challenge_50.csv
 # ✅ Analyze accuracy (~50-65%), ECE, MI behavior
 ```
 
-**Day 3: Medium Test** (200 examples, ~2 hours)
+**Day 3: Medium Test** (200 examples, ~1.5 hours)
 ```bash
-python -m llm_belief_mi_test.cli --dataset arc-challenge --limit 200 --k 10 --n 2 --load-in-4bit --temperature 0.9 --max-tokens 30 --output outputs/results/arc_challenge_200.csv
+python -m llm_belief_mi_test.cli --dataset arc-challenge --limit 200 --k 10 --n 2 --load-in-4bit --temperature 0.9 --max-tokens 10 --answer-format strict --output outputs/results/arc_challenge_200.csv
 # ✅ More robust metrics for ECE analysis
 ```
 
-**Day 4+: Full Evaluation** (~5-7 hours)
+**Day 4+: Full Evaluation** (~3.5 hours)
 ```bash
-python -m llm_belief_mi_test.cli --dataset arc-challenge --k 10 --n 2 --load-in-4bit --temperature 0.9 --max-tokens 30 --output outputs/results/arc_challenge_full.csv
+python -m llm_belief_mi_test.cli --dataset arc-challenge --k 10 --n 2 --load-in-4bit --temperature 0.9 --max-tokens 10 --answer-format strict --output outputs/results/arc_challenge_full.csv
 # ✅ Complete results for publication
 ```
 
-**Total time**: ~7 hours per dataset, spread across days with verification! 🎯
+**Total time**: ~3.5 hours per dataset with strict mode, spread across days with verification! 🎯
 
 ### Where Your Files Are Saved
 

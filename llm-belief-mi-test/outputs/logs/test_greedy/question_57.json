@@ -1,0 +1,51 @@
+{
+  "question_id": 57,
+  "question_text": "Which factor determines if two individuals are members of the same species?",
+  "choices": [
+    "A: They live in the same habitat and niche.",
+    "B: They forage and eat the same type of food.",
+    "C: They mate and produce fertile offspring.",
+    "D: They are similar in appearance and color."
+  ],
+  "gold_answer": "C",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: Which factor determines if two individuals are members of the same species?\n\nChoices:\nA) They live in the same habitat and niche.\nB) They forage and eat the same type of food.\nC) They mate and produce fertile offspring.\nD) They are similar in appearance and color.\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "C",
+          "logprob": -0.039986601084819995,
+          "probability": 0.9608023127747704
+        }
+      ],
+      "decision_process": {
+        "selected_text": "C",
+        "matched_choice": "C",
+        "confidence_computation": "exp(logprob) = exp(-0.0400) = 0.9608"
+      },
+      "final_metrics": {
+        "predicted": "C",
+        "correct": true,
+        "confidence": 0.9608023127747704,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

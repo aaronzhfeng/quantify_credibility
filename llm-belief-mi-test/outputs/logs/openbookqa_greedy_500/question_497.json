@@ -1,0 +1,51 @@
+{
+  "question_id": 497,
+  "question_text": "A decrease in diseases",
+  "choices": [
+    "A: has no impact on a population",
+    "B: leads to more sick people",
+    "C: leads to less sick people",
+    "D: leads to an uptick in emergency room visits"
+  ],
+  "gold_answer": "C",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: A decrease in diseases\n\nChoices:\nA) has no impact on a population\nB) leads to more sick people\nC) leads to less sick people\nD) leads to an uptick in emergency room visits\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "C",
+          "logprob": -0.019241910515120253,
+          "probability": 0.9809420333451958
+        }
+      ],
+      "decision_process": {
+        "selected_text": "C",
+        "matched_choice": "C",
+        "confidence_computation": "exp(logprob) = exp(-0.0192) = 0.9809"
+      },
+      "final_metrics": {
+        "predicted": "C",
+        "correct": true,
+        "confidence": 0.9809420333451958,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

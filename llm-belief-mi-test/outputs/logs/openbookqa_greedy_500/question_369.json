@@ -1,0 +1,51 @@
+{
+  "question_id": 369,
+  "question_text": "if a place has experienced flooding, what could be responsible?",
+  "choices": [
+    "A: all of these",
+    "B: there has been excess condensed water vapor",
+    "C: the water lacks oxygen",
+    "D: the local deities are angry"
+  ],
+  "gold_answer": "B",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: if a place has experienced flooding, what could be responsible?\n\nChoices:\nA) all of these\nB) there has been excess condensed water vapor\nC) the water lacks oxygen\nD) the local deities are angry\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "A",
+          "logprob": -0.025389648391865194,
+          "probability": 0.9749299581185629
+        }
+      ],
+      "decision_process": {
+        "selected_text": "A",
+        "matched_choice": "A",
+        "confidence_computation": "exp(logprob) = exp(-0.0254) = 0.9749"
+      },
+      "final_metrics": {
+        "predicted": "A",
+        "correct": false,
+        "confidence": 0.9749299581185629,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

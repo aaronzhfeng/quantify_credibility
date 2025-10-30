@@ -1,0 +1,51 @@
+{
+  "question_id": 137,
+  "question_text": "You can experience a change of pressure when",
+  "choices": [
+    "A: Yelling really loud",
+    "B: Soaring the skies",
+    "C: Going walking",
+    "D: riding a bike"
+  ],
+  "gold_answer": "B",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: You can experience a change of pressure when\n\nChoices:\nA) Yelling really loud\nB) Soaring the skies\nC) Going walking\nD) riding a bike\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "B",
+          "logprob": -0.7531453199480893,
+          "probability": 0.4708831429220678
+        }
+      ],
+      "decision_process": {
+        "selected_text": "B",
+        "matched_choice": "B",
+        "confidence_computation": "exp(logprob) = exp(-0.7531) = 0.4709"
+      },
+      "final_metrics": {
+        "predicted": "B",
+        "correct": true,
+        "confidence": 0.4708831429220678,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

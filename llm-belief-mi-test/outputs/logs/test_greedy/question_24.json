@@ -1,0 +1,51 @@
+{
+  "question_id": 24,
+  "question_text": "Jessica wants to see cells in an oak tree leaf. Which tool is best for Jessica to use to see the cells?",
+  "choices": [
+    "A: binoculars",
+    "B: microscope",
+    "C: reading glasses",
+    "D: magnifying glass"
+  ],
+  "gold_answer": "B",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: Jessica wants to see cells in an oak tree leaf. Which tool is best for Jessica to use to see the cells?\n\nChoices:\nA) binoculars\nB) microscope\nC) reading glasses\nD) magnifying glass\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "B",
+          "logprob": -0.11253425595350564,
+          "probability": 0.8935667366036394
+        }
+      ],
+      "decision_process": {
+        "selected_text": "B",
+        "matched_choice": "B",
+        "confidence_computation": "exp(logprob) = exp(-0.1125) = 0.8936"
+      },
+      "final_metrics": {
+        "predicted": "B",
+        "correct": true,
+        "confidence": 0.8935667366036394,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

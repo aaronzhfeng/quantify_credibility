@@ -1,0 +1,50 @@
+{
+  "question_id": 93,
+  "question_text": "When a rock is placed in a graduated cylinder containing water, the height of the water will",
+  "choices": [
+    "A: decrease",
+    "B: increase",
+    "C: remain the same"
+  ],
+  "gold_answer": "B",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: When a rock is placed in a graduated cylinder containing water, the height of the water will\n\nChoices:\nA) decrease\nB) increase\nC) remain the same\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "A",
+          "logprob": -0.5023328575043706,
+          "probability": 0.6051173592667256
+        }
+      ],
+      "decision_process": {
+        "selected_text": "A",
+        "matched_choice": "A",
+        "confidence_computation": "exp(logprob) = exp(-0.5023) = 0.6051"
+      },
+      "final_metrics": {
+        "predicted": "A",
+        "correct": false,
+        "confidence": 0.6051173592667256,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

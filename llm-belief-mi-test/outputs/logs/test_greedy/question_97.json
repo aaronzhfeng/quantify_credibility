@@ -1,0 +1,51 @@
+{
+  "question_id": 97,
+  "question_text": "A cook touches a hot stove and quickly moves his hand away. What are the two primary body systems that work together to produce this response?",
+  "choices": [
+    "A: Integumentary and endocrine systems",
+    "B: Muscular and respiratory systems",
+    "C: Nervous and muscular systems",
+    "D: Skeletal and nervous systems"
+  ],
+  "gold_answer": "C",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: A cook touches a hot stove and quickly moves his hand away. What are the two primary body systems that work together to produce this response?\n\nChoices:\nA) Integumentary and endocrine systems\nB) Muscular and respiratory systems\nC) Nervous and muscular systems\nD) Skeletal and nervous systems\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "C",
+          "logprob": -0.13003947585821152,
+          "probability": 0.8780607680340122
+        }
+      ],
+      "decision_process": {
+        "selected_text": "C",
+        "matched_choice": "C",
+        "confidence_computation": "exp(logprob) = exp(-0.1300) = 0.8781"
+      },
+      "final_metrics": {
+        "predicted": "C",
+        "correct": true,
+        "confidence": 0.8780607680340122,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

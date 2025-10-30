@@ -1,0 +1,51 @@
+{
+  "question_id": 78,
+  "question_text": "Which substance is capable of dripping?",
+  "choices": [
+    "A: Oxygen",
+    "B: Juice",
+    "C: Wood",
+    "D: Lightning"
+  ],
+  "gold_answer": "B",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: Which substance is capable of dripping?\n\nChoices:\nA) Oxygen\nB) Juice\nC) Wood\nD) Lightning\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "B",
+          "logprob": -0.5322513570536103,
+          "probability": 0.5872813003133573
+        }
+      ],
+      "decision_process": {
+        "selected_text": "B",
+        "matched_choice": "B",
+        "confidence_computation": "exp(logprob) = exp(-0.5323) = 0.5873"
+      },
+      "final_metrics": {
+        "predicted": "B",
+        "correct": true,
+        "confidence": 0.5872813003133573,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

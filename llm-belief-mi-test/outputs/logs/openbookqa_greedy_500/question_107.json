@@ -1,0 +1,51 @@
+{
+  "question_id": 107,
+  "question_text": "The unit of measure derived from French word millilitre is a unit used for measuring volume generally used for values between 1 and",
+  "choices": [
+    "A: 1000",
+    "B: 250",
+    "C: 5000",
+    "D: 300"
+  ],
+  "gold_answer": "A",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: The unit of measure derived from French word millilitre is a unit used for measuring volume generally used for values between 1 and\n\nChoices:\nA) 1000\nB) 250\nC) 5000\nD) 300\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "A",
+          "logprob": -0.2328587380470708,
+          "probability": 0.7922654825891903
+        }
+      ],
+      "decision_process": {
+        "selected_text": "A",
+        "matched_choice": "A",
+        "confidence_computation": "exp(logprob) = exp(-0.2329) = 0.7923"
+      },
+      "final_metrics": {
+        "predicted": "A",
+        "correct": true,
+        "confidence": 0.7922654825891903,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

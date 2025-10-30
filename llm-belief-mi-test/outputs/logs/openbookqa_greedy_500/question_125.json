@@ -1,0 +1,51 @@
+{
+  "question_id": 125,
+  "question_text": "Since density = mass / volume, denser liquids such as water sink more than",
+  "choices": [
+    "A: baby oil",
+    "B: corn syrup or",
+    "C: milk",
+    "D: honey"
+  ],
+  "gold_answer": "A",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: Since density = mass / volume, denser liquids such as water sink more than\n\nChoices:\nA) baby oil\nB) corn syrup or\nC) milk\nD) honey\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "B",
+          "logprob": -0.876114392769523,
+          "probability": 0.4163977304062429
+        }
+      ],
+      "decision_process": {
+        "selected_text": "B",
+        "matched_choice": "B",
+        "confidence_computation": "exp(logprob) = exp(-0.8761) = 0.4164"
+      },
+      "final_metrics": {
+        "predicted": "B",
+        "correct": false,
+        "confidence": 0.4163977304062429,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

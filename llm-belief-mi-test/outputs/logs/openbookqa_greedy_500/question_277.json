@@ -1,0 +1,51 @@
+{
+  "question_id": 277,
+  "question_text": "The arctic is white in coloring",
+  "choices": [
+    "A: because it's overpopulated with polar bears",
+    "B: because it's covered in white lilies",
+    "C: because it's blanketed in crystalline ice water",
+    "D: because it's gets so little sunlight"
+  ],
+  "gold_answer": "C",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: The arctic is white in coloring\n\nChoices:\nA) because it's overpopulated with polar bears\nB) because it's covered in white lilies\nC) because it's blanketed in crystalline ice water\nD) because it's gets so little sunlight\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "D",
+          "logprob": -0.5664277095347643,
+          "probability": 0.5675492725409973
+        }
+      ],
+      "decision_process": {
+        "selected_text": "D",
+        "matched_choice": "D",
+        "confidence_computation": "exp(logprob) = exp(-0.5664) = 0.5675"
+      },
+      "final_metrics": {
+        "predicted": "D",
+        "correct": false,
+        "confidence": 0.5675492725409973,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

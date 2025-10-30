@@ -1,0 +1,51 @@
+{
+  "question_id": 140,
+  "question_text": "It takes more water to fill a bathtub than a",
+  "choices": [
+    "A: lake",
+    "B: pool",
+    "C: stomach",
+    "D: holding tank"
+  ],
+  "gold_answer": "C",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: It takes more water to fill a bathtub than a\n\nChoices:\nA) lake\nB) pool\nC) stomach\nD) holding tank\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "A",
+          "logprob": -0.5741481469885912,
+          "probability": 0.5631844148663621
+        }
+      ],
+      "decision_process": {
+        "selected_text": "A",
+        "matched_choice": "A",
+        "confidence_computation": "exp(logprob) = exp(-0.5741) = 0.5632"
+      },
+      "final_metrics": {
+        "predicted": "A",
+        "correct": false,
+        "confidence": 0.5631844148663621,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "question_id": 280,
+  "question_text": "What food production happens in a leaf?",
+  "choices": [
+    "A: nutrient making process",
+    "B: the breathing",
+    "C: the respiration",
+    "D: the digestion"
+  ],
+  "gold_answer": "A",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: What food production happens in a leaf?\n\nChoices:\nA) nutrient making process\nB) the breathing\nC) the respiration\nD) the digestion\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "A",
+          "logprob": -0.03695908638474066,
+          "probability": 0.963715563630261
+        }
+      ],
+      "decision_process": {
+        "selected_text": "A",
+        "matched_choice": "A",
+        "confidence_computation": "exp(logprob) = exp(-0.0370) = 0.9637"
+      },
+      "final_metrics": {
+        "predicted": "A",
+        "correct": true,
+        "confidence": 0.963715563630261,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

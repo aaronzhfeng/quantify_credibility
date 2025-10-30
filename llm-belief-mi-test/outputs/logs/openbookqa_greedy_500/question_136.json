@@ -1,0 +1,51 @@
+{
+  "question_id": 136,
+  "question_text": "What is the formula of the substance which best helps plants grow",
+  "choices": [
+    "A: NH4",
+    "B: C4H4",
+    "C: CO2",
+    "D: H2O"
+  ],
+  "gold_answer": "D",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: What is the formula of the substance which best helps plants grow\n\nChoices:\nA) NH4\nB) C4H4\nC) CO2\nD) H2O\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "C",
+          "logprob": -0.7391860457573785,
+          "probability": 0.4775024225087925
+        }
+      ],
+      "decision_process": {
+        "selected_text": "C",
+        "matched_choice": "C",
+        "confidence_computation": "exp(logprob) = exp(-0.7392) = 0.4775"
+      },
+      "final_metrics": {
+        "predicted": "C",
+        "correct": false,
+        "confidence": 0.4775024225087925,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

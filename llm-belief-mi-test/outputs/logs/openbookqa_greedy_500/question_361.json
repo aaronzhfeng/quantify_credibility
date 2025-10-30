@@ -1,0 +1,51 @@
+{
+  "question_id": 361,
+  "question_text": "Respiration is a",
+  "choices": [
+    "A: happens for some species",
+    "B: happens for only land dwelling mammals",
+    "C: occurs for only sea creatures",
+    "D: commonality among all animals"
+  ],
+  "gold_answer": "D",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: Respiration is a\n\nChoices:\nA) happens for some species\nB) happens for only land dwelling mammals\nC) occurs for only sea creatures\nD) commonality among all animals\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "D",
+          "logprob": -0.13315434823744,
+          "probability": 0.8753299760425954
+        }
+      ],
+      "decision_process": {
+        "selected_text": "D",
+        "matched_choice": "D",
+        "confidence_computation": "exp(logprob) = exp(-0.1332) = 0.8753"
+      },
+      "final_metrics": {
+        "predicted": "D",
+        "correct": true,
+        "confidence": 0.8753299760425954,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

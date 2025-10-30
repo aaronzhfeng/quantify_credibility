@@ -1,0 +1,51 @@
+{
+  "question_id": 169,
+  "question_text": "Evaporation",
+  "choices": [
+    "A: only happens in the summer",
+    "B: is like nature's disappearing water trick",
+    "C: is caused by snow",
+    "D: involves the disappearance of sunlight"
+  ],
+  "gold_answer": "B",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: Evaporation\n\nChoices:\nA) only happens in the summer\nB) is like nature's disappearing water trick\nC) is caused by snow\nD) involves the disappearance of sunlight\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "B",
+          "logprob": -0.1264413643948501,
+          "probability": 0.8812258192378435
+        }
+      ],
+      "decision_process": {
+        "selected_text": "B",
+        "matched_choice": "B",
+        "confidence_computation": "exp(logprob) = exp(-0.1264) = 0.8812"
+      },
+      "final_metrics": {
+        "predicted": "B",
+        "correct": true,
+        "confidence": 0.8812258192378435,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

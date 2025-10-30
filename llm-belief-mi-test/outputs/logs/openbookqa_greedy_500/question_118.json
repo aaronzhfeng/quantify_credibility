@@ -1,0 +1,51 @@
+{
+  "question_id": 118,
+  "question_text": "How could we determine approximately how far a bird is from the ground?",
+  "choices": [
+    "A: Measure the altitude of the bird using a reference point, such as a tall building.",
+    "B: Identify the species of bird",
+    "C: Ask the bird how high it was when it returns back to earth",
+    "D: Measure the bird's mass"
+  ],
+  "gold_answer": "A",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: How could we determine approximately how far a bird is from the ground?\n\nChoices:\nA) Measure the altitude of the bird using a reference point, such as a tall building.\nB) Identify the species of bird\nC) Ask the bird how high it was when it returns back to earth\nD) Measure the bird's mass\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "A",
+          "logprob": -0.033565379737410694,
+          "probability": 0.9669916875020428
+        }
+      ],
+      "decision_process": {
+        "selected_text": "A",
+        "matched_choice": "A",
+        "confidence_computation": "exp(logprob) = exp(-0.0336) = 0.9670"
+      },
+      "final_metrics": {
+        "predicted": "A",
+        "correct": true,
+        "confidence": 0.9669916875020428,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

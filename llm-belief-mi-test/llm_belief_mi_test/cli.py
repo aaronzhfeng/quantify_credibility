@@ -13,6 +13,7 @@ from .calibration import (
     evaluate_mcq_semantic_entropy,
     evaluate_mcq_self_verification
 )
+from .detailed_logger import DetailedLogger
 
 
 def setup_logging(verbose: bool = False):
@@ -111,6 +112,13 @@ def main():
         default=64,
         help="Max tokens per generation"
     )
+    parser.add_argument(
+        "--answer-format",
+        type=str,
+        default="default",
+        choices=["default", "strict", "codeblock"],
+        help="Answer format: 'default' (verbose), 'strict' (only A/B/C/D), 'codeblock' (```A```)"
+    )
     
     # Output
     parser.add_argument(
@@ -176,6 +184,10 @@ def main():
     if not client.supports_logprobs():
         logging.warning("Client doesn't support logprobs - falling back to approximate method")
     
+    # Create detailed logger for saving per-question traces
+    detailed_logger = DetailedLogger.create_from_output_path(args.output, args.method)
+    logging.info(f"Detailed logs will be saved to: {detailed_logger.output_dir}")
+    
     # Run evaluation based on method
     if args.method == "greedy":
         logging.info(f"Starting GREEDY BASELINE evaluation...")
@@ -185,6 +197,8 @@ def main():
             client=client,
             examples=examples,
             max_tokens=args.max_tokens,
+            answer_format=args.answer_format,
+            detailed_logger=detailed_logger,
             verbose=True
         )
     
@@ -198,6 +212,8 @@ def main():
             k=args.k,
             temperature=args.temperature,
             max_tokens=args.max_tokens,
+            answer_format=args.answer_format,
+            detailed_logger=detailed_logger,
             verbose=True
         )
     
@@ -211,6 +227,8 @@ def main():
             k=args.k,
             temperature=args.temperature,
             max_tokens=args.max_tokens,
+            answer_format=args.answer_format,
+            detailed_logger=detailed_logger,
             verbose=True
         )
     
@@ -224,6 +242,8 @@ def main():
             k=args.k,
             temperature=args.temperature,
             max_tokens=args.max_tokens,
+            answer_format=args.answer_format,
+            detailed_logger=detailed_logger,
             verbose=True
         )
     
@@ -240,6 +260,8 @@ def main():
             max_tokens=args.max_tokens,
             mi_method=args.mi_method,
             confidence_method=args.confidence_method,
+            answer_format=args.answer_format,
+            detailed_logger=detailed_logger,
             verbose=True
         )
     

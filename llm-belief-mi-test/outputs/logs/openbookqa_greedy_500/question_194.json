@@ -1,0 +1,51 @@
+{
+  "question_id": 194,
+  "question_text": "A hemisphere experiences summer when",
+  "choices": [
+    "A: it's tilted towards Jupiter",
+    "B: it's angled towards the moon",
+    "C: it's angled towards the largest star in the solar system",
+    "D: it spins counter clockwise on Earth's axis"
+  ],
+  "gold_answer": "C",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: A hemisphere experiences summer when\n\nChoices:\nA) it's tilted towards Jupiter\nB) it's angled towards the moon\nC) it's angled towards the largest star in the solar system\nD) it spins counter clockwise on Earth's axis\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "A",
+          "logprob": -0.3188176044204738,
+          "probability": 0.727008140285034
+        }
+      ],
+      "decision_process": {
+        "selected_text": "A",
+        "matched_choice": "A",
+        "confidence_computation": "exp(logprob) = exp(-0.3188) = 0.7270"
+      },
+      "final_metrics": {
+        "predicted": "A",
+        "correct": false,
+        "confidence": 0.727008140285034,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

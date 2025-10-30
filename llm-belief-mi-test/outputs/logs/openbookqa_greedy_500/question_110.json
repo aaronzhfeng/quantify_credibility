@@ -1,0 +1,51 @@
+{
+  "question_id": 110,
+  "question_text": "A seismograph can accurately describe",
+  "choices": [
+    "A: how rough the footing will be",
+    "B: how bad the weather will be",
+    "C: how stable the ground will be",
+    "D: how shaky the horse will be"
+  ],
+  "gold_answer": "C",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: A seismograph can accurately describe\n\nChoices:\nA) how rough the footing will be\nB) how bad the weather will be\nC) how stable the ground will be\nD) how shaky the horse will be\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "C",
+          "logprob": -0.3912526331259869,
+          "probability": 0.6762093015887691
+        }
+      ],
+      "decision_process": {
+        "selected_text": "C",
+        "matched_choice": "C",
+        "confidence_computation": "exp(logprob) = exp(-0.3913) = 0.6762"
+      },
+      "final_metrics": {
+        "predicted": "C",
+        "correct": true,
+        "confidence": 0.6762093015887691,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

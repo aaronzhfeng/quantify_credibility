@@ -1,0 +1,51 @@
+{
+  "question_id": 425,
+  "question_text": "if a pot on the stove is described as hot, what does this mean?",
+  "choices": [
+    "A: the body of the pot is of high temperature",
+    "B: the body of the pot is cold",
+    "C: all of these",
+    "D: the body of the pot is wet"
+  ],
+  "gold_answer": "A",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: if a pot on the stove is described as hot, what does this mean?\n\nChoices:\nA) the body of the pot is of high temperature\nB) the body of the pot is cold\nC) all of these\nD) the body of the pot is wet\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "A",
+          "logprob": -0.031294372951379046,
+          "probability": 0.9691902276913318
+        }
+      ],
+      "decision_process": {
+        "selected_text": "A",
+        "matched_choice": "A",
+        "confidence_computation": "exp(logprob) = exp(-0.0313) = 0.9692"
+      },
+      "final_metrics": {
+        "predicted": "A",
+        "correct": true,
+        "confidence": 0.9691902276913318,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

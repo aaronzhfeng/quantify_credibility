@@ -1,0 +1,51 @@
+{
+  "question_id": 486,
+  "question_text": "if a student wants an orange, he would have to get it from which of these?",
+  "choices": [
+    "A: from a live cow",
+    "B: from a live plant",
+    "C: from a volcano cave",
+    "D: from a wild dog"
+  ],
+  "gold_answer": "B",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: if a student wants an orange, he would have to get it from which of these?\n\nChoices:\nA) from a live cow\nB) from a live plant\nC) from a volcano cave\nD) from a wild dog\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "A",
+          "logprob": -0.3234794087766204,
+          "probability": 0.7236268581312542
+        }
+      ],
+      "decision_process": {
+        "selected_text": "A",
+        "matched_choice": "A",
+        "confidence_computation": "exp(logprob) = exp(-0.3235) = 0.7236"
+      },
+      "final_metrics": {
+        "predicted": "A",
+        "correct": false,
+        "confidence": 0.7236268581312542,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

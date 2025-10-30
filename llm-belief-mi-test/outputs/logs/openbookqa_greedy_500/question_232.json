@@ -1,0 +1,51 @@
+{
+  "question_id": 232,
+  "question_text": "An example of a chemical reaction would be",
+  "choices": [
+    "A: A rusty fence",
+    "B: Sleeping",
+    "C: Drinking water",
+    "D: Rain"
+  ],
+  "gold_answer": "A",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: An example of a chemical reaction would be\n\nChoices:\nA) A rusty fence\nB) Sleeping\nC) Drinking water\nD) Rain\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "A",
+          "logprob": -0.325443827881827,
+          "probability": 0.7222067470094873
+        }
+      ],
+      "decision_process": {
+        "selected_text": "A",
+        "matched_choice": "A",
+        "confidence_computation": "exp(logprob) = exp(-0.3254) = 0.7222"
+      },
+      "final_metrics": {
+        "predicted": "A",
+        "correct": true,
+        "confidence": 0.7222067470094873,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

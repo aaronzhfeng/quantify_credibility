@@ -1,0 +1,51 @@
+{
+  "question_id": 276,
+  "question_text": "I chipped away at a toy doll and the surface became really rough, when I rub it against a piece of wood that will create an increase in",
+  "choices": [
+    "A: animals",
+    "B: resistance",
+    "C: water",
+    "D: sunshine"
+  ],
+  "gold_answer": "B",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: I chipped away at a toy doll and the surface became really rough, when I rub it against a piece of wood that will create an increase in\n\nChoices:\nA) animals\nB) resistance\nC) water\nD) sunshine\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "B",
+          "logprob": -0.2380825625732541,
+          "probability": 0.7881376177376967
+        }
+      ],
+      "decision_process": {
+        "selected_text": "B",
+        "matched_choice": "B",
+        "confidence_computation": "exp(logprob) = exp(-0.2381) = 0.7881"
+      },
+      "final_metrics": {
+        "predicted": "B",
+        "correct": true,
+        "confidence": 0.7881376177376967,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

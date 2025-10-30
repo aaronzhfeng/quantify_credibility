@@ -1,0 +1,51 @@
+{
+  "question_id": 61,
+  "question_text": "If a UFO is flying overhead and looks small, then large, then",
+  "choices": [
+    "A: the UFO is calling",
+    "B: the UFO had been close",
+    "C: the UFO is approaching",
+    "D: the UFO is leaving"
+  ],
+  "gold_answer": "C",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: If a UFO is flying overhead and looks small, then large, then\n\nChoices:\nA) the UFO is calling\nB) the UFO had been close\nC) the UFO is approaching\nD) the UFO is leaving\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "C",
+          "logprob": -0.3828811882995069,
+          "probability": 0.681893911448474
+        }
+      ],
+      "decision_process": {
+        "selected_text": "C",
+        "matched_choice": "C",
+        "confidence_computation": "exp(logprob) = exp(-0.3829) = 0.6819"
+      },
+      "final_metrics": {
+        "predicted": "C",
+        "correct": true,
+        "confidence": 0.681893911448474,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

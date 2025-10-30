@@ -1,0 +1,51 @@
+{
+  "question_id": 424,
+  "question_text": "The amount of brush in a park has been decreasing. What could be a cause?",
+  "choices": [
+    "A: the season has been quite dry",
+    "B: There has been a lot of rain",
+    "C: snakes shelter under the brush",
+    "D: People have been walking by the brush on the trails"
+  ],
+  "gold_answer": "A",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: The amount of brush in a park has been decreasing. What could be a cause?\n\nChoices:\nA) the season has been quite dry\nB) There has been a lot of rain\nC) snakes shelter under the brush\nD) People have been walking by the brush on the trails\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "A",
+          "logprob": -0.6482637235021684,
+          "probability": 0.5229529799238548
+        }
+      ],
+      "decision_process": {
+        "selected_text": "A",
+        "matched_choice": "A",
+        "confidence_computation": "exp(logprob) = exp(-0.6483) = 0.5230"
+      },
+      "final_metrics": {
+        "predicted": "A",
+        "correct": true,
+        "confidence": 0.5229529799238548,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "question_id": 419,
+  "question_text": "Steve was driving on the highway when he rear-ended another car because he didn't see it until he was just a foot away. This could have happened because of",
+  "choices": [
+    "A: reports of tornadoes in the area",
+    "B: a dog running across the highway behind Steve's car",
+    "C: a sudden fog moving into the area",
+    "D: ice forming on the road"
+  ],
+  "gold_answer": "C",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: Steve was driving on the highway when he rear-ended another car because he didn't see it until he was just a foot away. This could have happened because of\n\nChoices:\nA) reports of tornadoes in the area\nB) a dog running across the highway behind Steve's car\nC) a sudden fog moving into the area\nD) ice forming on the road\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "A",
+          "logprob": -0.3205780917778611,
+          "probability": 0.7257293775983901
+        }
+      ],
+      "decision_process": {
+        "selected_text": "A",
+        "matched_choice": "A",
+        "confidence_computation": "exp(logprob) = exp(-0.3206) = 0.7257"
+      },
+      "final_metrics": {
+        "predicted": "A",
+        "correct": false,
+        "confidence": 0.7257293775983901,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

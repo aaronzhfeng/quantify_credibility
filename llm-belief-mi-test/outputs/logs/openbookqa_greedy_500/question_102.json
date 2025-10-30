@@ -1,0 +1,51 @@
+{
+  "question_id": 102,
+  "question_text": "Pollinators",
+  "choices": [
+    "A: enable plants to continue flourishing",
+    "B: play an unimportant role in the reproduction process",
+    "C: are useless to plants",
+    "D: are considered unwanted pests"
+  ],
+  "gold_answer": "A",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: Pollinators\n\nChoices:\nA) enable plants to continue flourishing\nB) play an unimportant role in the reproduction process\nC) are useless to plants\nD) are considered unwanted pests\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "A",
+          "logprob": -0.0024654612643644214,
+          "probability": 0.99753757548908
+        }
+      ],
+      "decision_process": {
+        "selected_text": "A",
+        "matched_choice": "A",
+        "confidence_computation": "exp(logprob) = exp(-0.0025) = 0.9975"
+      },
+      "final_metrics": {
+        "predicted": "A",
+        "correct": true,
+        "confidence": 0.99753757548908,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

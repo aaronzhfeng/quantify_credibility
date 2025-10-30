@@ -1,0 +1,51 @@
+{
+  "question_id": 284,
+  "question_text": "Where would you find a mine?",
+  "choices": [
+    "A: in a tree",
+    "B: under a mountain",
+    "C: in the air",
+    "D: in the water"
+  ],
+  "gold_answer": "B",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: Where would you find a mine?\n\nChoices:\nA) in a tree\nB) under a mountain\nC) in the air\nD) in the water\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "B",
+          "logprob": -0.5023232658713823,
+          "probability": 0.6051231633581858
+        }
+      ],
+      "decision_process": {
+        "selected_text": "B",
+        "matched_choice": "B",
+        "confidence_computation": "exp(logprob) = exp(-0.5023) = 0.6051"
+      },
+      "final_metrics": {
+        "predicted": "B",
+        "correct": true,
+        "confidence": 0.6051231633581858,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

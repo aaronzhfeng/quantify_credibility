@@ -1,0 +1,51 @@
+{
+  "question_id": 245,
+  "question_text": "What is the primary reason my duck feather filled jacket works well against the snow",
+  "choices": [
+    "A: feathers slows heat transfer",
+    "B: the natural duck wax",
+    "C: a synthetic thick liner",
+    "D: small flexible solar panels"
+  ],
+  "gold_answer": "A",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: What is the primary reason my duck feather filled jacket works well against the snow\n\nChoices:\nA) feathers slows heat transfer\nB) the natural duck wax\nC) a synthetic thick liner\nD) small flexible solar panels\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "A",
+          "logprob": -0.0038228569319471717,
+          "probability": 0.9961844408831511
+        }
+      ],
+      "decision_process": {
+        "selected_text": "A",
+        "matched_choice": "A",
+        "confidence_computation": "exp(logprob) = exp(-0.0038) = 0.9962"
+      },
+      "final_metrics": {
+        "predicted": "A",
+        "correct": true,
+        "confidence": 0.9961844408831511,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

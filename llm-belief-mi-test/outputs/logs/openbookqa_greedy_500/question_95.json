@@ -1,0 +1,51 @@
+{
+  "question_id": 95,
+  "question_text": "Squirrels spend their fall",
+  "choices": [
+    "A: looking for pretty leaves to collect",
+    "B: stockpiling rocks for fighting in the winter",
+    "C: stockpiling pecans for the frigid months",
+    "D: collecting twigs to keep warm"
+  ],
+  "gold_answer": "C",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: Squirrels spend their fall\n\nChoices:\nA) looking for pretty leaves to collect\nB) stockpiling rocks for fighting in the winter\nC) stockpiling pecans for the frigid months\nD) collecting twigs to keep warm\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "A",
+          "logprob": -0.5005487049929798,
+          "probability": 0.6061979446008231
+        }
+      ],
+      "decision_process": {
+        "selected_text": "A",
+        "matched_choice": "A",
+        "confidence_computation": "exp(logprob) = exp(-0.5005) = 0.6062"
+      },
+      "final_metrics": {
+        "predicted": "A",
+        "correct": false,
+        "confidence": 0.6061979446008231,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

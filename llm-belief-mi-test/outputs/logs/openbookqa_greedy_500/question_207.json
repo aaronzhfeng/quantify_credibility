@@ -1,0 +1,51 @@
+{
+  "question_id": 207,
+  "question_text": "Resources decreasing in an environment",
+  "choices": [
+    "A: induces organisms to use more of their resources",
+    "B: causes an increase in use of resources",
+    "C: causes an uptick in birthrate",
+    "D: induces organisms to be more economical with resources"
+  ],
+  "gold_answer": "D",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: Resources decreasing in an environment\n\nChoices:\nA) induces organisms to use more of their resources\nB) causes an increase in use of resources\nC) causes an uptick in birthrate\nD) induces organisms to be more economical with resources\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "D",
+          "logprob": -0.18637759989360347,
+          "probability": 0.8299601429442581
+        }
+      ],
+      "decision_process": {
+        "selected_text": "D",
+        "matched_choice": "D",
+        "confidence_computation": "exp(logprob) = exp(-0.1864) = 0.8300"
+      },
+      "final_metrics": {
+        "predicted": "D",
+        "correct": true,
+        "confidence": 0.8299601429442581,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

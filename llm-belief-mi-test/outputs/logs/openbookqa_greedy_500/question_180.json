@@ -1,0 +1,51 @@
+{
+  "question_id": 180,
+  "question_text": "A lake environment is a good setup for what to happen to organic remains?",
+  "choices": [
+    "A: bleaching",
+    "B: burning",
+    "C: fossilization",
+    "D: drying"
+  ],
+  "gold_answer": "C",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: A lake environment is a good setup for what to happen to organic remains?\n\nChoices:\nA) bleaching\nB) burning\nC) fossilization\nD) drying\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "C",
+          "logprob": -0.43084748805267736,
+          "probability": 0.6499580295809256
+        }
+      ],
+      "decision_process": {
+        "selected_text": "C",
+        "matched_choice": "C",
+        "confidence_computation": "exp(logprob) = exp(-0.4308) = 0.6500"
+      },
+      "final_metrics": {
+        "predicted": "C",
+        "correct": true,
+        "confidence": 0.6499580295809256,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

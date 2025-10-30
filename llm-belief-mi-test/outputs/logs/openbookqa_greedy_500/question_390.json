@@ -1,0 +1,51 @@
+{
+  "question_id": 390,
+  "question_text": "A bear cub learns to stay away from unknown bears because",
+  "choices": [
+    "A: they are much bigger than the cub",
+    "B: the other bears look like its mother",
+    "C: their mother teaches them to keep their distance",
+    "D: the unknown bears look harmless"
+  ],
+  "gold_answer": "C",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: A bear cub learns to stay away from unknown bears because\n\nChoices:\nA) they are much bigger than the cub\nB) the other bears look like its mother\nC) their mother teaches them to keep their distance\nD) the unknown bears look harmless\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "C",
+          "logprob": -0.47451618360355496,
+          "probability": 0.6221860074486817
+        }
+      ],
+      "decision_process": {
+        "selected_text": "C",
+        "matched_choice": "C",
+        "confidence_computation": "exp(logprob) = exp(-0.4745) = 0.6222"
+      },
+      "final_metrics": {
+        "predicted": "C",
+        "correct": true,
+        "confidence": 0.6221860074486817,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

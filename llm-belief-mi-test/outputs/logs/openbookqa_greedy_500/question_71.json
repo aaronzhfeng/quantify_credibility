@@ -1,0 +1,51 @@
+{
+  "question_id": 71,
+  "question_text": "Decaying vegetation is part of the process that",
+  "choices": [
+    "A: enables nuclear power to function",
+    "B: enables to emitting of light beams",
+    "C: enables gas powered motors to operate",
+    "D: enables windmills to power electric grids"
+  ],
+  "gold_answer": "C",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: Decaying vegetation is part of the process that\n\nChoices:\nA) enables nuclear power to function\nB) enables to emitting of light beams\nC) enables gas powered motors to operate\nD) enables windmills to power electric grids\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "A",
+          "logprob": -0.6416711026977282,
+          "probability": 0.5264120000950441
+        }
+      ],
+      "decision_process": {
+        "selected_text": "A",
+        "matched_choice": "A",
+        "confidence_computation": "exp(logprob) = exp(-0.6417) = 0.5264"
+      },
+      "final_metrics": {
+        "predicted": "A",
+        "correct": false,
+        "confidence": 0.5264120000950441,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

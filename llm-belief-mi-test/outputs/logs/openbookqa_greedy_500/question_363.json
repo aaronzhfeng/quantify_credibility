@@ -1,0 +1,51 @@
+{
+  "question_id": 363,
+  "question_text": "Polar bears live in",
+  "choices": [
+    "A: frosty environments",
+    "B: tepid environments",
+    "C: warm environments",
+    "D: tropical environments"
+  ],
+  "gold_answer": "A",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: Polar bears live in\n\nChoices:\nA) frosty environments\nB) tepid environments\nC) warm environments\nD) tropical environments\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "A",
+          "logprob": -0.002293301688041538,
+          "probability": 0.9977093259192588
+        }
+      ],
+      "decision_process": {
+        "selected_text": "A",
+        "matched_choice": "A",
+        "confidence_computation": "exp(logprob) = exp(-0.0023) = 0.9977"
+      },
+      "final_metrics": {
+        "predicted": "A",
+        "correct": true,
+        "confidence": 0.9977093259192588,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

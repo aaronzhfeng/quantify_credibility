@@ -1,0 +1,51 @@
+{
+  "question_id": 148,
+  "question_text": "if coffee sits in the fridge and loses its liquid form, what is that point known as?",
+  "choices": [
+    "A: the freezing point",
+    "B: the prime point",
+    "C: the boiling point",
+    "D: the melting point"
+  ],
+  "gold_answer": "A",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: if coffee sits in the fridge and loses its liquid form, what is that point known as?\n\nChoices:\nA) the freezing point\nB) the prime point\nC) the boiling point\nD) the melting point\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "D",
+          "logprob": -0.35994913939066464,
+          "probability": 0.6977118112164843
+        }
+      ],
+      "decision_process": {
+        "selected_text": "D",
+        "matched_choice": "D",
+        "confidence_computation": "exp(logprob) = exp(-0.3599) = 0.6977"
+      },
+      "final_metrics": {
+        "predicted": "D",
+        "correct": false,
+        "confidence": 0.6977118112164843,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "question_id": 179,
+  "question_text": "The winter solstice is on December 21st in the",
+  "choices": [
+    "A: counties",
+    "B: north of equator",
+    "C: states",
+    "D: southern hemisphere"
+  ],
+  "gold_answer": "B",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: The winter solstice is on December 21st in the\n\nChoices:\nA) counties\nB) north of equator\nC) states\nD) southern hemisphere\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "B",
+          "logprob": -0.48280720051843673,
+          "probability": 0.6170487785905384
+        }
+      ],
+      "decision_process": {
+        "selected_text": "B",
+        "matched_choice": "B",
+        "confidence_computation": "exp(logprob) = exp(-0.4828) = 0.6170"
+      },
+      "final_metrics": {
+        "predicted": "B",
+        "correct": true,
+        "confidence": 0.6170487785905384,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

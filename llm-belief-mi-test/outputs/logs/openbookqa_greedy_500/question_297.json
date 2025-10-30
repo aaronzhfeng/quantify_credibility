@@ -1,0 +1,51 @@
+{
+  "question_id": 297,
+  "question_text": "In a closed circuit, electricity will",
+  "choices": [
+    "A: burn out",
+    "B: charge itself",
+    "C: loop endlessly",
+    "D: resist flow"
+  ],
+  "gold_answer": "C",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: In a closed circuit, electricity will\n\nChoices:\nA) burn out\nB) charge itself\nC) loop endlessly\nD) resist flow\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "C",
+          "logprob": -0.3022093437903095,
+          "probability": 0.7391833052562571
+        }
+      ],
+      "decision_process": {
+        "selected_text": "C",
+        "matched_choice": "C",
+        "confidence_computation": "exp(logprob) = exp(-0.3022) = 0.7392"
+      },
+      "final_metrics": {
+        "predicted": "C",
+        "correct": true,
+        "confidence": 0.7391833052562571,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

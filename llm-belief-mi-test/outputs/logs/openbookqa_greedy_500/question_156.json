@@ -1,0 +1,51 @@
+{
+  "question_id": 156,
+  "question_text": "Lightning may lead to",
+  "choices": [
+    "A: damage to local foliage",
+    "B: rainbows across the sky",
+    "C: growth of local flora",
+    "D: firefighters getting the night off"
+  ],
+  "gold_answer": "A",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: Lightning may lead to\n\nChoices:\nA) damage to local foliage\nB) rainbows across the sky\nC) growth of local flora\nD) firefighters getting the night off\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "A",
+          "logprob": -0.029920113433036022,
+          "probability": 0.9705230622073169
+        }
+      ],
+      "decision_process": {
+        "selected_text": "A",
+        "matched_choice": "A",
+        "confidence_computation": "exp(logprob) = exp(-0.0299) = 0.9705"
+      },
+      "final_metrics": {
+        "predicted": "A",
+        "correct": true,
+        "confidence": 0.9705230622073169,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

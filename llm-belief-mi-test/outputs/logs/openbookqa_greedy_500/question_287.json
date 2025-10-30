@@ -1,0 +1,51 @@
+{
+  "question_id": 287,
+  "question_text": "A Punnett square is used to identify the percent chance of a trait being passed down from a parent to its offspring, so",
+  "choices": [
+    "A: certain things may be featured",
+    "B: certain features may be predicted",
+    "C: certain traits may be given",
+    "D: certain features may be guaranteed"
+  ],
+  "gold_answer": "B",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: A Punnett square is used to identify the percent chance of a trait being passed down from a parent to its offspring, so\n\nChoices:\nA) certain things may be featured\nB) certain features may be predicted\nC) certain traits may be given\nD) certain features may be guaranteed\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "B",
+          "logprob": -0.6500666951178573,
+          "probability": 0.5220109600174744
+        }
+      ],
+      "decision_process": {
+        "selected_text": "B",
+        "matched_choice": "B",
+        "confidence_computation": "exp(logprob) = exp(-0.6501) = 0.5220"
+      },
+      "final_metrics": {
+        "predicted": "B",
+        "correct": true,
+        "confidence": 0.5220109600174744,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

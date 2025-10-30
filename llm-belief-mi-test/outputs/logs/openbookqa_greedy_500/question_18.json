@@ -1,0 +1,51 @@
+{
+  "question_id": 18,
+  "question_text": "Which requires energy to move?",
+  "choices": [
+    "A: weasel",
+    "B: willow",
+    "C: mango",
+    "D: poison ivy"
+  ],
+  "gold_answer": "A",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: Which requires energy to move?\n\nChoices:\nA) weasel\nB) willow\nC) mango\nD) poison ivy\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "A",
+          "logprob": -0.12090396758867428,
+          "probability": 0.8861190516562644
+        }
+      ],
+      "decision_process": {
+        "selected_text": "A",
+        "matched_choice": "A",
+        "confidence_computation": "exp(logprob) = exp(-0.1209) = 0.8861"
+      },
+      "final_metrics": {
+        "predicted": "A",
+        "correct": true,
+        "confidence": 0.8861190516562644,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

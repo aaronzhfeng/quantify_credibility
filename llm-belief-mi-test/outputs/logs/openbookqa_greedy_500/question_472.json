@@ -1,0 +1,51 @@
+{
+  "question_id": 472,
+  "question_text": "Having a sense of touch means",
+  "choices": [
+    "A: I am the water",
+    "B: I am a tree",
+    "C: I am an Ant",
+    "D: I am the Air"
+  ],
+  "gold_answer": "C",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: Having a sense of touch means\n\nChoices:\nA) I am the water\nB) I am a tree\nC) I am an Ant\nD) I am the Air\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "A",
+          "logprob": -0.5546551673905924,
+          "probability": 0.5742702541675074
+        }
+      ],
+      "decision_process": {
+        "selected_text": "A",
+        "matched_choice": "A",
+        "confidence_computation": "exp(logprob) = exp(-0.5547) = 0.5743"
+      },
+      "final_metrics": {
+        "predicted": "A",
+        "correct": false,
+        "confidence": 0.5742702541675074,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

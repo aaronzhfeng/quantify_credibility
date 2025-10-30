@@ -1,0 +1,51 @@
+{
+  "question_id": 142,
+  "question_text": "birds use their peckers to catch",
+  "choices": [
+    "A: dogs",
+    "B: a tan",
+    "C: a ball",
+    "D: bees"
+  ],
+  "gold_answer": "D",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: birds use their peckers to catch\n\nChoices:\nA) dogs\nB) a tan\nC) a ball\nD) bees\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "D",
+          "logprob": -0.6544112517003668,
+          "probability": 0.5197479732615126
+        }
+      ],
+      "decision_process": {
+        "selected_text": "D",
+        "matched_choice": "D",
+        "confidence_computation": "exp(logprob) = exp(-0.6544) = 0.5197"
+      },
+      "final_metrics": {
+        "predicted": "D",
+        "correct": true,
+        "confidence": 0.5197479732615126,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

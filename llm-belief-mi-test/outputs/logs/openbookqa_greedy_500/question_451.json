@@ -1,0 +1,51 @@
+{
+  "question_id": 451,
+  "question_text": "If a person loses his job and is low on money, he will have to start cutting back on how much food he consumes or he'd run out, otherwise known as",
+  "choices": [
+    "A: destroying",
+    "B: conserving",
+    "C: losing",
+    "D: squandering"
+  ],
+  "gold_answer": "B",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: If a person loses his job and is low on money, he will have to start cutting back on how much food he consumes or he'd run out, otherwise known as\n\nChoices:\nA) destroying\nB) conserving\nC) losing\nD) squandering\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "B",
+          "logprob": -0.37840552628040314,
+          "probability": 0.6849526780257148
+        }
+      ],
+      "decision_process": {
+        "selected_text": "B",
+        "matched_choice": "B",
+        "confidence_computation": "exp(logprob) = exp(-0.3784) = 0.6850"
+      },
+      "final_metrics": {
+        "predicted": "B",
+        "correct": true,
+        "confidence": 0.6849526780257148,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

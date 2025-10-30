@@ -1,0 +1,51 @@
+{
+  "question_id": 11,
+  "question_text": "A cactus stem is used to store",
+  "choices": [
+    "A: fruit",
+    "B: liquid",
+    "C: food",
+    "D: spines"
+  ],
+  "gold_answer": "B",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: A cactus stem is used to store\n\nChoices:\nA) fruit\nB) liquid\nC) food\nD) spines\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "C",
+          "logprob": -0.41057786195960944,
+          "probability": 0.6632668626854606
+        }
+      ],
+      "decision_process": {
+        "selected_text": "C",
+        "matched_choice": "C",
+        "confidence_computation": "exp(logprob) = exp(-0.4106) = 0.6633"
+      },
+      "final_metrics": {
+        "predicted": "C",
+        "correct": false,
+        "confidence": 0.6632668626854606,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

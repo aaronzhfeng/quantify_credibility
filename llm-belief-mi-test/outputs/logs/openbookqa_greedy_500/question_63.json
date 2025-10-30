@@ -1,0 +1,51 @@
+{
+  "question_id": 63,
+  "question_text": "What likely explains deforestation?",
+  "choices": [
+    "A: Increased insect populations",
+    "B: Clearing for farming",
+    "C: reduction in rainfall",
+    "D: More carbon dioxide"
+  ],
+  "gold_answer": "B",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: What likely explains deforestation?\n\nChoices:\nA) Increased insect populations\nB) Clearing for farming\nC) reduction in rainfall\nD) More carbon dioxide\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "B",
+          "logprob": -0.14780036477168323,
+          "probability": 0.8626033037614896
+        }
+      ],
+      "decision_process": {
+        "selected_text": "B",
+        "matched_choice": "B",
+        "confidence_computation": "exp(logprob) = exp(-0.1478) = 0.8626"
+      },
+      "final_metrics": {
+        "predicted": "B",
+        "correct": true,
+        "confidence": 0.8626033037614896,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

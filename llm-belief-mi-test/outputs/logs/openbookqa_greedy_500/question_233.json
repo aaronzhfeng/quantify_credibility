@@ -1,0 +1,51 @@
+{
+  "question_id": 233,
+  "question_text": "The size of an object and the ability to see it more easily have what kind of relationship?",
+  "choices": [
+    "A: equal",
+    "B: inverse",
+    "C: direct",
+    "D: reverse"
+  ],
+  "gold_answer": "C",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: The size of an object and the ability to see it more easily have what kind of relationship?\n\nChoices:\nA) equal\nB) inverse\nC) direct\nD) reverse\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "C",
+          "logprob": -0.552561417222023,
+          "probability": 0.575473892227963
+        }
+      ],
+      "decision_process": {
+        "selected_text": "C",
+        "matched_choice": "C",
+        "confidence_computation": "exp(logprob) = exp(-0.5526) = 0.5755"
+      },
+      "final_metrics": {
+        "predicted": "C",
+        "correct": true,
+        "confidence": 0.575473892227963,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

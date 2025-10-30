@@ -1,0 +1,51 @@
+{
+  "question_id": 96,
+  "question_text": "Rainbows are always found after what?",
+  "choices": [
+    "A: A fire",
+    "B: A tornado",
+    "C: Rainfall",
+    "D: Cereal"
+  ],
+  "gold_answer": "C",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: Rainbows are always found after what?\n\nChoices:\nA) A fire\nB) A tornado\nC) Rainfall\nD) Cereal\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "C",
+          "logprob": -0.5277321322137141,
+          "probability": 0.5899413627365391
+        }
+      ],
+      "decision_process": {
+        "selected_text": "C",
+        "matched_choice": "C",
+        "confidence_computation": "exp(logprob) = exp(-0.5277) = 0.5899"
+      },
+      "final_metrics": {
+        "predicted": "C",
+        "correct": true,
+        "confidence": 0.5899413627365391,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "question_id": 274,
+  "question_text": "In which location would a groundhog hide from a wolf?",
+  "choices": [
+    "A: beside a tree",
+    "B: in the grass",
+    "C: on a stump",
+    "D: under the ground"
+  ],
+  "gold_answer": "D",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: In which location would a groundhog hide from a wolf?\n\nChoices:\nA) beside a tree\nB) in the grass\nC) on a stump\nD) under the ground\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "D",
+          "logprob": -0.3495606977667194,
+          "probability": 0.7049977287778786
+        }
+      ],
+      "decision_process": {
+        "selected_text": "D",
+        "matched_choice": "D",
+        "confidence_computation": "exp(logprob) = exp(-0.3496) = 0.7050"
+      },
+      "final_metrics": {
+        "predicted": "D",
+        "correct": true,
+        "confidence": 0.7049977287778786,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

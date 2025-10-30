@@ -1,0 +1,51 @@
+{
+  "question_id": 267,
+  "question_text": "Which of the following contains large amounts of salt water?",
+  "choices": [
+    "A: The Amazon",
+    "B: The Nile",
+    "C: The Indian",
+    "D: The Mississippi"
+  ],
+  "gold_answer": "C",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: Which of the following contains large amounts of salt water?\n\nChoices:\nA) The Amazon\nB) The Nile\nC) The Indian\nD) The Mississippi\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "A",
+          "logprob": -0.5198046538280323,
+          "probability": 0.5946366966276249
+        }
+      ],
+      "decision_process": {
+        "selected_text": "A",
+        "matched_choice": "A",
+        "confidence_computation": "exp(logprob) = exp(-0.5198) = 0.5946"
+      },
+      "final_metrics": {
+        "predicted": "A",
+        "correct": false,
+        "confidence": 0.5946366966276249,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "question_id": 272,
+  "question_text": "How can we see how wind effects sand?",
+  "choices": [
+    "A: sand is always moving",
+    "B: sandstorms create ripples in sand",
+    "C: sand is easy to move through",
+    "D: beaches often have waves in the sand"
+  ],
+  "gold_answer": "B",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: How can we see how wind effects sand?\n\nChoices:\nA) sand is always moving\nB) sandstorms create ripples in sand\nC) sand is easy to move through\nD) beaches often have waves in the sand\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "B",
+          "logprob": -0.6750974881579168,
+          "probability": 0.5091067863054303
+        }
+      ],
+      "decision_process": {
+        "selected_text": "B",
+        "matched_choice": "B",
+        "confidence_computation": "exp(logprob) = exp(-0.6751) = 0.5091"
+      },
+      "final_metrics": {
+        "predicted": "B",
+        "correct": true,
+        "confidence": 0.5091067863054303,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

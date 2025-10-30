@@ -1,0 +1,51 @@
+{
+  "question_id": 342,
+  "question_text": "What is an example of fire giving off light?",
+  "choices": [
+    "A: an oven is preheated and the pilot light is lit",
+    "B: a match is lit to light a cigarette",
+    "C: a lit candle in a window signalling to someone",
+    "D: a fire that was put out to send smoke signals"
+  ],
+  "gold_answer": "C",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: What is an example of fire giving off light?\n\nChoices:\nA) an oven is preheated and the pilot light is lit\nB) a match is lit to light a cigarette\nC) a lit candle in a window signalling to someone\nD) a fire that was put out to send smoke signals\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "A",
+          "logprob": -0.7398502575379098,
+          "probability": 0.47718536508282516
+        }
+      ],
+      "decision_process": {
+        "selected_text": "A",
+        "matched_choice": "A",
+        "confidence_computation": "exp(logprob) = exp(-0.7399) = 0.4772"
+      },
+      "final_metrics": {
+        "predicted": "A",
+        "correct": false,
+        "confidence": 0.47718536508282516,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

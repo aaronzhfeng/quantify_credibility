@@ -1,0 +1,51 @@
+{
+  "question_id": 91,
+  "question_text": "An organism is born with a genetic abnormality not present in any of its ancestors. This abnormality is most likely the result of",
+  "choices": [
+    "1: circulation",
+    "2: competition",
+    "3: mutation",
+    "4: respiration"
+  ],
+  "gold_answer": "3",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: An organism is born with a genetic abnormality not present in any of its ancestors. This abnormality is most likely the result of\n\nChoices:\n1) circulation\n2) competition\n3) mutation\n4) respiration\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "C",
+          "logprob": -0.3190314178064,
+          "probability": 0.7268527128297911
+        }
+      ],
+      "decision_process": {
+        "selected_text": "C",
+        "matched_choice": "1",
+        "confidence_computation": "exp(logprob) = exp(-0.3190) = 0.7269"
+      },
+      "final_metrics": {
+        "predicted": "1",
+        "correct": false,
+        "confidence": 0.7268527128297911,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

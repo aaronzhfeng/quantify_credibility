@@ -1,0 +1,51 @@
+{
+  "question_id": 0,
+  "question_text": "A person wants to start saving money so that they can afford a nice vacation at the end of the year. After looking over their budget and expenses, they decide the best way to save money is to",
+  "choices": [
+    "A: make more phone calls",
+    "B: quit eating lunch out",
+    "C: buy less with monopoly money",
+    "D: have lunch with friends"
+  ],
+  "gold_answer": "B",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: A person wants to start saving money so that they can afford a nice vacation at the end of the year. After looking over their budget and expenses, they decide the best way to save money is to\n\nChoices:\nA) make more phone calls\nB) quit eating lunch out\nC) buy less with monopoly money\nD) have lunch with friends\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "B",
+          "logprob": -0.3389465908257989,
+          "probability": 0.7125205032046408
+        }
+      ],
+      "decision_process": {
+        "selected_text": "B",
+        "matched_choice": "B",
+        "confidence_computation": "exp(logprob) = exp(-0.3389) = 0.7125"
+      },
+      "final_metrics": {
+        "predicted": "B",
+        "correct": true,
+        "confidence": 0.7125205032046408,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

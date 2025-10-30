@@ -1,0 +1,51 @@
+{
+  "question_id": 482,
+  "question_text": "what does a chipmunk do with acorns",
+  "choices": [
+    "A: throw them at other chipmunks",
+    "B: leave them where they're found",
+    "C: use them to build shelter",
+    "D: transfer them to the stomach"
+  ],
+  "gold_answer": "D",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: what does a chipmunk do with acorns\n\nChoices:\nA) throw them at other chipmunks\nB) leave them where they're found\nC) use them to build shelter\nD) transfer them to the stomach\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "A",
+          "logprob": -0.4112652442418039,
+          "probability": 0.6628111014547268
+        }
+      ],
+      "decision_process": {
+        "selected_text": "A",
+        "matched_choice": "A",
+        "confidence_computation": "exp(logprob) = exp(-0.4113) = 0.6628"
+      },
+      "final_metrics": {
+        "predicted": "A",
+        "correct": false,
+        "confidence": 0.6628111014547268,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

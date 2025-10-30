@@ -1,0 +1,51 @@
+{
+  "question_id": 146,
+  "question_text": "What would be the flavor if you ate the item that fell and is thought to have hit Sir Issac Newton's head",
+  "choices": [
+    "A: Sweet",
+    "B: Salty",
+    "C: bitter",
+    "D: sour"
+  ],
+  "gold_answer": "A",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: What would be the flavor if you ate the item that fell and is thought to have hit Sir Issac Newton's head\n\nChoices:\nA) Sweet\nB) Salty\nC) bitter\nD) sour\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "A",
+          "logprob": -0.23409270821139216,
+          "probability": 0.7912884535577662
+        }
+      ],
+      "decision_process": {
+        "selected_text": "A",
+        "matched_choice": "A",
+        "confidence_computation": "exp(logprob) = exp(-0.2341) = 0.7913"
+      },
+      "final_metrics": {
+        "predicted": "A",
+        "correct": true,
+        "confidence": 0.7912884535577662,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

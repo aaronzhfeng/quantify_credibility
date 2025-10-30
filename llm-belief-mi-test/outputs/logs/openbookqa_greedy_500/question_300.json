@@ -1,0 +1,51 @@
+{
+  "question_id": 300,
+  "question_text": "what kind of temperature causes fur shedding?",
+  "choices": [
+    "A: in freezing cold",
+    "B: a high temperature",
+    "C: in any temperature",
+    "D: a low temperature"
+  ],
+  "gold_answer": "B",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: what kind of temperature causes fur shedding?\n\nChoices:\nA) in freezing cold\nB) a high temperature\nC) in any temperature\nD) a low temperature\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "A",
+          "logprob": -0.5459314756444655,
+          "probability": 0.5793019263118921
+        }
+      ],
+      "decision_process": {
+        "selected_text": "A",
+        "matched_choice": "A",
+        "confidence_computation": "exp(logprob) = exp(-0.5459) = 0.5793"
+      },
+      "final_metrics": {
+        "predicted": "A",
+        "correct": false,
+        "confidence": 0.5793019263118921,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

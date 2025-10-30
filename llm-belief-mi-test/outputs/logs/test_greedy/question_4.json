@@ -1,0 +1,51 @@
+{
+  "question_id": 4,
+  "question_text": "Which best describes the structure of an atom?",
+  "choices": [
+    "A: a lightweight core surrounded by neutral particles",
+    "B: a massive core surrounded by negatively-charged particles",
+    "C: a network of interacting positive and negative particles",
+    "D: overlapping layers of neutral, positive, and negative particles"
+  ],
+  "gold_answer": "B",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: Which best describes the structure of an atom?\n\nChoices:\nA) a lightweight core surrounded by neutral particles\nB) a massive core surrounded by negatively-charged particles\nC) a network of interacting positive and negative particles\nD) overlapping layers of neutral, positive, and negative particles\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "C",
+          "logprob": -0.721585238352418,
+          "probability": 0.4859812488921454
+        }
+      ],
+      "decision_process": {
+        "selected_text": "C",
+        "matched_choice": "C",
+        "confidence_computation": "exp(logprob) = exp(-0.7216) = 0.4860"
+      },
+      "final_metrics": {
+        "predicted": "C",
+        "correct": false,
+        "confidence": 0.4859812488921454,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

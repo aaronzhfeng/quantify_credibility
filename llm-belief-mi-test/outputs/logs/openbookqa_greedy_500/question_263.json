@@ -1,0 +1,51 @@
+{
+  "question_id": 263,
+  "question_text": "Which of the following is not an input in photosynthesis?",
+  "choices": [
+    "A: sunlight",
+    "B: oxygen",
+    "C: water",
+    "D: carbon dioxide"
+  ],
+  "gold_answer": "B",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: Which of the following is not an input in photosynthesis?\n\nChoices:\nA) sunlight\nB) oxygen\nC) water\nD) carbon dioxide\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "D",
+          "logprob": -0.9406678428640589,
+          "probability": 0.3903670444395443
+        }
+      ],
+      "decision_process": {
+        "selected_text": "D",
+        "matched_choice": "D",
+        "confidence_computation": "exp(logprob) = exp(-0.9407) = 0.3904"
+      },
+      "final_metrics": {
+        "predicted": "D",
+        "correct": false,
+        "confidence": 0.3903670444395443,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

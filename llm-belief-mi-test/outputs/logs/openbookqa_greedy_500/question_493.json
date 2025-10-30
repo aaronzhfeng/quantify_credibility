@@ -1,0 +1,51 @@
+{
+  "question_id": 493,
+  "question_text": "The Grand Canyon was formed by",
+  "choices": [
+    "A: a volcano erupting in 1782",
+    "B: a river named after the 20th state to join the union flowing over time",
+    "C: a river named after the 38th state to join the union flowing over time",
+    "D: the Great Lakes drying up"
+  ],
+  "gold_answer": "C",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: The Grand Canyon was formed by\n\nChoices:\nA) a volcano erupting in 1782\nB) a river named after the 20th state to join the union flowing over time\nC) a river named after the 38th state to join the union flowing over time\nD) the Great Lakes drying up\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "C",
+          "logprob": -0.7623164694523439,
+          "probability": 0.46658434580575453
+        }
+      ],
+      "decision_process": {
+        "selected_text": "C",
+        "matched_choice": "C",
+        "confidence_computation": "exp(logprob) = exp(-0.7623) = 0.4666"
+      },
+      "final_metrics": {
+        "predicted": "C",
+        "correct": true,
+        "confidence": 0.46658434580575453,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

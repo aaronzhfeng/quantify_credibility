@@ -1,0 +1,51 @@
+{
+  "question_id": 28,
+  "question_text": "Every evening a child can look into the night sky and see that the moon is",
+  "choices": [
+    "A: gone",
+    "B: breaking",
+    "C: falling",
+    "D: moving upwards"
+  ],
+  "gold_answer": "D",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: Every evening a child can look into the night sky and see that the moon is\n\nChoices:\nA) gone\nB) breaking\nC) falling\nD) moving upwards\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "A",
+          "logprob": -0.24997454340336844,
+          "probability": 0.7788206089411444
+        }
+      ],
+      "decision_process": {
+        "selected_text": "A",
+        "matched_choice": "A",
+        "confidence_computation": "exp(logprob) = exp(-0.2500) = 0.7788"
+      },
+      "final_metrics": {
+        "predicted": "A",
+        "correct": false,
+        "confidence": 0.7788206089411444,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

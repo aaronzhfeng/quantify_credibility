@@ -1,0 +1,51 @@
+{
+  "question_id": 33,
+  "question_text": "Antarctica is a continent at Earth's south pole. Fossils of tropical fern plants were discovered in Antarctica even though these plants do not grow there today. Which conclusion does the fossil evidence best support?",
+  "choices": [
+    "A: Millions of years ago, Antarctica was in a warmer location on Earth.",
+    "B: Recently, a natural disaster killed all of the fern plants in Antarctica.",
+    "C: Recently, birds stopped carrying the seeds of fern plants to Antarctica.",
+    "D: Millions of years ago, Earth's south pole was much colder than it is today."
+  ],
+  "gold_answer": "A",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: Antarctica is a continent at Earth's south pole. Fossils of tropical fern plants were discovered in Antarctica even though these plants do not grow there today. Which conclusion does the fossil evidence best support?\n\nChoices:\nA) Millions of years ago, Antarctica was in a warmer location on Earth.\nB) Recently, a natural disaster killed all of the fern plants in Antarctica.\nC) Recently, birds stopped carrying the seeds of fern plants to Antarctica.\nD) Millions of years ago, Earth's south pole was much colder than it is today.\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "A",
+          "logprob": -0.03187756198167335,
+          "probability": 0.9686251713656141
+        }
+      ],
+      "decision_process": {
+        "selected_text": "A",
+        "matched_choice": "A",
+        "confidence_computation": "exp(logprob) = exp(-0.0319) = 0.9686"
+      },
+      "final_metrics": {
+        "predicted": "A",
+        "correct": true,
+        "confidence": 0.9686251713656141,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

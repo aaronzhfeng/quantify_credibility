@@ -1,0 +1,51 @@
+{
+  "question_id": 468,
+  "question_text": "An instinctual behavior is",
+  "choices": [
+    "A: dogs rolling over on command",
+    "B: frogs returning to the ponds were they hatched to lay eggs",
+    "C: birds mimicking human speech",
+    "D: seals clapping for treats from trainers"
+  ],
+  "gold_answer": "B",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: An instinctual behavior is\n\nChoices:\nA) dogs rolling over on command\nB) frogs returning to the ponds were they hatched to lay eggs\nC) birds mimicking human speech\nD) seals clapping for treats from trainers\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "B",
+          "logprob": -0.4445617755627609,
+          "probability": 0.6411051624311991
+        }
+      ],
+      "decision_process": {
+        "selected_text": "B",
+        "matched_choice": "B",
+        "confidence_computation": "exp(logprob) = exp(-0.4446) = 0.6411"
+      },
+      "final_metrics": {
+        "predicted": "B",
+        "correct": true,
+        "confidence": 0.6411051624311991,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

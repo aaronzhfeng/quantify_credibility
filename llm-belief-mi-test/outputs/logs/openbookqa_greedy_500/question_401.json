@@ -1,0 +1,51 @@
+{
+  "question_id": 401,
+  "question_text": "If I want to go running at night, what can I use as a reflector?",
+  "choices": [
+    "A: A black shirt",
+    "B: Kitchen foil",
+    "C: Sunglasses",
+    "D: A megaphone"
+  ],
+  "gold_answer": "B",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: If I want to go running at night, what can I use as a reflector?\n\nChoices:\nA) A black shirt\nB) Kitchen foil\nC) Sunglasses\nD) A megaphone\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "A",
+          "logprob": -0.5554790192400105,
+          "probability": 0.5737973353907988
+        }
+      ],
+      "decision_process": {
+        "selected_text": "A",
+        "matched_choice": "A",
+        "confidence_computation": "exp(logprob) = exp(-0.5555) = 0.5738"
+      },
+      "final_metrics": {
+        "predicted": "A",
+        "correct": false,
+        "confidence": 0.5737973353907988,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

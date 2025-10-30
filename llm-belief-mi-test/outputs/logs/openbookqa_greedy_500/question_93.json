@@ -1,0 +1,51 @@
+{
+  "question_id": 93,
+  "question_text": "When looking for good soil for plants, typically what is optimal?",
+  "choices": [
+    "A: malleable and nutritious",
+    "B: dry and sandy",
+    "C: grainy and bitter",
+    "D: compact and hard"
+  ],
+  "gold_answer": "A",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: When looking for good soil for plants, typically what is optimal?\n\nChoices:\nA) malleable and nutritious\nB) dry and sandy\nC) grainy and bitter\nD) compact and hard\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "A",
+          "logprob": -0.0005134866660227999,
+          "probability": 0.9994866451456932
+        }
+      ],
+      "decision_process": {
+        "selected_text": "A",
+        "matched_choice": "A",
+        "confidence_computation": "exp(logprob) = exp(-0.0005) = 0.9995"
+      },
+      "final_metrics": {
+        "predicted": "A",
+        "correct": true,
+        "confidence": 0.9994866451456932,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

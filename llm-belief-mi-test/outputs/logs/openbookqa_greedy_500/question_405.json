@@ -1,0 +1,51 @@
+{
+  "question_id": 405,
+  "question_text": "A renewable resource is",
+  "choices": [
+    "A: fossil fuel",
+    "B: turbine produced electricity",
+    "C: copper",
+    "D: coal lumps"
+  ],
+  "gold_answer": "B",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: A renewable resource is\n\nChoices:\nA) fossil fuel\nB) turbine produced electricity\nC) copper\nD) coal lumps\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "B",
+          "logprob": -0.3080081032931048,
+          "probability": 0.7349093627989681
+        }
+      ],
+      "decision_process": {
+        "selected_text": "B",
+        "matched_choice": "B",
+        "confidence_computation": "exp(logprob) = exp(-0.3080) = 0.7349"
+      },
+      "final_metrics": {
+        "predicted": "B",
+        "correct": true,
+        "confidence": 0.7349093627989681,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

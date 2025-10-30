@@ -1,0 +1,51 @@
+{
+  "question_id": 471,
+  "question_text": "which of these would be most ideal for plant root growth?",
+  "choices": [
+    "A: a sticky clay soil",
+    "B: soil with worms burrowing around",
+    "C: an arid soil with little looseness",
+    "D: all of these"
+  ],
+  "gold_answer": "B",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: which of these would be most ideal for plant root growth?\n\nChoices:\nA) a sticky clay soil\nB) soil with worms burrowing around\nC) an arid soil with little looseness\nD) all of these\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "A",
+          "logprob": -0.08612006195471622,
+          "probability": 0.9174840696763519
+        }
+      ],
+      "decision_process": {
+        "selected_text": "A",
+        "matched_choice": "A",
+        "confidence_computation": "exp(logprob) = exp(-0.0861) = 0.9175"
+      },
+      "final_metrics": {
+        "predicted": "A",
+        "correct": false,
+        "confidence": 0.9174840696763519,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

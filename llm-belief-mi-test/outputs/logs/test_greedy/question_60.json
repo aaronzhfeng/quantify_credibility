@@ -1,0 +1,51 @@
+{
+  "question_id": 60,
+  "question_text": "During which activity should a student wear goggles?",
+  "choices": [
+    "A: writing a science report",
+    "B: mixing baking soda with water",
+    "C: measuring the length of a shadow",
+    "D: examining a leaf with a microscope"
+  ],
+  "gold_answer": "B",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: During which activity should a student wear goggles?\n\nChoices:\nA) writing a science report\nB) mixing baking soda with water\nC) measuring the length of a shadow\nD) examining a leaf with a microscope\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "B",
+          "logprob": -0.4053330318274675,
+          "probability": 0.6667547233354353
+        }
+      ],
+      "decision_process": {
+        "selected_text": "B",
+        "matched_choice": "B",
+        "confidence_computation": "exp(logprob) = exp(-0.4053) = 0.6668"
+      },
+      "final_metrics": {
+        "predicted": "B",
+        "correct": true,
+        "confidence": 0.6667547233354353,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

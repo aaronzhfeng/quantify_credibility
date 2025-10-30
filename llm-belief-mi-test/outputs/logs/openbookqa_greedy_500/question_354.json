@@ -1,0 +1,51 @@
+{
+  "question_id": 354,
+  "question_text": "Snow is more likely to fall two months before",
+  "choices": [
+    "A: June",
+    "B: March",
+    "C: September",
+    "D: December"
+  ],
+  "gold_answer": "B",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: Snow is more likely to fall two months before\n\nChoices:\nA) June\nB) March\nC) September\nD) December\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "D",
+          "logprob": -0.6813071668730117,
+          "probability": 0.5059551920518218
+        }
+      ],
+      "decision_process": {
+        "selected_text": "D",
+        "matched_choice": "D",
+        "confidence_computation": "exp(logprob) = exp(-0.6813) = 0.5060"
+      },
+      "final_metrics": {
+        "predicted": "D",
+        "correct": false,
+        "confidence": 0.5059551920518218,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

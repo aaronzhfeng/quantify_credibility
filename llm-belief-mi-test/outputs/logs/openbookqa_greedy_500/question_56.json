@@ -1,0 +1,51 @@
+{
+  "question_id": 56,
+  "question_text": "A rabbit may enjoy",
+  "choices": [
+    "A: meat",
+    "B: compost",
+    "C: peas",
+    "D: pebbles"
+  ],
+  "gold_answer": "C",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: A rabbit may enjoy\n\nChoices:\nA) meat\nB) compost\nC) peas\nD) pebbles\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "C",
+          "logprob": -0.4488936055749946,
+          "probability": 0.6383340102609818
+        }
+      ],
+      "decision_process": {
+        "selected_text": "C",
+        "matched_choice": "C",
+        "confidence_computation": "exp(logprob) = exp(-0.4489) = 0.6383"
+      },
+      "final_metrics": {
+        "predicted": "C",
+        "correct": true,
+        "confidence": 0.6383340102609818,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

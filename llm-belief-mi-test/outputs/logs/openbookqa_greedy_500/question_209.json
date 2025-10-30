@@ -1,0 +1,51 @@
+{
+  "question_id": 209,
+  "question_text": "If you wanted to make a necklace, how long would you have to wait for the materials to appear inside the Earth?",
+  "choices": [
+    "A: millions of years",
+    "B: 1 day",
+    "C: 10 days",
+    "D: 100 days"
+  ],
+  "gold_answer": "A",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: If you wanted to make a necklace, how long would you have to wait for the materials to appear inside the Earth?\n\nChoices:\nA) millions of years\nB) 1 day\nC) 10 days\nD) 100 days\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "A",
+          "logprob": -0.014989448012784123,
+          "probability": 0.9851223345464991
+        }
+      ],
+      "decision_process": {
+        "selected_text": "A",
+        "matched_choice": "A",
+        "confidence_computation": "exp(logprob) = exp(-0.0150) = 0.9851"
+      },
+      "final_metrics": {
+        "predicted": "A",
+        "correct": true,
+        "confidence": 0.9851223345464991,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

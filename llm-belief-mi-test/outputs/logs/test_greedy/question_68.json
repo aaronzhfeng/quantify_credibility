@@ -1,0 +1,51 @@
+{
+  "question_id": 68,
+  "question_text": "Solar radiation provides more heat near the equator than near the poles on Earth. The greatest amount of heat is moved away from the equator by",
+  "choices": [
+    "A: ocean currents.",
+    "B: aquatic plants.",
+    "C: surface winds.",
+    "D: tectonic plates."
+  ],
+  "gold_answer": "A",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: Solar radiation provides more heat near the equator than near the poles on Earth. The greatest amount of heat is moved away from the equator by\n\nChoices:\nA) ocean currents.\nB) aquatic plants.\nC) surface winds.\nD) tectonic plates.\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "A",
+          "logprob": -0.3982529134955257,
+          "probability": 0.6714921767504811
+        }
+      ],
+      "decision_process": {
+        "selected_text": "A",
+        "matched_choice": "A",
+        "confidence_computation": "exp(logprob) = exp(-0.3983) = 0.6715"
+      },
+      "final_metrics": {
+        "predicted": "A",
+        "correct": true,
+        "confidence": 0.6714921767504811,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

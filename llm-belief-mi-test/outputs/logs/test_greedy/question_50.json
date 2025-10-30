@@ -1,0 +1,51 @@
+{
+  "question_id": 50,
+  "question_text": "Which tools are needed to measure the effects of friction on a block of wood?",
+  "choices": [
+    "A: meter stick, spring scale",
+    "B: balance, stopwatch",
+    "C: balance, meter stick",
+    "D: meter stick, stopwatch"
+  ],
+  "gold_answer": "A",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: Which tools are needed to measure the effects of friction on a block of wood?\n\nChoices:\nA) meter stick, spring scale\nB) balance, stopwatch\nC) balance, meter stick\nD) meter stick, stopwatch\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "A",
+          "logprob": -0.4764173161238432,
+          "probability": 0.6210042730690115
+        }
+      ],
+      "decision_process": {
+        "selected_text": "A",
+        "matched_choice": "A",
+        "confidence_computation": "exp(logprob) = exp(-0.4764) = 0.6210"
+      },
+      "final_metrics": {
+        "predicted": "A",
+        "correct": true,
+        "confidence": 0.6210042730690115,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

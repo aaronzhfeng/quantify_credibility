@@ -1,0 +1,51 @@
+{
+  "question_id": 51,
+  "question_text": "A person has a chance to experience an equinox",
+  "choices": [
+    "A: weekly",
+    "B: monthly",
+    "C: annually",
+    "D: biannually"
+  ],
+  "gold_answer": "D",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: A person has a chance to experience an equinox\n\nChoices:\nA) weekly\nB) monthly\nC) annually\nD) biannually\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "C",
+          "logprob": -0.36623816192150116,
+          "probability": 0.693337654916613
+        }
+      ],
+      "decision_process": {
+        "selected_text": "C",
+        "matched_choice": "C",
+        "confidence_computation": "exp(logprob) = exp(-0.3662) = 0.6933"
+      },
+      "final_metrics": {
+        "predicted": "C",
+        "correct": false,
+        "confidence": 0.693337654916613,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

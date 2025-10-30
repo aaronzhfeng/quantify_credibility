@@ -1,0 +1,51 @@
+{
+  "question_id": 73,
+  "question_text": "Jonathon was studying bears. He found out that bears are born with some behaviors and learn others from their environment. Which behavior does a bear most likely inherit?",
+  "choices": [
+    "A: how to find food in garbage cans",
+    "B: how to hibernate during the winter",
+    "C: how to seek shelter in a hollow log",
+    "D: how to live in human neighborhoods"
+  ],
+  "gold_answer": "B",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: Jonathon was studying bears. He found out that bears are born with some behaviors and learn others from their environment. Which behavior does a bear most likely inherit?\n\nChoices:\nA) how to find food in garbage cans\nB) how to hibernate during the winter\nC) how to seek shelter in a hollow log\nD) how to live in human neighborhoods\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "A",
+          "logprob": -0.3474837070389185,
+          "probability": 0.7064635242185003
+        }
+      ],
+      "decision_process": {
+        "selected_text": "A",
+        "matched_choice": "A",
+        "confidence_computation": "exp(logprob) = exp(-0.3475) = 0.7065"
+      },
+      "final_metrics": {
+        "predicted": "A",
+        "correct": false,
+        "confidence": 0.7064635242185003,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

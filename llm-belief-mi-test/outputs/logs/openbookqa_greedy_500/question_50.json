@@ -1,0 +1,51 @@
+{
+  "question_id": 50,
+  "question_text": "Some berries may be eaten by",
+  "choices": [
+    "A: a bear or person",
+    "B: a bear or shark",
+    "C: a bear or lion",
+    "D: a bear or wolf"
+  ],
+  "gold_answer": "A",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: Some berries may be eaten by\n\nChoices:\nA) a bear or person\nB) a bear or shark\nC) a bear or lion\nD) a bear or wolf\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "A",
+          "logprob": -0.04884640900127124,
+          "probability": 0.9523273873808301
+        }
+      ],
+      "decision_process": {
+        "selected_text": "A",
+        "matched_choice": "A",
+        "confidence_computation": "exp(logprob) = exp(-0.0488) = 0.9523"
+      },
+      "final_metrics": {
+        "predicted": "A",
+        "correct": true,
+        "confidence": 0.9523273873808301,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

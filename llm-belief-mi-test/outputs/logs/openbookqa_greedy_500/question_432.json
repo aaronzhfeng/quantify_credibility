@@ -1,0 +1,51 @@
+{
+  "question_id": 432,
+  "question_text": "How many times would someone change the page of a calendar in a year?",
+  "choices": [
+    "A: 13",
+    "B: 12",
+    "C: 15",
+    "D: 14"
+  ],
+  "gold_answer": "B",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: How many times would someone change the page of a calendar in a year?\n\nChoices:\nA) 13\nB) 12\nC) 15\nD) 14\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "A",
+          "logprob": -0.5964989383937791,
+          "probability": 0.5507364268816834
+        }
+      ],
+      "decision_process": {
+        "selected_text": "A",
+        "matched_choice": "A",
+        "confidence_computation": "exp(logprob) = exp(-0.5965) = 0.5507"
+      },
+      "final_metrics": {
+        "predicted": "A",
+        "correct": false,
+        "confidence": 0.5507364268816834,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

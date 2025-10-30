@@ -1,0 +1,51 @@
+{
+  "question_id": 65,
+  "question_text": "Marta studied different forms of energy. Which two types of energy travel in waves?",
+  "choices": [
+    "A: light and sound",
+    "B: electrical and sound",
+    "C: chemical and light",
+    "D: chemical and electrical"
+  ],
+  "gold_answer": "A",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: Marta studied different forms of energy. Which two types of energy travel in waves?\n\nChoices:\nA) light and sound\nB) electrical and sound\nC) chemical and light\nD) chemical and electrical\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "A",
+          "logprob": -0.029827951453626156,
+          "probability": 0.9706125116556487
+        }
+      ],
+      "decision_process": {
+        "selected_text": "A",
+        "matched_choice": "A",
+        "confidence_computation": "exp(logprob) = exp(-0.0298) = 0.9706"
+      },
+      "final_metrics": {
+        "predicted": "A",
+        "correct": true,
+        "confidence": 0.9706125116556487,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

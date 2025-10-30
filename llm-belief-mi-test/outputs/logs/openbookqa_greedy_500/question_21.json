@@ -1,0 +1,51 @@
+{
+  "question_id": 21,
+  "question_text": "An example of conservation is avoiding the use of",
+  "choices": [
+    "A: gasoline",
+    "B: air",
+    "C: snow",
+    "D: clothes"
+  ],
+  "gold_answer": "A",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: An example of conservation is avoiding the use of\n\nChoices:\nA) gasoline\nB) air\nC) snow\nD) clothes\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "A",
+          "logprob": -0.09116417705081403,
+          "probability": 0.9128678266482632
+        }
+      ],
+      "decision_process": {
+        "selected_text": "A",
+        "matched_choice": "A",
+        "confidence_computation": "exp(logprob) = exp(-0.0912) = 0.9129"
+      },
+      "final_metrics": {
+        "predicted": "A",
+        "correct": true,
+        "confidence": 0.9128678266482632,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

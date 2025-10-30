@@ -1,0 +1,499 @@
+{
+  "question_id": 485,
+  "question_text": "Which item has a higher altitude?",
+  "choices": [
+    "A: Tile Floor",
+    "B: Cars",
+    "C: A 6'' Man",
+    "D: A Picture Book"
+  ],
+  "gold_answer": "C",
+  "methods": {
+    "mi_method": {
+      "description": "k=10 chains of length n=2, MI estimation",
+      "raw_inputs": [
+        {
+          "chain_id": 0,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Which item has a higher altitude?\n\n\nChoices:\nA) Tile Floor\nB) Cars\nC) A 6'' Man\nD) A Picture Book\n\nProvide an answer to the following question:\n\nQ: Which item has a higher altitude?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 0,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Which item has a higher altitude?\n\n\nOne answer to question Q is C) A 6'' Man.\n\n\nChoices:\nA) Tile Floor\nB) Cars\nC) A 6'' Man\nD) A Picture Book\n\nProvide an answer to the following question:\n\nQ: Which item has a higher altitude?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 1,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Which item has a higher altitude?\n\n\nChoices:\nA) Tile Floor\nB) Cars\nC) A 6'' Man\nD) A Picture Book\n\nProvide an answer to the following question:\n\nQ: Which item has a higher altitude?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 1,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Which item has a higher altitude?\n\n\nOne answer to question Q is A) Tile Floor.\n\n\nChoices:\nA) Tile Floor\nB) Cars\nC) A 6'' Man\nD) A Picture Book\n\nProvide an answer to the following question:\n\nQ: Which item has a higher altitude?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 2,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Which item has a higher altitude?\n\n\nChoices:\nA) Tile Floor\nB) Cars\nC) A 6'' Man\nD) A Picture Book\n\nProvide an answer to the following question:\n\nQ: Which item has a higher altitude?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 2,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Which item has a higher altitude?\n\n\nOne answer to question Q is D) A Picture Book.\n\n\nChoices:\nA) Tile Floor\nB) Cars\nC) A 6'' Man\nD) A Picture Book\n\nProvide an answer to the following question:\n\nQ: Which item has a higher altitude?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 3,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Which item has a higher altitude?\n\n\nChoices:\nA) Tile Floor\nB) Cars\nC) A 6'' Man\nD) A Picture Book\n\nProvide an answer to the following question:\n\nQ: Which item has a higher altitude?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 3,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Which item has a higher altitude?\n\n\nOne answer to question Q is D) A Picture Book.\n\n\nChoices:\nA) Tile Floor\nB) Cars\nC) A 6'' Man\nD) A Picture Book\n\nProvide an answer to the following question:\n\nQ: Which item has a higher altitude?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 4,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Which item has a higher altitude?\n\n\nChoices:\nA) Tile Floor\nB) Cars\nC) A 6'' Man\nD) A Picture Book\n\nProvide an answer to the following question:\n\nQ: Which item has a higher altitude?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 4,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Which item has a higher altitude?\n\n\nOne answer to question Q is C) A 6'' Man.\n\n\nChoices:\nA) Tile Floor\nB) Cars\nC) A 6'' Man\nD) A Picture Book\n\nProvide an answer to the following question:\n\nQ: Which item has a higher altitude?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 5,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Which item has a higher altitude?\n\n\nChoices:\nA) Tile Floor\nB) Cars\nC) A 6'' Man\nD) A Picture Book\n\nProvide an answer to the following question:\n\nQ: Which item has a higher altitude?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 5,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Which item has a higher altitude?\n\n\nOne answer to question Q is D) A Picture Book.\n\n\nChoices:\nA) Tile Floor\nB) Cars\nC) A 6'' Man\nD) A Picture Book\n\nProvide an answer to the following question:\n\nQ: Which item has a higher altitude?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 6,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Which item has a higher altitude?\n\n\nChoices:\nA) Tile Floor\nB) Cars\nC) A 6'' Man\nD) A Picture Book\n\nProvide an answer to the following question:\n\nQ: Which item has a higher altitude?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 6,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Which item has a higher altitude?\n\n\nOne answer to question Q is C) A 6'' Man.\n\n\nChoices:\nA) Tile Floor\nB) Cars\nC) A 6'' Man\nD) A Picture Book\n\nProvide an answer to the following question:\n\nQ: Which item has a higher altitude?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 7,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Which item has a higher altitude?\n\n\nChoices:\nA) Tile Floor\nB) Cars\nC) A 6'' Man\nD) A Picture Book\n\nProvide an answer to the following question:\n\nQ: Which item has a higher altitude?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 7,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Which item has a higher altitude?\n\n\nOne answer to question Q is A) Tile Floor.\n\n\nChoices:\nA) Tile Floor\nB) Cars\nC) A 6'' Man\nD) A Picture Book\n\nProvide an answer to the following question:\n\nQ: Which item has a higher altitude?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 8,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Which item has a higher altitude?\n\n\nChoices:\nA) Tile Floor\nB) Cars\nC) A 6'' Man\nD) A Picture Book\n\nProvide an answer to the following question:\n\nQ: Which item has a higher altitude?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 8,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Which item has a higher altitude?\n\n\nOne answer to question Q is C) A 6'' Man.\n\n\nChoices:\nA) Tile Floor\nB) Cars\nC) A 6'' Man\nD) A Picture Book\n\nProvide an answer to the following question:\n\nQ: Which item has a higher altitude?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 9,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Which item has a higher altitude?\n\n\nChoices:\nA) Tile Floor\nB) Cars\nC) A 6'' Man\nD) A Picture Book\n\nProvide an answer to the following question:\n\nQ: Which item has a higher altitude?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 9,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Which item has a higher altitude?\n\n\nOne answer to question Q is D) A Picture Book.\n\n\nChoices:\nA) Tile Floor\nB) Cars\nC) A 6'' Man\nD) A Picture Book\n\nProvide an answer to the following question:\n\nQ: Which item has a higher altitude?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "chain_id": 0,
+          "step": 0,
+          "text": "C",
+          "logprob": -0.8463916182518005,
+          "probability": 0.4289599940986632
+        },
+        {
+          "chain_id": 0,
+          "step": 1,
+          "text": "C",
+          "logprob": -0.44923728704452515,
+          "probability": 0.6381146643849995
+        },
+        {
+          "chain_id": 1,
+          "step": 0,
+          "text": "A",
+          "logprob": -1.401947021484375,
+          "probability": 0.2461173014629352
+        },
+        {
+          "chain_id": 1,
+          "step": 1,
+          "text": "C",
+          "logprob": -0.8612058162689209,
+          "probability": 0.42265213410821173
+        },
+        {
+          "chain_id": 2,
+          "step": 0,
+          "text": "D",
+          "logprob": -1.1241683959960938,
+          "probability": 0.3249225619403852
+        },
+        {
+          "chain_id": 2,
+          "step": 1,
+          "text": "C",
+          "logprob": -1.1762707233428955,
+          "probability": 0.3084268054270666
+        },
+        {
+          "chain_id": 3,
+          "step": 0,
+          "text": "D",
+          "logprob": -1.1241683959960938,
+          "probability": 0.3249225619403852
+        },
+        {
+          "chain_id": 3,
+          "step": 1,
+          "text": "C",
+          "logprob": -1.1762707233428955,
+          "probability": 0.3084268054270666
+        },
+        {
+          "chain_id": 4,
+          "step": 0,
+          "text": "C",
+          "logprob": -0.8463916182518005,
+          "probability": 0.4289599940986632
+        },
+        {
+          "chain_id": 4,
+          "step": 1,
+          "text": "C",
+          "logprob": -0.44923728704452515,
+          "probability": 0.6381146643849995
+        },
+        {
+          "chain_id": 5,
+          "step": 0,
+          "text": "D",
+          "logprob": -1.1241683959960938,
+          "probability": 0.3249225619403852
+        },
+        {
+          "chain_id": 5,
+          "step": 1,
+          "text": "A",
+          "logprob": -0.6207153797149658,
+          "probability": 0.5375597406748333
+        },
+        {
+          "chain_id": 6,
+          "step": 0,
+          "text": "C",
+          "logprob": -0.8463916182518005,
+          "probability": 0.4289599940986632
+        },
+        {
+          "chain_id": 6,
+          "step": 1,
+          "text": "A",
+          "logprob": -1.4214606285095215,
+          "probability": 0.24136122022796455
+        },
+        {
+          "chain_id": 7,
+          "step": 0,
+          "text": "A",
+          "logprob": -1.401947021484375,
+          "probability": 0.2461173014629352
+        },
+        {
+          "chain_id": 7,
+          "step": 1,
+          "text": "D",
+          "logprob": -0.7223184108734131,
+          "probability": 0.48562507138047584
+        },
+        {
+          "chain_id": 8,
+          "step": 0,
+          "text": "C",
+          "logprob": -0.8463916182518005,
+          "probability": 0.4289599940986632
+        },
+        {
+          "chain_id": 8,
+          "step": 1,
+          "text": "C",
+          "logprob": -0.44923728704452515,
+          "probability": 0.6381146643849995
+        },
+        {
+          "chain_id": 9,
+          "step": 0,
+          "text": "D",
+          "logprob": -1.1241683959960938,
+          "probability": 0.3249225619403852
+        },
+        {
+          "chain_id": 9,
+          "step": 1,
+          "text": "A",
+          "logprob": -0.6207153797149658,
+          "probability": 0.5375597406748333
+        }
+      ],
+      "decision_process": {
+        "num_chains": 10,
+        "chain_length": 2,
+        "total_inferences": 20,
+        "mi_method": "listing",
+        "mi_nats": 0.11777456233503322,
+        "mi_bits": 0.16991277702362054,
+        "selected_answer": "C",
+        "matched_choice": "C",
+        "confidence_computation": "1/(1 + mi_nats) = 1/(1 + 0.1178) = 0.8946",
+        "agreement": "60.00% (6/10 chains agree on final answer)"
+      },
+      "final_metrics": {
+        "predicted": "C",
+        "correct": true,
+        "confidence": 0.8946347803004194,
+        "mi_score": 0.16991277702362054,
+        "agreement": 0.6
+      }
+    }
+  }
+}

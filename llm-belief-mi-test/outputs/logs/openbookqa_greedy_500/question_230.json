@@ -1,0 +1,51 @@
+{
+  "question_id": 230,
+  "question_text": "Which of these would create the most sound if struck with a metal spoon?",
+  "choices": [
+    "A: the plastic water bottle",
+    "B: the backside of a person",
+    "C: the hair on a doll",
+    "D: the chassis of a car"
+  ],
+  "gold_answer": "D",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: Which of these would create the most sound if struck with a metal spoon?\n\nChoices:\nA) the plastic water bottle\nB) the backside of a person\nC) the hair on a doll\nD) the chassis of a car\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "A",
+          "logprob": -0.31677567114820704,
+          "probability": 0.7284941590551473
+        }
+      ],
+      "decision_process": {
+        "selected_text": "A",
+        "matched_choice": "A",
+        "confidence_computation": "exp(logprob) = exp(-0.3168) = 0.7285"
+      },
+      "final_metrics": {
+        "predicted": "A",
+        "correct": false,
+        "confidence": 0.7284941590551473,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

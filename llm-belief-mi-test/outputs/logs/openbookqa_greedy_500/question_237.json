@@ -1,0 +1,51 @@
+{
+  "question_id": 237,
+  "question_text": "What kind of substance will cool when it touches a cold object?",
+  "choices": [
+    "A: warm",
+    "B: frozen",
+    "C: chilly",
+    "D: cold"
+  ],
+  "gold_answer": "A",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: What kind of substance will cool when it touches a cold object?\n\nChoices:\nA) warm\nB) frozen\nC) chilly\nD) cold\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "D",
+          "logprob": -0.677724948283867,
+          "probability": 0.5077708843077161
+        }
+      ],
+      "decision_process": {
+        "selected_text": "D",
+        "matched_choice": "D",
+        "confidence_computation": "exp(logprob) = exp(-0.6777) = 0.5078"
+      },
+      "final_metrics": {
+        "predicted": "D",
+        "correct": false,
+        "confidence": 0.5077708843077161,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

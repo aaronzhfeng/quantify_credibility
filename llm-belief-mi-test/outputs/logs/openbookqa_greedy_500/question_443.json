@@ -1,0 +1,51 @@
+{
+  "question_id": 443,
+  "question_text": "Camouflage can be used by animals for hunting",
+  "choices": [
+    "A: water",
+    "B: trees",
+    "C: air",
+    "D: meals"
+  ],
+  "gold_answer": "D",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: Camouflage can be used by animals for hunting\n\nChoices:\nA) water\nB) trees\nC) air\nD) meals\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "A",
+          "logprob": -0.3541100984439254,
+          "probability": 0.7017976962674494
+        }
+      ],
+      "decision_process": {
+        "selected_text": "A",
+        "matched_choice": "A",
+        "confidence_computation": "exp(logprob) = exp(-0.3541) = 0.7018"
+      },
+      "final_metrics": {
+        "predicted": "A",
+        "correct": false,
+        "confidence": 0.7017976962674494,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

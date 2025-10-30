@@ -1,0 +1,51 @@
+{
+  "question_id": 124,
+  "question_text": "The pull the human planet space rock orbiter has on certain bodies of dihydrogen monooxide results in?",
+  "choices": [
+    "A: telescope views",
+    "B: water level fluctuations",
+    "C: animal",
+    "D: plant harvesting"
+  ],
+  "gold_answer": "B",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: The pull the human planet space rock orbiter has on certain bodies of dihydrogen monooxide results in?\n\nChoices:\nA) telescope views\nB) water level fluctuations\nC) animal\nD) plant harvesting\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "B",
+          "logprob": -0.3999793662223965,
+          "probability": 0.6703338774130887
+        }
+      ],
+      "decision_process": {
+        "selected_text": "B",
+        "matched_choice": "B",
+        "confidence_computation": "exp(logprob) = exp(-0.4000) = 0.6703"
+      },
+      "final_metrics": {
+        "predicted": "B",
+        "correct": true,
+        "confidence": 0.6703338774130887,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "question_id": 70,
+  "question_text": "How can we see that the coloration of fur is an inherited characteristic?",
+  "choices": [
+    "A: puppies have soft fur",
+    "B: kittens look like their parents",
+    "C: all mammals are born with fur",
+    "D: baby rats are mostly bald"
+  ],
+  "gold_answer": "B",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: How can we see that the coloration of fur is an inherited characteristic?\n\nChoices:\nA) puppies have soft fur\nB) kittens look like their parents\nC) all mammals are born with fur\nD) baby rats are mostly bald\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "B",
+          "logprob": -0.7002317667938769,
+          "probability": 0.4964702251438831
+        }
+      ],
+      "decision_process": {
+        "selected_text": "B",
+        "matched_choice": "B",
+        "confidence_computation": "exp(logprob) = exp(-0.7002) = 0.4965"
+      },
+      "final_metrics": {
+        "predicted": "B",
+        "correct": true,
+        "confidence": 0.4964702251438831,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

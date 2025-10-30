@@ -1,0 +1,51 @@
+{
+  "question_id": 86,
+  "question_text": "Beak shape can influence a bird's ability",
+  "choices": [
+    "A: to give birth to live young",
+    "B: to mate with it's partner",
+    "C: to fly to warmer climates",
+    "D: to chew up certain worms"
+  ],
+  "gold_answer": "D",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: Beak shape can influence a bird's ability\n\nChoices:\nA) to give birth to live young\nB) to mate with it's partner\nC) to fly to warmer climates\nD) to chew up certain worms\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "D",
+          "logprob": -0.4327586188301211,
+          "probability": 0.6487170609908917
+        }
+      ],
+      "decision_process": {
+        "selected_text": "D",
+        "matched_choice": "D",
+        "confidence_computation": "exp(logprob) = exp(-0.4328) = 0.6487"
+      },
+      "final_metrics": {
+        "predicted": "D",
+        "correct": true,
+        "confidence": 0.6487170609908917,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

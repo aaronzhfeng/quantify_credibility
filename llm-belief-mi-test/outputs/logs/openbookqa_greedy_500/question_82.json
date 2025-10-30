@@ -1,0 +1,51 @@
+{
+  "question_id": 82,
+  "question_text": "The lowest temperature on the trip was at",
+  "choices": [
+    "A: the mountain pass",
+    "B: the plain",
+    "C: the large hill",
+    "D: the canyon"
+  ],
+  "gold_answer": "A",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: The lowest temperature on the trip was at\n\nChoices:\nA) the mountain pass\nB) the plain\nC) the large hill\nD) the canyon\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "A",
+          "logprob": -0.05226428125752136,
+          "probability": 0.9490780101659781
+        }
+      ],
+      "decision_process": {
+        "selected_text": "A",
+        "matched_choice": "A",
+        "confidence_computation": "exp(logprob) = exp(-0.0523) = 0.9491"
+      },
+      "final_metrics": {
+        "predicted": "A",
+        "correct": true,
+        "confidence": 0.9490780101659781,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

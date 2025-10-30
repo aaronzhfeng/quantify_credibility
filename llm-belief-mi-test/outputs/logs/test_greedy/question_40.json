@@ -1,0 +1,51 @@
+{
+  "question_id": 40,
+  "question_text": "Which scientist is credited with discovering the first four moons of Jupiter?",
+  "choices": [
+    "A: Galileo Galilei",
+    "B: Albert Einstein",
+    "C: Charles Darwin",
+    "D: Sir Isaac Newton"
+  ],
+  "gold_answer": "A",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: Which scientist is credited with discovering the first four moons of Jupiter?\n\nChoices:\nA) Galileo Galilei\nB) Albert Einstein\nC) Charles Darwin\nD) Sir Isaac Newton\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "A",
+          "logprob": -0.007850941503420472,
+          "probability": 0.9921797966440913
+        }
+      ],
+      "decision_process": {
+        "selected_text": "A",
+        "matched_choice": "A",
+        "confidence_computation": "exp(logprob) = exp(-0.0079) = 0.9922"
+      },
+      "final_metrics": {
+        "predicted": "A",
+        "correct": true,
+        "confidence": 0.9921797966440913,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "question_id": 89,
+  "question_text": "Seeds provide new plants with",
+  "choices": [
+    "A: life sustaining elements",
+    "B: essentials for photosynthesis",
+    "C: water and hydrogen",
+    "D: storage for roots"
+  ],
+  "gold_answer": "A",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: Seeds provide new plants with\n\nChoices:\nA) life sustaining elements\nB) essentials for photosynthesis\nC) water and hydrogen\nD) storage for roots\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "A",
+          "logprob": -0.092242458180408,
+          "probability": 0.911884028997517
+        }
+      ],
+      "decision_process": {
+        "selected_text": "A",
+        "matched_choice": "A",
+        "confidence_computation": "exp(logprob) = exp(-0.0922) = 0.9119"
+      },
+      "final_metrics": {
+        "predicted": "A",
+        "correct": true,
+        "confidence": 0.911884028997517,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

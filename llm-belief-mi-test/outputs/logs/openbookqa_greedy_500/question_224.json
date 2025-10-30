@@ -1,0 +1,51 @@
+{
+  "question_id": 224,
+  "question_text": "When a plane is in the sky and is several miles away, the light seen is barely visible, but when it is drawing near",
+  "choices": [
+    "A: light is far away",
+    "B: light is more easily seen",
+    "C: light is more distant",
+    "D: light is further away"
+  ],
+  "gold_answer": "B",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: When a plane is in the sky and is several miles away, the light seen is barely visible, but when it is drawing near\n\nChoices:\nA) light is far away\nB) light is more easily seen\nC) light is more distant\nD) light is further away\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "B",
+          "logprob": -0.27375652734190226,
+          "probability": 0.7605172178699497
+        }
+      ],
+      "decision_process": {
+        "selected_text": "B",
+        "matched_choice": "B",
+        "confidence_computation": "exp(logprob) = exp(-0.2738) = 0.7605"
+      },
+      "final_metrics": {
+        "predicted": "B",
+        "correct": true,
+        "confidence": 0.7605172178699497,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

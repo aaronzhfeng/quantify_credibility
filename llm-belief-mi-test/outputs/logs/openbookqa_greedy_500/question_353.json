@@ -1,0 +1,51 @@
+{
+  "question_id": 353,
+  "question_text": "Tapping a drumstick to a drum will",
+  "choices": [
+    "A: reverberate when touched together",
+    "B: vibrate when next to each other",
+    "C: shake around when near",
+    "D: put each other down"
+  ],
+  "gold_answer": "A",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: Tapping a drumstick to a drum will\n\nChoices:\nA) reverberate when touched together\nB) vibrate when next to each other\nC) shake around when near\nD) put each other down\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "A",
+          "logprob": -0.046667357586557046,
+          "probability": 0.9544048203161449
+        }
+      ],
+      "decision_process": {
+        "selected_text": "A",
+        "matched_choice": "A",
+        "confidence_computation": "exp(logprob) = exp(-0.0467) = 0.9544"
+      },
+      "final_metrics": {
+        "predicted": "A",
+        "correct": true,
+        "confidence": 0.9544048203161449,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

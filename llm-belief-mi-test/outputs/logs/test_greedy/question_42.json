@@ -1,0 +1,51 @@
+{
+  "question_id": 42,
+  "question_text": "When the Northern Hemisphere is tilted away from the Sun causing the rays of light to hit Earth at large angles, which season occurs?",
+  "choices": [
+    "A: winter",
+    "B: spring",
+    "C: summer",
+    "D: fall"
+  ],
+  "gold_answer": "A",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: When the Northern Hemisphere is tilted away from the Sun causing the rays of light to hit Earth at large angles, which season occurs?\n\nChoices:\nA) winter\nB) spring\nC) summer\nD) fall\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "A",
+          "logprob": -0.34030646411702037,
+          "probability": 0.7115522241205339
+        }
+      ],
+      "decision_process": {
+        "selected_text": "A",
+        "matched_choice": "A",
+        "confidence_computation": "exp(logprob) = exp(-0.3403) = 0.7116"
+      },
+      "final_metrics": {
+        "predicted": "A",
+        "correct": true,
+        "confidence": 0.7115522241205339,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

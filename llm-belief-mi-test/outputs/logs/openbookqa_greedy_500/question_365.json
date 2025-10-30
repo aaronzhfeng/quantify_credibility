@@ -1,0 +1,51 @@
+{
+  "question_id": 365,
+  "question_text": "What constitutes a frog's diet?",
+  "choices": [
+    "A: it eats all plants",
+    "B: it will eat dogs",
+    "C: it only eats burgers",
+    "D: it chomps on insects"
+  ],
+  "gold_answer": "D",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: What constitutes a frog's diet?\n\nChoices:\nA) it eats all plants\nB) it will eat dogs\nC) it only eats burgers\nD) it chomps on insects\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "D",
+          "logprob": -0.01434583570517134,
+          "probability": 0.985756575486261
+        }
+      ],
+      "decision_process": {
+        "selected_text": "D",
+        "matched_choice": "D",
+        "confidence_computation": "exp(logprob) = exp(-0.0143) = 0.9858"
+      },
+      "final_metrics": {
+        "predicted": "D",
+        "correct": true,
+        "confidence": 0.985756575486261,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

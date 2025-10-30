@@ -1,0 +1,51 @@
+{
+  "question_id": 288,
+  "question_text": "A deer is eating in a field, and wants more food. Regardless of how hard the deer tries, the deer is unable to produce",
+  "choices": [
+    "A: longer antlers",
+    "B: food for itself",
+    "C: baby deer",
+    "D: urine"
+  ],
+  "gold_answer": "B",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: A deer is eating in a field, and wants more food. Regardless of how hard the deer tries, the deer is unable to produce\n\nChoices:\nA) longer antlers\nB) food for itself\nC) baby deer\nD) urine\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "A",
+          "logprob": -0.26610826153773814,
+          "probability": 0.7663561561138792
+        }
+      ],
+      "decision_process": {
+        "selected_text": "A",
+        "matched_choice": "A",
+        "confidence_computation": "exp(logprob) = exp(-0.2661) = 0.7664"
+      },
+      "final_metrics": {
+        "predicted": "A",
+        "correct": false,
+        "confidence": 0.7663561561138792,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

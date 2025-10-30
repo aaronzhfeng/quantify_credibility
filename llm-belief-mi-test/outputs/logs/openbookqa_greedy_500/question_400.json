@@ -1,0 +1,51 @@
+{
+  "question_id": 400,
+  "question_text": "Animals died after the removal of a",
+  "choices": [
+    "A: bush",
+    "B: street",
+    "C: house",
+    "D: city"
+  ],
+  "gold_answer": "A",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: Animals died after the removal of a\n\nChoices:\nA) bush\nB) street\nC) house\nD) city\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "A",
+          "logprob": -0.10684889656840824,
+          "probability": 0.8986614535610644
+        }
+      ],
+      "decision_process": {
+        "selected_text": "A",
+        "matched_choice": "A",
+        "confidence_computation": "exp(logprob) = exp(-0.1068) = 0.8987"
+      },
+      "final_metrics": {
+        "predicted": "A",
+        "correct": true,
+        "confidence": 0.8986614535610644,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

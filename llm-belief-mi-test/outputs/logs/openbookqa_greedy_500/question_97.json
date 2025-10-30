@@ -1,0 +1,51 @@
+{
+  "question_id": 97,
+  "question_text": "Crop rotation has a positive impact on what?",
+  "choices": [
+    "A: government mentality",
+    "B: dirt quality",
+    "C: town economies",
+    "D: crop watering"
+  ],
+  "gold_answer": "B",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: Crop rotation has a positive impact on what?\n\nChoices:\nA) government mentality\nB) dirt quality\nC) town economies\nD) crop watering\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "B",
+          "logprob": -0.2862518021429423,
+          "probability": 0.7510734702249265
+        }
+      ],
+      "decision_process": {
+        "selected_text": "B",
+        "matched_choice": "B",
+        "confidence_computation": "exp(logprob) = exp(-0.2863) = 0.7511"
+      },
+      "final_metrics": {
+        "predicted": "B",
+        "correct": true,
+        "confidence": 0.7510734702249265,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

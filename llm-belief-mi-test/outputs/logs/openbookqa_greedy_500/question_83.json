@@ -1,0 +1,51 @@
+{
+  "question_id": 83,
+  "question_text": "What is the benefit to using a frosted window film over a non treated windows?",
+  "choices": [
+    "A: they are easier to make",
+    "B: they let in less light",
+    "C: they are cheaper to produce",
+    "D: they are much stronger"
+  ],
+  "gold_answer": "B",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: What is the benefit to using a frosted window film over a non treated windows?\n\nChoices:\nA) they are easier to make\nB) they let in less light\nC) they are cheaper to produce\nD) they are much stronger\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "A",
+          "logprob": -0.42324940278194845,
+          "probability": 0.6549152750501375
+        }
+      ],
+      "decision_process": {
+        "selected_text": "A",
+        "matched_choice": "A",
+        "confidence_computation": "exp(logprob) = exp(-0.4232) = 0.6549"
+      },
+      "final_metrics": {
+        "predicted": "A",
+        "correct": false,
+        "confidence": 0.6549152750501375,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

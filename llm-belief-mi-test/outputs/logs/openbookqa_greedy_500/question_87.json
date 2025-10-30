@@ -1,0 +1,51 @@
+{
+  "question_id": 87,
+  "question_text": "Some blind people have demonstrated bat-like skills by:",
+  "choices": [
+    "A: sensing shapes by light and shadows",
+    "B: having a unusually strong sense of smell",
+    "C: sensing nearby objects by temperature change",
+    "D: using sound to 'see'"
+  ],
+  "gold_answer": "D",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: Some blind people have demonstrated bat-like skills by:\n\nChoices:\nA) sensing shapes by light and shadows\nB) having a unusually strong sense of smell\nC) sensing nearby objects by temperature change\nD) using sound to 'see'\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "D",
+          "logprob": -0.0626725135371089,
+          "probability": 0.9392510153212984
+        }
+      ],
+      "decision_process": {
+        "selected_text": "D",
+        "matched_choice": "D",
+        "confidence_computation": "exp(logprob) = exp(-0.0627) = 0.9393"
+      },
+      "final_metrics": {
+        "predicted": "D",
+        "correct": true,
+        "confidence": 0.9392510153212984,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

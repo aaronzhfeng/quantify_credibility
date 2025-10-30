@@ -1,0 +1,51 @@
+{
+  "question_id": 239,
+  "question_text": "A pulley is used to lift a flag on a flagpole by",
+  "choices": [
+    "A: moving a rope sideways",
+    "B: putting something in the air",
+    "C: moving things with wheels",
+    "D: yanking string up a wheel"
+  ],
+  "gold_answer": "D",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: A pulley is used to lift a flag on a flagpole by\n\nChoices:\nA) moving a rope sideways\nB) putting something in the air\nC) moving things with wheels\nD) yanking string up a wheel\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "D",
+          "logprob": -0.3934129151457455,
+          "probability": 0.6747500755303569
+        }
+      ],
+      "decision_process": {
+        "selected_text": "D",
+        "matched_choice": "D",
+        "confidence_computation": "exp(logprob) = exp(-0.3934) = 0.6748"
+      },
+      "final_metrics": {
+        "predicted": "D",
+        "correct": true,
+        "confidence": 0.6747500755303569,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

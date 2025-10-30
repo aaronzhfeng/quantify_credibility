@@ -1,0 +1,51 @@
+{
+  "question_id": 316,
+  "question_text": "A sailor needs to navigate to the shore, and does this by",
+  "choices": [
+    "A: closing the sails quickly",
+    "B: setting out to sea",
+    "C: making an adjustment to the rudder",
+    "D: taking the afternoon off"
+  ],
+  "gold_answer": "C",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: A sailor needs to navigate to the shore, and does this by\n\nChoices:\nA) closing the sails quickly\nB) setting out to sea\nC) making an adjustment to the rudder\nD) taking the afternoon off\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "A",
+          "logprob": -0.43380897332099266,
+          "probability": 0.6480360358341022
+        }
+      ],
+      "decision_process": {
+        "selected_text": "A",
+        "matched_choice": "A",
+        "confidence_computation": "exp(logprob) = exp(-0.4338) = 0.6480"
+      },
+      "final_metrics": {
+        "predicted": "A",
+        "correct": false,
+        "confidence": 0.6480360358341022,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

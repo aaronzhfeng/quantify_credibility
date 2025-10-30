@@ -1,0 +1,51 @@
+{
+  "question_id": 331,
+  "question_text": "When heat is added to something",
+  "choices": [
+    "A: contaminates may be destroyed",
+    "B: bacterial can grow more rapidly",
+    "C: viruses may be picked up",
+    "D: the thing loses energy"
+  ],
+  "gold_answer": "A",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: When heat is added to something\n\nChoices:\nA) contaminates may be destroyed\nB) bacterial can grow more rapidly\nC) viruses may be picked up\nD) the thing loses energy\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "A",
+          "logprob": -0.8141127114649862,
+          "probability": 0.44303225045396427
+        }
+      ],
+      "decision_process": {
+        "selected_text": "A",
+        "matched_choice": "A",
+        "confidence_computation": "exp(logprob) = exp(-0.8141) = 0.4430"
+      },
+      "final_metrics": {
+        "predicted": "A",
+        "correct": true,
+        "confidence": 0.44303225045396427,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

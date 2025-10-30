@@ -1,0 +1,51 @@
+{
+  "question_id": 176,
+  "question_text": "If your dog is overweight",
+  "choices": [
+    "A: add more fat to their diet",
+    "B: cut back their caloric intake",
+    "C: let them sleep more",
+    "D: increase their caloric intake"
+  ],
+  "gold_answer": "B",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: If your dog is overweight\n\nChoices:\nA) add more fat to their diet\nB) cut back their caloric intake\nC) let them sleep more\nD) increase their caloric intake\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "B",
+          "logprob": -0.004702552490925882,
+          "probability": 0.9953084871973552
+        }
+      ],
+      "decision_process": {
+        "selected_text": "B",
+        "matched_choice": "B",
+        "confidence_computation": "exp(logprob) = exp(-0.0047) = 0.9953"
+      },
+      "final_metrics": {
+        "predicted": "B",
+        "correct": true,
+        "confidence": 0.9953084871973552,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

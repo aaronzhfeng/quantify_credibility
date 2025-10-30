@@ -1,0 +1,51 @@
+{
+  "question_id": 318,
+  "question_text": "In order to catch a rabbit, a predator must be",
+  "choices": [
+    "A: big",
+    "B: quick",
+    "C: slow",
+    "D: small"
+  ],
+  "gold_answer": "B",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: In order to catch a rabbit, a predator must be\n\nChoices:\nA) big\nB) quick\nC) slow\nD) small\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "B",
+          "logprob": -0.4245415212062653,
+          "probability": 0.6540695934349371
+        }
+      ],
+      "decision_process": {
+        "selected_text": "B",
+        "matched_choice": "B",
+        "confidence_computation": "exp(logprob) = exp(-0.4245) = 0.6541"
+      },
+      "final_metrics": {
+        "predicted": "B",
+        "correct": true,
+        "confidence": 0.6540695934349371,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

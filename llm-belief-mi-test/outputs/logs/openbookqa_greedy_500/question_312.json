@@ -1,0 +1,51 @@
+{
+  "question_id": 312,
+  "question_text": "Which of these foods might have a negative impact on humans?",
+  "choices": [
+    "A: Organic corn",
+    "B: Conventional corn",
+    "C: Organic potato",
+    "D: Organic Apples"
+  ],
+  "gold_answer": "B",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: Which of these foods might have a negative impact on humans?\n\nChoices:\nA) Organic corn\nB) Conventional corn\nC) Organic potato\nD) Organic Apples\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "A",
+          "logprob": -0.12508975178934634,
+          "probability": 0.8824177004628151
+        }
+      ],
+      "decision_process": {
+        "selected_text": "A",
+        "matched_choice": "A",
+        "confidence_computation": "exp(logprob) = exp(-0.1251) = 0.8824"
+      },
+      "final_metrics": {
+        "predicted": "A",
+        "correct": false,
+        "confidence": 0.8824177004628151,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

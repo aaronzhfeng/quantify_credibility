@@ -1,0 +1,51 @@
+{
+  "question_id": 436,
+  "question_text": "Which of these is a place where a human might live?",
+  "choices": [
+    "A: igloo",
+    "B: cloud",
+    "C: Mars",
+    "D: the Moon"
+  ],
+  "gold_answer": "A",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: Which of these is a place where a human might live?\n\nChoices:\nA) igloo\nB) cloud\nC) Mars\nD) the Moon\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "A",
+          "logprob": -0.03172489770804532,
+          "probability": 0.9687730571119663
+        }
+      ],
+      "decision_process": {
+        "selected_text": "A",
+        "matched_choice": "A",
+        "confidence_computation": "exp(logprob) = exp(-0.0317) = 0.9688"
+      },
+      "final_metrics": {
+        "predicted": "A",
+        "correct": true,
+        "confidence": 0.9687730571119663,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

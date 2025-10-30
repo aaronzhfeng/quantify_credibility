@@ -1,0 +1,51 @@
+{
+  "question_id": 64,
+  "question_text": "Mosquitoes enjoy all the people at a BBQ in the summer for what reason?",
+  "choices": [
+    "A: steak",
+    "B: blood",
+    "C: nice weather",
+    "D: taking food"
+  ],
+  "gold_answer": "B",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: Mosquitoes enjoy all the people at a BBQ in the summer for what reason?\n\nChoices:\nA) steak\nB) blood\nC) nice weather\nD) taking food\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "B",
+          "logprob": -0.038587359129451215,
+          "probability": 0.9621476486873464
+        }
+      ],
+      "decision_process": {
+        "selected_text": "B",
+        "matched_choice": "B",
+        "confidence_computation": "exp(logprob) = exp(-0.0386) = 0.9621"
+      },
+      "final_metrics": {
+        "predicted": "B",
+        "correct": true,
+        "confidence": 0.9621476486873464,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

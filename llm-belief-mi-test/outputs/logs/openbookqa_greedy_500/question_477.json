@@ -1,0 +1,51 @@
+{
+  "question_id": 477,
+  "question_text": "Will happen to the number of islands if the planet's temperature rises?",
+  "choices": [
+    "A: they will increase",
+    "B: nothing will happen",
+    "C: they will shrink",
+    "D: they will double"
+  ],
+  "gold_answer": "C",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: Will happen to the number of islands if the planet's temperature rises?\n\nChoices:\nA) they will increase\nB) nothing will happen\nC) they will shrink\nD) they will double\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "A",
+          "logprob": -0.7109742866887245,
+          "probability": 0.49116542833085747
+        }
+      ],
+      "decision_process": {
+        "selected_text": "A",
+        "matched_choice": "A",
+        "confidence_computation": "exp(logprob) = exp(-0.7110) = 0.4912"
+      },
+      "final_metrics": {
+        "predicted": "A",
+        "correct": false,
+        "confidence": 0.49116542833085747,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

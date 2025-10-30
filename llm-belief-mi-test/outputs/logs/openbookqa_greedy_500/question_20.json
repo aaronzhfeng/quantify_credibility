@@ -1,0 +1,51 @@
+{
+  "question_id": 20,
+  "question_text": "There was a lot more water vapor in the air when we went on a trip to",
+  "choices": [
+    "A: Hanoi",
+    "B: Athens",
+    "C: Baghdad",
+    "D: Phoenix"
+  ],
+  "gold_answer": "A",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: There was a lot more water vapor in the air when we went on a trip to\n\nChoices:\nA) Hanoi\nB) Athens\nC) Baghdad\nD) Phoenix\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "A",
+          "logprob": -0.6530642660800368,
+          "probability": 0.5204485380271006
+        }
+      ],
+      "decision_process": {
+        "selected_text": "A",
+        "matched_choice": "A",
+        "confidence_computation": "exp(logprob) = exp(-0.6531) = 0.5204"
+      },
+      "final_metrics": {
+        "predicted": "A",
+        "correct": true,
+        "confidence": 0.5204485380271006,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

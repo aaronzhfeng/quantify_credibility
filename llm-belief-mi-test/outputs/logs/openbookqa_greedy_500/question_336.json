@@ -1,0 +1,51 @@
+{
+  "question_id": 336,
+  "question_text": "to find out how fast you are going you first need to know",
+  "choices": [
+    "A: where you're going",
+    "B: distance traveled",
+    "C: distance to travel",
+    "D: home location"
+  ],
+  "gold_answer": "B",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: to find out how fast you are going you first need to know\n\nChoices:\nA) where you're going\nB) distance traveled\nC) distance to travel\nD) home location\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "A",
+          "logprob": -0.6107918825582601,
+          "probability": 0.5429207693149887
+        }
+      ],
+      "decision_process": {
+        "selected_text": "A",
+        "matched_choice": "A",
+        "confidence_computation": "exp(logprob) = exp(-0.6108) = 0.5429"
+      },
+      "final_metrics": {
+        "predicted": "A",
+        "correct": false,
+        "confidence": 0.5429207693149887,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "question_id": 491,
+  "question_text": "A shark will be unable to survive on eating algae and moss, because",
+  "choices": [
+    "A: it is a predator",
+    "B: it is a vegetarian",
+    "C: it is a freshwater fish",
+    "D: it is a producer"
+  ],
+  "gold_answer": "A",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: A shark will be unable to survive on eating algae and moss, because\n\nChoices:\nA) it is a predator\nB) it is a vegetarian\nC) it is a freshwater fish\nD) it is a producer\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "A",
+          "logprob": -0.4142947670916328,
+          "probability": 0.6608061386515257
+        }
+      ],
+      "decision_process": {
+        "selected_text": "A",
+        "matched_choice": "A",
+        "confidence_computation": "exp(logprob) = exp(-0.4143) = 0.6608"
+      },
+      "final_metrics": {
+        "predicted": "A",
+        "correct": true,
+        "confidence": 0.6608061386515257,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

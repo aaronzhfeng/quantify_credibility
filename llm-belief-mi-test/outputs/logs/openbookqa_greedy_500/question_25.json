@@ -1,0 +1,51 @@
+{
+  "question_id": 25,
+  "question_text": "If you were attacked by a shark and had to punch it sharply where it pulls in air from, you'd use your hand to make contact with",
+  "choices": [
+    "A: its snout",
+    "B: its gills",
+    "C: its nose",
+    "D: its belly"
+  ],
+  "gold_answer": "B",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: If you were attacked by a shark and had to punch it sharply where it pulls in air from, you'd use your hand to make contact with\n\nChoices:\nA) its snout\nB) its gills\nC) its nose\nD) its belly\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "A",
+          "logprob": -0.4027342783519998,
+          "probability": 0.6684897079121495
+        }
+      ],
+      "decision_process": {
+        "selected_text": "A",
+        "matched_choice": "A",
+        "confidence_computation": "exp(logprob) = exp(-0.4027) = 0.6685"
+      },
+      "final_metrics": {
+        "predicted": "A",
+        "correct": false,
+        "confidence": 0.6684897079121495,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

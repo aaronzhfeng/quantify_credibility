@@ -1,0 +1,51 @@
+{
+  "question_id": 94,
+  "question_text": "Animals are drawn to",
+  "choices": [
+    "A: gold",
+    "B: houses",
+    "C: feeders",
+    "D: Carbon Dioxide"
+  ],
+  "gold_answer": "C",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question (Q) and previous answers if any.\nProvide an answer to the following question:\nQ: Animals are drawn to\n\nChoices:\nA) gold\nB) houses\nC) feeders\nD) Carbon Dioxide\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "C",
+          "logprob": -0.39102279520011507,
+          "probability": 0.6763647379940078
+        }
+      ],
+      "decision_process": {
+        "selected_text": "C",
+        "matched_choice": "C",
+        "confidence_computation": "exp(logprob) = exp(-0.3910) = 0.6764"
+      },
+      "final_metrics": {
+        "predicted": "C",
+        "correct": true,
+        "confidence": 0.6763647379940078,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}
