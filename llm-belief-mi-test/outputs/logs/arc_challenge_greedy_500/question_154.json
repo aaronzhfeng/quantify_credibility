@@ -1,0 +1,51 @@
+{
+  "question_id": 154,
+  "question_text": "Why does a floor covered with tile feel colder than a floor covered with carpet?",
+  "choices": [
+    "A: The tile floor is colder than the carpet.",
+    "B: The tile floor conducts heat better than the carpet.",
+    "C: The carpet conducts heat better than the tile floor.",
+    "D: The tile floor is a better insulator than the carpet."
+  ],
+  "gold_answer": "B",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Why does a floor covered with tile feel colder than a floor covered with carpet?\n\n\nChoices:\nA) The tile floor is colder than the carpet.\nB) The tile floor conducts heat better than the carpet.\nC) The carpet conducts heat better than the tile floor.\nD) The tile floor is a better insulator than the carpet.\n\nProvide an answer to the following question:\n\nQ: Why does a floor covered with tile feel colder than a floor covered with carpet?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "B",
+          "logprob": -0.20348761044442654,
+          "probability": 0.8158803126545295
+        }
+      ],
+      "decision_process": {
+        "selected_text": "B",
+        "matched_choice": "B",
+        "confidence_computation": "exp(logprob) = exp(-0.2035) = 0.8159"
+      },
+      "final_metrics": {
+        "predicted": "B",
+        "correct": true,
+        "confidence": 0.8158803126545295,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

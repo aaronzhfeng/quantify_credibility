@@ -1,0 +1,51 @@
+{
+  "question_id": 313,
+  "question_text": "An object accelerates at 3 meters per second^2 when a 10-newton (N) force is applied to it. Which force would cause this object to accelerate at 6 meters per second^2?",
+  "choices": [
+    "1: 5 N",
+    "2: 10 N",
+    "3: 20 N",
+    "4: 30 N"
+  ],
+  "gold_answer": "3",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: An object accelerates at 3 meters per second^2 when a 10-newton (N) force is applied to it. Which force would cause this object to accelerate at 6 meters per second^2?\n\n\nChoices:\n1) 5 N\n2) 10 N\n3) 20 N\n4) 30 N\n\nProvide an answer to the following question:\n\nQ: An object accelerates at 3 meters per second^2 when a 10-newton (N) force is applied to it. Which force would cause this object to accelerate at 6 meters per second^2?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "C",
+          "logprob": -0.9821051955223083,
+          "probability": 0.37452182668423556
+        }
+      ],
+      "decision_process": {
+        "selected_text": "C",
+        "matched_choice": "1",
+        "confidence_computation": "exp(logprob) = exp(-0.9821) = 0.3745"
+      },
+      "final_metrics": {
+        "predicted": "1",
+        "correct": false,
+        "confidence": 0.37452182668423556,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

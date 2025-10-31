@@ -1,0 +1,51 @@
+{
+  "question_id": 472,
+  "question_text": "Anne's project for the science fair is about renewable energy. She wants to describe an activity that uses a renewable source of energy. Which activity should she describe in her project?",
+  "choices": [
+    "A: fueling a car with gas",
+    "B: heating a house with oil",
+    "C: flying a kite in the wind",
+    "D: grilling food over charcoal"
+  ],
+  "gold_answer": "C",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Anne's project for the science fair is about renewable energy. She wants to describe an activity that uses a renewable source of energy. Which activity should she describe in her project?\n\n\nChoices:\nA) fueling a car with gas\nB) heating a house with oil\nC) flying a kite in the wind\nD) grilling food over charcoal\n\nProvide an answer to the following question:\n\nQ: Anne's project for the science fair is about renewable energy. She wants to describe an activity that uses a renewable source of energy. Which activity should she describe in her project?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "C",
+          "logprob": -0.10073887999169528,
+          "probability": 0.9041690987063313
+        }
+      ],
+      "decision_process": {
+        "selected_text": "C",
+        "matched_choice": "C",
+        "confidence_computation": "exp(logprob) = exp(-0.1007) = 0.9042"
+      },
+      "final_metrics": {
+        "predicted": "C",
+        "correct": true,
+        "confidence": 0.9041690987063313,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

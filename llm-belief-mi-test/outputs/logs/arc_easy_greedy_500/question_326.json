@@ -1,0 +1,51 @@
+{
+  "question_id": 326,
+  "question_text": "Today, almost all cars have seat belts. How does improving the design of seat belts help people the most?",
+  "choices": [
+    "A: It decreases the cost of cars.",
+    "B: It increases the speed at which cars can travel.",
+    "C: It decreases injuries to passengers in cars.",
+    "D: It increases the comfort of passengers in cars."
+  ],
+  "gold_answer": "C",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Today, almost all cars have seat belts. How does improving the design of seat belts help people the most?\n\n\nChoices:\nA) It decreases the cost of cars.\nB) It increases the speed at which cars can travel.\nC) It decreases injuries to passengers in cars.\nD) It increases the comfort of passengers in cars.\n\nProvide an answer to the following question:\n\nQ: Today, almost all cars have seat belts. How does improving the design of seat belts help people the most?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "C",
+          "logprob": -0.002500692615285516,
+          "probability": 0.9975024315117894
+        }
+      ],
+      "decision_process": {
+        "selected_text": "C",
+        "matched_choice": "C",
+        "confidence_computation": "exp(logprob) = exp(-0.0025) = 0.9975"
+      },
+      "final_metrics": {
+        "predicted": "C",
+        "correct": true,
+        "confidence": 0.9975024315117894,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

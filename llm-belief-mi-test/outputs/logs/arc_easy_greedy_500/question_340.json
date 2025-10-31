@@ -1,0 +1,51 @@
+{
+  "question_id": 340,
+  "question_text": "Which type of storm causes the most flooding in areas located near an ocean coastline?",
+  "choices": [
+    "A: Tornado",
+    "B: Hurricane",
+    "C: Blizzard",
+    "D: Freezing rain"
+  ],
+  "gold_answer": "B",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Which type of storm causes the most flooding in areas located near an ocean coastline?\n\n\nChoices:\nA) Tornado\nB) Hurricane\nC) Blizzard\nD) Freezing rain\n\nProvide an answer to the following question:\n\nQ: Which type of storm causes the most flooding in areas located near an ocean coastline?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "B",
+          "logprob": -0.0018721423839451745,
+          "probability": 0.998129608981502
+        }
+      ],
+      "decision_process": {
+        "selected_text": "B",
+        "matched_choice": "B",
+        "confidence_computation": "exp(logprob) = exp(-0.0019) = 0.9981"
+      },
+      "final_metrics": {
+        "predicted": "B",
+        "correct": true,
+        "confidence": 0.998129608981502,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

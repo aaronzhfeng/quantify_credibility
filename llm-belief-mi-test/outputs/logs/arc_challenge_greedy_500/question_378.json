@@ -1,0 +1,51 @@
+{
+  "question_id": 378,
+  "question_text": "To keep a heavy box sliding across a carpeted floor at constant speed, a person must continually exert a force on the box. This force is used primarily to overcome which of the following forces?",
+  "choices": [
+    "A: Air resistance",
+    "B: The weight of the box",
+    "C: The frictional force exerted by the floor on the box",
+    "D: The gravitational force exerted by the Earth on the box"
+  ],
+  "gold_answer": "C",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: To keep a heavy box sliding across a carpeted floor at constant speed, a person must continually exert a force on the box. This force is used primarily to overcome which of the following forces?\n\n\nChoices:\nA) Air resistance\nB) The weight of the box\nC) The frictional force exerted by the floor on the box\nD) The gravitational force exerted by the Earth on the box\n\nProvide an answer to the following question:\n\nQ: To keep a heavy box sliding across a carpeted floor at constant speed, a person must continually exert a force on the box. This force is used primarily to overcome which of the following forces?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "C",
+          "logprob": -0.08112299964705016,
+          "probability": 0.9220802689216566
+        }
+      ],
+      "decision_process": {
+        "selected_text": "C",
+        "matched_choice": "C",
+        "confidence_computation": "exp(logprob) = exp(-0.0811) = 0.9221"
+      },
+      "final_metrics": {
+        "predicted": "C",
+        "correct": true,
+        "confidence": 0.9220802689216566,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

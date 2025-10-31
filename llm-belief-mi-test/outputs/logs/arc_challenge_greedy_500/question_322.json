@@ -1,0 +1,51 @@
+{
+  "question_id": 322,
+  "question_text": "A scientist is performing an experiment to determine the melting point of a new substance. Which action could increase the likelihood of obtaining accurate results?",
+  "choices": [
+    "A: repeating the experiment three times",
+    "B: experimenting with multiple substances",
+    "C: writing out the procedure after the experiment",
+    "D: using three types of thermometers in the experiment"
+  ],
+  "gold_answer": "A",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A scientist is performing an experiment to determine the melting point of a new substance. Which action could increase the likelihood of obtaining accurate results?\n\n\nChoices:\nA) repeating the experiment three times\nB) experimenting with multiple substances\nC) writing out the procedure after the experiment\nD) using three types of thermometers in the experiment\n\nProvide an answer to the following question:\n\nQ: A scientist is performing an experiment to determine the melting point of a new substance. Which action could increase the likelihood of obtaining accurate results?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "C",
+          "logprob": -1.03885089000687,
+          "probability": 0.3538610737156336
+        }
+      ],
+      "decision_process": {
+        "selected_text": "C",
+        "matched_choice": "C",
+        "confidence_computation": "exp(logprob) = exp(-1.0389) = 0.3539"
+      },
+      "final_metrics": {
+        "predicted": "C",
+        "correct": false,
+        "confidence": 0.3538610737156336,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

@@ -1,0 +1,959 @@
+{
+  "question_id": 85,
+  "question_text": "A cheetah that runs all day will find it has lost a lot of",
+  "choices": [
+    "A: blood",
+    "B: water",
+    "C: prey",
+    "D: spots"
+  ],
+  "gold_answer": "B",
+  "methods": {
+    "mi_method": {
+      "description": "k=10 chains of length n=4, MI estimation",
+      "raw_inputs": [
+        {
+          "chain_id": 0,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A cheetah that runs all day will find it has lost a lot of\n\n\nChoices:\nA) blood\nB) water\nC) prey\nD) spots\n\nProvide an answer to the following question:\n\nQ: A cheetah that runs all day will find it has lost a lot of\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 0,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A cheetah that runs all day will find it has lost a lot of\n\n\nOne answer to question Q is B) water.\n\n\nChoices:\nA) blood\nB) water\nC) prey\nD) spots\n\nProvide an answer to the following question:\n\nQ: A cheetah that runs all day will find it has lost a lot of\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 0,
+          "step": 2,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A cheetah that runs all day will find it has lost a lot of\n\n\nOne answer to question Q is B) water. Another answer to question Q is B) water.\n\n\nChoices:\nA) blood\nB) water\nC) prey\nD) spots\n\nProvide an answer to the following question:\n\nQ: A cheetah that runs all day will find it has lost a lot of\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 0,
+          "step": 3,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A cheetah that runs all day will find it has lost a lot of\n\n\nOne answer to question Q is B) water. Another answer to question Q is B) water. Another answer to question Q is A) blood.\n\n\nChoices:\nA) blood\nB) water\nC) prey\nD) spots\n\nProvide an answer to the following question:\n\nQ: A cheetah that runs all day will find it has lost a lot of\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 1,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A cheetah that runs all day will find it has lost a lot of\n\n\nChoices:\nA) blood\nB) water\nC) prey\nD) spots\n\nProvide an answer to the following question:\n\nQ: A cheetah that runs all day will find it has lost a lot of\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 1,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A cheetah that runs all day will find it has lost a lot of\n\n\nOne answer to question Q is A) blood.\n\n\nChoices:\nA) blood\nB) water\nC) prey\nD) spots\n\nProvide an answer to the following question:\n\nQ: A cheetah that runs all day will find it has lost a lot of\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 1,
+          "step": 2,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A cheetah that runs all day will find it has lost a lot of\n\n\nOne answer to question Q is A) blood. Another answer to question Q is A) blood.\n\n\nChoices:\nA) blood\nB) water\nC) prey\nD) spots\n\nProvide an answer to the following question:\n\nQ: A cheetah that runs all day will find it has lost a lot of\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 1,
+          "step": 3,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A cheetah that runs all day will find it has lost a lot of\n\n\nOne answer to question Q is A) blood. Another answer to question Q is A) blood. Another answer to question Q is A) blood.\n\n\nChoices:\nA) blood\nB) water\nC) prey\nD) spots\n\nProvide an answer to the following question:\n\nQ: A cheetah that runs all day will find it has lost a lot of\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 2,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A cheetah that runs all day will find it has lost a lot of\n\n\nChoices:\nA) blood\nB) water\nC) prey\nD) spots\n\nProvide an answer to the following question:\n\nQ: A cheetah that runs all day will find it has lost a lot of\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 2,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A cheetah that runs all day will find it has lost a lot of\n\n\nOne answer to question Q is A) blood.\n\n\nChoices:\nA) blood\nB) water\nC) prey\nD) spots\n\nProvide an answer to the following question:\n\nQ: A cheetah that runs all day will find it has lost a lot of\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 2,
+          "step": 2,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A cheetah that runs all day will find it has lost a lot of\n\n\nOne answer to question Q is A) blood. Another answer to question Q is A) blood.\n\n\nChoices:\nA) blood\nB) water\nC) prey\nD) spots\n\nProvide an answer to the following question:\n\nQ: A cheetah that runs all day will find it has lost a lot of\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 2,
+          "step": 3,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A cheetah that runs all day will find it has lost a lot of\n\n\nOne answer to question Q is A) blood. Another answer to question Q is A) blood. Another answer to question Q is A) blood.\n\n\nChoices:\nA) blood\nB) water\nC) prey\nD) spots\n\nProvide an answer to the following question:\n\nQ: A cheetah that runs all day will find it has lost a lot of\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 3,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A cheetah that runs all day will find it has lost a lot of\n\n\nChoices:\nA) blood\nB) water\nC) prey\nD) spots\n\nProvide an answer to the following question:\n\nQ: A cheetah that runs all day will find it has lost a lot of\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 3,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A cheetah that runs all day will find it has lost a lot of\n\n\nOne answer to question Q is B) water.\n\n\nChoices:\nA) blood\nB) water\nC) prey\nD) spots\n\nProvide an answer to the following question:\n\nQ: A cheetah that runs all day will find it has lost a lot of\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 3,
+          "step": 2,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A cheetah that runs all day will find it has lost a lot of\n\n\nOne answer to question Q is B) water. Another answer to question Q is A) blood.\n\n\nChoices:\nA) blood\nB) water\nC) prey\nD) spots\n\nProvide an answer to the following question:\n\nQ: A cheetah that runs all day will find it has lost a lot of\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 3,
+          "step": 3,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A cheetah that runs all day will find it has lost a lot of\n\n\nOne answer to question Q is B) water. Another answer to question Q is A) blood. Another answer to question Q is A) blood.\n\n\nChoices:\nA) blood\nB) water\nC) prey\nD) spots\n\nProvide an answer to the following question:\n\nQ: A cheetah that runs all day will find it has lost a lot of\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 4,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A cheetah that runs all day will find it has lost a lot of\n\n\nChoices:\nA) blood\nB) water\nC) prey\nD) spots\n\nProvide an answer to the following question:\n\nQ: A cheetah that runs all day will find it has lost a lot of\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 4,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A cheetah that runs all day will find it has lost a lot of\n\n\nOne answer to question Q is A) blood.\n\n\nChoices:\nA) blood\nB) water\nC) prey\nD) spots\n\nProvide an answer to the following question:\n\nQ: A cheetah that runs all day will find it has lost a lot of\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 4,
+          "step": 2,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A cheetah that runs all day will find it has lost a lot of\n\n\nOne answer to question Q is A) blood. Another answer to question Q is A) blood.\n\n\nChoices:\nA) blood\nB) water\nC) prey\nD) spots\n\nProvide an answer to the following question:\n\nQ: A cheetah that runs all day will find it has lost a lot of\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 4,
+          "step": 3,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A cheetah that runs all day will find it has lost a lot of\n\n\nOne answer to question Q is A) blood. Another answer to question Q is A) blood. Another answer to question Q is A) blood.\n\n\nChoices:\nA) blood\nB) water\nC) prey\nD) spots\n\nProvide an answer to the following question:\n\nQ: A cheetah that runs all day will find it has lost a lot of\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 5,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A cheetah that runs all day will find it has lost a lot of\n\n\nChoices:\nA) blood\nB) water\nC) prey\nD) spots\n\nProvide an answer to the following question:\n\nQ: A cheetah that runs all day will find it has lost a lot of\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 5,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A cheetah that runs all day will find it has lost a lot of\n\n\nOne answer to question Q is B) water.\n\n\nChoices:\nA) blood\nB) water\nC) prey\nD) spots\n\nProvide an answer to the following question:\n\nQ: A cheetah that runs all day will find it has lost a lot of\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 5,
+          "step": 2,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A cheetah that runs all day will find it has lost a lot of\n\n\nOne answer to question Q is B) water. Another answer to question Q is B) water.\n\n\nChoices:\nA) blood\nB) water\nC) prey\nD) spots\n\nProvide an answer to the following question:\n\nQ: A cheetah that runs all day will find it has lost a lot of\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 5,
+          "step": 3,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A cheetah that runs all day will find it has lost a lot of\n\n\nOne answer to question Q is B) water. Another answer to question Q is B) water. Another answer to question Q is A) blood.\n\n\nChoices:\nA) blood\nB) water\nC) prey\nD) spots\n\nProvide an answer to the following question:\n\nQ: A cheetah that runs all day will find it has lost a lot of\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 6,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A cheetah that runs all day will find it has lost a lot of\n\n\nChoices:\nA) blood\nB) water\nC) prey\nD) spots\n\nProvide an answer to the following question:\n\nQ: A cheetah that runs all day will find it has lost a lot of\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 6,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A cheetah that runs all day will find it has lost a lot of\n\n\nOne answer to question Q is B) water.\n\n\nChoices:\nA) blood\nB) water\nC) prey\nD) spots\n\nProvide an answer to the following question:\n\nQ: A cheetah that runs all day will find it has lost a lot of\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 6,
+          "step": 2,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A cheetah that runs all day will find it has lost a lot of\n\n\nOne answer to question Q is B) water. Another answer to question Q is A) blood.\n\n\nChoices:\nA) blood\nB) water\nC) prey\nD) spots\n\nProvide an answer to the following question:\n\nQ: A cheetah that runs all day will find it has lost a lot of\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 6,
+          "step": 3,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A cheetah that runs all day will find it has lost a lot of\n\n\nOne answer to question Q is B) water. Another answer to question Q is A) blood. Another answer to question Q is A) blood.\n\n\nChoices:\nA) blood\nB) water\nC) prey\nD) spots\n\nProvide an answer to the following question:\n\nQ: A cheetah that runs all day will find it has lost a lot of\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 7,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A cheetah that runs all day will find it has lost a lot of\n\n\nChoices:\nA) blood\nB) water\nC) prey\nD) spots\n\nProvide an answer to the following question:\n\nQ: A cheetah that runs all day will find it has lost a lot of\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 7,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A cheetah that runs all day will find it has lost a lot of\n\n\nOne answer to question Q is A) blood.\n\n\nChoices:\nA) blood\nB) water\nC) prey\nD) spots\n\nProvide an answer to the following question:\n\nQ: A cheetah that runs all day will find it has lost a lot of\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 7,
+          "step": 2,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A cheetah that runs all day will find it has lost a lot of\n\n\nOne answer to question Q is A) blood. Another answer to question Q is A) blood.\n\n\nChoices:\nA) blood\nB) water\nC) prey\nD) spots\n\nProvide an answer to the following question:\n\nQ: A cheetah that runs all day will find it has lost a lot of\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 7,
+          "step": 3,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A cheetah that runs all day will find it has lost a lot of\n\n\nOne answer to question Q is A) blood. Another answer to question Q is A) blood. Another answer to question Q is A) blood.\n\n\nChoices:\nA) blood\nB) water\nC) prey\nD) spots\n\nProvide an answer to the following question:\n\nQ: A cheetah that runs all day will find it has lost a lot of\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 8,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A cheetah that runs all day will find it has lost a lot of\n\n\nChoices:\nA) blood\nB) water\nC) prey\nD) spots\n\nProvide an answer to the following question:\n\nQ: A cheetah that runs all day will find it has lost a lot of\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 8,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A cheetah that runs all day will find it has lost a lot of\n\n\nOne answer to question Q is A) blood.\n\n\nChoices:\nA) blood\nB) water\nC) prey\nD) spots\n\nProvide an answer to the following question:\n\nQ: A cheetah that runs all day will find it has lost a lot of\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 8,
+          "step": 2,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A cheetah that runs all day will find it has lost a lot of\n\n\nOne answer to question Q is A) blood. Another answer to question Q is A) blood.\n\n\nChoices:\nA) blood\nB) water\nC) prey\nD) spots\n\nProvide an answer to the following question:\n\nQ: A cheetah that runs all day will find it has lost a lot of\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 8,
+          "step": 3,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A cheetah that runs all day will find it has lost a lot of\n\n\nOne answer to question Q is A) blood. Another answer to question Q is A) blood. Another answer to question Q is A) blood.\n\n\nChoices:\nA) blood\nB) water\nC) prey\nD) spots\n\nProvide an answer to the following question:\n\nQ: A cheetah that runs all day will find it has lost a lot of\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 9,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A cheetah that runs all day will find it has lost a lot of\n\n\nChoices:\nA) blood\nB) water\nC) prey\nD) spots\n\nProvide an answer to the following question:\n\nQ: A cheetah that runs all day will find it has lost a lot of\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 9,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A cheetah that runs all day will find it has lost a lot of\n\n\nOne answer to question Q is B) water.\n\n\nChoices:\nA) blood\nB) water\nC) prey\nD) spots\n\nProvide an answer to the following question:\n\nQ: A cheetah that runs all day will find it has lost a lot of\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 9,
+          "step": 2,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A cheetah that runs all day will find it has lost a lot of\n\n\nOne answer to question Q is B) water. Another answer to question Q is B) water.\n\n\nChoices:\nA) blood\nB) water\nC) prey\nD) spots\n\nProvide an answer to the following question:\n\nQ: A cheetah that runs all day will find it has lost a lot of\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 9,
+          "step": 3,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A cheetah that runs all day will find it has lost a lot of\n\n\nOne answer to question Q is B) water. Another answer to question Q is B) water. Another answer to question Q is A) blood.\n\n\nChoices:\nA) blood\nB) water\nC) prey\nD) spots\n\nProvide an answer to the following question:\n\nQ: A cheetah that runs all day will find it has lost a lot of\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "chain_id": 0,
+          "step": 0,
+          "text": "B",
+          "logprob": -0.6998203992843628,
+          "probability": 0.4966744988768562
+        },
+        {
+          "chain_id": 0,
+          "step": 1,
+          "text": "B",
+          "logprob": -0.6261118650436401,
+          "probability": 0.5346666207816538
+        },
+        {
+          "chain_id": 0,
+          "step": 2,
+          "text": "A",
+          "logprob": -0.2845716178417206,
+          "probability": 0.7523364728201056
+        },
+        {
+          "chain_id": 0,
+          "step": 3,
+          "text": "A",
+          "logprob": 0.0,
+          "probability": 0.5
+        },
+        {
+          "chain_id": 1,
+          "step": 0,
+          "text": "A",
+          "logprob": -0.8387097120285034,
+          "probability": 0.43226791384437224
+        },
+        {
+          "chain_id": 1,
+          "step": 1,
+          "text": "A",
+          "logprob": 0.0,
+          "probability": 0.5
+        },
+        {
+          "chain_id": 1,
+          "step": 2,
+          "text": "A",
+          "logprob": 0.0,
+          "probability": 0.5
+        },
+        {
+          "chain_id": 1,
+          "step": 3,
+          "text": "A",
+          "logprob": 0.0,
+          "probability": 0.5
+        },
+        {
+          "chain_id": 2,
+          "step": 0,
+          "text": "A",
+          "logprob": -0.8387097120285034,
+          "probability": 0.43226791384437224
+        },
+        {
+          "chain_id": 2,
+          "step": 1,
+          "text": "A",
+          "logprob": 0.0,
+          "probability": 0.5
+        },
+        {
+          "chain_id": 2,
+          "step": 2,
+          "text": "A",
+          "logprob": 0.0,
+          "probability": 0.5
+        },
+        {
+          "chain_id": 2,
+          "step": 3,
+          "text": "A",
+          "logprob": 0.0,
+          "probability": 0.5
+        },
+        {
+          "chain_id": 3,
+          "step": 0,
+          "text": "B",
+          "logprob": -0.6998203992843628,
+          "probability": 0.4966744988768562
+        },
+        {
+          "chain_id": 3,
+          "step": 1,
+          "text": "A",
+          "logprob": -0.7650011777877808,
+          "probability": 0.46533338291001825
+        },
+        {
+          "chain_id": 3,
+          "step": 2,
+          "text": "A",
+          "logprob": 0.0,
+          "probability": 0.5
+        },
+        {
+          "chain_id": 3,
+          "step": 3,
+          "text": "A",
+          "logprob": -0.11735103279352188,
+          "probability": 0.8892729743906995
+        },
+        {
+          "chain_id": 4,
+          "step": 0,
+          "text": "A",
+          "logprob": -0.8387097120285034,
+          "probability": 0.43226791384437224
+        },
+        {
+          "chain_id": 4,
+          "step": 1,
+          "text": "A",
+          "logprob": 0.0,
+          "probability": 0.5
+        },
+        {
+          "chain_id": 4,
+          "step": 2,
+          "text": "A",
+          "logprob": 0.0,
+          "probability": 0.5
+        },
+        {
+          "chain_id": 4,
+          "step": 3,
+          "text": "A",
+          "logprob": 0.0,
+          "probability": 0.5
+        },
+        {
+          "chain_id": 5,
+          "step": 0,
+          "text": "B",
+          "logprob": -0.6998203992843628,
+          "probability": 0.4966744988768562
+        },
+        {
+          "chain_id": 5,
+          "step": 1,
+          "text": "B",
+          "logprob": -0.6261118650436401,
+          "probability": 0.5346666207816538
+        },
+        {
+          "chain_id": 5,
+          "step": 2,
+          "text": "A",
+          "logprob": -0.2845716178417206,
+          "probability": 0.7523364728201056
+        },
+        {
+          "chain_id": 5,
+          "step": 3,
+          "text": "A",
+          "logprob": 0.0,
+          "probability": 0.5
+        },
+        {
+          "chain_id": 6,
+          "step": 0,
+          "text": "B",
+          "logprob": -0.6998203992843628,
+          "probability": 0.4966744988768562
+        },
+        {
+          "chain_id": 6,
+          "step": 1,
+          "text": "A",
+          "logprob": -0.7650011777877808,
+          "probability": 0.46533338291001825
+        },
+        {
+          "chain_id": 6,
+          "step": 2,
+          "text": "A",
+          "logprob": 0.0,
+          "probability": 0.5
+        },
+        {
+          "chain_id": 6,
+          "step": 3,
+          "text": "A",
+          "logprob": -0.11735103279352188,
+          "probability": 0.8892729743906995
+        },
+        {
+          "chain_id": 7,
+          "step": 0,
+          "text": "A",
+          "logprob": -0.8387097120285034,
+          "probability": 0.43226791384437224
+        },
+        {
+          "chain_id": 7,
+          "step": 1,
+          "text": "A",
+          "logprob": 0.0,
+          "probability": 0.5
+        },
+        {
+          "chain_id": 7,
+          "step": 2,
+          "text": "A",
+          "logprob": 0.0,
+          "probability": 0.5
+        },
+        {
+          "chain_id": 7,
+          "step": 3,
+          "text": "A",
+          "logprob": 0.0,
+          "probability": 0.5
+        },
+        {
+          "chain_id": 8,
+          "step": 0,
+          "text": "A",
+          "logprob": -0.8387097120285034,
+          "probability": 0.43226791384437224
+        },
+        {
+          "chain_id": 8,
+          "step": 1,
+          "text": "A",
+          "logprob": 0.0,
+          "probability": 0.5
+        },
+        {
+          "chain_id": 8,
+          "step": 2,
+          "text": "A",
+          "logprob": 0.0,
+          "probability": 0.5
+        },
+        {
+          "chain_id": 8,
+          "step": 3,
+          "text": "A",
+          "logprob": 0.0,
+          "probability": 0.5
+        },
+        {
+          "chain_id": 9,
+          "step": 0,
+          "text": "B",
+          "logprob": -0.6998203992843628,
+          "probability": 0.4966744988768562
+        },
+        {
+          "chain_id": 9,
+          "step": 1,
+          "text": "B",
+          "logprob": -0.6261118650436401,
+          "probability": 0.5346666207816538
+        },
+        {
+          "chain_id": 9,
+          "step": 2,
+          "text": "A",
+          "logprob": -0.2845716178417206,
+          "probability": 0.7523364728201056
+        },
+        {
+          "chain_id": 9,
+          "step": 3,
+          "text": "A",
+          "logprob": 0.0,
+          "probability": 0.5
+        }
+      ],
+      "decision_process": {
+        "num_chains": 10,
+        "chain_length": 4,
+        "total_inferences": 40,
+        "mi_method": "listing",
+        "mi_nats": 0.20374910337797836,
+        "mi_bits": 0.29394782102898215,
+        "selected_answer": "A",
+        "matched_choice": "A",
+        "confidence_computation": "1/(1 + mi_nats) = 1/(1 + 0.2037) = 0.8307",
+        "agreement": "100.00% (10/10 chains agree on final answer)"
+      },
+      "final_metrics": {
+        "predicted": "A",
+        "correct": false,
+        "confidence": 0.8307378981166302,
+        "mi_score": 0.29394782102898215,
+        "agreement": 1.0
+      }
+    }
+  }
+}

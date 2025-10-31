@@ -1,0 +1,51 @@
+{
+  "question_id": 77,
+  "question_text": "Under which circumstance would an adaptation that shortens the time of a tadpole's metamorphosis be most useful?",
+  "choices": [
+    "A: when tadpoles need to swim immediately",
+    "B: when there is a limited amount of water in their environment",
+    "C: when there is a decrease in the number of predators",
+    "D: when tadpoles need to blend in with their surroundings"
+  ],
+  "gold_answer": "B",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Under which circumstance would an adaptation that shortens the time of a tadpole's metamorphosis be most useful?\n\n\nChoices:\nA) when tadpoles need to swim immediately\nB) when there is a limited amount of water in their environment\nC) when there is a decrease in the number of predators\nD) when tadpoles need to blend in with their surroundings\n\nProvide an answer to the following question:\n\nQ: Under which circumstance would an adaptation that shortens the time of a tadpole's metamorphosis be most useful?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "A",
+          "logprob": -0.8229085702187149,
+          "probability": 0.439152489285045
+        }
+      ],
+      "decision_process": {
+        "selected_text": "A",
+        "matched_choice": "A",
+        "confidence_computation": "exp(logprob) = exp(-0.8229) = 0.4392"
+      },
+      "final_metrics": {
+        "predicted": "A",
+        "correct": false,
+        "confidence": 0.439152489285045,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

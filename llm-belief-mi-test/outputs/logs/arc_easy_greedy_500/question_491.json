@@ -1,0 +1,51 @@
+{
+  "question_id": 491,
+  "question_text": "Which two behaviors best demonstrate stewardship?",
+  "choices": [
+    "A: reducing consumption, recycling wastes",
+    "B: increasing consumption, discarding wastes",
+    "C: reducing consumption, discarding wastes",
+    "D: increasing consumption, recycling wastes"
+  ],
+  "gold_answer": "A",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Which two behaviors best demonstrate stewardship?\n\n\nChoices:\nA) reducing consumption, recycling wastes\nB) increasing consumption, discarding wastes\nC) reducing consumption, discarding wastes\nD) increasing consumption, recycling wastes\n\nProvide an answer to the following question:\n\nQ: Which two behaviors best demonstrate stewardship?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "A",
+          "logprob": -0.0025536268658470362,
+          "probability": 0.9974496308656378
+        }
+      ],
+      "decision_process": {
+        "selected_text": "A",
+        "matched_choice": "A",
+        "confidence_computation": "exp(logprob) = exp(-0.0026) = 0.9974"
+      },
+      "final_metrics": {
+        "predicted": "A",
+        "correct": true,
+        "confidence": 0.9974496308656378,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "question_id": 311,
+  "question_text": "Newton's first law of motion states that an object at rest will stay at rest unless acted upon by an outside force. Which activity is an example of this law?",
+  "choices": [
+    "A: A football is kicked off a tee.",
+    "B: A baseball player slides into second base.",
+    "C: A floating stick is carried over a waterfall.",
+    "D: A bicycle travels faster as it goes downhill."
+  ],
+  "gold_answer": "A",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Newton's first law of motion states that an object at rest will stay at rest unless acted upon by an outside force. Which activity is an example of this law?\n\n\nChoices:\nA) A football is kicked off a tee.\nB) A baseball player slides into second base.\nC) A floating stick is carried over a waterfall.\nD) A bicycle travels faster as it goes downhill.\n\nProvide an answer to the following question:\n\nQ: Newton's first law of motion states that an object at rest will stay at rest unless acted upon by an outside force. Which activity is an example of this law?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "A",
+          "logprob": -0.2801970030850498,
+          "probability": 0.7556348643921301
+        }
+      ],
+      "decision_process": {
+        "selected_text": "A",
+        "matched_choice": "A",
+        "confidence_computation": "exp(logprob) = exp(-0.2802) = 0.7556"
+      },
+      "final_metrics": {
+        "predicted": "A",
+        "correct": true,
+        "confidence": 0.7556348643921301,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

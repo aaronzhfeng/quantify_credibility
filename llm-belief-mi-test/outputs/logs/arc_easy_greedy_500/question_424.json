@@ -1,0 +1,51 @@
+{
+  "question_id": 424,
+  "question_text": "A growing community relies on a nearby lake to provide fresh water for drinking and bathing. An increase in the use of fresh water will cause the lake to become",
+  "choices": [
+    "A: colder",
+    "B: deeper",
+    "C: larger",
+    "D: smaller"
+  ],
+  "gold_answer": "D",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A growing community relies on a nearby lake to provide fresh water for drinking and bathing. An increase in the use of fresh water will cause the lake to become\n\n\nChoices:\nA) colder\nB) deeper\nC) larger\nD) smaller\n\nProvide an answer to the following question:\n\nQ: A growing community relies on a nearby lake to provide fresh water for drinking and bathing. An increase in the use of fresh water will cause the lake to become\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "D",
+          "logprob": -0.3536345070460811,
+          "probability": 0.7021315445962251
+        }
+      ],
+      "decision_process": {
+        "selected_text": "D",
+        "matched_choice": "D",
+        "confidence_computation": "exp(logprob) = exp(-0.3536) = 0.7021"
+      },
+      "final_metrics": {
+        "predicted": "D",
+        "correct": true,
+        "confidence": 0.7021315445962251,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

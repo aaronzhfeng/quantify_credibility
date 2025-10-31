@@ -1,0 +1,51 @@
+{
+  "question_id": 223,
+  "question_text": "A student wants to know how long it takes mold to form on bread. After preparing the bread for the investigation, what should the student most likely do next?",
+  "choices": [
+    "A: Check the bread each day.",
+    "B: Record the temperature of the bread.",
+    "C: Measure the weight of the bread.",
+    "D: Give the bread different amounts of light."
+  ],
+  "gold_answer": "A",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A student wants to know how long it takes mold to form on bread. After preparing the bread for the investigation, what should the student most likely do next?\n\n\nChoices:\nA) Check the bread each day.\nB) Record the temperature of the bread.\nC) Measure the weight of the bread.\nD) Give the bread different amounts of light.\n\nProvide an answer to the following question:\n\nQ: A student wants to know how long it takes mold to form on bread. After preparing the bread for the investigation, what should the student most likely do next?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "A",
+          "logprob": -0.07162324368255213,
+          "probability": 0.930881545255332
+        }
+      ],
+      "decision_process": {
+        "selected_text": "A",
+        "matched_choice": "A",
+        "confidence_computation": "exp(logprob) = exp(-0.0716) = 0.9309"
+      },
+      "final_metrics": {
+        "predicted": "A",
+        "correct": true,
+        "confidence": 0.930881545255332,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

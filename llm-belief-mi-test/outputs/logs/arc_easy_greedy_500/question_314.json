@@ -1,0 +1,51 @@
+{
+  "question_id": 314,
+  "question_text": "A unicellular organism is best described as being",
+  "choices": [
+    "A: a complex organism.",
+    "B: a microorganism.",
+    "C: an organism with specialized cells.",
+    "D: an organism with different types of tissues."
+  ],
+  "gold_answer": "B",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A unicellular organism is best described as being\n\n\nChoices:\nA) a complex organism.\nB) a microorganism.\nC) an organism with specialized cells.\nD) an organism with different types of tissues.\n\nProvide an answer to the following question:\n\nQ: A unicellular organism is best described as being\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "B",
+          "logprob": -0.2532203217560891,
+          "probability": 0.7762968279006099
+        }
+      ],
+      "decision_process": {
+        "selected_text": "B",
+        "matched_choice": "B",
+        "confidence_computation": "exp(logprob) = exp(-0.2532) = 0.7763"
+      },
+      "final_metrics": {
+        "predicted": "B",
+        "correct": true,
+        "confidence": 0.7762968279006099,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

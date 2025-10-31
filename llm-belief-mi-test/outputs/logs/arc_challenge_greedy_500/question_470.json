@@ -1,0 +1,51 @@
+{
+  "question_id": 470,
+  "question_text": "Tori made some observations about a grasshopper she saw on a nature walk. Which statement about the grasshopper is a scientific observation?",
+  "choices": [
+    "A: The grasshopper is pretty.",
+    "B: The grasshopper is dangerous.",
+    "C: The grasshopper is better than a spider.",
+    "D: The grasshopper is smaller than the leaf."
+  ],
+  "gold_answer": "D",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Tori made some observations about a grasshopper she saw on a nature walk. Which statement about the grasshopper is a scientific observation?\n\n\nChoices:\nA) The grasshopper is pretty.\nB) The grasshopper is dangerous.\nC) The grasshopper is better than a spider.\nD) The grasshopper is smaller than the leaf.\n\nProvide an answer to the following question:\n\nQ: Tori made some observations about a grasshopper she saw on a nature walk. Which statement about the grasshopper is a scientific observation?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "D",
+          "logprob": -0.05539634788874537,
+          "probability": 0.9461100848959991
+        }
+      ],
+      "decision_process": {
+        "selected_text": "D",
+        "matched_choice": "D",
+        "confidence_computation": "exp(logprob) = exp(-0.0554) = 0.9461"
+      },
+      "final_metrics": {
+        "predicted": "D",
+        "correct": true,
+        "confidence": 0.9461100848959991,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

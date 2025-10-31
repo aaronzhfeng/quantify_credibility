@@ -1,0 +1,51 @@
+{
+  "question_id": 362,
+  "question_text": "Scientists use different tools during their investigations. What tool does a scientist use to study cells?",
+  "choices": [
+    "A: a balance",
+    "B: a microscope",
+    "C: a centimeter ruler",
+    "D: a graduated cylinder"
+  ],
+  "gold_answer": "B",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Scientists use different tools during their investigations. What tool does a scientist use to study cells?\n\n\nChoices:\nA) a balance\nB) a microscope\nC) a centimeter ruler\nD) a graduated cylinder\n\nProvide an answer to the following question:\n\nQ: Scientists use different tools during their investigations. What tool does a scientist use to study cells?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "B",
+          "logprob": -0.0014598977868445218,
+          "probability": 0.9985411673455383
+        }
+      ],
+      "decision_process": {
+        "selected_text": "B",
+        "matched_choice": "B",
+        "confidence_computation": "exp(logprob) = exp(-0.0015) = 0.9985"
+      },
+      "final_metrics": {
+        "predicted": "B",
+        "correct": true,
+        "confidence": 0.9985411673455383,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

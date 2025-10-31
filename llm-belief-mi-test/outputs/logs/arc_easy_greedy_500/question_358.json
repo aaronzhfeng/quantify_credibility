@@ -1,0 +1,51 @@
+{
+  "question_id": 358,
+  "question_text": "Metals that easily transfer electricity are called",
+  "choices": [
+    "A: resistors.",
+    "B: magnets.",
+    "C: insulators.",
+    "D: conductors."
+  ],
+  "gold_answer": "D",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Metals that easily transfer electricity are called\n\n\nChoices:\nA) resistors.\nB) magnets.\nC) insulators.\nD) conductors.\n\nProvide an answer to the following question:\n\nQ: Metals that easily transfer electricity are called\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "D",
+          "logprob": -0.00962163251824677,
+          "probability": 0.9904245072892459
+        }
+      ],
+      "decision_process": {
+        "selected_text": "D",
+        "matched_choice": "D",
+        "confidence_computation": "exp(logprob) = exp(-0.0096) = 0.9904"
+      },
+      "final_metrics": {
+        "predicted": "D",
+        "correct": true,
+        "confidence": 0.9904245072892459,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

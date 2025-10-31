@@ -1,0 +1,51 @@
+{
+  "question_id": 383,
+  "question_text": "Most farmers use fertilizers on their cornfields. Which statement best explains why farmers should not use excess amounts of fertilizers?",
+  "choices": [
+    "A: Fertilizers may wash into streams.",
+    "B: Fertilizers may be used by weeds.",
+    "C: Fertilizers may evaporate into the air.",
+    "D: Fertilizers may come from natural materials."
+  ],
+  "gold_answer": "A",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Most farmers use fertilizers on their cornfields. Which statement best explains why farmers should not use excess amounts of fertilizers?\n\n\nChoices:\nA) Fertilizers may wash into streams.\nB) Fertilizers may be used by weeds.\nC) Fertilizers may evaporate into the air.\nD) Fertilizers may come from natural materials.\n\nProvide an answer to the following question:\n\nQ: Most farmers use fertilizers on their cornfields. Which statement best explains why farmers should not use excess amounts of fertilizers?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "A",
+          "logprob": -0.03245803900063038,
+          "probability": 0.968063069872936
+        }
+      ],
+      "decision_process": {
+        "selected_text": "A",
+        "matched_choice": "A",
+        "confidence_computation": "exp(logprob) = exp(-0.0325) = 0.9681"
+      },
+      "final_metrics": {
+        "predicted": "A",
+        "correct": true,
+        "confidence": 0.968063069872936,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

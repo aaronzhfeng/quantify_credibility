@@ -1,0 +1,729 @@
+{
+  "question_id": 172,
+  "question_text": "Where would a duck like to live?",
+  "choices": [
+    "A: the Sahara",
+    "B: Antarctica",
+    "C: the Appalachian mountains",
+    "D: Death Valley"
+  ],
+  "gold_answer": "C",
+  "methods": {
+    "mi_method": {
+      "description": "k=10 chains of length n=3, MI estimation",
+      "raw_inputs": [
+        {
+          "chain_id": 0,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Where would a duck like to live?\n\n\nChoices:\nA) the Sahara\nB) Antarctica\nC) the Appalachian mountains\nD) Death Valley\n\nProvide an answer to the following question:\n\nQ: Where would a duck like to live?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 0,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Where would a duck like to live?\n\n\nOne answer to question Q is A) the Sahara.\n\n\nChoices:\nA) the Sahara\nB) Antarctica\nC) the Appalachian mountains\nD) Death Valley\n\nProvide an answer to the following question:\n\nQ: Where would a duck like to live?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 0,
+          "step": 2,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Where would a duck like to live?\n\n\nOne answer to question Q is A) the Sahara. Another answer to question Q is C) the Appalachian mountains.\n\n\nChoices:\nA) the Sahara\nB) Antarctica\nC) the Appalachian mountains\nD) Death Valley\n\nProvide an answer to the following question:\n\nQ: Where would a duck like to live?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 1,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Where would a duck like to live?\n\n\nChoices:\nA) the Sahara\nB) Antarctica\nC) the Appalachian mountains\nD) Death Valley\n\nProvide an answer to the following question:\n\nQ: Where would a duck like to live?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 1,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Where would a duck like to live?\n\n\nOne answer to question Q is A) the Sahara.\n\n\nChoices:\nA) the Sahara\nB) Antarctica\nC) the Appalachian mountains\nD) Death Valley\n\nProvide an answer to the following question:\n\nQ: Where would a duck like to live?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 1,
+          "step": 2,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Where would a duck like to live?\n\n\nOne answer to question Q is A) the Sahara. Another answer to question Q is C) the Appalachian mountains.\n\n\nChoices:\nA) the Sahara\nB) Antarctica\nC) the Appalachian mountains\nD) Death Valley\n\nProvide an answer to the following question:\n\nQ: Where would a duck like to live?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 2,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Where would a duck like to live?\n\n\nChoices:\nA) the Sahara\nB) Antarctica\nC) the Appalachian mountains\nD) Death Valley\n\nProvide an answer to the following question:\n\nQ: Where would a duck like to live?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 2,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Where would a duck like to live?\n\n\nOne answer to question Q is A) the Sahara.\n\n\nChoices:\nA) the Sahara\nB) Antarctica\nC) the Appalachian mountains\nD) Death Valley\n\nProvide an answer to the following question:\n\nQ: Where would a duck like to live?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 2,
+          "step": 2,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Where would a duck like to live?\n\n\nOne answer to question Q is A) the Sahara. Another answer to question Q is C) the Appalachian mountains.\n\n\nChoices:\nA) the Sahara\nB) Antarctica\nC) the Appalachian mountains\nD) Death Valley\n\nProvide an answer to the following question:\n\nQ: Where would a duck like to live?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 3,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Where would a duck like to live?\n\n\nChoices:\nA) the Sahara\nB) Antarctica\nC) the Appalachian mountains\nD) Death Valley\n\nProvide an answer to the following question:\n\nQ: Where would a duck like to live?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 3,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Where would a duck like to live?\n\n\nOne answer to question Q is A) the Sahara.\n\n\nChoices:\nA) the Sahara\nB) Antarctica\nC) the Appalachian mountains\nD) Death Valley\n\nProvide an answer to the following question:\n\nQ: Where would a duck like to live?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 3,
+          "step": 2,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Where would a duck like to live?\n\n\nOne answer to question Q is A) the Sahara. Another answer to question Q is C) the Appalachian mountains.\n\n\nChoices:\nA) the Sahara\nB) Antarctica\nC) the Appalachian mountains\nD) Death Valley\n\nProvide an answer to the following question:\n\nQ: Where would a duck like to live?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 4,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Where would a duck like to live?\n\n\nChoices:\nA) the Sahara\nB) Antarctica\nC) the Appalachian mountains\nD) Death Valley\n\nProvide an answer to the following question:\n\nQ: Where would a duck like to live?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 4,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Where would a duck like to live?\n\n\nOne answer to question Q is A) the Sahara.\n\n\nChoices:\nA) the Sahara\nB) Antarctica\nC) the Appalachian mountains\nD) Death Valley\n\nProvide an answer to the following question:\n\nQ: Where would a duck like to live?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 4,
+          "step": 2,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Where would a duck like to live?\n\n\nOne answer to question Q is A) the Sahara. Another answer to question Q is C) the Appalachian mountains.\n\n\nChoices:\nA) the Sahara\nB) Antarctica\nC) the Appalachian mountains\nD) Death Valley\n\nProvide an answer to the following question:\n\nQ: Where would a duck like to live?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 5,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Where would a duck like to live?\n\n\nChoices:\nA) the Sahara\nB) Antarctica\nC) the Appalachian mountains\nD) Death Valley\n\nProvide an answer to the following question:\n\nQ: Where would a duck like to live?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 5,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Where would a duck like to live?\n\n\nOne answer to question Q is A) the Sahara.\n\n\nChoices:\nA) the Sahara\nB) Antarctica\nC) the Appalachian mountains\nD) Death Valley\n\nProvide an answer to the following question:\n\nQ: Where would a duck like to live?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 5,
+          "step": 2,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Where would a duck like to live?\n\n\nOne answer to question Q is A) the Sahara. Another answer to question Q is C) the Appalachian mountains.\n\n\nChoices:\nA) the Sahara\nB) Antarctica\nC) the Appalachian mountains\nD) Death Valley\n\nProvide an answer to the following question:\n\nQ: Where would a duck like to live?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 6,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Where would a duck like to live?\n\n\nChoices:\nA) the Sahara\nB) Antarctica\nC) the Appalachian mountains\nD) Death Valley\n\nProvide an answer to the following question:\n\nQ: Where would a duck like to live?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 6,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Where would a duck like to live?\n\n\nOne answer to question Q is A) the Sahara.\n\n\nChoices:\nA) the Sahara\nB) Antarctica\nC) the Appalachian mountains\nD) Death Valley\n\nProvide an answer to the following question:\n\nQ: Where would a duck like to live?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 6,
+          "step": 2,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Where would a duck like to live?\n\n\nOne answer to question Q is A) the Sahara. Another answer to question Q is A) the Sahara.\n\n\nChoices:\nA) the Sahara\nB) Antarctica\nC) the Appalachian mountains\nD) Death Valley\n\nProvide an answer to the following question:\n\nQ: Where would a duck like to live?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 7,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Where would a duck like to live?\n\n\nChoices:\nA) the Sahara\nB) Antarctica\nC) the Appalachian mountains\nD) Death Valley\n\nProvide an answer to the following question:\n\nQ: Where would a duck like to live?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 7,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Where would a duck like to live?\n\n\nOne answer to question Q is A) the Sahara.\n\n\nChoices:\nA) the Sahara\nB) Antarctica\nC) the Appalachian mountains\nD) Death Valley\n\nProvide an answer to the following question:\n\nQ: Where would a duck like to live?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 7,
+          "step": 2,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Where would a duck like to live?\n\n\nOne answer to question Q is A) the Sahara. Another answer to question Q is C) the Appalachian mountains.\n\n\nChoices:\nA) the Sahara\nB) Antarctica\nC) the Appalachian mountains\nD) Death Valley\n\nProvide an answer to the following question:\n\nQ: Where would a duck like to live?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 8,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Where would a duck like to live?\n\n\nChoices:\nA) the Sahara\nB) Antarctica\nC) the Appalachian mountains\nD) Death Valley\n\nProvide an answer to the following question:\n\nQ: Where would a duck like to live?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 8,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Where would a duck like to live?\n\n\nOne answer to question Q is A) the Sahara.\n\n\nChoices:\nA) the Sahara\nB) Antarctica\nC) the Appalachian mountains\nD) Death Valley\n\nProvide an answer to the following question:\n\nQ: Where would a duck like to live?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 8,
+          "step": 2,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Where would a duck like to live?\n\n\nOne answer to question Q is A) the Sahara. Another answer to question Q is C) the Appalachian mountains.\n\n\nChoices:\nA) the Sahara\nB) Antarctica\nC) the Appalachian mountains\nD) Death Valley\n\nProvide an answer to the following question:\n\nQ: Where would a duck like to live?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 9,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Where would a duck like to live?\n\n\nChoices:\nA) the Sahara\nB) Antarctica\nC) the Appalachian mountains\nD) Death Valley\n\nProvide an answer to the following question:\n\nQ: Where would a duck like to live?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 9,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Where would a duck like to live?\n\n\nOne answer to question Q is A) the Sahara.\n\n\nChoices:\nA) the Sahara\nB) Antarctica\nC) the Appalachian mountains\nD) Death Valley\n\nProvide an answer to the following question:\n\nQ: Where would a duck like to live?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 9,
+          "step": 2,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Where would a duck like to live?\n\n\nOne answer to question Q is A) the Sahara. Another answer to question Q is C) the Appalachian mountains.\n\n\nChoices:\nA) the Sahara\nB) Antarctica\nC) the Appalachian mountains\nD) Death Valley\n\nProvide an answer to the following question:\n\nQ: Where would a duck like to live?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "chain_id": 0,
+          "step": 0,
+          "text": "A",
+          "logprob": -0.405032217502594,
+          "probability": 0.6669553228774868
+        },
+        {
+          "chain_id": 0,
+          "step": 1,
+          "text": "C",
+          "logprob": -0.284250944852829,
+          "probability": 0.7525777654914504
+        },
+        {
+          "chain_id": 0,
+          "step": 2,
+          "text": "C",
+          "logprob": -0.8416507244110107,
+          "probability": 0.43099847618813386
+        },
+        {
+          "chain_id": 1,
+          "step": 0,
+          "text": "A",
+          "logprob": -0.405032217502594,
+          "probability": 0.6669553228774868
+        },
+        {
+          "chain_id": 1,
+          "step": 1,
+          "text": "C",
+          "logprob": -0.284250944852829,
+          "probability": 0.7525777654914504
+        },
+        {
+          "chain_id": 1,
+          "step": 2,
+          "text": "C",
+          "logprob": -0.8416507244110107,
+          "probability": 0.43099847618813386
+        },
+        {
+          "chain_id": 2,
+          "step": 0,
+          "text": "A",
+          "logprob": -0.405032217502594,
+          "probability": 0.6669553228774868
+        },
+        {
+          "chain_id": 2,
+          "step": 1,
+          "text": "C",
+          "logprob": -0.284250944852829,
+          "probability": 0.7525777654914504
+        },
+        {
+          "chain_id": 2,
+          "step": 2,
+          "text": "C",
+          "logprob": -0.8416507244110107,
+          "probability": 0.43099847618813386
+        },
+        {
+          "chain_id": 3,
+          "step": 0,
+          "text": "A",
+          "logprob": -0.405032217502594,
+          "probability": 0.6669553228774868
+        },
+        {
+          "chain_id": 3,
+          "step": 1,
+          "text": "C",
+          "logprob": -0.284250944852829,
+          "probability": 0.7525777654914504
+        },
+        {
+          "chain_id": 3,
+          "step": 2,
+          "text": "C",
+          "logprob": -0.8416507244110107,
+          "probability": 0.43099847618813386
+        },
+        {
+          "chain_id": 4,
+          "step": 0,
+          "text": "A",
+          "logprob": -0.405032217502594,
+          "probability": 0.6669553228774868
+        },
+        {
+          "chain_id": 4,
+          "step": 1,
+          "text": "C",
+          "logprob": -0.284250944852829,
+          "probability": 0.7525777654914504
+        },
+        {
+          "chain_id": 4,
+          "step": 2,
+          "text": "A",
+          "logprob": -0.5638720989227295,
+          "probability": 0.5690015624380658
+        },
+        {
+          "chain_id": 5,
+          "step": 0,
+          "text": "A",
+          "logprob": -0.405032217502594,
+          "probability": 0.6669553228774868
+        },
+        {
+          "chain_id": 5,
+          "step": 1,
+          "text": "C",
+          "logprob": -0.284250944852829,
+          "probability": 0.7525777654914504
+        },
+        {
+          "chain_id": 5,
+          "step": 2,
+          "text": "A",
+          "logprob": -0.5638720989227295,
+          "probability": 0.5690015624380658
+        },
+        {
+          "chain_id": 6,
+          "step": 0,
+          "text": "A",
+          "logprob": -0.405032217502594,
+          "probability": 0.6669553228774868
+        },
+        {
+          "chain_id": 6,
+          "step": 1,
+          "text": "A",
+          "logprob": -2.089806318283081,
+          "probability": 0.123711094074344
+        },
+        {
+          "chain_id": 6,
+          "step": 2,
+          "text": "A",
+          "logprob": -0.44411662220954895,
+          "probability": 0.6413906160746263
+        },
+        {
+          "chain_id": 7,
+          "step": 0,
+          "text": "A",
+          "logprob": -0.405032217502594,
+          "probability": 0.6669553228774868
+        },
+        {
+          "chain_id": 7,
+          "step": 1,
+          "text": "C",
+          "logprob": -0.284250944852829,
+          "probability": 0.7525777654914504
+        },
+        {
+          "chain_id": 7,
+          "step": 2,
+          "text": "C",
+          "logprob": -0.8416507244110107,
+          "probability": 0.43099847618813386
+        },
+        {
+          "chain_id": 8,
+          "step": 0,
+          "text": "A",
+          "logprob": -0.405032217502594,
+          "probability": 0.6669553228774868
+        },
+        {
+          "chain_id": 8,
+          "step": 1,
+          "text": "C",
+          "logprob": -0.284250944852829,
+          "probability": 0.7525777654914504
+        },
+        {
+          "chain_id": 8,
+          "step": 2,
+          "text": "A",
+          "logprob": -0.5638720989227295,
+          "probability": 0.5690015624380658
+        },
+        {
+          "chain_id": 9,
+          "step": 0,
+          "text": "A",
+          "logprob": -0.405032217502594,
+          "probability": 0.6669553228774868
+        },
+        {
+          "chain_id": 9,
+          "step": 1,
+          "text": "C",
+          "logprob": -0.284250944852829,
+          "probability": 0.7525777654914504
+        },
+        {
+          "chain_id": 9,
+          "step": 2,
+          "text": "A",
+          "logprob": -0.5638720989227295,
+          "probability": 0.5690015624380658
+        }
+      ],
+      "decision_process": {
+        "num_chains": 10,
+        "chain_length": 3,
+        "total_inferences": 30,
+        "mi_method": "listing",
+        "mi_nats": 0.03414982381826298,
+        "mi_bits": 0.04926778146983981,
+        "selected_answer": "A",
+        "matched_choice": "A",
+        "confidence_computation": "1/(1 + mi_nats) = 1/(1 + 0.0341) = 0.9670",
+        "agreement": "50.00% (5/10 chains agree on final answer)"
+      },
+      "final_metrics": {
+        "predicted": "A",
+        "correct": false,
+        "confidence": 0.9669778759017956,
+        "mi_score": 0.04926778146983981,
+        "agreement": 0.5
+      }
+    }
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "question_id": 260,
+  "question_text": "Certain lakes in the northeastern part of the United States have had decreases in pH levels, causing the deaths of many fish. What is the most likely reason for this change in pH levels?",
+  "choices": [
+    "A: nuclear power plants",
+    "B: hydroelectric power plants",
+    "C: coal-burning factories",
+    "D: noncommercial farms"
+  ],
+  "gold_answer": "C",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Certain lakes in the northeastern part of the United States have had decreases in pH levels, causing the deaths of many fish. What is the most likely reason for this change in pH levels?\n\n\nChoices:\nA) nuclear power plants\nB) hydroelectric power plants\nC) coal-burning factories\nD) noncommercial farms\n\nProvide an answer to the following question:\n\nQ: Certain lakes in the northeastern part of the United States have had decreases in pH levels, causing the deaths of many fish. What is the most likely reason for this change in pH levels?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "C",
+          "logprob": -0.35036531333753373,
+          "probability": 0.7044307047766766
+        }
+      ],
+      "decision_process": {
+        "selected_text": "C",
+        "matched_choice": "C",
+        "confidence_computation": "exp(logprob) = exp(-0.3504) = 0.7044"
+      },
+      "final_metrics": {
+        "predicted": "C",
+        "correct": true,
+        "confidence": 0.7044307047766766,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

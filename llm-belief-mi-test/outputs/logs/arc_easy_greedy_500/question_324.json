@@ -1,0 +1,51 @@
+{
+  "question_id": 324,
+  "question_text": "The visible light spectrum can be subdivided according to",
+  "choices": [
+    "A: the types of waves.",
+    "B: the sizes of particles.",
+    "C: a range of colors.",
+    "D: a type of energy."
+  ],
+  "gold_answer": "C",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: The visible light spectrum can be subdivided according to\n\n\nChoices:\nA) the types of waves.\nB) the sizes of particles.\nC) a range of colors.\nD) a type of energy.\n\nProvide an answer to the following question:\n\nQ: The visible light spectrum can be subdivided according to\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "C",
+          "logprob": -0.2288444471778348,
+          "probability": 0.7954522587256834
+        }
+      ],
+      "decision_process": {
+        "selected_text": "C",
+        "matched_choice": "C",
+        "confidence_computation": "exp(logprob) = exp(-0.2288) = 0.7955"
+      },
+      "final_metrics": {
+        "predicted": "C",
+        "correct": true,
+        "confidence": 0.7954522587256834,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

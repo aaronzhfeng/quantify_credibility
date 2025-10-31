@@ -1,0 +1,51 @@
+{
+  "question_id": 389,
+  "question_text": "After a person eats, the food is converted into energy by",
+  "choices": [
+    "A: muscles.",
+    "B: tissues.",
+    "C: bones.",
+    "D: cells."
+  ],
+  "gold_answer": "D",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: After a person eats, the food is converted into energy by\n\n\nChoices:\nA) muscles.\nB) tissues.\nC) bones.\nD) cells.\n\nProvide an answer to the following question:\n\nQ: After a person eats, the food is converted into energy by\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "D",
+          "logprob": -0.010566116194240749,
+          "probability": 0.989489509124564
+        }
+      ],
+      "decision_process": {
+        "selected_text": "D",
+        "matched_choice": "D",
+        "confidence_computation": "exp(logprob) = exp(-0.0106) = 0.9895"
+      },
+      "final_metrics": {
+        "predicted": "D",
+        "correct": true,
+        "confidence": 0.989489509124564,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

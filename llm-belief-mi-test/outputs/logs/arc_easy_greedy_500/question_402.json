@@ -1,0 +1,51 @@
+{
+  "question_id": 402,
+  "question_text": "Some classrooms have computers. The computer is most useful to the students because it helps them",
+  "choices": [
+    "A: play games.",
+    "B: watch movies.",
+    "C: listen to music.",
+    "D: find information."
+  ],
+  "gold_answer": "D",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Some classrooms have computers. The computer is most useful to the students because it helps them\n\n\nChoices:\nA) play games.\nB) watch movies.\nC) listen to music.\nD) find information.\n\nProvide an answer to the following question:\n\nQ: Some classrooms have computers. The computer is most useful to the students because it helps them\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "D",
+          "logprob": -0.006095635588280857,
+          "probability": 0.9939229051067628
+        }
+      ],
+      "decision_process": {
+        "selected_text": "D",
+        "matched_choice": "D",
+        "confidence_computation": "exp(logprob) = exp(-0.0061) = 0.9939"
+      },
+      "final_metrics": {
+        "predicted": "D",
+        "correct": true,
+        "confidence": 0.9939229051067628,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

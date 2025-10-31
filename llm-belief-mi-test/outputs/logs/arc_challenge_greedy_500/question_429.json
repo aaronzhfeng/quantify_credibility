@@ -1,0 +1,51 @@
+{
+  "question_id": 429,
+  "question_text": "Which of the following natural disasters is most likely to result in a narrow path of destruction through a forest?",
+  "choices": [
+    "A: a flood",
+    "B: a tornado",
+    "C: a hurricane",
+    "D: an earthquake"
+  ],
+  "gold_answer": "B",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Which of the following natural disasters is most likely to result in a narrow path of destruction through a forest?\n\n\nChoices:\nA) a flood\nB) a tornado\nC) a hurricane\nD) an earthquake\n\nProvide an answer to the following question:\n\nQ: Which of the following natural disasters is most likely to result in a narrow path of destruction through a forest?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "B",
+          "logprob": -0.32601157861063257,
+          "probability": 0.721796829978882
+        }
+      ],
+      "decision_process": {
+        "selected_text": "B",
+        "matched_choice": "B",
+        "confidence_computation": "exp(logprob) = exp(-0.3260) = 0.7218"
+      },
+      "final_metrics": {
+        "predicted": "B",
+        "correct": true,
+        "confidence": 0.721796829978882,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

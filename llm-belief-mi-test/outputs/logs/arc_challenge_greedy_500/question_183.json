@@ -1,0 +1,51 @@
+{
+  "question_id": 183,
+  "question_text": "A glass of cold water is set on a desktop. Later that day, beads of water had formed on the outside of the glass. The most likely explanation for the beads of water is that",
+  "choices": [
+    "A: some water dripped over the side.",
+    "B: the water soaked through the glass.",
+    "C: water vapor condensed on the sides.",
+    "D: someone sprayed the glass with water."
+  ],
+  "gold_answer": "C",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A glass of cold water is set on a desktop. Later that day, beads of water had formed on the outside of the glass. The most likely explanation for the beads of water is that\n\n\nChoices:\nA) some water dripped over the side.\nB) the water soaked through the glass.\nC) water vapor condensed on the sides.\nD) someone sprayed the glass with water.\n\nProvide an answer to the following question:\n\nQ: A glass of cold water is set on a desktop. Later that day, beads of water had formed on the outside of the glass. The most likely explanation for the beads of water is that\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "C",
+          "logprob": -0.021889407245907933,
+          "probability": 0.978348427315498
+        }
+      ],
+      "decision_process": {
+        "selected_text": "C",
+        "matched_choice": "C",
+        "confidence_computation": "exp(logprob) = exp(-0.0219) = 0.9783"
+      },
+      "final_metrics": {
+        "predicted": "C",
+        "correct": true,
+        "confidence": 0.978348427315498,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

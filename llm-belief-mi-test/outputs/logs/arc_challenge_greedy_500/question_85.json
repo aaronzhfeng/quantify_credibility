@@ -1,0 +1,51 @@
+{
+  "question_id": 85,
+  "question_text": "The period of rotation for each planet in our solar system is different. The period of rotation for Earth is",
+  "choices": [
+    "A: 24 hours",
+    "B: 28 days",
+    "C: 13 weeks",
+    "D: 1 year"
+  ],
+  "gold_answer": "A",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: The period of rotation for each planet in our solar system is different. The period of rotation for Earth is\n\n\nChoices:\nA) 24 hours\nB) 28 days\nC) 13 weeks\nD) 1 year\n\nProvide an answer to the following question:\n\nQ: The period of rotation for each planet in our solar system is different. The period of rotation for Earth is\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "A",
+          "logprob": -0.005570155568420887,
+          "probability": 0.994445328984311
+        }
+      ],
+      "decision_process": {
+        "selected_text": "A",
+        "matched_choice": "A",
+        "confidence_computation": "exp(logprob) = exp(-0.0056) = 0.9944"
+      },
+      "final_metrics": {
+        "predicted": "A",
+        "correct": true,
+        "confidence": 0.994445328984311,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

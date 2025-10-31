@@ -1,0 +1,51 @@
+{
+  "question_id": 45,
+  "question_text": "The best way to separate salt from water is with the use of",
+  "choices": [
+    "A: oil.",
+    "B: heat.",
+    "C: a magnet.",
+    "D: rubbing alcohol."
+  ],
+  "gold_answer": "B",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: The best way to separate salt from water is with the use of\n\n\nChoices:\nA) oil.\nB) heat.\nC) a magnet.\nD) rubbing alcohol.\n\nProvide an answer to the following question:\n\nQ: The best way to separate salt from water is with the use of\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "A",
+          "logprob": -0.045597412157803774,
+          "probability": 0.955426527879021
+        }
+      ],
+      "decision_process": {
+        "selected_text": "A",
+        "matched_choice": "A",
+        "confidence_computation": "exp(logprob) = exp(-0.0456) = 0.9554"
+      },
+      "final_metrics": {
+        "predicted": "A",
+        "correct": false,
+        "confidence": 0.955426527879021,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

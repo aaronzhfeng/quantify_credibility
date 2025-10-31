@@ -1,0 +1,51 @@
+{
+  "question_id": 319,
+  "question_text": "Which statement describes an interaction between the hydrosphere and the atmosphere?",
+  "choices": [
+    "A: Flowing water carves through rock to form a canyon.",
+    "B: Lava from an underwater volcano cools to form a mountain.",
+    "C: Ashes rise from a volcanic eruption to block sunlight.",
+    "D: Water vapor rises from the ocean to form clouds."
+  ],
+  "gold_answer": "D",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Which statement describes an interaction between the hydrosphere and the atmosphere?\n\n\nChoices:\nA) Flowing water carves through rock to form a canyon.\nB) Lava from an underwater volcano cools to form a mountain.\nC) Ashes rise from a volcanic eruption to block sunlight.\nD) Water vapor rises from the ocean to form clouds.\n\nProvide an answer to the following question:\n\nQ: Which statement describes an interaction between the hydrosphere and the atmosphere?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "D",
+          "logprob": -0.013199410561355762,
+          "probability": 0.9868873196430025
+        }
+      ],
+      "decision_process": {
+        "selected_text": "D",
+        "matched_choice": "D",
+        "confidence_computation": "exp(logprob) = exp(-0.0132) = 0.9869"
+      },
+      "final_metrics": {
+        "predicted": "D",
+        "correct": true,
+        "confidence": 0.9868873196430025,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

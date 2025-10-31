@@ -1,0 +1,51 @@
+{
+  "question_id": 177,
+  "question_text": "Which of the following could help to reduce a home heating bill in winter?",
+  "choices": [
+    "A: replacing wood doors with aluminum doors",
+    "B: using more insulation in the walls of the home",
+    "C: removing thick rugs and heavy curtains in the home",
+    "D: painting the roof of the home white to reflect light"
+  ],
+  "gold_answer": "B",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Which of the following could help to reduce a home heating bill in winter?\n\n\nChoices:\nA) replacing wood doors with aluminum doors\nB) using more insulation in the walls of the home\nC) removing thick rugs and heavy curtains in the home\nD) painting the roof of the home white to reflect light\n\nProvide an answer to the following question:\n\nQ: Which of the following could help to reduce a home heating bill in winter?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "B",
+          "logprob": -0.10494789881340694,
+          "probability": 0.900371431784213
+        }
+      ],
+      "decision_process": {
+        "selected_text": "B",
+        "matched_choice": "B",
+        "confidence_computation": "exp(logprob) = exp(-0.1049) = 0.9004"
+      },
+      "final_metrics": {
+        "predicted": "B",
+        "correct": true,
+        "confidence": 0.900371431784213,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

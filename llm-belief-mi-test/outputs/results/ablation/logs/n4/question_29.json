@@ -1,0 +1,959 @@
+{
+  "question_id": 29,
+  "question_text": "When it's flying, a plane has no friction with the",
+  "choices": [
+    "A: wings",
+    "B: ground",
+    "C: air",
+    "D: clouds"
+  ],
+  "gold_answer": "B",
+  "methods": {
+    "mi_method": {
+      "description": "k=10 chains of length n=4, MI estimation",
+      "raw_inputs": [
+        {
+          "chain_id": 0,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: When it's flying, a plane has no friction with the\n\n\nChoices:\nA) wings\nB) ground\nC) air\nD) clouds\n\nProvide an answer to the following question:\n\nQ: When it's flying, a plane has no friction with the\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 0,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: When it's flying, a plane has no friction with the\n\n\nOne answer to question Q is C) air.\n\n\nChoices:\nA) wings\nB) ground\nC) air\nD) clouds\n\nProvide an answer to the following question:\n\nQ: When it's flying, a plane has no friction with the\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 0,
+          "step": 2,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: When it's flying, a plane has no friction with the\n\n\nOne answer to question Q is C) air. Another answer to question Q is C) air.\n\n\nChoices:\nA) wings\nB) ground\nC) air\nD) clouds\n\nProvide an answer to the following question:\n\nQ: When it's flying, a plane has no friction with the\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 0,
+          "step": 3,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: When it's flying, a plane has no friction with the\n\n\nOne answer to question Q is C) air. Another answer to question Q is C) air. Another answer to question Q is C) air.\n\n\nChoices:\nA) wings\nB) ground\nC) air\nD) clouds\n\nProvide an answer to the following question:\n\nQ: When it's flying, a plane has no friction with the\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 1,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: When it's flying, a plane has no friction with the\n\n\nChoices:\nA) wings\nB) ground\nC) air\nD) clouds\n\nProvide an answer to the following question:\n\nQ: When it's flying, a plane has no friction with the\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 1,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: When it's flying, a plane has no friction with the\n\n\nOne answer to question Q is B) ground.\n\n\nChoices:\nA) wings\nB) ground\nC) air\nD) clouds\n\nProvide an answer to the following question:\n\nQ: When it's flying, a plane has no friction with the\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 1,
+          "step": 2,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: When it's flying, a plane has no friction with the\n\n\nOne answer to question Q is B) ground. Another answer to question Q is A) wings.\n\n\nChoices:\nA) wings\nB) ground\nC) air\nD) clouds\n\nProvide an answer to the following question:\n\nQ: When it's flying, a plane has no friction with the\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 1,
+          "step": 3,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: When it's flying, a plane has no friction with the\n\n\nOne answer to question Q is B) ground. Another answer to question Q is A) wings. Another answer to question Q is A) wings.\n\n\nChoices:\nA) wings\nB) ground\nC) air\nD) clouds\n\nProvide an answer to the following question:\n\nQ: When it's flying, a plane has no friction with the\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 2,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: When it's flying, a plane has no friction with the\n\n\nChoices:\nA) wings\nB) ground\nC) air\nD) clouds\n\nProvide an answer to the following question:\n\nQ: When it's flying, a plane has no friction with the\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 2,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: When it's flying, a plane has no friction with the\n\n\nOne answer to question Q is B) ground.\n\n\nChoices:\nA) wings\nB) ground\nC) air\nD) clouds\n\nProvide an answer to the following question:\n\nQ: When it's flying, a plane has no friction with the\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 2,
+          "step": 2,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: When it's flying, a plane has no friction with the\n\n\nOne answer to question Q is B) ground. Another answer to question Q is B) ground.\n\n\nChoices:\nA) wings\nB) ground\nC) air\nD) clouds\n\nProvide an answer to the following question:\n\nQ: When it's flying, a plane has no friction with the\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 2,
+          "step": 3,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: When it's flying, a plane has no friction with the\n\n\nOne answer to question Q is B) ground. Another answer to question Q is B) ground. Another answer to question Q is A) wings.\n\n\nChoices:\nA) wings\nB) ground\nC) air\nD) clouds\n\nProvide an answer to the following question:\n\nQ: When it's flying, a plane has no friction with the\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 3,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: When it's flying, a plane has no friction with the\n\n\nChoices:\nA) wings\nB) ground\nC) air\nD) clouds\n\nProvide an answer to the following question:\n\nQ: When it's flying, a plane has no friction with the\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 3,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: When it's flying, a plane has no friction with the\n\n\nOne answer to question Q is B) ground.\n\n\nChoices:\nA) wings\nB) ground\nC) air\nD) clouds\n\nProvide an answer to the following question:\n\nQ: When it's flying, a plane has no friction with the\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 3,
+          "step": 2,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: When it's flying, a plane has no friction with the\n\n\nOne answer to question Q is B) ground. Another answer to question Q is C) air.\n\n\nChoices:\nA) wings\nB) ground\nC) air\nD) clouds\n\nProvide an answer to the following question:\n\nQ: When it's flying, a plane has no friction with the\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 3,
+          "step": 3,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: When it's flying, a plane has no friction with the\n\n\nOne answer to question Q is B) ground. Another answer to question Q is C) air. Another answer to question Q is A) wings.\n\n\nChoices:\nA) wings\nB) ground\nC) air\nD) clouds\n\nProvide an answer to the following question:\n\nQ: When it's flying, a plane has no friction with the\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 4,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: When it's flying, a plane has no friction with the\n\n\nChoices:\nA) wings\nB) ground\nC) air\nD) clouds\n\nProvide an answer to the following question:\n\nQ: When it's flying, a plane has no friction with the\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 4,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: When it's flying, a plane has no friction with the\n\n\nOne answer to question Q is C) air.\n\n\nChoices:\nA) wings\nB) ground\nC) air\nD) clouds\n\nProvide an answer to the following question:\n\nQ: When it's flying, a plane has no friction with the\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 4,
+          "step": 2,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: When it's flying, a plane has no friction with the\n\n\nOne answer to question Q is C) air. Another answer to question Q is C) air.\n\n\nChoices:\nA) wings\nB) ground\nC) air\nD) clouds\n\nProvide an answer to the following question:\n\nQ: When it's flying, a plane has no friction with the\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 4,
+          "step": 3,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: When it's flying, a plane has no friction with the\n\n\nOne answer to question Q is C) air. Another answer to question Q is C) air. Another answer to question Q is C) air.\n\n\nChoices:\nA) wings\nB) ground\nC) air\nD) clouds\n\nProvide an answer to the following question:\n\nQ: When it's flying, a plane has no friction with the\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 5,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: When it's flying, a plane has no friction with the\n\n\nChoices:\nA) wings\nB) ground\nC) air\nD) clouds\n\nProvide an answer to the following question:\n\nQ: When it's flying, a plane has no friction with the\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 5,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: When it's flying, a plane has no friction with the\n\n\nOne answer to question Q is A) wings.\n\n\nChoices:\nA) wings\nB) ground\nC) air\nD) clouds\n\nProvide an answer to the following question:\n\nQ: When it's flying, a plane has no friction with the\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 5,
+          "step": 2,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: When it's flying, a plane has no friction with the\n\n\nOne answer to question Q is A) wings. Another answer to question Q is C) air.\n\n\nChoices:\nA) wings\nB) ground\nC) air\nD) clouds\n\nProvide an answer to the following question:\n\nQ: When it's flying, a plane has no friction with the\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 5,
+          "step": 3,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: When it's flying, a plane has no friction with the\n\n\nOne answer to question Q is A) wings. Another answer to question Q is C) air. Another answer to question Q is A) wings.\n\n\nChoices:\nA) wings\nB) ground\nC) air\nD) clouds\n\nProvide an answer to the following question:\n\nQ: When it's flying, a plane has no friction with the\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 6,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: When it's flying, a plane has no friction with the\n\n\nChoices:\nA) wings\nB) ground\nC) air\nD) clouds\n\nProvide an answer to the following question:\n\nQ: When it's flying, a plane has no friction with the\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 6,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: When it's flying, a plane has no friction with the\n\n\nOne answer to question Q is B) ground.\n\n\nChoices:\nA) wings\nB) ground\nC) air\nD) clouds\n\nProvide an answer to the following question:\n\nQ: When it's flying, a plane has no friction with the\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 6,
+          "step": 2,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: When it's flying, a plane has no friction with the\n\n\nOne answer to question Q is B) ground. Another answer to question Q is A) wings.\n\n\nChoices:\nA) wings\nB) ground\nC) air\nD) clouds\n\nProvide an answer to the following question:\n\nQ: When it's flying, a plane has no friction with the\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 6,
+          "step": 3,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: When it's flying, a plane has no friction with the\n\n\nOne answer to question Q is B) ground. Another answer to question Q is A) wings. Another answer to question Q is A) wings.\n\n\nChoices:\nA) wings\nB) ground\nC) air\nD) clouds\n\nProvide an answer to the following question:\n\nQ: When it's flying, a plane has no friction with the\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 7,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: When it's flying, a plane has no friction with the\n\n\nChoices:\nA) wings\nB) ground\nC) air\nD) clouds\n\nProvide an answer to the following question:\n\nQ: When it's flying, a plane has no friction with the\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 7,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: When it's flying, a plane has no friction with the\n\n\nOne answer to question Q is B) ground.\n\n\nChoices:\nA) wings\nB) ground\nC) air\nD) clouds\n\nProvide an answer to the following question:\n\nQ: When it's flying, a plane has no friction with the\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 7,
+          "step": 2,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: When it's flying, a plane has no friction with the\n\n\nOne answer to question Q is B) ground. Another answer to question Q is B) ground.\n\n\nChoices:\nA) wings\nB) ground\nC) air\nD) clouds\n\nProvide an answer to the following question:\n\nQ: When it's flying, a plane has no friction with the\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 7,
+          "step": 3,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: When it's flying, a plane has no friction with the\n\n\nOne answer to question Q is B) ground. Another answer to question Q is B) ground. Another answer to question Q is B) ground.\n\n\nChoices:\nA) wings\nB) ground\nC) air\nD) clouds\n\nProvide an answer to the following question:\n\nQ: When it's flying, a plane has no friction with the\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 8,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: When it's flying, a plane has no friction with the\n\n\nChoices:\nA) wings\nB) ground\nC) air\nD) clouds\n\nProvide an answer to the following question:\n\nQ: When it's flying, a plane has no friction with the\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 8,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: When it's flying, a plane has no friction with the\n\n\nOne answer to question Q is B) ground.\n\n\nChoices:\nA) wings\nB) ground\nC) air\nD) clouds\n\nProvide an answer to the following question:\n\nQ: When it's flying, a plane has no friction with the\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 8,
+          "step": 2,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: When it's flying, a plane has no friction with the\n\n\nOne answer to question Q is B) ground. Another answer to question Q is A) wings.\n\n\nChoices:\nA) wings\nB) ground\nC) air\nD) clouds\n\nProvide an answer to the following question:\n\nQ: When it's flying, a plane has no friction with the\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 8,
+          "step": 3,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: When it's flying, a plane has no friction with the\n\n\nOne answer to question Q is B) ground. Another answer to question Q is A) wings. Another answer to question Q is A) wings.\n\n\nChoices:\nA) wings\nB) ground\nC) air\nD) clouds\n\nProvide an answer to the following question:\n\nQ: When it's flying, a plane has no friction with the\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 9,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: When it's flying, a plane has no friction with the\n\n\nChoices:\nA) wings\nB) ground\nC) air\nD) clouds\n\nProvide an answer to the following question:\n\nQ: When it's flying, a plane has no friction with the\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 9,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: When it's flying, a plane has no friction with the\n\n\nOne answer to question Q is A) wings.\n\n\nChoices:\nA) wings\nB) ground\nC) air\nD) clouds\n\nProvide an answer to the following question:\n\nQ: When it's flying, a plane has no friction with the\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 9,
+          "step": 2,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: When it's flying, a plane has no friction with the\n\n\nOne answer to question Q is A) wings. Another answer to question Q is A) wings.\n\n\nChoices:\nA) wings\nB) ground\nC) air\nD) clouds\n\nProvide an answer to the following question:\n\nQ: When it's flying, a plane has no friction with the\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 9,
+          "step": 3,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: When it's flying, a plane has no friction with the\n\n\nOne answer to question Q is A) wings. Another answer to question Q is A) wings. Another answer to question Q is A) wings.\n\n\nChoices:\nA) wings\nB) ground\nC) air\nD) clouds\n\nProvide an answer to the following question:\n\nQ: When it's flying, a plane has no friction with the\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "chain_id": 0,
+          "step": 0,
+          "text": "C",
+          "logprob": -0.7290485501289368,
+          "probability": 0.4823677205315919
+        },
+        {
+          "chain_id": 0,
+          "step": 1,
+          "text": "C",
+          "logprob": -0.1730077564716339,
+          "probability": 0.841131090609876
+        },
+        {
+          "chain_id": 0,
+          "step": 2,
+          "text": "C",
+          "logprob": -0.1730080544948578,
+          "probability": 0.8411308399333141
+        },
+        {
+          "chain_id": 0,
+          "step": 3,
+          "text": "C",
+          "logprob": 0.0,
+          "probability": 0.5
+        },
+        {
+          "chain_id": 1,
+          "step": 0,
+          "text": "B",
+          "logprob": -1.2846019268035889,
+          "probability": 0.2767607327363373
+        },
+        {
+          "chain_id": 1,
+          "step": 1,
+          "text": "A",
+          "logprob": -1.1083678007125854,
+          "probability": 0.330097306200366
+        },
+        {
+          "chain_id": 1,
+          "step": 2,
+          "text": "A",
+          "logprob": -0.22262509167194366,
+          "probability": 0.8004148752525572
+        },
+        {
+          "chain_id": 1,
+          "step": 3,
+          "text": "A",
+          "logprob": -0.25192949175834656,
+          "probability": 0.7772995421608091
+        },
+        {
+          "chain_id": 2,
+          "step": 0,
+          "text": "B",
+          "logprob": -1.2846019268035889,
+          "probability": 0.2767607327363373
+        },
+        {
+          "chain_id": 2,
+          "step": 1,
+          "text": "B",
+          "logprob": -0.5528143644332886,
+          "probability": 0.5753283461202848
+        },
+        {
+          "chain_id": 2,
+          "step": 2,
+          "text": "A",
+          "logprob": -1.194218635559082,
+          "probability": 0.3029405687171196
+        },
+        {
+          "chain_id": 2,
+          "step": 3,
+          "text": "A",
+          "logprob": -0.1337146908044815,
+          "probability": 0.8748396287908604
+        },
+        {
+          "chain_id": 3,
+          "step": 0,
+          "text": "B",
+          "logprob": -1.2846019268035889,
+          "probability": 0.2767607327363373
+        },
+        {
+          "chain_id": 3,
+          "step": 1,
+          "text": "C",
+          "logprob": -2.358369827270508,
+          "probability": 0.0945742699966015
+        },
+        {
+          "chain_id": 3,
+          "step": 2,
+          "text": "A",
+          "logprob": -1.5009207725524902,
+          "probability": 0.2229248025796477
+        },
+        {
+          "chain_id": 3,
+          "step": 3,
+          "text": "C",
+          "logprob": -1.9392777681350708,
+          "probability": 0.14380777483771884
+        },
+        {
+          "chain_id": 4,
+          "step": 0,
+          "text": "C",
+          "logprob": -0.7290485501289368,
+          "probability": 0.4823677205315919
+        },
+        {
+          "chain_id": 4,
+          "step": 1,
+          "text": "C",
+          "logprob": -0.1730077564716339,
+          "probability": 0.841131090609876
+        },
+        {
+          "chain_id": 4,
+          "step": 2,
+          "text": "C",
+          "logprob": -0.1730080544948578,
+          "probability": 0.8411308399333141
+        },
+        {
+          "chain_id": 4,
+          "step": 3,
+          "text": "C",
+          "logprob": 0.0,
+          "probability": 0.5
+        },
+        {
+          "chain_id": 5,
+          "step": 0,
+          "text": "A",
+          "logprob": -1.4234912395477295,
+          "probability": 0.24087160674548386
+        },
+        {
+          "chain_id": 5,
+          "step": 1,
+          "text": "C",
+          "logprob": -2.4824633598327637,
+          "probability": 0.08353718976838019
+        },
+        {
+          "chain_id": 5,
+          "step": 2,
+          "text": "A",
+          "logprob": -0.36088523268699646,
+          "probability": 0.6970589934640643
+        },
+        {
+          "chain_id": 5,
+          "step": 3,
+          "text": "A",
+          "logprob": -0.22262471914291382,
+          "probability": 0.8004151734303897
+        },
+        {
+          "chain_id": 6,
+          "step": 0,
+          "text": "B",
+          "logprob": -1.2846019268035889,
+          "probability": 0.2767607327363373
+        },
+        {
+          "chain_id": 6,
+          "step": 1,
+          "text": "A",
+          "logprob": -1.1083678007125854,
+          "probability": 0.330097306200366
+        },
+        {
+          "chain_id": 6,
+          "step": 2,
+          "text": "A",
+          "logprob": -0.22262509167194366,
+          "probability": 0.8004148752525572
+        },
+        {
+          "chain_id": 6,
+          "step": 3,
+          "text": "A",
+          "logprob": -0.25192949175834656,
+          "probability": 0.7772995421608091
+        },
+        {
+          "chain_id": 7,
+          "step": 0,
+          "text": "B",
+          "logprob": -1.2846019268035889,
+          "probability": 0.2767607327363373
+        },
+        {
+          "chain_id": 7,
+          "step": 1,
+          "text": "B",
+          "logprob": -0.5528143644332886,
+          "probability": 0.5753283461202848
+        },
+        {
+          "chain_id": 7,
+          "step": 2,
+          "text": "B",
+          "logprob": -0.3608846366405487,
+          "probability": 0.6970594089437251
+        },
+        {
+          "chain_id": 7,
+          "step": 3,
+          "text": "B",
+          "logprob": -0.1173514574766159,
+          "probability": 0.8892725967315815
+        },
+        {
+          "chain_id": 8,
+          "step": 0,
+          "text": "B",
+          "logprob": -1.2846019268035889,
+          "probability": 0.2767607327363373
+        },
+        {
+          "chain_id": 8,
+          "step": 1,
+          "text": "A",
+          "logprob": -1.1083678007125854,
+          "probability": 0.330097306200366
+        },
+        {
+          "chain_id": 8,
+          "step": 2,
+          "text": "A",
+          "logprob": -0.22262509167194366,
+          "probability": 0.8004148752525572
+        },
+        {
+          "chain_id": 8,
+          "step": 3,
+          "text": "A",
+          "logprob": -0.25192949175834656,
+          "probability": 0.7772995421608091
+        },
+        {
+          "chain_id": 9,
+          "step": 0,
+          "text": "A",
+          "logprob": -1.4234912395477295,
+          "probability": 0.24087160674548386
+        },
+        {
+          "chain_id": 9,
+          "step": 1,
+          "text": "A",
+          "logprob": -0.37759314477443695,
+          "probability": 0.6855093469969784
+        },
+        {
+          "chain_id": 9,
+          "step": 2,
+          "text": "A",
+          "logprob": -0.33997634053230286,
+          "probability": 0.7117871630687844
+        },
+        {
+          "chain_id": 9,
+          "step": 3,
+          "text": "A",
+          "logprob": -0.09012897312641144,
+          "probability": 0.9138133203098086
+        }
+      ],
+      "decision_process": {
+        "num_chains": 10,
+        "chain_length": 4,
+        "total_inferences": 40,
+        "mi_method": "listing",
+        "mi_nats": 0.6229113614059991,
+        "mi_bits": 0.8986711320138278,
+        "selected_answer": "C",
+        "matched_choice": "C",
+        "confidence_computation": "1/(1 + mi_nats) = 1/(1 + 0.6229) = 0.6162",
+        "agreement": "60.00% (6/10 chains agree on final answer)"
+      },
+      "final_metrics": {
+        "predicted": "C",
+        "correct": false,
+        "confidence": 0.6161765970592851,
+        "mi_score": 0.8986711320138278,
+        "agreement": 0.6
+      }
+    }
+  }
+}

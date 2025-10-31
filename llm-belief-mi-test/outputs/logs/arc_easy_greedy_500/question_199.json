@@ -1,0 +1,51 @@
+{
+  "question_id": 199,
+  "question_text": "During which process do animals increase in size?",
+  "choices": [
+    "A: breathing",
+    "B: growing",
+    "C: shedding",
+    "D: repairing"
+  ],
+  "gold_answer": "B",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: During which process do animals increase in size?\n\n\nChoices:\nA) breathing\nB) growing\nC) shedding\nD) repairing\n\nProvide an answer to the following question:\n\nQ: During which process do animals increase in size?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "B",
+          "logprob": -0.005229986039921641,
+          "probability": 0.9947836665257883
+        }
+      ],
+      "decision_process": {
+        "selected_text": "B",
+        "matched_choice": "B",
+        "confidence_computation": "exp(logprob) = exp(-0.0052) = 0.9948"
+      },
+      "final_metrics": {
+        "predicted": "B",
+        "correct": true,
+        "confidence": 0.9947836665257883,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

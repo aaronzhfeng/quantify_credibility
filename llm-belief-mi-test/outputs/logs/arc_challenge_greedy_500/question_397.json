@@ -1,0 +1,51 @@
+{
+  "question_id": 397,
+  "question_text": "When considering if scientific research is correct, all of these are important except",
+  "choices": [
+    "A: other support for the research study findings.",
+    "B: the way the research study was designed.",
+    "C: when the research study was done.",
+    "D: how the author feels about the research study."
+  ],
+  "gold_answer": "D",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: When considering if scientific research is correct, all of these are important except\n\n\nChoices:\nA) other support for the research study findings.\nB) the way the research study was designed.\nC) when the research study was done.\nD) how the author feels about the research study.\n\nProvide an answer to the following question:\n\nQ: When considering if scientific research is correct, all of these are important except\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "A",
+          "logprob": -0.8034047866240144,
+          "probability": 0.4478016963562481
+        }
+      ],
+      "decision_process": {
+        "selected_text": "A",
+        "matched_choice": "A",
+        "confidence_computation": "exp(logprob) = exp(-0.8034) = 0.4478"
+      },
+      "final_metrics": {
+        "predicted": "A",
+        "correct": false,
+        "confidence": 0.4478016963562481,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

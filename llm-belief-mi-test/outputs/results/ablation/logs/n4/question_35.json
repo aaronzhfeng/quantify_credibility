@@ -1,0 +1,959 @@
+{
+  "question_id": 35,
+  "question_text": "Tadpoles start their lives as",
+  "choices": [
+    "A: Water animals",
+    "B: Frogs",
+    "C: Ants",
+    "D: College Students"
+  ],
+  "gold_answer": "A",
+  "methods": {
+    "mi_method": {
+      "description": "k=10 chains of length n=4, MI estimation",
+      "raw_inputs": [
+        {
+          "chain_id": 0,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Tadpoles start their lives as\n\n\nChoices:\nA) Water animals\nB) Frogs\nC) Ants\nD) College Students\n\nProvide an answer to the following question:\n\nQ: Tadpoles start their lives as\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 0,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Tadpoles start their lives as\n\n\nOne answer to question Q is B) Frogs.\n\n\nChoices:\nA) Water animals\nB) Frogs\nC) Ants\nD) College Students\n\nProvide an answer to the following question:\n\nQ: Tadpoles start their lives as\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 0,
+          "step": 2,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Tadpoles start their lives as\n\n\nOne answer to question Q is B) Frogs. Another answer to question Q is A) Water animals.\n\n\nChoices:\nA) Water animals\nB) Frogs\nC) Ants\nD) College Students\n\nProvide an answer to the following question:\n\nQ: Tadpoles start their lives as\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 0,
+          "step": 3,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Tadpoles start their lives as\n\n\nOne answer to question Q is B) Frogs. Another answer to question Q is A) Water animals. Another answer to question Q is A) Water animals.\n\n\nChoices:\nA) Water animals\nB) Frogs\nC) Ants\nD) College Students\n\nProvide an answer to the following question:\n\nQ: Tadpoles start their lives as\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 1,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Tadpoles start their lives as\n\n\nChoices:\nA) Water animals\nB) Frogs\nC) Ants\nD) College Students\n\nProvide an answer to the following question:\n\nQ: Tadpoles start their lives as\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 1,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Tadpoles start their lives as\n\n\nOne answer to question Q is A) Water animals.\n\n\nChoices:\nA) Water animals\nB) Frogs\nC) Ants\nD) College Students\n\nProvide an answer to the following question:\n\nQ: Tadpoles start their lives as\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 1,
+          "step": 2,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Tadpoles start their lives as\n\n\nOne answer to question Q is A) Water animals. Another answer to question Q is A) Water animals.\n\n\nChoices:\nA) Water animals\nB) Frogs\nC) Ants\nD) College Students\n\nProvide an answer to the following question:\n\nQ: Tadpoles start their lives as\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 1,
+          "step": 3,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Tadpoles start their lives as\n\n\nOne answer to question Q is A) Water animals. Another answer to question Q is A) Water animals. Another answer to question Q is A) Water animals.\n\n\nChoices:\nA) Water animals\nB) Frogs\nC) Ants\nD) College Students\n\nProvide an answer to the following question:\n\nQ: Tadpoles start their lives as\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 2,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Tadpoles start their lives as\n\n\nChoices:\nA) Water animals\nB) Frogs\nC) Ants\nD) College Students\n\nProvide an answer to the following question:\n\nQ: Tadpoles start their lives as\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 2,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Tadpoles start their lives as\n\n\nOne answer to question Q is A) Water animals.\n\n\nChoices:\nA) Water animals\nB) Frogs\nC) Ants\nD) College Students\n\nProvide an answer to the following question:\n\nQ: Tadpoles start their lives as\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 2,
+          "step": 2,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Tadpoles start their lives as\n\n\nOne answer to question Q is A) Water animals. Another answer to question Q is A) Water animals.\n\n\nChoices:\nA) Water animals\nB) Frogs\nC) Ants\nD) College Students\n\nProvide an answer to the following question:\n\nQ: Tadpoles start their lives as\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 2,
+          "step": 3,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Tadpoles start their lives as\n\n\nOne answer to question Q is A) Water animals. Another answer to question Q is A) Water animals. Another answer to question Q is A) Water animals.\n\n\nChoices:\nA) Water animals\nB) Frogs\nC) Ants\nD) College Students\n\nProvide an answer to the following question:\n\nQ: Tadpoles start their lives as\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 3,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Tadpoles start their lives as\n\n\nChoices:\nA) Water animals\nB) Frogs\nC) Ants\nD) College Students\n\nProvide an answer to the following question:\n\nQ: Tadpoles start their lives as\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 3,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Tadpoles start their lives as\n\n\nOne answer to question Q is B) Frogs.\n\n\nChoices:\nA) Water animals\nB) Frogs\nC) Ants\nD) College Students\n\nProvide an answer to the following question:\n\nQ: Tadpoles start their lives as\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 3,
+          "step": 2,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Tadpoles start their lives as\n\n\nOne answer to question Q is B) Frogs. Another answer to question Q is B) Frogs.\n\n\nChoices:\nA) Water animals\nB) Frogs\nC) Ants\nD) College Students\n\nProvide an answer to the following question:\n\nQ: Tadpoles start their lives as\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 3,
+          "step": 3,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Tadpoles start their lives as\n\n\nOne answer to question Q is B) Frogs. Another answer to question Q is B) Frogs. Another answer to question Q is A) Water animals.\n\n\nChoices:\nA) Water animals\nB) Frogs\nC) Ants\nD) College Students\n\nProvide an answer to the following question:\n\nQ: Tadpoles start their lives as\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 4,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Tadpoles start their lives as\n\n\nChoices:\nA) Water animals\nB) Frogs\nC) Ants\nD) College Students\n\nProvide an answer to the following question:\n\nQ: Tadpoles start their lives as\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 4,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Tadpoles start their lives as\n\n\nOne answer to question Q is B) Frogs.\n\n\nChoices:\nA) Water animals\nB) Frogs\nC) Ants\nD) College Students\n\nProvide an answer to the following question:\n\nQ: Tadpoles start their lives as\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 4,
+          "step": 2,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Tadpoles start their lives as\n\n\nOne answer to question Q is B) Frogs. Another answer to question Q is B) Frogs.\n\n\nChoices:\nA) Water animals\nB) Frogs\nC) Ants\nD) College Students\n\nProvide an answer to the following question:\n\nQ: Tadpoles start their lives as\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 4,
+          "step": 3,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Tadpoles start their lives as\n\n\nOne answer to question Q is B) Frogs. Another answer to question Q is B) Frogs. Another answer to question Q is A) Water animals.\n\n\nChoices:\nA) Water animals\nB) Frogs\nC) Ants\nD) College Students\n\nProvide an answer to the following question:\n\nQ: Tadpoles start their lives as\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 5,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Tadpoles start their lives as\n\n\nChoices:\nA) Water animals\nB) Frogs\nC) Ants\nD) College Students\n\nProvide an answer to the following question:\n\nQ: Tadpoles start their lives as\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 5,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Tadpoles start their lives as\n\n\nOne answer to question Q is A) Water animals.\n\n\nChoices:\nA) Water animals\nB) Frogs\nC) Ants\nD) College Students\n\nProvide an answer to the following question:\n\nQ: Tadpoles start their lives as\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 5,
+          "step": 2,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Tadpoles start their lives as\n\n\nOne answer to question Q is A) Water animals. Another answer to question Q is A) Water animals.\n\n\nChoices:\nA) Water animals\nB) Frogs\nC) Ants\nD) College Students\n\nProvide an answer to the following question:\n\nQ: Tadpoles start their lives as\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 5,
+          "step": 3,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Tadpoles start their lives as\n\n\nOne answer to question Q is A) Water animals. Another answer to question Q is A) Water animals. Another answer to question Q is A) Water animals.\n\n\nChoices:\nA) Water animals\nB) Frogs\nC) Ants\nD) College Students\n\nProvide an answer to the following question:\n\nQ: Tadpoles start their lives as\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 6,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Tadpoles start their lives as\n\n\nChoices:\nA) Water animals\nB) Frogs\nC) Ants\nD) College Students\n\nProvide an answer to the following question:\n\nQ: Tadpoles start their lives as\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 6,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Tadpoles start their lives as\n\n\nOne answer to question Q is A) Water animals.\n\n\nChoices:\nA) Water animals\nB) Frogs\nC) Ants\nD) College Students\n\nProvide an answer to the following question:\n\nQ: Tadpoles start their lives as\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 6,
+          "step": 2,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Tadpoles start their lives as\n\n\nOne answer to question Q is A) Water animals. Another answer to question Q is A) Water animals.\n\n\nChoices:\nA) Water animals\nB) Frogs\nC) Ants\nD) College Students\n\nProvide an answer to the following question:\n\nQ: Tadpoles start their lives as\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 6,
+          "step": 3,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Tadpoles start their lives as\n\n\nOne answer to question Q is A) Water animals. Another answer to question Q is A) Water animals. Another answer to question Q is A) Water animals.\n\n\nChoices:\nA) Water animals\nB) Frogs\nC) Ants\nD) College Students\n\nProvide an answer to the following question:\n\nQ: Tadpoles start their lives as\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 7,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Tadpoles start their lives as\n\n\nChoices:\nA) Water animals\nB) Frogs\nC) Ants\nD) College Students\n\nProvide an answer to the following question:\n\nQ: Tadpoles start their lives as\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 7,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Tadpoles start their lives as\n\n\nOne answer to question Q is A) Water animals.\n\n\nChoices:\nA) Water animals\nB) Frogs\nC) Ants\nD) College Students\n\nProvide an answer to the following question:\n\nQ: Tadpoles start their lives as\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 7,
+          "step": 2,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Tadpoles start their lives as\n\n\nOne answer to question Q is A) Water animals. Another answer to question Q is A) Water animals.\n\n\nChoices:\nA) Water animals\nB) Frogs\nC) Ants\nD) College Students\n\nProvide an answer to the following question:\n\nQ: Tadpoles start their lives as\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 7,
+          "step": 3,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Tadpoles start their lives as\n\n\nOne answer to question Q is A) Water animals. Another answer to question Q is A) Water animals. Another answer to question Q is A) Water animals.\n\n\nChoices:\nA) Water animals\nB) Frogs\nC) Ants\nD) College Students\n\nProvide an answer to the following question:\n\nQ: Tadpoles start their lives as\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 8,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Tadpoles start their lives as\n\n\nChoices:\nA) Water animals\nB) Frogs\nC) Ants\nD) College Students\n\nProvide an answer to the following question:\n\nQ: Tadpoles start their lives as\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 8,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Tadpoles start their lives as\n\n\nOne answer to question Q is A) Water animals.\n\n\nChoices:\nA) Water animals\nB) Frogs\nC) Ants\nD) College Students\n\nProvide an answer to the following question:\n\nQ: Tadpoles start their lives as\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 8,
+          "step": 2,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Tadpoles start their lives as\n\n\nOne answer to question Q is A) Water animals. Another answer to question Q is A) Water animals.\n\n\nChoices:\nA) Water animals\nB) Frogs\nC) Ants\nD) College Students\n\nProvide an answer to the following question:\n\nQ: Tadpoles start their lives as\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 8,
+          "step": 3,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Tadpoles start their lives as\n\n\nOne answer to question Q is A) Water animals. Another answer to question Q is A) Water animals. Another answer to question Q is A) Water animals.\n\n\nChoices:\nA) Water animals\nB) Frogs\nC) Ants\nD) College Students\n\nProvide an answer to the following question:\n\nQ: Tadpoles start their lives as\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 9,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Tadpoles start their lives as\n\n\nChoices:\nA) Water animals\nB) Frogs\nC) Ants\nD) College Students\n\nProvide an answer to the following question:\n\nQ: Tadpoles start their lives as\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 9,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Tadpoles start their lives as\n\n\nOne answer to question Q is A) Water animals.\n\n\nChoices:\nA) Water animals\nB) Frogs\nC) Ants\nD) College Students\n\nProvide an answer to the following question:\n\nQ: Tadpoles start their lives as\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 9,
+          "step": 2,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Tadpoles start their lives as\n\n\nOne answer to question Q is A) Water animals. Another answer to question Q is A) Water animals.\n\n\nChoices:\nA) Water animals\nB) Frogs\nC) Ants\nD) College Students\n\nProvide an answer to the following question:\n\nQ: Tadpoles start their lives as\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 9,
+          "step": 3,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Tadpoles start their lives as\n\n\nOne answer to question Q is A) Water animals. Another answer to question Q is A) Water animals. Another answer to question Q is A) Water animals.\n\n\nChoices:\nA) Water animals\nB) Frogs\nC) Ants\nD) College Students\n\nProvide an answer to the following question:\n\nQ: Tadpoles start their lives as\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "chain_id": 0,
+          "step": 0,
+          "text": "B",
+          "logprob": -1.5019290447235107,
+          "probability": 0.2227001469810028
+        },
+        {
+          "chain_id": 0,
+          "step": 1,
+          "text": "A",
+          "logprob": -0.3208087086677551,
+          "probability": 0.7255620314435902
+        },
+        {
+          "chain_id": 0,
+          "step": 2,
+          "text": "A",
+          "logprob": 0.0,
+          "probability": 0.5
+        },
+        {
+          "chain_id": 0,
+          "step": 3,
+          "text": "A",
+          "logprob": 0.0,
+          "probability": 0.5
+        },
+        {
+          "chain_id": 1,
+          "step": 0,
+          "text": "A",
+          "logprob": -0.25192904472351074,
+          "probability": 0.77729988964086
+        },
+        {
+          "chain_id": 1,
+          "step": 1,
+          "text": "A",
+          "logprob": 0.0,
+          "probability": 0.5
+        },
+        {
+          "chain_id": 1,
+          "step": 2,
+          "text": "A",
+          "logprob": 0.0,
+          "probability": 0.5
+        },
+        {
+          "chain_id": 1,
+          "step": 3,
+          "text": "A",
+          "logprob": 0.0,
+          "probability": 0.5
+        },
+        {
+          "chain_id": 2,
+          "step": 0,
+          "text": "A",
+          "logprob": -0.25192904472351074,
+          "probability": 0.77729988964086
+        },
+        {
+          "chain_id": 2,
+          "step": 1,
+          "text": "A",
+          "logprob": 0.0,
+          "probability": 0.5
+        },
+        {
+          "chain_id": 2,
+          "step": 2,
+          "text": "A",
+          "logprob": 0.0,
+          "probability": 0.5
+        },
+        {
+          "chain_id": 2,
+          "step": 3,
+          "text": "A",
+          "logprob": 0.0,
+          "probability": 0.5
+        },
+        {
+          "chain_id": 3,
+          "step": 0,
+          "text": "B",
+          "logprob": -1.5019290447235107,
+          "probability": 0.2227001469810028
+        },
+        {
+          "chain_id": 3,
+          "step": 1,
+          "text": "B",
+          "logprob": -1.293030023574829,
+          "probability": 0.2744379684886416
+        },
+        {
+          "chain_id": 3,
+          "step": 2,
+          "text": "A",
+          "logprob": -0.5638729929924011,
+          "probability": 0.5690010537112531
+        },
+        {
+          "chain_id": 3,
+          "step": 3,
+          "text": "A",
+          "logprob": 0.0,
+          "probability": 0.5
+        },
+        {
+          "chain_id": 4,
+          "step": 0,
+          "text": "B",
+          "logprob": -1.5019290447235107,
+          "probability": 0.2227001469810028
+        },
+        {
+          "chain_id": 4,
+          "step": 1,
+          "text": "B",
+          "logprob": -1.293030023574829,
+          "probability": 0.2744379684886416
+        },
+        {
+          "chain_id": 4,
+          "step": 2,
+          "text": "A",
+          "logprob": -0.5638729929924011,
+          "probability": 0.5690010537112531
+        },
+        {
+          "chain_id": 4,
+          "step": 3,
+          "text": "A",
+          "logprob": 0.0,
+          "probability": 0.5
+        },
+        {
+          "chain_id": 5,
+          "step": 0,
+          "text": "A",
+          "logprob": -0.25192904472351074,
+          "probability": 0.77729988964086
+        },
+        {
+          "chain_id": 5,
+          "step": 1,
+          "text": "A",
+          "logprob": 0.0,
+          "probability": 0.5
+        },
+        {
+          "chain_id": 5,
+          "step": 2,
+          "text": "A",
+          "logprob": 0.0,
+          "probability": 0.5
+        },
+        {
+          "chain_id": 5,
+          "step": 3,
+          "text": "A",
+          "logprob": 0.0,
+          "probability": 0.5
+        },
+        {
+          "chain_id": 6,
+          "step": 0,
+          "text": "A",
+          "logprob": -0.25192904472351074,
+          "probability": 0.77729988964086
+        },
+        {
+          "chain_id": 6,
+          "step": 1,
+          "text": "A",
+          "logprob": 0.0,
+          "probability": 0.5
+        },
+        {
+          "chain_id": 6,
+          "step": 2,
+          "text": "A",
+          "logprob": 0.0,
+          "probability": 0.5
+        },
+        {
+          "chain_id": 6,
+          "step": 3,
+          "text": "A",
+          "logprob": 0.0,
+          "probability": 0.5
+        },
+        {
+          "chain_id": 7,
+          "step": 0,
+          "text": "A",
+          "logprob": -0.25192904472351074,
+          "probability": 0.77729988964086
+        },
+        {
+          "chain_id": 7,
+          "step": 1,
+          "text": "A",
+          "logprob": 0.0,
+          "probability": 0.5
+        },
+        {
+          "chain_id": 7,
+          "step": 2,
+          "text": "A",
+          "logprob": 0.0,
+          "probability": 0.5
+        },
+        {
+          "chain_id": 7,
+          "step": 3,
+          "text": "A",
+          "logprob": 0.0,
+          "probability": 0.5
+        },
+        {
+          "chain_id": 8,
+          "step": 0,
+          "text": "A",
+          "logprob": -0.25192904472351074,
+          "probability": 0.77729988964086
+        },
+        {
+          "chain_id": 8,
+          "step": 1,
+          "text": "A",
+          "logprob": 0.0,
+          "probability": 0.5
+        },
+        {
+          "chain_id": 8,
+          "step": 2,
+          "text": "A",
+          "logprob": 0.0,
+          "probability": 0.5
+        },
+        {
+          "chain_id": 8,
+          "step": 3,
+          "text": "A",
+          "logprob": 0.0,
+          "probability": 0.5
+        },
+        {
+          "chain_id": 9,
+          "step": 0,
+          "text": "A",
+          "logprob": -0.25192904472351074,
+          "probability": 0.77729988964086
+        },
+        {
+          "chain_id": 9,
+          "step": 1,
+          "text": "A",
+          "logprob": 0.0,
+          "probability": 0.5
+        },
+        {
+          "chain_id": 9,
+          "step": 2,
+          "text": "A",
+          "logprob": 0.0,
+          "probability": 0.5
+        },
+        {
+          "chain_id": 9,
+          "step": 3,
+          "text": "A",
+          "logprob": 0.0,
+          "probability": 0.5
+        }
+      ],
+      "decision_process": {
+        "num_chains": 10,
+        "chain_length": 4,
+        "total_inferences": 40,
+        "mi_method": "listing",
+        "mi_nats": 0.20731923163147706,
+        "mi_bits": 0.2990984273556423,
+        "selected_answer": "A",
+        "matched_choice": "A",
+        "confidence_computation": "1/(1 + mi_nats) = 1/(1 + 0.2073) = 0.8283",
+        "agreement": "100.00% (10/10 chains agree on final answer)"
+      },
+      "final_metrics": {
+        "predicted": "A",
+        "correct": true,
+        "confidence": 0.8282813474682068,
+        "mi_score": 0.2990984273556423,
+        "agreement": 1.0
+      }
+    }
+  }
+}

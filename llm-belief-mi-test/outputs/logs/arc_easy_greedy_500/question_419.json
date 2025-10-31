@@ -1,0 +1,51 @@
+{
+  "question_id": 419,
+  "question_text": "How are electromagnetic waves different from other waves?",
+  "choices": [
+    "A: They have very short wavelengths.",
+    "B: They transmit energy instead of matter.",
+    "C: They can travel through a vacuum and through matter.",
+    "D: They can change direction by reflection when they strike an object."
+  ],
+  "gold_answer": "C",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: How are electromagnetic waves different from other waves?\n\n\nChoices:\nA) They have very short wavelengths.\nB) They transmit energy instead of matter.\nC) They can travel through a vacuum and through matter.\nD) They can change direction by reflection when they strike an object.\n\nProvide an answer to the following question:\n\nQ: How are electromagnetic waves different from other waves?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "C",
+          "logprob": -0.06586909852921963,
+          "probability": 0.93625341321934
+        }
+      ],
+      "decision_process": {
+        "selected_text": "C",
+        "matched_choice": "C",
+        "confidence_computation": "exp(logprob) = exp(-0.0659) = 0.9363"
+      },
+      "final_metrics": {
+        "predicted": "C",
+        "correct": true,
+        "confidence": 0.93625341321934,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

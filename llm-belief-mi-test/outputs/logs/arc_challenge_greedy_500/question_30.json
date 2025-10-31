@@ -1,0 +1,51 @@
+{
+  "question_id": 30,
+  "question_text": "Students are observing two fossils in a lab. They are told by the teacher that the fossils were found in different rock layers. What can the students most likely determine from just observing the fossils?",
+  "choices": [
+    "A: how each organism died",
+    "B: the exact age of the fossils",
+    "C: when the fossils were discovered",
+    "D: the type of environment in which the organisms lived"
+  ],
+  "gold_answer": "D",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Students are observing two fossils in a lab. They are told by the teacher that the fossils were found in different rock layers. What can the students most likely determine from just observing the fossils?\n\n\nChoices:\nA) how each organism died\nB) the exact age of the fossils\nC) when the fossils were discovered\nD) the type of environment in which the organisms lived\n\nProvide an answer to the following question:\n\nQ: Students are observing two fossils in a lab. They are told by the teacher that the fossils were found in different rock layers. What can the students most likely determine from just observing the fossils?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "D",
+          "logprob": -0.14466827674186788,
+          "probability": 0.865309288723097
+        }
+      ],
+      "decision_process": {
+        "selected_text": "D",
+        "matched_choice": "D",
+        "confidence_computation": "exp(logprob) = exp(-0.1447) = 0.8653"
+      },
+      "final_metrics": {
+        "predicted": "D",
+        "correct": true,
+        "confidence": 0.865309288723097,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "question_id": 72,
+  "question_text": "Some scientists predict that as greenhouse gases change the climate of Earth, the number and strength of hurricanes will increase. In order for this to occur, the climate change would have to affect Earth by changing the",
+  "choices": [
+    "A: depths of the oceans.",
+    "B: speed of currents in the oceans.",
+    "C: chemical compositions of the oceans.",
+    "D: amount of dissolved oxygen in the oceans."
+  ],
+  "gold_answer": "B",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Some scientists predict that as greenhouse gases change the climate of Earth, the number and strength of hurricanes will increase. In order for this to occur, the climate change would have to affect Earth by changing the\n\n\nChoices:\nA) depths of the oceans.\nB) speed of currents in the oceans.\nC) chemical compositions of the oceans.\nD) amount of dissolved oxygen in the oceans.\n\nProvide an answer to the following question:\n\nQ: Some scientists predict that as greenhouse gases change the climate of Earth, the number and strength of hurricanes will increase. In order for this to occur, the climate change would have to affect Earth by changing the\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "B",
+          "logprob": -0.5613242071121931,
+          "probability": 0.5704531653374667
+        }
+      ],
+      "decision_process": {
+        "selected_text": "B",
+        "matched_choice": "B",
+        "confidence_computation": "exp(logprob) = exp(-0.5613) = 0.5705"
+      },
+      "final_metrics": {
+        "predicted": "B",
+        "correct": true,
+        "confidence": 0.5704531653374667,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

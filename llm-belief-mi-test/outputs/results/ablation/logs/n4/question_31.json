@@ -1,0 +1,959 @@
+{
+  "question_id": 31,
+  "question_text": "What is the best way to guess a babies eye color?",
+  "choices": [
+    "A: The surroundings they are born in.",
+    "B: Their parents usual diet.",
+    "C: Just take a random guess.",
+    "D: The genealogy records of their family."
+  ],
+  "gold_answer": "D",
+  "methods": {
+    "mi_method": {
+      "description": "k=10 chains of length n=4, MI estimation",
+      "raw_inputs": [
+        {
+          "chain_id": 0,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: What is the best way to guess a babies eye color?\n\n\nChoices:\nA) The surroundings they are born in.\nB) Their parents usual diet.\nC) Just take a random guess.\nD) The genealogy records of their family.\n\nProvide an answer to the following question:\n\nQ: What is the best way to guess a babies eye color?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 0,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: What is the best way to guess a babies eye color?\n\n\nOne answer to question Q is D) The genealogy records of their family..\n\n\nChoices:\nA) The surroundings they are born in.\nB) Their parents usual diet.\nC) Just take a random guess.\nD) The genealogy records of their family.\n\nProvide an answer to the following question:\n\nQ: What is the best way to guess a babies eye color?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 0,
+          "step": 2,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: What is the best way to guess a babies eye color?\n\n\nOne answer to question Q is D) The genealogy records of their family.. Another answer to question Q is D) The genealogy records of their family..\n\n\nChoices:\nA) The surroundings they are born in.\nB) Their parents usual diet.\nC) Just take a random guess.\nD) The genealogy records of their family.\n\nProvide an answer to the following question:\n\nQ: What is the best way to guess a babies eye color?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 0,
+          "step": 3,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: What is the best way to guess a babies eye color?\n\n\nOne answer to question Q is D) The genealogy records of their family.. Another answer to question Q is D) The genealogy records of their family.. Another answer to question Q is A) The surroundings they are born in..\n\n\nChoices:\nA) The surroundings they are born in.\nB) Their parents usual diet.\nC) Just take a random guess.\nD) The genealogy records of their family.\n\nProvide an answer to the following question:\n\nQ: What is the best way to guess a babies eye color?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 1,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: What is the best way to guess a babies eye color?\n\n\nChoices:\nA) The surroundings they are born in.\nB) Their parents usual diet.\nC) Just take a random guess.\nD) The genealogy records of their family.\n\nProvide an answer to the following question:\n\nQ: What is the best way to guess a babies eye color?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 1,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: What is the best way to guess a babies eye color?\n\n\nOne answer to question Q is A) The surroundings they are born in..\n\n\nChoices:\nA) The surroundings they are born in.\nB) Their parents usual diet.\nC) Just take a random guess.\nD) The genealogy records of their family.\n\nProvide an answer to the following question:\n\nQ: What is the best way to guess a babies eye color?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 1,
+          "step": 2,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: What is the best way to guess a babies eye color?\n\n\nOne answer to question Q is A) The surroundings they are born in.. Another answer to question Q is D) The genealogy records of their family..\n\n\nChoices:\nA) The surroundings they are born in.\nB) Their parents usual diet.\nC) Just take a random guess.\nD) The genealogy records of their family.\n\nProvide an answer to the following question:\n\nQ: What is the best way to guess a babies eye color?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 1,
+          "step": 3,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: What is the best way to guess a babies eye color?\n\n\nOne answer to question Q is A) The surroundings they are born in.. Another answer to question Q is D) The genealogy records of their family.. Another answer to question Q is D) The genealogy records of their family..\n\n\nChoices:\nA) The surroundings they are born in.\nB) Their parents usual diet.\nC) Just take a random guess.\nD) The genealogy records of their family.\n\nProvide an answer to the following question:\n\nQ: What is the best way to guess a babies eye color?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 2,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: What is the best way to guess a babies eye color?\n\n\nChoices:\nA) The surroundings they are born in.\nB) Their parents usual diet.\nC) Just take a random guess.\nD) The genealogy records of their family.\n\nProvide an answer to the following question:\n\nQ: What is the best way to guess a babies eye color?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 2,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: What is the best way to guess a babies eye color?\n\n\nOne answer to question Q is D) The genealogy records of their family..\n\n\nChoices:\nA) The surroundings they are born in.\nB) Their parents usual diet.\nC) Just take a random guess.\nD) The genealogy records of their family.\n\nProvide an answer to the following question:\n\nQ: What is the best way to guess a babies eye color?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 2,
+          "step": 2,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: What is the best way to guess a babies eye color?\n\n\nOne answer to question Q is D) The genealogy records of their family.. Another answer to question Q is A) The surroundings they are born in..\n\n\nChoices:\nA) The surroundings they are born in.\nB) Their parents usual diet.\nC) Just take a random guess.\nD) The genealogy records of their family.\n\nProvide an answer to the following question:\n\nQ: What is the best way to guess a babies eye color?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 2,
+          "step": 3,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: What is the best way to guess a babies eye color?\n\n\nOne answer to question Q is D) The genealogy records of their family.. Another answer to question Q is A) The surroundings they are born in.. Another answer to question Q is D) The genealogy records of their family..\n\n\nChoices:\nA) The surroundings they are born in.\nB) Their parents usual diet.\nC) Just take a random guess.\nD) The genealogy records of their family.\n\nProvide an answer to the following question:\n\nQ: What is the best way to guess a babies eye color?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 3,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: What is the best way to guess a babies eye color?\n\n\nChoices:\nA) The surroundings they are born in.\nB) Their parents usual diet.\nC) Just take a random guess.\nD) The genealogy records of their family.\n\nProvide an answer to the following question:\n\nQ: What is the best way to guess a babies eye color?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 3,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: What is the best way to guess a babies eye color?\n\n\nOne answer to question Q is A) The surroundings they are born in..\n\n\nChoices:\nA) The surroundings they are born in.\nB) Their parents usual diet.\nC) Just take a random guess.\nD) The genealogy records of their family.\n\nProvide an answer to the following question:\n\nQ: What is the best way to guess a babies eye color?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 3,
+          "step": 2,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: What is the best way to guess a babies eye color?\n\n\nOne answer to question Q is A) The surroundings they are born in.. Another answer to question Q is D) The genealogy records of their family..\n\n\nChoices:\nA) The surroundings they are born in.\nB) Their parents usual diet.\nC) Just take a random guess.\nD) The genealogy records of their family.\n\nProvide an answer to the following question:\n\nQ: What is the best way to guess a babies eye color?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 3,
+          "step": 3,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: What is the best way to guess a babies eye color?\n\n\nOne answer to question Q is A) The surroundings they are born in.. Another answer to question Q is D) The genealogy records of their family.. Another answer to question Q is D) The genealogy records of their family..\n\n\nChoices:\nA) The surroundings they are born in.\nB) Their parents usual diet.\nC) Just take a random guess.\nD) The genealogy records of their family.\n\nProvide an answer to the following question:\n\nQ: What is the best way to guess a babies eye color?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 4,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: What is the best way to guess a babies eye color?\n\n\nChoices:\nA) The surroundings they are born in.\nB) Their parents usual diet.\nC) Just take a random guess.\nD) The genealogy records of their family.\n\nProvide an answer to the following question:\n\nQ: What is the best way to guess a babies eye color?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 4,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: What is the best way to guess a babies eye color?\n\n\nOne answer to question Q is D) The genealogy records of their family..\n\n\nChoices:\nA) The surroundings they are born in.\nB) Their parents usual diet.\nC) Just take a random guess.\nD) The genealogy records of their family.\n\nProvide an answer to the following question:\n\nQ: What is the best way to guess a babies eye color?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 4,
+          "step": 2,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: What is the best way to guess a babies eye color?\n\n\nOne answer to question Q is D) The genealogy records of their family.. Another answer to question Q is D) The genealogy records of their family..\n\n\nChoices:\nA) The surroundings they are born in.\nB) Their parents usual diet.\nC) Just take a random guess.\nD) The genealogy records of their family.\n\nProvide an answer to the following question:\n\nQ: What is the best way to guess a babies eye color?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 4,
+          "step": 3,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: What is the best way to guess a babies eye color?\n\n\nOne answer to question Q is D) The genealogy records of their family.. Another answer to question Q is D) The genealogy records of their family.. Another answer to question Q is D) The genealogy records of their family..\n\n\nChoices:\nA) The surroundings they are born in.\nB) Their parents usual diet.\nC) Just take a random guess.\nD) The genealogy records of their family.\n\nProvide an answer to the following question:\n\nQ: What is the best way to guess a babies eye color?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 5,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: What is the best way to guess a babies eye color?\n\n\nChoices:\nA) The surroundings they are born in.\nB) Their parents usual diet.\nC) Just take a random guess.\nD) The genealogy records of their family.\n\nProvide an answer to the following question:\n\nQ: What is the best way to guess a babies eye color?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 5,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: What is the best way to guess a babies eye color?\n\n\nOne answer to question Q is D) The genealogy records of their family..\n\n\nChoices:\nA) The surroundings they are born in.\nB) Their parents usual diet.\nC) Just take a random guess.\nD) The genealogy records of their family.\n\nProvide an answer to the following question:\n\nQ: What is the best way to guess a babies eye color?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 5,
+          "step": 2,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: What is the best way to guess a babies eye color?\n\n\nOne answer to question Q is D) The genealogy records of their family.. Another answer to question Q is D) The genealogy records of their family..\n\n\nChoices:\nA) The surroundings they are born in.\nB) Their parents usual diet.\nC) Just take a random guess.\nD) The genealogy records of their family.\n\nProvide an answer to the following question:\n\nQ: What is the best way to guess a babies eye color?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 5,
+          "step": 3,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: What is the best way to guess a babies eye color?\n\n\nOne answer to question Q is D) The genealogy records of their family.. Another answer to question Q is D) The genealogy records of their family.. Another answer to question Q is D) The genealogy records of their family..\n\n\nChoices:\nA) The surroundings they are born in.\nB) Their parents usual diet.\nC) Just take a random guess.\nD) The genealogy records of their family.\n\nProvide an answer to the following question:\n\nQ: What is the best way to guess a babies eye color?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 6,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: What is the best way to guess a babies eye color?\n\n\nChoices:\nA) The surroundings they are born in.\nB) Their parents usual diet.\nC) Just take a random guess.\nD) The genealogy records of their family.\n\nProvide an answer to the following question:\n\nQ: What is the best way to guess a babies eye color?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 6,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: What is the best way to guess a babies eye color?\n\n\nOne answer to question Q is D) The genealogy records of their family..\n\n\nChoices:\nA) The surroundings they are born in.\nB) Their parents usual diet.\nC) Just take a random guess.\nD) The genealogy records of their family.\n\nProvide an answer to the following question:\n\nQ: What is the best way to guess a babies eye color?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 6,
+          "step": 2,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: What is the best way to guess a babies eye color?\n\n\nOne answer to question Q is D) The genealogy records of their family.. Another answer to question Q is D) The genealogy records of their family..\n\n\nChoices:\nA) The surroundings they are born in.\nB) Their parents usual diet.\nC) Just take a random guess.\nD) The genealogy records of their family.\n\nProvide an answer to the following question:\n\nQ: What is the best way to guess a babies eye color?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 6,
+          "step": 3,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: What is the best way to guess a babies eye color?\n\n\nOne answer to question Q is D) The genealogy records of their family.. Another answer to question Q is D) The genealogy records of their family.. Another answer to question Q is D) The genealogy records of their family..\n\n\nChoices:\nA) The surroundings they are born in.\nB) Their parents usual diet.\nC) Just take a random guess.\nD) The genealogy records of their family.\n\nProvide an answer to the following question:\n\nQ: What is the best way to guess a babies eye color?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 7,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: What is the best way to guess a babies eye color?\n\n\nChoices:\nA) The surroundings they are born in.\nB) Their parents usual diet.\nC) Just take a random guess.\nD) The genealogy records of their family.\n\nProvide an answer to the following question:\n\nQ: What is the best way to guess a babies eye color?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 7,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: What is the best way to guess a babies eye color?\n\n\nOne answer to question Q is D) The genealogy records of their family..\n\n\nChoices:\nA) The surroundings they are born in.\nB) Their parents usual diet.\nC) Just take a random guess.\nD) The genealogy records of their family.\n\nProvide an answer to the following question:\n\nQ: What is the best way to guess a babies eye color?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 7,
+          "step": 2,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: What is the best way to guess a babies eye color?\n\n\nOne answer to question Q is D) The genealogy records of their family.. Another answer to question Q is A) The surroundings they are born in..\n\n\nChoices:\nA) The surroundings they are born in.\nB) Their parents usual diet.\nC) Just take a random guess.\nD) The genealogy records of their family.\n\nProvide an answer to the following question:\n\nQ: What is the best way to guess a babies eye color?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 7,
+          "step": 3,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: What is the best way to guess a babies eye color?\n\n\nOne answer to question Q is D) The genealogy records of their family.. Another answer to question Q is A) The surroundings they are born in.. Another answer to question Q is A) The surroundings they are born in..\n\n\nChoices:\nA) The surroundings they are born in.\nB) Their parents usual diet.\nC) Just take a random guess.\nD) The genealogy records of their family.\n\nProvide an answer to the following question:\n\nQ: What is the best way to guess a babies eye color?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 8,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: What is the best way to guess a babies eye color?\n\n\nChoices:\nA) The surroundings they are born in.\nB) Their parents usual diet.\nC) Just take a random guess.\nD) The genealogy records of their family.\n\nProvide an answer to the following question:\n\nQ: What is the best way to guess a babies eye color?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 8,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: What is the best way to guess a babies eye color?\n\n\nOne answer to question Q is D) The genealogy records of their family..\n\n\nChoices:\nA) The surroundings they are born in.\nB) Their parents usual diet.\nC) Just take a random guess.\nD) The genealogy records of their family.\n\nProvide an answer to the following question:\n\nQ: What is the best way to guess a babies eye color?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 8,
+          "step": 2,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: What is the best way to guess a babies eye color?\n\n\nOne answer to question Q is D) The genealogy records of their family.. Another answer to question Q is D) The genealogy records of their family..\n\n\nChoices:\nA) The surroundings they are born in.\nB) Their parents usual diet.\nC) Just take a random guess.\nD) The genealogy records of their family.\n\nProvide an answer to the following question:\n\nQ: What is the best way to guess a babies eye color?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 8,
+          "step": 3,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: What is the best way to guess a babies eye color?\n\n\nOne answer to question Q is D) The genealogy records of their family.. Another answer to question Q is D) The genealogy records of their family.. Another answer to question Q is D) The genealogy records of their family..\n\n\nChoices:\nA) The surroundings they are born in.\nB) Their parents usual diet.\nC) Just take a random guess.\nD) The genealogy records of their family.\n\nProvide an answer to the following question:\n\nQ: What is the best way to guess a babies eye color?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 9,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: What is the best way to guess a babies eye color?\n\n\nChoices:\nA) The surroundings they are born in.\nB) Their parents usual diet.\nC) Just take a random guess.\nD) The genealogy records of their family.\n\nProvide an answer to the following question:\n\nQ: What is the best way to guess a babies eye color?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 9,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: What is the best way to guess a babies eye color?\n\n\nOne answer to question Q is A) The surroundings they are born in..\n\n\nChoices:\nA) The surroundings they are born in.\nB) Their parents usual diet.\nC) Just take a random guess.\nD) The genealogy records of their family.\n\nProvide an answer to the following question:\n\nQ: What is the best way to guess a babies eye color?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 9,
+          "step": 2,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: What is the best way to guess a babies eye color?\n\n\nOne answer to question Q is A) The surroundings they are born in.. Another answer to question Q is A) The surroundings they are born in..\n\n\nChoices:\nA) The surroundings they are born in.\nB) Their parents usual diet.\nC) Just take a random guess.\nD) The genealogy records of their family.\n\nProvide an answer to the following question:\n\nQ: What is the best way to guess a babies eye color?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 9,
+          "step": 3,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: What is the best way to guess a babies eye color?\n\n\nOne answer to question Q is A) The surroundings they are born in.. Another answer to question Q is A) The surroundings they are born in.. Another answer to question Q is D) The genealogy records of their family..\n\n\nChoices:\nA) The surroundings they are born in.\nB) Their parents usual diet.\nC) Just take a random guess.\nD) The genealogy records of their family.\n\nProvide an answer to the following question:\n\nQ: What is the best way to guess a babies eye color?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "chain_id": 0,
+          "step": 0,
+          "text": "D",
+          "logprob": -0.22262509167194366,
+          "probability": 0.8004148752525572
+        },
+        {
+          "chain_id": 0,
+          "step": 1,
+          "text": "D",
+          "logprob": -0.36088407039642334,
+          "probability": 0.6970598036496322
+        },
+        {
+          "chain_id": 0,
+          "step": 2,
+          "text": "A",
+          "logprob": -1.9577484130859375,
+          "probability": 0.14117593321745264
+        },
+        {
+          "chain_id": 0,
+          "step": 3,
+          "text": "D",
+          "logprob": -0.1173514574766159,
+          "probability": 0.8892725967315815
+        },
+        {
+          "chain_id": 1,
+          "step": 0,
+          "text": "A",
+          "logprob": -1.6115144491195679,
+          "probability": 0.19958512356505415
+        },
+        {
+          "chain_id": 1,
+          "step": 1,
+          "text": "D",
+          "logprob": -0.18455547094345093,
+          "probability": 0.83147381598312
+        },
+        {
+          "chain_id": 1,
+          "step": 2,
+          "text": "D",
+          "logprob": 0.0,
+          "probability": 0.5
+        },
+        {
+          "chain_id": 1,
+          "step": 3,
+          "text": "D",
+          "logprob": 0.0,
+          "probability": 0.5
+        },
+        {
+          "chain_id": 2,
+          "step": 0,
+          "text": "D",
+          "logprob": -0.22262509167194366,
+          "probability": 0.8004148752525572
+        },
+        {
+          "chain_id": 2,
+          "step": 1,
+          "text": "A",
+          "logprob": -1.194219946861267,
+          "probability": 0.30294017147075036
+        },
+        {
+          "chain_id": 2,
+          "step": 2,
+          "text": "D",
+          "logprob": -0.5063595175743103,
+          "probability": 0.60268565646446
+        },
+        {
+          "chain_id": 2,
+          "step": 3,
+          "text": "A",
+          "logprob": -2.2006852626800537,
+          "probability": 0.11072725510288184
+        },
+        {
+          "chain_id": 3,
+          "step": 0,
+          "text": "A",
+          "logprob": -1.6115144491195679,
+          "probability": 0.19958512356505415
+        },
+        {
+          "chain_id": 3,
+          "step": 1,
+          "text": "D",
+          "logprob": -0.18455547094345093,
+          "probability": 0.83147381598312
+        },
+        {
+          "chain_id": 3,
+          "step": 2,
+          "text": "D",
+          "logprob": 0.0,
+          "probability": 0.5
+        },
+        {
+          "chain_id": 3,
+          "step": 3,
+          "text": "D",
+          "logprob": 0.0,
+          "probability": 0.5
+        },
+        {
+          "chain_id": 4,
+          "step": 0,
+          "text": "D",
+          "logprob": -0.22262509167194366,
+          "probability": 0.8004148752525572
+        },
+        {
+          "chain_id": 4,
+          "step": 1,
+          "text": "D",
+          "logprob": -0.36088407039642334,
+          "probability": 0.6970598036496322
+        },
+        {
+          "chain_id": 4,
+          "step": 2,
+          "text": "D",
+          "logprob": -0.1521911770105362,
+          "probability": 0.8588240776259563
+        },
+        {
+          "chain_id": 4,
+          "step": 3,
+          "text": "D",
+          "logprob": -0.1173514574766159,
+          "probability": 0.8892725967315815
+        },
+        {
+          "chain_id": 5,
+          "step": 0,
+          "text": "D",
+          "logprob": -0.22262509167194366,
+          "probability": 0.8004148752525572
+        },
+        {
+          "chain_id": 5,
+          "step": 1,
+          "text": "D",
+          "logprob": -0.36088407039642334,
+          "probability": 0.6970598036496322
+        },
+        {
+          "chain_id": 5,
+          "step": 2,
+          "text": "D",
+          "logprob": -0.1521911770105362,
+          "probability": 0.8588240776259563
+        },
+        {
+          "chain_id": 5,
+          "step": 3,
+          "text": "A",
+          "logprob": -2.20068359375,
+          "probability": 0.11072743989907986
+        },
+        {
+          "chain_id": 6,
+          "step": 0,
+          "text": "D",
+          "logprob": -0.22262509167194366,
+          "probability": 0.8004148752525572
+        },
+        {
+          "chain_id": 6,
+          "step": 1,
+          "text": "D",
+          "logprob": -0.36088407039642334,
+          "probability": 0.6970598036496322
+        },
+        {
+          "chain_id": 6,
+          "step": 2,
+          "text": "D",
+          "logprob": -0.1521911770105362,
+          "probability": 0.8588240776259563
+        },
+        {
+          "chain_id": 6,
+          "step": 3,
+          "text": "D",
+          "logprob": -0.1173514574766159,
+          "probability": 0.8892725967315815
+        },
+        {
+          "chain_id": 7,
+          "step": 0,
+          "text": "D",
+          "logprob": -0.22262509167194366,
+          "probability": 0.8004148752525572
+        },
+        {
+          "chain_id": 7,
+          "step": 1,
+          "text": "A",
+          "logprob": -1.194219946861267,
+          "probability": 0.30294017147075036
+        },
+        {
+          "chain_id": 7,
+          "step": 2,
+          "text": "A",
+          "logprob": -0.9230274558067322,
+          "probability": 0.3973143667687347
+        },
+        {
+          "chain_id": 7,
+          "step": 3,
+          "text": "D",
+          "logprob": 0.0,
+          "probability": 0.5
+        },
+        {
+          "chain_id": 8,
+          "step": 0,
+          "text": "D",
+          "logprob": -0.22262509167194366,
+          "probability": 0.8004148752525572
+        },
+        {
+          "chain_id": 8,
+          "step": 1,
+          "text": "D",
+          "logprob": -0.36088407039642334,
+          "probability": 0.6970598036496322
+        },
+        {
+          "chain_id": 8,
+          "step": 2,
+          "text": "D",
+          "logprob": -0.1521911770105362,
+          "probability": 0.8588240776259563
+        },
+        {
+          "chain_id": 8,
+          "step": 3,
+          "text": "D",
+          "logprob": -0.1173514574766159,
+          "probability": 0.8892725967315815
+        },
+        {
+          "chain_id": 9,
+          "step": 0,
+          "text": "A",
+          "logprob": -1.6115144491195679,
+          "probability": 0.19958512356505415
+        },
+        {
+          "chain_id": 9,
+          "step": 1,
+          "text": "A",
+          "logprob": -2.5456643104553223,
+          "probability": 0.07842093882340301
+        },
+        {
+          "chain_id": 9,
+          "step": 2,
+          "text": "D",
+          "logprob": -1.0994775295257568,
+          "probability": 0.33304504445176264
+        },
+        {
+          "chain_id": 9,
+          "step": 3,
+          "text": "D",
+          "logprob": 0.0,
+          "probability": 0.5
+        }
+      ],
+      "decision_process": {
+        "num_chains": 10,
+        "chain_length": 4,
+        "total_inferences": 40,
+        "mi_method": "listing",
+        "mi_nats": 0.166697219846747,
+        "mi_bits": 0.24049325240287922,
+        "selected_answer": "D",
+        "matched_choice": "D",
+        "confidence_computation": "1/(1 + mi_nats) = 1/(1 + 0.1667) = 0.8571",
+        "agreement": "80.00% (8/10 chains agree on final answer)"
+      },
+      "final_metrics": {
+        "predicted": "D",
+        "correct": true,
+        "confidence": 0.857120410496355,
+        "mi_score": 0.24049325240287922,
+        "agreement": 0.8
+      }
+    }
+  }
+}

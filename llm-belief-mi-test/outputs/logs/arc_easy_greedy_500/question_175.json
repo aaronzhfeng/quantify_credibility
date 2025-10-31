@@ -1,0 +1,51 @@
+{
+  "question_id": 175,
+  "question_text": "Which is the best example of an object with kinetic energy?",
+  "choices": [
+    "A: a plate sitting on a table",
+    "B: a bird perching in a tree",
+    "C: a marble rolling down a ramp",
+    "D: a dam holding back some water"
+  ],
+  "gold_answer": "C",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Which is the best example of an object with kinetic energy?\n\n\nChoices:\nA) a plate sitting on a table\nB) a bird perching in a tree\nC) a marble rolling down a ramp\nD) a dam holding back some water\n\nProvide an answer to the following question:\n\nQ: Which is the best example of an object with kinetic energy?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "C",
+          "logprob": -0.027052386314608157,
+          "probability": 0.9733102520516979
+        }
+      ],
+      "decision_process": {
+        "selected_text": "C",
+        "matched_choice": "C",
+        "confidence_computation": "exp(logprob) = exp(-0.0271) = 0.9733"
+      },
+      "final_metrics": {
+        "predicted": "C",
+        "correct": true,
+        "confidence": 0.9733102520516979,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

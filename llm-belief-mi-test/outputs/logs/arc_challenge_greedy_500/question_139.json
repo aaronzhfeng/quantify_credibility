@@ -1,0 +1,51 @@
+{
+  "question_id": 139,
+  "question_text": "What physical property distinguishes elements on the left side of the Periodic Table of the Elements from elements on the right side?",
+  "choices": [
+    "A: number of protons",
+    "B: state of matter",
+    "C: atomic mass",
+    "D: temperature"
+  ],
+  "gold_answer": "B",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: What physical property distinguishes elements on the left side of the Periodic Table of the Elements from elements on the right side?\n\n\nChoices:\nA) number of protons\nB) state of matter\nC) atomic mass\nD) temperature\n\nProvide an answer to the following question:\n\nQ: What physical property distinguishes elements on the left side of the Periodic Table of the Elements from elements on the right side?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "A",
+          "logprob": -0.3510492015630007,
+          "probability": 0.7039491176066899
+        }
+      ],
+      "decision_process": {
+        "selected_text": "A",
+        "matched_choice": "A",
+        "confidence_computation": "exp(logprob) = exp(-0.3510) = 0.7039"
+      },
+      "final_metrics": {
+        "predicted": "A",
+        "correct": false,
+        "confidence": 0.7039491176066899,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

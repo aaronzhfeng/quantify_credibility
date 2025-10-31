@@ -1,0 +1,51 @@
+{
+  "question_id": 250,
+  "question_text": "If your hands are cold, you can warm them by rubbing them together. The heat energy that you produce is caused by",
+  "choices": [
+    "A: insulation.",
+    "B: magnetism.",
+    "C: friction.",
+    "D: conduction."
+  ],
+  "gold_answer": "C",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: If your hands are cold, you can warm them by rubbing them together. The heat energy that you produce is caused by\n\n\nChoices:\nA) insulation.\nB) magnetism.\nC) friction.\nD) conduction.\n\nProvide an answer to the following question:\n\nQ: If your hands are cold, you can warm them by rubbing them together. The heat energy that you produce is caused by\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "C",
+          "logprob": -0.009643741301260889,
+          "probability": 0.9904026104507795
+        }
+      ],
+      "decision_process": {
+        "selected_text": "C",
+        "matched_choice": "C",
+        "confidence_computation": "exp(logprob) = exp(-0.0096) = 0.9904"
+      },
+      "final_metrics": {
+        "predicted": "C",
+        "correct": true,
+        "confidence": 0.9904026104507795,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

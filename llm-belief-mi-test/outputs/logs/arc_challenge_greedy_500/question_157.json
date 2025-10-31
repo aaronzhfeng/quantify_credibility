@@ -1,0 +1,51 @@
+{
+  "question_id": 157,
+  "question_text": "A chemical change happens when",
+  "choices": [
+    "A: glass breaks into pieces.",
+    "B: dough bakes in an oven.",
+    "C: ice cream melts into a liquid.",
+    "D: electricity flows through a wire."
+  ],
+  "gold_answer": "B",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A chemical change happens when\n\n\nChoices:\nA) glass breaks into pieces.\nB) dough bakes in an oven.\nC) ice cream melts into a liquid.\nD) electricity flows through a wire.\n\nProvide an answer to the following question:\n\nQ: A chemical change happens when\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "B",
+          "logprob": -0.762300783804676,
+          "probability": 0.4665916645408096
+        }
+      ],
+      "decision_process": {
+        "selected_text": "B",
+        "matched_choice": "B",
+        "confidence_computation": "exp(logprob) = exp(-0.7623) = 0.4666"
+      },
+      "final_metrics": {
+        "predicted": "B",
+        "correct": true,
+        "confidence": 0.4665916645408096,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

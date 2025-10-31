@@ -1,0 +1,51 @@
+{
+  "question_id": 172,
+  "question_text": "Which of the following is a chemical property of silver?",
+  "choices": [
+    "A: malleable",
+    "B: white metal",
+    "C: conductor of heat",
+    "D: reacts with nitric acid"
+  ],
+  "gold_answer": "D",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Which of the following is a chemical property of silver?\n\n\nChoices:\nA) malleable\nB) white metal\nC) conductor of heat\nD) reacts with nitric acid\n\nProvide an answer to the following question:\n\nQ: Which of the following is a chemical property of silver?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "A",
+          "logprob": -0.37639721552841365,
+          "probability": 0.686329658092719
+        }
+      ],
+      "decision_process": {
+        "selected_text": "A",
+        "matched_choice": "A",
+        "confidence_computation": "exp(logprob) = exp(-0.3764) = 0.6863"
+      },
+      "final_metrics": {
+        "predicted": "A",
+        "correct": false,
+        "confidence": 0.686329658092719,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

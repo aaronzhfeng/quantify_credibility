@@ -1,0 +1,51 @@
+{
+  "question_id": 195,
+  "question_text": "Which of these is a way that sunglasses help protect the eyes?",
+  "choices": [
+    "A: reflecting light rays away from the eyes",
+    "B: refracting more light rays into the eyes",
+    "C: reflecting more light rays into the eyes",
+    "D: refracting light rays away from the eyes"
+  ],
+  "gold_answer": "A",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Which of these is a way that sunglasses help protect the eyes?\n\n\nChoices:\nA) reflecting light rays away from the eyes\nB) refracting more light rays into the eyes\nC) reflecting more light rays into the eyes\nD) refracting light rays away from the eyes\n\nProvide an answer to the following question:\n\nQ: Which of these is a way that sunglasses help protect the eyes?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "A",
+          "logprob": -0.011241813843298587,
+          "probability": 0.9888211392228965
+        }
+      ],
+      "decision_process": {
+        "selected_text": "A",
+        "matched_choice": "A",
+        "confidence_computation": "exp(logprob) = exp(-0.0112) = 0.9888"
+      },
+      "final_metrics": {
+        "predicted": "A",
+        "correct": true,
+        "confidence": 0.9888211392228965,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

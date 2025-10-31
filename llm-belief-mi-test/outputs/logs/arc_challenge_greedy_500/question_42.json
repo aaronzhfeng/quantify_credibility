@@ -1,0 +1,51 @@
+{
+  "question_id": 42,
+  "question_text": "What is the mass of a carbon atom that has 6 protons, 7 neutrons, and 6 electrons?",
+  "choices": [
+    "A: 6",
+    "B: 7",
+    "C: 13",
+    "D: 19"
+  ],
+  "gold_answer": "C",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: What is the mass of a carbon atom that has 6 protons, 7 neutrons, and 6 electrons?\n\n\nChoices:\nA) 6\nB) 7\nC) 13\nD) 19\n\nProvide an answer to the following question:\n\nQ: What is the mass of a carbon atom that has 6 protons, 7 neutrons, and 6 electrons?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "C",
+          "logprob": -0.2596169597527478,
+          "probability": 0.7713469861651387
+        }
+      ],
+      "decision_process": {
+        "selected_text": "C",
+        "matched_choice": "C",
+        "confidence_computation": "exp(logprob) = exp(-0.2596) = 0.7713"
+      },
+      "final_metrics": {
+        "predicted": "C",
+        "correct": true,
+        "confidence": 0.7713469861651387,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

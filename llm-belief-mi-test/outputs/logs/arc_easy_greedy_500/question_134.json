@@ -1,0 +1,51 @@
+{
+  "question_id": 134,
+  "question_text": "An animal has scales and uses only its lungs to exchange gases. What is the animal most likely to be classified as?",
+  "choices": [
+    "A: a fish",
+    "B: a reptile",
+    "C: a mammal",
+    "D: an amphibian"
+  ],
+  "gold_answer": "B",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: An animal has scales and uses only its lungs to exchange gases. What is the animal most likely to be classified as?\n\n\nChoices:\nA) a fish\nB) a reptile\nC) a mammal\nD) an amphibian\n\nProvide an answer to the following question:\n\nQ: An animal has scales and uses only its lungs to exchange gases. What is the animal most likely to be classified as?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "B",
+          "logprob": -0.37440522899851203,
+          "probability": 0.6876981801129008
+        }
+      ],
+      "decision_process": {
+        "selected_text": "B",
+        "matched_choice": "B",
+        "confidence_computation": "exp(logprob) = exp(-0.3744) = 0.6877"
+      },
+      "final_metrics": {
+        "predicted": "B",
+        "correct": true,
+        "confidence": 0.6876981801129008,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

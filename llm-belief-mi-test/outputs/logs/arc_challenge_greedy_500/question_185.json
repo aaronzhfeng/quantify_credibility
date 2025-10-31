@@ -1,0 +1,51 @@
+{
+  "question_id": 185,
+  "question_text": "When a person parachutes from a plane, she travels at about 67 meters per second. When she pulls her cord and her chute opens, she slows to about 3 meters per second. If the velocity and acceleration are both considered positive before the chute opens, how do her velocity and acceleration change when the chute opens?",
+  "choices": [
+    "A: Velocity and acceleration both remain positive.",
+    "B: Velocity and acceleration both become negative.",
+    "C: Velocity remains positive but acceleration becomes negative.",
+    "D: Velocity becomes negative but acceleration remains positive."
+  ],
+  "gold_answer": "C",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: When a person parachutes from a plane, she travels at about 67 meters per second. When she pulls her cord and her chute opens, she slows to about 3 meters per second. If the velocity and acceleration are both considered positive before the chute opens, how do her velocity and acceleration change when the chute opens?\n\n\nChoices:\nA) Velocity and acceleration both remain positive.\nB) Velocity and acceleration both become negative.\nC) Velocity remains positive but acceleration becomes negative.\nD) Velocity becomes negative but acceleration remains positive.\n\nProvide an answer to the following question:\n\nQ: When a person parachutes from a plane, she travels at about 67 meters per second. When she pulls her cord and her chute opens, she slows to about 3 meters per second. If the velocity and acceleration are both considered positive before the chute opens, how do her velocity and acceleration change when the chute opens?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "C",
+          "logprob": -0.8087778213666752,
+          "probability": 0.4454020946285688
+        }
+      ],
+      "decision_process": {
+        "selected_text": "C",
+        "matched_choice": "C",
+        "confidence_computation": "exp(logprob) = exp(-0.8088) = 0.4454"
+      },
+      "final_metrics": {
+        "predicted": "C",
+        "correct": true,
+        "confidence": 0.4454020946285688,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

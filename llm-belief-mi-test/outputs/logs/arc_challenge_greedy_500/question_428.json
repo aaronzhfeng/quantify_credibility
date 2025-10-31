@@ -1,0 +1,51 @@
+{
+  "question_id": 428,
+  "question_text": "A pharmaceutical company developed a drug to help relieve headaches. Recently, the pharmaceutical company discovered that the drug may cause nausea in a small number of people who might take the drug. Which is the most ethical course of action that the drug company could take?",
+  "choices": [
+    "A: Discontinue the use of the drug.",
+    "B: Inform people of the possible side effects.",
+    "C: Reduce the amount of drug given to people.",
+    "D: Modify the drug to include medicine that prevents nausea."
+  ],
+  "gold_answer": "B",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A pharmaceutical company developed a drug to help relieve headaches. Recently, the pharmaceutical company discovered that the drug may cause nausea in a small number of people who might take the drug. Which is the most ethical course of action that the drug company could take?\n\n\nChoices:\nA) Discontinue the use of the drug.\nB) Inform people of the possible side effects.\nC) Reduce the amount of drug given to people.\nD) Modify the drug to include medicine that prevents nausea.\n\nProvide an answer to the following question:\n\nQ: A pharmaceutical company developed a drug to help relieve headaches. Recently, the pharmaceutical company discovered that the drug may cause nausea in a small number of people who might take the drug. Which is the most ethical course of action that the drug company could take?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "B",
+          "logprob": -0.05546712793875486,
+          "probability": 0.9460431215467382
+        }
+      ],
+      "decision_process": {
+        "selected_text": "B",
+        "matched_choice": "B",
+        "confidence_computation": "exp(logprob) = exp(-0.0555) = 0.9460"
+      },
+      "final_metrics": {
+        "predicted": "B",
+        "correct": true,
+        "confidence": 0.9460431215467382,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

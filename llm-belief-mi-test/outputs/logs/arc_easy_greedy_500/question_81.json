@@ -1,0 +1,51 @@
+{
+  "question_id": 81,
+  "question_text": "Which of these traits is most influenced by environment?",
+  "choices": [
+    "A: weight",
+    "B: hair color",
+    "C: blood type",
+    "D: handedness"
+  ],
+  "gold_answer": "A",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Which of these traits is most influenced by environment?\n\n\nChoices:\nA) weight\nB) hair color\nC) blood type\nD) handedness\n\nProvide an answer to the following question:\n\nQ: Which of these traits is most influenced by environment?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "A",
+          "logprob": -0.5251212737930473,
+          "probability": 0.5914836285539058
+        }
+      ],
+      "decision_process": {
+        "selected_text": "A",
+        "matched_choice": "A",
+        "confidence_computation": "exp(logprob) = exp(-0.5251) = 0.5915"
+      },
+      "final_metrics": {
+        "predicted": "A",
+        "correct": true,
+        "confidence": 0.5914836285539058,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

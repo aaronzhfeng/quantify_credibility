@@ -1,0 +1,51 @@
+{
+  "question_id": 299,
+  "question_text": "Each layer of Earth has different properties. Which statement best describes the mantle of Earth?",
+  "choices": [
+    "A: The mantle lies below the core.",
+    "B: The mantle is composed of hot gases.",
+    "C: The mantle lies between the core and the crust.",
+    "D: The mantle temperature is lower than the crust temperature."
+  ],
+  "gold_answer": "C",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Each layer of Earth has different properties. Which statement best describes the mantle of Earth?\n\n\nChoices:\nA) The mantle lies below the core.\nB) The mantle is composed of hot gases.\nC) The mantle lies between the core and the crust.\nD) The mantle temperature is lower than the crust temperature.\n\nProvide an answer to the following question:\n\nQ: Each layer of Earth has different properties. Which statement best describes the mantle of Earth?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "C",
+          "logprob": -0.0151911306893453,
+          "probability": 0.9849236724713505
+        }
+      ],
+      "decision_process": {
+        "selected_text": "C",
+        "matched_choice": "C",
+        "confidence_computation": "exp(logprob) = exp(-0.0152) = 0.9849"
+      },
+      "final_metrics": {
+        "predicted": "C",
+        "correct": true,
+        "confidence": 0.9849236724713505,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

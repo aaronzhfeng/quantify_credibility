@@ -1,0 +1,51 @@
+{
+  "question_id": 341,
+  "question_text": "What change has taken place in the following? K -> K^+",
+  "choices": [
+    "A: loss of a proton",
+    "B: gain of a proton",
+    "C: loss of an electron",
+    "D: gain of an electron"
+  ],
+  "gold_answer": "C",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: What change has taken place in the following? K -> K^+\n\n\nChoices:\nA) loss of a proton\nB) gain of a proton\nC) loss of an electron\nD) gain of an electron\n\nProvide an answer to the following question:\n\nQ: What change has taken place in the following? K -> K^+\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "A",
+          "logprob": -0.7713906407007016,
+          "probability": 0.4623696309922341
+        }
+      ],
+      "decision_process": {
+        "selected_text": "A",
+        "matched_choice": "A",
+        "confidence_computation": "exp(logprob) = exp(-0.7714) = 0.4624"
+      },
+      "final_metrics": {
+        "predicted": "A",
+        "correct": false,
+        "confidence": 0.4623696309922341,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

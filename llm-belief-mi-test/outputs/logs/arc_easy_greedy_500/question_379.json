@@ -1,0 +1,51 @@
+{
+  "question_id": 379,
+  "question_text": "A class measures the time it takes for two different trucks to drive across the parking lot. How can they tell which truck is faster?",
+  "choices": [
+    "A: The truck that starts moving first is faster.",
+    "B: The truck that takes less time is faster.",
+    "C: The truck that has bigger tires is faster.",
+    "D: The truck that takes more time is faster."
+  ],
+  "gold_answer": "B",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A class measures the time it takes for two different trucks to drive across the parking lot. How can they tell which truck is faster?\n\n\nChoices:\nA) The truck that starts moving first is faster.\nB) The truck that takes less time is faster.\nC) The truck that has bigger tires is faster.\nD) The truck that takes more time is faster.\n\nProvide an answer to the following question:\n\nQ: A class measures the time it takes for two different trucks to drive across the parking lot. How can they tell which truck is faster?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "B",
+          "logprob": -0.0029773643473163247,
+          "probability": 0.9970270636062781
+        }
+      ],
+      "decision_process": {
+        "selected_text": "B",
+        "matched_choice": "B",
+        "confidence_computation": "exp(logprob) = exp(-0.0030) = 0.9970"
+      },
+      "final_metrics": {
+        "predicted": "B",
+        "correct": true,
+        "confidence": 0.9970270636062781,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

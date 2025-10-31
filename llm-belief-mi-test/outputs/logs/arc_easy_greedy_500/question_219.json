@@ -1,0 +1,51 @@
+{
+  "question_id": 219,
+  "question_text": "What kind of force do brakes use to stop a moving bicycle?",
+  "choices": [
+    "A: gravity",
+    "B: friction",
+    "C: magnetic",
+    "D: push"
+  ],
+  "gold_answer": "B",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: What kind of force do brakes use to stop a moving bicycle?\n\n\nChoices:\nA) gravity\nB) friction\nC) magnetic\nD) push\n\nProvide an answer to the following question:\n\nQ: What kind of force do brakes use to stop a moving bicycle?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "B",
+          "logprob": -0.0007008083048276603,
+          "probability": 0.9992994372039575
+        }
+      ],
+      "decision_process": {
+        "selected_text": "B",
+        "matched_choice": "B",
+        "confidence_computation": "exp(logprob) = exp(-0.0007) = 0.9993"
+      },
+      "final_metrics": {
+        "predicted": "B",
+        "correct": true,
+        "confidence": 0.9992994372039575,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

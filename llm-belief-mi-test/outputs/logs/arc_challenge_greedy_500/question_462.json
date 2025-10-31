@@ -1,0 +1,51 @@
+{
+  "question_id": 462,
+  "question_text": "Early Egyptians thought the solar system was a rectangular box. People in early Greece pictured the universe as a set of crystal-like spheres. Later the solar system was viewed as a set of planets orbiting the Sun. Why has the model of the solar system changed over the centuries?",
+  "choices": [
+    "A: Scientists preferred newer models.",
+    "B: New evidence caused revisions.",
+    "C: The newer models were easier to draw.",
+    "D: The information was finally put in books."
+  ],
+  "gold_answer": "B",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Early Egyptians thought the solar system was a rectangular box. People in early Greece pictured the universe as a set of crystal-like spheres. Later the solar system was viewed as a set of planets orbiting the Sun. Why has the model of the solar system changed over the centuries?\n\n\nChoices:\nA) Scientists preferred newer models.\nB) New evidence caused revisions.\nC) The newer models were easier to draw.\nD) The information was finally put in books.\n\nProvide an answer to the following question:\n\nQ: Early Egyptians thought the solar system was a rectangular box. People in early Greece pictured the universe as a set of crystal-like spheres. Later the solar system was viewed as a set of planets orbiting the Sun. Why has the model of the solar system changed over the centuries?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "B",
+          "logprob": -0.04049846390262246,
+          "probability": 0.9603106396409352
+        }
+      ],
+      "decision_process": {
+        "selected_text": "B",
+        "matched_choice": "B",
+        "confidence_computation": "exp(logprob) = exp(-0.0405) = 0.9603"
+      },
+      "final_metrics": {
+        "predicted": "B",
+        "correct": true,
+        "confidence": 0.9603106396409352,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

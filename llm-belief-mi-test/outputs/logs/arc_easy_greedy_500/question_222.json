@@ -1,0 +1,51 @@
+{
+  "question_id": 222,
+  "question_text": "Glaciers are slow-moving sheets of ice found on land. What process occurs when glacial ice is heated to 5° Celsius?",
+  "choices": [
+    "A: evaporation",
+    "B: freezing",
+    "C: melting",
+    "D: precipitation"
+  ],
+  "gold_answer": "C",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Glaciers are slow-moving sheets of ice found on land. What process occurs when glacial ice is heated to 5° Celsius?\n\n\nChoices:\nA) evaporation\nB) freezing\nC) melting\nD) precipitation\n\nProvide an answer to the following question:\n\nQ: Glaciers are slow-moving sheets of ice found on land. What process occurs when glacial ice is heated to 5° Celsius?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "C",
+          "logprob": -0.0015550324751529843,
+          "probability": 0.9984461759613792
+        }
+      ],
+      "decision_process": {
+        "selected_text": "C",
+        "matched_choice": "C",
+        "confidence_computation": "exp(logprob) = exp(-0.0016) = 0.9984"
+      },
+      "final_metrics": {
+        "predicted": "C",
+        "correct": true,
+        "confidence": 0.9984461759613792,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

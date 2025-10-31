@@ -1,0 +1,51 @@
+{
+  "question_id": 59,
+  "question_text": "Cells need nutrients for energy. Which system is responsible for breaking down food to provide cellular energy?",
+  "choices": [
+    "A: digestive",
+    "B: excretory",
+    "C: circulatory",
+    "D: respiratory"
+  ],
+  "gold_answer": "A",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Cells need nutrients for energy. Which system is responsible for breaking down food to provide cellular energy?\n\n\nChoices:\nA) digestive\nB) excretory\nC) circulatory\nD) respiratory\n\nProvide an answer to the following question:\n\nQ: Cells need nutrients for energy. Which system is responsible for breaking down food to provide cellular energy?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "A",
+          "logprob": -0.007715296960668638,
+          "probability": 0.9923143895471247
+        }
+      ],
+      "decision_process": {
+        "selected_text": "A",
+        "matched_choice": "A",
+        "confidence_computation": "exp(logprob) = exp(-0.0077) = 0.9923"
+      },
+      "final_metrics": {
+        "predicted": "A",
+        "correct": true,
+        "confidence": 0.9923143895471247,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

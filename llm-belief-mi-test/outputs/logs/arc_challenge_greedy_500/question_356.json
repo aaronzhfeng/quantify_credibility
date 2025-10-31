@@ -1,0 +1,51 @@
+{
+  "question_id": 356,
+  "question_text": "Sean felt the room become cooler. His body adjusts to enable him to survive. Which response did Sean have that enabled his body to continue to function correctly?",
+  "choices": [
+    "A: an increase in cellular respiration which increases heat production",
+    "B: sweating from the skin to lower inner heat levels",
+    "C: opening of the capillaries in the skin to obtain more heat",
+    "D: an increase in the metabolism which decreases heat from cells"
+  ],
+  "gold_answer": "A",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Sean felt the room become cooler. His body adjusts to enable him to survive. Which response did Sean have that enabled his body to continue to function correctly?\n\n\nChoices:\nA) an increase in cellular respiration which increases heat production\nB) sweating from the skin to lower inner heat levels\nC) opening of the capillaries in the skin to obtain more heat\nD) an increase in the metabolism which decreases heat from cells\n\nProvide an answer to the following question:\n\nQ: Sean felt the room become cooler. His body adjusts to enable him to survive. Which response did Sean have that enabled his body to continue to function correctly?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "B",
+          "logprob": -0.1074774676526431,
+          "probability": 0.898096758450941
+        }
+      ],
+      "decision_process": {
+        "selected_text": "B",
+        "matched_choice": "B",
+        "confidence_computation": "exp(logprob) = exp(-0.1075) = 0.8981"
+      },
+      "final_metrics": {
+        "predicted": "B",
+        "correct": false,
+        "confidence": 0.898096758450941,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

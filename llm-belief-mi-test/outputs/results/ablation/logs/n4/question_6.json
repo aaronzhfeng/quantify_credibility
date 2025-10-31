@@ -1,0 +1,959 @@
+{
+  "question_id": 6,
+  "question_text": "an electric car contains a motor that runs on",
+  "choices": [
+    "A: gas",
+    "B: hydrogen",
+    "C: ions",
+    "D: plutonium"
+  ],
+  "gold_answer": "C",
+  "methods": {
+    "mi_method": {
+      "description": "k=10 chains of length n=4, MI estimation",
+      "raw_inputs": [
+        {
+          "chain_id": 0,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: an electric car contains a motor that runs on\n\n\nChoices:\nA) gas\nB) hydrogen\nC) ions\nD) plutonium\n\nProvide an answer to the following question:\n\nQ: an electric car contains a motor that runs on\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 0,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: an electric car contains a motor that runs on\n\n\nOne answer to question Q is C) ions.\n\n\nChoices:\nA) gas\nB) hydrogen\nC) ions\nD) plutonium\n\nProvide an answer to the following question:\n\nQ: an electric car contains a motor that runs on\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 0,
+          "step": 2,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: an electric car contains a motor that runs on\n\n\nOne answer to question Q is C) ions. Another answer to question Q is A) gas.\n\n\nChoices:\nA) gas\nB) hydrogen\nC) ions\nD) plutonium\n\nProvide an answer to the following question:\n\nQ: an electric car contains a motor that runs on\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 0,
+          "step": 3,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: an electric car contains a motor that runs on\n\n\nOne answer to question Q is C) ions. Another answer to question Q is A) gas. Another answer to question Q is A) gas.\n\n\nChoices:\nA) gas\nB) hydrogen\nC) ions\nD) plutonium\n\nProvide an answer to the following question:\n\nQ: an electric car contains a motor that runs on\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 1,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: an electric car contains a motor that runs on\n\n\nChoices:\nA) gas\nB) hydrogen\nC) ions\nD) plutonium\n\nProvide an answer to the following question:\n\nQ: an electric car contains a motor that runs on\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 1,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: an electric car contains a motor that runs on\n\n\nOne answer to question Q is C) ions.\n\n\nChoices:\nA) gas\nB) hydrogen\nC) ions\nD) plutonium\n\nProvide an answer to the following question:\n\nQ: an electric car contains a motor that runs on\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 1,
+          "step": 2,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: an electric car contains a motor that runs on\n\n\nOne answer to question Q is C) ions. Another answer to question Q is A) gas.\n\n\nChoices:\nA) gas\nB) hydrogen\nC) ions\nD) plutonium\n\nProvide an answer to the following question:\n\nQ: an electric car contains a motor that runs on\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 1,
+          "step": 3,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: an electric car contains a motor that runs on\n\n\nOne answer to question Q is C) ions. Another answer to question Q is A) gas. Another answer to question Q is A) gas.\n\n\nChoices:\nA) gas\nB) hydrogen\nC) ions\nD) plutonium\n\nProvide an answer to the following question:\n\nQ: an electric car contains a motor that runs on\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 2,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: an electric car contains a motor that runs on\n\n\nChoices:\nA) gas\nB) hydrogen\nC) ions\nD) plutonium\n\nProvide an answer to the following question:\n\nQ: an electric car contains a motor that runs on\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 2,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: an electric car contains a motor that runs on\n\n\nOne answer to question Q is C) ions.\n\n\nChoices:\nA) gas\nB) hydrogen\nC) ions\nD) plutonium\n\nProvide an answer to the following question:\n\nQ: an electric car contains a motor that runs on\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 2,
+          "step": 2,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: an electric car contains a motor that runs on\n\n\nOne answer to question Q is C) ions. Another answer to question Q is C) ions.\n\n\nChoices:\nA) gas\nB) hydrogen\nC) ions\nD) plutonium\n\nProvide an answer to the following question:\n\nQ: an electric car contains a motor that runs on\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 2,
+          "step": 3,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: an electric car contains a motor that runs on\n\n\nOne answer to question Q is C) ions. Another answer to question Q is C) ions. Another answer to question Q is C) ions.\n\n\nChoices:\nA) gas\nB) hydrogen\nC) ions\nD) plutonium\n\nProvide an answer to the following question:\n\nQ: an electric car contains a motor that runs on\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 3,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: an electric car contains a motor that runs on\n\n\nChoices:\nA) gas\nB) hydrogen\nC) ions\nD) plutonium\n\nProvide an answer to the following question:\n\nQ: an electric car contains a motor that runs on\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 3,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: an electric car contains a motor that runs on\n\n\nOne answer to question Q is C) ions.\n\n\nChoices:\nA) gas\nB) hydrogen\nC) ions\nD) plutonium\n\nProvide an answer to the following question:\n\nQ: an electric car contains a motor that runs on\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 3,
+          "step": 2,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: an electric car contains a motor that runs on\n\n\nOne answer to question Q is C) ions. Another answer to question Q is A) gas.\n\n\nChoices:\nA) gas\nB) hydrogen\nC) ions\nD) plutonium\n\nProvide an answer to the following question:\n\nQ: an electric car contains a motor that runs on\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 3,
+          "step": 3,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: an electric car contains a motor that runs on\n\n\nOne answer to question Q is C) ions. Another answer to question Q is A) gas. Another answer to question Q is A) gas.\n\n\nChoices:\nA) gas\nB) hydrogen\nC) ions\nD) plutonium\n\nProvide an answer to the following question:\n\nQ: an electric car contains a motor that runs on\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 4,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: an electric car contains a motor that runs on\n\n\nChoices:\nA) gas\nB) hydrogen\nC) ions\nD) plutonium\n\nProvide an answer to the following question:\n\nQ: an electric car contains a motor that runs on\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 4,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: an electric car contains a motor that runs on\n\n\nOne answer to question Q is C) ions.\n\n\nChoices:\nA) gas\nB) hydrogen\nC) ions\nD) plutonium\n\nProvide an answer to the following question:\n\nQ: an electric car contains a motor that runs on\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 4,
+          "step": 2,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: an electric car contains a motor that runs on\n\n\nOne answer to question Q is C) ions. Another answer to question Q is A) gas.\n\n\nChoices:\nA) gas\nB) hydrogen\nC) ions\nD) plutonium\n\nProvide an answer to the following question:\n\nQ: an electric car contains a motor that runs on\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 4,
+          "step": 3,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: an electric car contains a motor that runs on\n\n\nOne answer to question Q is C) ions. Another answer to question Q is A) gas. Another answer to question Q is A) gas.\n\n\nChoices:\nA) gas\nB) hydrogen\nC) ions\nD) plutonium\n\nProvide an answer to the following question:\n\nQ: an electric car contains a motor that runs on\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 5,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: an electric car contains a motor that runs on\n\n\nChoices:\nA) gas\nB) hydrogen\nC) ions\nD) plutonium\n\nProvide an answer to the following question:\n\nQ: an electric car contains a motor that runs on\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 5,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: an electric car contains a motor that runs on\n\n\nOne answer to question Q is C) ions.\n\n\nChoices:\nA) gas\nB) hydrogen\nC) ions\nD) plutonium\n\nProvide an answer to the following question:\n\nQ: an electric car contains a motor that runs on\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 5,
+          "step": 2,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: an electric car contains a motor that runs on\n\n\nOne answer to question Q is C) ions. Another answer to question Q is A) gas.\n\n\nChoices:\nA) gas\nB) hydrogen\nC) ions\nD) plutonium\n\nProvide an answer to the following question:\n\nQ: an electric car contains a motor that runs on\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 5,
+          "step": 3,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: an electric car contains a motor that runs on\n\n\nOne answer to question Q is C) ions. Another answer to question Q is A) gas. Another answer to question Q is A) gas.\n\n\nChoices:\nA) gas\nB) hydrogen\nC) ions\nD) plutonium\n\nProvide an answer to the following question:\n\nQ: an electric car contains a motor that runs on\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 6,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: an electric car contains a motor that runs on\n\n\nChoices:\nA) gas\nB) hydrogen\nC) ions\nD) plutonium\n\nProvide an answer to the following question:\n\nQ: an electric car contains a motor that runs on\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 6,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: an electric car contains a motor that runs on\n\n\nOne answer to question Q is C) ions.\n\n\nChoices:\nA) gas\nB) hydrogen\nC) ions\nD) plutonium\n\nProvide an answer to the following question:\n\nQ: an electric car contains a motor that runs on\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 6,
+          "step": 2,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: an electric car contains a motor that runs on\n\n\nOne answer to question Q is C) ions. Another answer to question Q is A) gas.\n\n\nChoices:\nA) gas\nB) hydrogen\nC) ions\nD) plutonium\n\nProvide an answer to the following question:\n\nQ: an electric car contains a motor that runs on\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 6,
+          "step": 3,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: an electric car contains a motor that runs on\n\n\nOne answer to question Q is C) ions. Another answer to question Q is A) gas. Another answer to question Q is A) gas.\n\n\nChoices:\nA) gas\nB) hydrogen\nC) ions\nD) plutonium\n\nProvide an answer to the following question:\n\nQ: an electric car contains a motor that runs on\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 7,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: an electric car contains a motor that runs on\n\n\nChoices:\nA) gas\nB) hydrogen\nC) ions\nD) plutonium\n\nProvide an answer to the following question:\n\nQ: an electric car contains a motor that runs on\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 7,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: an electric car contains a motor that runs on\n\n\nOne answer to question Q is C) ions.\n\n\nChoices:\nA) gas\nB) hydrogen\nC) ions\nD) plutonium\n\nProvide an answer to the following question:\n\nQ: an electric car contains a motor that runs on\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 7,
+          "step": 2,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: an electric car contains a motor that runs on\n\n\nOne answer to question Q is C) ions. Another answer to question Q is A) gas.\n\n\nChoices:\nA) gas\nB) hydrogen\nC) ions\nD) plutonium\n\nProvide an answer to the following question:\n\nQ: an electric car contains a motor that runs on\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 7,
+          "step": 3,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: an electric car contains a motor that runs on\n\n\nOne answer to question Q is C) ions. Another answer to question Q is A) gas. Another answer to question Q is A) gas.\n\n\nChoices:\nA) gas\nB) hydrogen\nC) ions\nD) plutonium\n\nProvide an answer to the following question:\n\nQ: an electric car contains a motor that runs on\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 8,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: an electric car contains a motor that runs on\n\n\nChoices:\nA) gas\nB) hydrogen\nC) ions\nD) plutonium\n\nProvide an answer to the following question:\n\nQ: an electric car contains a motor that runs on\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 8,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: an electric car contains a motor that runs on\n\n\nOne answer to question Q is C) ions.\n\n\nChoices:\nA) gas\nB) hydrogen\nC) ions\nD) plutonium\n\nProvide an answer to the following question:\n\nQ: an electric car contains a motor that runs on\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 8,
+          "step": 2,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: an electric car contains a motor that runs on\n\n\nOne answer to question Q is C) ions. Another answer to question Q is C) ions.\n\n\nChoices:\nA) gas\nB) hydrogen\nC) ions\nD) plutonium\n\nProvide an answer to the following question:\n\nQ: an electric car contains a motor that runs on\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 8,
+          "step": 3,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: an electric car contains a motor that runs on\n\n\nOne answer to question Q is C) ions. Another answer to question Q is C) ions. Another answer to question Q is A) gas.\n\n\nChoices:\nA) gas\nB) hydrogen\nC) ions\nD) plutonium\n\nProvide an answer to the following question:\n\nQ: an electric car contains a motor that runs on\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 9,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: an electric car contains a motor that runs on\n\n\nChoices:\nA) gas\nB) hydrogen\nC) ions\nD) plutonium\n\nProvide an answer to the following question:\n\nQ: an electric car contains a motor that runs on\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 9,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: an electric car contains a motor that runs on\n\n\nOne answer to question Q is C) ions.\n\n\nChoices:\nA) gas\nB) hydrogen\nC) ions\nD) plutonium\n\nProvide an answer to the following question:\n\nQ: an electric car contains a motor that runs on\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 9,
+          "step": 2,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: an electric car contains a motor that runs on\n\n\nOne answer to question Q is C) ions. Another answer to question Q is A) gas.\n\n\nChoices:\nA) gas\nB) hydrogen\nC) ions\nD) plutonium\n\nProvide an answer to the following question:\n\nQ: an electric car contains a motor that runs on\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 9,
+          "step": 3,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: an electric car contains a motor that runs on\n\n\nOne answer to question Q is C) ions. Another answer to question Q is A) gas. Another answer to question Q is A) gas.\n\n\nChoices:\nA) gas\nB) hydrogen\nC) ions\nD) plutonium\n\nProvide an answer to the following question:\n\nQ: an electric car contains a motor that runs on\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "chain_id": 0,
+          "step": 0,
+          "text": "C",
+          "logprob": -0.25378721952438354,
+          "probability": 0.7758568716782218
+        },
+        {
+          "chain_id": 0,
+          "step": 1,
+          "text": "A",
+          "logprob": -0.5638720989227295,
+          "probability": 0.5690015624380658
+        },
+        {
+          "chain_id": 0,
+          "step": 2,
+          "text": "A",
+          "logprob": 0.0,
+          "probability": 0.5
+        },
+        {
+          "chain_id": 0,
+          "step": 3,
+          "text": "A",
+          "logprob": 0.0,
+          "probability": 0.5
+        },
+        {
+          "chain_id": 1,
+          "step": 0,
+          "text": "C",
+          "logprob": -0.25378721952438354,
+          "probability": 0.7758568716782218
+        },
+        {
+          "chain_id": 1,
+          "step": 1,
+          "text": "A",
+          "logprob": -0.5638720989227295,
+          "probability": 0.5690015624380658
+        },
+        {
+          "chain_id": 1,
+          "step": 2,
+          "text": "A",
+          "logprob": 0.0,
+          "probability": 0.5
+        },
+        {
+          "chain_id": 1,
+          "step": 3,
+          "text": "A",
+          "logprob": 0.0,
+          "probability": 0.5
+        },
+        {
+          "chain_id": 2,
+          "step": 0,
+          "text": "C",
+          "logprob": -0.25378721952438354,
+          "probability": 0.7758568716782218
+        },
+        {
+          "chain_id": 2,
+          "step": 1,
+          "text": "C",
+          "logprob": -0.8416507244110107,
+          "probability": 0.43099847618813386
+        },
+        {
+          "chain_id": 2,
+          "step": 2,
+          "text": "C",
+          "logprob": -2.0781593322753906,
+          "probability": 0.12516037897329685
+        },
+        {
+          "chain_id": 2,
+          "step": 3,
+          "text": "A",
+          "logprob": -0.32080817222595215,
+          "probability": 0.7255624206654989
+        },
+        {
+          "chain_id": 3,
+          "step": 0,
+          "text": "C",
+          "logprob": -0.25378721952438354,
+          "probability": 0.7758568716782218
+        },
+        {
+          "chain_id": 3,
+          "step": 1,
+          "text": "A",
+          "logprob": -0.5638720989227295,
+          "probability": 0.5690015624380658
+        },
+        {
+          "chain_id": 3,
+          "step": 2,
+          "text": "A",
+          "logprob": 0.0,
+          "probability": 0.5
+        },
+        {
+          "chain_id": 3,
+          "step": 3,
+          "text": "A",
+          "logprob": 0.0,
+          "probability": 0.5
+        },
+        {
+          "chain_id": 4,
+          "step": 0,
+          "text": "C",
+          "logprob": -0.25378721952438354,
+          "probability": 0.7758568716782218
+        },
+        {
+          "chain_id": 4,
+          "step": 1,
+          "text": "A",
+          "logprob": -0.5638720989227295,
+          "probability": 0.5690015624380658
+        },
+        {
+          "chain_id": 4,
+          "step": 2,
+          "text": "A",
+          "logprob": 0.0,
+          "probability": 0.5
+        },
+        {
+          "chain_id": 4,
+          "step": 3,
+          "text": "A",
+          "logprob": 0.0,
+          "probability": 0.5
+        },
+        {
+          "chain_id": 5,
+          "step": 0,
+          "text": "C",
+          "logprob": -0.25378721952438354,
+          "probability": 0.7758568716782218
+        },
+        {
+          "chain_id": 5,
+          "step": 1,
+          "text": "A",
+          "logprob": -0.5638720989227295,
+          "probability": 0.5690015624380658
+        },
+        {
+          "chain_id": 5,
+          "step": 2,
+          "text": "A",
+          "logprob": 0.0,
+          "probability": 0.5
+        },
+        {
+          "chain_id": 5,
+          "step": 3,
+          "text": "A",
+          "logprob": 0.0,
+          "probability": 0.5
+        },
+        {
+          "chain_id": 6,
+          "step": 0,
+          "text": "C",
+          "logprob": -0.25378721952438354,
+          "probability": 0.7758568716782218
+        },
+        {
+          "chain_id": 6,
+          "step": 1,
+          "text": "A",
+          "logprob": -0.5638720989227295,
+          "probability": 0.5690015624380658
+        },
+        {
+          "chain_id": 6,
+          "step": 2,
+          "text": "A",
+          "logprob": 0.0,
+          "probability": 0.5
+        },
+        {
+          "chain_id": 6,
+          "step": 3,
+          "text": "A",
+          "logprob": 0.0,
+          "probability": 0.5
+        },
+        {
+          "chain_id": 7,
+          "step": 0,
+          "text": "C",
+          "logprob": -0.25378721952438354,
+          "probability": 0.7758568716782218
+        },
+        {
+          "chain_id": 7,
+          "step": 1,
+          "text": "A",
+          "logprob": -0.5638720989227295,
+          "probability": 0.5690015624380658
+        },
+        {
+          "chain_id": 7,
+          "step": 2,
+          "text": "A",
+          "logprob": 0.0,
+          "probability": 0.5
+        },
+        {
+          "chain_id": 7,
+          "step": 3,
+          "text": "A",
+          "logprob": 0.0,
+          "probability": 0.5
+        },
+        {
+          "chain_id": 8,
+          "step": 0,
+          "text": "C",
+          "logprob": -0.25378721952438354,
+          "probability": 0.7758568716782218
+        },
+        {
+          "chain_id": 8,
+          "step": 1,
+          "text": "C",
+          "logprob": -0.8416507244110107,
+          "probability": 0.43099847618813386
+        },
+        {
+          "chain_id": 8,
+          "step": 2,
+          "text": "A",
+          "logprob": -0.1337146908044815,
+          "probability": 0.8748396287908604
+        },
+        {
+          "chain_id": 8,
+          "step": 3,
+          "text": "A",
+          "logprob": 0.0,
+          "probability": 0.5
+        },
+        {
+          "chain_id": 9,
+          "step": 0,
+          "text": "C",
+          "logprob": -0.25378721952438354,
+          "probability": 0.7758568716782218
+        },
+        {
+          "chain_id": 9,
+          "step": 1,
+          "text": "A",
+          "logprob": -0.5638720989227295,
+          "probability": 0.5690015624380658
+        },
+        {
+          "chain_id": 9,
+          "step": 2,
+          "text": "A",
+          "logprob": 0.0,
+          "probability": 0.5
+        },
+        {
+          "chain_id": 9,
+          "step": 3,
+          "text": "A",
+          "logprob": 0.0,
+          "probability": 0.5
+        }
+      ],
+      "decision_process": {
+        "num_chains": 10,
+        "chain_length": 4,
+        "total_inferences": 40,
+        "mi_method": "listing",
+        "mi_nats": 0.09190767716728725,
+        "mi_bits": 0.13259475006886912,
+        "selected_answer": "A",
+        "matched_choice": "A",
+        "confidence_computation": "1/(1 + mi_nats) = 1/(1 + 0.0919) = 0.9158",
+        "agreement": "100.00% (10/10 chains agree on final answer)"
+      },
+      "final_metrics": {
+        "predicted": "A",
+        "correct": false,
+        "confidence": 0.9158283442005634,
+        "mi_score": 0.13259475006886912,
+        "agreement": 1.0
+      }
+    }
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "question_id": 206,
+  "question_text": "Why do identical twins usually look like each other?",
+  "choices": [
+    "A: They were born on the same day.",
+    "B: They have the same kinds of interests.",
+    "C: They inherited the same characteristics from their parents.",
+    "D: They were taught the same kinds of things at home."
+  ],
+  "gold_answer": "C",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Why do identical twins usually look like each other?\n\n\nChoices:\nA) They were born on the same day.\nB) They have the same kinds of interests.\nC) They inherited the same characteristics from their parents.\nD) They were taught the same kinds of things at home.\n\nProvide an answer to the following question:\n\nQ: Why do identical twins usually look like each other?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "C",
+          "logprob": -0.03353803837671876,
+          "probability": 0.9670181267319975
+        }
+      ],
+      "decision_process": {
+        "selected_text": "C",
+        "matched_choice": "C",
+        "confidence_computation": "exp(logprob) = exp(-0.0335) = 0.9670"
+      },
+      "final_metrics": {
+        "predicted": "C",
+        "correct": true,
+        "confidence": 0.9670181267319975,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

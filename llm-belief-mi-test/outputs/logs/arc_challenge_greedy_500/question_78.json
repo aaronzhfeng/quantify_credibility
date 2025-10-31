@@ -1,0 +1,51 @@
+{
+  "question_id": 78,
+  "question_text": "A 20 N object is placed on a surface and starts to slide. What is the most likely reason the object begins to move?",
+  "choices": [
+    "A: Gravity exerts a balanced force on the object.",
+    "B: An unbalanced force causes acceleration.",
+    "C: Friction is applied to the object.",
+    "D: The forces acting on the object are in equilibrium."
+  ],
+  "gold_answer": "B",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A 20 N object is placed on a surface and starts to slide. What is the most likely reason the object begins to move?\n\n\nChoices:\nA) Gravity exerts a balanced force on the object.\nB) An unbalanced force causes acceleration.\nC) Friction is applied to the object.\nD) The forces acting on the object are in equilibrium.\n\nProvide an answer to the following question:\n\nQ: A 20 N object is placed on a surface and starts to slide. What is the most likely reason the object begins to move?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "B",
+          "logprob": -0.2621280991588719,
+          "probability": 0.7694124563060316
+        }
+      ],
+      "decision_process": {
+        "selected_text": "B",
+        "matched_choice": "B",
+        "confidence_computation": "exp(logprob) = exp(-0.2621) = 0.7694"
+      },
+      "final_metrics": {
+        "predicted": "B",
+        "correct": true,
+        "confidence": 0.7694124563060316,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

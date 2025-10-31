@@ -1,0 +1,51 @@
+{
+  "question_id": 49,
+  "question_text": "In the United States, windmills have been used for farming for hundreds of years. Which simple machine is the most important part of a windmill?",
+  "choices": [
+    "A: lever",
+    "B: pulley",
+    "C: inclined plane",
+    "D: wheel and axle"
+  ],
+  "gold_answer": "D",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: In the United States, windmills have been used for farming for hundreds of years. Which simple machine is the most important part of a windmill?\n\n\nChoices:\nA) lever\nB) pulley\nC) inclined plane\nD) wheel and axle\n\nProvide an answer to the following question:\n\nQ: In the United States, windmills have been used for farming for hundreds of years. Which simple machine is the most important part of a windmill?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "D",
+          "logprob": -0.22446292036329396,
+          "probability": 0.7989452007484859
+        }
+      ],
+      "decision_process": {
+        "selected_text": "D",
+        "matched_choice": "D",
+        "confidence_computation": "exp(logprob) = exp(-0.2245) = 0.7989"
+      },
+      "final_metrics": {
+        "predicted": "D",
+        "correct": true,
+        "confidence": 0.7989452007484859,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

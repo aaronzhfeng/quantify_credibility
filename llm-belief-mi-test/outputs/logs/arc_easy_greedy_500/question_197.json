@@ -1,0 +1,51 @@
+{
+  "question_id": 197,
+  "question_text": "All of the planets in the solar system formed at about the same time from a large cloud of gas and dust. How is Earth different from other planets in the solar system?",
+  "choices": [
+    "A: Earth has no natural satellites.",
+    "B: Earth's atmosphere is composed of gases.",
+    "C: Water is found in all three phases on Earth.",
+    "D: Volcanoes release liquid rock onto Earth's surface."
+  ],
+  "gold_answer": "C",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: All of the planets in the solar system formed at about the same time from a large cloud of gas and dust. How is Earth different from other planets in the solar system?\n\n\nChoices:\nA) Earth has no natural satellites.\nB) Earth's atmosphere is composed of gases.\nC) Water is found in all three phases on Earth.\nD) Volcanoes release liquid rock onto Earth's surface.\n\nProvide an answer to the following question:\n\nQ: All of the planets in the solar system formed at about the same time from a large cloud of gas and dust. How is Earth different from other planets in the solar system?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "C",
+          "logprob": -0.4086396414786577,
+          "probability": 0.6645536667552111
+        }
+      ],
+      "decision_process": {
+        "selected_text": "C",
+        "matched_choice": "C",
+        "confidence_computation": "exp(logprob) = exp(-0.4086) = 0.6646"
+      },
+      "final_metrics": {
+        "predicted": "C",
+        "correct": true,
+        "confidence": 0.6645536667552111,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

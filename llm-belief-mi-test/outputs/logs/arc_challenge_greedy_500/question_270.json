@@ -1,0 +1,51 @@
+{
+  "question_id": 270,
+  "question_text": "When ice begins to melt at 0°C, water molecules",
+  "choices": [
+    "A: begin to lose some of their atomic mass.",
+    "B: break apart into individual water atoms.",
+    "C: move more freely in relation to each other.",
+    "D: release heat to the surrounding atmosphere."
+  ],
+  "gold_answer": "C",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: When ice begins to melt at 0°C, water molecules\n\n\nChoices:\nA) begin to lose some of their atomic mass.\nB) break apart into individual water atoms.\nC) move more freely in relation to each other.\nD) release heat to the surrounding atmosphere.\n\nProvide an answer to the following question:\n\nQ: When ice begins to melt at 0°C, water molecules\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "C",
+          "logprob": -0.04084005960612558,
+          "probability": 0.9599826576742101
+        }
+      ],
+      "decision_process": {
+        "selected_text": "C",
+        "matched_choice": "C",
+        "confidence_computation": "exp(logprob) = exp(-0.0408) = 0.9600"
+      },
+      "final_metrics": {
+        "predicted": "C",
+        "correct": true,
+        "confidence": 0.9599826576742101,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

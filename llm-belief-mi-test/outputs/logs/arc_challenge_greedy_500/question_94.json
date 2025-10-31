@@ -1,0 +1,51 @@
+{
+  "question_id": 94,
+  "question_text": "A carbon monoxide detector is used in homes to",
+  "choices": [
+    "A: alert residents to the possibility of fire.",
+    "B: warn residents when a dangerous gas is present.",
+    "C: tell people that it is time to check the smoke detector.",
+    "D: advise people of an increase in temperature in the home."
+  ],
+  "gold_answer": "B",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A carbon monoxide detector is used in homes to\n\n\nChoices:\nA) alert residents to the possibility of fire.\nB) warn residents when a dangerous gas is present.\nC) tell people that it is time to check the smoke detector.\nD) advise people of an increase in temperature in the home.\n\nProvide an answer to the following question:\n\nQ: A carbon monoxide detector is used in homes to\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "B",
+          "logprob": -0.01878791442140937,
+          "probability": 0.981387478303976
+        }
+      ],
+      "decision_process": {
+        "selected_text": "B",
+        "matched_choice": "B",
+        "confidence_computation": "exp(logprob) = exp(-0.0188) = 0.9814"
+      },
+      "final_metrics": {
+        "predicted": "B",
+        "correct": true,
+        "confidence": 0.981387478303976,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

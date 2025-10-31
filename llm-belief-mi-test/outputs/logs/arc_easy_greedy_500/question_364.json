@@ -1,0 +1,51 @@
+{
+  "question_id": 364,
+  "question_text": "Sodium bicarbonate (NaHCO_{3}) will neutralize stomach acid (HCl) in a double replacement reaction as follows: NaHCO_{3} + HCl -> NaCl + CO_{2} + \\Box What is the product necessary to make this reaction complete?",
+  "choices": [
+    "A: 2HO",
+    "B: HO_{2}",
+    "C: H_{2}O_{2}",
+    "D: H_{2}O"
+  ],
+  "gold_answer": "D",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Sodium bicarbonate (NaHCO_{3}) will neutralize stomach acid (HCl) in a double replacement reaction as follows: NaHCO_{3} + HCl -> NaCl + CO_{2} + \\Box What is the product necessary to make this reaction complete?\n\n\nChoices:\nA) 2HO\nB) HO_{2}\nC) H_{2}O_{2}\nD) H_{2}O\n\nProvide an answer to the following question:\n\nQ: Sodium bicarbonate (NaHCO_{3}) will neutralize stomach acid (HCl) in a double replacement reaction as follows: NaHCO_{3} + HCl -> NaCl + CO_{2} + \\Box What is the product necessary to make this reaction complete?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "D",
+          "logprob": -0.10291593847796321,
+          "probability": 0.9022028108354349
+        }
+      ],
+      "decision_process": {
+        "selected_text": "D",
+        "matched_choice": "D",
+        "confidence_computation": "exp(logprob) = exp(-0.1029) = 0.9022"
+      },
+      "final_metrics": {
+        "predicted": "D",
+        "correct": true,
+        "confidence": 0.9022028108354349,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

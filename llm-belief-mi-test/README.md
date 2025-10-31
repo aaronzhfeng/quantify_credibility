@@ -245,22 +245,27 @@ python scripts/compare_results.py outputs/results/*_5.json
 
 See **[docs/BASELINE_COMPARISON_GUIDE.md](docs/BASELINE_COMPARISON_GUIDE.md)** for detailed comparison guide.
 
-### 7. Run Full Baseline Comparison (RECOMMENDED - 500 examples per dataset)
+### 7. Run Full Method Comparison (RECOMMENDED - 500 examples per dataset)
 
-For fair comparison, run all 3 methods on 500 examples from each dataset:
+For comprehensive comparison, run all 5 methods on 500 examples from each dataset. Each dataset includes commands for individual methods plus a combined command to run all methods sequentially.
 
-**ARC-Challenge (500 examples)**
+---
+
+#### **ARC-Challenge (500 examples)**
+
+**Run methods individually:**
+
 ```bash
-# Greedy baseline (~10 min)
+# 1. Greedy baseline (~5 min)
 python -m llm_belief_mi_test.cli \
   --method greedy \
   --dataset arc-challenge --limit 500 \
   --load-in-4bit \
   --max-tokens 10 \
   --answer-format strict \
-  --output outputs/results/arc_challenge_greedy_500.csv
+  --output outputs/results/arc_challenge/greedy_500.csv
 
-# Self-consistency baseline (~2 hours)
+# 2. Self-consistency baseline (~1.5 hours)
 python -m llm_belief_mi_test.cli \
   --method self-consistency \
   --dataset arc-challenge --limit 500 \
@@ -268,9 +273,9 @@ python -m llm_belief_mi_test.cli \
   --load-in-4bit \
   --max-tokens 10 \
   --answer-format strict \
-  --output outputs/results/arc_challenge_selfcons_500.csv
+  --output outputs/results/arc_challenge/selfcons_500.csv
 
-# MI method (~2.5 hours)
+# 3. MI method (~1.5 hours)
 python -m llm_belief_mi_test.cli \
   --method mi \
   --dataset arc-challenge --limit 500 \
@@ -278,21 +283,57 @@ python -m llm_belief_mi_test.cli \
   --load-in-4bit \
   --temperature 0.9 --max-tokens 10 \
   --answer-format strict \
-  --output outputs/results/arc_challenge_mi_500.csv
+  --output outputs/results/arc_challenge/mi_500.csv
+
+# 4. Semantic Entropy (~1.5 hours)
+python -m llm_belief_mi_test.cli \
+  --method semantic-entropy \
+  --dataset arc-challenge --limit 500 \
+  --k 10 --temperature 0.9 \
+  --load-in-4bit \
+  --max-tokens 10 \
+  --answer-format strict \
+  --output outputs/results/arc_challenge/semantic_entropy_500.csv
+
+# 5. Self-Verification (~2 hours)
+python -m llm_belief_mi_test.cli \
+  --method self-verification \
+  --dataset arc-challenge --limit 500 \
+  --k 10 --temperature 0.9 \
+  --load-in-4bit \
+  --max-tokens 10 \
+  --answer-format strict \
+  --output outputs/results/arc_challenge/self_verification_500.csv
 ```
 
-**ARC-Easy (500 examples)**
+**Or run all 5 methods sequentially (~6.5 hours):**
+
 ```bash
-# Greedy baseline (~10 min)
+cd /teamspace/studios/this_studio/quantify_credibility/llm-belief-mi-test && \
+python -m llm_belief_mi_test.cli --method greedy --dataset arc-challenge --limit 500 --load-in-4bit --max-tokens 10 --answer-format strict --output outputs/results/arc_challenge/greedy_500.csv 2>&1 | tee outputs/logs/arc_challenge_greedy_500.log && \
+python -m llm_belief_mi_test.cli --method self-consistency --dataset arc-challenge --limit 500 --k 10 --temperature 0.9 --load-in-4bit --max-tokens 10 --answer-format strict --output outputs/results/arc_challenge/selfcons_500.csv 2>&1 | tee outputs/logs/arc_challenge_selfcons_500.log && \
+python -m llm_belief_mi_test.cli --method mi --dataset arc-challenge --limit 500 --k 10 --n 2 --temperature 0.9 --load-in-4bit --max-tokens 10 --answer-format strict --output outputs/results/arc_challenge/mi_500.csv 2>&1 | tee outputs/logs/arc_challenge_mi_500.log && \
+python -m llm_belief_mi_test.cli --method semantic-entropy --dataset arc-challenge --limit 500 --k 10 --temperature 0.9 --load-in-4bit --max-tokens 10 --answer-format strict --output outputs/results/arc_challenge/semantic_entropy_500.csv 2>&1 | tee outputs/logs/arc_challenge_semantic_entropy_500.log && \
+python -m llm_belief_mi_test.cli --method self-verification --dataset arc-challenge --limit 500 --k 10 --temperature 0.9 --load-in-4bit --max-tokens 10 --answer-format strict --output outputs/results/arc_challenge/self_verification_500.csv 2>&1 | tee outputs/logs/arc_challenge_self_verification_500.log
+```
+
+---
+
+#### **ARC-Easy (500 examples)**
+
+**Run methods individually:**
+
+```bash
+# 1. Greedy baseline (~5 min)
 python -m llm_belief_mi_test.cli \
   --method greedy \
   --dataset arc-easy --limit 500 \
   --load-in-4bit \
   --max-tokens 10 \
   --answer-format strict \
-  --output outputs/results/arc_easy_greedy_500.csv
+  --output outputs/results/arc_easy/greedy_500.csv
 
-# Self-consistency baseline (~2 hours)
+# 2. Self-consistency baseline (~1.5 hours)
 python -m llm_belief_mi_test.cli \
   --method self-consistency \
   --dataset arc-easy --limit 500 \
@@ -300,9 +341,9 @@ python -m llm_belief_mi_test.cli \
   --load-in-4bit \
   --max-tokens 10 \
   --answer-format strict \
-  --output outputs/results/arc_easy_selfcons_500.csv
+  --output outputs/results/arc_easy/selfcons_500.csv
 
-# MI method (~2.5 hours)
+# 3. MI method (~1.5 hours)
 python -m llm_belief_mi_test.cli \
   --method mi \
   --dataset arc-easy --limit 500 \
@@ -310,21 +351,57 @@ python -m llm_belief_mi_test.cli \
   --load-in-4bit \
   --temperature 0.9 --max-tokens 10 \
   --answer-format strict \
-  --output outputs/results/arc_easy_mi_500.csv
+  --output outputs/results/arc_easy/mi_500.csv
+
+# 4. Semantic Entropy (~1.5 hours)
+python -m llm_belief_mi_test.cli \
+  --method semantic-entropy \
+  --dataset arc-easy --limit 500 \
+  --k 10 --temperature 0.9 \
+  --load-in-4bit \
+  --max-tokens 10 \
+  --answer-format strict \
+  --output outputs/results/arc_easy/semantic_entropy_500.csv
+
+# 5. Self-Verification (~2 hours)
+python -m llm_belief_mi_test.cli \
+  --method self-verification \
+  --dataset arc-easy --limit 500 \
+  --k 10 --temperature 0.9 \
+  --load-in-4bit \
+  --max-tokens 10 \
+  --answer-format strict \
+  --output outputs/results/arc_easy/self_verification_500.csv
 ```
 
-**OpenBookQA (500 examples - full dataset)**
+**Or run all 5 methods sequentially (~6.5 hours):**
+
 ```bash
-# Greedy baseline (~10 min)
+cd /teamspace/studios/this_studio/quantify_credibility/llm-belief-mi-test && \
+python -m llm_belief_mi_test.cli --method greedy --dataset arc-easy --limit 500 --load-in-4bit --max-tokens 10 --answer-format strict --output outputs/results/arc_easy/greedy_500.csv 2>&1 | tee outputs/logs/arc_easy_greedy_500.log && \
+python -m llm_belief_mi_test.cli --method self-consistency --dataset arc-easy --limit 500 --k 10 --temperature 0.9 --load-in-4bit --max-tokens 10 --answer-format strict --output outputs/results/arc_easy/selfcons_500.csv 2>&1 | tee outputs/logs/arc_easy_selfcons_500.log && \
+python -m llm_belief_mi_test.cli --method mi --dataset arc-easy --limit 500 --k 10 --n 2 --temperature 0.9 --load-in-4bit --max-tokens 10 --answer-format strict --output outputs/results/arc_easy/mi_500.csv 2>&1 | tee outputs/logs/arc_easy_mi_500.log && \
+python -m llm_belief_mi_test.cli --method semantic-entropy --dataset arc-easy --limit 500 --k 10 --temperature 0.9 --load-in-4bit --max-tokens 10 --answer-format strict --output outputs/results/arc_easy/semantic_entropy_500.csv 2>&1 | tee outputs/logs/arc_easy_semantic_entropy_500.log && \
+python -m llm_belief_mi_test.cli --method self-verification --dataset arc-easy --limit 500 --k 10 --temperature 0.9 --load-in-4bit --max-tokens 10 --answer-format strict --output outputs/results/arc_easy/self_verification_500.csv 2>&1 | tee outputs/logs/arc_easy_self_verification_500.log
+```
+
+---
+
+#### **OpenBookQA (500 examples - full dataset)**
+
+**Run methods individually:**
+
+```bash
+# 1. Greedy baseline (~5 min)
 python -m llm_belief_mi_test.cli \
   --method greedy \
   --dataset openbookqa \
   --load-in-4bit \
   --max-tokens 10 \
   --answer-format strict \
-  --output outputs/results/openbookqa_greedy_500.csv
+  --output outputs/results/openbookqa/greedy_500.csv
 
-# Self-consistency baseline (~2 hours)
+# 2. Self-consistency baseline (~1.5 hours)
 python -m llm_belief_mi_test.cli \
   --method self-consistency \
   --dataset openbookqa \
@@ -332,9 +409,9 @@ python -m llm_belief_mi_test.cli \
   --load-in-4bit \
   --max-tokens 10 \
   --answer-format strict \
-  --output outputs/results/openbookqa_selfcons_500.csv
+  --output outputs/results/openbookqa/selfcons_500.csv
 
-# MI method (~2.5 hours)
+# 3. MI method (~1.5 hours)
 python -m llm_belief_mi_test.cli \
   --method mi \
   --dataset openbookqa \
@@ -342,62 +419,532 @@ python -m llm_belief_mi_test.cli \
   --load-in-4bit \
   --temperature 0.9 --max-tokens 10 \
   --answer-format strict \
-  --output outputs/results/openbookqa_mi_500.csv
-```
+  --output outputs/results/openbookqa/mi_500.csv
 
-**Compare results across all datasets:**
-```bash
-# Compare each dataset
-python scripts/compare_results.py outputs/results/arc_challenge_*_500.json
-python scripts/compare_results.py outputs/results/arc_easy_*_500.json
-python scripts/compare_results.py outputs/results/openbookqa_*_500.json
-```
-
-**Or run all at once:**
-```bash
-bash scripts/RUN_BASELINE_COMPARISON_500.sh
-```
-
-**Total time: ~8 hours (3 datasets × ~2.7 hours each) | Fair comparison on same sample size! ✅**
-
-**Note**: With `--answer-format strict` and `--max-tokens 10`, evaluation is ~30% faster than default format!
-
-**Note**: Using **temperature=0.9** from paper (line 799) for proper diversity.
-
-### 8. Additional Methods: Semantic Entropy & Self-Verification (NEW!)
-
-Two additional baseline methods from the paper are now available:
-
-**Semantic Entropy (S.E.)** - Kuhn et al. 2023:
-```bash
-# Run on OpenBookQA (500 examples, ~2 hours)
+# 4. Semantic Entropy (~1.5 hours)
 python -m llm_belief_mi_test.cli \
   --method semantic-entropy \
   --dataset openbookqa \
   --k 10 --temperature 0.9 \
-  --load-in-4bit --max-tokens 10 \
+  --load-in-4bit \
+  --max-tokens 10 \
   --answer-format strict \
-  --output outputs/results/openbookqa_semantic_entropy_500.csv
-```
+  --output outputs/results/openbookqa/semantic_entropy_500.csv
 
-**Self-Verification (S.V.)** - KCAHD 2022:
-```bash
-# Run on OpenBookQA (500 examples, ~2.5 hours - includes verification step)
+# 5. Self-Verification (~2 hours)
 python -m llm_belief_mi_test.cli \
   --method self-verification \
   --dataset openbookqa \
   --k 10 --temperature 0.9 \
-  --load-in-4bit --max-tokens 10 \
+  --load-in-4bit \
+  --max-tokens 10 \
   --answer-format strict \
-  --output outputs/results/openbookqa_self_verification_500.csv
+  --output outputs/results/openbookqa/self_verification_500.csv
 ```
 
-**Compare all 5 methods:**
+**Or run all 5 methods sequentially (~6.5 hours):**
+
 ```bash
-python scripts/compare_results.py outputs/results/openbookqa_*_500.json
+cd /teamspace/studios/this_studio/quantify_credibility/llm-belief-mi-test && \
+python -m llm_belief_mi_test.cli --method greedy --dataset openbookqa --load-in-4bit --max-tokens 10 --answer-format strict --output outputs/results/openbookqa/greedy_500.csv 2>&1 | tee outputs/logs/openbookqa_greedy_500.log && \
+python -m llm_belief_mi_test.cli --method self-consistency --dataset openbookqa --k 10 --temperature 0.9 --load-in-4bit --max-tokens 10 --answer-format strict --output outputs/results/openbookqa/selfcons_500.csv 2>&1 | tee outputs/logs/openbookqa_selfcons_500.log && \
+python -m llm_belief_mi_test.cli --method mi --dataset openbookqa --k 10 --n 2 --temperature 0.9 --load-in-4bit --max-tokens 10 --answer-format strict --output outputs/results/openbookqa/mi_500.csv 2>&1 | tee outputs/logs/openbookqa_mi_500.log && \
+python -m llm_belief_mi_test.cli --method semantic-entropy --dataset openbookqa --k 10 --temperature 0.9 --load-in-4bit --max-tokens 10 --answer-format strict --output outputs/results/openbookqa/semantic_entropy_500.csv 2>&1 | tee outputs/logs/openbookqa_semantic_entropy_500.log && \
+python -m llm_belief_mi_test.cli --method self-verification --dataset openbookqa --k 10 --temperature 0.9 --load-in-4bit --max-tokens 10 --answer-format strict --output outputs/results/openbookqa/self_verification_500.csv 2>&1 | tee outputs/logs/openbookqa_self_verification_500.log
 ```
 
-**Expected ranking (from paper):** MI ≥ S.E. > Self-Consistency > S.V. > Greedy (on ECE)
+---
+
+#### **Compare Results**
+
+**Compare each dataset:**
+```bash
+python scripts/compare_results.py outputs/results/arc_challenge/*.json
+python scripts/compare_results.py outputs/results/arc_easy/*.json
+python scripts/compare_results.py outputs/results/openbookqa/*.json
+```
+
+**Visualize all results:**
+```bash
+bash scripts/visualize_all.sh
+```
+
+---
+
+**Total time per dataset: ~6.5 hours | All 5 methods with comprehensive comparison! ✅**
+
+**Expected ranking (from paper):** MI ≥ Semantic Entropy > Self-Consistency > Self-Verification > Greedy (on ECE)
+
+**Notes:**
+- Combined commands use `&&` so if one method fails, the rest won't run
+- Logs are saved with `tee` to both screen and log files
+- With `--answer-format strict` and `--max-tokens 10`, evaluation is ~70% faster than default!
+- All detailed per-question logs automatically saved to `outputs/logs/{run_name}/`
+
+---
+
+### 8. Parameter Ablation Study (MI Method on OpenBookQA)
+
+Systematic exploration of MI method parameters to understand their impact on accuracy and calibration (ECE). This ablation study varies one parameter at a time from the baseline configuration.
+
+**Baseline Configuration (from paper):**
+- Temperature: 0.9
+- k (number of chains): 10
+- n (chain length): 2
+- MI estimator: listing
+- Confidence method: inverse
+- Answer format: strict
+- Max tokens: 10
+
+**Total experiments: 16 runs (~10 hours for 200 examples each) | One parameter varied at a time**
+
+---
+
+#### **8.1. Temperature Ablation** (3 runs, ~1.8 hours for 200 examples)
+
+**What it controls:** Sampling diversity in response generation.
+
+**Formula:** Softmax with temperature: `P(token) ∝ exp(logit / T)`
+- **Low T (0.5)**: Sharper distribution → more deterministic, less diverse chains
+- **Medium T (0.9)**: Paper's baseline → balanced exploration
+- **High T (1.3)**: Flatter distribution → more random, highly diverse chains
+
+**Why this matters for MI:**
+- MI measures epistemic uncertainty through chain diversity
+- Too low: Chains too similar → underestimates uncertainty (low MI)
+- Too high: Chains too random → overestimates uncertainty (high MI)
+- Optimal: Captures genuine model uncertainty
+
+**Expected results:**
+- T=0.5: Lower MI, higher accuracy, possibly worse ECE (overconfident)
+- T=0.9: Baseline performance (paper-validated)
+- T=1.3: Higher MI, lower accuracy, potentially better ECE if model is overconfident
+
+**Commands:**
+
+```bash
+# Temperature = 0.5 (lower diversity)
+python -m llm_belief_mi_test.cli \
+  --method mi --dataset openbookqa --limit 200 \
+  --k 10 --n 2 --temperature 0.5 \
+  --load-in-4bit --max-tokens 10 --answer-format strict \
+  --output outputs/results/ablation/temperature/temp0.5.csv
+
+# Temperature = 0.9 (baseline, paper's value)
+python -m llm_belief_mi_test.cli \
+  --method mi --dataset openbookqa --limit 200 \
+  --k 10 --n 2 --temperature 0.9 \
+  --load-in-4bit --max-tokens 10 --answer-format strict \
+  --output outputs/results/ablation/temperature/temp0.9.csv
+
+# Temperature = 1.3 (higher diversity)
+python -m llm_belief_mi_test.cli \
+  --method mi --dataset openbookqa --limit 200 \
+  --k 10 --n 2 --temperature 1.3 \
+  --load-in-4bit --max-tokens 10 --answer-format strict \
+  --output outputs/results/ablation/temperature/temp1.3.csv
+```
+
+**Combined command:**
+```bash
+cd /teamspace/studios/this_studio/quantify_credibility/llm-belief-mi-test && \
+python -m llm_belief_mi_test.cli --method mi --dataset openbookqa --limit 200 --k 10 --n 2 --temperature 0.5 --load-in-4bit --max-tokens 10 --answer-format strict --output outputs/results/ablation/temperature/temp0.5.csv 2>&1 | tee outputs/logs/ablation_temp0.5.log && \
+python -m llm_belief_mi_test.cli --method mi --dataset openbookqa --limit 200 --k 10 --n 2 --temperature 0.9 --load-in-4bit --max-tokens 10 --answer-format strict --output outputs/results/ablation/temperature/temp0.9.csv 2>&1 | tee outputs/logs/ablation_temp0.9.log && \
+python -m llm_belief_mi_test.cli --method mi --dataset openbookqa --limit 200 --k 10 --n 2 --temperature 1.3 --load-in-4bit --max-tokens 10 --answer-format strict --output outputs/results/ablation/temperature/temp1.3.csv 2>&1 | tee outputs/logs/ablation_temp1.3.log
+```
+
+---
+
+#### **8.2. Number of Chains (k) Ablation** (3 runs, ~1.5 hours for 200 examples)
+
+**What it controls:** Number of independent sampling chains per question.
+
+**Formula:** Each chain samples response sequence independently with temperature T
+- **k=5**: Fewer chains → faster, but less robust statistics
+- **k=10**: Paper's baseline → good balance
+- **k=20**: More chains → better statistics, more expensive
+
+**Why this matters for MI:**
+- MI estimation requires multiple samples: `MI = Σ H(Yi) - H(Y1,...,Yn)`
+- More chains → better empirical estimates of marginal/joint entropies
+- Trade-off: Computation cost vs statistical robustness
+
+**Expected results:**
+- k=5: Noisier MI estimates, faster runtime
+- k=10: Baseline (paper-validated)
+- k=20: More stable MI/ECE, 2× runtime
+
+**Commands:**
+
+```bash
+# k = 5 (fewer chains, faster)
+python -m llm_belief_mi_test.cli \
+  --method mi --dataset openbookqa --limit 200 \
+  --k 5 --n 2 --temperature 0.9 \
+  --load-in-4bit --max-tokens 10 --answer-format strict \
+  --output outputs/results/ablation/k_chains/k5.csv
+
+# k = 10 (baseline, paper's value)
+python -m llm_belief_mi_test.cli \
+  --method mi --dataset openbookqa --limit 200 \
+  --k 10 --n 2 --temperature 0.9 \
+  --load-in-4bit --max-tokens 10 --answer-format strict \
+  --output outputs/results/ablation/k_chains/k10.csv
+
+# k = 20 (more chains, better statistics)
+python -m llm_belief_mi_test.cli \
+  --method mi --dataset openbookqa --limit 200 \
+  --k 20 --n 2 --temperature 0.9 \
+  --load-in-4bit --max-tokens 10 --answer-format strict \
+  --output outputs/results/ablation/k_chains/k20.csv
+```
+
+**Combined command:**
+```bash
+cd /teamspace/studios/this_studio/quantify_credibility/llm-belief-mi-test && \
+python -m llm_belief_mi_test.cli --method mi --dataset openbookqa --limit 200 --k 5 --n 2 --temperature 0.9 --load-in-4bit --max-tokens 10 --answer-format strict --output outputs/results/ablation/k_chains/k5.csv 2>&1 | tee outputs/logs/ablation_k5.log && \
+python -m llm_belief_mi_test.cli --method mi --dataset openbookqa --limit 200 --k 10 --n 2 --temperature 0.9 --load-in-4bit --max-tokens 10 --answer-format strict --output outputs/results/ablation/k_chains/k10.csv 2>&1 | tee outputs/logs/ablation_k10.log && \
+python -m llm_belief_mi_test.cli --method mi --dataset openbookqa --limit 200 --k 20 --n 2 --temperature 0.9 --load-in-4bit --max-tokens 10 --answer-format strict --output outputs/results/ablation/k_chains/k20.csv 2>&1 | tee outputs/logs/ablation_k20.log
+```
+
+---
+
+#### **8.3. Chain Length (n) Ablation** (3 runs, ~2.4 hours for 200 examples)
+
+**What it controls:** Length of iterative prompting sequence (pseudo-joint dimension).
+
+**Formula:** Pseudo-joint distribution `Q̃(Y1, Y2, ..., Yn)` with MI:
+```
+MI(Y1; Y2; ...; Yn) = Σᵢ H(Yᵢ) - H(Y1,...,Yn)
+```
+- **n=2**: Shortest chain → (initial, refined) → fast
+- **n=3**: Medium chain → (initial, refined₁, refined₂) → more context
+- **n=4**: Longest chain → maximum iterative refinement → richest MI signal
+
+**Why this matters for MI:**
+- Longer chains capture more iterative reasoning
+- Each step conditions on previous answers in chain
+- Higher n → richer dependency structure → potentially more informative MI
+- Trade-off: More queries per chain (n × k total queries)
+
+**Expected results:**
+- n=2: Baseline (paper-validated)
+- n=3: More context, potentially better uncertainty capture, +50% runtime
+- n=4: Maximum refinement, highest MI potential, +100% runtime
+
+**Commands:**
+
+```bash
+# n = 2 (baseline, paper's value)
+python -m llm_belief_mi_test.cli \
+  --method mi --dataset openbookqa --limit 200 \
+  --k 10 --n 2 --temperature 0.9 \
+  --load-in-4bit --max-tokens 10 --answer-format strict \
+  --output outputs/results/ablation/n_length/n2.csv
+
+# n = 3 (longer chains, more context)
+python -m llm_belief_mi_test.cli \
+  --method mi --dataset openbookqa --limit 200 \
+  --k 10 --n 3 --temperature 0.9 \
+  --load-in-4bit --max-tokens 10 --answer-format strict \
+  --output outputs/results/ablation/n_length/n3.csv
+
+# n = 4 (longest chains, maximum iterative context)
+python -m llm_belief_mi_test.cli \
+  --method mi --dataset openbookqa --limit 200 \
+  --k 10 --n 4 --temperature 0.9 \
+  --load-in-4bit --max-tokens 10 --answer-format strict \
+  --output outputs/results/ablation/n_length/n4.csv
+```
+
+**Combined command:**
+```bash
+cd /teamspace/studios/this_studio/quantify_credibility/llm-belief-mi-test && \
+python -m llm_belief_mi_test.cli --method mi --dataset openbookqa --limit 200 --k 10 --n 2 --temperature 0.9 --load-in-4bit --max-tokens 10 --answer-format strict --output outputs/results/ablation/n_length/n2.csv 2>&1 | tee outputs/logs/ablation_n2.log && \
+python -m llm_belief_mi_test.cli --method mi --dataset openbookqa --limit 200 --k 10 --n 3 --temperature 0.9 --load-in-4bit --max-tokens 10 --answer-format strict --output outputs/results/ablation/n_length/n3.csv 2>&1 | tee outputs/logs/ablation_n3.log && \
+python -m llm_belief_mi_test.cli --method mi --dataset openbookqa --limit 200 --k 10 --n 4 --temperature 0.9 --load-in-4bit --max-tokens 10 --answer-format strict --output outputs/results/ablation/n_length/n4.csv 2>&1 | tee outputs/logs/ablation_n4.log
+```
+
+---
+
+#### **8.4. MI Estimator Method Ablation** (2 runs, ~1.2 hours for 200 examples)
+
+**What it controls:** Algorithm for estimating mutual information from samples.
+
+**Formulas:**
+
+**Plugin estimator (simple):**
+```
+MI = Σᵢ H(Yᵢ) - H(Y1,...,Yn)
+H(X) = -Σ p(x) log p(x)  [empirical probabilities]
+```
+- Direct plug-in of empirical distributions
+- Simple and intuitive
+- Biased for small samples (underestimates MI)
+
+**Listing estimator (paper's Algorithm 1):**
+```
+MI = Σ μ̂ · log((μ̂ + γ₁) / (μ̂_prod + γ₂))
+μ̂ = empirical joint probabilities
+μ̂_prod = product of marginals
+γ₁, γ₂ = 1/k (regularization)
+```
+- From paper's listing.tex (Algorithm 1)
+- Regularized with smoothing parameters
+- Better for small sample sizes
+- More sophisticated estimation
+
+**Why this matters:**
+- Different estimators may give different MI scales
+- Should show similar trends across experiments
+- Tests robustness of conclusions to estimation method
+
+**Expected results:**
+- **Plugin**: Lower MI values (finite sample bias), simpler
+- **Listing**: Higher MI values (regularization), paper's default
+- Both should rank questions similarly (correlation ~0.9+)
+
+**Commands:**
+
+```bash
+# MI method = listing (baseline, paper's default)
+python -m llm_belief_mi_test.cli \
+  --method mi --dataset openbookqa --limit 200 \
+  --k 10 --n 2 --temperature 0.9 \
+  --mi-method listing \
+  --load-in-4bit --max-tokens 10 --answer-format strict \
+  --output outputs/results/ablation/mi_method/listing.csv
+
+# MI method = plugin (alternative estimator)
+python -m llm_belief_mi_test.cli \
+  --method mi --dataset openbookqa --limit 200 \
+  --k 10 --n 2 --temperature 0.9 \
+  --mi-method plugin \
+  --load-in-4bit --max-tokens 10 --answer-format strict \
+  --output outputs/results/ablation/mi_method/plugin.csv
+```
+
+**Combined command:**
+```bash
+cd /teamspace/studios/this_studio/quantify_credibility/llm-belief-mi-test && \
+python -m llm_belief_mi_test.cli --method mi --dataset openbookqa --limit 200 --k 10 --n 2 --temperature 0.9 --mi-method listing --load-in-4bit --max-tokens 10 --answer-format strict --output outputs/results/ablation/mi_method/listing.csv 2>&1 | tee outputs/logs/ablation_listing.log && \
+python -m llm_belief_mi_test.cli --method mi --dataset openbookqa --limit 200 --k 10 --n 2 --temperature 0.9 --mi-method plugin --load-in-4bit --max-tokens 10 --answer-format strict --output outputs/results/ablation/mi_method/plugin.csv 2>&1 | tee outputs/logs/ablation_plugin.log
+```
+
+---
+
+#### **8.5. Confidence Conversion Method Ablation** (3 runs, ~1.8 hours for 200 examples)
+
+**What it controls:** How MI (uncertainty) is converted to confidence score.
+
+**Formulas (all map high MI → low confidence):**
+
+**Inverse (baseline):**
+```
+confidence = 1 / (1 + MI)
+```
+- Linear-like decay
+- MI=0 → conf=1.0, MI=1 → conf=0.5, MI=5 → conf=0.17
+
+**Exponential:**
+```
+confidence = exp(-MI)
+```
+- Aggressive penalty for high uncertainty
+- MI=0 → conf=1.0, MI=1 → conf=0.37, MI=5 → conf=0.007
+- Much steeper drop than inverse
+
+**Normalized:**
+```
+confidence = 1 - (MI / (MI + 1))
+```
+- Mathematically equivalent to inverse!
+- MI=0 → conf=1.0, MI=1 → conf=0.5, MI=5 → conf=0.17
+- Alternative formulation of same function
+
+**Why this matters for calibration:**
+- ECE directly depends on confidence values
+- Different mappings change calibration curves
+- Exp gives lower confidences → might improve ECE if model overconfident
+- Tests sensitivity of ECE to confidence scale
+
+**Expected results:**
+- **Inverse**: Baseline ECE (paper's default)
+- **Exp**: Lower confidences, different ECE (might improve if overconfident)
+- **Normalized**: Nearly identical to inverse (mathematical equivalence)
+
+**Commands:**
+
+```bash
+# Confidence = inverse (baseline, 1/(1+MI))
+python -m llm_belief_mi_test.cli \
+  --method mi --dataset openbookqa --limit 200 \
+  --k 10 --n 2 --temperature 0.9 \
+  --confidence-method inverse \
+  --load-in-4bit --max-tokens 10 --answer-format strict \
+  --output outputs/results/ablation/confidence_method/inverse.csv
+
+# Confidence = exp (exponential: exp(-MI))
+python -m llm_belief_mi_test.cli \
+  --method mi --dataset openbookqa --limit 200 \
+  --k 10 --n 2 --temperature 0.9 \
+  --confidence-method exp \
+  --load-in-4bit --max-tokens 10 --answer-format strict \
+  --output outputs/results/ablation/confidence_method/exp.csv
+
+# Confidence = normalized (1 - MI/(MI+1))
+python -m llm_belief_mi_test.cli \
+  --method mi --dataset openbookqa --limit 200 \
+  --k 10 --n 2 --temperature 0.9 \
+  --confidence-method normalized \
+  --load-in-4bit --max-tokens 10 --answer-format strict \
+  --output outputs/results/ablation/confidence_method/normalized.csv
+```
+
+**Combined command:**
+```bash
+cd /teamspace/studios/this_studio/quantify_credibility/llm-belief-mi-test && \
+python -m llm_belief_mi_test.cli --method mi --dataset openbookqa --limit 200 --k 10 --n 2 --temperature 0.9 --confidence-method inverse --load-in-4bit --max-tokens 10 --answer-format strict --output outputs/results/ablation/confidence_method/inverse.csv 2>&1 | tee outputs/logs/ablation_conf_inverse.log && \
+python -m llm_belief_mi_test.cli --method mi --dataset openbookqa --limit 200 --k 10 --n 2 --temperature 0.9 --confidence-method exp --load-in-4bit --max-tokens 10 --answer-format strict --output outputs/results/ablation/confidence_method/exp.csv 2>&1 | tee outputs/logs/ablation_conf_exp.log && \
+python -m llm_belief_mi_test.cli --method mi --dataset openbookqa --limit 200 --k 10 --n 2 --temperature 0.9 --confidence-method normalized --load-in-4bit --max-tokens 10 --answer-format strict --output outputs/results/ablation/confidence_method/normalized.csv 2>&1 | tee outputs/logs/ablation_conf_normalized.log
+```
+
+---
+
+#### **8.6. Answer Format Ablation** (2 runs, ~1.6 hours for 200 examples)
+
+**What it controls:** Output format constraint and parsing strategy.
+
+**Formats:**
+
+**Strict (baseline):**
+- System prompt: "Output ONLY the letter (A, B, C, or D)"
+- Model outputs: "A" or "B" (1-2 tokens)
+- Extraction: Direct (first character)
+- **Pros**: Fast, 100% parseable, minimal output variance
+- **Cons**: Restricts model expression, might not capture natural uncertainty
+
+**Codeblock:**
+- System prompt: "Output answer in triple backticks: \`\`\`A\`\`\`"
+- Model outputs: \`\`\`B\`\`\` (with markers)
+- Extraction: Parse codeblock content
+- **Pros**: Clear delimiter, still parseable, allows slight formatting flexibility
+- **Cons**: More tokens (~5-10), slightly more verbose
+
+**Why we skip "default" format:**
+- Default uses fuzzy matching (substring search, similarity)
+- Introduces **parsing uncertainty** on top of model uncertainty
+- MI should measure model uncertainty, not extraction noise!
+- Results would confound two sources of variance
+
+**Why this matters:**
+- Strict may suppress genuine model uncertainty (forced brevity)
+- Codeblock allows slightly more expression while remaining parseable
+- Tests if format restriction affects MI/ECE
+
+**Expected results:**
+- **Strict**: Baseline (fastest, most constrained)
+- **Codeblock**: Slightly longer runtime, possibly different MI if format affects generation
+
+**Commands:**
+
+```bash
+# Answer format = strict (baseline, single letter)
+python -m llm_belief_mi_test.cli \
+  --method mi --dataset openbookqa --limit 200 \
+  --k 10 --n 2 --temperature 0.9 \
+  --load-in-4bit --max-tokens 10 --answer-format strict \
+  --output outputs/results/ablation/answer_format/strict.csv
+
+# Answer format = codeblock (answer in triple backticks)
+python -m llm_belief_mi_test.cli \
+  --method mi --dataset openbookqa --limit 200 \
+  --k 10 --n 2 --temperature 0.9 \
+  --load-in-4bit --max-tokens 30 --answer-format codeblock \
+  --output outputs/results/ablation/answer_format/codeblock.csv
+```
+
+**Combined command:**
+```bash
+cd /teamspace/studios/this_studio/quantify_credibility/llm-belief-mi-test && \
+python -m llm_belief_mi_test.cli --method mi --dataset openbookqa --limit 200 --k 10 --n 2 --temperature 0.9 --load-in-4bit --max-tokens 10 --answer-format strict --output outputs/results/ablation/answer_format/strict.csv 2>&1 | tee outputs/logs/ablation_format_strict.log && \
+python -m llm_belief_mi_test.cli --method mi --dataset openbookqa --limit 200 --k 10 --n 2 --temperature 0.9 --load-in-4bit --max-tokens 30 --answer-format codeblock --output outputs/results/ablation/answer_format/codeblock.csv 2>&1 | tee outputs/logs/ablation_format_codeblock.log
+```
+
+---
+
+#### **8.7. Run All Ablations Sequentially** (~10 hours total for 200 examples each)
+
+Run all 16 ablation experiments in one command:
+
+```bash
+cd /teamspace/studios/this_studio/quantify_credibility/llm-belief-mi-test && \
+# Temperature ablation (3 runs)
+python -m llm_belief_mi_test.cli --method mi --dataset openbookqa --limit 200 --k 10 --n 2 --temperature 0.5 --load-in-4bit --max-tokens 10 --answer-format strict --output outputs/results/ablation/temperature/temp0.5.csv 2>&1 | tee outputs/logs/ablation_temp0.5.log && \
+python -m llm_belief_mi_test.cli --method mi --dataset openbookqa --limit 200 --k 10 --n 2 --temperature 0.9 --load-in-4bit --max-tokens 10 --answer-format strict --output outputs/results/ablation/temperature/temp0.9.csv 2>&1 | tee outputs/logs/ablation_temp0.9.log && \
+python -m llm_belief_mi_test.cli --method mi --dataset openbookqa --limit 200 --k 10 --n 2 --temperature 1.3 --load-in-4bit --max-tokens 10 --answer-format strict --output outputs/results/ablation/temperature/temp1.3.csv 2>&1 | tee outputs/logs/ablation_temp1.3.log && \
+# k ablation (3 runs)
+python -m llm_belief_mi_test.cli --method mi --dataset openbookqa --limit 200 --k 5 --n 2 --temperature 0.9 --load-in-4bit --max-tokens 10 --answer-format strict --output outputs/results/ablation/k_chains/k5.csv 2>&1 | tee outputs/logs/ablation_k5.log && \
+python -m llm_belief_mi_test.cli --method mi --dataset openbookqa --limit 200 --k 10 --n 2 --temperature 0.9 --load-in-4bit --max-tokens 10 --answer-format strict --output outputs/results/ablation/k_chains/k10.csv 2>&1 | tee outputs/logs/ablation_k10.log && \
+python -m llm_belief_mi_test.cli --method mi --dataset openbookqa --limit 200 --k 20 --n 2 --temperature 0.9 --load-in-4bit --max-tokens 10 --answer-format strict --output outputs/results/ablation/k_chains/k20.csv 2>&1 | tee outputs/logs/ablation_k20.log && \
+# n ablation (3 runs)
+python -m llm_belief_mi_test.cli --method mi --dataset openbookqa --limit 200 --k 10 --n 2 --temperature 0.9 --load-in-4bit --max-tokens 10 --answer-format strict --output outputs/results/ablation/n_length/n2.csv 2>&1 | tee outputs/logs/ablation_n2.log && \
+python -m llm_belief_mi_test.cli --method mi --dataset openbookqa --limit 200 --k 10 --n 3 --temperature 0.9 --load-in-4bit --max-tokens 10 --answer-format strict --output outputs/results/ablation/n_length/n3.csv 2>&1 | tee outputs/logs/ablation_n3.log && \
+python -m llm_belief_mi_test.cli --method mi --dataset openbookqa --limit 200 --k 10 --n 4 --temperature 0.9 --load-in-4bit --max-tokens 10 --answer-format strict --output outputs/results/ablation/n_length/n4.csv 2>&1 | tee outputs/logs/ablation_n4.log && \
+# MI method ablation (2 runs)
+python -m llm_belief_mi_test.cli --method mi --dataset openbookqa --limit 200 --k 10 --n 2 --temperature 0.9 --mi-method listing --load-in-4bit --max-tokens 10 --answer-format strict --output outputs/results/ablation/mi_method/listing.csv 2>&1 | tee outputs/logs/ablation_listing.log && \
+python -m llm_belief_mi_test.cli --method mi --dataset openbookqa --limit 200 --k 10 --n 2 --temperature 0.9 --mi-method plugin --load-in-4bit --max-tokens 10 --answer-format strict --output outputs/results/ablation/mi_method/plugin.csv 2>&1 | tee outputs/logs/ablation_plugin.log && \
+# Confidence method ablation (3 runs)
+python -m llm_belief_mi_test.cli --method mi --dataset openbookqa --limit 200 --k 10 --n 2 --temperature 0.9 --confidence-method inverse --load-in-4bit --max-tokens 10 --answer-format strict --output outputs/results/ablation/confidence_method/inverse.csv 2>&1 | tee outputs/logs/ablation_conf_inverse.log && \
+python -m llm_belief_mi_test.cli --method mi --dataset openbookqa --limit 200 --k 10 --n 2 --temperature 0.9 --confidence-method exp --load-in-4bit --max-tokens 10 --answer-format strict --output outputs/results/ablation/confidence_method/exp.csv 2>&1 | tee outputs/logs/ablation_conf_exp.log && \
+python -m llm_belief_mi_test.cli --method mi --dataset openbookqa --limit 200 --k 10 --n 2 --temperature 0.9 --confidence-method normalized --load-in-4bit --max-tokens 10 --answer-format strict --output outputs/results/ablation/confidence_method/normalized.csv 2>&1 | tee outputs/logs/ablation_conf_normalized.log && \
+# Answer format ablation (2 runs)
+python -m llm_belief_mi_test.cli --method mi --dataset openbookqa --limit 200 --k 10 --n 2 --temperature 0.9 --load-in-4bit --max-tokens 10 --answer-format strict --output outputs/results/ablation/answer_format/strict.csv 2>&1 | tee outputs/logs/ablation_format_strict.log && \
+python -m llm_belief_mi_test.cli --method mi --dataset openbookqa --limit 200 --k 10 --n 2 --temperature 0.9 --load-in-4bit --max-tokens 30 --answer-format codeblock --output outputs/results/ablation/answer_format/codeblock.csv 2>&1 | tee outputs/logs/ablation_format_codeblock.log
+```
+
+---
+
+#### **8.8. Analyze Ablation Results**
+
+After running ablations, compare and visualize the results:
+
+```bash
+# Compare each ablation category
+python scripts/compare_results.py outputs/results/ablation/temperature/*.json
+python scripts/compare_results.py outputs/results/ablation/k_chains/*.json
+python scripts/compare_results.py outputs/results/ablation/n_length/*.json
+python scripts/compare_results.py outputs/results/ablation/mi_method/*.json
+python scripts/compare_results.py outputs/results/ablation/confidence_method/*.json
+python scripts/compare_results.py outputs/results/ablation/answer_format/*.json
+
+# Compare all ablation results together
+python scripts/compare_results.py outputs/results/ablation/*/*.json
+
+# Generate summary table
+python scripts/summarize_results.py --pattern "ablation/*" --export-csv outputs/results/ablation_summary.csv
+
+# Visualize all results
+bash scripts/visualize_all.sh
+```
+
+**Key questions to answer:**
+1. **Temperature**: Does higher T increase MI? At what cost to accuracy?
+2. **k (chains)**: Do more chains stabilize ECE? Diminishing returns?
+3. **n (length)**: Do longer chains improve uncertainty quantification?
+4. **MI estimator**: Are results robust to estimation method?
+5. **Confidence method**: Which mapping gives best ECE?
+6. **Answer format**: Does format constraint affect MI measurement?
+
+**Expected insights:**
+- **Sensitivity**: Which parameters matter most for ECE?
+- **Robustness**: Are conclusions stable across parameter choices?
+- **Optimal settings**: Best configuration for your use case
+- **Trade-offs**: Performance vs computational cost
+
+**Total: 16 experiments (~24 hours) | Comprehensive parameter sensitivity analysis! 📊**
+
+---
 
 ### 9. Detailed Demo: Understand How Methods Work
 
@@ -428,6 +975,8 @@ See [`demo/README.md`](demo/README.md) for full documentation.
 
 ### 10. Visualize Results
 
+#### **10.1. Standard Method Comparison**
+
 Generate plots and summaries from your evaluation results:
 
 ```bash
@@ -454,6 +1003,61 @@ python scripts/summarize_results.py --dataset openbookqa
 - **Combined plot**: All datasets and methods in one view
 - **Calibration curves**: Reliability diagrams showing confidence vs actual accuracy
 - **Confidence distributions**: Histograms of confidence scores
+
+---
+
+#### **10.2. Ablation Study Visualization**
+
+After running ablation experiments (Section 8), visualize the results:
+
+```bash
+# Generate all ablation plots
+bash scripts/visualize_ablations.sh
+
+# Or plot specific parameters:
+
+# Temperature ablation (T=0.5, 0.9, 1.3)
+python scripts/plot_ablation.py --parameter temperature
+
+# Number of chains (k=5, 10, 20)
+python scripts/plot_ablation.py --parameter k_chains
+
+# Chain length (n=2, 3, 4)
+python scripts/plot_ablation.py --parameter n_length
+
+# MI estimator (listing vs plugin)
+python scripts/plot_ablation.py --parameter mi_method
+
+# Confidence conversion (inverse, exp, normalized)
+python scripts/plot_ablation.py --parameter confidence_method
+
+# Answer format (strict vs codeblock)
+python scripts/plot_ablation.py --parameter answer_format
+
+# Combined plot showing all parameters
+python scripts/plot_ablation.py --combined
+
+# Plot all parameters individually + combined
+python scripts/plot_ablation.py --all
+```
+
+**Generated ablation plots** (saved to `outputs/plots/ablation/`):
+- **Individual parameter plots**: Separate plots for each ablated parameter
+- **Combined plot**: All 6 parameter ablations in a single comprehensive view
+- Each plot shows both accuracy and ECE side-by-side
+- Green borders highlight the best-performing values
+- Dual y-axis in combined plot for clear comparison
+
+**Usage examples:**
+```bash
+# After running temperature ablation (Section 8.1):
+python scripts/plot_ablation.py --parameter temperature
+# Output: outputs/plots/ablation/ablation_temperature.png
+
+# After running all ablations (Section 8.7):
+bash scripts/visualize_ablations.sh
+# Output: All 7 plots in outputs/plots/ablation/
+```
 
 💡 **Incremental Runs:**
 ```bash

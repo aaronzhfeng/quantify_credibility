@@ -1,0 +1,51 @@
+{
+  "question_id": 288,
+  "question_text": "Scientists are able to correlate time and the amount of difference between homologous genes when studying the divergence of two species because scientists have reliable estimates for which value?",
+  "choices": [
+    "A: rate of genetic mutations",
+    "B: survival benefit of specific genes",
+    "C: pressure of selection on base pairs",
+    "D: number of bases in species' genomes"
+  ],
+  "gold_answer": "A",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Scientists are able to correlate time and the amount of difference between homologous genes when studying the divergence of two species because scientists have reliable estimates for which value?\n\n\nChoices:\nA) rate of genetic mutations\nB) survival benefit of specific genes\nC) pressure of selection on base pairs\nD) number of bases in species' genomes\n\nProvide an answer to the following question:\n\nQ: Scientists are able to correlate time and the amount of difference between homologous genes when studying the divergence of two species because scientists have reliable estimates for which value?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "A",
+          "logprob": -0.1122461212798953,
+          "probability": 0.8938242412598683
+        }
+      ],
+      "decision_process": {
+        "selected_text": "A",
+        "matched_choice": "A",
+        "confidence_computation": "exp(logprob) = exp(-0.1122) = 0.8938"
+      },
+      "final_metrics": {
+        "predicted": "A",
+        "correct": true,
+        "confidence": 0.8938242412598683,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

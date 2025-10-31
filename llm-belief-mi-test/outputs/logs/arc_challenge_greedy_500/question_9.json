@@ -1,0 +1,51 @@
+{
+  "question_id": 9,
+  "question_text": "Copper is an element that is used in electrical wires. What is the smallest unit of copper that still maintains the characteristics of copper?",
+  "choices": [
+    "A: the atom",
+    "B: the electron",
+    "C: the nucleus",
+    "D: the proton"
+  ],
+  "gold_answer": "A",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Copper is an element that is used in electrical wires. What is the smallest unit of copper that still maintains the characteristics of copper?\n\n\nChoices:\nA) the atom\nB) the electron\nC) the nucleus\nD) the proton\n\nProvide an answer to the following question:\n\nQ: Copper is an element that is used in electrical wires. What is the smallest unit of copper that still maintains the characteristics of copper?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "A",
+          "logprob": -0.013767280615866184,
+          "probability": 0.9863270549808193
+        }
+      ],
+      "decision_process": {
+        "selected_text": "A",
+        "matched_choice": "A",
+        "confidence_computation": "exp(logprob) = exp(-0.0138) = 0.9863"
+      },
+      "final_metrics": {
+        "predicted": "A",
+        "correct": true,
+        "confidence": 0.9863270549808193,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

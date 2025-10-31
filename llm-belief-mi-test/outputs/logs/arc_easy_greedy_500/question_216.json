@@ -1,0 +1,51 @@
+{
+  "question_id": 216,
+  "question_text": "Which source produces light from nuclear energy?",
+  "choices": [
+    "A: the Sun",
+    "B: a stove burner",
+    "C: the Moon",
+    "D: a light bulb"
+  ],
+  "gold_answer": "A",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Which source produces light from nuclear energy?\n\n\nChoices:\nA) the Sun\nB) a stove burner\nC) the Moon\nD) a light bulb\n\nProvide an answer to the following question:\n\nQ: Which source produces light from nuclear energy?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "A",
+          "logprob": -0.06420213251840323,
+          "probability": 0.937815417378904
+        }
+      ],
+      "decision_process": {
+        "selected_text": "A",
+        "matched_choice": "A",
+        "confidence_computation": "exp(logprob) = exp(-0.0642) = 0.9378"
+      },
+      "final_metrics": {
+        "predicted": "A",
+        "correct": true,
+        "confidence": 0.937815417378904,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

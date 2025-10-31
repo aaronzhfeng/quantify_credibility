@@ -1,0 +1,51 @@
+{
+  "question_id": 302,
+  "question_text": "What is the main function of the cell wall in a plant cell?",
+  "choices": [
+    "A: to protect against disease",
+    "B: to give structural support",
+    "C: to contain the parts of the cell",
+    "D: to help with cell division"
+  ],
+  "gold_answer": "B",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: What is the main function of the cell wall in a plant cell?\n\n\nChoices:\nA) to protect against disease\nB) to give structural support\nC) to contain the parts of the cell\nD) to help with cell division\n\nProvide an answer to the following question:\n\nQ: What is the main function of the cell wall in a plant cell?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "B",
+          "logprob": -0.11443523853085935,
+          "probability": 0.8918696953396457
+        }
+      ],
+      "decision_process": {
+        "selected_text": "B",
+        "matched_choice": "B",
+        "confidence_computation": "exp(logprob) = exp(-0.1144) = 0.8919"
+      },
+      "final_metrics": {
+        "predicted": "B",
+        "correct": true,
+        "confidence": 0.8918696953396457,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

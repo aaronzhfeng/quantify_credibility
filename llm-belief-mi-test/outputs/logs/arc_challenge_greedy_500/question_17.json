@@ -1,0 +1,51 @@
+{
+  "question_id": 17,
+  "question_text": "Molly was making iced tea by putting tea bags in boiling water. She needed to cool the hot tea quickly, so she poured it into a pitcher full of ice. Which best describes the flow of thermal energy?",
+  "choices": [
+    "A: from the ice to the tea",
+    "B: from the tea to the ice",
+    "C: from the pitcher to the tea",
+    "D: from the ice to the pitcher"
+  ],
+  "gold_answer": "B",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Molly was making iced tea by putting tea bags in boiling water. She needed to cool the hot tea quickly, so she poured it into a pitcher full of ice. Which best describes the flow of thermal energy?\n\n\nChoices:\nA) from the ice to the tea\nB) from the tea to the ice\nC) from the pitcher to the tea\nD) from the ice to the pitcher\n\nProvide an answer to the following question:\n\nQ: Molly was making iced tea by putting tea bags in boiling water. She needed to cool the hot tea quickly, so she poured it into a pitcher full of ice. Which best describes the flow of thermal energy?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "B",
+          "logprob": -0.1227982237469405,
+          "probability": 0.8844421039713832
+        }
+      ],
+      "decision_process": {
+        "selected_text": "B",
+        "matched_choice": "B",
+        "confidence_computation": "exp(logprob) = exp(-0.1228) = 0.8844"
+      },
+      "final_metrics": {
+        "predicted": "B",
+        "correct": true,
+        "confidence": 0.8844421039713832,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

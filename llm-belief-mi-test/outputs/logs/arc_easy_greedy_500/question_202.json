@@ -1,0 +1,51 @@
+{
+  "question_id": 202,
+  "question_text": "A student observes different characteristics of a rock. Which observation best describes a fact about the rock?",
+  "choices": [
+    "A: It has a nice surface.",
+    "B: It has an interesting shape.",
+    "C: It is made of several layers.",
+    "D: It feels warm when touched."
+  ],
+  "gold_answer": "C",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A student observes different characteristics of a rock. Which observation best describes a fact about the rock?\n\n\nChoices:\nA) It has a nice surface.\nB) It has an interesting shape.\nC) It is made of several layers.\nD) It feels warm when touched.\n\nProvide an answer to the following question:\n\nQ: A student observes different characteristics of a rock. Which observation best describes a fact about the rock?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "C",
+          "logprob": -0.27229153841472,
+          "probability": 0.7616321836799327
+        }
+      ],
+      "decision_process": {
+        "selected_text": "C",
+        "matched_choice": "C",
+        "confidence_computation": "exp(logprob) = exp(-0.2723) = 0.7616"
+      },
+      "final_metrics": {
+        "predicted": "C",
+        "correct": true,
+        "confidence": 0.7616321836799327,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

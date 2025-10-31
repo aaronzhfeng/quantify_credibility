@@ -1,0 +1,51 @@
+{
+  "question_id": 211,
+  "question_text": "The bottom of the space shuttle is covered with ceramic tile. This material was chosen because it withstands",
+  "choices": [
+    "A: moisture.",
+    "B: vibration.",
+    "C: heat.",
+    "D: light."
+  ],
+  "gold_answer": "C",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: The bottom of the space shuttle is covered with ceramic tile. This material was chosen because it withstands\n\n\nChoices:\nA) moisture.\nB) vibration.\nC) heat.\nD) light.\n\nProvide an answer to the following question:\n\nQ: The bottom of the space shuttle is covered with ceramic tile. This material was chosen because it withstands\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "C",
+          "logprob": -0.03264121524989605,
+          "probability": 0.9678857599507231
+        }
+      ],
+      "decision_process": {
+        "selected_text": "C",
+        "matched_choice": "C",
+        "confidence_computation": "exp(logprob) = exp(-0.0326) = 0.9679"
+      },
+      "final_metrics": {
+        "predicted": "C",
+        "correct": true,
+        "confidence": 0.9678857599507231,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

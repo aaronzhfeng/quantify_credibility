@@ -1,0 +1,51 @@
+{
+  "question_id": 357,
+  "question_text": "Which property supports the hypothesis that eukaryotic mitochondria were once prokaryotic organisms?",
+  "choices": [
+    "A: They lack genetic material.",
+    "B: They lack a mechanism of motility.",
+    "C: They lack internal membrane-bound organelles.",
+    "D: They lack a need for proteins in their life functions."
+  ],
+  "gold_answer": "C",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Which property supports the hypothesis that eukaryotic mitochondria were once prokaryotic organisms?\n\n\nChoices:\nA) They lack genetic material.\nB) They lack a mechanism of motility.\nC) They lack internal membrane-bound organelles.\nD) They lack a need for proteins in their life functions.\n\nProvide an answer to the following question:\n\nQ: Which property supports the hypothesis that eukaryotic mitochondria were once prokaryotic organisms?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "C",
+          "logprob": -0.7410320974886417,
+          "probability": 0.4766217414765164
+        }
+      ],
+      "decision_process": {
+        "selected_text": "C",
+        "matched_choice": "C",
+        "confidence_computation": "exp(logprob) = exp(-0.7410) = 0.4766"
+      },
+      "final_metrics": {
+        "predicted": "C",
+        "correct": true,
+        "confidence": 0.4766217414765164,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

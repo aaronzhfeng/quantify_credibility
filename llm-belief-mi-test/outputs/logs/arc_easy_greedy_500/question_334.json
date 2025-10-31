@@ -1,0 +1,51 @@
+{
+  "question_id": 334,
+  "question_text": "In living things, traits are passed on from one generation to the next by the transfer of",
+  "choices": [
+    "1: blood",
+    "2: minerals",
+    "3: Calories",
+    "4: DNA"
+  ],
+  "gold_answer": "4",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: In living things, traits are passed on from one generation to the next by the transfer of\n\n\nChoices:\n1) blood\n2) minerals\n3) Calories\n4) DNA\n\nProvide an answer to the following question:\n\nQ: In living things, traits are passed on from one generation to the next by the transfer of\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "D",
+          "logprob": -0.16456234082579613,
+          "probability": 0.8482648737632418
+        }
+      ],
+      "decision_process": {
+        "selected_text": "D",
+        "matched_choice": "1",
+        "confidence_computation": "exp(logprob) = exp(-0.1646) = 0.8483"
+      },
+      "final_metrics": {
+        "predicted": "1",
+        "correct": false,
+        "confidence": 0.8482648737632418,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

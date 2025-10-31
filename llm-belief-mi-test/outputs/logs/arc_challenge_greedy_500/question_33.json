@@ -1,0 +1,51 @@
+{
+  "question_id": 33,
+  "question_text": "Which statement describes a positive effect of a scientific discovery?",
+  "choices": [
+    "A: It makes some people upset.",
+    "B: It takes a long time to be useful.",
+    "C: It helps explain how things work.",
+    "D: It causes work to be more difficult."
+  ],
+  "gold_answer": "C",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Which statement describes a positive effect of a scientific discovery?\n\n\nChoices:\nA) It makes some people upset.\nB) It takes a long time to be useful.\nC) It helps explain how things work.\nD) It causes work to be more difficult.\n\nProvide an answer to the following question:\n\nQ: Which statement describes a positive effect of a scientific discovery?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "C",
+          "logprob": -0.3167713179718703,
+          "probability": 0.7284973303255844
+        }
+      ],
+      "decision_process": {
+        "selected_text": "C",
+        "matched_choice": "C",
+        "confidence_computation": "exp(logprob) = exp(-0.3168) = 0.7285"
+      },
+      "final_metrics": {
+        "predicted": "C",
+        "correct": true,
+        "confidence": 0.7284973303255844,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

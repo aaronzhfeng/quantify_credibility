@@ -1,0 +1,51 @@
+{
+  "question_id": 373,
+  "question_text": "How do muscles and bones work together to create body movement?",
+  "choices": [
+    "A: The muscles pull on the bones.",
+    "B: The muscles protect the bones.",
+    "C: Muscles grow at the same rate as bones.",
+    "D: Muscles send electrical impulses to bones."
+  ],
+  "gold_answer": "A",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: How do muscles and bones work together to create body movement?\n\n\nChoices:\nA) The muscles pull on the bones.\nB) The muscles protect the bones.\nC) Muscles grow at the same rate as bones.\nD) Muscles send electrical impulses to bones.\n\nProvide an answer to the following question:\n\nQ: How do muscles and bones work together to create body movement?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "A",
+          "logprob": -0.030521457667418872,
+          "probability": 0.9699396192021483
+        }
+      ],
+      "decision_process": {
+        "selected_text": "A",
+        "matched_choice": "A",
+        "confidence_computation": "exp(logprob) = exp(-0.0305) = 0.9699"
+      },
+      "final_metrics": {
+        "predicted": "A",
+        "correct": true,
+        "confidence": 0.9699396192021483,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "question_id": 360,
+  "question_text": "The Statue of Liberty was built in France and then taken apart into 350 pieces for shipping. When the pieces arrived in New York, the statue was put together. Which statement describes the relationship between the mass of the 350 pieces and the mass of the whole statue?",
+  "choices": [
+    "A: The mass of the pieces is greater than the mass of the statue.",
+    "B: The mass of the pieces is the same as the mass of the statue.",
+    "C: The mass of the statue is greater than the mass of the pieces.",
+    "D: The mass of the statue is not related to the mass of the pieces."
+  ],
+  "gold_answer": "B",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: The Statue of Liberty was built in France and then taken apart into 350 pieces for shipping. When the pieces arrived in New York, the statue was put together. Which statement describes the relationship between the mass of the 350 pieces and the mass of the whole statue?\n\n\nChoices:\nA) The mass of the pieces is greater than the mass of the statue.\nB) The mass of the pieces is the same as the mass of the statue.\nC) The mass of the statue is greater than the mass of the pieces.\nD) The mass of the statue is not related to the mass of the pieces.\n\nProvide an answer to the following question:\n\nQ: The Statue of Liberty was built in France and then taken apart into 350 pieces for shipping. When the pieces arrived in New York, the statue was put together. Which statement describes the relationship between the mass of the 350 pieces and the mass of the whole statue?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "A",
+          "logprob": -0.9376927277480718,
+          "probability": 0.39153016067866686
+        }
+      ],
+      "decision_process": {
+        "selected_text": "A",
+        "matched_choice": "A",
+        "confidence_computation": "exp(logprob) = exp(-0.9377) = 0.3915"
+      },
+      "final_metrics": {
+        "predicted": "A",
+        "correct": false,
+        "confidence": 0.39153016067866686,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

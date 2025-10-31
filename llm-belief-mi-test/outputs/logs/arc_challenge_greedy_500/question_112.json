@@ -1,0 +1,51 @@
+{
+  "question_id": 112,
+  "question_text": "When cold air is at the tops of mountains, the air",
+  "choices": [
+    "A: will flow toward areas of lower pressure in valleys.",
+    "B: will flow toward areas of higher pressure in valleys.",
+    "C: is considered to be less dense than warmer air.",
+    "D: is considered to be free of oxygen atoms."
+  ],
+  "gold_answer": "A",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: When cold air is at the tops of mountains, the air\n\n\nChoices:\nA) will flow toward areas of lower pressure in valleys.\nB) will flow toward areas of higher pressure in valleys.\nC) is considered to be less dense than warmer air.\nD) is considered to be free of oxygen atoms.\n\nProvide an answer to the following question:\n\nQ: When cold air is at the tops of mountains, the air\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "A",
+          "logprob": -0.29590808833017945,
+          "probability": 0.7438557939064437
+        }
+      ],
+      "decision_process": {
+        "selected_text": "A",
+        "matched_choice": "A",
+        "confidence_computation": "exp(logprob) = exp(-0.2959) = 0.7439"
+      },
+      "final_metrics": {
+        "predicted": "A",
+        "correct": true,
+        "confidence": 0.7438557939064437,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

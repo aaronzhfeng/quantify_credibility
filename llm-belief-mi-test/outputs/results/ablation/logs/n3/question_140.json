@@ -1,0 +1,729 @@
+{
+  "question_id": 140,
+  "question_text": "It takes more water to fill a bathtub than a",
+  "choices": [
+    "A: lake",
+    "B: pool",
+    "C: stomach",
+    "D: holding tank"
+  ],
+  "gold_answer": "C",
+  "methods": {
+    "mi_method": {
+      "description": "k=10 chains of length n=3, MI estimation",
+      "raw_inputs": [
+        {
+          "chain_id": 0,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: It takes more water to fill a bathtub than a\n\n\nChoices:\nA) lake\nB) pool\nC) stomach\nD) holding tank\n\nProvide an answer to the following question:\n\nQ: It takes more water to fill a bathtub than a\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 0,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: It takes more water to fill a bathtub than a\n\n\nOne answer to question Q is A) lake.\n\n\nChoices:\nA) lake\nB) pool\nC) stomach\nD) holding tank\n\nProvide an answer to the following question:\n\nQ: It takes more water to fill a bathtub than a\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 0,
+          "step": 2,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: It takes more water to fill a bathtub than a\n\n\nOne answer to question Q is A) lake. Another answer to question Q is A) lake.\n\n\nChoices:\nA) lake\nB) pool\nC) stomach\nD) holding tank\n\nProvide an answer to the following question:\n\nQ: It takes more water to fill a bathtub than a\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 1,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: It takes more water to fill a bathtub than a\n\n\nChoices:\nA) lake\nB) pool\nC) stomach\nD) holding tank\n\nProvide an answer to the following question:\n\nQ: It takes more water to fill a bathtub than a\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 1,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: It takes more water to fill a bathtub than a\n\n\nOne answer to question Q is B) pool.\n\n\nChoices:\nA) lake\nB) pool\nC) stomach\nD) holding tank\n\nProvide an answer to the following question:\n\nQ: It takes more water to fill a bathtub than a\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 1,
+          "step": 2,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: It takes more water to fill a bathtub than a\n\n\nOne answer to question Q is B) pool. Another answer to question Q is A) lake.\n\n\nChoices:\nA) lake\nB) pool\nC) stomach\nD) holding tank\n\nProvide an answer to the following question:\n\nQ: It takes more water to fill a bathtub than a\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 2,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: It takes more water to fill a bathtub than a\n\n\nChoices:\nA) lake\nB) pool\nC) stomach\nD) holding tank\n\nProvide an answer to the following question:\n\nQ: It takes more water to fill a bathtub than a\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 2,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: It takes more water to fill a bathtub than a\n\n\nOne answer to question Q is D) holding tank.\n\n\nChoices:\nA) lake\nB) pool\nC) stomach\nD) holding tank\n\nProvide an answer to the following question:\n\nQ: It takes more water to fill a bathtub than a\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 2,
+          "step": 2,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: It takes more water to fill a bathtub than a\n\n\nOne answer to question Q is D) holding tank. Another answer to question Q is D) holding tank.\n\n\nChoices:\nA) lake\nB) pool\nC) stomach\nD) holding tank\n\nProvide an answer to the following question:\n\nQ: It takes more water to fill a bathtub than a\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 3,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: It takes more water to fill a bathtub than a\n\n\nChoices:\nA) lake\nB) pool\nC) stomach\nD) holding tank\n\nProvide an answer to the following question:\n\nQ: It takes more water to fill a bathtub than a\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 3,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: It takes more water to fill a bathtub than a\n\n\nOne answer to question Q is D) holding tank.\n\n\nChoices:\nA) lake\nB) pool\nC) stomach\nD) holding tank\n\nProvide an answer to the following question:\n\nQ: It takes more water to fill a bathtub than a\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 3,
+          "step": 2,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: It takes more water to fill a bathtub than a\n\n\nOne answer to question Q is D) holding tank. Another answer to question Q is A) lake.\n\n\nChoices:\nA) lake\nB) pool\nC) stomach\nD) holding tank\n\nProvide an answer to the following question:\n\nQ: It takes more water to fill a bathtub than a\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 4,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: It takes more water to fill a bathtub than a\n\n\nChoices:\nA) lake\nB) pool\nC) stomach\nD) holding tank\n\nProvide an answer to the following question:\n\nQ: It takes more water to fill a bathtub than a\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 4,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: It takes more water to fill a bathtub than a\n\n\nOne answer to question Q is A) lake.\n\n\nChoices:\nA) lake\nB) pool\nC) stomach\nD) holding tank\n\nProvide an answer to the following question:\n\nQ: It takes more water to fill a bathtub than a\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 4,
+          "step": 2,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: It takes more water to fill a bathtub than a\n\n\nOne answer to question Q is A) lake. Another answer to question Q is B) pool.\n\n\nChoices:\nA) lake\nB) pool\nC) stomach\nD) holding tank\n\nProvide an answer to the following question:\n\nQ: It takes more water to fill a bathtub than a\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 5,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: It takes more water to fill a bathtub than a\n\n\nChoices:\nA) lake\nB) pool\nC) stomach\nD) holding tank\n\nProvide an answer to the following question:\n\nQ: It takes more water to fill a bathtub than a\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 5,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: It takes more water to fill a bathtub than a\n\n\nOne answer to question Q is B) pool.\n\n\nChoices:\nA) lake\nB) pool\nC) stomach\nD) holding tank\n\nProvide an answer to the following question:\n\nQ: It takes more water to fill a bathtub than a\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 5,
+          "step": 2,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: It takes more water to fill a bathtub than a\n\n\nOne answer to question Q is B) pool. Another answer to question Q is A) lake.\n\n\nChoices:\nA) lake\nB) pool\nC) stomach\nD) holding tank\n\nProvide an answer to the following question:\n\nQ: It takes more water to fill a bathtub than a\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 6,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: It takes more water to fill a bathtub than a\n\n\nChoices:\nA) lake\nB) pool\nC) stomach\nD) holding tank\n\nProvide an answer to the following question:\n\nQ: It takes more water to fill a bathtub than a\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 6,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: It takes more water to fill a bathtub than a\n\n\nOne answer to question Q is D) holding tank.\n\n\nChoices:\nA) lake\nB) pool\nC) stomach\nD) holding tank\n\nProvide an answer to the following question:\n\nQ: It takes more water to fill a bathtub than a\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 6,
+          "step": 2,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: It takes more water to fill a bathtub than a\n\n\nOne answer to question Q is D) holding tank. Another answer to question Q is B) pool.\n\n\nChoices:\nA) lake\nB) pool\nC) stomach\nD) holding tank\n\nProvide an answer to the following question:\n\nQ: It takes more water to fill a bathtub than a\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 7,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: It takes more water to fill a bathtub than a\n\n\nChoices:\nA) lake\nB) pool\nC) stomach\nD) holding tank\n\nProvide an answer to the following question:\n\nQ: It takes more water to fill a bathtub than a\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 7,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: It takes more water to fill a bathtub than a\n\n\nOne answer to question Q is A) lake.\n\n\nChoices:\nA) lake\nB) pool\nC) stomach\nD) holding tank\n\nProvide an answer to the following question:\n\nQ: It takes more water to fill a bathtub than a\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 7,
+          "step": 2,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: It takes more water to fill a bathtub than a\n\n\nOne answer to question Q is A) lake. Another answer to question Q is B) pool.\n\n\nChoices:\nA) lake\nB) pool\nC) stomach\nD) holding tank\n\nProvide an answer to the following question:\n\nQ: It takes more water to fill a bathtub than a\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 8,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: It takes more water to fill a bathtub than a\n\n\nChoices:\nA) lake\nB) pool\nC) stomach\nD) holding tank\n\nProvide an answer to the following question:\n\nQ: It takes more water to fill a bathtub than a\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 8,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: It takes more water to fill a bathtub than a\n\n\nOne answer to question Q is D) holding tank.\n\n\nChoices:\nA) lake\nB) pool\nC) stomach\nD) holding tank\n\nProvide an answer to the following question:\n\nQ: It takes more water to fill a bathtub than a\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 8,
+          "step": 2,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: It takes more water to fill a bathtub than a\n\n\nOne answer to question Q is D) holding tank. Another answer to question Q is A) lake.\n\n\nChoices:\nA) lake\nB) pool\nC) stomach\nD) holding tank\n\nProvide an answer to the following question:\n\nQ: It takes more water to fill a bathtub than a\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 9,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: It takes more water to fill a bathtub than a\n\n\nChoices:\nA) lake\nB) pool\nC) stomach\nD) holding tank\n\nProvide an answer to the following question:\n\nQ: It takes more water to fill a bathtub than a\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 9,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: It takes more water to fill a bathtub than a\n\n\nOne answer to question Q is A) lake.\n\n\nChoices:\nA) lake\nB) pool\nC) stomach\nD) holding tank\n\nProvide an answer to the following question:\n\nQ: It takes more water to fill a bathtub than a\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 9,
+          "step": 2,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: It takes more water to fill a bathtub than a\n\n\nOne answer to question Q is A) lake. Another answer to question Q is A) lake.\n\n\nChoices:\nA) lake\nB) pool\nC) stomach\nD) holding tank\n\nProvide an answer to the following question:\n\nQ: It takes more water to fill a bathtub than a\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "chain_id": 0,
+          "step": 0,
+          "text": "A",
+          "logprob": -0.889781653881073,
+          "probability": 0.4107454276318987
+        },
+        {
+          "chain_id": 0,
+          "step": 1,
+          "text": "A",
+          "logprob": -1.104013442993164,
+          "probability": 0.3315378018945183
+        },
+        {
+          "chain_id": 0,
+          "step": 2,
+          "text": "A",
+          "logprob": -0.5211422443389893,
+          "probability": 0.5938418479342924
+        },
+        {
+          "chain_id": 1,
+          "step": 0,
+          "text": "B",
+          "logprob": -0.889781653881073,
+          "probability": 0.4107454276318987
+        },
+        {
+          "chain_id": 1,
+          "step": 1,
+          "text": "A",
+          "logprob": -0.5236791372299194,
+          "probability": 0.5923372440882786
+        },
+        {
+          "chain_id": 1,
+          "step": 2,
+          "text": "D",
+          "logprob": -1.7297669649124146,
+          "probability": 0.17732572827200277
+        },
+        {
+          "chain_id": 2,
+          "step": 0,
+          "text": "D",
+          "logprob": -1.7231156826019287,
+          "probability": 0.178509102868251
+        },
+        {
+          "chain_id": 2,
+          "step": 1,
+          "text": "D",
+          "logprob": -1.2892796993255615,
+          "probability": 0.27546913224740527
+        },
+        {
+          "chain_id": 2,
+          "step": 2,
+          "text": "A",
+          "logprob": -0.496169775724411,
+          "probability": 0.6088582629449418
+        },
+        {
+          "chain_id": 3,
+          "step": 0,
+          "text": "D",
+          "logprob": -1.7231156826019287,
+          "probability": 0.178509102868251
+        },
+        {
+          "chain_id": 3,
+          "step": 1,
+          "text": "A",
+          "logprob": -0.4559456706047058,
+          "probability": 0.6338482727564735
+        },
+        {
+          "chain_id": 3,
+          "step": 2,
+          "text": "A",
+          "logprob": -0.5017544627189636,
+          "probability": 0.6054674572295426
+        },
+        {
+          "chain_id": 4,
+          "step": 0,
+          "text": "A",
+          "logprob": -0.889781653881073,
+          "probability": 0.4107454276318987
+        },
+        {
+          "chain_id": 4,
+          "step": 1,
+          "text": "B",
+          "logprob": -0.6873474717140198,
+          "probability": 0.5029082798591207
+        },
+        {
+          "chain_id": 4,
+          "step": 2,
+          "text": "A",
+          "logprob": -0.5826461315155029,
+          "probability": 0.5584187603318489
+        },
+        {
+          "chain_id": 5,
+          "step": 0,
+          "text": "B",
+          "logprob": -0.889781653881073,
+          "probability": 0.4107454276318987
+        },
+        {
+          "chain_id": 5,
+          "step": 1,
+          "text": "A",
+          "logprob": -0.5236791372299194,
+          "probability": 0.5923372440882786
+        },
+        {
+          "chain_id": 5,
+          "step": 2,
+          "text": "D",
+          "logprob": -1.7297669649124146,
+          "probability": 0.17732572827200277
+        },
+        {
+          "chain_id": 6,
+          "step": 0,
+          "text": "D",
+          "logprob": -1.7231156826019287,
+          "probability": 0.178509102868251
+        },
+        {
+          "chain_id": 6,
+          "step": 1,
+          "text": "B",
+          "logprob": -2.400390386581421,
+          "probability": 0.09068254512963926
+        },
+        {
+          "chain_id": 6,
+          "step": 2,
+          "text": "A",
+          "logprob": -0.7694565057754517,
+          "probability": 0.46326478163591867
+        },
+        {
+          "chain_id": 7,
+          "step": 0,
+          "text": "A",
+          "logprob": -0.889781653881073,
+          "probability": 0.4107454276318987
+        },
+        {
+          "chain_id": 7,
+          "step": 1,
+          "text": "B",
+          "logprob": -0.6873474717140198,
+          "probability": 0.5029082798591207
+        },
+        {
+          "chain_id": 7,
+          "step": 2,
+          "text": "A",
+          "logprob": -0.5826461315155029,
+          "probability": 0.5584187603318489
+        },
+        {
+          "chain_id": 8,
+          "step": 0,
+          "text": "D",
+          "logprob": -1.7231156826019287,
+          "probability": 0.178509102868251
+        },
+        {
+          "chain_id": 8,
+          "step": 1,
+          "text": "A",
+          "logprob": -0.4559456706047058,
+          "probability": 0.6338482727564735
+        },
+        {
+          "chain_id": 8,
+          "step": 2,
+          "text": "A",
+          "logprob": -0.5017544627189636,
+          "probability": 0.6054674572295426
+        },
+        {
+          "chain_id": 9,
+          "step": 0,
+          "text": "A",
+          "logprob": -0.889781653881073,
+          "probability": 0.4107454276318987
+        },
+        {
+          "chain_id": 9,
+          "step": 1,
+          "text": "A",
+          "logprob": -1.104013442993164,
+          "probability": 0.3315378018945183
+        },
+        {
+          "chain_id": 9,
+          "step": 2,
+          "text": "D",
+          "logprob": -1.9100315570831299,
+          "probability": 0.14807571368412487
+        }
+      ],
+      "decision_process": {
+        "num_chains": 10,
+        "chain_length": 3,
+        "total_inferences": 30,
+        "mi_method": "listing",
+        "mi_nats": 0.31733615875646526,
+        "mi_bits": 0.45781930253270525,
+        "selected_answer": "A",
+        "matched_choice": "A",
+        "confidence_computation": "1/(1 + mi_nats) = 1/(1 + 0.3173) = 0.7591",
+        "agreement": "70.00% (7/10 chains agree on final answer)"
+      },
+      "final_metrics": {
+        "predicted": "A",
+        "correct": false,
+        "confidence": 0.7591076836029285,
+        "mi_score": 0.45781930253270525,
+        "agreement": 0.7
+      }
+    }
+  }
+}

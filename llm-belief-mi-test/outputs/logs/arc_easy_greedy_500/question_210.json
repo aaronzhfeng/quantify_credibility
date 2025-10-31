@@ -1,0 +1,51 @@
+{
+  "question_id": 210,
+  "question_text": "A scientist finds a plant and states that it is a new species. Which is the best way to verify that it is a new species?",
+  "choices": [
+    "A: develop a theory about the plant",
+    "B: compare the plant to other plants",
+    "C: observe the plant with a microscope",
+    "D: determine the best growing conditions for the plant"
+  ],
+  "gold_answer": "B",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A scientist finds a plant and states that it is a new species. Which is the best way to verify that it is a new species?\n\n\nChoices:\nA) develop a theory about the plant\nB) compare the plant to other plants\nC) observe the plant with a microscope\nD) determine the best growing conditions for the plant\n\nProvide an answer to the following question:\n\nQ: A scientist finds a plant and states that it is a new species. Which is the best way to verify that it is a new species?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "B",
+          "logprob": -0.0067969190422445536,
+          "probability": 0.993226127766662
+        }
+      ],
+      "decision_process": {
+        "selected_text": "B",
+        "matched_choice": "B",
+        "confidence_computation": "exp(logprob) = exp(-0.0068) = 0.9932"
+      },
+      "final_metrics": {
+        "predicted": "B",
+        "correct": true,
+        "confidence": 0.993226127766662,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

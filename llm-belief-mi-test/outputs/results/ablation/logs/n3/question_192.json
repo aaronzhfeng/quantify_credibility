@@ -1,0 +1,729 @@
+{
+  "question_id": 192,
+  "question_text": "A tree is not the habitat of a",
+  "choices": [
+    "A: squirrel",
+    "B: woodpecker",
+    "C: monkey",
+    "D: lion"
+  ],
+  "gold_answer": "D",
+  "methods": {
+    "mi_method": {
+      "description": "k=10 chains of length n=3, MI estimation",
+      "raw_inputs": [
+        {
+          "chain_id": 0,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A tree is not the habitat of a\n\n\nChoices:\nA) squirrel\nB) woodpecker\nC) monkey\nD) lion\n\nProvide an answer to the following question:\n\nQ: A tree is not the habitat of a\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 0,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A tree is not the habitat of a\n\n\nOne answer to question Q is C) monkey.\n\n\nChoices:\nA) squirrel\nB) woodpecker\nC) monkey\nD) lion\n\nProvide an answer to the following question:\n\nQ: A tree is not the habitat of a\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 0,
+          "step": 2,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A tree is not the habitat of a\n\n\nOne answer to question Q is C) monkey. Another answer to question Q is A) squirrel.\n\n\nChoices:\nA) squirrel\nB) woodpecker\nC) monkey\nD) lion\n\nProvide an answer to the following question:\n\nQ: A tree is not the habitat of a\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 1,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A tree is not the habitat of a\n\n\nChoices:\nA) squirrel\nB) woodpecker\nC) monkey\nD) lion\n\nProvide an answer to the following question:\n\nQ: A tree is not the habitat of a\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 1,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A tree is not the habitat of a\n\n\nOne answer to question Q is A) squirrel.\n\n\nChoices:\nA) squirrel\nB) woodpecker\nC) monkey\nD) lion\n\nProvide an answer to the following question:\n\nQ: A tree is not the habitat of a\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 1,
+          "step": 2,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A tree is not the habitat of a\n\n\nOne answer to question Q is A) squirrel. Another answer to question Q is A) squirrel.\n\n\nChoices:\nA) squirrel\nB) woodpecker\nC) monkey\nD) lion\n\nProvide an answer to the following question:\n\nQ: A tree is not the habitat of a\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 2,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A tree is not the habitat of a\n\n\nChoices:\nA) squirrel\nB) woodpecker\nC) monkey\nD) lion\n\nProvide an answer to the following question:\n\nQ: A tree is not the habitat of a\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 2,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A tree is not the habitat of a\n\n\nOne answer to question Q is A) squirrel.\n\n\nChoices:\nA) squirrel\nB) woodpecker\nC) monkey\nD) lion\n\nProvide an answer to the following question:\n\nQ: A tree is not the habitat of a\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 2,
+          "step": 2,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A tree is not the habitat of a\n\n\nOne answer to question Q is A) squirrel. Another answer to question Q is A) squirrel.\n\n\nChoices:\nA) squirrel\nB) woodpecker\nC) monkey\nD) lion\n\nProvide an answer to the following question:\n\nQ: A tree is not the habitat of a\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 3,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A tree is not the habitat of a\n\n\nChoices:\nA) squirrel\nB) woodpecker\nC) monkey\nD) lion\n\nProvide an answer to the following question:\n\nQ: A tree is not the habitat of a\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 3,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A tree is not the habitat of a\n\n\nOne answer to question Q is A) squirrel.\n\n\nChoices:\nA) squirrel\nB) woodpecker\nC) monkey\nD) lion\n\nProvide an answer to the following question:\n\nQ: A tree is not the habitat of a\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 3,
+          "step": 2,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A tree is not the habitat of a\n\n\nOne answer to question Q is A) squirrel. Another answer to question Q is B) woodpecker.\n\n\nChoices:\nA) squirrel\nB) woodpecker\nC) monkey\nD) lion\n\nProvide an answer to the following question:\n\nQ: A tree is not the habitat of a\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 4,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A tree is not the habitat of a\n\n\nChoices:\nA) squirrel\nB) woodpecker\nC) monkey\nD) lion\n\nProvide an answer to the following question:\n\nQ: A tree is not the habitat of a\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 4,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A tree is not the habitat of a\n\n\nOne answer to question Q is A) squirrel.\n\n\nChoices:\nA) squirrel\nB) woodpecker\nC) monkey\nD) lion\n\nProvide an answer to the following question:\n\nQ: A tree is not the habitat of a\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 4,
+          "step": 2,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A tree is not the habitat of a\n\n\nOne answer to question Q is A) squirrel. Another answer to question Q is B) woodpecker.\n\n\nChoices:\nA) squirrel\nB) woodpecker\nC) monkey\nD) lion\n\nProvide an answer to the following question:\n\nQ: A tree is not the habitat of a\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 5,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A tree is not the habitat of a\n\n\nChoices:\nA) squirrel\nB) woodpecker\nC) monkey\nD) lion\n\nProvide an answer to the following question:\n\nQ: A tree is not the habitat of a\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 5,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A tree is not the habitat of a\n\n\nOne answer to question Q is C) monkey.\n\n\nChoices:\nA) squirrel\nB) woodpecker\nC) monkey\nD) lion\n\nProvide an answer to the following question:\n\nQ: A tree is not the habitat of a\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 5,
+          "step": 2,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A tree is not the habitat of a\n\n\nOne answer to question Q is C) monkey. Another answer to question Q is A) squirrel.\n\n\nChoices:\nA) squirrel\nB) woodpecker\nC) monkey\nD) lion\n\nProvide an answer to the following question:\n\nQ: A tree is not the habitat of a\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 6,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A tree is not the habitat of a\n\n\nChoices:\nA) squirrel\nB) woodpecker\nC) monkey\nD) lion\n\nProvide an answer to the following question:\n\nQ: A tree is not the habitat of a\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 6,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A tree is not the habitat of a\n\n\nOne answer to question Q is A) squirrel.\n\n\nChoices:\nA) squirrel\nB) woodpecker\nC) monkey\nD) lion\n\nProvide an answer to the following question:\n\nQ: A tree is not the habitat of a\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 6,
+          "step": 2,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A tree is not the habitat of a\n\n\nOne answer to question Q is A) squirrel. Another answer to question Q is B) woodpecker.\n\n\nChoices:\nA) squirrel\nB) woodpecker\nC) monkey\nD) lion\n\nProvide an answer to the following question:\n\nQ: A tree is not the habitat of a\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 7,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A tree is not the habitat of a\n\n\nChoices:\nA) squirrel\nB) woodpecker\nC) monkey\nD) lion\n\nProvide an answer to the following question:\n\nQ: A tree is not the habitat of a\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 7,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A tree is not the habitat of a\n\n\nOne answer to question Q is A) squirrel.\n\n\nChoices:\nA) squirrel\nB) woodpecker\nC) monkey\nD) lion\n\nProvide an answer to the following question:\n\nQ: A tree is not the habitat of a\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 7,
+          "step": 2,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A tree is not the habitat of a\n\n\nOne answer to question Q is A) squirrel. Another answer to question Q is A) squirrel.\n\n\nChoices:\nA) squirrel\nB) woodpecker\nC) monkey\nD) lion\n\nProvide an answer to the following question:\n\nQ: A tree is not the habitat of a\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 8,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A tree is not the habitat of a\n\n\nChoices:\nA) squirrel\nB) woodpecker\nC) monkey\nD) lion\n\nProvide an answer to the following question:\n\nQ: A tree is not the habitat of a\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 8,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A tree is not the habitat of a\n\n\nOne answer to question Q is B) woodpecker.\n\n\nChoices:\nA) squirrel\nB) woodpecker\nC) monkey\nD) lion\n\nProvide an answer to the following question:\n\nQ: A tree is not the habitat of a\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 8,
+          "step": 2,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A tree is not the habitat of a\n\n\nOne answer to question Q is B) woodpecker. Another answer to question Q is A) squirrel.\n\n\nChoices:\nA) squirrel\nB) woodpecker\nC) monkey\nD) lion\n\nProvide an answer to the following question:\n\nQ: A tree is not the habitat of a\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 9,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A tree is not the habitat of a\n\n\nChoices:\nA) squirrel\nB) woodpecker\nC) monkey\nD) lion\n\nProvide an answer to the following question:\n\nQ: A tree is not the habitat of a\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 9,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A tree is not the habitat of a\n\n\nOne answer to question Q is C) monkey.\n\n\nChoices:\nA) squirrel\nB) woodpecker\nC) monkey\nD) lion\n\nProvide an answer to the following question:\n\nQ: A tree is not the habitat of a\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 9,
+          "step": 2,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A tree is not the habitat of a\n\n\nOne answer to question Q is C) monkey. Another answer to question Q is C) monkey.\n\n\nChoices:\nA) squirrel\nB) woodpecker\nC) monkey\nD) lion\n\nProvide an answer to the following question:\n\nQ: A tree is not the habitat of a\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "chain_id": 0,
+          "step": 0,
+          "text": "C",
+          "logprob": -1.910568118095398,
+          "probability": 0.14799628334081655
+        },
+        {
+          "chain_id": 0,
+          "step": 1,
+          "text": "A",
+          "logprob": -0.26024141907691956,
+          "probability": 0.7708654617093217
+        },
+        {
+          "chain_id": 0,
+          "step": 2,
+          "text": "A",
+          "logprob": -0.4890413284301758,
+          "probability": 0.613213983298932
+        },
+        {
+          "chain_id": 1,
+          "step": 0,
+          "text": "A",
+          "logprob": -0.3827894628047943,
+          "probability": 0.6819564613735106
+        },
+        {
+          "chain_id": 1,
+          "step": 1,
+          "text": "A",
+          "logprob": -0.3226771056652069,
+          "probability": 0.7242076591691206
+        },
+        {
+          "chain_id": 1,
+          "step": 2,
+          "text": "A",
+          "logprob": -0.33280277252197266,
+          "probability": 0.7169115748750405
+        },
+        {
+          "chain_id": 2,
+          "step": 0,
+          "text": "A",
+          "logprob": -0.3827894628047943,
+          "probability": 0.6819564613735106
+        },
+        {
+          "chain_id": 2,
+          "step": 1,
+          "text": "A",
+          "logprob": -0.3226771056652069,
+          "probability": 0.7242076591691206
+        },
+        {
+          "chain_id": 2,
+          "step": 2,
+          "text": "A",
+          "logprob": -0.33280277252197266,
+          "probability": 0.7169115748750405
+        },
+        {
+          "chain_id": 3,
+          "step": 0,
+          "text": "A",
+          "logprob": -0.3827894628047943,
+          "probability": 0.6819564613735106
+        },
+        {
+          "chain_id": 3,
+          "step": 1,
+          "text": "B",
+          "logprob": -1.572679042816162,
+          "probability": 0.20748856633777887
+        },
+        {
+          "chain_id": 3,
+          "step": 2,
+          "text": "A",
+          "logprob": -0.3867984712123871,
+          "probability": 0.6792279651228552
+        },
+        {
+          "chain_id": 4,
+          "step": 0,
+          "text": "A",
+          "logprob": -0.3827894628047943,
+          "probability": 0.6819564613735106
+        },
+        {
+          "chain_id": 4,
+          "step": 1,
+          "text": "B",
+          "logprob": -1.572679042816162,
+          "probability": 0.20748856633777887
+        },
+        {
+          "chain_id": 4,
+          "step": 2,
+          "text": "B",
+          "logprob": -1.4979091882705688,
+          "probability": 0.2235971713505796
+        },
+        {
+          "chain_id": 5,
+          "step": 0,
+          "text": "C",
+          "logprob": -1.910568118095398,
+          "probability": 0.14799628334081655
+        },
+        {
+          "chain_id": 5,
+          "step": 1,
+          "text": "A",
+          "logprob": -0.26024141907691956,
+          "probability": 0.7708654617093217
+        },
+        {
+          "chain_id": 5,
+          "step": 2,
+          "text": "C",
+          "logprob": -2.2945985794067383,
+          "probability": 0.10080184908592327
+        },
+        {
+          "chain_id": 6,
+          "step": 0,
+          "text": "A",
+          "logprob": -0.3827894628047943,
+          "probability": 0.6819564613735106
+        },
+        {
+          "chain_id": 6,
+          "step": 1,
+          "text": "B",
+          "logprob": -1.572679042816162,
+          "probability": 0.20748856633777887
+        },
+        {
+          "chain_id": 6,
+          "step": 2,
+          "text": "A",
+          "logprob": -0.3867984712123871,
+          "probability": 0.6792279651228552
+        },
+        {
+          "chain_id": 7,
+          "step": 0,
+          "text": "A",
+          "logprob": -0.3827894628047943,
+          "probability": 0.6819564613735106
+        },
+        {
+          "chain_id": 7,
+          "step": 1,
+          "text": "A",
+          "logprob": -0.3226771056652069,
+          "probability": 0.7242076591691206
+        },
+        {
+          "chain_id": 7,
+          "step": 2,
+          "text": "A",
+          "logprob": -0.33280277252197266,
+          "probability": 0.7169115748750405
+        },
+        {
+          "chain_id": 8,
+          "step": 0,
+          "text": "B",
+          "logprob": -1.7716788053512573,
+          "probability": 0.170047272790183
+        },
+        {
+          "chain_id": 8,
+          "step": 1,
+          "text": "A",
+          "logprob": -0.15219168365001678,
+          "probability": 0.8588236425118818
+        },
+        {
+          "chain_id": 8,
+          "step": 2,
+          "text": "B",
+          "logprob": -1.7716788053512573,
+          "probability": 0.170047272790183
+        },
+        {
+          "chain_id": 9,
+          "step": 0,
+          "text": "C",
+          "logprob": -1.910568118095398,
+          "probability": 0.14799628334081655
+        },
+        {
+          "chain_id": 9,
+          "step": 1,
+          "text": "C",
+          "logprob": -1.926909327507019,
+          "probability": 0.14559749798924243
+        },
+        {
+          "chain_id": 9,
+          "step": 2,
+          "text": "A",
+          "logprob": -0.17894496023654938,
+          "probability": 0.8361519197344206
+        }
+      ],
+      "decision_process": {
+        "num_chains": 10,
+        "chain_length": 3,
+        "total_inferences": 30,
+        "mi_method": "listing",
+        "mi_nats": 0.28234179716718305,
+        "mi_bits": 0.4073331106087726,
+        "selected_answer": "A",
+        "matched_choice": "A",
+        "confidence_computation": "1/(1 + mi_nats) = 1/(1 + 0.2823) = 0.7798",
+        "agreement": "70.00% (7/10 chains agree on final answer)"
+      },
+      "final_metrics": {
+        "predicted": "A",
+        "correct": false,
+        "confidence": 0.7798232906461418,
+        "mi_score": 0.4073331106087726,
+        "agreement": 0.7
+      }
+    }
+  }
+}

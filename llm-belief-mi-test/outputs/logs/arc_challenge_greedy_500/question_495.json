@@ -1,0 +1,51 @@
+{
+  "question_id": 495,
+  "question_text": "Which land feature is most likely the result of a glacier?",
+  "choices": [
+    "A: large, arid desert",
+    "B: deep, bowl-shaped lake",
+    "C: long crack in the ground",
+    "D: volcanic mountain range"
+  ],
+  "gold_answer": "B",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Which land feature is most likely the result of a glacier?\n\n\nChoices:\nA) large, arid desert\nB) deep, bowl-shaped lake\nC) long crack in the ground\nD) volcanic mountain range\n\nProvide an answer to the following question:\n\nQ: Which land feature is most likely the result of a glacier?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "B",
+          "logprob": -0.07050832326058298,
+          "probability": 0.93191998288066
+        }
+      ],
+      "decision_process": {
+        "selected_text": "B",
+        "matched_choice": "B",
+        "confidence_computation": "exp(logprob) = exp(-0.0705) = 0.9319"
+      },
+      "final_metrics": {
+        "predicted": "B",
+        "correct": true,
+        "confidence": 0.93191998288066,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

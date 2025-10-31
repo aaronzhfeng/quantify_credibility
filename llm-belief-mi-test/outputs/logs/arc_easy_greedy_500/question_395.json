@@ -1,0 +1,51 @@
+{
+  "question_id": 395,
+  "question_text": "Which action results in a chemical change?",
+  "choices": [
+    "A: apples being cut into slices",
+    "B: wood burning in a fireplace",
+    "C: wet clothes drying on a clothesline",
+    "D: snow being shoveled off of a sidewalk"
+  ],
+  "gold_answer": "B",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Which action results in a chemical change?\n\n\nChoices:\nA) apples being cut into slices\nB) wood burning in a fireplace\nC) wet clothes drying on a clothesline\nD) snow being shoveled off of a sidewalk\n\nProvide an answer to the following question:\n\nQ: Which action results in a chemical change?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "B",
+          "logprob": -0.12898700384539552,
+          "probability": 0.8789853889013625
+        }
+      ],
+      "decision_process": {
+        "selected_text": "B",
+        "matched_choice": "B",
+        "confidence_computation": "exp(logprob) = exp(-0.1290) = 0.8790"
+      },
+      "final_metrics": {
+        "predicted": "B",
+        "correct": true,
+        "confidence": 0.8789853889013625,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

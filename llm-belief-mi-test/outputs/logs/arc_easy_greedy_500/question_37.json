@@ -1,0 +1,51 @@
+{
+  "question_id": 37,
+  "question_text": "New research uncovers information that proves that the data from an old theory is partially incorrect. What should the scientific community do about the old theory?",
+  "choices": [
+    "A: remove the old theory from historical records",
+    "B: change the research notes in the original theory",
+    "C: use the new information to update the old theory",
+    "D: ban the public from discussing the old theory"
+  ],
+  "gold_answer": "C",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: New research uncovers information that proves that the data from an old theory is partially incorrect. What should the scientific community do about the old theory?\n\n\nChoices:\nA) remove the old theory from historical records\nB) change the research notes in the original theory\nC) use the new information to update the old theory\nD) ban the public from discussing the old theory\n\nProvide an answer to the following question:\n\nQ: New research uncovers information that proves that the data from an old theory is partially incorrect. What should the scientific community do about the old theory?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "C",
+          "logprob": -0.02000400167889893,
+          "probability": 0.9801947508742558
+        }
+      ],
+      "decision_process": {
+        "selected_text": "C",
+        "matched_choice": "C",
+        "confidence_computation": "exp(logprob) = exp(-0.0200) = 0.9802"
+      },
+      "final_metrics": {
+        "predicted": "C",
+        "correct": true,
+        "confidence": 0.9801947508742558,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

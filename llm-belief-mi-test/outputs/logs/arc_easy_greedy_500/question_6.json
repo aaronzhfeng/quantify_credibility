@@ -1,0 +1,51 @@
+{
+  "question_id": 6,
+  "question_text": "A student has just completed a laboratory activity. What is the last action that the student should perform before leaving the lab area?",
+  "choices": [
+    "A: wash hands",
+    "B: turn off all equipment",
+    "C: put away all glassware",
+    "D: wash instruments and table tops"
+  ],
+  "gold_answer": "A",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A student has just completed a laboratory activity. What is the last action that the student should perform before leaving the lab area?\n\n\nChoices:\nA) wash hands\nB) turn off all equipment\nC) put away all glassware\nD) wash instruments and table tops\n\nProvide an answer to the following question:\n\nQ: A student has just completed a laboratory activity. What is the last action that the student should perform before leaving the lab area?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "B",
+          "logprob": -0.0835243396286387,
+          "probability": 0.9198686971362764
+        }
+      ],
+      "decision_process": {
+        "selected_text": "B",
+        "matched_choice": "B",
+        "confidence_computation": "exp(logprob) = exp(-0.0835) = 0.9199"
+      },
+      "final_metrics": {
+        "predicted": "B",
+        "correct": false,
+        "confidence": 0.9198686971362764,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

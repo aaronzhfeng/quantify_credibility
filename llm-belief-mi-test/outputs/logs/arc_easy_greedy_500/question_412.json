@@ -1,0 +1,51 @@
+{
+  "question_id": 412,
+  "question_text": "Which investigation might be used to demonstrate potential energy?",
+  "choices": [
+    "A: Roll one ball toward another, and see what happens when they collide.",
+    "B: Place a glass of water in the freezer, and see how long the water takes to become solid.",
+    "C: Compress a spring by different amounts, and see how far it can launch a ball into the air.",
+    "D: Roll a ball from the top of an inclined plane and determine the amount of time it takes to get to the bottom."
+  ],
+  "gold_answer": "C",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Which investigation might be used to demonstrate potential energy?\n\n\nChoices:\nA) Roll one ball toward another, and see what happens when they collide.\nB) Place a glass of water in the freezer, and see how long the water takes to become solid.\nC) Compress a spring by different amounts, and see how far it can launch a ball into the air.\nD) Roll a ball from the top of an inclined plane and determine the amount of time it takes to get to the bottom.\n\nProvide an answer to the following question:\n\nQ: Which investigation might be used to demonstrate potential energy?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "C",
+          "logprob": -0.2358975789975375,
+          "probability": 0.7898615682037179
+        }
+      ],
+      "decision_process": {
+        "selected_text": "C",
+        "matched_choice": "C",
+        "confidence_computation": "exp(logprob) = exp(-0.2359) = 0.7899"
+      },
+      "final_metrics": {
+        "predicted": "C",
+        "correct": true,
+        "confidence": 0.7898615682037179,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

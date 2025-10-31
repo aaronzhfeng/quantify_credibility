@@ -1,0 +1,729 @@
+{
+  "question_id": 56,
+  "question_text": "A rabbit may enjoy",
+  "choices": [
+    "A: meat",
+    "B: compost",
+    "C: peas",
+    "D: pebbles"
+  ],
+  "gold_answer": "C",
+  "methods": {
+    "mi_method": {
+      "description": "k=10 chains of length n=3, MI estimation",
+      "raw_inputs": [
+        {
+          "chain_id": 0,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A rabbit may enjoy\n\n\nChoices:\nA) meat\nB) compost\nC) peas\nD) pebbles\n\nProvide an answer to the following question:\n\nQ: A rabbit may enjoy\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 0,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A rabbit may enjoy\n\n\nOne answer to question Q is C) peas.\n\n\nChoices:\nA) meat\nB) compost\nC) peas\nD) pebbles\n\nProvide an answer to the following question:\n\nQ: A rabbit may enjoy\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 0,
+          "step": 2,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A rabbit may enjoy\n\n\nOne answer to question Q is C) peas. Another answer to question Q is C) peas.\n\n\nChoices:\nA) meat\nB) compost\nC) peas\nD) pebbles\n\nProvide an answer to the following question:\n\nQ: A rabbit may enjoy\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 1,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A rabbit may enjoy\n\n\nChoices:\nA) meat\nB) compost\nC) peas\nD) pebbles\n\nProvide an answer to the following question:\n\nQ: A rabbit may enjoy\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 1,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A rabbit may enjoy\n\n\nOne answer to question Q is C) peas.\n\n\nChoices:\nA) meat\nB) compost\nC) peas\nD) pebbles\n\nProvide an answer to the following question:\n\nQ: A rabbit may enjoy\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 1,
+          "step": 2,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A rabbit may enjoy\n\n\nOne answer to question Q is C) peas. Another answer to question Q is C) peas.\n\n\nChoices:\nA) meat\nB) compost\nC) peas\nD) pebbles\n\nProvide an answer to the following question:\n\nQ: A rabbit may enjoy\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 2,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A rabbit may enjoy\n\n\nChoices:\nA) meat\nB) compost\nC) peas\nD) pebbles\n\nProvide an answer to the following question:\n\nQ: A rabbit may enjoy\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 2,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A rabbit may enjoy\n\n\nOne answer to question Q is A) meat.\n\n\nChoices:\nA) meat\nB) compost\nC) peas\nD) pebbles\n\nProvide an answer to the following question:\n\nQ: A rabbit may enjoy\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 2,
+          "step": 2,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A rabbit may enjoy\n\n\nOne answer to question Q is A) meat. Another answer to question Q is A) meat.\n\n\nChoices:\nA) meat\nB) compost\nC) peas\nD) pebbles\n\nProvide an answer to the following question:\n\nQ: A rabbit may enjoy\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 3,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A rabbit may enjoy\n\n\nChoices:\nA) meat\nB) compost\nC) peas\nD) pebbles\n\nProvide an answer to the following question:\n\nQ: A rabbit may enjoy\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 3,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A rabbit may enjoy\n\n\nOne answer to question Q is C) peas.\n\n\nChoices:\nA) meat\nB) compost\nC) peas\nD) pebbles\n\nProvide an answer to the following question:\n\nQ: A rabbit may enjoy\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 3,
+          "step": 2,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A rabbit may enjoy\n\n\nOne answer to question Q is C) peas. Another answer to question Q is A) meat.\n\n\nChoices:\nA) meat\nB) compost\nC) peas\nD) pebbles\n\nProvide an answer to the following question:\n\nQ: A rabbit may enjoy\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 4,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A rabbit may enjoy\n\n\nChoices:\nA) meat\nB) compost\nC) peas\nD) pebbles\n\nProvide an answer to the following question:\n\nQ: A rabbit may enjoy\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 4,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A rabbit may enjoy\n\n\nOne answer to question Q is C) peas.\n\n\nChoices:\nA) meat\nB) compost\nC) peas\nD) pebbles\n\nProvide an answer to the following question:\n\nQ: A rabbit may enjoy\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 4,
+          "step": 2,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A rabbit may enjoy\n\n\nOne answer to question Q is C) peas. Another answer to question Q is C) peas.\n\n\nChoices:\nA) meat\nB) compost\nC) peas\nD) pebbles\n\nProvide an answer to the following question:\n\nQ: A rabbit may enjoy\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 5,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A rabbit may enjoy\n\n\nChoices:\nA) meat\nB) compost\nC) peas\nD) pebbles\n\nProvide an answer to the following question:\n\nQ: A rabbit may enjoy\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 5,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A rabbit may enjoy\n\n\nOne answer to question Q is C) peas.\n\n\nChoices:\nA) meat\nB) compost\nC) peas\nD) pebbles\n\nProvide an answer to the following question:\n\nQ: A rabbit may enjoy\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 5,
+          "step": 2,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A rabbit may enjoy\n\n\nOne answer to question Q is C) peas. Another answer to question Q is C) peas.\n\n\nChoices:\nA) meat\nB) compost\nC) peas\nD) pebbles\n\nProvide an answer to the following question:\n\nQ: A rabbit may enjoy\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 6,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A rabbit may enjoy\n\n\nChoices:\nA) meat\nB) compost\nC) peas\nD) pebbles\n\nProvide an answer to the following question:\n\nQ: A rabbit may enjoy\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 6,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A rabbit may enjoy\n\n\nOne answer to question Q is C) peas.\n\n\nChoices:\nA) meat\nB) compost\nC) peas\nD) pebbles\n\nProvide an answer to the following question:\n\nQ: A rabbit may enjoy\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 6,
+          "step": 2,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A rabbit may enjoy\n\n\nOne answer to question Q is C) peas. Another answer to question Q is C) peas.\n\n\nChoices:\nA) meat\nB) compost\nC) peas\nD) pebbles\n\nProvide an answer to the following question:\n\nQ: A rabbit may enjoy\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 7,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A rabbit may enjoy\n\n\nChoices:\nA) meat\nB) compost\nC) peas\nD) pebbles\n\nProvide an answer to the following question:\n\nQ: A rabbit may enjoy\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 7,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A rabbit may enjoy\n\n\nOne answer to question Q is C) peas.\n\n\nChoices:\nA) meat\nB) compost\nC) peas\nD) pebbles\n\nProvide an answer to the following question:\n\nQ: A rabbit may enjoy\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 7,
+          "step": 2,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A rabbit may enjoy\n\n\nOne answer to question Q is C) peas. Another answer to question Q is C) peas.\n\n\nChoices:\nA) meat\nB) compost\nC) peas\nD) pebbles\n\nProvide an answer to the following question:\n\nQ: A rabbit may enjoy\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 8,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A rabbit may enjoy\n\n\nChoices:\nA) meat\nB) compost\nC) peas\nD) pebbles\n\nProvide an answer to the following question:\n\nQ: A rabbit may enjoy\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 8,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A rabbit may enjoy\n\n\nOne answer to question Q is C) peas.\n\n\nChoices:\nA) meat\nB) compost\nC) peas\nD) pebbles\n\nProvide an answer to the following question:\n\nQ: A rabbit may enjoy\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 8,
+          "step": 2,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A rabbit may enjoy\n\n\nOne answer to question Q is C) peas. Another answer to question Q is C) peas.\n\n\nChoices:\nA) meat\nB) compost\nC) peas\nD) pebbles\n\nProvide an answer to the following question:\n\nQ: A rabbit may enjoy\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 9,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A rabbit may enjoy\n\n\nChoices:\nA) meat\nB) compost\nC) peas\nD) pebbles\n\nProvide an answer to the following question:\n\nQ: A rabbit may enjoy\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 9,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A rabbit may enjoy\n\n\nOne answer to question Q is C) peas.\n\n\nChoices:\nA) meat\nB) compost\nC) peas\nD) pebbles\n\nProvide an answer to the following question:\n\nQ: A rabbit may enjoy\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 9,
+          "step": 2,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A rabbit may enjoy\n\n\nOne answer to question Q is C) peas. Another answer to question Q is A) meat.\n\n\nChoices:\nA) meat\nB) compost\nC) peas\nD) pebbles\n\nProvide an answer to the following question:\n\nQ: A rabbit may enjoy\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "chain_id": 0,
+          "step": 0,
+          "text": "C",
+          "logprob": -0.13371489942073822,
+          "probability": 0.8748394462851108
+        },
+        {
+          "chain_id": 0,
+          "step": 1,
+          "text": "C",
+          "logprob": -0.2845720648765564,
+          "probability": 0.7523361364995692
+        },
+        {
+          "chain_id": 0,
+          "step": 2,
+          "text": "A",
+          "logprob": -1.009018898010254,
+          "probability": 0.36457649088593796
+        },
+        {
+          "chain_id": 1,
+          "step": 0,
+          "text": "C",
+          "logprob": -0.13371489942073822,
+          "probability": 0.8748394462851108
+        },
+        {
+          "chain_id": 1,
+          "step": 1,
+          "text": "C",
+          "logprob": -0.2845720648765564,
+          "probability": 0.7523361364995692
+        },
+        {
+          "chain_id": 1,
+          "step": 2,
+          "text": "C",
+          "logprob": -0.4534635841846466,
+          "probability": 0.6354234930544035
+        },
+        {
+          "chain_id": 2,
+          "step": 0,
+          "text": "A",
+          "logprob": -2.078157663345337,
+          "probability": 0.12516058785738915
+        },
+        {
+          "chain_id": 2,
+          "step": 1,
+          "text": "A",
+          "logprob": 0.0,
+          "probability": 0.5
+        },
+        {
+          "chain_id": 2,
+          "step": 2,
+          "text": "A",
+          "logprob": 0.0,
+          "probability": 0.5
+        },
+        {
+          "chain_id": 3,
+          "step": 0,
+          "text": "C",
+          "logprob": -0.13371489942073822,
+          "probability": 0.8748394462851108
+        },
+        {
+          "chain_id": 3,
+          "step": 1,
+          "text": "A",
+          "logprob": -1.3956828117370605,
+          "probability": 0.24766387082184832
+        },
+        {
+          "chain_id": 3,
+          "step": 2,
+          "text": "A",
+          "logprob": -0.4050334692001343,
+          "probability": 0.6669544880516722
+        },
+        {
+          "chain_id": 4,
+          "step": 0,
+          "text": "C",
+          "logprob": -0.13371489942073822,
+          "probability": 0.8748394462851108
+        },
+        {
+          "chain_id": 4,
+          "step": 1,
+          "text": "C",
+          "logprob": -0.2845720648765564,
+          "probability": 0.7523361364995692
+        },
+        {
+          "chain_id": 4,
+          "step": 2,
+          "text": "C",
+          "logprob": -0.4534635841846466,
+          "probability": 0.6354234930544035
+        },
+        {
+          "chain_id": 5,
+          "step": 0,
+          "text": "C",
+          "logprob": -0.13371489942073822,
+          "probability": 0.8748394462851108
+        },
+        {
+          "chain_id": 5,
+          "step": 1,
+          "text": "C",
+          "logprob": -0.2845720648765564,
+          "probability": 0.7523361364995692
+        },
+        {
+          "chain_id": 5,
+          "step": 2,
+          "text": "A",
+          "logprob": -1.009018898010254,
+          "probability": 0.36457649088593796
+        },
+        {
+          "chain_id": 6,
+          "step": 0,
+          "text": "C",
+          "logprob": -0.13371489942073822,
+          "probability": 0.8748394462851108
+        },
+        {
+          "chain_id": 6,
+          "step": 1,
+          "text": "C",
+          "logprob": -0.2845720648765564,
+          "probability": 0.7523361364995692
+        },
+        {
+          "chain_id": 6,
+          "step": 2,
+          "text": "C",
+          "logprob": -0.4534635841846466,
+          "probability": 0.6354234930544035
+        },
+        {
+          "chain_id": 7,
+          "step": 0,
+          "text": "C",
+          "logprob": -0.13371489942073822,
+          "probability": 0.8748394462851108
+        },
+        {
+          "chain_id": 7,
+          "step": 1,
+          "text": "C",
+          "logprob": -0.2845720648765564,
+          "probability": 0.7523361364995692
+        },
+        {
+          "chain_id": 7,
+          "step": 2,
+          "text": "A",
+          "logprob": -1.009018898010254,
+          "probability": 0.36457649088593796
+        },
+        {
+          "chain_id": 8,
+          "step": 0,
+          "text": "C",
+          "logprob": -0.13371489942073822,
+          "probability": 0.8748394462851108
+        },
+        {
+          "chain_id": 8,
+          "step": 1,
+          "text": "C",
+          "logprob": -0.2845720648765564,
+          "probability": 0.7523361364995692
+        },
+        {
+          "chain_id": 8,
+          "step": 2,
+          "text": "A",
+          "logprob": -1.009018898010254,
+          "probability": 0.36457649088593796
+        },
+        {
+          "chain_id": 9,
+          "step": 0,
+          "text": "C",
+          "logprob": -0.13371489942073822,
+          "probability": 0.8748394462851108
+        },
+        {
+          "chain_id": 9,
+          "step": 1,
+          "text": "A",
+          "logprob": -1.3956828117370605,
+          "probability": 0.24766387082184832
+        },
+        {
+          "chain_id": 9,
+          "step": 2,
+          "text": "A",
+          "logprob": -0.4050334692001343,
+          "probability": 0.6669544880516722
+        }
+      ],
+      "decision_process": {
+        "num_chains": 10,
+        "chain_length": 3,
+        "total_inferences": 30,
+        "mi_method": "listing",
+        "mi_nats": 0.1237107249328325,
+        "mi_bits": 0.17847684936537608,
+        "selected_answer": "A",
+        "matched_choice": "A",
+        "confidence_computation": "1/(1 + mi_nats) = 1/(1 + 0.1237) = 0.8899",
+        "agreement": "70.00% (7/10 chains agree on final answer)"
+      },
+      "final_metrics": {
+        "predicted": "A",
+        "correct": false,
+        "confidence": 0.8899087441385531,
+        "mi_score": 0.17847684936537608,
+        "agreement": 0.7
+      }
+    }
+  }
+}

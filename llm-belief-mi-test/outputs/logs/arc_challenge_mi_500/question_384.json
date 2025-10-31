@@ -1,0 +1,499 @@
+{
+  "question_id": 384,
+  "question_text": "Which is a statement about weather?",
+  "choices": [
+    "A: The average annual rainfall is 51cm.",
+    "B: The average high temperature in springtime is 22°C.",
+    "C: The average temperature Monday was 17°C.",
+    "D: The average number of sunny days per year is 285."
+  ],
+  "gold_answer": "C",
+  "methods": {
+    "mi_method": {
+      "description": "k=10 chains of length n=2, MI estimation",
+      "raw_inputs": [
+        {
+          "chain_id": 0,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Which is a statement about weather?\n\n\nChoices:\nA) The average annual rainfall is 51cm.\nB) The average high temperature in springtime is 22°C.\nC) The average temperature Monday was 17°C.\nD) The average number of sunny days per year is 285.\n\nProvide an answer to the following question:\n\nQ: Which is a statement about weather?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 0,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Which is a statement about weather?\n\n\nOne answer to question Q is A) The average annual rainfall is 51cm..\n\n\nChoices:\nA) The average annual rainfall is 51cm.\nB) The average high temperature in springtime is 22°C.\nC) The average temperature Monday was 17°C.\nD) The average number of sunny days per year is 285.\n\nProvide an answer to the following question:\n\nQ: Which is a statement about weather?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 1,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Which is a statement about weather?\n\n\nChoices:\nA) The average annual rainfall is 51cm.\nB) The average high temperature in springtime is 22°C.\nC) The average temperature Monday was 17°C.\nD) The average number of sunny days per year is 285.\n\nProvide an answer to the following question:\n\nQ: Which is a statement about weather?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 1,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Which is a statement about weather?\n\n\nOne answer to question Q is A) The average annual rainfall is 51cm..\n\n\nChoices:\nA) The average annual rainfall is 51cm.\nB) The average high temperature in springtime is 22°C.\nC) The average temperature Monday was 17°C.\nD) The average number of sunny days per year is 285.\n\nProvide an answer to the following question:\n\nQ: Which is a statement about weather?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 2,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Which is a statement about weather?\n\n\nChoices:\nA) The average annual rainfall is 51cm.\nB) The average high temperature in springtime is 22°C.\nC) The average temperature Monday was 17°C.\nD) The average number of sunny days per year is 285.\n\nProvide an answer to the following question:\n\nQ: Which is a statement about weather?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 2,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Which is a statement about weather?\n\n\nOne answer to question Q is B) The average high temperature in springtime is 22°C..\n\n\nChoices:\nA) The average annual rainfall is 51cm.\nB) The average high temperature in springtime is 22°C.\nC) The average temperature Monday was 17°C.\nD) The average number of sunny days per year is 285.\n\nProvide an answer to the following question:\n\nQ: Which is a statement about weather?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 3,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Which is a statement about weather?\n\n\nChoices:\nA) The average annual rainfall is 51cm.\nB) The average high temperature in springtime is 22°C.\nC) The average temperature Monday was 17°C.\nD) The average number of sunny days per year is 285.\n\nProvide an answer to the following question:\n\nQ: Which is a statement about weather?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 3,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Which is a statement about weather?\n\n\nOne answer to question Q is A) The average annual rainfall is 51cm..\n\n\nChoices:\nA) The average annual rainfall is 51cm.\nB) The average high temperature in springtime is 22°C.\nC) The average temperature Monday was 17°C.\nD) The average number of sunny days per year is 285.\n\nProvide an answer to the following question:\n\nQ: Which is a statement about weather?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 4,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Which is a statement about weather?\n\n\nChoices:\nA) The average annual rainfall is 51cm.\nB) The average high temperature in springtime is 22°C.\nC) The average temperature Monday was 17°C.\nD) The average number of sunny days per year is 285.\n\nProvide an answer to the following question:\n\nQ: Which is a statement about weather?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 4,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Which is a statement about weather?\n\n\nOne answer to question Q is A) The average annual rainfall is 51cm..\n\n\nChoices:\nA) The average annual rainfall is 51cm.\nB) The average high temperature in springtime is 22°C.\nC) The average temperature Monday was 17°C.\nD) The average number of sunny days per year is 285.\n\nProvide an answer to the following question:\n\nQ: Which is a statement about weather?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 5,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Which is a statement about weather?\n\n\nChoices:\nA) The average annual rainfall is 51cm.\nB) The average high temperature in springtime is 22°C.\nC) The average temperature Monday was 17°C.\nD) The average number of sunny days per year is 285.\n\nProvide an answer to the following question:\n\nQ: Which is a statement about weather?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 5,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Which is a statement about weather?\n\n\nOne answer to question Q is A) The average annual rainfall is 51cm..\n\n\nChoices:\nA) The average annual rainfall is 51cm.\nB) The average high temperature in springtime is 22°C.\nC) The average temperature Monday was 17°C.\nD) The average number of sunny days per year is 285.\n\nProvide an answer to the following question:\n\nQ: Which is a statement about weather?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 6,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Which is a statement about weather?\n\n\nChoices:\nA) The average annual rainfall is 51cm.\nB) The average high temperature in springtime is 22°C.\nC) The average temperature Monday was 17°C.\nD) The average number of sunny days per year is 285.\n\nProvide an answer to the following question:\n\nQ: Which is a statement about weather?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 6,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Which is a statement about weather?\n\n\nOne answer to question Q is D) The average number of sunny days per year is 285..\n\n\nChoices:\nA) The average annual rainfall is 51cm.\nB) The average high temperature in springtime is 22°C.\nC) The average temperature Monday was 17°C.\nD) The average number of sunny days per year is 285.\n\nProvide an answer to the following question:\n\nQ: Which is a statement about weather?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 7,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Which is a statement about weather?\n\n\nChoices:\nA) The average annual rainfall is 51cm.\nB) The average high temperature in springtime is 22°C.\nC) The average temperature Monday was 17°C.\nD) The average number of sunny days per year is 285.\n\nProvide an answer to the following question:\n\nQ: Which is a statement about weather?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 7,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Which is a statement about weather?\n\n\nOne answer to question Q is A) The average annual rainfall is 51cm..\n\n\nChoices:\nA) The average annual rainfall is 51cm.\nB) The average high temperature in springtime is 22°C.\nC) The average temperature Monday was 17°C.\nD) The average number of sunny days per year is 285.\n\nProvide an answer to the following question:\n\nQ: Which is a statement about weather?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 8,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Which is a statement about weather?\n\n\nChoices:\nA) The average annual rainfall is 51cm.\nB) The average high temperature in springtime is 22°C.\nC) The average temperature Monday was 17°C.\nD) The average number of sunny days per year is 285.\n\nProvide an answer to the following question:\n\nQ: Which is a statement about weather?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 8,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Which is a statement about weather?\n\n\nOne answer to question Q is D) The average number of sunny days per year is 285..\n\n\nChoices:\nA) The average annual rainfall is 51cm.\nB) The average high temperature in springtime is 22°C.\nC) The average temperature Monday was 17°C.\nD) The average number of sunny days per year is 285.\n\nProvide an answer to the following question:\n\nQ: Which is a statement about weather?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 9,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Which is a statement about weather?\n\n\nChoices:\nA) The average annual rainfall is 51cm.\nB) The average high temperature in springtime is 22°C.\nC) The average temperature Monday was 17°C.\nD) The average number of sunny days per year is 285.\n\nProvide an answer to the following question:\n\nQ: Which is a statement about weather?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 9,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Which is a statement about weather?\n\n\nOne answer to question Q is A) The average annual rainfall is 51cm..\n\n\nChoices:\nA) The average annual rainfall is 51cm.\nB) The average high temperature in springtime is 22°C.\nC) The average temperature Monday was 17°C.\nD) The average number of sunny days per year is 285.\n\nProvide an answer to the following question:\n\nQ: Which is a statement about weather?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "chain_id": 0,
+          "step": 0,
+          "text": "A",
+          "logprob": -0.5349913835525513,
+          "probability": 0.5856743365551957
+        },
+        {
+          "chain_id": 0,
+          "step": 1,
+          "text": "A",
+          "logprob": 0.0,
+          "probability": 0.5
+        },
+        {
+          "chain_id": 1,
+          "step": 0,
+          "text": "A",
+          "logprob": -0.5349913835525513,
+          "probability": 0.5856743365551957
+        },
+        {
+          "chain_id": 1,
+          "step": 1,
+          "text": "A",
+          "logprob": 0.0,
+          "probability": 0.5
+        },
+        {
+          "chain_id": 2,
+          "step": 0,
+          "text": "B",
+          "logprob": -1.5072165727615356,
+          "probability": 0.22152572135020426
+        },
+        {
+          "chain_id": 2,
+          "step": 1,
+          "text": "B",
+          "logprob": -0.9230274558067322,
+          "probability": 0.3973143667687347
+        },
+        {
+          "chain_id": 3,
+          "step": 0,
+          "text": "A",
+          "logprob": -0.5349913835525513,
+          "probability": 0.5856743365551957
+        },
+        {
+          "chain_id": 3,
+          "step": 1,
+          "text": "A",
+          "logprob": 0.0,
+          "probability": 0.5
+        },
+        {
+          "chain_id": 4,
+          "step": 0,
+          "text": "A",
+          "logprob": -0.5349913835525513,
+          "probability": 0.5856743365551957
+        },
+        {
+          "chain_id": 4,
+          "step": 1,
+          "text": "A",
+          "logprob": 0.0,
+          "probability": 0.5
+        },
+        {
+          "chain_id": 5,
+          "step": 0,
+          "text": "A",
+          "logprob": -0.5349913835525513,
+          "probability": 0.5856743365551957
+        },
+        {
+          "chain_id": 5,
+          "step": 1,
+          "text": "A",
+          "logprob": 0.0,
+          "probability": 0.5
+        },
+        {
+          "chain_id": 6,
+          "step": 0,
+          "text": "D",
+          "logprob": -1.6461020708084106,
+          "probability": 0.19279996645227873
+        },
+        {
+          "chain_id": 6,
+          "step": 1,
+          "text": "A",
+          "logprob": -0.7650011777877808,
+          "probability": 0.46533338291001825
+        },
+        {
+          "chain_id": 7,
+          "step": 0,
+          "text": "A",
+          "logprob": -0.5349913835525513,
+          "probability": 0.5856743365551957
+        },
+        {
+          "chain_id": 7,
+          "step": 1,
+          "text": "A",
+          "logprob": 0.0,
+          "probability": 0.5
+        },
+        {
+          "chain_id": 8,
+          "step": 0,
+          "text": "D",
+          "logprob": -1.6461020708084106,
+          "probability": 0.19279996645227873
+        },
+        {
+          "chain_id": 8,
+          "step": 1,
+          "text": "D",
+          "logprob": -0.6261118650436401,
+          "probability": 0.5346666207816538
+        },
+        {
+          "chain_id": 9,
+          "step": 0,
+          "text": "A",
+          "logprob": -0.5349913835525513,
+          "probability": 0.5856743365551957
+        },
+        {
+          "chain_id": 9,
+          "step": 1,
+          "text": "A",
+          "logprob": 0.0,
+          "probability": 0.5
+        }
+      ],
+      "decision_process": {
+        "num_chains": 10,
+        "chain_length": 2,
+        "total_inferences": 20,
+        "mi_method": "listing",
+        "mi_nats": 0.21929016085863126,
+        "mi_bits": 0.3163688275864904,
+        "selected_answer": "A",
+        "matched_choice": "A",
+        "confidence_computation": "1/(1 + mi_nats) = 1/(1 + 0.2193) = 0.8201",
+        "agreement": "80.00% (8/10 chains agree on final answer)"
+      },
+      "final_metrics": {
+        "predicted": "A",
+        "correct": false,
+        "confidence": 0.8201493230256153,
+        "mi_score": 0.3163688275864904,
+        "agreement": 0.8
+      }
+    }
+  }
+}

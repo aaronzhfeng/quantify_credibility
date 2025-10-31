@@ -1,0 +1,51 @@
+{
+  "question_id": 325,
+  "question_text": "Animals can affect their habitats through activities of finding food and raising their young. Sometimes these activities have a positive effect on the habitat of other organisms. Which is the best example of an activity that has a positive effect?",
+  "choices": [
+    "A: elephants stripping bark from trees",
+    "B: viruses infecting the cells of certain birds",
+    "C: beavers constructing dams to make ponds for lodges",
+    "D: semi-aquatic rodents feeding on the roots of aquatic plants"
+  ],
+  "gold_answer": "C",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Animals can affect their habitats through activities of finding food and raising their young. Sometimes these activities have a positive effect on the habitat of other organisms. Which is the best example of an activity that has a positive effect?\n\n\nChoices:\nA) elephants stripping bark from trees\nB) viruses infecting the cells of certain birds\nC) beavers constructing dams to make ponds for lodges\nD) semi-aquatic rodents feeding on the roots of aquatic plants\n\nProvide an answer to the following question:\n\nQ: Animals can affect their habitats through activities of finding food and raising their young. Sometimes these activities have a positive effect on the habitat of other organisms. Which is the best example of an activity that has a positive effect?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "C",
+          "logprob": -0.10984919564361917,
+          "probability": 0.895969241173747
+        }
+      ],
+      "decision_process": {
+        "selected_text": "C",
+        "matched_choice": "C",
+        "confidence_computation": "exp(logprob) = exp(-0.1098) = 0.8960"
+      },
+      "final_metrics": {
+        "predicted": "C",
+        "correct": true,
+        "confidence": 0.895969241173747,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

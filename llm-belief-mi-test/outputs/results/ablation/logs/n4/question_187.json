@@ -1,0 +1,959 @@
+{
+  "question_id": 187,
+  "question_text": "As a drought worsens the level at an aquifer will",
+  "choices": [
+    "A: stay the same",
+    "B: fluctuate wildly",
+    "C: decrease",
+    "D: increase"
+  ],
+  "gold_answer": "C",
+  "methods": {
+    "mi_method": {
+      "description": "k=10 chains of length n=4, MI estimation",
+      "raw_inputs": [
+        {
+          "chain_id": 0,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: As a drought worsens the level at an aquifer will\n\n\nChoices:\nA) stay the same\nB) fluctuate wildly\nC) decrease\nD) increase\n\nProvide an answer to the following question:\n\nQ: As a drought worsens the level at an aquifer will\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 0,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: As a drought worsens the level at an aquifer will\n\n\nOne answer to question Q is C) decrease.\n\n\nChoices:\nA) stay the same\nB) fluctuate wildly\nC) decrease\nD) increase\n\nProvide an answer to the following question:\n\nQ: As a drought worsens the level at an aquifer will\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 0,
+          "step": 2,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: As a drought worsens the level at an aquifer will\n\n\nOne answer to question Q is C) decrease. Another answer to question Q is C) decrease.\n\n\nChoices:\nA) stay the same\nB) fluctuate wildly\nC) decrease\nD) increase\n\nProvide an answer to the following question:\n\nQ: As a drought worsens the level at an aquifer will\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 0,
+          "step": 3,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: As a drought worsens the level at an aquifer will\n\n\nOne answer to question Q is C) decrease. Another answer to question Q is C) decrease. Another answer to question Q is A) stay the same.\n\n\nChoices:\nA) stay the same\nB) fluctuate wildly\nC) decrease\nD) increase\n\nProvide an answer to the following question:\n\nQ: As a drought worsens the level at an aquifer will\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 1,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: As a drought worsens the level at an aquifer will\n\n\nChoices:\nA) stay the same\nB) fluctuate wildly\nC) decrease\nD) increase\n\nProvide an answer to the following question:\n\nQ: As a drought worsens the level at an aquifer will\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 1,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: As a drought worsens the level at an aquifer will\n\n\nOne answer to question Q is C) decrease.\n\n\nChoices:\nA) stay the same\nB) fluctuate wildly\nC) decrease\nD) increase\n\nProvide an answer to the following question:\n\nQ: As a drought worsens the level at an aquifer will\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 1,
+          "step": 2,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: As a drought worsens the level at an aquifer will\n\n\nOne answer to question Q is C) decrease. Another answer to question Q is C) decrease.\n\n\nChoices:\nA) stay the same\nB) fluctuate wildly\nC) decrease\nD) increase\n\nProvide an answer to the following question:\n\nQ: As a drought worsens the level at an aquifer will\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 1,
+          "step": 3,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: As a drought worsens the level at an aquifer will\n\n\nOne answer to question Q is C) decrease. Another answer to question Q is C) decrease. Another answer to question Q is A) stay the same.\n\n\nChoices:\nA) stay the same\nB) fluctuate wildly\nC) decrease\nD) increase\n\nProvide an answer to the following question:\n\nQ: As a drought worsens the level at an aquifer will\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 2,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: As a drought worsens the level at an aquifer will\n\n\nChoices:\nA) stay the same\nB) fluctuate wildly\nC) decrease\nD) increase\n\nProvide an answer to the following question:\n\nQ: As a drought worsens the level at an aquifer will\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 2,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: As a drought worsens the level at an aquifer will\n\n\nOne answer to question Q is C) decrease.\n\n\nChoices:\nA) stay the same\nB) fluctuate wildly\nC) decrease\nD) increase\n\nProvide an answer to the following question:\n\nQ: As a drought worsens the level at an aquifer will\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 2,
+          "step": 2,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: As a drought worsens the level at an aquifer will\n\n\nOne answer to question Q is C) decrease. Another answer to question Q is C) decrease.\n\n\nChoices:\nA) stay the same\nB) fluctuate wildly\nC) decrease\nD) increase\n\nProvide an answer to the following question:\n\nQ: As a drought worsens the level at an aquifer will\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 2,
+          "step": 3,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: As a drought worsens the level at an aquifer will\n\n\nOne answer to question Q is C) decrease. Another answer to question Q is C) decrease. Another answer to question Q is C) decrease.\n\n\nChoices:\nA) stay the same\nB) fluctuate wildly\nC) decrease\nD) increase\n\nProvide an answer to the following question:\n\nQ: As a drought worsens the level at an aquifer will\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 3,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: As a drought worsens the level at an aquifer will\n\n\nChoices:\nA) stay the same\nB) fluctuate wildly\nC) decrease\nD) increase\n\nProvide an answer to the following question:\n\nQ: As a drought worsens the level at an aquifer will\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 3,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: As a drought worsens the level at an aquifer will\n\n\nOne answer to question Q is C) decrease.\n\n\nChoices:\nA) stay the same\nB) fluctuate wildly\nC) decrease\nD) increase\n\nProvide an answer to the following question:\n\nQ: As a drought worsens the level at an aquifer will\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 3,
+          "step": 2,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: As a drought worsens the level at an aquifer will\n\n\nOne answer to question Q is C) decrease. Another answer to question Q is C) decrease.\n\n\nChoices:\nA) stay the same\nB) fluctuate wildly\nC) decrease\nD) increase\n\nProvide an answer to the following question:\n\nQ: As a drought worsens the level at an aquifer will\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 3,
+          "step": 3,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: As a drought worsens the level at an aquifer will\n\n\nOne answer to question Q is C) decrease. Another answer to question Q is C) decrease. Another answer to question Q is C) decrease.\n\n\nChoices:\nA) stay the same\nB) fluctuate wildly\nC) decrease\nD) increase\n\nProvide an answer to the following question:\n\nQ: As a drought worsens the level at an aquifer will\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 4,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: As a drought worsens the level at an aquifer will\n\n\nChoices:\nA) stay the same\nB) fluctuate wildly\nC) decrease\nD) increase\n\nProvide an answer to the following question:\n\nQ: As a drought worsens the level at an aquifer will\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 4,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: As a drought worsens the level at an aquifer will\n\n\nOne answer to question Q is C) decrease.\n\n\nChoices:\nA) stay the same\nB) fluctuate wildly\nC) decrease\nD) increase\n\nProvide an answer to the following question:\n\nQ: As a drought worsens the level at an aquifer will\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 4,
+          "step": 2,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: As a drought worsens the level at an aquifer will\n\n\nOne answer to question Q is C) decrease. Another answer to question Q is A) stay the same.\n\n\nChoices:\nA) stay the same\nB) fluctuate wildly\nC) decrease\nD) increase\n\nProvide an answer to the following question:\n\nQ: As a drought worsens the level at an aquifer will\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 4,
+          "step": 3,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: As a drought worsens the level at an aquifer will\n\n\nOne answer to question Q is C) decrease. Another answer to question Q is A) stay the same. Another answer to question Q is A) stay the same.\n\n\nChoices:\nA) stay the same\nB) fluctuate wildly\nC) decrease\nD) increase\n\nProvide an answer to the following question:\n\nQ: As a drought worsens the level at an aquifer will\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 5,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: As a drought worsens the level at an aquifer will\n\n\nChoices:\nA) stay the same\nB) fluctuate wildly\nC) decrease\nD) increase\n\nProvide an answer to the following question:\n\nQ: As a drought worsens the level at an aquifer will\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 5,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: As a drought worsens the level at an aquifer will\n\n\nOne answer to question Q is C) decrease.\n\n\nChoices:\nA) stay the same\nB) fluctuate wildly\nC) decrease\nD) increase\n\nProvide an answer to the following question:\n\nQ: As a drought worsens the level at an aquifer will\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 5,
+          "step": 2,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: As a drought worsens the level at an aquifer will\n\n\nOne answer to question Q is C) decrease. Another answer to question Q is C) decrease.\n\n\nChoices:\nA) stay the same\nB) fluctuate wildly\nC) decrease\nD) increase\n\nProvide an answer to the following question:\n\nQ: As a drought worsens the level at an aquifer will\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 5,
+          "step": 3,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: As a drought worsens the level at an aquifer will\n\n\nOne answer to question Q is C) decrease. Another answer to question Q is C) decrease. Another answer to question Q is A) stay the same.\n\n\nChoices:\nA) stay the same\nB) fluctuate wildly\nC) decrease\nD) increase\n\nProvide an answer to the following question:\n\nQ: As a drought worsens the level at an aquifer will\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 6,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: As a drought worsens the level at an aquifer will\n\n\nChoices:\nA) stay the same\nB) fluctuate wildly\nC) decrease\nD) increase\n\nProvide an answer to the following question:\n\nQ: As a drought worsens the level at an aquifer will\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 6,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: As a drought worsens the level at an aquifer will\n\n\nOne answer to question Q is C) decrease.\n\n\nChoices:\nA) stay the same\nB) fluctuate wildly\nC) decrease\nD) increase\n\nProvide an answer to the following question:\n\nQ: As a drought worsens the level at an aquifer will\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 6,
+          "step": 2,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: As a drought worsens the level at an aquifer will\n\n\nOne answer to question Q is C) decrease. Another answer to question Q is C) decrease.\n\n\nChoices:\nA) stay the same\nB) fluctuate wildly\nC) decrease\nD) increase\n\nProvide an answer to the following question:\n\nQ: As a drought worsens the level at an aquifer will\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 6,
+          "step": 3,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: As a drought worsens the level at an aquifer will\n\n\nOne answer to question Q is C) decrease. Another answer to question Q is C) decrease. Another answer to question Q is C) decrease.\n\n\nChoices:\nA) stay the same\nB) fluctuate wildly\nC) decrease\nD) increase\n\nProvide an answer to the following question:\n\nQ: As a drought worsens the level at an aquifer will\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 7,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: As a drought worsens the level at an aquifer will\n\n\nChoices:\nA) stay the same\nB) fluctuate wildly\nC) decrease\nD) increase\n\nProvide an answer to the following question:\n\nQ: As a drought worsens the level at an aquifer will\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 7,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: As a drought worsens the level at an aquifer will\n\n\nOne answer to question Q is C) decrease.\n\n\nChoices:\nA) stay the same\nB) fluctuate wildly\nC) decrease\nD) increase\n\nProvide an answer to the following question:\n\nQ: As a drought worsens the level at an aquifer will\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 7,
+          "step": 2,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: As a drought worsens the level at an aquifer will\n\n\nOne answer to question Q is C) decrease. Another answer to question Q is C) decrease.\n\n\nChoices:\nA) stay the same\nB) fluctuate wildly\nC) decrease\nD) increase\n\nProvide an answer to the following question:\n\nQ: As a drought worsens the level at an aquifer will\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 7,
+          "step": 3,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: As a drought worsens the level at an aquifer will\n\n\nOne answer to question Q is C) decrease. Another answer to question Q is C) decrease. Another answer to question Q is C) decrease.\n\n\nChoices:\nA) stay the same\nB) fluctuate wildly\nC) decrease\nD) increase\n\nProvide an answer to the following question:\n\nQ: As a drought worsens the level at an aquifer will\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 8,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: As a drought worsens the level at an aquifer will\n\n\nChoices:\nA) stay the same\nB) fluctuate wildly\nC) decrease\nD) increase\n\nProvide an answer to the following question:\n\nQ: As a drought worsens the level at an aquifer will\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 8,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: As a drought worsens the level at an aquifer will\n\n\nOne answer to question Q is C) decrease.\n\n\nChoices:\nA) stay the same\nB) fluctuate wildly\nC) decrease\nD) increase\n\nProvide an answer to the following question:\n\nQ: As a drought worsens the level at an aquifer will\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 8,
+          "step": 2,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: As a drought worsens the level at an aquifer will\n\n\nOne answer to question Q is C) decrease. Another answer to question Q is C) decrease.\n\n\nChoices:\nA) stay the same\nB) fluctuate wildly\nC) decrease\nD) increase\n\nProvide an answer to the following question:\n\nQ: As a drought worsens the level at an aquifer will\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 8,
+          "step": 3,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: As a drought worsens the level at an aquifer will\n\n\nOne answer to question Q is C) decrease. Another answer to question Q is C) decrease. Another answer to question Q is C) decrease.\n\n\nChoices:\nA) stay the same\nB) fluctuate wildly\nC) decrease\nD) increase\n\nProvide an answer to the following question:\n\nQ: As a drought worsens the level at an aquifer will\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 9,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: As a drought worsens the level at an aquifer will\n\n\nChoices:\nA) stay the same\nB) fluctuate wildly\nC) decrease\nD) increase\n\nProvide an answer to the following question:\n\nQ: As a drought worsens the level at an aquifer will\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 9,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: As a drought worsens the level at an aquifer will\n\n\nOne answer to question Q is C) decrease.\n\n\nChoices:\nA) stay the same\nB) fluctuate wildly\nC) decrease\nD) increase\n\nProvide an answer to the following question:\n\nQ: As a drought worsens the level at an aquifer will\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 9,
+          "step": 2,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: As a drought worsens the level at an aquifer will\n\n\nOne answer to question Q is C) decrease. Another answer to question Q is C) decrease.\n\n\nChoices:\nA) stay the same\nB) fluctuate wildly\nC) decrease\nD) increase\n\nProvide an answer to the following question:\n\nQ: As a drought worsens the level at an aquifer will\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 9,
+          "step": 3,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: As a drought worsens the level at an aquifer will\n\n\nOne answer to question Q is C) decrease. Another answer to question Q is C) decrease. Another answer to question Q is C) decrease.\n\n\nChoices:\nA) stay the same\nB) fluctuate wildly\nC) decrease\nD) increase\n\nProvide an answer to the following question:\n\nQ: As a drought worsens the level at an aquifer will\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "chain_id": 0,
+          "step": 0,
+          "text": "C",
+          "logprob": 0.0,
+          "probability": 0.5
+        },
+        {
+          "chain_id": 0,
+          "step": 1,
+          "text": "C",
+          "logprob": -0.25192904472351074,
+          "probability": 0.77729988964086
+        },
+        {
+          "chain_id": 0,
+          "step": 2,
+          "text": "A",
+          "logprob": -0.7650011777877808,
+          "probability": 0.46533338291001825
+        },
+        {
+          "chain_id": 0,
+          "step": 3,
+          "text": "C",
+          "logprob": -0.7650011777877808,
+          "probability": 0.46533338291001825
+        },
+        {
+          "chain_id": 1,
+          "step": 0,
+          "text": "C",
+          "logprob": 0.0,
+          "probability": 0.5
+        },
+        {
+          "chain_id": 1,
+          "step": 1,
+          "text": "C",
+          "logprob": -0.25192904472351074,
+          "probability": 0.77729988964086
+        },
+        {
+          "chain_id": 1,
+          "step": 2,
+          "text": "A",
+          "logprob": -0.7650011777877808,
+          "probability": 0.46533338291001825
+        },
+        {
+          "chain_id": 1,
+          "step": 3,
+          "text": "C",
+          "logprob": -0.7650011777877808,
+          "probability": 0.46533338291001825
+        },
+        {
+          "chain_id": 2,
+          "step": 0,
+          "text": "C",
+          "logprob": 0.0,
+          "probability": 0.5
+        },
+        {
+          "chain_id": 2,
+          "step": 1,
+          "text": "C",
+          "logprob": -0.25192904472351074,
+          "probability": 0.77729988964086
+        },
+        {
+          "chain_id": 2,
+          "step": 2,
+          "text": "C",
+          "logprob": -0.6261118650436401,
+          "probability": 0.5346666207816538
+        },
+        {
+          "chain_id": 2,
+          "step": 3,
+          "text": "C",
+          "logprob": 0.0,
+          "probability": 0.5
+        },
+        {
+          "chain_id": 3,
+          "step": 0,
+          "text": "C",
+          "logprob": 0.0,
+          "probability": 0.5
+        },
+        {
+          "chain_id": 3,
+          "step": 1,
+          "text": "C",
+          "logprob": -0.25192904472351074,
+          "probability": 0.77729988964086
+        },
+        {
+          "chain_id": 3,
+          "step": 2,
+          "text": "C",
+          "logprob": -0.6261118650436401,
+          "probability": 0.5346666207816538
+        },
+        {
+          "chain_id": 3,
+          "step": 3,
+          "text": "C",
+          "logprob": 0.0,
+          "probability": 0.5
+        },
+        {
+          "chain_id": 4,
+          "step": 0,
+          "text": "C",
+          "logprob": 0.0,
+          "probability": 0.5
+        },
+        {
+          "chain_id": 4,
+          "step": 1,
+          "text": "A",
+          "logprob": -1.5019290447235107,
+          "probability": 0.2227001469810028
+        },
+        {
+          "chain_id": 4,
+          "step": 2,
+          "text": "A",
+          "logprob": -1.3956828117370605,
+          "probability": 0.24766387082184832
+        },
+        {
+          "chain_id": 4,
+          "step": 3,
+          "text": "C",
+          "logprob": -0.25192904472351074,
+          "probability": 0.77729988964086
+        },
+        {
+          "chain_id": 5,
+          "step": 0,
+          "text": "C",
+          "logprob": 0.0,
+          "probability": 0.5
+        },
+        {
+          "chain_id": 5,
+          "step": 1,
+          "text": "C",
+          "logprob": -0.25192904472351074,
+          "probability": 0.77729988964086
+        },
+        {
+          "chain_id": 5,
+          "step": 2,
+          "text": "A",
+          "logprob": -0.7650011777877808,
+          "probability": 0.46533338291001825
+        },
+        {
+          "chain_id": 5,
+          "step": 3,
+          "text": "C",
+          "logprob": -0.7650011777877808,
+          "probability": 0.46533338291001825
+        },
+        {
+          "chain_id": 6,
+          "step": 0,
+          "text": "C",
+          "logprob": 0.0,
+          "probability": 0.5
+        },
+        {
+          "chain_id": 6,
+          "step": 1,
+          "text": "C",
+          "logprob": -0.25192904472351074,
+          "probability": 0.77729988964086
+        },
+        {
+          "chain_id": 6,
+          "step": 2,
+          "text": "C",
+          "logprob": -0.6261118650436401,
+          "probability": 0.5346666207816538
+        },
+        {
+          "chain_id": 6,
+          "step": 3,
+          "text": "C",
+          "logprob": 0.0,
+          "probability": 0.5
+        },
+        {
+          "chain_id": 7,
+          "step": 0,
+          "text": "C",
+          "logprob": 0.0,
+          "probability": 0.5
+        },
+        {
+          "chain_id": 7,
+          "step": 1,
+          "text": "C",
+          "logprob": -0.25192904472351074,
+          "probability": 0.77729988964086
+        },
+        {
+          "chain_id": 7,
+          "step": 2,
+          "text": "C",
+          "logprob": -0.6261118650436401,
+          "probability": 0.5346666207816538
+        },
+        {
+          "chain_id": 7,
+          "step": 3,
+          "text": "C",
+          "logprob": 0.0,
+          "probability": 0.5
+        },
+        {
+          "chain_id": 8,
+          "step": 0,
+          "text": "C",
+          "logprob": 0.0,
+          "probability": 0.5
+        },
+        {
+          "chain_id": 8,
+          "step": 1,
+          "text": "C",
+          "logprob": -0.25192904472351074,
+          "probability": 0.77729988964086
+        },
+        {
+          "chain_id": 8,
+          "step": 2,
+          "text": "C",
+          "logprob": -0.6261118650436401,
+          "probability": 0.5346666207816538
+        },
+        {
+          "chain_id": 8,
+          "step": 3,
+          "text": "C",
+          "logprob": 0.0,
+          "probability": 0.5
+        },
+        {
+          "chain_id": 9,
+          "step": 0,
+          "text": "C",
+          "logprob": 0.0,
+          "probability": 0.5
+        },
+        {
+          "chain_id": 9,
+          "step": 1,
+          "text": "C",
+          "logprob": -0.25192904472351074,
+          "probability": 0.77729988964086
+        },
+        {
+          "chain_id": 9,
+          "step": 2,
+          "text": "C",
+          "logprob": -0.6261118650436401,
+          "probability": 0.5346666207816538
+        },
+        {
+          "chain_id": 9,
+          "step": 3,
+          "text": "C",
+          "logprob": 0.0,
+          "probability": 0.5
+        }
+      ],
+      "decision_process": {
+        "num_chains": 10,
+        "chain_length": 4,
+        "total_inferences": 40,
+        "mi_method": "listing",
+        "mi_nats": 0.04750620689513826,
+        "mi_bits": 0.06853696909906104,
+        "selected_answer": "C",
+        "matched_choice": "C",
+        "confidence_computation": "1/(1 + mi_nats) = 1/(1 + 0.0475) = 0.9546",
+        "agreement": "100.00% (10/10 chains agree on final answer)"
+      },
+      "final_metrics": {
+        "predicted": "C",
+        "correct": true,
+        "confidence": 0.9546482812393551,
+        "mi_score": 0.06853696909906104,
+        "agreement": 1.0
+      }
+    }
+  }
+}

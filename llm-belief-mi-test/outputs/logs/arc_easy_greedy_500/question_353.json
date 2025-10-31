@@ -1,0 +1,51 @@
+{
+  "question_id": 353,
+  "question_text": "What covers most of the Earth's surface?",
+  "choices": [
+    "A: Water",
+    "B: Bare rock",
+    "C: Farm land",
+    "D: Cities and towns"
+  ],
+  "gold_answer": "A",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: What covers most of the Earth's surface?\n\n\nChoices:\nA) Water\nB) Bare rock\nC) Farm land\nD) Cities and towns\n\nProvide an answer to the following question:\n\nQ: What covers most of the Earth's surface?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "A",
+          "logprob": -0.0020566493667502073,
+          "probability": 0.9979454640874323
+        }
+      ],
+      "decision_process": {
+        "selected_text": "A",
+        "matched_choice": "A",
+        "confidence_computation": "exp(logprob) = exp(-0.0021) = 0.9979"
+      },
+      "final_metrics": {
+        "predicted": "A",
+        "correct": true,
+        "confidence": 0.9979454640874323,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

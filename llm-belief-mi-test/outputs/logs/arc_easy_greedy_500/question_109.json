@@ -1,0 +1,51 @@
+{
+  "question_id": 109,
+  "question_text": "When potassium and bromine atoms form chemical bonds, which of these is produced?",
+  "choices": [
+    "A: an element",
+    "B: a mixture",
+    "C: a compound",
+    "D: a new form of matter"
+  ],
+  "gold_answer": "C",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: When potassium and bromine atoms form chemical bonds, which of these is produced?\n\n\nChoices:\nA) an element\nB) a mixture\nC) a compound\nD) a new form of matter\n\nProvide an answer to the following question:\n\nQ: When potassium and bromine atoms form chemical bonds, which of these is produced?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "C",
+          "logprob": -0.011953130175243132,
+          "probability": 0.9881180246952649
+        }
+      ],
+      "decision_process": {
+        "selected_text": "C",
+        "matched_choice": "C",
+        "confidence_computation": "exp(logprob) = exp(-0.0120) = 0.9881"
+      },
+      "final_metrics": {
+        "predicted": "C",
+        "correct": true,
+        "confidence": 0.9881180246952649,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

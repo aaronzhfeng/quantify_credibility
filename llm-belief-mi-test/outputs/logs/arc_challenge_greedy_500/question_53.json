@@ -1,0 +1,51 @@
+{
+  "question_id": 53,
+  "question_text": "Which example shows a relationship between a living thing and a nonliving thing?",
+  "choices": [
+    "A: An insect is food for a salmon.",
+    "B: Water carries a rock downstream.",
+    "C: A tree removes a gas from the air.",
+    "D: A flower makes food for a butterfly."
+  ],
+  "gold_answer": "C",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Which example shows a relationship between a living thing and a nonliving thing?\n\n\nChoices:\nA) An insect is food for a salmon.\nB) Water carries a rock downstream.\nC) A tree removes a gas from the air.\nD) A flower makes food for a butterfly.\n\nProvide an answer to the following question:\n\nQ: Which example shows a relationship between a living thing and a nonliving thing?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "A",
+          "logprob": -0.8592428807169199,
+          "probability": 0.4234825878052721
+        }
+      ],
+      "decision_process": {
+        "selected_text": "A",
+        "matched_choice": "A",
+        "confidence_computation": "exp(logprob) = exp(-0.8592) = 0.4235"
+      },
+      "final_metrics": {
+        "predicted": "A",
+        "correct": false,
+        "confidence": 0.4234825878052721,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

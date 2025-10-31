@@ -1,0 +1,51 @@
+{
+  "question_id": 492,
+  "question_text": "Which property makes the water cycle on Earth possible?",
+  "choices": [
+    "A: Water can change phase.",
+    "B: Water can be absorbed by plants.",
+    "C: Water is important in chemical reactions.",
+    "D: Water is the universal solvent."
+  ],
+  "gold_answer": "A",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Which property makes the water cycle on Earth possible?\n\n\nChoices:\nA) Water can change phase.\nB) Water can be absorbed by plants.\nC) Water is important in chemical reactions.\nD) Water is the universal solvent.\n\nProvide an answer to the following question:\n\nQ: Which property makes the water cycle on Earth possible?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "A",
+          "logprob": -0.0039473139913752675,
+          "probability": 0.9960604664118998
+        }
+      ],
+      "decision_process": {
+        "selected_text": "A",
+        "matched_choice": "A",
+        "confidence_computation": "exp(logprob) = exp(-0.0039) = 0.9961"
+      },
+      "final_metrics": {
+        "predicted": "A",
+        "correct": true,
+        "confidence": 0.9960604664118998,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

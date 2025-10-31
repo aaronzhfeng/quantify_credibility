@@ -1,0 +1,51 @@
+{
+  "question_id": 253,
+  "question_text": "What is a primary role of decomposers in an ecosystem?",
+  "choices": [
+    "A: They eliminate matter by taking nitrogen from the ecosystem.",
+    "B: They eliminate matter by taking phosphorus from the ecosystem.",
+    "C: They cycle matter by returning carbon and other matter to the ecosystem.",
+    "D: They cycle matter by returning oxygen and other matter to the ecosystem."
+  ],
+  "gold_answer": "C",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: What is a primary role of decomposers in an ecosystem?\n\n\nChoices:\nA) They eliminate matter by taking nitrogen from the ecosystem.\nB) They eliminate matter by taking phosphorus from the ecosystem.\nC) They cycle matter by returning carbon and other matter to the ecosystem.\nD) They cycle matter by returning oxygen and other matter to the ecosystem.\n\nProvide an answer to the following question:\n\nQ: What is a primary role of decomposers in an ecosystem?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "C",
+          "logprob": -0.025321426102891564,
+          "probability": 0.9749964723407452
+        }
+      ],
+      "decision_process": {
+        "selected_text": "C",
+        "matched_choice": "C",
+        "confidence_computation": "exp(logprob) = exp(-0.0253) = 0.9750"
+      },
+      "final_metrics": {
+        "predicted": "C",
+        "correct": true,
+        "confidence": 0.9749964723407452,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

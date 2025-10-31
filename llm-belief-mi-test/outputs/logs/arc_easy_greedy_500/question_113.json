@@ -1,0 +1,51 @@
+{
+  "question_id": 113,
+  "question_text": "Air is composed of many different substances. Which of the following components of air is a compound rather than an element?",
+  "choices": [
+    "A: Argon, Ar",
+    "B: Oxygen, O2",
+    "C: Water, H2O",
+    "D: Nitrogen, N2"
+  ],
+  "gold_answer": "C",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Air is composed of many different substances. Which of the following components of air is a compound rather than an element?\n\n\nChoices:\nA) Argon, Ar\nB) Oxygen, O2\nC) Water, H2O\nD) Nitrogen, N2\n\nProvide an answer to the following question:\n\nQ: Air is composed of many different substances. Which of the following components of air is a compound rather than an element?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "C",
+          "logprob": -0.6460538228275254,
+          "probability": 0.5241099319707028
+        }
+      ],
+      "decision_process": {
+        "selected_text": "C",
+        "matched_choice": "C",
+        "confidence_computation": "exp(logprob) = exp(-0.6461) = 0.5241"
+      },
+      "final_metrics": {
+        "predicted": "C",
+        "correct": true,
+        "confidence": 0.5241099319707028,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

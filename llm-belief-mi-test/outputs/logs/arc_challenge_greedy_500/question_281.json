@@ -1,0 +1,51 @@
+{
+  "question_id": 281,
+  "question_text": "A class tested the amount of vitamin C in fresh orange juice and calculated a different amount than the previous class that conducted the same investigation. What should most likely be done to make sure that their results are accurate?",
+  "choices": [
+    "A: try a different juice",
+    "B: analyze the recorded data",
+    "C: ask a scientist what went wrong",
+    "D: repeat the investigation two more times"
+  ],
+  "gold_answer": "D",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A class tested the amount of vitamin C in fresh orange juice and calculated a different amount than the previous class that conducted the same investigation. What should most likely be done to make sure that their results are accurate?\n\n\nChoices:\nA) try a different juice\nB) analyze the recorded data\nC) ask a scientist what went wrong\nD) repeat the investigation two more times\n\nProvide an answer to the following question:\n\nQ: A class tested the amount of vitamin C in fresh orange juice and calculated a different amount than the previous class that conducted the same investigation. What should most likely be done to make sure that their results are accurate?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "B",
+          "logprob": -0.4465087915305048,
+          "probability": 0.6398581348282135
+        }
+      ],
+      "decision_process": {
+        "selected_text": "B",
+        "matched_choice": "B",
+        "confidence_computation": "exp(logprob) = exp(-0.4465) = 0.6399"
+      },
+      "final_metrics": {
+        "predicted": "B",
+        "correct": false,
+        "confidence": 0.6398581348282135,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

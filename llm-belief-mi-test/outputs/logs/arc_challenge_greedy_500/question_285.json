@@ -1,0 +1,51 @@
+{
+  "question_id": 285,
+  "question_text": "A certain atom has 20 electrons, 21 neutrons, and 20 protons. What is the atomic mass of the atom?",
+  "choices": [
+    "A: 20",
+    "B: 21",
+    "C: 41",
+    "D: 61"
+  ],
+  "gold_answer": "C",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A certain atom has 20 electrons, 21 neutrons, and 20 protons. What is the atomic mass of the atom?\n\n\nChoices:\nA) 20\nB) 21\nC) 41\nD) 61\n\nProvide an answer to the following question:\n\nQ: A certain atom has 20 electrons, 21 neutrons, and 20 protons. What is the atomic mass of the atom?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "C",
+          "logprob": -0.5290285296505317,
+          "probability": 0.5891770597932466
+        }
+      ],
+      "decision_process": {
+        "selected_text": "C",
+        "matched_choice": "C",
+        "confidence_computation": "exp(logprob) = exp(-0.5290) = 0.5892"
+      },
+      "final_metrics": {
+        "predicted": "C",
+        "correct": true,
+        "confidence": 0.5891770597932466,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

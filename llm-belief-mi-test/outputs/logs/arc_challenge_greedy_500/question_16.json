@@ -1,0 +1,51 @@
+{
+  "question_id": 16,
+  "question_text": "Fossil bones and teeth of dinosaurs have been researched for the last century. Recent discoveries of fossilized dinosaurs have also revealed details of soft tissues, such as skin. Which is best for a scientist to do when reporting research on dinosaurs now?",
+  "choices": [
+    "A: exclude research on teeth or bones",
+    "B: predict what the next discovery will be",
+    "C: analyze new data as it becomes available",
+    "D: delete earlier reports that were missing the new findings"
+  ],
+  "gold_answer": "C",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Fossil bones and teeth of dinosaurs have been researched for the last century. Recent discoveries of fossilized dinosaurs have also revealed details of soft tissues, such as skin. Which is best for a scientist to do when reporting research on dinosaurs now?\n\n\nChoices:\nA) exclude research on teeth or bones\nB) predict what the next discovery will be\nC) analyze new data as it becomes available\nD) delete earlier reports that were missing the new findings\n\nProvide an answer to the following question:\n\nQ: Fossil bones and teeth of dinosaurs have been researched for the last century. Recent discoveries of fossilized dinosaurs have also revealed details of soft tissues, such as skin. Which is best for a scientist to do when reporting research on dinosaurs now?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "C",
+          "logprob": -0.027967030997388065,
+          "probability": 0.9724204260043289
+        }
+      ],
+      "decision_process": {
+        "selected_text": "C",
+        "matched_choice": "C",
+        "confidence_computation": "exp(logprob) = exp(-0.0280) = 0.9724"
+      },
+      "final_metrics": {
+        "predicted": "C",
+        "correct": true,
+        "confidence": 0.9724204260043289,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

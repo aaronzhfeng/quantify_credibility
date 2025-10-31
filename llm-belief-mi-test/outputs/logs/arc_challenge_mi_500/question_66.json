@@ -1,0 +1,499 @@
+{
+  "question_id": 66,
+  "question_text": "Some students are performing hardness tests on several substances. X scratches Y. Y scratches Z. Z scratches W. Which of these statements best describes substance W's hardness?",
+  "choices": [
+    "A: W is the softest of the four substances tested.",
+    "B: W is the hardest of the four substances tested.",
+    "C: W can scratch Y.",
+    "D: W can scratch X."
+  ],
+  "gold_answer": "A",
+  "methods": {
+    "mi_method": {
+      "description": "k=10 chains of length n=2, MI estimation",
+      "raw_inputs": [
+        {
+          "chain_id": 0,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Some students are performing hardness tests on several substances. X scratches Y. Y scratches Z. Z scratches W. Which of these statements best describes substance W's hardness?\n\n\nChoices:\nA) W is the softest of the four substances tested.\nB) W is the hardest of the four substances tested.\nC) W can scratch Y.\nD) W can scratch X.\n\nProvide an answer to the following question:\n\nQ: Some students are performing hardness tests on several substances. X scratches Y. Y scratches Z. Z scratches W. Which of these statements best describes substance W's hardness?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 0,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Some students are performing hardness tests on several substances. X scratches Y. Y scratches Z. Z scratches W. Which of these statements best describes substance W's hardness?\n\n\nOne answer to question Q is A) W is the softest of the four substances tested..\n\n\nChoices:\nA) W is the softest of the four substances tested.\nB) W is the hardest of the four substances tested.\nC) W can scratch Y.\nD) W can scratch X.\n\nProvide an answer to the following question:\n\nQ: Some students are performing hardness tests on several substances. X scratches Y. Y scratches Z. Z scratches W. Which of these statements best describes substance W's hardness?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 1,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Some students are performing hardness tests on several substances. X scratches Y. Y scratches Z. Z scratches W. Which of these statements best describes substance W's hardness?\n\n\nChoices:\nA) W is the softest of the four substances tested.\nB) W is the hardest of the four substances tested.\nC) W can scratch Y.\nD) W can scratch X.\n\nProvide an answer to the following question:\n\nQ: Some students are performing hardness tests on several substances. X scratches Y. Y scratches Z. Z scratches W. Which of these statements best describes substance W's hardness?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 1,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Some students are performing hardness tests on several substances. X scratches Y. Y scratches Z. Z scratches W. Which of these statements best describes substance W's hardness?\n\n\nOne answer to question Q is A) W is the softest of the four substances tested..\n\n\nChoices:\nA) W is the softest of the four substances tested.\nB) W is the hardest of the four substances tested.\nC) W can scratch Y.\nD) W can scratch X.\n\nProvide an answer to the following question:\n\nQ: Some students are performing hardness tests on several substances. X scratches Y. Y scratches Z. Z scratches W. Which of these statements best describes substance W's hardness?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 2,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Some students are performing hardness tests on several substances. X scratches Y. Y scratches Z. Z scratches W. Which of these statements best describes substance W's hardness?\n\n\nChoices:\nA) W is the softest of the four substances tested.\nB) W is the hardest of the four substances tested.\nC) W can scratch Y.\nD) W can scratch X.\n\nProvide an answer to the following question:\n\nQ: Some students are performing hardness tests on several substances. X scratches Y. Y scratches Z. Z scratches W. Which of these statements best describes substance W's hardness?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 2,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Some students are performing hardness tests on several substances. X scratches Y. Y scratches Z. Z scratches W. Which of these statements best describes substance W's hardness?\n\n\nOne answer to question Q is C) W can scratch Y..\n\n\nChoices:\nA) W is the softest of the four substances tested.\nB) W is the hardest of the four substances tested.\nC) W can scratch Y.\nD) W can scratch X.\n\nProvide an answer to the following question:\n\nQ: Some students are performing hardness tests on several substances. X scratches Y. Y scratches Z. Z scratches W. Which of these statements best describes substance W's hardness?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 3,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Some students are performing hardness tests on several substances. X scratches Y. Y scratches Z. Z scratches W. Which of these statements best describes substance W's hardness?\n\n\nChoices:\nA) W is the softest of the four substances tested.\nB) W is the hardest of the four substances tested.\nC) W can scratch Y.\nD) W can scratch X.\n\nProvide an answer to the following question:\n\nQ: Some students are performing hardness tests on several substances. X scratches Y. Y scratches Z. Z scratches W. Which of these statements best describes substance W's hardness?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 3,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Some students are performing hardness tests on several substances. X scratches Y. Y scratches Z. Z scratches W. Which of these statements best describes substance W's hardness?\n\n\nOne answer to question Q is C) W can scratch Y..\n\n\nChoices:\nA) W is the softest of the four substances tested.\nB) W is the hardest of the four substances tested.\nC) W can scratch Y.\nD) W can scratch X.\n\nProvide an answer to the following question:\n\nQ: Some students are performing hardness tests on several substances. X scratches Y. Y scratches Z. Z scratches W. Which of these statements best describes substance W's hardness?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 4,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Some students are performing hardness tests on several substances. X scratches Y. Y scratches Z. Z scratches W. Which of these statements best describes substance W's hardness?\n\n\nChoices:\nA) W is the softest of the four substances tested.\nB) W is the hardest of the four substances tested.\nC) W can scratch Y.\nD) W can scratch X.\n\nProvide an answer to the following question:\n\nQ: Some students are performing hardness tests on several substances. X scratches Y. Y scratches Z. Z scratches W. Which of these statements best describes substance W's hardness?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 4,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Some students are performing hardness tests on several substances. X scratches Y. Y scratches Z. Z scratches W. Which of these statements best describes substance W's hardness?\n\n\nOne answer to question Q is C) W can scratch Y..\n\n\nChoices:\nA) W is the softest of the four substances tested.\nB) W is the hardest of the four substances tested.\nC) W can scratch Y.\nD) W can scratch X.\n\nProvide an answer to the following question:\n\nQ: Some students are performing hardness tests on several substances. X scratches Y. Y scratches Z. Z scratches W. Which of these statements best describes substance W's hardness?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 5,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Some students are performing hardness tests on several substances. X scratches Y. Y scratches Z. Z scratches W. Which of these statements best describes substance W's hardness?\n\n\nChoices:\nA) W is the softest of the four substances tested.\nB) W is the hardest of the four substances tested.\nC) W can scratch Y.\nD) W can scratch X.\n\nProvide an answer to the following question:\n\nQ: Some students are performing hardness tests on several substances. X scratches Y. Y scratches Z. Z scratches W. Which of these statements best describes substance W's hardness?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 5,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Some students are performing hardness tests on several substances. X scratches Y. Y scratches Z. Z scratches W. Which of these statements best describes substance W's hardness?\n\n\nOne answer to question Q is C) W can scratch Y..\n\n\nChoices:\nA) W is the softest of the four substances tested.\nB) W is the hardest of the four substances tested.\nC) W can scratch Y.\nD) W can scratch X.\n\nProvide an answer to the following question:\n\nQ: Some students are performing hardness tests on several substances. X scratches Y. Y scratches Z. Z scratches W. Which of these statements best describes substance W's hardness?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 6,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Some students are performing hardness tests on several substances. X scratches Y. Y scratches Z. Z scratches W. Which of these statements best describes substance W's hardness?\n\n\nChoices:\nA) W is the softest of the four substances tested.\nB) W is the hardest of the four substances tested.\nC) W can scratch Y.\nD) W can scratch X.\n\nProvide an answer to the following question:\n\nQ: Some students are performing hardness tests on several substances. X scratches Y. Y scratches Z. Z scratches W. Which of these statements best describes substance W's hardness?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 6,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Some students are performing hardness tests on several substances. X scratches Y. Y scratches Z. Z scratches W. Which of these statements best describes substance W's hardness?\n\n\nOne answer to question Q is A) W is the softest of the four substances tested..\n\n\nChoices:\nA) W is the softest of the four substances tested.\nB) W is the hardest of the four substances tested.\nC) W can scratch Y.\nD) W can scratch X.\n\nProvide an answer to the following question:\n\nQ: Some students are performing hardness tests on several substances. X scratches Y. Y scratches Z. Z scratches W. Which of these statements best describes substance W's hardness?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 7,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Some students are performing hardness tests on several substances. X scratches Y. Y scratches Z. Z scratches W. Which of these statements best describes substance W's hardness?\n\n\nChoices:\nA) W is the softest of the four substances tested.\nB) W is the hardest of the four substances tested.\nC) W can scratch Y.\nD) W can scratch X.\n\nProvide an answer to the following question:\n\nQ: Some students are performing hardness tests on several substances. X scratches Y. Y scratches Z. Z scratches W. Which of these statements best describes substance W's hardness?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 7,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Some students are performing hardness tests on several substances. X scratches Y. Y scratches Z. Z scratches W. Which of these statements best describes substance W's hardness?\n\n\nOne answer to question Q is A) W is the softest of the four substances tested..\n\n\nChoices:\nA) W is the softest of the four substances tested.\nB) W is the hardest of the four substances tested.\nC) W can scratch Y.\nD) W can scratch X.\n\nProvide an answer to the following question:\n\nQ: Some students are performing hardness tests on several substances. X scratches Y. Y scratches Z. Z scratches W. Which of these statements best describes substance W's hardness?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 8,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Some students are performing hardness tests on several substances. X scratches Y. Y scratches Z. Z scratches W. Which of these statements best describes substance W's hardness?\n\n\nChoices:\nA) W is the softest of the four substances tested.\nB) W is the hardest of the four substances tested.\nC) W can scratch Y.\nD) W can scratch X.\n\nProvide an answer to the following question:\n\nQ: Some students are performing hardness tests on several substances. X scratches Y. Y scratches Z. Z scratches W. Which of these statements best describes substance W's hardness?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 8,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Some students are performing hardness tests on several substances. X scratches Y. Y scratches Z. Z scratches W. Which of these statements best describes substance W's hardness?\n\n\nOne answer to question Q is B) W is the hardest of the four substances tested..\n\n\nChoices:\nA) W is the softest of the four substances tested.\nB) W is the hardest of the four substances tested.\nC) W can scratch Y.\nD) W can scratch X.\n\nProvide an answer to the following question:\n\nQ: Some students are performing hardness tests on several substances. X scratches Y. Y scratches Z. Z scratches W. Which of these statements best describes substance W's hardness?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 9,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Some students are performing hardness tests on several substances. X scratches Y. Y scratches Z. Z scratches W. Which of these statements best describes substance W's hardness?\n\n\nChoices:\nA) W is the softest of the four substances tested.\nB) W is the hardest of the four substances tested.\nC) W can scratch Y.\nD) W can scratch X.\n\nProvide an answer to the following question:\n\nQ: Some students are performing hardness tests on several substances. X scratches Y. Y scratches Z. Z scratches W. Which of these statements best describes substance W's hardness?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 9,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Some students are performing hardness tests on several substances. X scratches Y. Y scratches Z. Z scratches W. Which of these statements best describes substance W's hardness?\n\n\nOne answer to question Q is D) W can scratch X..\n\n\nChoices:\nA) W is the softest of the four substances tested.\nB) W is the hardest of the four substances tested.\nC) W can scratch Y.\nD) W can scratch X.\n\nProvide an answer to the following question:\n\nQ: Some students are performing hardness tests on several substances. X scratches Y. Y scratches Z. Z scratches W. Which of these statements best describes substance W's hardness?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "chain_id": 0,
+          "step": 0,
+          "text": "A",
+          "logprob": -1.2942746877670288,
+          "probability": 0.27409659786624935
+        },
+        {
+          "chain_id": 0,
+          "step": 1,
+          "text": "C",
+          "logprob": -0.9106834530830383,
+          "probability": 0.4022492116014749
+        },
+        {
+          "chain_id": 1,
+          "step": 0,
+          "text": "A",
+          "logprob": -1.2942746877670288,
+          "probability": 0.27409659786624935
+        },
+        {
+          "chain_id": 1,
+          "step": 1,
+          "text": "B",
+          "logprob": -1.0495727062225342,
+          "probability": 0.3500873072842138
+        },
+        {
+          "chain_id": 2,
+          "step": 0,
+          "text": "C",
+          "logprob": -1.1553853750228882,
+          "probability": 0.3149361449901261
+        },
+        {
+          "chain_id": 2,
+          "step": 1,
+          "text": "C",
+          "logprob": -0.5588756799697876,
+          "probability": 0.5718516468074942
+        },
+        {
+          "chain_id": 3,
+          "step": 0,
+          "text": "C",
+          "logprob": -1.1553853750228882,
+          "probability": 0.3149361449901261
+        },
+        {
+          "chain_id": 3,
+          "step": 1,
+          "text": "C",
+          "logprob": -0.5588756799697876,
+          "probability": 0.5718516468074942
+        },
+        {
+          "chain_id": 4,
+          "step": 0,
+          "text": "C",
+          "logprob": -1.1553853750228882,
+          "probability": 0.3149361449901261
+        },
+        {
+          "chain_id": 4,
+          "step": 1,
+          "text": "C",
+          "logprob": -0.5588756799697876,
+          "probability": 0.5718516468074942
+        },
+        {
+          "chain_id": 5,
+          "step": 0,
+          "text": "C",
+          "logprob": -1.1553853750228882,
+          "probability": 0.3149361449901261
+        },
+        {
+          "chain_id": 5,
+          "step": 1,
+          "text": "A",
+          "logprob": -1.253318428993225,
+          "probability": 0.2855556267833617
+        },
+        {
+          "chain_id": 6,
+          "step": 0,
+          "text": "A",
+          "logprob": -1.2942746877670288,
+          "probability": 0.27409659786624935
+        },
+        {
+          "chain_id": 6,
+          "step": 1,
+          "text": "C",
+          "logprob": -0.9106834530830383,
+          "probability": 0.4022492116014749
+        },
+        {
+          "chain_id": 7,
+          "step": 0,
+          "text": "A",
+          "logprob": -1.2942746877670288,
+          "probability": 0.27409659786624935
+        },
+        {
+          "chain_id": 7,
+          "step": 1,
+          "text": "C",
+          "logprob": -0.9106834530830383,
+          "probability": 0.4022492116014749
+        },
+        {
+          "chain_id": 8,
+          "step": 0,
+          "text": "B",
+          "logprob": -1.2942746877670288,
+          "probability": 0.27409659786624935
+        },
+        {
+          "chain_id": 8,
+          "step": 1,
+          "text": "C",
+          "logprob": -1.1428542137145996,
+          "probability": 0.3189074914481029
+        },
+        {
+          "chain_id": 9,
+          "step": 0,
+          "text": "D",
+          "logprob": -1.9887193441390991,
+          "probability": 0.13687059738682433
+        },
+        {
+          "chain_id": 9,
+          "step": 1,
+          "text": "C",
+          "logprob": -1.1899853944778442,
+          "probability": 0.3042257074095652
+        }
+      ],
+      "decision_process": {
+        "num_chains": 10,
+        "chain_length": 2,
+        "total_inferences": 20,
+        "mi_method": "listing",
+        "mi_nats": 0.06313299341765252,
+        "mi_bits": 0.09108165652012287,
+        "selected_answer": "C",
+        "matched_choice": "C",
+        "confidence_computation": "1/(1 + mi_nats) = 1/(1 + 0.0631) = 0.9406",
+        "agreement": "80.00% (8/10 chains agree on final answer)"
+      },
+      "final_metrics": {
+        "predicted": "C",
+        "correct": false,
+        "confidence": 0.9406160905469606,
+        "mi_score": 0.09108165652012287,
+        "agreement": 0.8
+      }
+    }
+  }
+}

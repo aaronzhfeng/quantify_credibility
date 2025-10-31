@@ -1,0 +1,51 @@
+{
+  "question_id": 327,
+  "question_text": "Which type of organism is made of one cell?",
+  "choices": [
+    "A: trees",
+    "B: bacteria",
+    "C: fern",
+    "D: fish"
+  ],
+  "gold_answer": "B",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Which type of organism is made of one cell?\n\n\nChoices:\nA) trees\nB) bacteria\nC) fern\nD) fish\n\nProvide an answer to the following question:\n\nQ: Which type of organism is made of one cell?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "B",
+          "logprob": -0.06243781404918991,
+          "probability": 0.9394714829244265
+        }
+      ],
+      "decision_process": {
+        "selected_text": "B",
+        "matched_choice": "B",
+        "confidence_computation": "exp(logprob) = exp(-0.0624) = 0.9395"
+      },
+      "final_metrics": {
+        "predicted": "B",
+        "correct": true,
+        "confidence": 0.9394714829244265,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

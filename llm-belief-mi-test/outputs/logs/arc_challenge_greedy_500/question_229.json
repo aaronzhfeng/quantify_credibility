@@ -1,0 +1,51 @@
+{
+  "question_id": 229,
+  "question_text": "A small laundry room has several shelves above the washing machine. These shelves are an example of",
+  "choices": [
+    "A: making the wall stronger.",
+    "B: using storage space efficiently.",
+    "C: using a machine for more than one purpose.",
+    "D: solving the need for shelter in a creative way."
+  ],
+  "gold_answer": "B",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A small laundry room has several shelves above the washing machine. These shelves are an example of\n\n\nChoices:\nA) making the wall stronger.\nB) using storage space efficiently.\nC) using a machine for more than one purpose.\nD) solving the need for shelter in a creative way.\n\nProvide an answer to the following question:\n\nQ: A small laundry room has several shelves above the washing machine. These shelves are an example of\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "B",
+          "logprob": -0.011223446112126112,
+          "probability": 0.9888393017905615
+        }
+      ],
+      "decision_process": {
+        "selected_text": "B",
+        "matched_choice": "B",
+        "confidence_computation": "exp(logprob) = exp(-0.0112) = 0.9888"
+      },
+      "final_metrics": {
+        "predicted": "B",
+        "correct": true,
+        "confidence": 0.9888393017905615,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

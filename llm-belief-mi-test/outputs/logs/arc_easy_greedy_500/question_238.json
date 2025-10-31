@@ -1,0 +1,51 @@
+{
+  "question_id": 238,
+  "question_text": "A solar eclipse occurs when",
+  "choices": [
+    "A: the Moon blocks the Earth from the Sun.",
+    "B: the first four planets in the solar system are aligned.",
+    "C: Earth blocks the Moon from the Sun.",
+    "D: Earth's shadow falls on the Sun."
+  ],
+  "gold_answer": "A",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A solar eclipse occurs when\n\n\nChoices:\nA) the Moon blocks the Earth from the Sun.\nB) the first four planets in the solar system are aligned.\nC) Earth blocks the Moon from the Sun.\nD) Earth's shadow falls on the Sun.\n\nProvide an answer to the following question:\n\nQ: A solar eclipse occurs when\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "A",
+          "logprob": -0.1168183462577872,
+          "probability": 0.889746804320958
+        }
+      ],
+      "decision_process": {
+        "selected_text": "A",
+        "matched_choice": "A",
+        "confidence_computation": "exp(logprob) = exp(-0.1168) = 0.8897"
+      },
+      "final_metrics": {
+        "predicted": "A",
+        "correct": true,
+        "confidence": 0.889746804320958,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

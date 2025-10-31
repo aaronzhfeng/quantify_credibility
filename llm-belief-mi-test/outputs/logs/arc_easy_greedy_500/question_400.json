@@ -1,0 +1,51 @@
+{
+  "question_id": 400,
+  "question_text": "Materials made of the same substance will have characteristics in common. Which property is most likely to remain constant in different samples of the same material?",
+  "choices": [
+    "A: density",
+    "B: mass",
+    "C: shape",
+    "D: volume"
+  ],
+  "gold_answer": "A",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Materials made of the same substance will have characteristics in common. Which property is most likely to remain constant in different samples of the same material?\n\n\nChoices:\nA) density\nB) mass\nC) shape\nD) volume\n\nProvide an answer to the following question:\n\nQ: Materials made of the same substance will have characteristics in common. Which property is most likely to remain constant in different samples of the same material?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "A",
+          "logprob": -0.039672405750025064,
+          "probability": 0.9611042398086533
+        }
+      ],
+      "decision_process": {
+        "selected_text": "A",
+        "matched_choice": "A",
+        "confidence_computation": "exp(logprob) = exp(-0.0397) = 0.9611"
+      },
+      "final_metrics": {
+        "predicted": "A",
+        "correct": true,
+        "confidence": 0.9611042398086533,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

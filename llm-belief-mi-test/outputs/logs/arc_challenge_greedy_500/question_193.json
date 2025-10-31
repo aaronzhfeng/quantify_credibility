@@ -1,0 +1,51 @@
+{
+  "question_id": 193,
+  "question_text": "Students conduct an investigation with 20 of the same tomato plants. Each plant receives the same amount of water but different amounts of sunlight. The students measure the number of fruits on each plant every day. What is the dependent variable in this investigation?",
+  "choices": [
+    "A: type of plant",
+    "B: amount of water",
+    "C: amount of sunlight",
+    "D: number of fruits"
+  ],
+  "gold_answer": "D",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Students conduct an investigation with 20 of the same tomato plants. Each plant receives the same amount of water but different amounts of sunlight. The students measure the number of fruits on each plant every day. What is the dependent variable in this investigation?\n\n\nChoices:\nA) type of plant\nB) amount of water\nC) amount of sunlight\nD) number of fruits\n\nProvide an answer to the following question:\n\nQ: Students conduct an investigation with 20 of the same tomato plants. Each plant receives the same amount of water but different amounts of sunlight. The students measure the number of fruits on each plant every day. What is the dependent variable in this investigation?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "D",
+          "logprob": -0.00938492784916889,
+          "probability": 0.9906589731429769
+        }
+      ],
+      "decision_process": {
+        "selected_text": "D",
+        "matched_choice": "D",
+        "confidence_computation": "exp(logprob) = exp(-0.0094) = 0.9907"
+      },
+      "final_metrics": {
+        "predicted": "D",
+        "correct": true,
+        "confidence": 0.9906589731429769,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

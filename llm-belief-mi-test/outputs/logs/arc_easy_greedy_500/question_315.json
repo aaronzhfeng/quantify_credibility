@@ -1,0 +1,51 @@
+{
+  "question_id": 315,
+  "question_text": "Which of the following best describes how plants use the energy they receive from sunlight?",
+  "choices": [
+    "A: They change water into heat.",
+    "B: They produce their own food.",
+    "C: They make minerals for their roots.",
+    "D: They break down nutrients into rocks."
+  ],
+  "gold_answer": "B",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Which of the following best describes how plants use the energy they receive from sunlight?\n\n\nChoices:\nA) They change water into heat.\nB) They produce their own food.\nC) They make minerals for their roots.\nD) They break down nutrients into rocks.\n\nProvide an answer to the following question:\n\nQ: Which of the following best describes how plants use the energy they receive from sunlight?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "B",
+          "logprob": -0.06274289131397381,
+          "probability": 0.9391849152489373
+        }
+      ],
+      "decision_process": {
+        "selected_text": "B",
+        "matched_choice": "B",
+        "confidence_computation": "exp(logprob) = exp(-0.0627) = 0.9392"
+      },
+      "final_metrics": {
+        "predicted": "B",
+        "correct": true,
+        "confidence": 0.9391849152489373,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

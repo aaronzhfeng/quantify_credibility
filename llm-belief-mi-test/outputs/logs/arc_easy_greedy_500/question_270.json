@@ -1,0 +1,51 @@
+{
+  "question_id": 270,
+  "question_text": "The human body is composed of different systems made of specialized cells, tissues, and organs. Each of these structures has a specific function that aids in the survival of the human species. What is the primary function of the excretory system?",
+  "choices": [
+    "A: to digest food",
+    "B: to help in defense",
+    "C: to eliminate waste",
+    "D: to enable movement"
+  ],
+  "gold_answer": "C",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: The human body is composed of different systems made of specialized cells, tissues, and organs. Each of these structures has a specific function that aids in the survival of the human species. What is the primary function of the excretory system?\n\n\nChoices:\nA) to digest food\nB) to help in defense\nC) to eliminate waste\nD) to enable movement\n\nProvide an answer to the following question:\n\nQ: The human body is composed of different systems made of specialized cells, tissues, and organs. Each of these structures has a specific function that aids in the survival of the human species. What is the primary function of the excretory system?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "C",
+          "logprob": -0.002569220552686602,
+          "probability": 0.9974340770697266
+        }
+      ],
+      "decision_process": {
+        "selected_text": "C",
+        "matched_choice": "C",
+        "confidence_computation": "exp(logprob) = exp(-0.0026) = 0.9974"
+      },
+      "final_metrics": {
+        "predicted": "C",
+        "correct": true,
+        "confidence": 0.9974340770697266,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "question_id": 207,
+  "question_text": "On a hot day, Jenny walked home from the grocery store with a bag of chocolate chips. When she arrived home the chocolate chips had melted in the bag. Why did the chocolate chips melt?",
+  "choices": [
+    "A: Heat transferred from the chocolate chips to the bag.",
+    "B: Heat evaporated from the bag to the chocolate chips.",
+    "C: Heat transferred from the environment to the chocolate chips.",
+    "D: Heat condensed from her hand to the chocolate chips."
+  ],
+  "gold_answer": "C",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: On a hot day, Jenny walked home from the grocery store with a bag of chocolate chips. When she arrived home the chocolate chips had melted in the bag. Why did the chocolate chips melt?\n\n\nChoices:\nA) Heat transferred from the chocolate chips to the bag.\nB) Heat evaporated from the bag to the chocolate chips.\nC) Heat transferred from the environment to the chocolate chips.\nD) Heat condensed from her hand to the chocolate chips.\n\nProvide an answer to the following question:\n\nQ: On a hot day, Jenny walked home from the grocery store with a bag of chocolate chips. When she arrived home the chocolate chips had melted in the bag. Why did the chocolate chips melt?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "C",
+          "logprob": -0.04936242662370205,
+          "probability": 0.9518360964349126
+        }
+      ],
+      "decision_process": {
+        "selected_text": "C",
+        "matched_choice": "C",
+        "confidence_computation": "exp(logprob) = exp(-0.0494) = 0.9518"
+      },
+      "final_metrics": {
+        "predicted": "C",
+        "correct": true,
+        "confidence": 0.9518360964349126,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

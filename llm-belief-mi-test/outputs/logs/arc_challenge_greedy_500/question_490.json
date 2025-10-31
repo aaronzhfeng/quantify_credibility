@@ -1,0 +1,51 @@
+{
+  "question_id": 490,
+  "question_text": "Marta was studying a diagram of the rock cycle. She wanted to know what could cause a sedimentary rock to become a metamorphic rock. Which processes must occur in order for a sedimentary rock to change into a metamorphic rock?",
+  "choices": [
+    "A: compaction and cementation",
+    "B: heating and pressure",
+    "C: melting and cooling",
+    "D: uplift and erosion"
+  ],
+  "gold_answer": "B",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Marta was studying a diagram of the rock cycle. She wanted to know what could cause a sedimentary rock to become a metamorphic rock. Which processes must occur in order for a sedimentary rock to change into a metamorphic rock?\n\n\nChoices:\nA) compaction and cementation\nB) heating and pressure\nC) melting and cooling\nD) uplift and erosion\n\nProvide an answer to the following question:\n\nQ: Marta was studying a diagram of the rock cycle. She wanted to know what could cause a sedimentary rock to become a metamorphic rock. Which processes must occur in order for a sedimentary rock to change into a metamorphic rock?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "B",
+          "logprob": -0.03008232932188548,
+          "probability": 0.9703656407146108
+        }
+      ],
+      "decision_process": {
+        "selected_text": "B",
+        "matched_choice": "B",
+        "confidence_computation": "exp(logprob) = exp(-0.0301) = 0.9704"
+      },
+      "final_metrics": {
+        "predicted": "B",
+        "correct": true,
+        "confidence": 0.9703656407146108,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "question_id": 262,
+  "question_text": "A student throws a ball. Which of these best describes the moving ball?",
+  "choices": [
+    "A: The ball has light energy.",
+    "B: The ball has kinetic energy.",
+    "C: The ball is transferring sound energy to the air.",
+    "D: The ball is transferring light energy to the air."
+  ],
+  "gold_answer": "B",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A student throws a ball. Which of these best describes the moving ball?\n\n\nChoices:\nA) The ball has light energy.\nB) The ball has kinetic energy.\nC) The ball is transferring sound energy to the air.\nD) The ball is transferring light energy to the air.\n\nProvide an answer to the following question:\n\nQ: A student throws a ball. Which of these best describes the moving ball?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "B",
+          "logprob": -0.006538219116919208,
+          "probability": 0.9934831085307654
+        }
+      ],
+      "decision_process": {
+        "selected_text": "B",
+        "matched_choice": "B",
+        "confidence_computation": "exp(logprob) = exp(-0.0065) = 0.9935"
+      },
+      "final_metrics": {
+        "predicted": "B",
+        "correct": true,
+        "confidence": 0.9934831085307654,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

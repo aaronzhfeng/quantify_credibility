@@ -1,0 +1,51 @@
+{
+  "question_id": 392,
+  "question_text": "The Steller sea lion population has been decreasing in parts of Alaska. New evidence suggests that Steller sea lions need herring as a part of their diet in order to survive. Pollock, another type of fish, also feed on herring. Which would most likely help the Steller sea lion population to increase?",
+  "choices": [
+    "A: increasing the number of pollock",
+    "B: changing the diet of the sea lions",
+    "C: improving the habitats of herring",
+    "D: changing the location of the sea lions"
+  ],
+  "gold_answer": "C",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: The Steller sea lion population has been decreasing in parts of Alaska. New evidence suggests that Steller sea lions need herring as a part of their diet in order to survive. Pollock, another type of fish, also feed on herring. Which would most likely help the Steller sea lion population to increase?\n\n\nChoices:\nA) increasing the number of pollock\nB) changing the diet of the sea lions\nC) improving the habitats of herring\nD) changing the location of the sea lions\n\nProvide an answer to the following question:\n\nQ: The Steller sea lion population has been decreasing in parts of Alaska. New evidence suggests that Steller sea lions need herring as a part of their diet in order to survive. Pollock, another type of fish, also feed on herring. Which would most likely help the Steller sea lion population to increase?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "C",
+          "logprob": -0.39181189599912614,
+          "probability": 0.6758312285628768
+        }
+      ],
+      "decision_process": {
+        "selected_text": "C",
+        "matched_choice": "C",
+        "confidence_computation": "exp(logprob) = exp(-0.3918) = 0.6758"
+      },
+      "final_metrics": {
+        "predicted": "C",
+        "correct": true,
+        "confidence": 0.6758312285628768,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

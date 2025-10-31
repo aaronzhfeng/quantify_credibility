@@ -1,0 +1,51 @@
+{
+  "question_id": 322,
+  "question_text": "Which process converts organic nitrogen into an inorganic form that can be used by plants?",
+  "choices": [
+    "A: decomposition",
+    "B: sedimentation",
+    "C: absorption",
+    "D: radiation"
+  ],
+  "gold_answer": "A",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Which process converts organic nitrogen into an inorganic form that can be used by plants?\n\n\nChoices:\nA) decomposition\nB) sedimentation\nC) absorption\nD) radiation\n\nProvide an answer to the following question:\n\nQ: Which process converts organic nitrogen into an inorganic form that can be used by plants?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "A",
+          "logprob": -0.004973812145181,
+          "probability": 0.9950385367762251
+        }
+      ],
+      "decision_process": {
+        "selected_text": "A",
+        "matched_choice": "A",
+        "confidence_computation": "exp(logprob) = exp(-0.0050) = 0.9950"
+      },
+      "final_metrics": {
+        "predicted": "A",
+        "correct": true,
+        "confidence": 0.9950385367762251,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

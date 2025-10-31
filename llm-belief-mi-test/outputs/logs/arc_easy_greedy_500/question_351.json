@@ -1,0 +1,51 @@
+{
+  "question_id": 351,
+  "question_text": "If the climate in an area were to become much drier, which plant variation would be most advantageous to the survival of the species?",
+  "choices": [
+    "A: bigger branches",
+    "B: larger flowers",
+    "C: thicker leaves",
+    "D: longer stems"
+  ],
+  "gold_answer": "C",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: If the climate in an area were to become much drier, which plant variation would be most advantageous to the survival of the species?\n\n\nChoices:\nA) bigger branches\nB) larger flowers\nC) thicker leaves\nD) longer stems\n\nProvide an answer to the following question:\n\nQ: If the climate in an area were to become much drier, which plant variation would be most advantageous to the survival of the species?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "C",
+          "logprob": -0.6543816982302815,
+          "probability": 0.5197633338446704
+        }
+      ],
+      "decision_process": {
+        "selected_text": "C",
+        "matched_choice": "C",
+        "confidence_computation": "exp(logprob) = exp(-0.6544) = 0.5198"
+      },
+      "final_metrics": {
+        "predicted": "C",
+        "correct": true,
+        "confidence": 0.5197633338446704,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

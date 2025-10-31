@@ -1,0 +1,51 @@
+{
+  "question_id": 311,
+  "question_text": "A species of moth in England has both a light-colored form and a dark-colored form. In the mid-1800s, the percentage of dark-colored moths increased in areas where black soot from factories covered the trees. The soot in these areas has decreased in more recent times as a result of pollution laws. Which of the following statements describes what has most likely happened to the moth populations in these areas?",
+  "choices": [
+    "A: The moth populations went extinct.",
+    "B: The moth populations migrated south.",
+    "C: The percentage of light-colored moths in the populations decreased.",
+    "D: The percentage of dark-colored moths in the populations decreased."
+  ],
+  "gold_answer": "D",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A species of moth in England has both a light-colored form and a dark-colored form. In the mid-1800s, the percentage of dark-colored moths increased in areas where black soot from factories covered the trees. The soot in these areas has decreased in more recent times as a result of pollution laws. Which of the following statements describes what has most likely happened to the moth populations in these areas?\n\n\nChoices:\nA) The moth populations went extinct.\nB) The moth populations migrated south.\nC) The percentage of light-colored moths in the populations decreased.\nD) The percentage of dark-colored moths in the populations decreased.\n\nProvide an answer to the following question:\n\nQ: A species of moth in England has both a light-colored form and a dark-colored form. In the mid-1800s, the percentage of dark-colored moths increased in areas where black soot from factories covered the trees. The soot in these areas has decreased in more recent times as a result of pollution laws. Which of the following statements describes what has most likely happened to the moth populations in these areas?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "D",
+          "logprob": -0.4492926547827665,
+          "probability": 0.6380793343973736
+        }
+      ],
+      "decision_process": {
+        "selected_text": "D",
+        "matched_choice": "D",
+        "confidence_computation": "exp(logprob) = exp(-0.4493) = 0.6381"
+      },
+      "final_metrics": {
+        "predicted": "D",
+        "correct": true,
+        "confidence": 0.6380793343973736,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

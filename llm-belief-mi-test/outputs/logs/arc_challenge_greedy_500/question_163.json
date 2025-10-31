@@ -1,0 +1,51 @@
+{
+  "question_id": 163,
+  "question_text": "Scientists present the results of their investigations to others for review because",
+  "choices": [
+    "A: people need to be informed about the scientific process.",
+    "B: data often supports more than one explanation.",
+    "C: it deters other scientists from duplicating research.",
+    "D: it ensures that researchers receive credit."
+  ],
+  "gold_answer": "B",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Scientists present the results of their investigations to others for review because\n\n\nChoices:\nA) people need to be informed about the scientific process.\nB) data often supports more than one explanation.\nC) it deters other scientists from duplicating research.\nD) it ensures that researchers receive credit.\n\nProvide an answer to the following question:\n\nQ: Scientists present the results of their investigations to others for review because\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "C",
+          "logprob": -0.9398732157424092,
+          "probability": 0.39067736395827835
+        }
+      ],
+      "decision_process": {
+        "selected_text": "C",
+        "matched_choice": "C",
+        "confidence_computation": "exp(logprob) = exp(-0.9399) = 0.3907"
+      },
+      "final_metrics": {
+        "predicted": "C",
+        "correct": false,
+        "confidence": 0.39067736395827835,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

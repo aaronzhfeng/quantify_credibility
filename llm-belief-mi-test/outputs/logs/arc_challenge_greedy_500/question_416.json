@@ -1,0 +1,51 @@
+{
+  "question_id": 416,
+  "question_text": "Jo Anne took a large beaker of clean water and carefully added one drop of blue food coloring to the edge of the water's surface. She did not touch or move the beaker. At first, she saw blue streaks as the food coloring sank into the water, but gradually the color of the entire beaker of water became evenly blue. What caused the blue food coloring to be mixed throughout the water?",
+  "choices": [
+    "A: Water molecules hitting the food coloring molecules caused the mixing.",
+    "B: Light shining on the surface of the water caused the mixing.",
+    "C: A chemical reaction between the water and the food coloring formed a new, light blue compound.",
+    "D: The water interacted with the food coloring, causing the blue color to fade."
+  ],
+  "gold_answer": "A",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Jo Anne took a large beaker of clean water and carefully added one drop of blue food coloring to the edge of the water's surface. She did not touch or move the beaker. At first, she saw blue streaks as the food coloring sank into the water, but gradually the color of the entire beaker of water became evenly blue. What caused the blue food coloring to be mixed throughout the water?\n\n\nChoices:\nA) Water molecules hitting the food coloring molecules caused the mixing.\nB) Light shining on the surface of the water caused the mixing.\nC) A chemical reaction between the water and the food coloring formed a new, light blue compound.\nD) The water interacted with the food coloring, causing the blue color to fade.\n\nProvide an answer to the following question:\n\nQ: Jo Anne took a large beaker of clean water and carefully added one drop of blue food coloring to the edge of the water's surface. She did not touch or move the beaker. At first, she saw blue streaks as the food coloring sank into the water, but gradually the color of the entire beaker of water became evenly blue. What caused the blue food coloring to be mixed throughout the water?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "A",
+          "logprob": -0.1832447336637415,
+          "probability": 0.8325643742723995
+        }
+      ],
+      "decision_process": {
+        "selected_text": "A",
+        "matched_choice": "A",
+        "confidence_computation": "exp(logprob) = exp(-0.1832) = 0.8326"
+      },
+      "final_metrics": {
+        "predicted": "A",
+        "correct": true,
+        "confidence": 0.8325643742723995,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

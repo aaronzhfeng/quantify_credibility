@@ -1,0 +1,51 @@
+{
+  "question_id": 444,
+  "question_text": "Which two are functions of flowers?",
+  "choices": [
+    "A: attract pollinators and make seeds",
+    "B: make seeds and store food",
+    "C: store food and take in water",
+    "D: take in water and attract pollinators"
+  ],
+  "gold_answer": "A",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Which two are functions of flowers?\n\n\nChoices:\nA) attract pollinators and make seeds\nB) make seeds and store food\nC) store food and take in water\nD) take in water and attract pollinators\n\nProvide an answer to the following question:\n\nQ: Which two are functions of flowers?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "A",
+          "logprob": -0.04970840644091368,
+          "probability": 0.9515068373180415
+        }
+      ],
+      "decision_process": {
+        "selected_text": "A",
+        "matched_choice": "A",
+        "confidence_computation": "exp(logprob) = exp(-0.0497) = 0.9515"
+      },
+      "final_metrics": {
+        "predicted": "A",
+        "correct": true,
+        "confidence": 0.9515068373180415,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

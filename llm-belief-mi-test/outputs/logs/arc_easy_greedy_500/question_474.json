@@ -1,0 +1,51 @@
+{
+  "question_id": 474,
+  "question_text": "The average temperature of Earth's surface has increased approximately 1°C in the past century. Which of the following can best explain this increase in temperature?",
+  "choices": [
+    "A: higher levels of oxygen in the atmosphere",
+    "B: lower levels of ozone in the atmosphere",
+    "C: higher levels of carbon dioxide in the atmosphere",
+    "D: lower levels of nitrogen in the atmosphere"
+  ],
+  "gold_answer": "C",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: The average temperature of Earth's surface has increased approximately 1°C in the past century. Which of the following can best explain this increase in temperature?\n\n\nChoices:\nA) higher levels of oxygen in the atmosphere\nB) lower levels of ozone in the atmosphere\nC) higher levels of carbon dioxide in the atmosphere\nD) lower levels of nitrogen in the atmosphere\n\nProvide an answer to the following question:\n\nQ: The average temperature of Earth's surface has increased approximately 1°C in the past century. Which of the following can best explain this increase in temperature?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "C",
+          "logprob": -0.055468015125370584,
+          "probability": 0.9460422822303152
+        }
+      ],
+      "decision_process": {
+        "selected_text": "C",
+        "matched_choice": "C",
+        "confidence_computation": "exp(logprob) = exp(-0.0555) = 0.9460"
+      },
+      "final_metrics": {
+        "predicted": "C",
+        "correct": true,
+        "confidence": 0.9460422822303152,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

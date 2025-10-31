@@ -1,0 +1,51 @@
+{
+  "question_id": 289,
+  "question_text": "A school replaced all of their light bulbs with a new type of light bulb. The new light bulbs use less energy. How will the new light bulbs most likely help the environment?",
+  "choices": [
+    "A: The amount of light pollution will decrease.",
+    "B: The air conditioner at the school will run less often.",
+    "C: Fewer natural resources will be used to make electricity.",
+    "D: Money will be saved on the electricity bill for the school."
+  ],
+  "gold_answer": "C",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A school replaced all of their light bulbs with a new type of light bulb. The new light bulbs use less energy. How will the new light bulbs most likely help the environment?\n\n\nChoices:\nA) The amount of light pollution will decrease.\nB) The air conditioner at the school will run less often.\nC) Fewer natural resources will be used to make electricity.\nD) Money will be saved on the electricity bill for the school.\n\nProvide an answer to the following question:\n\nQ: A school replaced all of their light bulbs with a new type of light bulb. The new light bulbs use less energy. How will the new light bulbs most likely help the environment?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "C",
+          "logprob": -0.3631634833291173,
+          "probability": 0.6954727260081507
+        }
+      ],
+      "decision_process": {
+        "selected_text": "C",
+        "matched_choice": "C",
+        "confidence_computation": "exp(logprob) = exp(-0.3632) = 0.6955"
+      },
+      "final_metrics": {
+        "predicted": "C",
+        "correct": true,
+        "confidence": 0.6954727260081507,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "question_id": 39,
+  "question_text": "The speed at which sound waves travel depends on the",
+  "choices": [
+    "A: distance between the vibration source and the receiver.",
+    "B: type of material through which the sound travels.",
+    "C: size of the object making the sound.",
+    "D: type of device making the sound."
+  ],
+  "gold_answer": "B",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: The speed at which sound waves travel depends on the\n\n\nChoices:\nA) distance between the vibration source and the receiver.\nB) type of material through which the sound travels.\nC) size of the object making the sound.\nD) type of device making the sound.\n\nProvide an answer to the following question:\n\nQ: The speed at which sound waves travel depends on the\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "B",
+          "logprob": -0.013286118570249528,
+          "probability": 0.9868017523182535
+        }
+      ],
+      "decision_process": {
+        "selected_text": "B",
+        "matched_choice": "B",
+        "confidence_computation": "exp(logprob) = exp(-0.0133) = 0.9868"
+      },
+      "final_metrics": {
+        "predicted": "B",
+        "correct": true,
+        "confidence": 0.9868017523182535,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

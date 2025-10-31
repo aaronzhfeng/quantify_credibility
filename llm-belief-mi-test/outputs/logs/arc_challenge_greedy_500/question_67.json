@@ -1,0 +1,51 @@
+{
+  "question_id": 67,
+  "question_text": "Scientists have studied the productivity of crops in mountain valleys. In some areas, the valleys are more productive than others. The increase in which factor most likely accounts for the high productivity of some areas in mountain valleys?",
+  "choices": [
+    "A: leaching of soils",
+    "B: evaporation rates",
+    "C: runoff from rains",
+    "D: amounts of sunlight"
+  ],
+  "gold_answer": "C",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Scientists have studied the productivity of crops in mountain valleys. In some areas, the valleys are more productive than others. The increase in which factor most likely accounts for the high productivity of some areas in mountain valleys?\n\n\nChoices:\nA) leaching of soils\nB) evaporation rates\nC) runoff from rains\nD) amounts of sunlight\n\nProvide an answer to the following question:\n\nQ: Scientists have studied the productivity of crops in mountain valleys. In some areas, the valleys are more productive than others. The increase in which factor most likely accounts for the high productivity of some areas in mountain valleys?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "D",
+          "logprob": -0.3177734198397957,
+          "probability": 0.7277676674494132
+        }
+      ],
+      "decision_process": {
+        "selected_text": "D",
+        "matched_choice": "D",
+        "confidence_computation": "exp(logprob) = exp(-0.3178) = 0.7278"
+      },
+      "final_metrics": {
+        "predicted": "D",
+        "correct": false,
+        "confidence": 0.7277676674494132,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "question_id": 376,
+  "question_text": "Which of these do scientists most likely do when studying the interaction of animals in their natural habitat?",
+  "choices": [
+    "A: collect samples of types of trees",
+    "B: observe and record behaviors",
+    "C: conduct experiments in a laboratory",
+    "D: change environment and observe responses"
+  ],
+  "gold_answer": "B",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Which of these do scientists most likely do when studying the interaction of animals in their natural habitat?\n\n\nChoices:\nA) collect samples of types of trees\nB) observe and record behaviors\nC) conduct experiments in a laboratory\nD) change environment and observe responses\n\nProvide an answer to the following question:\n\nQ: Which of these do scientists most likely do when studying the interaction of animals in their natural habitat?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "B",
+          "logprob": -0.030361314929905348,
+          "probability": 0.9700949604260426
+        }
+      ],
+      "decision_process": {
+        "selected_text": "B",
+        "matched_choice": "B",
+        "confidence_computation": "exp(logprob) = exp(-0.0304) = 0.9701"
+      },
+      "final_metrics": {
+        "predicted": "B",
+        "correct": true,
+        "confidence": 0.9700949604260426,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

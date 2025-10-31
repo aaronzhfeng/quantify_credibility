@@ -1,0 +1,51 @@
+{
+  "question_id": 358,
+  "question_text": "Which group on the periodic table contains elements that are the least reactive?",
+  "choices": [
+    "A: group 1 (1A)",
+    "B: group 3 (3B)",
+    "C: group 16 (6A)",
+    "D: group 18 (8A)"
+  ],
+  "gold_answer": "D",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Which group on the periodic table contains elements that are the least reactive?\n\n\nChoices:\nA) group 1 (1A)\nB) group 3 (3B)\nC) group 16 (6A)\nD) group 18 (8A)\n\nProvide an answer to the following question:\n\nQ: Which group on the periodic table contains elements that are the least reactive?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "D",
+          "logprob": -0.42999981716275215,
+          "probability": 0.65050921366062
+        }
+      ],
+      "decision_process": {
+        "selected_text": "D",
+        "matched_choice": "D",
+        "confidence_computation": "exp(logprob) = exp(-0.4300) = 0.6505"
+      },
+      "final_metrics": {
+        "predicted": "D",
+        "correct": true,
+        "confidence": 0.65050921366062,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

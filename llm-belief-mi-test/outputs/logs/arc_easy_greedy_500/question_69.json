@@ -1,0 +1,51 @@
+{
+  "question_id": 69,
+  "question_text": "Which human activity will help conserve Earth's natural resources?",
+  "choices": [
+    "A: leaving the television on all day",
+    "B: recycling plastic bottles",
+    "C: cutting down trees",
+    "D: burning trash in the yard"
+  ],
+  "gold_answer": "B",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Which human activity will help conserve Earth's natural resources?\n\n\nChoices:\nA) leaving the television on all day\nB) recycling plastic bottles\nC) cutting down trees\nD) burning trash in the yard\n\nProvide an answer to the following question:\n\nQ: Which human activity will help conserve Earth's natural resources?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "B",
+          "logprob": -0.003723739820998162,
+          "probability": 0.9962831847004239
+        }
+      ],
+      "decision_process": {
+        "selected_text": "B",
+        "matched_choice": "B",
+        "confidence_computation": "exp(logprob) = exp(-0.0037) = 0.9963"
+      },
+      "final_metrics": {
+        "predicted": "B",
+        "correct": true,
+        "confidence": 0.9962831847004239,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

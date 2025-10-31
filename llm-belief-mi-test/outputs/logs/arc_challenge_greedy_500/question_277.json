@@ -1,0 +1,51 @@
+{
+  "question_id": 277,
+  "question_text": "Which two environmental changes usually cause certain animals to migrate?",
+  "choices": [
+    "A: change of season and fewer predators",
+    "B: change of season and less food",
+    "C: loss of habitat and fewer predators",
+    "D: loss of habitat and more food"
+  ],
+  "gold_answer": "B",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Which two environmental changes usually cause certain animals to migrate?\n\n\nChoices:\nA) change of season and fewer predators\nB) change of season and less food\nC) loss of habitat and fewer predators\nD) loss of habitat and more food\n\nProvide an answer to the following question:\n\nQ: Which two environmental changes usually cause certain animals to migrate?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "B",
+          "logprob": -0.04186884220689535,
+          "probability": 0.9589955520645546
+        }
+      ],
+      "decision_process": {
+        "selected_text": "B",
+        "matched_choice": "B",
+        "confidence_computation": "exp(logprob) = exp(-0.0419) = 0.9590"
+      },
+      "final_metrics": {
+        "predicted": "B",
+        "correct": true,
+        "confidence": 0.9589955520645546,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

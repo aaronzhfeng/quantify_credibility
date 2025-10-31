@@ -1,0 +1,51 @@
+{
+  "question_id": 199,
+  "question_text": "Which statement best describes a property of water?",
+  "choices": [
+    "A: Liquid water holds its shape.",
+    "B: Water changes to a gas as it boils.",
+    "C: Ice becomes a liquid when it freezes.",
+    "D: Solid ice changes shape with its container."
+  ],
+  "gold_answer": "B",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Which statement best describes a property of water?\n\n\nChoices:\nA) Liquid water holds its shape.\nB) Water changes to a gas as it boils.\nC) Ice becomes a liquid when it freezes.\nD) Solid ice changes shape with its container.\n\nProvide an answer to the following question:\n\nQ: Which statement best describes a property of water?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "B",
+          "logprob": -0.5514619803288952,
+          "probability": 0.5761069373889461
+        }
+      ],
+      "decision_process": {
+        "selected_text": "B",
+        "matched_choice": "B",
+        "confidence_computation": "exp(logprob) = exp(-0.5515) = 0.5761"
+      },
+      "final_metrics": {
+        "predicted": "B",
+        "correct": true,
+        "confidence": 0.5761069373889461,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

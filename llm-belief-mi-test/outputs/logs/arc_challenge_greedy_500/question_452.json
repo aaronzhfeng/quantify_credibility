@@ -1,0 +1,51 @@
+{
+  "question_id": 452,
+  "question_text": "Which of the following will best display percentages of the eight most abundant elements in the Earth's crust?",
+  "choices": [
+    "A: line graph",
+    "B: pie chart",
+    "C: bar graph",
+    "D: data table"
+  ],
+  "gold_answer": "D",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Which of the following will best display percentages of the eight most abundant elements in the Earth's crust?\n\n\nChoices:\nA) line graph\nB) pie chart\nC) bar graph\nD) data table\n\nProvide an answer to the following question:\n\nQ: Which of the following will best display percentages of the eight most abundant elements in the Earth's crust?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "B",
+          "logprob": -0.602167975041084,
+          "probability": 0.5476231149722975
+        }
+      ],
+      "decision_process": {
+        "selected_text": "B",
+        "matched_choice": "B",
+        "confidence_computation": "exp(logprob) = exp(-0.6022) = 0.5476"
+      },
+      "final_metrics": {
+        "predicted": "B",
+        "correct": false,
+        "confidence": 0.5476231149722975,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

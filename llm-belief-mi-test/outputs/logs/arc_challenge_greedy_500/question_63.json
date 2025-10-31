@@ -1,0 +1,51 @@
+{
+  "question_id": 63,
+  "question_text": "Which of the following organs in fish has the same function as the human lung?",
+  "choices": [
+    "A: kidney",
+    "B: heart",
+    "C: gill",
+    "D: skin"
+  ],
+  "gold_answer": "C",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Which of the following organs in fish has the same function as the human lung?\n\n\nChoices:\nA) kidney\nB) heart\nC) gill\nD) skin\n\nProvide an answer to the following question:\n\nQ: Which of the following organs in fish has the same function as the human lung?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "C",
+          "logprob": -0.2876640437170863,
+          "probability": 0.7500135216729099
+        }
+      ],
+      "decision_process": {
+        "selected_text": "C",
+        "matched_choice": "C",
+        "confidence_computation": "exp(logprob) = exp(-0.2877) = 0.7500"
+      },
+      "final_metrics": {
+        "predicted": "C",
+        "correct": true,
+        "confidence": 0.7500135216729099,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

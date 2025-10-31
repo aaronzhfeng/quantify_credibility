@@ -1,0 +1,51 @@
+{
+  "question_id": 20,
+  "question_text": "Cells take in food for energy. The part of the cell that aids in digestion of the food is the lysosome. What is the main role of lysosomes in the process of food digestion?",
+  "choices": [
+    "A: building proteins",
+    "B: breaking down wastes",
+    "C: controlling the activities of the cell",
+    "D: converting energy from one form into another"
+  ],
+  "gold_answer": "B",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Cells take in food for energy. The part of the cell that aids in digestion of the food is the lysosome. What is the main role of lysosomes in the process of food digestion?\n\n\nChoices:\nA) building proteins\nB) breaking down wastes\nC) controlling the activities of the cell\nD) converting energy from one form into another\n\nProvide an answer to the following question:\n\nQ: Cells take in food for energy. The part of the cell that aids in digestion of the food is the lysosome. What is the main role of lysosomes in the process of food digestion?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "B",
+          "logprob": -0.1276106890582014,
+          "probability": 0.8801959823775898
+        }
+      ],
+      "decision_process": {
+        "selected_text": "B",
+        "matched_choice": "B",
+        "confidence_computation": "exp(logprob) = exp(-0.1276) = 0.8802"
+      },
+      "final_metrics": {
+        "predicted": "B",
+        "correct": true,
+        "confidence": 0.8801959823775898,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

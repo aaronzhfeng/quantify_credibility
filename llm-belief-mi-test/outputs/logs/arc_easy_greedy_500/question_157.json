@@ -1,0 +1,51 @@
+{
+  "question_id": 157,
+  "question_text": "Pollutants, such as motor oil and gasoline, are sometimes leaked onto roads by vehicles. How do these pollutants most likely affect the environment?",
+  "choices": [
+    "A: Storms wash the pollutants into lakes and rivers.",
+    "B: Animals become sick from licking the pollutants on the road.",
+    "C: Animals get stuck in the pollutants when they cross the road.",
+    "D: Winds blow the pollutants to the side of the road and harm the soil."
+  ],
+  "gold_answer": "A",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Pollutants, such as motor oil and gasoline, are sometimes leaked onto roads by vehicles. How do these pollutants most likely affect the environment?\n\n\nChoices:\nA) Storms wash the pollutants into lakes and rivers.\nB) Animals become sick from licking the pollutants on the road.\nC) Animals get stuck in the pollutants when they cross the road.\nD) Winds blow the pollutants to the side of the road and harm the soil.\n\nProvide an answer to the following question:\n\nQ: Pollutants, such as motor oil and gasoline, are sometimes leaked onto roads by vehicles. How do these pollutants most likely affect the environment?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "A",
+          "logprob": -0.07865574420429766,
+          "probability": 0.9243580853057554
+        }
+      ],
+      "decision_process": {
+        "selected_text": "A",
+        "matched_choice": "A",
+        "confidence_computation": "exp(logprob) = exp(-0.0787) = 0.9244"
+      },
+      "final_metrics": {
+        "predicted": "A",
+        "correct": true,
+        "confidence": 0.9243580853057554,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

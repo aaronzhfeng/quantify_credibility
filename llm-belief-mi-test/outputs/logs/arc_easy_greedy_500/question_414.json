@@ -1,0 +1,51 @@
+{
+  "question_id": 414,
+  "question_text": "An agriculturalist predicts that the tomato harvest will be very good this year. Which has the greatest effect on the size of the tomato harvest?",
+  "choices": [
+    "A: the time of day the seeds are planted",
+    "B: the amount of fruit picked after dark",
+    "C: the type of soil in which the crops are grown",
+    "D: the number of times daily that the farmer observes the crop"
+  ],
+  "gold_answer": "C",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: An agriculturalist predicts that the tomato harvest will be very good this year. Which has the greatest effect on the size of the tomato harvest?\n\n\nChoices:\nA) the time of day the seeds are planted\nB) the amount of fruit picked after dark\nC) the type of soil in which the crops are grown\nD) the number of times daily that the farmer observes the crop\n\nProvide an answer to the following question:\n\nQ: An agriculturalist predicts that the tomato harvest will be very good this year. Which has the greatest effect on the size of the tomato harvest?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "C",
+          "logprob": -0.11251829343382269,
+          "probability": 0.8935810002941024
+        }
+      ],
+      "decision_process": {
+        "selected_text": "C",
+        "matched_choice": "C",
+        "confidence_computation": "exp(logprob) = exp(-0.1125) = 0.8936"
+      },
+      "final_metrics": {
+        "predicted": "C",
+        "correct": true,
+        "confidence": 0.8935810002941024,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "question_id": 85,
+  "question_text": "Which event helps to renew a resource?",
+  "choices": [
+    "A: A seed is planted from a tree.",
+    "B: An offshore rig pumps oil.",
+    "C: A car is filled with gasoline.",
+    "D: An office is heated with coal."
+  ],
+  "gold_answer": "A",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Which event helps to renew a resource?\n\n\nChoices:\nA) A seed is planted from a tree.\nB) An offshore rig pumps oil.\nC) A car is filled with gasoline.\nD) An office is heated with coal.\n\nProvide an answer to the following question:\n\nQ: Which event helps to renew a resource?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "A",
+          "logprob": -0.016456721801660024,
+          "probability": 0.9836779502789049
+        }
+      ],
+      "decision_process": {
+        "selected_text": "A",
+        "matched_choice": "A",
+        "confidence_computation": "exp(logprob) = exp(-0.0165) = 0.9837"
+      },
+      "final_metrics": {
+        "predicted": "A",
+        "correct": true,
+        "confidence": 0.9836779502789049,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

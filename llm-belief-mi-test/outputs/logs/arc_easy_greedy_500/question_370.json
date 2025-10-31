@@ -1,0 +1,51 @@
+{
+  "question_id": 370,
+  "question_text": "Cancer is most often the result of",
+  "choices": [
+    "1: abnormal cell division",
+    "2: natural selection",
+    "3: bacterial infection",
+    "4: biological adaptation"
+  ],
+  "gold_answer": "1",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Cancer is most often the result of\n\n\nChoices:\n1) abnormal cell division\n2) natural selection\n3) bacterial infection\n4) biological adaptation\n\nProvide an answer to the following question:\n\nQ: Cancer is most often the result of\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "A",
+          "logprob": -0.0010966570698656142,
+          "probability": 0.998903944038742
+        }
+      ],
+      "decision_process": {
+        "selected_text": "A",
+        "matched_choice": "1",
+        "confidence_computation": "exp(logprob) = exp(-0.0011) = 0.9989"
+      },
+      "final_metrics": {
+        "predicted": "1",
+        "correct": true,
+        "confidence": 0.998903944038742,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

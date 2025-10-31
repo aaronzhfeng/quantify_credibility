@@ -1,0 +1,51 @@
+{
+  "question_id": 226,
+  "question_text": "What safety procedure should a student follow when a thermometer is broken during a lab experiment?",
+  "choices": [
+    "A: tell the teacher immediately",
+    "B: stop the experiment immediately",
+    "C: sweep the glass into a biohazard container",
+    "D: use a paper towel to pick up the pieces"
+  ],
+  "gold_answer": "A",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: What safety procedure should a student follow when a thermometer is broken during a lab experiment?\n\n\nChoices:\nA) tell the teacher immediately\nB) stop the experiment immediately\nC) sweep the glass into a biohazard container\nD) use a paper towel to pick up the pieces\n\nProvide an answer to the following question:\n\nQ: What safety procedure should a student follow when a thermometer is broken during a lab experiment?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "A",
+          "logprob": -0.4503085392061621,
+          "probability": 0.6374314486848898
+        }
+      ],
+      "decision_process": {
+        "selected_text": "A",
+        "matched_choice": "A",
+        "confidence_computation": "exp(logprob) = exp(-0.4503) = 0.6374"
+      },
+      "final_metrics": {
+        "predicted": "A",
+        "correct": true,
+        "confidence": 0.6374314486848898,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

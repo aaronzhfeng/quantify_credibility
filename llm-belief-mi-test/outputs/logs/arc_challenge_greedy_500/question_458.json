@@ -1,0 +1,51 @@
+{
+  "question_id": 458,
+  "question_text": "Gulf sturgeons, a type of fish, live in saltwater along the gulf coast of Florida. They swim upriver to breed in clean freshwater. After several years, the young sturgeons migrate downriver to the coastal saltwater environments. Which would be the most likely effect on gulf sturgeons if dams were built along these rivers?",
+  "choices": [
+    "A: Gulf sturgeons will change over time into a new species.",
+    "B: Gulf sturgeons will move from coastal rivers into the ocean.",
+    "C: The gulf sturgeon population will decline due to loss of habitat.",
+    "D: The gulf sturgeon population will adapt to breeding in saltwater."
+  ],
+  "gold_answer": "C",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Gulf sturgeons, a type of fish, live in saltwater along the gulf coast of Florida. They swim upriver to breed in clean freshwater. After several years, the young sturgeons migrate downriver to the coastal saltwater environments. Which would be the most likely effect on gulf sturgeons if dams were built along these rivers?\n\n\nChoices:\nA) Gulf sturgeons will change over time into a new species.\nB) Gulf sturgeons will move from coastal rivers into the ocean.\nC) The gulf sturgeon population will decline due to loss of habitat.\nD) The gulf sturgeon population will adapt to breeding in saltwater.\n\nProvide an answer to the following question:\n\nQ: Gulf sturgeons, a type of fish, live in saltwater along the gulf coast of Florida. They swim upriver to breed in clean freshwater. After several years, the young sturgeons migrate downriver to the coastal saltwater environments. Which would be the most likely effect on gulf sturgeons if dams were built along these rivers?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "C",
+          "logprob": -0.011731157777830958,
+          "probability": 0.9883373839670837
+        }
+      ],
+      "decision_process": {
+        "selected_text": "C",
+        "matched_choice": "C",
+        "confidence_computation": "exp(logprob) = exp(-0.0117) = 0.9883"
+      },
+      "final_metrics": {
+        "predicted": "C",
+        "correct": true,
+        "confidence": 0.9883373839670837,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

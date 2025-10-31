@@ -158,7 +158,7 @@ def plot_all_datasets(
     all_results = {}
     
     for dataset in datasets:
-        pattern = f"outputs/results/{dataset}_*_500.json"
+        pattern = f"outputs/results/{dataset}/{dataset}_*_500.json"
         results = collect_results(pattern)
         
         if results:

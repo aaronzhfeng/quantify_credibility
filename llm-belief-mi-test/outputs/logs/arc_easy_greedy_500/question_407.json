@@ -1,0 +1,51 @@
+{
+  "question_id": 407,
+  "question_text": "In one day, a family in a car rode for 2 hours, stopped for 3 hours, and then rode for another 5 hours. During the day, the family traveled a total distance of 400 kilometers. What was their average speed for the whole trip?",
+  "choices": [
+    "A: 10 km/h",
+    "B: 20 km/h",
+    "C: 40 km/h",
+    "D: 50 km/h"
+  ],
+  "gold_answer": "C",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: In one day, a family in a car rode for 2 hours, stopped for 3 hours, and then rode for another 5 hours. During the day, the family traveled a total distance of 400 kilometers. What was their average speed for the whole trip?\n\n\nChoices:\nA) 10 km/h\nB) 20 km/h\nC) 40 km/h\nD) 50 km/h\n\nProvide an answer to the following question:\n\nQ: In one day, a family in a car rode for 2 hours, stopped for 3 hours, and then rode for another 5 hours. During the day, the family traveled a total distance of 400 kilometers. What was their average speed for the whole trip?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "C",
+          "logprob": -0.8850600074511021,
+          "probability": 0.41268940809653265
+        }
+      ],
+      "decision_process": {
+        "selected_text": "C",
+        "matched_choice": "C",
+        "confidence_computation": "exp(logprob) = exp(-0.8851) = 0.4127"
+      },
+      "final_metrics": {
+        "predicted": "C",
+        "correct": true,
+        "confidence": 0.41268940809653265,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

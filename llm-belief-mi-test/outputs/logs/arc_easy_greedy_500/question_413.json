@@ -1,0 +1,51 @@
+{
+  "question_id": 413,
+  "question_text": "The fossil record shows that trees have changed throughout the years. Which of the following conclusions would be best supported by the fossil record?",
+  "choices": [
+    "A: The environment has changed.",
+    "B: Animals need leafy trees.",
+    "C: Rocks can destroy trees.",
+    "D: Trees give off oxygen."
+  ],
+  "gold_answer": "A",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: The fossil record shows that trees have changed throughout the years. Which of the following conclusions would be best supported by the fossil record?\n\n\nChoices:\nA) The environment has changed.\nB) Animals need leafy trees.\nC) Rocks can destroy trees.\nD) Trees give off oxygen.\n\nProvide an answer to the following question:\n\nQ: The fossil record shows that trees have changed throughout the years. Which of the following conclusions would be best supported by the fossil record?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "A",
+          "logprob": -0.00204204778856365,
+          "probability": 0.9979600357725367
+        }
+      ],
+      "decision_process": {
+        "selected_text": "A",
+        "matched_choice": "A",
+        "confidence_computation": "exp(logprob) = exp(-0.0020) = 0.9980"
+      },
+      "final_metrics": {
+        "predicted": "A",
+        "correct": true,
+        "confidence": 0.9979600357725367,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

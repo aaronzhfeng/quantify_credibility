@@ -1,0 +1,51 @@
+{
+  "question_id": 35,
+  "question_text": "A scientist maps a long region in which earthquakes originate and determines this region is a transform plate boundary. Which evidence would cause the scientist to reevaluate this determination?",
+  "choices": [
+    "A: Volcanism also characterizes the region.",
+    "B: Earthquake centers in the region occur at shallow depths.",
+    "C: The region shows extensive faulting of sediments.",
+    "D: Equal crust densities are found on opposite sides of the region."
+  ],
+  "gold_answer": "A",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A scientist maps a long region in which earthquakes originate and determines this region is a transform plate boundary. Which evidence would cause the scientist to reevaluate this determination?\n\n\nChoices:\nA) Volcanism also characterizes the region.\nB) Earthquake centers in the region occur at shallow depths.\nC) The region shows extensive faulting of sediments.\nD) Equal crust densities are found on opposite sides of the region.\n\nProvide an answer to the following question:\n\nQ: A scientist maps a long region in which earthquakes originate and determines this region is a transform plate boundary. Which evidence would cause the scientist to reevaluate this determination?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "C",
+          "logprob": -0.951222286792472,
+          "probability": 0.386268603784403
+        }
+      ],
+      "decision_process": {
+        "selected_text": "C",
+        "matched_choice": "C",
+        "confidence_computation": "exp(logprob) = exp(-0.9512) = 0.3863"
+      },
+      "final_metrics": {
+        "predicted": "C",
+        "correct": false,
+        "confidence": 0.386268603784403,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "question_id": 379,
+  "question_text": "The amount of gravitational attraction between the Moon and an astronaut standing on its surface depends on the astronaut's distance from the center of the Moon and the astronaut's",
+  "choices": [
+    "A: height.",
+    "B: mass.",
+    "C: shape.",
+    "D: weight."
+  ],
+  "gold_answer": "B",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: The amount of gravitational attraction between the Moon and an astronaut standing on its surface depends on the astronaut's distance from the center of the Moon and the astronaut's\n\n\nChoices:\nA) height.\nB) mass.\nC) shape.\nD) weight.\n\nProvide an answer to the following question:\n\nQ: The amount of gravitational attraction between the Moon and an astronaut standing on its surface depends on the astronaut's distance from the center of the Moon and the astronaut's\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "B",
+          "logprob": -0.1537495069205761,
+          "probability": 0.8574867886176811
+        }
+      ],
+      "decision_process": {
+        "selected_text": "B",
+        "matched_choice": "B",
+        "confidence_computation": "exp(logprob) = exp(-0.1537) = 0.8575"
+      },
+      "final_metrics": {
+        "predicted": "B",
+        "correct": true,
+        "confidence": 0.8574867886176811,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

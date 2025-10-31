@@ -1,0 +1,51 @@
+{
+  "question_id": 36,
+  "question_text": "Which best describes how the sun might compare to a different-sized star, if they were right next to each other?",
+  "choices": [
+    "A: The sun would be enormous next to an average star.",
+    "B: The sun would be tiny next to one of the largest stars.",
+    "C: The sun would be extremely bright next to an average star.",
+    "D: The sun would be very dim next to one of the smallest stars."
+  ],
+  "gold_answer": "B",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Which best describes how the sun might compare to a different-sized star, if they were right next to each other?\n\n\nChoices:\nA) The sun would be enormous next to an average star.\nB) The sun would be tiny next to one of the largest stars.\nC) The sun would be extremely bright next to an average star.\nD) The sun would be very dim next to one of the smallest stars.\n\nProvide an answer to the following question:\n\nQ: Which best describes how the sun might compare to a different-sized star, if they were right next to each other?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "A",
+          "logprob": -0.6866612734738737,
+          "probability": 0.503253493064516
+        }
+      ],
+      "decision_process": {
+        "selected_text": "A",
+        "matched_choice": "A",
+        "confidence_computation": "exp(logprob) = exp(-0.6867) = 0.5033"
+      },
+      "final_metrics": {
+        "predicted": "A",
+        "correct": false,
+        "confidence": 0.503253493064516,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

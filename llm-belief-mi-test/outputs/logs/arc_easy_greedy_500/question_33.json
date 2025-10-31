@@ -1,0 +1,51 @@
+{
+  "question_id": 33,
+  "question_text": "Antarctica is a continent at Earth's south pole. Fossils of tropical fern plants were discovered in Antarctica even though these plants do not grow there today. Which conclusion does the fossil evidence best support?",
+  "choices": [
+    "A: Millions of years ago, Antarctica was in a warmer location on Earth.",
+    "B: Recently, a natural disaster killed all of the fern plants in Antarctica.",
+    "C: Recently, birds stopped carrying the seeds of fern plants to Antarctica.",
+    "D: Millions of years ago, Earth's south pole was much colder than it is today."
+  ],
+  "gold_answer": "A",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Antarctica is a continent at Earth's south pole. Fossils of tropical fern plants were discovered in Antarctica even though these plants do not grow there today. Which conclusion does the fossil evidence best support?\n\n\nChoices:\nA) Millions of years ago, Antarctica was in a warmer location on Earth.\nB) Recently, a natural disaster killed all of the fern plants in Antarctica.\nC) Recently, birds stopped carrying the seeds of fern plants to Antarctica.\nD) Millions of years ago, Earth's south pole was much colder than it is today.\n\nProvide an answer to the following question:\n\nQ: Antarctica is a continent at Earth's south pole. Fossils of tropical fern plants were discovered in Antarctica even though these plants do not grow there today. Which conclusion does the fossil evidence best support?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "A",
+          "logprob": -0.015261381835443899,
+          "probability": 0.9848544828848921
+        }
+      ],
+      "decision_process": {
+        "selected_text": "A",
+        "matched_choice": "A",
+        "confidence_computation": "exp(logprob) = exp(-0.0153) = 0.9849"
+      },
+      "final_metrics": {
+        "predicted": "A",
+        "correct": true,
+        "confidence": 0.9848544828848921,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

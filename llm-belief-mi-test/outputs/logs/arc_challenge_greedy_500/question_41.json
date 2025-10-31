@@ -1,0 +1,51 @@
+{
+  "question_id": 41,
+  "question_text": "Which event occurs once per day?",
+  "choices": [
+    "A: The Moon rises.",
+    "B: The new Moon occurs.",
+    "C: The Moon cycles through its phases.",
+    "D: The Moon passes in front of the Sun."
+  ],
+  "gold_answer": "A",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Which event occurs once per day?\n\n\nChoices:\nA) The Moon rises.\nB) The new Moon occurs.\nC) The Moon cycles through its phases.\nD) The Moon passes in front of the Sun.\n\nProvide an answer to the following question:\n\nQ: Which event occurs once per day?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "C",
+          "logprob": -0.650073434895603,
+          "probability": 0.5220074417914791
+        }
+      ],
+      "decision_process": {
+        "selected_text": "C",
+        "matched_choice": "C",
+        "confidence_computation": "exp(logprob) = exp(-0.6501) = 0.5220"
+      },
+      "final_metrics": {
+        "predicted": "C",
+        "correct": false,
+        "confidence": 0.5220074417914791,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

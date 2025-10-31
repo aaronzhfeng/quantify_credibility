@@ -1,0 +1,51 @@
+{
+  "question_id": 92,
+  "question_text": "Students shake salt into a jar of water, and they shake pepper into a second jar of water. Which statement best compares the two jars?",
+  "choices": [
+    "A: Only the salt and water is a mixture.",
+    "B: Only the pepper and water is a solution.",
+    "C: Both jars contain solutions.",
+    "D: Both jars contain mixtures."
+  ],
+  "gold_answer": "D",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Students shake salt into a jar of water, and they shake pepper into a second jar of water. Which statement best compares the two jars?\n\n\nChoices:\nA) Only the salt and water is a mixture.\nB) Only the pepper and water is a solution.\nC) Both jars contain solutions.\nD) Both jars contain mixtures.\n\nProvide an answer to the following question:\n\nQ: Students shake salt into a jar of water, and they shake pepper into a second jar of water. Which statement best compares the two jars?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "D",
+          "logprob": -0.19704264347092248,
+          "probability": 0.8211556156404073
+        }
+      ],
+      "decision_process": {
+        "selected_text": "D",
+        "matched_choice": "D",
+        "confidence_computation": "exp(logprob) = exp(-0.1970) = 0.8212"
+      },
+      "final_metrics": {
+        "predicted": "D",
+        "correct": true,
+        "confidence": 0.8211556156404073,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

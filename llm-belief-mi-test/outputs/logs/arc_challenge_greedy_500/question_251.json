@@ -1,0 +1,51 @@
+{
+  "question_id": 251,
+  "question_text": "Evidence of extensive glaciation has been suggested as an explanation for extinctions at the end of the Permian period. Such glaciation could have disrupted ocean ecosystems by producing which effect?",
+  "choices": [
+    "A: steep drop in ocean salinity and density",
+    "B: steep drop in ocean volume and area",
+    "C: increased exposure of oceans to ultraviolet radiation",
+    "D: increased exposure of tsunamis to ocean life"
+  ],
+  "gold_answer": "B",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Evidence of extensive glaciation has been suggested as an explanation for extinctions at the end of the Permian period. Such glaciation could have disrupted ocean ecosystems by producing which effect?\n\n\nChoices:\nA) steep drop in ocean salinity and density\nB) steep drop in ocean volume and area\nC) increased exposure of oceans to ultraviolet radiation\nD) increased exposure of tsunamis to ocean life\n\nProvide an answer to the following question:\n\nQ: Evidence of extensive glaciation has been suggested as an explanation for extinctions at the end of the Permian period. Such glaciation could have disrupted ocean ecosystems by producing which effect?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "A",
+          "logprob": -0.07537044014316052,
+          "probability": 0.927399876546019
+        }
+      ],
+      "decision_process": {
+        "selected_text": "A",
+        "matched_choice": "A",
+        "confidence_computation": "exp(logprob) = exp(-0.0754) = 0.9274"
+      },
+      "final_metrics": {
+        "predicted": "A",
+        "correct": false,
+        "confidence": 0.927399876546019,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

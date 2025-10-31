@@ -1,0 +1,51 @@
+{
+  "question_id": 459,
+  "question_text": "Which statement best describes the Law of Superposition?",
+  "choices": [
+    "A: Each sedimentary layer of rock represents 1,000 years of Earth's age, much like the rings of a tree.",
+    "B: In undisturbed layers of sedimentary rock, the upper rock layers are older than the lower rock layers.",
+    "C: In undisturbed layers of sedimentary rock, the lowest layers contain the older rocks.",
+    "D: Rocks that form near volcanoes are older than surrounding rock."
+  ],
+  "gold_answer": "C",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Which statement best describes the Law of Superposition?\n\n\nChoices:\nA) Each sedimentary layer of rock represents 1,000 years of Earth's age, much like the rings of a tree.\nB) In undisturbed layers of sedimentary rock, the upper rock layers are older than the lower rock layers.\nC) In undisturbed layers of sedimentary rock, the lowest layers contain the older rocks.\nD) Rocks that form near volcanoes are older than surrounding rock.\n\nProvide an answer to the following question:\n\nQ: Which statement best describes the Law of Superposition?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "C",
+          "logprob": -0.13112134614493698,
+          "probability": 0.877111333854056
+        }
+      ],
+      "decision_process": {
+        "selected_text": "C",
+        "matched_choice": "C",
+        "confidence_computation": "exp(logprob) = exp(-0.1311) = 0.8771"
+      },
+      "final_metrics": {
+        "predicted": "C",
+        "correct": true,
+        "confidence": 0.877111333854056,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

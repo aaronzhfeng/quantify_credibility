@@ -1,0 +1,51 @@
+{
+  "question_id": 256,
+  "question_text": "An atom would lose the least amount of mass if it lost",
+  "choices": [
+    "A: a proton.",
+    "B: a neutron.",
+    "C: a nucleus.",
+    "D: an electron."
+  ],
+  "gold_answer": "D",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: An atom would lose the least amount of mass if it lost\n\n\nChoices:\nA) a proton.\nB) a neutron.\nC) a nucleus.\nD) an electron.\n\nProvide an answer to the following question:\n\nQ: An atom would lose the least amount of mass if it lost\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "A",
+          "logprob": -0.6874487330205739,
+          "probability": 0.5028573572879118
+        }
+      ],
+      "decision_process": {
+        "selected_text": "A",
+        "matched_choice": "A",
+        "confidence_computation": "exp(logprob) = exp(-0.6874) = 0.5029"
+      },
+      "final_metrics": {
+        "predicted": "A",
+        "correct": false,
+        "confidence": 0.5028573572879118,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

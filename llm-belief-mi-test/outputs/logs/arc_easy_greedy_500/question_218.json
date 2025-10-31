@@ -1,0 +1,51 @@
+{
+  "question_id": 218,
+  "question_text": "In the human body, the circulatory system works with the respiratory system by",
+  "choices": [
+    "A: producing red blood cells.",
+    "B: transporting oxygen to organs.",
+    "C: providing nutrients to muscles.",
+    "D: controlling the movement of the lungs."
+  ],
+  "gold_answer": "B",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: In the human body, the circulatory system works with the respiratory system by\n\n\nChoices:\nA) producing red blood cells.\nB) transporting oxygen to organs.\nC) providing nutrients to muscles.\nD) controlling the movement of the lungs.\n\nProvide an answer to the following question:\n\nQ: In the human body, the circulatory system works with the respiratory system by\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "B",
+          "logprob": -0.11288205999881029,
+          "probability": 0.8932560045179695
+        }
+      ],
+      "decision_process": {
+        "selected_text": "B",
+        "matched_choice": "B",
+        "confidence_computation": "exp(logprob) = exp(-0.1129) = 0.8933"
+      },
+      "final_metrics": {
+        "predicted": "B",
+        "correct": true,
+        "confidence": 0.8932560045179695,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

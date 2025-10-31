@@ -1,0 +1,51 @@
+{
+  "question_id": 47,
+  "question_text": "A group of fish was released into a local lake. This species of fish had never lived in the lake before. Scientists want to collect data on how the lake's ecosystem is affected by the new fish. Which method of data collection will give the most accurate results?",
+  "choices": [
+    "A: Measuring oxygen levels in the lake for two months",
+    "B: Checking the lake water for nutrient levels on one day",
+    "C: Sampling fish populations in the lake over several years",
+    "D: Observing the surface of the lake for signs of the new fish after one week"
+  ],
+  "gold_answer": "C",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A group of fish was released into a local lake. This species of fish had never lived in the lake before. Scientists want to collect data on how the lake's ecosystem is affected by the new fish. Which method of data collection will give the most accurate results?\n\n\nChoices:\nA) Measuring oxygen levels in the lake for two months\nB) Checking the lake water for nutrient levels on one day\nC) Sampling fish populations in the lake over several years\nD) Observing the surface of the lake for signs of the new fish after one week\n\nProvide an answer to the following question:\n\nQ: A group of fish was released into a local lake. This species of fish had never lived in the lake before. Scientists want to collect data on how the lake's ecosystem is affected by the new fish. Which method of data collection will give the most accurate results?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "C",
+          "logprob": -0.1479512695223093,
+          "probability": 0.8624731426462586
+        }
+      ],
+      "decision_process": {
+        "selected_text": "C",
+        "matched_choice": "C",
+        "confidence_computation": "exp(logprob) = exp(-0.1480) = 0.8625"
+      },
+      "final_metrics": {
+        "predicted": "C",
+        "correct": true,
+        "confidence": 0.8624731426462586,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

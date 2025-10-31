@@ -1,0 +1,51 @@
+{
+  "question_id": 131,
+  "question_text": "Which set of elements contains only metals?",
+  "choices": [
+    "A: iodine, iron, nickel",
+    "B: helium, carbon, gold",
+    "C: sodium, chromium, copper",
+    "D: phosphorus, nitrogen, oxygen"
+  ],
+  "gold_answer": "C",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Which set of elements contains only metals?\n\n\nChoices:\nA) iodine, iron, nickel\nB) helium, carbon, gold\nC) sodium, chromium, copper\nD) phosphorus, nitrogen, oxygen\n\nProvide an answer to the following question:\n\nQ: Which set of elements contains only metals?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "C",
+          "logprob": -0.2827517496771179,
+          "probability": 0.7537068726113156
+        }
+      ],
+      "decision_process": {
+        "selected_text": "C",
+        "matched_choice": "C",
+        "confidence_computation": "exp(logprob) = exp(-0.2828) = 0.7537"
+      },
+      "final_metrics": {
+        "predicted": "C",
+        "correct": true,
+        "confidence": 0.7537068726113156,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

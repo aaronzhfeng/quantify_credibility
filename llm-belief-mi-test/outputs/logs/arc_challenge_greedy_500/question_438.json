@@ -1,0 +1,51 @@
+{
+  "question_id": 438,
+  "question_text": "In 1879, Marie Cornu discovered that light from the Sun had a drop in ultraviolet (UV) light. Two years later, Walter Hartley found that ozone absorbs certain wavelengths of UV light. What motivated Charles Fabry and Henri Buisson to conduct research that led to the discovery of the ozone layer in the atmosphere of Earth?",
+  "choices": [
+    "A: inquiring into the causes of observed phenomena",
+    "B: finding options for replacing missing wavelengths of light",
+    "C: health concerns about the effects of ultraviolet radiation",
+    "D: predicting future changes in ultraviolet light output"
+  ],
+  "gold_answer": "A",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: In 1879, Marie Cornu discovered that light from the Sun had a drop in ultraviolet (UV) light. Two years later, Walter Hartley found that ozone absorbs certain wavelengths of UV light. What motivated Charles Fabry and Henri Buisson to conduct research that led to the discovery of the ozone layer in the atmosphere of Earth?\n\n\nChoices:\nA) inquiring into the causes of observed phenomena\nB) finding options for replacing missing wavelengths of light\nC) health concerns about the effects of ultraviolet radiation\nD) predicting future changes in ultraviolet light output\n\nProvide an answer to the following question:\n\nQ: In 1879, Marie Cornu discovered that light from the Sun had a drop in ultraviolet (UV) light. Two years later, Walter Hartley found that ozone absorbs certain wavelengths of UV light. What motivated Charles Fabry and Henri Buisson to conduct research that led to the discovery of the ozone layer in the atmosphere of Earth?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "A",
+          "logprob": -0.7479284219443798,
+          "probability": 0.47334611119146774
+        }
+      ],
+      "decision_process": {
+        "selected_text": "A",
+        "matched_choice": "A",
+        "confidence_computation": "exp(logprob) = exp(-0.7479) = 0.4733"
+      },
+      "final_metrics": {
+        "predicted": "A",
+        "correct": true,
+        "confidence": 0.47334611119146774,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

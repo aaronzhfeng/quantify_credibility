@@ -1,0 +1,51 @@
+{
+  "question_id": 44,
+  "question_text": "A student sees many plants around a pond. The student can determine which plants are nonvascular by",
+  "choices": [
+    "A: observing if they lack true stems, roots, or leaves",
+    "B: examining the plants for spores",
+    "C: counting the number of leaves on each stalk",
+    "D: noticing if the plants are near rocks"
+  ],
+  "gold_answer": "A",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A student sees many plants around a pond. The student can determine which plants are nonvascular by\n\n\nChoices:\nA) observing if they lack true stems, roots, or leaves\nB) examining the plants for spores\nC) counting the number of leaves on each stalk\nD) noticing if the plants are near rocks\n\nProvide an answer to the following question:\n\nQ: A student sees many plants around a pond. The student can determine which plants are nonvascular by\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "B",
+          "logprob": -0.6481476841727272,
+          "probability": 0.5230136665579246
+        }
+      ],
+      "decision_process": {
+        "selected_text": "B",
+        "matched_choice": "B",
+        "confidence_computation": "exp(logprob) = exp(-0.6481) = 0.5230"
+      },
+      "final_metrics": {
+        "predicted": "B",
+        "correct": false,
+        "confidence": 0.5230136665579246,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

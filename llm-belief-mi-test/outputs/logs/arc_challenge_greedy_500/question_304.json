@@ -1,0 +1,51 @@
+{
+  "question_id": 304,
+  "question_text": "Which item can safely be reused after an investigation?",
+  "choices": [
+    "A: glassware used to heat liquids",
+    "B: filter paper used to filter water",
+    "C: paper towels used to soak up water",
+    "D: powdered chemicals cleaned from a spill"
+  ],
+  "gold_answer": "A",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Which item can safely be reused after an investigation?\n\n\nChoices:\nA) glassware used to heat liquids\nB) filter paper used to filter water\nC) paper towels used to soak up water\nD) powdered chemicals cleaned from a spill\n\nProvide an answer to the following question:\n\nQ: Which item can safely be reused after an investigation?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "A",
+          "logprob": -0.6134314264636487,
+          "probability": 0.5414895957608888
+        }
+      ],
+      "decision_process": {
+        "selected_text": "A",
+        "matched_choice": "A",
+        "confidence_computation": "exp(logprob) = exp(-0.6134) = 0.5415"
+      },
+      "final_metrics": {
+        "predicted": "A",
+        "correct": true,
+        "confidence": 0.5414895957608888,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

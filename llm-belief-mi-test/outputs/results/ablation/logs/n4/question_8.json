@@ -1,0 +1,959 @@
+{
+  "question_id": 8,
+  "question_text": "The summer solstice in the northern hemisphere is four months before",
+  "choices": [
+    "A: May",
+    "B: July",
+    "C: April",
+    "D: October"
+  ],
+  "gold_answer": "D",
+  "methods": {
+    "mi_method": {
+      "description": "k=10 chains of length n=4, MI estimation",
+      "raw_inputs": [
+        {
+          "chain_id": 0,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: The summer solstice in the northern hemisphere is four months before\n\n\nChoices:\nA) May\nB) July\nC) April\nD) October\n\nProvide an answer to the following question:\n\nQ: The summer solstice in the northern hemisphere is four months before\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 0,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: The summer solstice in the northern hemisphere is four months before\n\n\nOne answer to question Q is A) May.\n\n\nChoices:\nA) May\nB) July\nC) April\nD) October\n\nProvide an answer to the following question:\n\nQ: The summer solstice in the northern hemisphere is four months before\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 0,
+          "step": 2,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: The summer solstice in the northern hemisphere is four months before\n\n\nOne answer to question Q is A) May. Another answer to question Q is A) May.\n\n\nChoices:\nA) May\nB) July\nC) April\nD) October\n\nProvide an answer to the following question:\n\nQ: The summer solstice in the northern hemisphere is four months before\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 0,
+          "step": 3,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: The summer solstice in the northern hemisphere is four months before\n\n\nOne answer to question Q is A) May. Another answer to question Q is A) May. Another answer to question Q is A) May.\n\n\nChoices:\nA) May\nB) July\nC) April\nD) October\n\nProvide an answer to the following question:\n\nQ: The summer solstice in the northern hemisphere is four months before\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 1,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: The summer solstice in the northern hemisphere is four months before\n\n\nChoices:\nA) May\nB) July\nC) April\nD) October\n\nProvide an answer to the following question:\n\nQ: The summer solstice in the northern hemisphere is four months before\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 1,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: The summer solstice in the northern hemisphere is four months before\n\n\nOne answer to question Q is A) May.\n\n\nChoices:\nA) May\nB) July\nC) April\nD) October\n\nProvide an answer to the following question:\n\nQ: The summer solstice in the northern hemisphere is four months before\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 1,
+          "step": 2,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: The summer solstice in the northern hemisphere is four months before\n\n\nOne answer to question Q is A) May. Another answer to question Q is A) May.\n\n\nChoices:\nA) May\nB) July\nC) April\nD) October\n\nProvide an answer to the following question:\n\nQ: The summer solstice in the northern hemisphere is four months before\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 1,
+          "step": 3,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: The summer solstice in the northern hemisphere is four months before\n\n\nOne answer to question Q is A) May. Another answer to question Q is A) May. Another answer to question Q is C) April.\n\n\nChoices:\nA) May\nB) July\nC) April\nD) October\n\nProvide an answer to the following question:\n\nQ: The summer solstice in the northern hemisphere is four months before\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 2,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: The summer solstice in the northern hemisphere is four months before\n\n\nChoices:\nA) May\nB) July\nC) April\nD) October\n\nProvide an answer to the following question:\n\nQ: The summer solstice in the northern hemisphere is four months before\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 2,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: The summer solstice in the northern hemisphere is four months before\n\n\nOne answer to question Q is C) April.\n\n\nChoices:\nA) May\nB) July\nC) April\nD) October\n\nProvide an answer to the following question:\n\nQ: The summer solstice in the northern hemisphere is four months before\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 2,
+          "step": 2,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: The summer solstice in the northern hemisphere is four months before\n\n\nOne answer to question Q is C) April. Another answer to question Q is A) May.\n\n\nChoices:\nA) May\nB) July\nC) April\nD) October\n\nProvide an answer to the following question:\n\nQ: The summer solstice in the northern hemisphere is four months before\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 2,
+          "step": 3,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: The summer solstice in the northern hemisphere is four months before\n\n\nOne answer to question Q is C) April. Another answer to question Q is A) May. Another answer to question Q is A) May.\n\n\nChoices:\nA) May\nB) July\nC) April\nD) October\n\nProvide an answer to the following question:\n\nQ: The summer solstice in the northern hemisphere is four months before\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 3,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: The summer solstice in the northern hemisphere is four months before\n\n\nChoices:\nA) May\nB) July\nC) April\nD) October\n\nProvide an answer to the following question:\n\nQ: The summer solstice in the northern hemisphere is four months before\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 3,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: The summer solstice in the northern hemisphere is four months before\n\n\nOne answer to question Q is A) May.\n\n\nChoices:\nA) May\nB) July\nC) April\nD) October\n\nProvide an answer to the following question:\n\nQ: The summer solstice in the northern hemisphere is four months before\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 3,
+          "step": 2,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: The summer solstice in the northern hemisphere is four months before\n\n\nOne answer to question Q is A) May. Another answer to question Q is A) May.\n\n\nChoices:\nA) May\nB) July\nC) April\nD) October\n\nProvide an answer to the following question:\n\nQ: The summer solstice in the northern hemisphere is four months before\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 3,
+          "step": 3,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: The summer solstice in the northern hemisphere is four months before\n\n\nOne answer to question Q is A) May. Another answer to question Q is A) May. Another answer to question Q is A) May.\n\n\nChoices:\nA) May\nB) July\nC) April\nD) October\n\nProvide an answer to the following question:\n\nQ: The summer solstice in the northern hemisphere is four months before\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 4,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: The summer solstice in the northern hemisphere is four months before\n\n\nChoices:\nA) May\nB) July\nC) April\nD) October\n\nProvide an answer to the following question:\n\nQ: The summer solstice in the northern hemisphere is four months before\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 4,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: The summer solstice in the northern hemisphere is four months before\n\n\nOne answer to question Q is B) July.\n\n\nChoices:\nA) May\nB) July\nC) April\nD) October\n\nProvide an answer to the following question:\n\nQ: The summer solstice in the northern hemisphere is four months before\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 4,
+          "step": 2,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: The summer solstice in the northern hemisphere is four months before\n\n\nOne answer to question Q is B) July. Another answer to question Q is A) May.\n\n\nChoices:\nA) May\nB) July\nC) April\nD) October\n\nProvide an answer to the following question:\n\nQ: The summer solstice in the northern hemisphere is four months before\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 4,
+          "step": 3,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: The summer solstice in the northern hemisphere is four months before\n\n\nOne answer to question Q is B) July. Another answer to question Q is A) May. Another answer to question Q is A) May.\n\n\nChoices:\nA) May\nB) July\nC) April\nD) October\n\nProvide an answer to the following question:\n\nQ: The summer solstice in the northern hemisphere is four months before\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 5,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: The summer solstice in the northern hemisphere is four months before\n\n\nChoices:\nA) May\nB) July\nC) April\nD) October\n\nProvide an answer to the following question:\n\nQ: The summer solstice in the northern hemisphere is four months before\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 5,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: The summer solstice in the northern hemisphere is four months before\n\n\nOne answer to question Q is A) May.\n\n\nChoices:\nA) May\nB) July\nC) April\nD) October\n\nProvide an answer to the following question:\n\nQ: The summer solstice in the northern hemisphere is four months before\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 5,
+          "step": 2,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: The summer solstice in the northern hemisphere is four months before\n\n\nOne answer to question Q is A) May. Another answer to question Q is A) May.\n\n\nChoices:\nA) May\nB) July\nC) April\nD) October\n\nProvide an answer to the following question:\n\nQ: The summer solstice in the northern hemisphere is four months before\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 5,
+          "step": 3,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: The summer solstice in the northern hemisphere is four months before\n\n\nOne answer to question Q is A) May. Another answer to question Q is A) May. Another answer to question Q is A) May.\n\n\nChoices:\nA) May\nB) July\nC) April\nD) October\n\nProvide an answer to the following question:\n\nQ: The summer solstice in the northern hemisphere is four months before\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 6,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: The summer solstice in the northern hemisphere is four months before\n\n\nChoices:\nA) May\nB) July\nC) April\nD) October\n\nProvide an answer to the following question:\n\nQ: The summer solstice in the northern hemisphere is four months before\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 6,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: The summer solstice in the northern hemisphere is four months before\n\n\nOne answer to question Q is D) October.\n\n\nChoices:\nA) May\nB) July\nC) April\nD) October\n\nProvide an answer to the following question:\n\nQ: The summer solstice in the northern hemisphere is four months before\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 6,
+          "step": 2,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: The summer solstice in the northern hemisphere is four months before\n\n\nOne answer to question Q is D) October. Another answer to question Q is A) May.\n\n\nChoices:\nA) May\nB) July\nC) April\nD) October\n\nProvide an answer to the following question:\n\nQ: The summer solstice in the northern hemisphere is four months before\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 6,
+          "step": 3,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: The summer solstice in the northern hemisphere is four months before\n\n\nOne answer to question Q is D) October. Another answer to question Q is A) May. Another answer to question Q is A) May.\n\n\nChoices:\nA) May\nB) July\nC) April\nD) October\n\nProvide an answer to the following question:\n\nQ: The summer solstice in the northern hemisphere is four months before\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 7,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: The summer solstice in the northern hemisphere is four months before\n\n\nChoices:\nA) May\nB) July\nC) April\nD) October\n\nProvide an answer to the following question:\n\nQ: The summer solstice in the northern hemisphere is four months before\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 7,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: The summer solstice in the northern hemisphere is four months before\n\n\nOne answer to question Q is B) July.\n\n\nChoices:\nA) May\nB) July\nC) April\nD) October\n\nProvide an answer to the following question:\n\nQ: The summer solstice in the northern hemisphere is four months before\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 7,
+          "step": 2,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: The summer solstice in the northern hemisphere is four months before\n\n\nOne answer to question Q is B) July. Another answer to question Q is A) May.\n\n\nChoices:\nA) May\nB) July\nC) April\nD) October\n\nProvide an answer to the following question:\n\nQ: The summer solstice in the northern hemisphere is four months before\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 7,
+          "step": 3,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: The summer solstice in the northern hemisphere is four months before\n\n\nOne answer to question Q is B) July. Another answer to question Q is A) May. Another answer to question Q is A) May.\n\n\nChoices:\nA) May\nB) July\nC) April\nD) October\n\nProvide an answer to the following question:\n\nQ: The summer solstice in the northern hemisphere is four months before\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 8,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: The summer solstice in the northern hemisphere is four months before\n\n\nChoices:\nA) May\nB) July\nC) April\nD) October\n\nProvide an answer to the following question:\n\nQ: The summer solstice in the northern hemisphere is four months before\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 8,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: The summer solstice in the northern hemisphere is four months before\n\n\nOne answer to question Q is A) May.\n\n\nChoices:\nA) May\nB) July\nC) April\nD) October\n\nProvide an answer to the following question:\n\nQ: The summer solstice in the northern hemisphere is four months before\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 8,
+          "step": 2,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: The summer solstice in the northern hemisphere is four months before\n\n\nOne answer to question Q is A) May. Another answer to question Q is A) May.\n\n\nChoices:\nA) May\nB) July\nC) April\nD) October\n\nProvide an answer to the following question:\n\nQ: The summer solstice in the northern hemisphere is four months before\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 8,
+          "step": 3,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: The summer solstice in the northern hemisphere is four months before\n\n\nOne answer to question Q is A) May. Another answer to question Q is A) May. Another answer to question Q is A) May.\n\n\nChoices:\nA) May\nB) July\nC) April\nD) October\n\nProvide an answer to the following question:\n\nQ: The summer solstice in the northern hemisphere is four months before\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 9,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: The summer solstice in the northern hemisphere is four months before\n\n\nChoices:\nA) May\nB) July\nC) April\nD) October\n\nProvide an answer to the following question:\n\nQ: The summer solstice in the northern hemisphere is four months before\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 9,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: The summer solstice in the northern hemisphere is four months before\n\n\nOne answer to question Q is C) April.\n\n\nChoices:\nA) May\nB) July\nC) April\nD) October\n\nProvide an answer to the following question:\n\nQ: The summer solstice in the northern hemisphere is four months before\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 9,
+          "step": 2,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: The summer solstice in the northern hemisphere is four months before\n\n\nOne answer to question Q is C) April. Another answer to question Q is C) April.\n\n\nChoices:\nA) May\nB) July\nC) April\nD) October\n\nProvide an answer to the following question:\n\nQ: The summer solstice in the northern hemisphere is four months before\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 9,
+          "step": 3,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: The summer solstice in the northern hemisphere is four months before\n\n\nOne answer to question Q is C) April. Another answer to question Q is C) April. Another answer to question Q is C) April.\n\n\nChoices:\nA) May\nB) July\nC) April\nD) October\n\nProvide an answer to the following question:\n\nQ: The summer solstice in the northern hemisphere is four months before\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "chain_id": 0,
+          "step": 0,
+          "text": "A",
+          "logprob": -1.0320261716842651,
+          "probability": 0.35628433550300065
+        },
+        {
+          "chain_id": 0,
+          "step": 1,
+          "text": "A",
+          "logprob": -0.23711071908473969,
+          "probability": 0.7889039364601643
+        },
+        {
+          "chain_id": 0,
+          "step": 2,
+          "text": "A",
+          "logprob": -0.5039488077163696,
+          "probability": 0.6041403093863288
+        },
+        {
+          "chain_id": 0,
+          "step": 3,
+          "text": "A",
+          "logprob": -0.07888974994421005,
+          "probability": 0.9241418055144026
+        },
+        {
+          "chain_id": 1,
+          "step": 0,
+          "text": "A",
+          "logprob": -1.0320261716842651,
+          "probability": 0.35628433550300065
+        },
+        {
+          "chain_id": 1,
+          "step": 1,
+          "text": "A",
+          "logprob": -0.23711071908473969,
+          "probability": 0.7889039364601643
+        },
+        {
+          "chain_id": 1,
+          "step": 2,
+          "text": "C",
+          "logprob": -2.170616626739502,
+          "probability": 0.11410723364152973
+        },
+        {
+          "chain_id": 1,
+          "step": 3,
+          "text": "A",
+          "logprob": -0.251640260219574,
+          "probability": 0.7775243942190615
+        },
+        {
+          "chain_id": 2,
+          "step": 0,
+          "text": "C",
+          "logprob": -1.5875815153121948,
+          "probability": 0.20441939957212324
+        },
+        {
+          "chain_id": 2,
+          "step": 1,
+          "text": "A",
+          "logprob": -0.9230274558067322,
+          "probability": 0.3973143667687347
+        },
+        {
+          "chain_id": 2,
+          "step": 2,
+          "text": "A",
+          "logprob": -0.25192904472351074,
+          "probability": 0.77729988964086
+        },
+        {
+          "chain_id": 2,
+          "step": 3,
+          "text": "D",
+          "logprob": -2.4649577289819717,
+          "probability": 0.08501243585795763
+        },
+        {
+          "chain_id": 3,
+          "step": 0,
+          "text": "A",
+          "logprob": -1.0320261716842651,
+          "probability": 0.35628433550300065
+        },
+        {
+          "chain_id": 3,
+          "step": 1,
+          "text": "A",
+          "logprob": -0.23711071908473969,
+          "probability": 0.7889039364601643
+        },
+        {
+          "chain_id": 3,
+          "step": 2,
+          "text": "A",
+          "logprob": -0.5039488077163696,
+          "probability": 0.6041403093863288
+        },
+        {
+          "chain_id": 3,
+          "step": 3,
+          "text": "A",
+          "logprob": -0.07888974994421005,
+          "probability": 0.9241418055144026
+        },
+        {
+          "chain_id": 4,
+          "step": 0,
+          "text": "B",
+          "logprob": -1.448694109916687,
+          "probability": 0.23487681120604478
+        },
+        {
+          "chain_id": 4,
+          "step": 1,
+          "text": "A",
+          "logprob": -0.31378039717674255,
+          "probability": 0.7306794698165276
+        },
+        {
+          "chain_id": 4,
+          "step": 2,
+          "text": "A",
+          "logprob": -0.18780595064163208,
+          "probability": 0.8287755149867695
+        },
+        {
+          "chain_id": 4,
+          "step": 3,
+          "text": "A",
+          "logprob": -0.40503284335136414,
+          "probability": 0.6669549054644489
+        },
+        {
+          "chain_id": 5,
+          "step": 0,
+          "text": "A",
+          "logprob": -1.0320261716842651,
+          "probability": 0.35628433550300065
+        },
+        {
+          "chain_id": 5,
+          "step": 1,
+          "text": "A",
+          "logprob": -0.23711071908473969,
+          "probability": 0.7889039364601643
+        },
+        {
+          "chain_id": 5,
+          "step": 2,
+          "text": "A",
+          "logprob": -0.5039488077163696,
+          "probability": 0.6041403093863288
+        },
+        {
+          "chain_id": 5,
+          "step": 3,
+          "text": "A",
+          "logprob": -0.07888974994421005,
+          "probability": 0.9241418055144026
+        },
+        {
+          "chain_id": 6,
+          "step": 0,
+          "text": "D",
+          "logprob": -1.5875815153121948,
+          "probability": 0.20441939957212324
+        },
+        {
+          "chain_id": 6,
+          "step": 1,
+          "text": "A",
+          "logprob": -0.3025151193141937,
+          "probability": 0.7389573156466523
+        },
+        {
+          "chain_id": 6,
+          "step": 2,
+          "text": "A",
+          "logprob": -0.15200820565223694,
+          "probability": 0.858981232210935
+        },
+        {
+          "chain_id": 6,
+          "step": 3,
+          "text": "A",
+          "logprob": -0.18455496430397034,
+          "probability": 0.8314742372406889
+        },
+        {
+          "chain_id": 7,
+          "step": 0,
+          "text": "B",
+          "logprob": -1.448694109916687,
+          "probability": 0.23487681120604478
+        },
+        {
+          "chain_id": 7,
+          "step": 1,
+          "text": "A",
+          "logprob": -0.31378039717674255,
+          "probability": 0.7306794698165276
+        },
+        {
+          "chain_id": 7,
+          "step": 2,
+          "text": "A",
+          "logprob": -0.18780595064163208,
+          "probability": 0.8287755149867695
+        },
+        {
+          "chain_id": 7,
+          "step": 3,
+          "text": "B",
+          "logprob": -1.0994775295257568,
+          "probability": 0.33304504445176264
+        },
+        {
+          "chain_id": 8,
+          "step": 0,
+          "text": "A",
+          "logprob": -1.0320261716842651,
+          "probability": 0.35628433550300065
+        },
+        {
+          "chain_id": 8,
+          "step": 1,
+          "text": "A",
+          "logprob": -0.23711071908473969,
+          "probability": 0.7889039364601643
+        },
+        {
+          "chain_id": 8,
+          "step": 2,
+          "text": "A",
+          "logprob": -0.5039488077163696,
+          "probability": 0.6041403093863288
+        },
+        {
+          "chain_id": 8,
+          "step": 3,
+          "text": "A",
+          "logprob": -0.07888974994421005,
+          "probability": 0.9241418055144026
+        },
+        {
+          "chain_id": 9,
+          "step": 0,
+          "text": "C",
+          "logprob": -1.5875815153121948,
+          "probability": 0.20441939957212324
+        },
+        {
+          "chain_id": 9,
+          "step": 1,
+          "text": "C",
+          "logprob": -0.5063595175743103,
+          "probability": 0.60268565646446
+        },
+        {
+          "chain_id": 9,
+          "step": 2,
+          "text": "C",
+          "logprob": -0.8455219268798828,
+          "probability": 0.4293332191762191
+        },
+        {
+          "chain_id": 9,
+          "step": 3,
+          "text": "A",
+          "logprob": -1.2930314540863037,
+          "probability": 0.27443757590225937
+        }
+      ],
+      "decision_process": {
+        "num_chains": 10,
+        "chain_length": 4,
+        "total_inferences": 40,
+        "mi_method": "listing",
+        "mi_nats": 0.31091217410201766,
+        "mi_bits": 0.4485514517289869,
+        "selected_answer": "A",
+        "matched_choice": "A",
+        "confidence_computation": "1/(1 + mi_nats) = 1/(1 + 0.3109) = 0.7628",
+        "agreement": "80.00% (8/10 chains agree on final answer)"
+      },
+      "final_metrics": {
+        "predicted": "A",
+        "correct": false,
+        "confidence": 0.7628276094735374,
+        "mi_score": 0.4485514517289869,
+        "agreement": 0.8
+      }
+    }
+  }
+}

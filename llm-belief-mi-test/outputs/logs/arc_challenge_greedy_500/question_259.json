@@ -1,0 +1,51 @@
+{
+  "question_id": 259,
+  "question_text": "An airplane travels at a constant speed of 800 kilometers per hour (km/h). Approximately how long will it take the airplane to travel 200 kilometers?",
+  "choices": [
+    "A: 15 minutes",
+    "B: 25 minutes",
+    "C: 2 hours",
+    "D: 4 hours"
+  ],
+  "gold_answer": "A",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: An airplane travels at a constant speed of 800 kilometers per hour (km/h). Approximately how long will it take the airplane to travel 200 kilometers?\n\n\nChoices:\nA) 15 minutes\nB) 25 minutes\nC) 2 hours\nD) 4 hours\n\nProvide an answer to the following question:\n\nQ: An airplane travels at a constant speed of 800 kilometers per hour (km/h). Approximately how long will it take the airplane to travel 200 kilometers?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "C",
+          "logprob": -0.6119918881740887,
+          "probability": 0.5422696520931569
+        }
+      ],
+      "decision_process": {
+        "selected_text": "C",
+        "matched_choice": "C",
+        "confidence_computation": "exp(logprob) = exp(-0.6120) = 0.5423"
+      },
+      "final_metrics": {
+        "predicted": "C",
+        "correct": false,
+        "confidence": 0.5422696520931569,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

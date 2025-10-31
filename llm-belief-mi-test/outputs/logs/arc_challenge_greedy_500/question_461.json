@@ -1,0 +1,51 @@
+{
+  "question_id": 461,
+  "question_text": "In 2014, a break in a storm water pipe released thousands of gallons of coal ash from a retired electrical plant into a river. The spill occurred upstream from the water treatment plants that serve communities along the river. Coal ash contains several hazardous metals including arsenic. Which stage of the water treatment process is most likely to remove hazardous metals from the water?",
+  "choices": [
+    "A: aeration",
+    "B: coagulation",
+    "C: disinfection",
+    "D: reverse osmosis"
+  ],
+  "gold_answer": "B",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: In 2014, a break in a storm water pipe released thousands of gallons of coal ash from a retired electrical plant into a river. The spill occurred upstream from the water treatment plants that serve communities along the river. Coal ash contains several hazardous metals including arsenic. Which stage of the water treatment process is most likely to remove hazardous metals from the water?\n\n\nChoices:\nA) aeration\nB) coagulation\nC) disinfection\nD) reverse osmosis\n\nProvide an answer to the following question:\n\nQ: In 2014, a break in a storm water pipe released thousands of gallons of coal ash from a retired electrical plant into a river. The spill occurred upstream from the water treatment plants that serve communities along the river. Coal ash contains several hazardous metals including arsenic. Which stage of the water treatment process is most likely to remove hazardous metals from the water?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "B",
+          "logprob": -0.27410351752041606,
+          "probability": 0.7602533716434302
+        }
+      ],
+      "decision_process": {
+        "selected_text": "B",
+        "matched_choice": "B",
+        "confidence_computation": "exp(logprob) = exp(-0.2741) = 0.7603"
+      },
+      "final_metrics": {
+        "predicted": "B",
+        "correct": true,
+        "confidence": 0.7602533716434302,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

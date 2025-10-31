@@ -1,0 +1,51 @@
+{
+  "question_id": 154,
+  "question_text": "A wetland was drained to build a mall. Two years later, there were no more toads in that area. Why did the toads disappear?",
+  "choices": [
+    "A: The toads were destroyed by the construction equipment.",
+    "B: The toads died because toads cannot breathe out of water.",
+    "C: The toads were frightened and went into the woods.",
+    "D: The toads go their food from the wetland ecosystem."
+  ],
+  "gold_answer": "D",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A wetland was drained to build a mall. Two years later, there were no more toads in that area. Why did the toads disappear?\n\n\nChoices:\nA) The toads were destroyed by the construction equipment.\nB) The toads died because toads cannot breathe out of water.\nC) The toads were frightened and went into the woods.\nD) The toads go their food from the wetland ecosystem.\n\nProvide an answer to the following question:\n\nQ: A wetland was drained to build a mall. Two years later, there were no more toads in that area. Why did the toads disappear?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "D",
+          "logprob": -0.3239067730028182,
+          "probability": 0.7233176719712308
+        }
+      ],
+      "decision_process": {
+        "selected_text": "D",
+        "matched_choice": "D",
+        "confidence_computation": "exp(logprob) = exp(-0.3239) = 0.7233"
+      },
+      "final_metrics": {
+        "predicted": "D",
+        "correct": true,
+        "confidence": 0.7233176719712308,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

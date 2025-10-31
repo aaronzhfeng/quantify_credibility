@@ -1,0 +1,51 @@
+{
+  "question_id": 177,
+  "question_text": "The melting point of a compound was measured by three different scientists. It is acceptable for the scientists to display the same data differently because",
+  "choices": [
+    "A: multiple methods are acceptable for organizing data.",
+    "B: melting point data is inconsistent.",
+    "C: the scientists collected data in different areas.",
+    "D: the data was measured with different instruments."
+  ],
+  "gold_answer": "A",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: The melting point of a compound was measured by three different scientists. It is acceptable for the scientists to display the same data differently because\n\n\nChoices:\nA) multiple methods are acceptable for organizing data.\nB) melting point data is inconsistent.\nC) the scientists collected data in different areas.\nD) the data was measured with different instruments.\n\nProvide an answer to the following question:\n\nQ: The melting point of a compound was measured by three different scientists. It is acceptable for the scientists to display the same data differently because\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "A",
+          "logprob": -0.24404760141624138,
+          "probability": 0.7834503400295002
+        }
+      ],
+      "decision_process": {
+        "selected_text": "A",
+        "matched_choice": "A",
+        "confidence_computation": "exp(logprob) = exp(-0.2440) = 0.7835"
+      },
+      "final_metrics": {
+        "predicted": "A",
+        "correct": true,
+        "confidence": 0.7834503400295002,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

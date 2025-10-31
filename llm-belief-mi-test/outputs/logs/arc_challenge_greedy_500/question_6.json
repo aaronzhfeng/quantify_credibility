@@ -1,0 +1,51 @@
+{
+  "question_id": 6,
+  "question_text": "A type of small mammal from the mountain regions of the western United States makes its home out of piles of rock. During summer months, the mammal places grasses and seeds in protected places in the rock piles. Which of the following is the most likely reason for this behavior?",
+  "choices": [
+    "A: to repare for migration before winter",
+    "B: to provide warmth during the cold winter months",
+    "C: to store food that will be eaten over the winter months",
+    "D: to protect the grasses and seeds from decay before winter"
+  ],
+  "gold_answer": "C",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A type of small mammal from the mountain regions of the western United States makes its home out of piles of rock. During summer months, the mammal places grasses and seeds in protected places in the rock piles. Which of the following is the most likely reason for this behavior?\n\n\nChoices:\nA) to repare for migration before winter\nB) to provide warmth during the cold winter months\nC) to store food that will be eaten over the winter months\nD) to protect the grasses and seeds from decay before winter\n\nProvide an answer to the following question:\n\nQ: A type of small mammal from the mountain regions of the western United States makes its home out of piles of rock. During summer months, the mammal places grasses and seeds in protected places in the rock piles. Which of the following is the most likely reason for this behavior?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "C",
+          "logprob": -0.5435005829203874,
+          "probability": 0.5807118601542646
+        }
+      ],
+      "decision_process": {
+        "selected_text": "C",
+        "matched_choice": "C",
+        "confidence_computation": "exp(logprob) = exp(-0.5435) = 0.5807"
+      },
+      "final_metrics": {
+        "predicted": "C",
+        "correct": true,
+        "confidence": 0.5807118601542646,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

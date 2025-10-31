@@ -1,0 +1,51 @@
+{
+  "question_id": 105,
+  "question_text": "Which two human body systems are most responsible for getting oxygen to cells?",
+  "choices": [
+    "A: digestive and skeletal",
+    "B: skeletal and circulatory",
+    "C: circulatory and respiratory",
+    "D: respiratory and digestive"
+  ],
+  "gold_answer": "C",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Which two human body systems are most responsible for getting oxygen to cells?\n\n\nChoices:\nA) digestive and skeletal\nB) skeletal and circulatory\nC) circulatory and respiratory\nD) respiratory and digestive\n\nProvide an answer to the following question:\n\nQ: Which two human body systems are most responsible for getting oxygen to cells?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "C",
+          "logprob": -0.02052203379571438,
+          "probability": 0.9796871100110569
+        }
+      ],
+      "decision_process": {
+        "selected_text": "C",
+        "matched_choice": "C",
+        "confidence_computation": "exp(logprob) = exp(-0.0205) = 0.9797"
+      },
+      "final_metrics": {
+        "predicted": "C",
+        "correct": true,
+        "confidence": 0.9796871100110569,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

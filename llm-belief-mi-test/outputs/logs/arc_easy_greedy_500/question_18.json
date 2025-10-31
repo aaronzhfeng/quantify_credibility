@@ -1,0 +1,51 @@
+{
+  "question_id": 18,
+  "question_text": "Using a softball bat to hit a softball is an example of using which simple machine?",
+  "choices": [
+    "A: pulley",
+    "B: lever",
+    "C: inclined plane",
+    "D: wheel and axle"
+  ],
+  "gold_answer": "B",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Using a softball bat to hit a softball is an example of using which simple machine?\n\n\nChoices:\nA) pulley\nB) lever\nC) inclined plane\nD) wheel and axle\n\nProvide an answer to the following question:\n\nQ: Using a softball bat to hit a softball is an example of using which simple machine?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "B",
+          "logprob": -0.008404859763686545,
+          "probability": 0.9916303623221633
+        }
+      ],
+      "decision_process": {
+        "selected_text": "B",
+        "matched_choice": "B",
+        "confidence_computation": "exp(logprob) = exp(-0.0084) = 0.9916"
+      },
+      "final_metrics": {
+        "predicted": "B",
+        "correct": true,
+        "confidence": 0.9916303623221633,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

@@ -1,0 +1,729 @@
+{
+  "question_id": 60,
+  "question_text": "Birds carrying away fruit helps the tree",
+  "choices": [
+    "A: grow",
+    "B: fertilize",
+    "C: reproduce",
+    "D: conquer"
+  ],
+  "gold_answer": "C",
+  "methods": {
+    "mi_method": {
+      "description": "k=10 chains of length n=3, MI estimation",
+      "raw_inputs": [
+        {
+          "chain_id": 0,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Birds carrying away fruit helps the tree\n\n\nChoices:\nA) grow\nB) fertilize\nC) reproduce\nD) conquer\n\nProvide an answer to the following question:\n\nQ: Birds carrying away fruit helps the tree\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 0,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Birds carrying away fruit helps the tree\n\n\nOne answer to question Q is B) fertilize.\n\n\nChoices:\nA) grow\nB) fertilize\nC) reproduce\nD) conquer\n\nProvide an answer to the following question:\n\nQ: Birds carrying away fruit helps the tree\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 0,
+          "step": 2,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Birds carrying away fruit helps the tree\n\n\nOne answer to question Q is B) fertilize. Another answer to question Q is A) grow.\n\n\nChoices:\nA) grow\nB) fertilize\nC) reproduce\nD) conquer\n\nProvide an answer to the following question:\n\nQ: Birds carrying away fruit helps the tree\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 1,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Birds carrying away fruit helps the tree\n\n\nChoices:\nA) grow\nB) fertilize\nC) reproduce\nD) conquer\n\nProvide an answer to the following question:\n\nQ: Birds carrying away fruit helps the tree\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 1,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Birds carrying away fruit helps the tree\n\n\nOne answer to question Q is B) fertilize.\n\n\nChoices:\nA) grow\nB) fertilize\nC) reproduce\nD) conquer\n\nProvide an answer to the following question:\n\nQ: Birds carrying away fruit helps the tree\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 1,
+          "step": 2,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Birds carrying away fruit helps the tree\n\n\nOne answer to question Q is B) fertilize. Another answer to question Q is B) fertilize.\n\n\nChoices:\nA) grow\nB) fertilize\nC) reproduce\nD) conquer\n\nProvide an answer to the following question:\n\nQ: Birds carrying away fruit helps the tree\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 2,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Birds carrying away fruit helps the tree\n\n\nChoices:\nA) grow\nB) fertilize\nC) reproduce\nD) conquer\n\nProvide an answer to the following question:\n\nQ: Birds carrying away fruit helps the tree\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 2,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Birds carrying away fruit helps the tree\n\n\nOne answer to question Q is B) fertilize.\n\n\nChoices:\nA) grow\nB) fertilize\nC) reproduce\nD) conquer\n\nProvide an answer to the following question:\n\nQ: Birds carrying away fruit helps the tree\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 2,
+          "step": 2,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Birds carrying away fruit helps the tree\n\n\nOne answer to question Q is B) fertilize. Another answer to question Q is B) fertilize.\n\n\nChoices:\nA) grow\nB) fertilize\nC) reproduce\nD) conquer\n\nProvide an answer to the following question:\n\nQ: Birds carrying away fruit helps the tree\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 3,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Birds carrying away fruit helps the tree\n\n\nChoices:\nA) grow\nB) fertilize\nC) reproduce\nD) conquer\n\nProvide an answer to the following question:\n\nQ: Birds carrying away fruit helps the tree\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 3,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Birds carrying away fruit helps the tree\n\n\nOne answer to question Q is A) grow.\n\n\nChoices:\nA) grow\nB) fertilize\nC) reproduce\nD) conquer\n\nProvide an answer to the following question:\n\nQ: Birds carrying away fruit helps the tree\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 3,
+          "step": 2,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Birds carrying away fruit helps the tree\n\n\nOne answer to question Q is A) grow. Another answer to question Q is A) grow.\n\n\nChoices:\nA) grow\nB) fertilize\nC) reproduce\nD) conquer\n\nProvide an answer to the following question:\n\nQ: Birds carrying away fruit helps the tree\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 4,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Birds carrying away fruit helps the tree\n\n\nChoices:\nA) grow\nB) fertilize\nC) reproduce\nD) conquer\n\nProvide an answer to the following question:\n\nQ: Birds carrying away fruit helps the tree\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 4,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Birds carrying away fruit helps the tree\n\n\nOne answer to question Q is B) fertilize.\n\n\nChoices:\nA) grow\nB) fertilize\nC) reproduce\nD) conquer\n\nProvide an answer to the following question:\n\nQ: Birds carrying away fruit helps the tree\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 4,
+          "step": 2,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Birds carrying away fruit helps the tree\n\n\nOne answer to question Q is B) fertilize. Another answer to question Q is B) fertilize.\n\n\nChoices:\nA) grow\nB) fertilize\nC) reproduce\nD) conquer\n\nProvide an answer to the following question:\n\nQ: Birds carrying away fruit helps the tree\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 5,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Birds carrying away fruit helps the tree\n\n\nChoices:\nA) grow\nB) fertilize\nC) reproduce\nD) conquer\n\nProvide an answer to the following question:\n\nQ: Birds carrying away fruit helps the tree\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 5,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Birds carrying away fruit helps the tree\n\n\nOne answer to question Q is B) fertilize.\n\n\nChoices:\nA) grow\nB) fertilize\nC) reproduce\nD) conquer\n\nProvide an answer to the following question:\n\nQ: Birds carrying away fruit helps the tree\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 5,
+          "step": 2,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Birds carrying away fruit helps the tree\n\n\nOne answer to question Q is B) fertilize. Another answer to question Q is B) fertilize.\n\n\nChoices:\nA) grow\nB) fertilize\nC) reproduce\nD) conquer\n\nProvide an answer to the following question:\n\nQ: Birds carrying away fruit helps the tree\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 6,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Birds carrying away fruit helps the tree\n\n\nChoices:\nA) grow\nB) fertilize\nC) reproduce\nD) conquer\n\nProvide an answer to the following question:\n\nQ: Birds carrying away fruit helps the tree\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 6,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Birds carrying away fruit helps the tree\n\n\nOne answer to question Q is A) grow.\n\n\nChoices:\nA) grow\nB) fertilize\nC) reproduce\nD) conquer\n\nProvide an answer to the following question:\n\nQ: Birds carrying away fruit helps the tree\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 6,
+          "step": 2,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Birds carrying away fruit helps the tree\n\n\nOne answer to question Q is A) grow. Another answer to question Q is B) fertilize.\n\n\nChoices:\nA) grow\nB) fertilize\nC) reproduce\nD) conquer\n\nProvide an answer to the following question:\n\nQ: Birds carrying away fruit helps the tree\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 7,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Birds carrying away fruit helps the tree\n\n\nChoices:\nA) grow\nB) fertilize\nC) reproduce\nD) conquer\n\nProvide an answer to the following question:\n\nQ: Birds carrying away fruit helps the tree\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 7,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Birds carrying away fruit helps the tree\n\n\nOne answer to question Q is B) fertilize.\n\n\nChoices:\nA) grow\nB) fertilize\nC) reproduce\nD) conquer\n\nProvide an answer to the following question:\n\nQ: Birds carrying away fruit helps the tree\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 7,
+          "step": 2,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Birds carrying away fruit helps the tree\n\n\nOne answer to question Q is B) fertilize. Another answer to question Q is B) fertilize.\n\n\nChoices:\nA) grow\nB) fertilize\nC) reproduce\nD) conquer\n\nProvide an answer to the following question:\n\nQ: Birds carrying away fruit helps the tree\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 8,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Birds carrying away fruit helps the tree\n\n\nChoices:\nA) grow\nB) fertilize\nC) reproduce\nD) conquer\n\nProvide an answer to the following question:\n\nQ: Birds carrying away fruit helps the tree\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 8,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Birds carrying away fruit helps the tree\n\n\nOne answer to question Q is B) fertilize.\n\n\nChoices:\nA) grow\nB) fertilize\nC) reproduce\nD) conquer\n\nProvide an answer to the following question:\n\nQ: Birds carrying away fruit helps the tree\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 8,
+          "step": 2,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Birds carrying away fruit helps the tree\n\n\nOne answer to question Q is B) fertilize. Another answer to question Q is B) fertilize.\n\n\nChoices:\nA) grow\nB) fertilize\nC) reproduce\nD) conquer\n\nProvide an answer to the following question:\n\nQ: Birds carrying away fruit helps the tree\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 9,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Birds carrying away fruit helps the tree\n\n\nChoices:\nA) grow\nB) fertilize\nC) reproduce\nD) conquer\n\nProvide an answer to the following question:\n\nQ: Birds carrying away fruit helps the tree\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 9,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Birds carrying away fruit helps the tree\n\n\nOne answer to question Q is B) fertilize.\n\n\nChoices:\nA) grow\nB) fertilize\nC) reproduce\nD) conquer\n\nProvide an answer to the following question:\n\nQ: Birds carrying away fruit helps the tree\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 9,
+          "step": 2,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Birds carrying away fruit helps the tree\n\n\nOne answer to question Q is B) fertilize. Another answer to question Q is B) fertilize.\n\n\nChoices:\nA) grow\nB) fertilize\nC) reproduce\nD) conquer\n\nProvide an answer to the following question:\n\nQ: Birds carrying away fruit helps the tree\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "chain_id": 0,
+          "step": 0,
+          "text": "B",
+          "logprob": -0.1964029222726822,
+          "probability": 0.8216810943568028
+        },
+        {
+          "chain_id": 0,
+          "step": 1,
+          "text": "A",
+          "logprob": -1.7241815328598022,
+          "probability": 0.17831894025536374
+        },
+        {
+          "chain_id": 0,
+          "step": 2,
+          "text": "A",
+          "logprob": -0.36088407039642334,
+          "probability": 0.6970598036496322
+        },
+        {
+          "chain_id": 1,
+          "step": 0,
+          "text": "B",
+          "logprob": -0.1964029222726822,
+          "probability": 0.8216810943568028
+        },
+        {
+          "chain_id": 1,
+          "step": 1,
+          "text": "B",
+          "logprob": -0.1964029222726822,
+          "probability": 0.8216810943568028
+        },
+        {
+          "chain_id": 1,
+          "step": 2,
+          "text": "B",
+          "logprob": -0.22262509167194366,
+          "probability": 0.8004148752525572
+        },
+        {
+          "chain_id": 2,
+          "step": 0,
+          "text": "B",
+          "logprob": -0.1964029222726822,
+          "probability": 0.8216810943568028
+        },
+        {
+          "chain_id": 2,
+          "step": 1,
+          "text": "B",
+          "logprob": -0.1964029222726822,
+          "probability": 0.8216810943568028
+        },
+        {
+          "chain_id": 2,
+          "step": 2,
+          "text": "B",
+          "logprob": -0.22262509167194366,
+          "probability": 0.8004148752525572
+        },
+        {
+          "chain_id": 3,
+          "step": 0,
+          "text": "A",
+          "logprob": -1.7241815328598022,
+          "probability": 0.17831894025536374
+        },
+        {
+          "chain_id": 3,
+          "step": 1,
+          "text": "A",
+          "logprob": -0.9230252504348755,
+          "probability": 0.39731524299562365
+        },
+        {
+          "chain_id": 3,
+          "step": 2,
+          "text": "A",
+          "logprob": -1.3956842422485352,
+          "probability": 0.24766351653609267
+        },
+        {
+          "chain_id": 4,
+          "step": 0,
+          "text": "B",
+          "logprob": -0.1964029222726822,
+          "probability": 0.8216810943568028
+        },
+        {
+          "chain_id": 4,
+          "step": 1,
+          "text": "B",
+          "logprob": -0.1964029222726822,
+          "probability": 0.8216810943568028
+        },
+        {
+          "chain_id": 4,
+          "step": 2,
+          "text": "B",
+          "logprob": -0.22262509167194366,
+          "probability": 0.8004148752525572
+        },
+        {
+          "chain_id": 5,
+          "step": 0,
+          "text": "B",
+          "logprob": -0.1964029222726822,
+          "probability": 0.8216810943568028
+        },
+        {
+          "chain_id": 5,
+          "step": 1,
+          "text": "B",
+          "logprob": -0.1964029222726822,
+          "probability": 0.8216810943568028
+        },
+        {
+          "chain_id": 5,
+          "step": 2,
+          "text": "B",
+          "logprob": -0.22262509167194366,
+          "probability": 0.8004148752525572
+        },
+        {
+          "chain_id": 6,
+          "step": 0,
+          "text": "A",
+          "logprob": -1.7241815328598022,
+          "probability": 0.17831894025536374
+        },
+        {
+          "chain_id": 6,
+          "step": 1,
+          "text": "B",
+          "logprob": -0.5063611268997192,
+          "probability": 0.6026846865478999
+        },
+        {
+          "chain_id": 6,
+          "step": 2,
+          "text": "B",
+          "logprob": -0.17300845682621002,
+          "probability": 0.8411305015200738
+        },
+        {
+          "chain_id": 7,
+          "step": 0,
+          "text": "B",
+          "logprob": -0.1964029222726822,
+          "probability": 0.8216810943568028
+        },
+        {
+          "chain_id": 7,
+          "step": 1,
+          "text": "B",
+          "logprob": -0.1964029222726822,
+          "probability": 0.8216810943568028
+        },
+        {
+          "chain_id": 7,
+          "step": 2,
+          "text": "B",
+          "logprob": -0.22262509167194366,
+          "probability": 0.8004148752525572
+        },
+        {
+          "chain_id": 8,
+          "step": 0,
+          "text": "B",
+          "logprob": -0.1964029222726822,
+          "probability": 0.8216810943568028
+        },
+        {
+          "chain_id": 8,
+          "step": 1,
+          "text": "B",
+          "logprob": -0.1964029222726822,
+          "probability": 0.8216810943568028
+        },
+        {
+          "chain_id": 8,
+          "step": 2,
+          "text": "A",
+          "logprob": -1.6115144491195679,
+          "probability": 0.19958512356505415
+        },
+        {
+          "chain_id": 9,
+          "step": 0,
+          "text": "B",
+          "logprob": -0.1964029222726822,
+          "probability": 0.8216810943568028
+        },
+        {
+          "chain_id": 9,
+          "step": 1,
+          "text": "B",
+          "logprob": -0.1964029222726822,
+          "probability": 0.8216810943568028
+        },
+        {
+          "chain_id": 9,
+          "step": 2,
+          "text": "B",
+          "logprob": -0.22262509167194366,
+          "probability": 0.8004148752525572
+        }
+      ],
+      "decision_process": {
+        "num_chains": 10,
+        "chain_length": 3,
+        "total_inferences": 30,
+        "mi_method": "listing",
+        "mi_nats": 0.1913048532764978,
+        "mi_bits": 0.27599456311999415,
+        "selected_answer": "B",
+        "matched_choice": "B",
+        "confidence_computation": "1/(1 + mi_nats) = 1/(1 + 0.1913) = 0.8394",
+        "agreement": "70.00% (7/10 chains agree on final answer)"
+      },
+      "final_metrics": {
+        "predicted": "B",
+        "correct": false,
+        "confidence": 0.8394157022441874,
+        "mi_score": 0.27599456311999415,
+        "agreement": 0.7
+      }
+    }
+  }
+}

@@ -1,0 +1,729 @@
+{
+  "question_id": 175,
+  "question_text": "is it normal for an adult animal to lay eggs?",
+  "choices": [
+    "A: it has never happened",
+    "B: yes it is standard",
+    "C: it is abnormal and weird",
+    "D: all of these"
+  ],
+  "gold_answer": "B",
+  "methods": {
+    "mi_method": {
+      "description": "k=10 chains of length n=3, MI estimation",
+      "raw_inputs": [
+        {
+          "chain_id": 0,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: is it normal for an adult animal to lay eggs?\n\n\nChoices:\nA) it has never happened\nB) yes it is standard\nC) it is abnormal and weird\nD) all of these\n\nProvide an answer to the following question:\n\nQ: is it normal for an adult animal to lay eggs?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 0,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: is it normal for an adult animal to lay eggs?\n\n\nOne answer to question Q is A) it has never happened.\n\n\nChoices:\nA) it has never happened\nB) yes it is standard\nC) it is abnormal and weird\nD) all of these\n\nProvide an answer to the following question:\n\nQ: is it normal for an adult animal to lay eggs?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 0,
+          "step": 2,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: is it normal for an adult animal to lay eggs?\n\n\nOne answer to question Q is A) it has never happened. Another answer to question Q is A) it has never happened.\n\n\nChoices:\nA) it has never happened\nB) yes it is standard\nC) it is abnormal and weird\nD) all of these\n\nProvide an answer to the following question:\n\nQ: is it normal for an adult animal to lay eggs?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 1,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: is it normal for an adult animal to lay eggs?\n\n\nChoices:\nA) it has never happened\nB) yes it is standard\nC) it is abnormal and weird\nD) all of these\n\nProvide an answer to the following question:\n\nQ: is it normal for an adult animal to lay eggs?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 1,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: is it normal for an adult animal to lay eggs?\n\n\nOne answer to question Q is C) it is abnormal and weird.\n\n\nChoices:\nA) it has never happened\nB) yes it is standard\nC) it is abnormal and weird\nD) all of these\n\nProvide an answer to the following question:\n\nQ: is it normal for an adult animal to lay eggs?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 1,
+          "step": 2,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: is it normal for an adult animal to lay eggs?\n\n\nOne answer to question Q is C) it is abnormal and weird. Another answer to question Q is B) yes it is standard.\n\n\nChoices:\nA) it has never happened\nB) yes it is standard\nC) it is abnormal and weird\nD) all of these\n\nProvide an answer to the following question:\n\nQ: is it normal for an adult animal to lay eggs?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 2,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: is it normal for an adult animal to lay eggs?\n\n\nChoices:\nA) it has never happened\nB) yes it is standard\nC) it is abnormal and weird\nD) all of these\n\nProvide an answer to the following question:\n\nQ: is it normal for an adult animal to lay eggs?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 2,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: is it normal for an adult animal to lay eggs?\n\n\nOne answer to question Q is B) yes it is standard.\n\n\nChoices:\nA) it has never happened\nB) yes it is standard\nC) it is abnormal and weird\nD) all of these\n\nProvide an answer to the following question:\n\nQ: is it normal for an adult animal to lay eggs?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 2,
+          "step": 2,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: is it normal for an adult animal to lay eggs?\n\n\nOne answer to question Q is B) yes it is standard. Another answer to question Q is B) yes it is standard.\n\n\nChoices:\nA) it has never happened\nB) yes it is standard\nC) it is abnormal and weird\nD) all of these\n\nProvide an answer to the following question:\n\nQ: is it normal for an adult animal to lay eggs?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 3,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: is it normal for an adult animal to lay eggs?\n\n\nChoices:\nA) it has never happened\nB) yes it is standard\nC) it is abnormal and weird\nD) all of these\n\nProvide an answer to the following question:\n\nQ: is it normal for an adult animal to lay eggs?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 3,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: is it normal for an adult animal to lay eggs?\n\n\nOne answer to question Q is B) yes it is standard.\n\n\nChoices:\nA) it has never happened\nB) yes it is standard\nC) it is abnormal and weird\nD) all of these\n\nProvide an answer to the following question:\n\nQ: is it normal for an adult animal to lay eggs?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 3,
+          "step": 2,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: is it normal for an adult animal to lay eggs?\n\n\nOne answer to question Q is B) yes it is standard. Another answer to question Q is C) it is abnormal and weird.\n\n\nChoices:\nA) it has never happened\nB) yes it is standard\nC) it is abnormal and weird\nD) all of these\n\nProvide an answer to the following question:\n\nQ: is it normal for an adult animal to lay eggs?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 4,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: is it normal for an adult animal to lay eggs?\n\n\nChoices:\nA) it has never happened\nB) yes it is standard\nC) it is abnormal and weird\nD) all of these\n\nProvide an answer to the following question:\n\nQ: is it normal for an adult animal to lay eggs?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 4,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: is it normal for an adult animal to lay eggs?\n\n\nOne answer to question Q is C) it is abnormal and weird.\n\n\nChoices:\nA) it has never happened\nB) yes it is standard\nC) it is abnormal and weird\nD) all of these\n\nProvide an answer to the following question:\n\nQ: is it normal for an adult animal to lay eggs?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 4,
+          "step": 2,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: is it normal for an adult animal to lay eggs?\n\n\nOne answer to question Q is C) it is abnormal and weird. Another answer to question Q is C) it is abnormal and weird.\n\n\nChoices:\nA) it has never happened\nB) yes it is standard\nC) it is abnormal and weird\nD) all of these\n\nProvide an answer to the following question:\n\nQ: is it normal for an adult animal to lay eggs?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 5,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: is it normal for an adult animal to lay eggs?\n\n\nChoices:\nA) it has never happened\nB) yes it is standard\nC) it is abnormal and weird\nD) all of these\n\nProvide an answer to the following question:\n\nQ: is it normal for an adult animal to lay eggs?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 5,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: is it normal for an adult animal to lay eggs?\n\n\nOne answer to question Q is C) it is abnormal and weird.\n\n\nChoices:\nA) it has never happened\nB) yes it is standard\nC) it is abnormal and weird\nD) all of these\n\nProvide an answer to the following question:\n\nQ: is it normal for an adult animal to lay eggs?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 5,
+          "step": 2,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: is it normal for an adult animal to lay eggs?\n\n\nOne answer to question Q is C) it is abnormal and weird. Another answer to question Q is A) it has never happened.\n\n\nChoices:\nA) it has never happened\nB) yes it is standard\nC) it is abnormal and weird\nD) all of these\n\nProvide an answer to the following question:\n\nQ: is it normal for an adult animal to lay eggs?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 6,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: is it normal for an adult animal to lay eggs?\n\n\nChoices:\nA) it has never happened\nB) yes it is standard\nC) it is abnormal and weird\nD) all of these\n\nProvide an answer to the following question:\n\nQ: is it normal for an adult animal to lay eggs?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 6,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: is it normal for an adult animal to lay eggs?\n\n\nOne answer to question Q is A) it has never happened.\n\n\nChoices:\nA) it has never happened\nB) yes it is standard\nC) it is abnormal and weird\nD) all of these\n\nProvide an answer to the following question:\n\nQ: is it normal for an adult animal to lay eggs?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 6,
+          "step": 2,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: is it normal for an adult animal to lay eggs?\n\n\nOne answer to question Q is A) it has never happened. Another answer to question Q is A) it has never happened.\n\n\nChoices:\nA) it has never happened\nB) yes it is standard\nC) it is abnormal and weird\nD) all of these\n\nProvide an answer to the following question:\n\nQ: is it normal for an adult animal to lay eggs?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 7,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: is it normal for an adult animal to lay eggs?\n\n\nChoices:\nA) it has never happened\nB) yes it is standard\nC) it is abnormal and weird\nD) all of these\n\nProvide an answer to the following question:\n\nQ: is it normal for an adult animal to lay eggs?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 7,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: is it normal for an adult animal to lay eggs?\n\n\nOne answer to question Q is A) it has never happened.\n\n\nChoices:\nA) it has never happened\nB) yes it is standard\nC) it is abnormal and weird\nD) all of these\n\nProvide an answer to the following question:\n\nQ: is it normal for an adult animal to lay eggs?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 7,
+          "step": 2,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: is it normal for an adult animal to lay eggs?\n\n\nOne answer to question Q is A) it has never happened. Another answer to question Q is A) it has never happened.\n\n\nChoices:\nA) it has never happened\nB) yes it is standard\nC) it is abnormal and weird\nD) all of these\n\nProvide an answer to the following question:\n\nQ: is it normal for an adult animal to lay eggs?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 8,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: is it normal for an adult animal to lay eggs?\n\n\nChoices:\nA) it has never happened\nB) yes it is standard\nC) it is abnormal and weird\nD) all of these\n\nProvide an answer to the following question:\n\nQ: is it normal for an adult animal to lay eggs?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 8,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: is it normal for an adult animal to lay eggs?\n\n\nOne answer to question Q is A) it has never happened.\n\n\nChoices:\nA) it has never happened\nB) yes it is standard\nC) it is abnormal and weird\nD) all of these\n\nProvide an answer to the following question:\n\nQ: is it normal for an adult animal to lay eggs?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 8,
+          "step": 2,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: is it normal for an adult animal to lay eggs?\n\n\nOne answer to question Q is A) it has never happened. Another answer to question Q is B) yes it is standard.\n\n\nChoices:\nA) it has never happened\nB) yes it is standard\nC) it is abnormal and weird\nD) all of these\n\nProvide an answer to the following question:\n\nQ: is it normal for an adult animal to lay eggs?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 9,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: is it normal for an adult animal to lay eggs?\n\n\nChoices:\nA) it has never happened\nB) yes it is standard\nC) it is abnormal and weird\nD) all of these\n\nProvide an answer to the following question:\n\nQ: is it normal for an adult animal to lay eggs?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 9,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: is it normal for an adult animal to lay eggs?\n\n\nOne answer to question Q is C) it is abnormal and weird.\n\n\nChoices:\nA) it has never happened\nB) yes it is standard\nC) it is abnormal and weird\nD) all of these\n\nProvide an answer to the following question:\n\nQ: is it normal for an adult animal to lay eggs?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 9,
+          "step": 2,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: is it normal for an adult animal to lay eggs?\n\n\nOne answer to question Q is C) it is abnormal and weird. Another answer to question Q is C) it is abnormal and weird.\n\n\nChoices:\nA) it has never happened\nB) yes it is standard\nC) it is abnormal and weird\nD) all of these\n\nProvide an answer to the following question:\n\nQ: is it normal for an adult animal to lay eggs?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "chain_id": 0,
+          "step": 0,
+          "text": "A",
+          "logprob": -0.7389986515045166,
+          "probability": 0.4775919121031542
+        },
+        {
+          "chain_id": 0,
+          "step": 1,
+          "text": "A",
+          "logprob": -0.7961629033088684,
+          "probability": 0.4510563948385601
+        },
+        {
+          "chain_id": 0,
+          "step": 2,
+          "text": "B",
+          "logprob": -1.2439213991165161,
+          "probability": 0.2882516490012342
+        },
+        {
+          "chain_id": 1,
+          "step": 0,
+          "text": "C",
+          "logprob": -1.1556665897369385,
+          "probability": 0.3148475927638467
+        },
+        {
+          "chain_id": 1,
+          "step": 1,
+          "text": "B",
+          "logprob": -0.8139556646347046,
+          "probability": 0.4431018327283054
+        },
+        {
+          "chain_id": 1,
+          "step": 2,
+          "text": "C",
+          "logprob": -2.275486946105957,
+          "probability": 0.10274686406646352
+        },
+        {
+          "chain_id": 2,
+          "step": 0,
+          "text": "B",
+          "logprob": -1.5723326206207275,
+          "probability": 0.20756045743407392
+        },
+        {
+          "chain_id": 2,
+          "step": 1,
+          "text": "B",
+          "logprob": -0.8409126996994019,
+          "probability": 0.4313166811213352
+        },
+        {
+          "chain_id": 2,
+          "step": 2,
+          "text": "C",
+          "logprob": -1.6022138595581055,
+          "probability": 0.20145004185863008
+        },
+        {
+          "chain_id": 3,
+          "step": 0,
+          "text": "B",
+          "logprob": -1.5723326206207275,
+          "probability": 0.20756045743407392
+        },
+        {
+          "chain_id": 3,
+          "step": 1,
+          "text": "C",
+          "logprob": -1.257578730583191,
+          "probability": 0.28434166145789513
+        },
+        {
+          "chain_id": 3,
+          "step": 2,
+          "text": "B",
+          "logprob": -0.4848097562789917,
+          "probability": 0.6158143404325823
+        },
+        {
+          "chain_id": 4,
+          "step": 0,
+          "text": "C",
+          "logprob": -1.1556665897369385,
+          "probability": 0.3148475927638467
+        },
+        {
+          "chain_id": 4,
+          "step": 1,
+          "text": "C",
+          "logprob": -1.508400321006775,
+          "probability": 0.22126364581261246
+        },
+        {
+          "chain_id": 4,
+          "step": 2,
+          "text": "B",
+          "logprob": -0.582646369934082,
+          "probability": 0.5584186271944573
+        },
+        {
+          "chain_id": 5,
+          "step": 0,
+          "text": "C",
+          "logprob": -1.1556665897369385,
+          "probability": 0.3148475927638467
+        },
+        {
+          "chain_id": 5,
+          "step": 1,
+          "text": "A",
+          "logprob": -1.091732382774353,
+          "probability": 0.33563454227144707
+        },
+        {
+          "chain_id": 5,
+          "step": 2,
+          "text": "A",
+          "logprob": -0.552813708782196,
+          "probability": 0.5753287233350672
+        },
+        {
+          "chain_id": 6,
+          "step": 0,
+          "text": "A",
+          "logprob": -0.7389986515045166,
+          "probability": 0.4775919121031542
+        },
+        {
+          "chain_id": 6,
+          "step": 1,
+          "text": "A",
+          "logprob": -0.7961629033088684,
+          "probability": 0.4510563948385601
+        },
+        {
+          "chain_id": 6,
+          "step": 2,
+          "text": "A",
+          "logprob": -0.9661427736282349,
+          "probability": 0.38054807086013265
+        },
+        {
+          "chain_id": 7,
+          "step": 0,
+          "text": "A",
+          "logprob": -0.7389986515045166,
+          "probability": 0.4775919121031542
+        },
+        {
+          "chain_id": 7,
+          "step": 1,
+          "text": "A",
+          "logprob": -0.7961629033088684,
+          "probability": 0.4510563948385601
+        },
+        {
+          "chain_id": 7,
+          "step": 2,
+          "text": "B",
+          "logprob": -1.2439213991165161,
+          "probability": 0.2882516490012342
+        },
+        {
+          "chain_id": 8,
+          "step": 0,
+          "text": "A",
+          "logprob": -0.7389986515045166,
+          "probability": 0.4775919121031542
+        },
+        {
+          "chain_id": 8,
+          "step": 1,
+          "text": "B",
+          "logprob": -2.323939561843872,
+          "probability": 0.09788719234606255
+        },
+        {
+          "chain_id": 8,
+          "step": 2,
+          "text": "B",
+          "logprob": -0.8350470066070557,
+          "probability": 0.4338540869450723
+        },
+        {
+          "chain_id": 9,
+          "step": 0,
+          "text": "C",
+          "logprob": -1.1556665897369385,
+          "probability": 0.3148475927638467
+        },
+        {
+          "chain_id": 9,
+          "step": 1,
+          "text": "C",
+          "logprob": -1.508400321006775,
+          "probability": 0.22126364581261246
+        },
+        {
+          "chain_id": 9,
+          "step": 2,
+          "text": "C",
+          "logprob": -1.1382017135620117,
+          "probability": 0.32039466545679474
+        }
+      ],
+      "decision_process": {
+        "num_chains": 10,
+        "chain_length": 3,
+        "total_inferences": 30,
+        "mi_method": "listing",
+        "mi_nats": 0.40287098578825276,
+        "mi_bits": 0.5812199733147603,
+        "selected_answer": "B",
+        "matched_choice": "B",
+        "confidence_computation": "1/(1 + mi_nats) = 1/(1 + 0.4029) = 0.7128",
+        "agreement": "50.00% (5/10 chains agree on final answer)"
+      },
+      "final_metrics": {
+        "predicted": "B",
+        "correct": true,
+        "confidence": 0.7128239233190174,
+        "mi_score": 0.5812199733147603,
+        "agreement": 0.5
+      }
+    }
+  }
+}

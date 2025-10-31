@@ -1,0 +1,51 @@
+{
+  "question_id": 427,
+  "question_text": "When do organs and organ systems begin to develop in humans?",
+  "choices": [
+    "1: before fertilization",
+    "2: before birth",
+    "3: during childhood",
+    "4: during adulthood"
+  ],
+  "gold_answer": "2",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: When do organs and organ systems begin to develop in humans?\n\n\nChoices:\n1) before fertilization\n2) before birth\n3) during childhood\n4) during adulthood\n\nProvide an answer to the following question:\n\nQ: When do organs and organ systems begin to develop in humans?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "A",
+          "logprob": -0.4709755864460021,
+          "probability": 0.6243928218732097
+        }
+      ],
+      "decision_process": {
+        "selected_text": "A",
+        "matched_choice": "1",
+        "confidence_computation": "exp(logprob) = exp(-0.4710) = 0.6244"
+      },
+      "final_metrics": {
+        "predicted": "1",
+        "correct": false,
+        "confidence": 0.6243928218732097,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

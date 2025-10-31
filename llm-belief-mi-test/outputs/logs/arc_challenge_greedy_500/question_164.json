@@ -1,0 +1,51 @@
+{
+  "question_id": 164,
+  "question_text": "Which alternative energy resource is produced from plants?",
+  "choices": [
+    "A: biofuel",
+    "B: hydroelectricity",
+    "C: geothermal heat",
+    "D: solar radiation"
+  ],
+  "gold_answer": "A",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Which alternative energy resource is produced from plants?\n\n\nChoices:\nA) biofuel\nB) hydroelectricity\nC) geothermal heat\nD) solar radiation\n\nProvide an answer to the following question:\n\nQ: Which alternative energy resource is produced from plants?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "A",
+          "logprob": -0.043327846651664004,
+          "probability": 0.9575973934993806
+        }
+      ],
+      "decision_process": {
+        "selected_text": "A",
+        "matched_choice": "A",
+        "confidence_computation": "exp(logprob) = exp(-0.0433) = 0.9576"
+      },
+      "final_metrics": {
+        "predicted": "A",
+        "correct": true,
+        "confidence": 0.9575973934993806,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

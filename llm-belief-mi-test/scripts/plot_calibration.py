@@ -181,7 +181,7 @@ def main():
         }
         
         for dataset in datasets:
-            pattern = f"outputs/results/{dataset}_*_500.csv"
+            pattern = f"outputs/results/{dataset}/{dataset}_*_500.csv"
             files = sorted(glob(pattern))
             
             if files:

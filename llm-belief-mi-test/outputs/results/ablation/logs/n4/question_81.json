@@ -1,0 +1,959 @@
+{
+  "question_id": 81,
+  "question_text": "are explosions safe?",
+  "choices": [
+    "A: they could harm living things",
+    "B: they are very safe",
+    "C: they cause nothing serious",
+    "D: none of these"
+  ],
+  "gold_answer": "A",
+  "methods": {
+    "mi_method": {
+      "description": "k=10 chains of length n=4, MI estimation",
+      "raw_inputs": [
+        {
+          "chain_id": 0,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: are explosions safe?\n\n\nChoices:\nA) they could harm living things\nB) they are very safe\nC) they cause nothing serious\nD) none of these\n\nProvide an answer to the following question:\n\nQ: are explosions safe?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 0,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: are explosions safe?\n\n\nOne answer to question Q is A) they could harm living things.\n\n\nChoices:\nA) they could harm living things\nB) they are very safe\nC) they cause nothing serious\nD) none of these\n\nProvide an answer to the following question:\n\nQ: are explosions safe?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 0,
+          "step": 2,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: are explosions safe?\n\n\nOne answer to question Q is A) they could harm living things. Another answer to question Q is A) they could harm living things.\n\n\nChoices:\nA) they could harm living things\nB) they are very safe\nC) they cause nothing serious\nD) none of these\n\nProvide an answer to the following question:\n\nQ: are explosions safe?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 0,
+          "step": 3,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: are explosions safe?\n\n\nOne answer to question Q is A) they could harm living things. Another answer to question Q is A) they could harm living things. Another answer to question Q is A) they could harm living things.\n\n\nChoices:\nA) they could harm living things\nB) they are very safe\nC) they cause nothing serious\nD) none of these\n\nProvide an answer to the following question:\n\nQ: are explosions safe?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 1,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: are explosions safe?\n\n\nChoices:\nA) they could harm living things\nB) they are very safe\nC) they cause nothing serious\nD) none of these\n\nProvide an answer to the following question:\n\nQ: are explosions safe?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 1,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: are explosions safe?\n\n\nOne answer to question Q is A) they could harm living things.\n\n\nChoices:\nA) they could harm living things\nB) they are very safe\nC) they cause nothing serious\nD) none of these\n\nProvide an answer to the following question:\n\nQ: are explosions safe?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 1,
+          "step": 2,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: are explosions safe?\n\n\nOne answer to question Q is A) they could harm living things. Another answer to question Q is A) they could harm living things.\n\n\nChoices:\nA) they could harm living things\nB) they are very safe\nC) they cause nothing serious\nD) none of these\n\nProvide an answer to the following question:\n\nQ: are explosions safe?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 1,
+          "step": 3,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: are explosions safe?\n\n\nOne answer to question Q is A) they could harm living things. Another answer to question Q is A) they could harm living things. Another answer to question Q is D) none of these.\n\n\nChoices:\nA) they could harm living things\nB) they are very safe\nC) they cause nothing serious\nD) none of these\n\nProvide an answer to the following question:\n\nQ: are explosions safe?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 2,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: are explosions safe?\n\n\nChoices:\nA) they could harm living things\nB) they are very safe\nC) they cause nothing serious\nD) none of these\n\nProvide an answer to the following question:\n\nQ: are explosions safe?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 2,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: are explosions safe?\n\n\nOne answer to question Q is A) they could harm living things.\n\n\nChoices:\nA) they could harm living things\nB) they are very safe\nC) they cause nothing serious\nD) none of these\n\nProvide an answer to the following question:\n\nQ: are explosions safe?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 2,
+          "step": 2,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: are explosions safe?\n\n\nOne answer to question Q is A) they could harm living things. Another answer to question Q is D) none of these.\n\n\nChoices:\nA) they could harm living things\nB) they are very safe\nC) they cause nothing serious\nD) none of these\n\nProvide an answer to the following question:\n\nQ: are explosions safe?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 2,
+          "step": 3,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: are explosions safe?\n\n\nOne answer to question Q is A) they could harm living things. Another answer to question Q is D) none of these. Another answer to question Q is D) none of these.\n\n\nChoices:\nA) they could harm living things\nB) they are very safe\nC) they cause nothing serious\nD) none of these\n\nProvide an answer to the following question:\n\nQ: are explosions safe?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 3,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: are explosions safe?\n\n\nChoices:\nA) they could harm living things\nB) they are very safe\nC) they cause nothing serious\nD) none of these\n\nProvide an answer to the following question:\n\nQ: are explosions safe?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 3,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: are explosions safe?\n\n\nOne answer to question Q is A) they could harm living things.\n\n\nChoices:\nA) they could harm living things\nB) they are very safe\nC) they cause nothing serious\nD) none of these\n\nProvide an answer to the following question:\n\nQ: are explosions safe?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 3,
+          "step": 2,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: are explosions safe?\n\n\nOne answer to question Q is A) they could harm living things. Another answer to question Q is A) they could harm living things.\n\n\nChoices:\nA) they could harm living things\nB) they are very safe\nC) they cause nothing serious\nD) none of these\n\nProvide an answer to the following question:\n\nQ: are explosions safe?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 3,
+          "step": 3,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: are explosions safe?\n\n\nOne answer to question Q is A) they could harm living things. Another answer to question Q is A) they could harm living things. Another answer to question Q is A) they could harm living things.\n\n\nChoices:\nA) they could harm living things\nB) they are very safe\nC) they cause nothing serious\nD) none of these\n\nProvide an answer to the following question:\n\nQ: are explosions safe?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 4,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: are explosions safe?\n\n\nChoices:\nA) they could harm living things\nB) they are very safe\nC) they cause nothing serious\nD) none of these\n\nProvide an answer to the following question:\n\nQ: are explosions safe?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 4,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: are explosions safe?\n\n\nOne answer to question Q is A) they could harm living things.\n\n\nChoices:\nA) they could harm living things\nB) they are very safe\nC) they cause nothing serious\nD) none of these\n\nProvide an answer to the following question:\n\nQ: are explosions safe?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 4,
+          "step": 2,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: are explosions safe?\n\n\nOne answer to question Q is A) they could harm living things. Another answer to question Q is A) they could harm living things.\n\n\nChoices:\nA) they could harm living things\nB) they are very safe\nC) they cause nothing serious\nD) none of these\n\nProvide an answer to the following question:\n\nQ: are explosions safe?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 4,
+          "step": 3,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: are explosions safe?\n\n\nOne answer to question Q is A) they could harm living things. Another answer to question Q is A) they could harm living things. Another answer to question Q is A) they could harm living things.\n\n\nChoices:\nA) they could harm living things\nB) they are very safe\nC) they cause nothing serious\nD) none of these\n\nProvide an answer to the following question:\n\nQ: are explosions safe?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 5,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: are explosions safe?\n\n\nChoices:\nA) they could harm living things\nB) they are very safe\nC) they cause nothing serious\nD) none of these\n\nProvide an answer to the following question:\n\nQ: are explosions safe?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 5,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: are explosions safe?\n\n\nOne answer to question Q is A) they could harm living things.\n\n\nChoices:\nA) they could harm living things\nB) they are very safe\nC) they cause nothing serious\nD) none of these\n\nProvide an answer to the following question:\n\nQ: are explosions safe?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 5,
+          "step": 2,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: are explosions safe?\n\n\nOne answer to question Q is A) they could harm living things. Another answer to question Q is A) they could harm living things.\n\n\nChoices:\nA) they could harm living things\nB) they are very safe\nC) they cause nothing serious\nD) none of these\n\nProvide an answer to the following question:\n\nQ: are explosions safe?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 5,
+          "step": 3,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: are explosions safe?\n\n\nOne answer to question Q is A) they could harm living things. Another answer to question Q is A) they could harm living things. Another answer to question Q is D) none of these.\n\n\nChoices:\nA) they could harm living things\nB) they are very safe\nC) they cause nothing serious\nD) none of these\n\nProvide an answer to the following question:\n\nQ: are explosions safe?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 6,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: are explosions safe?\n\n\nChoices:\nA) they could harm living things\nB) they are very safe\nC) they cause nothing serious\nD) none of these\n\nProvide an answer to the following question:\n\nQ: are explosions safe?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 6,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: are explosions safe?\n\n\nOne answer to question Q is A) they could harm living things.\n\n\nChoices:\nA) they could harm living things\nB) they are very safe\nC) they cause nothing serious\nD) none of these\n\nProvide an answer to the following question:\n\nQ: are explosions safe?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 6,
+          "step": 2,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: are explosions safe?\n\n\nOne answer to question Q is A) they could harm living things. Another answer to question Q is A) they could harm living things.\n\n\nChoices:\nA) they could harm living things\nB) they are very safe\nC) they cause nothing serious\nD) none of these\n\nProvide an answer to the following question:\n\nQ: are explosions safe?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 6,
+          "step": 3,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: are explosions safe?\n\n\nOne answer to question Q is A) they could harm living things. Another answer to question Q is A) they could harm living things. Another answer to question Q is D) none of these.\n\n\nChoices:\nA) they could harm living things\nB) they are very safe\nC) they cause nothing serious\nD) none of these\n\nProvide an answer to the following question:\n\nQ: are explosions safe?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 7,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: are explosions safe?\n\n\nChoices:\nA) they could harm living things\nB) they are very safe\nC) they cause nothing serious\nD) none of these\n\nProvide an answer to the following question:\n\nQ: are explosions safe?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 7,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: are explosions safe?\n\n\nOne answer to question Q is A) they could harm living things.\n\n\nChoices:\nA) they could harm living things\nB) they are very safe\nC) they cause nothing serious\nD) none of these\n\nProvide an answer to the following question:\n\nQ: are explosions safe?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 7,
+          "step": 2,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: are explosions safe?\n\n\nOne answer to question Q is A) they could harm living things. Another answer to question Q is A) they could harm living things.\n\n\nChoices:\nA) they could harm living things\nB) they are very safe\nC) they cause nothing serious\nD) none of these\n\nProvide an answer to the following question:\n\nQ: are explosions safe?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 7,
+          "step": 3,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: are explosions safe?\n\n\nOne answer to question Q is A) they could harm living things. Another answer to question Q is A) they could harm living things. Another answer to question Q is D) none of these.\n\n\nChoices:\nA) they could harm living things\nB) they are very safe\nC) they cause nothing serious\nD) none of these\n\nProvide an answer to the following question:\n\nQ: are explosions safe?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 8,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: are explosions safe?\n\n\nChoices:\nA) they could harm living things\nB) they are very safe\nC) they cause nothing serious\nD) none of these\n\nProvide an answer to the following question:\n\nQ: are explosions safe?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 8,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: are explosions safe?\n\n\nOne answer to question Q is A) they could harm living things.\n\n\nChoices:\nA) they could harm living things\nB) they are very safe\nC) they cause nothing serious\nD) none of these\n\nProvide an answer to the following question:\n\nQ: are explosions safe?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 8,
+          "step": 2,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: are explosions safe?\n\n\nOne answer to question Q is A) they could harm living things. Another answer to question Q is A) they could harm living things.\n\n\nChoices:\nA) they could harm living things\nB) they are very safe\nC) they cause nothing serious\nD) none of these\n\nProvide an answer to the following question:\n\nQ: are explosions safe?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 8,
+          "step": 3,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: are explosions safe?\n\n\nOne answer to question Q is A) they could harm living things. Another answer to question Q is A) they could harm living things. Another answer to question Q is A) they could harm living things.\n\n\nChoices:\nA) they could harm living things\nB) they are very safe\nC) they cause nothing serious\nD) none of these\n\nProvide an answer to the following question:\n\nQ: are explosions safe?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 9,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: are explosions safe?\n\n\nChoices:\nA) they could harm living things\nB) they are very safe\nC) they cause nothing serious\nD) none of these\n\nProvide an answer to the following question:\n\nQ: are explosions safe?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 9,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: are explosions safe?\n\n\nOne answer to question Q is A) they could harm living things.\n\n\nChoices:\nA) they could harm living things\nB) they are very safe\nC) they cause nothing serious\nD) none of these\n\nProvide an answer to the following question:\n\nQ: are explosions safe?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 9,
+          "step": 2,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: are explosions safe?\n\n\nOne answer to question Q is A) they could harm living things. Another answer to question Q is A) they could harm living things.\n\n\nChoices:\nA) they could harm living things\nB) they are very safe\nC) they cause nothing serious\nD) none of these\n\nProvide an answer to the following question:\n\nQ: are explosions safe?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 9,
+          "step": 3,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: are explosions safe?\n\n\nOne answer to question Q is A) they could harm living things. Another answer to question Q is A) they could harm living things. Another answer to question Q is D) none of these.\n\n\nChoices:\nA) they could harm living things\nB) they are very safe\nC) they cause nothing serious\nD) none of these\n\nProvide an answer to the following question:\n\nQ: are explosions safe?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "chain_id": 0,
+          "step": 0,
+          "text": "A",
+          "logprob": 0.0,
+          "probability": 0.5
+        },
+        {
+          "chain_id": 0,
+          "step": 1,
+          "text": "A",
+          "logprob": -0.25192904472351074,
+          "probability": 0.77729988964086
+        },
+        {
+          "chain_id": 0,
+          "step": 2,
+          "text": "A",
+          "logprob": -0.9590019732713699,
+          "probability": 0.3832752140646086
+        },
+        {
+          "chain_id": 0,
+          "step": 3,
+          "text": "A",
+          "logprob": -1.7241815328598022,
+          "probability": 0.17831894025536374
+        },
+        {
+          "chain_id": 1,
+          "step": 0,
+          "text": "A",
+          "logprob": 0.0,
+          "probability": 0.5
+        },
+        {
+          "chain_id": 1,
+          "step": 1,
+          "text": "A",
+          "logprob": -0.25192904472351074,
+          "probability": 0.77729988964086
+        },
+        {
+          "chain_id": 1,
+          "step": 2,
+          "text": "D",
+          "logprob": -0.5638720989227295,
+          "probability": 0.5690015624380658
+        },
+        {
+          "chain_id": 1,
+          "step": 3,
+          "text": "A",
+          "logprob": -0.3608846366405487,
+          "probability": 0.6970594089437251
+        },
+        {
+          "chain_id": 2,
+          "step": 0,
+          "text": "A",
+          "logprob": 0.0,
+          "probability": 0.5
+        },
+        {
+          "chain_id": 2,
+          "step": 1,
+          "text": "D",
+          "logprob": -1.5019290447235107,
+          "probability": 0.2227001469810028
+        },
+        {
+          "chain_id": 2,
+          "step": 2,
+          "text": "D",
+          "logprob": -0.5638720989227295,
+          "probability": 0.5690015624380658
+        },
+        {
+          "chain_id": 2,
+          "step": 3,
+          "text": "D",
+          "logprob": -1.194218635559082,
+          "probability": 0.3029405687171196
+        },
+        {
+          "chain_id": 3,
+          "step": 0,
+          "text": "A",
+          "logprob": 0.0,
+          "probability": 0.5
+        },
+        {
+          "chain_id": 3,
+          "step": 1,
+          "text": "A",
+          "logprob": -0.25192904472351074,
+          "probability": 0.77729988964086
+        },
+        {
+          "chain_id": 3,
+          "step": 2,
+          "text": "A",
+          "logprob": -0.9590019732713699,
+          "probability": 0.3832752140646086
+        },
+        {
+          "chain_id": 3,
+          "step": 3,
+          "text": "D",
+          "logprob": -0.1964029222726822,
+          "probability": 0.8216810943568028
+        },
+        {
+          "chain_id": 4,
+          "step": 0,
+          "text": "A",
+          "logprob": 0.0,
+          "probability": 0.5
+        },
+        {
+          "chain_id": 4,
+          "step": 1,
+          "text": "A",
+          "logprob": -0.25192904472351074,
+          "probability": 0.77729988964086
+        },
+        {
+          "chain_id": 4,
+          "step": 2,
+          "text": "A) they could harm living things",
+          "logprob": -5.120495319366455,
+          "probability": 0.005973063588093184
+        },
+        {
+          "chain_id": 4,
+          "step": 3,
+          "text": "D",
+          "logprob": -0.1964029222726822,
+          "probability": 0.8216810943568028
+        },
+        {
+          "chain_id": 5,
+          "step": 0,
+          "text": "A",
+          "logprob": 0.0,
+          "probability": 0.5
+        },
+        {
+          "chain_id": 5,
+          "step": 1,
+          "text": "A",
+          "logprob": -0.25192904472351074,
+          "probability": 0.77729988964086
+        },
+        {
+          "chain_id": 5,
+          "step": 2,
+          "text": "D",
+          "logprob": -0.5638720989227295,
+          "probability": 0.5690015624380658
+        },
+        {
+          "chain_id": 5,
+          "step": 3,
+          "text": "A",
+          "logprob": -0.3608846366405487,
+          "probability": 0.6970594089437251
+        },
+        {
+          "chain_id": 6,
+          "step": 0,
+          "text": "A",
+          "logprob": 0.0,
+          "probability": 0.5
+        },
+        {
+          "chain_id": 6,
+          "step": 1,
+          "text": "A",
+          "logprob": -0.25192904472351074,
+          "probability": 0.77729988964086
+        },
+        {
+          "chain_id": 6,
+          "step": 2,
+          "text": "D",
+          "logprob": -0.5638720989227295,
+          "probability": 0.5690015624380658
+        },
+        {
+          "chain_id": 6,
+          "step": 3,
+          "text": "D",
+          "logprob": -1.194218635559082,
+          "probability": 0.3029405687171196
+        },
+        {
+          "chain_id": 7,
+          "step": 0,
+          "text": "A",
+          "logprob": 0.0,
+          "probability": 0.5
+        },
+        {
+          "chain_id": 7,
+          "step": 1,
+          "text": "A",
+          "logprob": -0.25192904472351074,
+          "probability": 0.77729988964086
+        },
+        {
+          "chain_id": 7,
+          "step": 2,
+          "text": "D",
+          "logprob": -0.5638720989227295,
+          "probability": 0.5690015624380658
+        },
+        {
+          "chain_id": 7,
+          "step": 3,
+          "text": "D",
+          "logprob": -1.194218635559082,
+          "probability": 0.3029405687171196
+        },
+        {
+          "chain_id": 8,
+          "step": 0,
+          "text": "A",
+          "logprob": 0.0,
+          "probability": 0.5
+        },
+        {
+          "chain_id": 8,
+          "step": 1,
+          "text": "A",
+          "logprob": -0.25192904472351074,
+          "probability": 0.77729988964086
+        },
+        {
+          "chain_id": 8,
+          "step": 2,
+          "text": "A)",
+          "logprob": -3.176050677895546,
+          "probability": 0.0417502150042747
+        },
+        {
+          "chain_id": 8,
+          "step": 3,
+          "text": "D",
+          "logprob": -0.1964029222726822,
+          "probability": 0.8216810943568028
+        },
+        {
+          "chain_id": 9,
+          "step": 0,
+          "text": "A",
+          "logprob": 0.0,
+          "probability": 0.5
+        },
+        {
+          "chain_id": 9,
+          "step": 1,
+          "text": "A",
+          "logprob": -0.25192904472351074,
+          "probability": 0.77729988964086
+        },
+        {
+          "chain_id": 9,
+          "step": 2,
+          "text": "D",
+          "logprob": -0.5638720989227295,
+          "probability": 0.5690015624380658
+        },
+        {
+          "chain_id": 9,
+          "step": 3,
+          "text": "A",
+          "logprob": -0.3608846366405487,
+          "probability": 0.6970594089437251
+        }
+      ],
+      "decision_process": {
+        "num_chains": 10,
+        "chain_length": 4,
+        "total_inferences": 40,
+        "mi_method": "listing",
+        "mi_nats": 0.1035259225073798,
+        "mi_bits": 0.14935633500485196,
+        "selected_answer": "A",
+        "matched_choice": "A",
+        "confidence_computation": "1/(1 + mi_nats) = 1/(1 + 0.1035) = 0.9062",
+        "agreement": "60.00% (6/10 chains agree on final answer)"
+      },
+      "final_metrics": {
+        "predicted": "A",
+        "correct": true,
+        "confidence": 0.9061862341464957,
+        "mi_score": 0.14935633500485196,
+        "agreement": 0.6
+      }
+    }
+  }
+}

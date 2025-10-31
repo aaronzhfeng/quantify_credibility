@@ -1,0 +1,51 @@
+{
+  "question_id": 455,
+  "question_text": "Because copper is a metal, it is",
+  "choices": [
+    "1: liquid at room temperature",
+    "2: nonreactive with other substances",
+    "3: a poor conductor of electricity",
+    "4: a good conductor of heat"
+  ],
+  "gold_answer": "4",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Because copper is a metal, it is\n\n\nChoices:\n1) liquid at room temperature\n2) nonreactive with other substances\n3) a poor conductor of electricity\n4) a good conductor of heat\n\nProvide an answer to the following question:\n\nQ: Because copper is a metal, it is\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "A",
+          "logprob": -0.5578679274767637,
+          "probability": 0.5724282222040551
+        }
+      ],
+      "decision_process": {
+        "selected_text": "A",
+        "matched_choice": "1",
+        "confidence_computation": "exp(logprob) = exp(-0.5579) = 0.5724"
+      },
+      "final_metrics": {
+        "predicted": "1",
+        "correct": false,
+        "confidence": 0.5724282222040551,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

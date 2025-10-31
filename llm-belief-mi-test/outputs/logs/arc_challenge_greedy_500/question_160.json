@@ -1,0 +1,51 @@
+{
+  "question_id": 160,
+  "question_text": "Which of the following best conserves natural resources that are used to make a television?",
+  "choices": [
+    "A: repair your broken television",
+    "B: buy a television that is on sale",
+    "C: throw old televisions in the trash",
+    "D: donate a new television to your school"
+  ],
+  "gold_answer": "A",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Which of the following best conserves natural resources that are used to make a television?\n\n\nChoices:\nA) repair your broken television\nB) buy a television that is on sale\nC) throw old televisions in the trash\nD) donate a new television to your school\n\nProvide an answer to the following question:\n\nQ: Which of the following best conserves natural resources that are used to make a television?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "A",
+          "logprob": -0.0034797918051481247,
+          "probability": 0.9965262556536892
+        }
+      ],
+      "decision_process": {
+        "selected_text": "A",
+        "matched_choice": "A",
+        "confidence_computation": "exp(logprob) = exp(-0.0035) = 0.9965"
+      },
+      "final_metrics": {
+        "predicted": "A",
+        "correct": true,
+        "confidence": 0.9965262556536892,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

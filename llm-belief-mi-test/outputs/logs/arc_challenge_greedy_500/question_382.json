@@ -1,0 +1,51 @@
+{
+  "question_id": 382,
+  "question_text": "Why does a town in the desert rarely experience early morning fog as compared to a town along the coast?",
+  "choices": [
+    "A: There is less rainfall in the desert.",
+    "B: Temperatures vary more in the desert.",
+    "C: There is less water vapor in the desert air.",
+    "D: There are fewer plants in the desert."
+  ],
+  "gold_answer": "C",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Why does a town in the desert rarely experience early morning fog as compared to a town along the coast?\n\n\nChoices:\nA) There is less rainfall in the desert.\nB) Temperatures vary more in the desert.\nC) There is less water vapor in the desert air.\nD) There are fewer plants in the desert.\n\nProvide an answer to the following question:\n\nQ: Why does a town in the desert rarely experience early morning fog as compared to a town along the coast?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "C",
+          "logprob": -0.28116383915767074,
+          "probability": 0.7549046424068665
+        }
+      ],
+      "decision_process": {
+        "selected_text": "C",
+        "matched_choice": "C",
+        "confidence_computation": "exp(logprob) = exp(-0.2812) = 0.7549"
+      },
+      "final_metrics": {
+        "predicted": "C",
+        "correct": true,
+        "confidence": 0.7549046424068665,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

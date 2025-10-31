@@ -1,0 +1,51 @@
+{
+  "question_id": 173,
+  "question_text": "If the climate in an area changed over time to become very cold, which change would most likely help a species living there to survive?",
+  "choices": [
+    "A: a thicker neck and longer tail",
+    "B: a larger mouth and stronger jaws",
+    "C: an increase in fur and fat",
+    "D: an increase in height and speed"
+  ],
+  "gold_answer": "C",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: If the climate in an area changed over time to become very cold, which change would most likely help a species living there to survive?\n\n\nChoices:\nA) a thicker neck and longer tail\nB) a larger mouth and stronger jaws\nC) an increase in fur and fat\nD) an increase in height and speed\n\nProvide an answer to the following question:\n\nQ: If the climate in an area changed over time to become very cold, which change would most likely help a species living there to survive?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "C",
+          "logprob": -0.005792802665382624,
+          "probability": 0.9942239432650839
+        }
+      ],
+      "decision_process": {
+        "selected_text": "C",
+        "matched_choice": "C",
+        "confidence_computation": "exp(logprob) = exp(-0.0058) = 0.9942"
+      },
+      "final_metrics": {
+        "predicted": "C",
+        "correct": true,
+        "confidence": 0.9942239432650839,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

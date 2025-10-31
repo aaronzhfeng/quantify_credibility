@@ -1,0 +1,51 @@
+{
+  "question_id": 209,
+  "question_text": "Which of the following is the best way to determine whether two people are related?",
+  "choices": [
+    "A: Compare their blood types.",
+    "B: Compare their handwriting.",
+    "C: Compare their genes.",
+    "D: Compare their fingerprints."
+  ],
+  "gold_answer": "C",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Which of the following is the best way to determine whether two people are related?\n\n\nChoices:\nA) Compare their blood types.\nB) Compare their handwriting.\nC) Compare their genes.\nD) Compare their fingerprints.\n\nProvide an answer to the following question:\n\nQ: Which of the following is the best way to determine whether two people are related?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "C",
+          "logprob": -0.2989730217959732,
+          "probability": 0.7415794156459209
+        }
+      ],
+      "decision_process": {
+        "selected_text": "C",
+        "matched_choice": "C",
+        "confidence_computation": "exp(logprob) = exp(-0.2990) = 0.7416"
+      },
+      "final_metrics": {
+        "predicted": "C",
+        "correct": true,
+        "confidence": 0.7415794156459209,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

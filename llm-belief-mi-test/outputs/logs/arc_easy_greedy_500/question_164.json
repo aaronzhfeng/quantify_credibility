@@ -1,0 +1,51 @@
+{
+  "question_id": 164,
+  "question_text": "Russell wants to observe changes in nature over the next few months. What can a thermometer help Russell investigate?",
+  "choices": [
+    "A: rainfall amounts each week",
+    "B: tiny organisms in pond water",
+    "C: the high temperatures each day",
+    "D: the amount of growth in a plant"
+  ],
+  "gold_answer": "C",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Russell wants to observe changes in nature over the next few months. What can a thermometer help Russell investigate?\n\n\nChoices:\nA) rainfall amounts each week\nB) tiny organisms in pond water\nC) the high temperatures each day\nD) the amount of growth in a plant\n\nProvide an answer to the following question:\n\nQ: Russell wants to observe changes in nature over the next few months. What can a thermometer help Russell investigate?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "C",
+          "logprob": -0.11655161558883265,
+          "probability": 0.8899841587347183
+        }
+      ],
+      "decision_process": {
+        "selected_text": "C",
+        "matched_choice": "C",
+        "confidence_computation": "exp(logprob) = exp(-0.1166) = 0.8900"
+      },
+      "final_metrics": {
+        "predicted": "C",
+        "correct": true,
+        "confidence": 0.8899841587347183,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

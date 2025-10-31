@@ -1,0 +1,51 @@
+{
+  "question_id": 212,
+  "question_text": "What is the effect of absorption of infrared light by human skin?",
+  "choices": [
+    "A: sunburn on the skin surface",
+    "B: disinfection of the skin tissues",
+    "C: feeling of warmth on the skin",
+    "D: immediate death of skin cells"
+  ],
+  "gold_answer": "C",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: What is the effect of absorption of infrared light by human skin?\n\n\nChoices:\nA) sunburn on the skin surface\nB) disinfection of the skin tissues\nC) feeling of warmth on the skin\nD) immediate death of skin cells\n\nProvide an answer to the following question:\n\nQ: What is the effect of absorption of infrared light by human skin?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "C",
+          "logprob": -0.019884650595486164,
+          "probability": 0.9803117451612866
+        }
+      ],
+      "decision_process": {
+        "selected_text": "C",
+        "matched_choice": "C",
+        "confidence_computation": "exp(logprob) = exp(-0.0199) = 0.9803"
+      },
+      "final_metrics": {
+        "predicted": "C",
+        "correct": true,
+        "confidence": 0.9803117451612866,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

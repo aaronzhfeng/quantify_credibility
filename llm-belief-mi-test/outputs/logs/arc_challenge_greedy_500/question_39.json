@@ -1,0 +1,51 @@
+{
+  "question_id": 39,
+  "question_text": "Which of the following is the primary difference between hydraulic and pneumatic systems?",
+  "choices": [
+    "A: Hydraulic systems are under pressure and pneumatic systems are not.",
+    "B: Hydraulic systems involve liquids and pneumatic systems involve gases.",
+    "C: Hydraulic systems are open systems and pneumatic systems are closed systems.",
+    "D: Hydraulic systems involve fluids in motion and pneumatic systems involve fluids at rest."
+  ],
+  "gold_answer": "B",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Which of the following is the primary difference between hydraulic and pneumatic systems?\n\n\nChoices:\nA) Hydraulic systems are under pressure and pneumatic systems are not.\nB) Hydraulic systems involve liquids and pneumatic systems involve gases.\nC) Hydraulic systems are open systems and pneumatic systems are closed systems.\nD) Hydraulic systems involve fluids in motion and pneumatic systems involve fluids at rest.\n\nProvide an answer to the following question:\n\nQ: Which of the following is the primary difference between hydraulic and pneumatic systems?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "B",
+          "logprob": -0.14465470239520073,
+          "probability": 0.8653210348110789
+        }
+      ],
+      "decision_process": {
+        "selected_text": "B",
+        "matched_choice": "B",
+        "confidence_computation": "exp(logprob) = exp(-0.1447) = 0.8653"
+      },
+      "final_metrics": {
+        "predicted": "B",
+        "correct": true,
+        "confidence": 0.8653210348110789,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

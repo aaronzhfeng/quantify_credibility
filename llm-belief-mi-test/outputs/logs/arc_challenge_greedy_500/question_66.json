@@ -1,0 +1,51 @@
+{
+  "question_id": 66,
+  "question_text": "Some students are performing hardness tests on several substances. X scratches Y. Y scratches Z. Z scratches W. Which of these statements best describes substance W's hardness?",
+  "choices": [
+    "A: W is the softest of the four substances tested.",
+    "B: W is the hardest of the four substances tested.",
+    "C: W can scratch Y.",
+    "D: W can scratch X."
+  ],
+  "gold_answer": "A",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Some students are performing hardness tests on several substances. X scratches Y. Y scratches Z. Z scratches W. Which of these statements best describes substance W's hardness?\n\n\nChoices:\nA) W is the softest of the four substances tested.\nB) W is the hardest of the four substances tested.\nC) W can scratch Y.\nD) W can scratch X.\n\nProvide an answer to the following question:\n\nQ: Some students are performing hardness tests on several substances. X scratches Y. Y scratches Z. Z scratches W. Which of these statements best describes substance W's hardness?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "C",
+          "logprob": -1.1753968419507146,
+          "probability": 0.3086964516754385
+        }
+      ],
+      "decision_process": {
+        "selected_text": "C",
+        "matched_choice": "C",
+        "confidence_computation": "exp(logprob) = exp(-1.1754) = 0.3087"
+      },
+      "final_metrics": {
+        "predicted": "C",
+        "correct": false,
+        "confidence": 0.3086964516754385,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

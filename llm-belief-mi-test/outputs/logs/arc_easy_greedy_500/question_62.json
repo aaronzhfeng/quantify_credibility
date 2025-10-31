@@ -1,0 +1,51 @@
+{
+  "question_id": 62,
+  "question_text": "A student examined a rock sample and described it as having particles of various colors that were 1 millimeter to 12 millimeters in size. The student was making",
+  "choices": [
+    "1: an inference",
+    "2: a hypothesis",
+    "3: a prediction",
+    "4: an observation"
+  ],
+  "gold_answer": "4",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A student examined a rock sample and described it as having particles of various colors that were 1 millimeter to 12 millimeters in size. The student was making\n\n\nChoices:\n1) an inference\n2) a hypothesis\n3) a prediction\n4) an observation\n\nProvide an answer to the following question:\n\nQ: A student examined a rock sample and described it as having particles of various colors that were 1 millimeter to 12 millimeters in size. The student was making\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "D",
+          "logprob": -0.04976581083610654,
+          "probability": 0.9514522182112268
+        }
+      ],
+      "decision_process": {
+        "selected_text": "D",
+        "matched_choice": "3",
+        "confidence_computation": "exp(logprob) = exp(-0.0498) = 0.9515"
+      },
+      "final_metrics": {
+        "predicted": "3",
+        "correct": false,
+        "confidence": 0.9514522182112268,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

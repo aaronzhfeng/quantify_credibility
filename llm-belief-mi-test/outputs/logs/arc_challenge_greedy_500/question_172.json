@@ -1,0 +1,51 @@
+{
+  "question_id": 172,
+  "question_text": "Which environmental risk is not associated with the disposal of used motor oil from cars?",
+  "choices": [
+    "A: It is insoluble and difficult to clean up.",
+    "B: It dissolves in water and causes acid rain.",
+    "C: It enter storm drains and contaminates surface water.",
+    "D: It leaks onto the ground and contaminates soil and ground water."
+  ],
+  "gold_answer": "B",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Which environmental risk is not associated with the disposal of used motor oil from cars?\n\n\nChoices:\nA) It is insoluble and difficult to clean up.\nB) It dissolves in water and causes acid rain.\nC) It enter storm drains and contaminates surface water.\nD) It leaks onto the ground and contaminates soil and ground water.\n\nProvide an answer to the following question:\n\nQ: Which environmental risk is not associated with the disposal of used motor oil from cars?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "A",
+          "logprob": -1.1134596733609214,
+          "probability": 0.3284207647457525
+        }
+      ],
+      "decision_process": {
+        "selected_text": "A",
+        "matched_choice": "A",
+        "confidence_computation": "exp(logprob) = exp(-1.1135) = 0.3284"
+      },
+      "final_metrics": {
+        "predicted": "A",
+        "correct": false,
+        "confidence": 0.3284207647457525,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

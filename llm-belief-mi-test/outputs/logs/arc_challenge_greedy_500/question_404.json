@@ -1,0 +1,51 @@
+{
+  "question_id": 404,
+  "question_text": "Although a model for the passing of genetic traits was proposed in the 19th century, it wasn't until the 20th century that scientists learned the role of DNA and genes in trait inheritance. This advance in scientific understanding most likely resulted from which of the following?",
+  "choices": [
+    "A: continued investigation",
+    "B: rejection of older hypotheses",
+    "C: progress in the scientific method",
+    "D: discussion of existing conclusions"
+  ],
+  "gold_answer": "A",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Although a model for the passing of genetic traits was proposed in the 19th century, it wasn't until the 20th century that scientists learned the role of DNA and genes in trait inheritance. This advance in scientific understanding most likely resulted from which of the following?\n\n\nChoices:\nA) continued investigation\nB) rejection of older hypotheses\nC) progress in the scientific method\nD) discussion of existing conclusions\n\nProvide an answer to the following question:\n\nQ: Although a model for the passing of genetic traits was proposed in the 19th century, it wasn't until the 20th century that scientists learned the role of DNA and genes in trait inheritance. This advance in scientific understanding most likely resulted from which of the following?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "A",
+          "logprob": -0.173620442597894,
+          "probability": 0.8406158991017543
+        }
+      ],
+      "decision_process": {
+        "selected_text": "A",
+        "matched_choice": "A",
+        "confidence_computation": "exp(logprob) = exp(-0.1736) = 0.8406"
+      },
+      "final_metrics": {
+        "predicted": "A",
+        "correct": true,
+        "confidence": 0.8406158991017543,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

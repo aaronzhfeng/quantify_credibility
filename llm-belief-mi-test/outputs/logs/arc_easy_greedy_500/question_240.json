@@ -1,0 +1,51 @@
+{
+  "question_id": 240,
+  "question_text": "Where are the active volcanoes most likely to be found?",
+  "choices": [
+    "A: where rivers form",
+    "B: where tectonic plates meet",
+    "C: where oceans are deepest",
+    "D: where land and water meet"
+  ],
+  "gold_answer": "B",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Where are the active volcanoes most likely to be found?\n\n\nChoices:\nA) where rivers form\nB) where tectonic plates meet\nC) where oceans are deepest\nD) where land and water meet\n\nProvide an answer to the following question:\n\nQ: Where are the active volcanoes most likely to be found?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "B",
+          "logprob": -0.01985153160057962,
+          "probability": 0.9803442126386236
+        }
+      ],
+      "decision_process": {
+        "selected_text": "B",
+        "matched_choice": "B",
+        "confidence_computation": "exp(logprob) = exp(-0.0199) = 0.9803"
+      },
+      "final_metrics": {
+        "predicted": "B",
+        "correct": true,
+        "confidence": 0.9803442126386236,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

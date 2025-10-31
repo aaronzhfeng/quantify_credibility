@@ -1,0 +1,729 @@
+{
+  "question_id": 28,
+  "question_text": "Every evening a child can look into the night sky and see that the moon is",
+  "choices": [
+    "A: gone",
+    "B: breaking",
+    "C: falling",
+    "D: moving upwards"
+  ],
+  "gold_answer": "D",
+  "methods": {
+    "mi_method": {
+      "description": "k=10 chains of length n=3, MI estimation",
+      "raw_inputs": [
+        {
+          "chain_id": 0,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Every evening a child can look into the night sky and see that the moon is\n\n\nChoices:\nA) gone\nB) breaking\nC) falling\nD) moving upwards\n\nProvide an answer to the following question:\n\nQ: Every evening a child can look into the night sky and see that the moon is\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 0,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Every evening a child can look into the night sky and see that the moon is\n\n\nOne answer to question Q is C) falling.\n\n\nChoices:\nA) gone\nB) breaking\nC) falling\nD) moving upwards\n\nProvide an answer to the following question:\n\nQ: Every evening a child can look into the night sky and see that the moon is\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 0,
+          "step": 2,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Every evening a child can look into the night sky and see that the moon is\n\n\nOne answer to question Q is C) falling. Another answer to question Q is A) gone.\n\n\nChoices:\nA) gone\nB) breaking\nC) falling\nD) moving upwards\n\nProvide an answer to the following question:\n\nQ: Every evening a child can look into the night sky and see that the moon is\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 1,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Every evening a child can look into the night sky and see that the moon is\n\n\nChoices:\nA) gone\nB) breaking\nC) falling\nD) moving upwards\n\nProvide an answer to the following question:\n\nQ: Every evening a child can look into the night sky and see that the moon is\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 1,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Every evening a child can look into the night sky and see that the moon is\n\n\nOne answer to question Q is D) moving upwards.\n\n\nChoices:\nA) gone\nB) breaking\nC) falling\nD) moving upwards\n\nProvide an answer to the following question:\n\nQ: Every evening a child can look into the night sky and see that the moon is\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 1,
+          "step": 2,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Every evening a child can look into the night sky and see that the moon is\n\n\nOne answer to question Q is D) moving upwards. Another answer to question Q is D) moving upwards.\n\n\nChoices:\nA) gone\nB) breaking\nC) falling\nD) moving upwards\n\nProvide an answer to the following question:\n\nQ: Every evening a child can look into the night sky and see that the moon is\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 2,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Every evening a child can look into the night sky and see that the moon is\n\n\nChoices:\nA) gone\nB) breaking\nC) falling\nD) moving upwards\n\nProvide an answer to the following question:\n\nQ: Every evening a child can look into the night sky and see that the moon is\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 2,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Every evening a child can look into the night sky and see that the moon is\n\n\nOne answer to question Q is C) falling.\n\n\nChoices:\nA) gone\nB) breaking\nC) falling\nD) moving upwards\n\nProvide an answer to the following question:\n\nQ: Every evening a child can look into the night sky and see that the moon is\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 2,
+          "step": 2,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Every evening a child can look into the night sky and see that the moon is\n\n\nOne answer to question Q is C) falling. Another answer to question Q is C) falling.\n\n\nChoices:\nA) gone\nB) breaking\nC) falling\nD) moving upwards\n\nProvide an answer to the following question:\n\nQ: Every evening a child can look into the night sky and see that the moon is\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 3,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Every evening a child can look into the night sky and see that the moon is\n\n\nChoices:\nA) gone\nB) breaking\nC) falling\nD) moving upwards\n\nProvide an answer to the following question:\n\nQ: Every evening a child can look into the night sky and see that the moon is\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 3,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Every evening a child can look into the night sky and see that the moon is\n\n\nOne answer to question Q is D) moving upwards.\n\n\nChoices:\nA) gone\nB) breaking\nC) falling\nD) moving upwards\n\nProvide an answer to the following question:\n\nQ: Every evening a child can look into the night sky and see that the moon is\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 3,
+          "step": 2,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Every evening a child can look into the night sky and see that the moon is\n\n\nOne answer to question Q is D) moving upwards. Another answer to question Q is D) moving upwards.\n\n\nChoices:\nA) gone\nB) breaking\nC) falling\nD) moving upwards\n\nProvide an answer to the following question:\n\nQ: Every evening a child can look into the night sky and see that the moon is\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 4,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Every evening a child can look into the night sky and see that the moon is\n\n\nChoices:\nA) gone\nB) breaking\nC) falling\nD) moving upwards\n\nProvide an answer to the following question:\n\nQ: Every evening a child can look into the night sky and see that the moon is\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 4,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Every evening a child can look into the night sky and see that the moon is\n\n\nOne answer to question Q is D) moving upwards.\n\n\nChoices:\nA) gone\nB) breaking\nC) falling\nD) moving upwards\n\nProvide an answer to the following question:\n\nQ: Every evening a child can look into the night sky and see that the moon is\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 4,
+          "step": 2,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Every evening a child can look into the night sky and see that the moon is\n\n\nOne answer to question Q is D) moving upwards. Another answer to question Q is A) gone.\n\n\nChoices:\nA) gone\nB) breaking\nC) falling\nD) moving upwards\n\nProvide an answer to the following question:\n\nQ: Every evening a child can look into the night sky and see that the moon is\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 5,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Every evening a child can look into the night sky and see that the moon is\n\n\nChoices:\nA) gone\nB) breaking\nC) falling\nD) moving upwards\n\nProvide an answer to the following question:\n\nQ: Every evening a child can look into the night sky and see that the moon is\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 5,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Every evening a child can look into the night sky and see that the moon is\n\n\nOne answer to question Q is A) gone.\n\n\nChoices:\nA) gone\nB) breaking\nC) falling\nD) moving upwards\n\nProvide an answer to the following question:\n\nQ: Every evening a child can look into the night sky and see that the moon is\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 5,
+          "step": 2,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Every evening a child can look into the night sky and see that the moon is\n\n\nOne answer to question Q is A) gone. Another answer to question Q is A) gone.\n\n\nChoices:\nA) gone\nB) breaking\nC) falling\nD) moving upwards\n\nProvide an answer to the following question:\n\nQ: Every evening a child can look into the night sky and see that the moon is\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 6,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Every evening a child can look into the night sky and see that the moon is\n\n\nChoices:\nA) gone\nB) breaking\nC) falling\nD) moving upwards\n\nProvide an answer to the following question:\n\nQ: Every evening a child can look into the night sky and see that the moon is\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 6,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Every evening a child can look into the night sky and see that the moon is\n\n\nOne answer to question Q is A) gone.\n\n\nChoices:\nA) gone\nB) breaking\nC) falling\nD) moving upwards\n\nProvide an answer to the following question:\n\nQ: Every evening a child can look into the night sky and see that the moon is\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 6,
+          "step": 2,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Every evening a child can look into the night sky and see that the moon is\n\n\nOne answer to question Q is A) gone. Another answer to question Q is A) gone.\n\n\nChoices:\nA) gone\nB) breaking\nC) falling\nD) moving upwards\n\nProvide an answer to the following question:\n\nQ: Every evening a child can look into the night sky and see that the moon is\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 7,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Every evening a child can look into the night sky and see that the moon is\n\n\nChoices:\nA) gone\nB) breaking\nC) falling\nD) moving upwards\n\nProvide an answer to the following question:\n\nQ: Every evening a child can look into the night sky and see that the moon is\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 7,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Every evening a child can look into the night sky and see that the moon is\n\n\nOne answer to question Q is D) moving upwards.\n\n\nChoices:\nA) gone\nB) breaking\nC) falling\nD) moving upwards\n\nProvide an answer to the following question:\n\nQ: Every evening a child can look into the night sky and see that the moon is\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 7,
+          "step": 2,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Every evening a child can look into the night sky and see that the moon is\n\n\nOne answer to question Q is D) moving upwards. Another answer to question Q is D) moving upwards.\n\n\nChoices:\nA) gone\nB) breaking\nC) falling\nD) moving upwards\n\nProvide an answer to the following question:\n\nQ: Every evening a child can look into the night sky and see that the moon is\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 8,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Every evening a child can look into the night sky and see that the moon is\n\n\nChoices:\nA) gone\nB) breaking\nC) falling\nD) moving upwards\n\nProvide an answer to the following question:\n\nQ: Every evening a child can look into the night sky and see that the moon is\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 8,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Every evening a child can look into the night sky and see that the moon is\n\n\nOne answer to question Q is D) moving upwards.\n\n\nChoices:\nA) gone\nB) breaking\nC) falling\nD) moving upwards\n\nProvide an answer to the following question:\n\nQ: Every evening a child can look into the night sky and see that the moon is\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 8,
+          "step": 2,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Every evening a child can look into the night sky and see that the moon is\n\n\nOne answer to question Q is D) moving upwards. Another answer to question Q is A) gone.\n\n\nChoices:\nA) gone\nB) breaking\nC) falling\nD) moving upwards\n\nProvide an answer to the following question:\n\nQ: Every evening a child can look into the night sky and see that the moon is\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 9,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Every evening a child can look into the night sky and see that the moon is\n\n\nChoices:\nA) gone\nB) breaking\nC) falling\nD) moving upwards\n\nProvide an answer to the following question:\n\nQ: Every evening a child can look into the night sky and see that the moon is\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 9,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Every evening a child can look into the night sky and see that the moon is\n\n\nOne answer to question Q is D) moving upwards.\n\n\nChoices:\nA) gone\nB) breaking\nC) falling\nD) moving upwards\n\nProvide an answer to the following question:\n\nQ: Every evening a child can look into the night sky and see that the moon is\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 9,
+          "step": 2,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Every evening a child can look into the night sky and see that the moon is\n\n\nOne answer to question Q is D) moving upwards. Another answer to question Q is A) gone.\n\n\nChoices:\nA) gone\nB) breaking\nC) falling\nD) moving upwards\n\nProvide an answer to the following question:\n\nQ: Every evening a child can look into the night sky and see that the moon is\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "chain_id": 0,
+          "step": 0,
+          "text": "C",
+          "logprob": -1.683936595916748,
+          "probability": 0.18564173921220678
+        },
+        {
+          "chain_id": 0,
+          "step": 1,
+          "text": "A",
+          "logprob": -1.0994775295257568,
+          "probability": 0.33304504445176264
+        },
+        {
+          "chain_id": 0,
+          "step": 2,
+          "text": "A",
+          "logprob": 0.0,
+          "probability": 0.5
+        },
+        {
+          "chain_id": 1,
+          "step": 0,
+          "text": "D",
+          "logprob": -0.7117152214050293,
+          "probability": 0.49080164160130985
+        },
+        {
+          "chain_id": 1,
+          "step": 1,
+          "text": "D",
+          "logprob": -0.5638729929924011,
+          "probability": 0.5690010537112531
+        },
+        {
+          "chain_id": 1,
+          "step": 2,
+          "text": "A",
+          "logprob": -0.6261118650436401,
+          "probability": 0.5346666207816538
+        },
+        {
+          "chain_id": 2,
+          "step": 0,
+          "text": "C",
+          "logprob": -1.683936595916748,
+          "probability": 0.18564173921220678
+        },
+        {
+          "chain_id": 2,
+          "step": 1,
+          "text": "C",
+          "logprob": -0.40503284335136414,
+          "probability": 0.6669549054644489
+        },
+        {
+          "chain_id": 2,
+          "step": 2,
+          "text": "A",
+          "logprob": -0.6261127591133118,
+          "probability": 0.5346661427526574
+        },
+        {
+          "chain_id": 3,
+          "step": 0,
+          "text": "D",
+          "logprob": -0.7117152214050293,
+          "probability": 0.49080164160130985
+        },
+        {
+          "chain_id": 3,
+          "step": 1,
+          "text": "D",
+          "logprob": -0.5638729929924011,
+          "probability": 0.5690010537112531
+        },
+        {
+          "chain_id": 3,
+          "step": 2,
+          "text": "A",
+          "logprob": -0.6261118650436401,
+          "probability": 0.5346666207816538
+        },
+        {
+          "chain_id": 4,
+          "step": 0,
+          "text": "D",
+          "logprob": -0.7117152214050293,
+          "probability": 0.49080164160130985
+        },
+        {
+          "chain_id": 4,
+          "step": 1,
+          "text": "A",
+          "logprob": -0.8416497111320496,
+          "probability": 0.4309989129100434
+        },
+        {
+          "chain_id": 4,
+          "step": 2,
+          "text": "A",
+          "logprob": 0.0,
+          "probability": 0.5
+        },
+        {
+          "chain_id": 5,
+          "step": 0,
+          "text": "A",
+          "logprob": -1.1283812522888184,
+          "probability": 0.3235565892243338
+        },
+        {
+          "chain_id": 5,
+          "step": 1,
+          "text": "A",
+          "logprob": -0.2916291654109955,
+          "probability": 0.7470455149299909
+        },
+        {
+          "chain_id": 5,
+          "step": 2,
+          "text": "C",
+          "logprob": -2.662459373474121,
+          "probability": 0.06977640431175644
+        },
+        {
+          "chain_id": 6,
+          "step": 0,
+          "text": "A",
+          "logprob": -1.1283812522888184,
+          "probability": 0.3235565892243338
+        },
+        {
+          "chain_id": 6,
+          "step": 1,
+          "text": "A",
+          "logprob": -0.2916291654109955,
+          "probability": 0.7470455149299909
+        },
+        {
+          "chain_id": 6,
+          "step": 2,
+          "text": "A",
+          "logprob": -0.35886260867118835,
+          "probability": 0.6984703085234045
+        },
+        {
+          "chain_id": 7,
+          "step": 0,
+          "text": "D",
+          "logprob": -0.7117152214050293,
+          "probability": 0.49080164160130985
+        },
+        {
+          "chain_id": 7,
+          "step": 1,
+          "text": "D",
+          "logprob": -0.5638729929924011,
+          "probability": 0.5690010537112531
+        },
+        {
+          "chain_id": 7,
+          "step": 2,
+          "text": "A",
+          "logprob": -0.6261118650436401,
+          "probability": 0.5346666207816538
+        },
+        {
+          "chain_id": 8,
+          "step": 0,
+          "text": "D",
+          "logprob": -0.7117152214050293,
+          "probability": 0.49080164160130985
+        },
+        {
+          "chain_id": 8,
+          "step": 1,
+          "text": "A",
+          "logprob": -0.8416497111320496,
+          "probability": 0.4309989129100434
+        },
+        {
+          "chain_id": 8,
+          "step": 2,
+          "text": "A",
+          "logprob": 0.0,
+          "probability": 0.5
+        },
+        {
+          "chain_id": 9,
+          "step": 0,
+          "text": "D",
+          "logprob": -0.7117152214050293,
+          "probability": 0.49080164160130985
+        },
+        {
+          "chain_id": 9,
+          "step": 1,
+          "text": "A",
+          "logprob": -0.8416497111320496,
+          "probability": 0.4309989129100434
+        },
+        {
+          "chain_id": 9,
+          "step": 2,
+          "text": "A",
+          "logprob": 0.0,
+          "probability": 0.5
+        }
+      ],
+      "decision_process": {
+        "num_chains": 10,
+        "chain_length": 3,
+        "total_inferences": 30,
+        "mi_method": "listing",
+        "mi_nats": 0.2123563216697479,
+        "mi_bits": 0.30636541217436686,
+        "selected_answer": "A",
+        "matched_choice": "A",
+        "confidence_computation": "1/(1 + mi_nats) = 1/(1 + 0.2124) = 0.8248",
+        "agreement": "90.00% (9/10 chains agree on final answer)"
+      },
+      "final_metrics": {
+        "predicted": "A",
+        "correct": false,
+        "confidence": 0.8248400095961269,
+        "mi_score": 0.30636541217436686,
+        "agreement": 0.9
+      }
+    }
+  }
+}

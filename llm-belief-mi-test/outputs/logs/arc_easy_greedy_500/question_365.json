@@ -1,0 +1,51 @@
+{
+  "question_id": 365,
+  "question_text": "Heat transfer by conduction occurs when molecules",
+  "choices": [
+    "1: flow as currents through liquids",
+    "2: form waves that travel through space",
+    "3: become less dense and rise",
+    "4: collide with other molecules"
+  ],
+  "gold_answer": "4",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Heat transfer by conduction occurs when molecules\n\n\nChoices:\n1) flow as currents through liquids\n2) form waves that travel through space\n3) become less dense and rise\n4) collide with other molecules\n\nProvide an answer to the following question:\n\nQ: Heat transfer by conduction occurs when molecules\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "D",
+          "logprob": -0.1742234940174967,
+          "probability": 0.8401091173135572
+        }
+      ],
+      "decision_process": {
+        "selected_text": "D",
+        "matched_choice": "1",
+        "confidence_computation": "exp(logprob) = exp(-0.1742) = 0.8401"
+      },
+      "final_metrics": {
+        "predicted": "1",
+        "correct": false,
+        "confidence": 0.8401091173135572,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

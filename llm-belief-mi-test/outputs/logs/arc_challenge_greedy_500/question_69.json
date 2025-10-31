@@ -1,0 +1,51 @@
+{
+  "question_id": 69,
+  "question_text": "What is the primary cause of rainstorms?",
+  "choices": [
+    "A: Earth is heated by the Sun.",
+    "B: Mountains direct moist air upward.",
+    "C: Water forms droplets when cooled.",
+    "D: Most of Earth is covered with water."
+  ],
+  "gold_answer": "A",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: What is the primary cause of rainstorms?\n\n\nChoices:\nA) Earth is heated by the Sun.\nB) Mountains direct moist air upward.\nC) Water forms droplets when cooled.\nD) Most of Earth is covered with water.\n\nProvide an answer to the following question:\n\nQ: What is the primary cause of rainstorms?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "B",
+          "logprob": -0.6568290075520054,
+          "probability": 0.5184928674389038
+        }
+      ],
+      "decision_process": {
+        "selected_text": "B",
+        "matched_choice": "B",
+        "confidence_computation": "exp(logprob) = exp(-0.6568) = 0.5185"
+      },
+      "final_metrics": {
+        "predicted": "B",
+        "correct": false,
+        "confidence": 0.5184928674389038,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "question_id": 406,
+  "question_text": "What is the BEST reason for including fruits and leafy vegetables in a healthy diet?",
+  "choices": [
+    "A: They have a high water content.",
+    "B: They are the best source of protein.",
+    "C: They are rich in minerals and vitamins.",
+    "D: They are the best source of carbohydrates."
+  ],
+  "gold_answer": "C",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: What is the BEST reason for including fruits and leafy vegetables in a healthy diet?\n\n\nChoices:\nA) They have a high water content.\nB) They are the best source of protein.\nC) They are rich in minerals and vitamins.\nD) They are the best source of carbohydrates.\n\nProvide an answer to the following question:\n\nQ: What is the BEST reason for including fruits and leafy vegetables in a healthy diet?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "C",
+          "logprob": -0.03398616425693035,
+          "probability": 0.966584877965018
+        }
+      ],
+      "decision_process": {
+        "selected_text": "C",
+        "matched_choice": "C",
+        "confidence_computation": "exp(logprob) = exp(-0.0340) = 0.9666"
+      },
+      "final_metrics": {
+        "predicted": "C",
+        "correct": true,
+        "confidence": 0.966584877965018,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "question_id": 43,
+  "question_text": "A scientist found fossils of ocean shells on a mountain top. Based on this find, which statement can be made?",
+  "choices": [
+    "A: The climate was once colder.",
+    "B: The shells were carried by the wind.",
+    "C: The mountain was covered by water.",
+    "D: The shells once lived on dry land."
+  ],
+  "gold_answer": "C",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A scientist found fossils of ocean shells on a mountain top. Based on this find, which statement can be made?\n\n\nChoices:\nA) The climate was once colder.\nB) The shells were carried by the wind.\nC) The mountain was covered by water.\nD) The shells once lived on dry land.\n\nProvide an answer to the following question:\n\nQ: A scientist found fossils of ocean shells on a mountain top. Based on this find, which statement can be made?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "C",
+          "logprob": -0.6922539376246277,
+          "probability": 0.5004468209977994
+        }
+      ],
+      "decision_process": {
+        "selected_text": "C",
+        "matched_choice": "C",
+        "confidence_computation": "exp(logprob) = exp(-0.6923) = 0.5004"
+      },
+      "final_metrics": {
+        "predicted": "C",
+        "correct": true,
+        "confidence": 0.5004468209977994,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

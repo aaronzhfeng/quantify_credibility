@@ -1,0 +1,51 @@
+{
+  "question_id": 477,
+  "question_text": "Sediments are generally classified by particle size. A student would like to classify sediments by their source. Which statement best describes this alternate classification?",
+  "choices": [
+    "A: acceptable if the sediments are also identified by particle size",
+    "B: acceptable if the factors used for the classification are given",
+    "C: unacceptable because others would not understand the classification system",
+    "D: unacceptable because this is not the way scientists usually classify sediments"
+  ],
+  "gold_answer": "B",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Sediments are generally classified by particle size. A student would like to classify sediments by their source. Which statement best describes this alternate classification?\n\n\nChoices:\nA) acceptable if the sediments are also identified by particle size\nB) acceptable if the factors used for the classification are given\nC) unacceptable because others would not understand the classification system\nD) unacceptable because this is not the way scientists usually classify sediments\n\nProvide an answer to the following question:\n\nQ: Sediments are generally classified by particle size. A student would like to classify sediments by their source. Which statement best describes this alternate classification?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "D",
+          "logprob": -1.1435735151171684,
+          "probability": 0.31867818332292946
+        }
+      ],
+      "decision_process": {
+        "selected_text": "D",
+        "matched_choice": "D",
+        "confidence_computation": "exp(logprob) = exp(-1.1436) = 0.3187"
+      },
+      "final_metrics": {
+        "predicted": "D",
+        "correct": false,
+        "confidence": 0.31867818332292946,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

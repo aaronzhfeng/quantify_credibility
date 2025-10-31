@@ -1,0 +1,51 @@
+{
+  "question_id": 330,
+  "question_text": "Which of the following statements best describes a result of using interchangeable parts to manufacture automobiles?",
+  "choices": [
+    "A: The automobiles are identical.",
+    "B: The automobiles wear out quickly.",
+    "C: The automobiles are difficult to design.",
+    "D: The automobiles can be produced on an assembly line."
+  ],
+  "gold_answer": "D",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Which of the following statements best describes a result of using interchangeable parts to manufacture automobiles?\n\n\nChoices:\nA) The automobiles are identical.\nB) The automobiles wear out quickly.\nC) The automobiles are difficult to design.\nD) The automobiles can be produced on an assembly line.\n\nProvide an answer to the following question:\n\nQ: Which of the following statements best describes a result of using interchangeable parts to manufacture automobiles?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "A",
+          "logprob": -0.6945262466324493,
+          "probability": 0.49931094220106975
+        }
+      ],
+      "decision_process": {
+        "selected_text": "A",
+        "matched_choice": "A",
+        "confidence_computation": "exp(logprob) = exp(-0.6945) = 0.4993"
+      },
+      "final_metrics": {
+        "predicted": "A",
+        "correct": false,
+        "confidence": 0.49931094220106975,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "question_id": 19,
+  "question_text": "It was once thought that living organisms could come from non-living matter. For example, people believed that flies would develop from rotting meat. This idea was later disproved primarily because of",
+  "choices": [
+    "A: the discovery of the atom.",
+    "B: better surgical techniques.",
+    "C: continued experimentation.",
+    "D: the invention of the microscope."
+  ],
+  "gold_answer": "C",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: It was once thought that living organisms could come from non-living matter. For example, people believed that flies would develop from rotting meat. This idea was later disproved primarily because of\n\n\nChoices:\nA) the discovery of the atom.\nB) better surgical techniques.\nC) continued experimentation.\nD) the invention of the microscope.\n\nProvide an answer to the following question:\n\nQ: It was once thought that living organisms could come from non-living matter. For example, people believed that flies would develop from rotting meat. This idea was later disproved primarily because of\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "D",
+          "logprob": -0.06469081249088049,
+          "probability": 0.9373572377272783
+        }
+      ],
+      "decision_process": {
+        "selected_text": "D",
+        "matched_choice": "D",
+        "confidence_computation": "exp(logprob) = exp(-0.0647) = 0.9374"
+      },
+      "final_metrics": {
+        "predicted": "D",
+        "correct": false,
+        "confidence": 0.9373572377272783,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

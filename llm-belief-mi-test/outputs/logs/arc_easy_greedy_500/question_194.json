@@ -1,0 +1,51 @@
+{
+  "question_id": 194,
+  "question_text": "When trees are removed from a tropical rain forest, other plants and animals are affected. Which statement identifies another change that will most likely occur when a rain forest habitat is destroyed?",
+  "choices": [
+    "A: Oxygen levels will increase.",
+    "B: Carbon dioxide levels will increase.",
+    "C: The temperature of Earth will decrease.",
+    "D: The air pollution in the atmosphere will decrease."
+  ],
+  "gold_answer": "B",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: When trees are removed from a tropical rain forest, other plants and animals are affected. Which statement identifies another change that will most likely occur when a rain forest habitat is destroyed?\n\n\nChoices:\nA) Oxygen levels will increase.\nB) Carbon dioxide levels will increase.\nC) The temperature of Earth will decrease.\nD) The air pollution in the atmosphere will decrease.\n\nProvide an answer to the following question:\n\nQ: When trees are removed from a tropical rain forest, other plants and animals are affected. Which statement identifies another change that will most likely occur when a rain forest habitat is destroyed?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "B",
+          "logprob": -0.21173719838407123,
+          "probability": 0.8091773227341448
+        }
+      ],
+      "decision_process": {
+        "selected_text": "B",
+        "matched_choice": "B",
+        "confidence_computation": "exp(logprob) = exp(-0.2117) = 0.8092"
+      },
+      "final_metrics": {
+        "predicted": "B",
+        "correct": true,
+        "confidence": 0.8091773227341448,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

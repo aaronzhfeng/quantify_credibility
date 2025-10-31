@@ -1,0 +1,51 @@
+{
+  "question_id": 295,
+  "question_text": "Which of the following involves a learned behavior?",
+  "choices": [
+    "A: laying eggs to reproduce",
+    "B: having hollow, light-weight bones",
+    "C: avoiding insects that taste bad",
+    "D: having white feathers on the throat"
+  ],
+  "gold_answer": "C",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Which of the following involves a learned behavior?\n\n\nChoices:\nA) laying eggs to reproduce\nB) having hollow, light-weight bones\nC) avoiding insects that taste bad\nD) having white feathers on the throat\n\nProvide an answer to the following question:\n\nQ: Which of the following involves a learned behavior?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "C",
+          "logprob": -0.15994454262545332,
+          "probability": 0.8521910479339007
+        }
+      ],
+      "decision_process": {
+        "selected_text": "C",
+        "matched_choice": "C",
+        "confidence_computation": "exp(logprob) = exp(-0.1599) = 0.8522"
+      },
+      "final_metrics": {
+        "predicted": "C",
+        "correct": true,
+        "confidence": 0.8521910479339007,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

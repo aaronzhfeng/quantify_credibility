@@ -1,0 +1,51 @@
+{
+  "question_id": 349,
+  "question_text": "Which shows one example of a physical change and one example of a chemical change?",
+  "choices": [
+    "A: boiling water and melting wax",
+    "B: rusting iron and baking a cake",
+    "C: dissolving powder and shredding paper",
+    "D: freezing water and burning coal"
+  ],
+  "gold_answer": "D",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Which shows one example of a physical change and one example of a chemical change?\n\n\nChoices:\nA) boiling water and melting wax\nB) rusting iron and baking a cake\nC) dissolving powder and shredding paper\nD) freezing water and burning coal\n\nProvide an answer to the following question:\n\nQ: Which shows one example of a physical change and one example of a chemical change?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "A",
+          "logprob": -0.6970611307770014,
+          "probability": 0.49804684965144685
+        }
+      ],
+      "decision_process": {
+        "selected_text": "A",
+        "matched_choice": "A",
+        "confidence_computation": "exp(logprob) = exp(-0.6971) = 0.4980"
+      },
+      "final_metrics": {
+        "predicted": "A",
+        "correct": false,
+        "confidence": 0.49804684965144685,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

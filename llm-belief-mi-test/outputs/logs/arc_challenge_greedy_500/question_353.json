@@ -1,0 +1,51 @@
+{
+  "question_id": 353,
+  "question_text": "An Earth Science class is planning a field trip to a forest. Which supply should each student carry on the field trip?",
+  "choices": [
+    "A: fire extinguisher",
+    "B: first-aid kit",
+    "C: bottled water",
+    "D: iodine tablets"
+  ],
+  "gold_answer": "C",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: An Earth Science class is planning a field trip to a forest. Which supply should each student carry on the field trip?\n\n\nChoices:\nA) fire extinguisher\nB) first-aid kit\nC) bottled water\nD) iodine tablets\n\nProvide an answer to the following question:\n\nQ: An Earth Science class is planning a field trip to a forest. Which supply should each student carry on the field trip?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "B",
+          "logprob": -0.29272888868581504,
+          "probability": 0.74622442315949
+        }
+      ],
+      "decision_process": {
+        "selected_text": "B",
+        "matched_choice": "B",
+        "confidence_computation": "exp(logprob) = exp(-0.2927) = 0.7462"
+      },
+      "final_metrics": {
+        "predicted": "B",
+        "correct": false,
+        "confidence": 0.74622442315949,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

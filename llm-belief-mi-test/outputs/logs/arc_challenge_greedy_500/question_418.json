@@ -1,0 +1,51 @@
+{
+  "question_id": 418,
+  "question_text": "How are plant cells and human cells the same?",
+  "choices": [
+    "A: They can produce their own oxygen.",
+    "B: They make their own food from sunlight.",
+    "C: They can receive nutrients through the cell wall.",
+    "D: They use mitochondria to release energy from sugars."
+  ],
+  "gold_answer": "D",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: How are plant cells and human cells the same?\n\n\nChoices:\nA) They can produce their own oxygen.\nB) They make their own food from sunlight.\nC) They can receive nutrients through the cell wall.\nD) They use mitochondria to release energy from sugars.\n\nProvide an answer to the following question:\n\nQ: How are plant cells and human cells the same?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "B",
+          "logprob": -0.05217404384166002,
+          "probability": 0.9491636563772546
+        }
+      ],
+      "decision_process": {
+        "selected_text": "B",
+        "matched_choice": "B",
+        "confidence_computation": "exp(logprob) = exp(-0.0522) = 0.9492"
+      },
+      "final_metrics": {
+        "predicted": "B",
+        "correct": false,
+        "confidence": 0.9491636563772546,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

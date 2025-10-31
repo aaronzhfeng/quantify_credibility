@@ -1,0 +1,51 @@
+{
+  "question_id": 98,
+  "question_text": "Which structures are common to both plant and animal cells?",
+  "choices": [
+    "A: vacuole, chloroplast, nucleus",
+    "B: cell membrane, nucleus, mitochondrion",
+    "C: nucleus, cell wall, cell membrane",
+    "D: mitochondrion, vacuole, cell wall"
+  ],
+  "gold_answer": "B",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Which structures are common to both plant and animal cells?\n\n\nChoices:\nA) vacuole, chloroplast, nucleus\nB) cell membrane, nucleus, mitochondrion\nC) nucleus, cell wall, cell membrane\nD) mitochondrion, vacuole, cell wall\n\nProvide an answer to the following question:\n\nQ: Which structures are common to both plant and animal cells?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "B",
+          "logprob": -0.18262079544365406,
+          "probability": 0.8330840050980999
+        }
+      ],
+      "decision_process": {
+        "selected_text": "B",
+        "matched_choice": "B",
+        "confidence_computation": "exp(logprob) = exp(-0.1826) = 0.8331"
+      },
+      "final_metrics": {
+        "predicted": "B",
+        "correct": true,
+        "confidence": 0.8330840050980999,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

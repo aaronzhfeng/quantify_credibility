@@ -1,0 +1,51 @@
+{
+  "question_id": 123,
+  "question_text": "Topsoil is considered to be most fertile when it has a",
+  "choices": [
+    "A: low pH level.",
+    "B: low sand content.",
+    "C: high organic matter level.",
+    "D: high parent rock material level."
+  ],
+  "gold_answer": "C",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Topsoil is considered to be most fertile when it has a\n\n\nChoices:\nA) low pH level.\nB) low sand content.\nC) high organic matter level.\nD) high parent rock material level.\n\nProvide an answer to the following question:\n\nQ: Topsoil is considered to be most fertile when it has a\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "C",
+          "logprob": -0.0035819901968352497,
+          "probability": 0.996424417477025
+        }
+      ],
+      "decision_process": {
+        "selected_text": "C",
+        "matched_choice": "C",
+        "confidence_computation": "exp(logprob) = exp(-0.0036) = 0.9964"
+      },
+      "final_metrics": {
+        "predicted": "C",
+        "correct": true,
+        "confidence": 0.996424417477025,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

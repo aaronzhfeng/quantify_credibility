@@ -1,0 +1,51 @@
+{
+  "question_id": 269,
+  "question_text": "A Green Community Many cities in the United States are developing \"green communities.\" A green community is intended to reduce the use of energy and consists of houses, apartments, and nearby businesses. Grocery stores, restaurants, and movie theaters are all within walking distance of the homes in the community. People travel shorter distances to their schools and jobs. Many of the buildings in a green community are made of renewable and recycled materials. Solar energy keeps the buildings at a comfortable temperature. Natural landscape features, such as trees and plants, are carefully located to provide shade and to control temperatures. Community gardens allow residents to grow food and flowers. People in green communities are using a nonrenewable resource when they",
+  "choices": [
+    "A: heat their homes with wood",
+    "B: wash vegetables before cooking",
+    "C: drive gasoline-powered automobiles",
+    "D: grow flowers in the community garden"
+  ],
+  "gold_answer": "C",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A Green Community Many cities in the United States are developing \"green communities.\" A green community is intended to reduce the use of energy and consists of houses, apartments, and nearby businesses. Grocery stores, restaurants, and movie theaters are all within walking distance of the homes in the community. People travel shorter distances to their schools and jobs. Many of the buildings in a green community are made of renewable and recycled materials. Solar energy keeps the buildings at a comfortable temperature. Natural landscape features, such as trees and plants, are carefully located to provide shade and to control temperatures. Community gardens allow residents to grow food and flowers. People in green communities are using a nonrenewable resource when they\n\n\nChoices:\nA) heat their homes with wood\nB) wash vegetables before cooking\nC) drive gasoline-powered automobiles\nD) grow flowers in the community garden\n\nProvide an answer to the following question:\n\nQ: A Green Community Many cities in the United States are developing \"green communities.\" A green community is intended to reduce the use of energy and consists of houses, apartments, and nearby businesses. Grocery stores, restaurants, and movie theaters are all within walking distance of the homes in the community. People travel shorter distances to their schools and jobs. Many of the buildings in a green community are made of renewable and recycled materials. Solar energy keeps the buildings at a comfortable temperature. Natural landscape features, such as trees and plants, are carefully located to provide shade and to control temperatures. Community gardens allow residents to grow food and flowers. People in green communities are using a nonrenewable resource when they\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "C",
+          "logprob": -0.5268599065893795,
+          "probability": 0.5904561491823007
+        }
+      ],
+      "decision_process": {
+        "selected_text": "C",
+        "matched_choice": "C",
+        "confidence_computation": "exp(logprob) = exp(-0.5269) = 0.5905"
+      },
+      "final_metrics": {
+        "predicted": "C",
+        "correct": true,
+        "confidence": 0.5904561491823007,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

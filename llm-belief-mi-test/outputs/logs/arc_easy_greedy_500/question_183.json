@@ -1,0 +1,51 @@
+{
+  "question_id": 183,
+  "question_text": "What is happening when rocks are broken down by both physical and chemical changes?",
+  "choices": [
+    "A: weathering",
+    "B: deposition",
+    "C: condensation",
+    "D: decomposing"
+  ],
+  "gold_answer": "A",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: What is happening when rocks are broken down by both physical and chemical changes?\n\n\nChoices:\nA) weathering\nB) deposition\nC) condensation\nD) decomposing\n\nProvide an answer to the following question:\n\nQ: What is happening when rocks are broken down by both physical and chemical changes?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "A",
+          "logprob": -0.010490523476619273,
+          "probability": 0.9895643101527876
+        }
+      ],
+      "decision_process": {
+        "selected_text": "A",
+        "matched_choice": "A",
+        "confidence_computation": "exp(logprob) = exp(-0.0105) = 0.9896"
+      },
+      "final_metrics": {
+        "predicted": "A",
+        "correct": true,
+        "confidence": 0.9895643101527876,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

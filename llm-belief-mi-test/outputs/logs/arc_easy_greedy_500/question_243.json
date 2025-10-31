@@ -1,0 +1,51 @@
+{
+  "question_id": 243,
+  "question_text": "Which of the following is designed to transform an electromagnetic wave into a mechanical wave?",
+  "choices": [
+    "A: a portable radio",
+    "B: a television screen",
+    "C: a computer monitor",
+    "D: a mercury thermometer"
+  ],
+  "gold_answer": "A",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Which of the following is designed to transform an electromagnetic wave into a mechanical wave?\n\n\nChoices:\nA) a portable radio\nB) a television screen\nC) a computer monitor\nD) a mercury thermometer\n\nProvide an answer to the following question:\n\nQ: Which of the following is designed to transform an electromagnetic wave into a mechanical wave?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "A",
+          "logprob": -0.6549541513086297,
+          "probability": 0.519465878871829
+        }
+      ],
+      "decision_process": {
+        "selected_text": "A",
+        "matched_choice": "A",
+        "confidence_computation": "exp(logprob) = exp(-0.6550) = 0.5195"
+      },
+      "final_metrics": {
+        "predicted": "A",
+        "correct": true,
+        "confidence": 0.519465878871829,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

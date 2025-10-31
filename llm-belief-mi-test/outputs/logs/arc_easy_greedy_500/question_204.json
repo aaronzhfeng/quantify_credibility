@@ -1,0 +1,51 @@
+{
+  "question_id": 204,
+  "question_text": "At one station in a production line, a worker must drill a hole in each end of wooden boards. At the next station, another worker attaches two of the boards together using metal fasteners that fit in the holes. Which of the following processes will ensure that the wooden boards fit together with the fewest errors?",
+  "choices": [
+    "A: placing the parts on a conveyor belt to keep them moving quickly",
+    "B: using a fixture to hold the boards in place as the holes are drilled",
+    "C: inspecting the boards after they are attached to each other",
+    "D: installing equipment to protect workers from debris"
+  ],
+  "gold_answer": "B",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: At one station in a production line, a worker must drill a hole in each end of wooden boards. At the next station, another worker attaches two of the boards together using metal fasteners that fit in the holes. Which of the following processes will ensure that the wooden boards fit together with the fewest errors?\n\n\nChoices:\nA) placing the parts on a conveyor belt to keep them moving quickly\nB) using a fixture to hold the boards in place as the holes are drilled\nC) inspecting the boards after they are attached to each other\nD) installing equipment to protect workers from debris\n\nProvide an answer to the following question:\n\nQ: At one station in a production line, a worker must drill a hole in each end of wooden boards. At the next station, another worker attaches two of the boards together using metal fasteners that fit in the holes. Which of the following processes will ensure that the wooden boards fit together with the fewest errors?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "B",
+          "logprob": -0.13742221767824958,
+          "probability": 0.8716021425988847
+        }
+      ],
+      "decision_process": {
+        "selected_text": "B",
+        "matched_choice": "B",
+        "confidence_computation": "exp(logprob) = exp(-0.1374) = 0.8716"
+      },
+      "final_metrics": {
+        "predicted": "B",
+        "correct": true,
+        "confidence": 0.8716021425988847,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

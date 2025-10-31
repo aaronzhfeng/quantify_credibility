@@ -1,0 +1,51 @@
+{
+  "question_id": 146,
+  "question_text": "Joshua studied the organisms living in a seaside ecosystem. Which do all animals at a beach need for survival?",
+  "choices": [
+    "A: sand",
+    "B: producers",
+    "C: salt water",
+    "D: sea shells"
+  ],
+  "gold_answer": "B",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Joshua studied the organisms living in a seaside ecosystem. Which do all animals at a beach need for survival?\n\n\nChoices:\nA) sand\nB) producers\nC) salt water\nD) sea shells\n\nProvide an answer to the following question:\n\nQ: Joshua studied the organisms living in a seaside ecosystem. Which do all animals at a beach need for survival?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "B",
+          "logprob": -0.1576524319825694,
+          "probability": 0.8541466044243923
+        }
+      ],
+      "decision_process": {
+        "selected_text": "B",
+        "matched_choice": "B",
+        "confidence_computation": "exp(logprob) = exp(-0.1577) = 0.8541"
+      },
+      "final_metrics": {
+        "predicted": "B",
+        "correct": true,
+        "confidence": 0.8541466044243923,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

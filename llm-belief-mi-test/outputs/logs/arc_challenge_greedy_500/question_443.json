@@ -1,0 +1,51 @@
+{
+  "question_id": 443,
+  "question_text": "Mr. Fernandez's class is studying solutions. Which statement best describes a solution?",
+  "choices": [
+    "A: A solution is a mixture whose components are similar throughout.",
+    "B: A solution is the liquid product of a chemical reaction.",
+    "C: A solution is formed by the combination of two or more liquids.",
+    "D: A solution consists of two components with different volumes."
+  ],
+  "gold_answer": "A",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Mr. Fernandez's class is studying solutions. Which statement best describes a solution?\n\n\nChoices:\nA) A solution is a mixture whose components are similar throughout.\nB) A solution is the liquid product of a chemical reaction.\nC) A solution is formed by the combination of two or more liquids.\nD) A solution consists of two components with different volumes.\n\nProvide an answer to the following question:\n\nQ: Mr. Fernandez's class is studying solutions. Which statement best describes a solution?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "A",
+          "logprob": -0.002702502089960035,
+          "probability": 0.9973011463814059
+        }
+      ],
+      "decision_process": {
+        "selected_text": "A",
+        "matched_choice": "A",
+        "confidence_computation": "exp(logprob) = exp(-0.0027) = 0.9973"
+      },
+      "final_metrics": {
+        "predicted": "A",
+        "correct": true,
+        "confidence": 0.9973011463814059,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

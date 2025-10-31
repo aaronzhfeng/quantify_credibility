@@ -1,0 +1,51 @@
+{
+  "question_id": 275,
+  "question_text": "Overuse of which water resource tends to cause land to subside?",
+  "choices": [
+    "A: ocean water",
+    "B: aquifer water",
+    "C: river water",
+    "D: lake water"
+  ],
+  "gold_answer": "B",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Overuse of which water resource tends to cause land to subside?\n\n\nChoices:\nA) ocean water\nB) aquifer water\nC) river water\nD) lake water\n\nProvide an answer to the following question:\n\nQ: Overuse of which water resource tends to cause land to subside?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "B",
+          "logprob": -0.07435634708963335,
+          "probability": 0.928340823341833
+        }
+      ],
+      "decision_process": {
+        "selected_text": "B",
+        "matched_choice": "B",
+        "confidence_computation": "exp(logprob) = exp(-0.0744) = 0.9283"
+      },
+      "final_metrics": {
+        "predicted": "B",
+        "correct": true,
+        "confidence": 0.928340823341833,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

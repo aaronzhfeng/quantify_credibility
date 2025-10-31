@@ -1,0 +1,51 @@
+{
+  "question_id": 11,
+  "question_text": "The circulatory system and the endocrine system work together in the human body. Which describes one way in which these systems interact?",
+  "choices": [
+    "A: taking in oxygen and transporting it to cells of the body",
+    "B: releasing hormones and transporting them to cells of the body",
+    "C: absorbing nutrients from food and transporting them to cells in the body",
+    "D: collecting waste products from the cells and transporting it out of the body"
+  ],
+  "gold_answer": "B",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: The circulatory system and the endocrine system work together in the human body. Which describes one way in which these systems interact?\n\n\nChoices:\nA) taking in oxygen and transporting it to cells of the body\nB) releasing hormones and transporting them to cells of the body\nC) absorbing nutrients from food and transporting them to cells in the body\nD) collecting waste products from the cells and transporting it out of the body\n\nProvide an answer to the following question:\n\nQ: The circulatory system and the endocrine system work together in the human body. Which describes one way in which these systems interact?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "B",
+          "logprob": -0.04901471792254597,
+          "probability": 0.9521671156735171
+        }
+      ],
+      "decision_process": {
+        "selected_text": "B",
+        "matched_choice": "B",
+        "confidence_computation": "exp(logprob) = exp(-0.0490) = 0.9522"
+      },
+      "final_metrics": {
+        "predicted": "B",
+        "correct": true,
+        "confidence": 0.9521671156735171,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

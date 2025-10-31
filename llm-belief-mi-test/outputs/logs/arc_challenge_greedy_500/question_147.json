@@ -1,0 +1,51 @@
+{
+  "question_id": 147,
+  "question_text": "A red giant star differs from main sequence stars because it",
+  "choices": [
+    "A: burns at a cooler temperature.",
+    "B: is always larger than other suns.",
+    "C: has greater density and gravity.",
+    "D: fuses hydrogen to make helium."
+  ],
+  "gold_answer": "A",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A red giant star differs from main sequence stars because it\n\n\nChoices:\nA) burns at a cooler temperature.\nB) is always larger than other suns.\nC) has greater density and gravity.\nD) fuses hydrogen to make helium.\n\nProvide an answer to the following question:\n\nQ: A red giant star differs from main sequence stars because it\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "A",
+          "logprob": -0.6548895987216383,
+          "probability": 0.5194994128205039
+        }
+      ],
+      "decision_process": {
+        "selected_text": "A",
+        "matched_choice": "A",
+        "confidence_computation": "exp(logprob) = exp(-0.6549) = 0.5195"
+      },
+      "final_metrics": {
+        "predicted": "A",
+        "correct": true,
+        "confidence": 0.5194994128205039,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

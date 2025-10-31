@@ -1,0 +1,51 @@
+{
+  "question_id": 27,
+  "question_text": "Seeds that remain inactive until the right conditions of light, water, and soil are present are called ___.",
+  "choices": [
+    "A: pollen",
+    "B: dormant",
+    "C: flowers",
+    "D: recycled"
+  ],
+  "gold_answer": "B",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Seeds that remain inactive until the right conditions of light, water, and soil are present are called ___.\n\n\nChoices:\nA) pollen\nB) dormant\nC) flowers\nD) recycled\n\nProvide an answer to the following question:\n\nQ: Seeds that remain inactive until the right conditions of light, water, and soil are present are called ___.\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "B",
+          "logprob": -0.0635703532025218,
+          "probability": 0.938408096963356
+        }
+      ],
+      "decision_process": {
+        "selected_text": "B",
+        "matched_choice": "B",
+        "confidence_computation": "exp(logprob) = exp(-0.0636) = 0.9384"
+      },
+      "final_metrics": {
+        "predicted": "B",
+        "correct": true,
+        "confidence": 0.938408096963356,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

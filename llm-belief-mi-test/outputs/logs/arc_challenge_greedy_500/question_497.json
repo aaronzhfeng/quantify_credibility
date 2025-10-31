@@ -1,0 +1,51 @@
+{
+  "question_id": 497,
+  "question_text": "Which is electrically attracted to positively-charged particles in an atom?",
+  "choices": [
+    "A: neutrons",
+    "B: electrons",
+    "C: protons",
+    "D: nucleus"
+  ],
+  "gold_answer": "B",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Which is electrically attracted to positively-charged particles in an atom?\n\n\nChoices:\nA) neutrons\nB) electrons\nC) protons\nD) nucleus\n\nProvide an answer to the following question:\n\nQ: Which is electrically attracted to positively-charged particles in an atom?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "B",
+          "logprob": -0.03315156462485902,
+          "probability": 0.9673919260827182
+        }
+      ],
+      "decision_process": {
+        "selected_text": "B",
+        "matched_choice": "B",
+        "confidence_computation": "exp(logprob) = exp(-0.0332) = 0.9674"
+      },
+      "final_metrics": {
+        "predicted": "B",
+        "correct": true,
+        "confidence": 0.9673919260827182,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

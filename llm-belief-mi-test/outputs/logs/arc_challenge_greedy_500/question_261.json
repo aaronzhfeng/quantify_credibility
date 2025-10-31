@@ -1,0 +1,51 @@
+{
+  "question_id": 261,
+  "question_text": "Energy companies often produce electricity from a variety of sources. Using which resource would improve air quality the most?",
+  "choices": [
+    "A: oil",
+    "B: gas",
+    "C: coal",
+    "D: wind"
+  ],
+  "gold_answer": "D",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Energy companies often produce electricity from a variety of sources. Using which resource would improve air quality the most?\n\n\nChoices:\nA) oil\nB) gas\nC) coal\nD) wind\n\nProvide an answer to the following question:\n\nQ: Energy companies often produce electricity from a variety of sources. Using which resource would improve air quality the most?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "D",
+          "logprob": -0.004049574141390622,
+          "probability": 0.9959586143269737
+        }
+      ],
+      "decision_process": {
+        "selected_text": "D",
+        "matched_choice": "D",
+        "confidence_computation": "exp(logprob) = exp(-0.0040) = 0.9960"
+      },
+      "final_metrics": {
+        "predicted": "D",
+        "correct": true,
+        "confidence": 0.9959586143269737,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

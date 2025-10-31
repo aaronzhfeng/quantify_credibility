@@ -1,0 +1,51 @@
+{
+  "question_id": 337,
+  "question_text": "The solar system containing Earth consists of a sun and planets. Which statement best describes the motion of the planets in our solar system?",
+  "choices": [
+    "A: The planets rotate around the sun.",
+    "B: The sun rotates around the planets.",
+    "C: The planets revolve around the sun.",
+    "D: The sun revolves around the planets."
+  ],
+  "gold_answer": "C",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: The solar system containing Earth consists of a sun and planets. Which statement best describes the motion of the planets in our solar system?\n\n\nChoices:\nA) The planets rotate around the sun.\nB) The sun rotates around the planets.\nC) The planets revolve around the sun.\nD) The sun revolves around the planets.\n\nProvide an answer to the following question:\n\nQ: The solar system containing Earth consists of a sun and planets. Which statement best describes the motion of the planets in our solar system?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "C",
+          "logprob": -0.5451327357441187,
+          "probability": 0.5797648227170894
+        }
+      ],
+      "decision_process": {
+        "selected_text": "C",
+        "matched_choice": "C",
+        "confidence_computation": "exp(logprob) = exp(-0.5451) = 0.5798"
+      },
+      "final_metrics": {
+        "predicted": "C",
+        "correct": true,
+        "confidence": 0.5797648227170894,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

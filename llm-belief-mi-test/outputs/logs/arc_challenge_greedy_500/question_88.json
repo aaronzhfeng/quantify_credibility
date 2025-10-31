@@ -1,0 +1,51 @@
+{
+  "question_id": 88,
+  "question_text": "A pitcher throws a 0.15 kg baseball at 43 40 m/s towards the catcher. What is the momentum of the baseball while moving at 40 m/s?",
+  "choices": [
+    "A: 0.025 kg x m/s",
+    "B: 3.8 kg x m/s",
+    "C: 6.0 kg x m/s",
+    "D: 270 kg x m/s"
+  ],
+  "gold_answer": "C",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A pitcher throws a 0.15 kg baseball at 43 40 m/s towards the catcher. What is the momentum of the baseball while moving at 40 m/s?\n\n\nChoices:\nA) 0.025 kg x m/s\nB) 3.8 kg x m/s\nC) 6.0 kg x m/s\nD) 270 kg x m/s\n\nProvide an answer to the following question:\n\nQ: A pitcher throws a 0.15 kg baseball at 43 40 m/s towards the catcher. What is the momentum of the baseball while moving at 40 m/s?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "B",
+          "logprob": -0.7906389702111483,
+          "probability": 0.4535548946064972
+        }
+      ],
+      "decision_process": {
+        "selected_text": "B",
+        "matched_choice": "B",
+        "confidence_computation": "exp(logprob) = exp(-0.7906) = 0.4536"
+      },
+      "final_metrics": {
+        "predicted": "B",
+        "correct": false,
+        "confidence": 0.4535548946064972,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "question_id": 2,
+  "question_text": "The end result in the process of photosynthesis is the production of sugar and oxygen. Which step signals the beginning of photosynthesis?",
+  "choices": [
+    "A: Chemical energy is absorbed through the roots.",
+    "B: Light energy is converted to chemical energy.",
+    "C: Chlorophyll in the leaf captures light energy.",
+    "D: Sunlight is converted into chlorophyll."
+  ],
+  "gold_answer": "C",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: The end result in the process of photosynthesis is the production of sugar and oxygen. Which step signals the beginning of photosynthesis?\n\n\nChoices:\nA) Chemical energy is absorbed through the roots.\nB) Light energy is converted to chemical energy.\nC) Chlorophyll in the leaf captures light energy.\nD) Sunlight is converted into chlorophyll.\n\nProvide an answer to the following question:\n\nQ: The end result in the process of photosynthesis is the production of sugar and oxygen. Which step signals the beginning of photosynthesis?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "C",
+          "logprob": -0.10433484986424446,
+          "probability": 0.9009235727717578
+        }
+      ],
+      "decision_process": {
+        "selected_text": "C",
+        "matched_choice": "C",
+        "confidence_computation": "exp(logprob) = exp(-0.1043) = 0.9009"
+      },
+      "final_metrics": {
+        "predicted": "C",
+        "correct": true,
+        "confidence": 0.9009235727717578,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

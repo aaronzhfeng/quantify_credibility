@@ -1,0 +1,51 @@
+{
+  "question_id": 258,
+  "question_text": "Balsam fir trees in Maine have similar needle length. Why do the trees have similar needle length?",
+  "choices": [
+    "A: because of the amount of sunlight they receive",
+    "B: because of their closeness to the ocean",
+    "C: because of the inherited information inside the seeds",
+    "D: because of the type of insects that eat the needles"
+  ],
+  "gold_answer": "C",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Balsam fir trees in Maine have similar needle length. Why do the trees have similar needle length?\n\n\nChoices:\nA) because of the amount of sunlight they receive\nB) because of their closeness to the ocean\nC) because of the inherited information inside the seeds\nD) because of the type of insects that eat the needles\n\nProvide an answer to the following question:\n\nQ: Balsam fir trees in Maine have similar needle length. Why do the trees have similar needle length?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "C",
+          "logprob": -0.1269071395508945,
+          "probability": 0.8808154617189652
+        }
+      ],
+      "decision_process": {
+        "selected_text": "C",
+        "matched_choice": "C",
+        "confidence_computation": "exp(logprob) = exp(-0.1269) = 0.8808"
+      },
+      "final_metrics": {
+        "predicted": "C",
+        "correct": true,
+        "confidence": 0.8808154617189652,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

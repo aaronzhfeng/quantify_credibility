@@ -1,0 +1,51 @@
+{
+  "question_id": 210,
+  "question_text": "What happens to a wooden log when it is burned?",
+  "choices": [
+    "A: It is completely destroyed.",
+    "B: It is completely changed into heat energy.",
+    "C: It changes into other types of matter and energy.",
+    "D: It physically changes into the gaseous phase."
+  ],
+  "gold_answer": "C",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: What happens to a wooden log when it is burned?\n\n\nChoices:\nA) It is completely destroyed.\nB) It is completely changed into heat energy.\nC) It changes into other types of matter and energy.\nD) It physically changes into the gaseous phase.\n\nProvide an answer to the following question:\n\nQ: What happens to a wooden log when it is burned?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "C",
+          "logprob": -0.039573474670760334,
+          "probability": 0.9611993275918744
+        }
+      ],
+      "decision_process": {
+        "selected_text": "C",
+        "matched_choice": "C",
+        "confidence_computation": "exp(logprob) = exp(-0.0396) = 0.9612"
+      },
+      "final_metrics": {
+        "predicted": "C",
+        "correct": true,
+        "confidence": 0.9611993275918744,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "question_id": 78,
+  "question_text": "A scientist finds a metamorphic rock formation next to a magma chamber and determines that it was originally a sedimentary rock formation. He concludes that the temperature of the magma chamber caused the rock formation to become metamorphic. Which is another reliable explanation of how the rock formation was changed?",
+  "choices": [
+    "A: weight of heavy machinery moving over the rocks",
+    "B: pressure on the rock formation inside Earth",
+    "C: a sandstorm that caused the rocks to be eroded",
+    "D: a quick burial of the rocks by tons of volcanic ash"
+  ],
+  "gold_answer": "B",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A scientist finds a metamorphic rock formation next to a magma chamber and determines that it was originally a sedimentary rock formation. He concludes that the temperature of the magma chamber caused the rock formation to become metamorphic. Which is another reliable explanation of how the rock formation was changed?\n\n\nChoices:\nA) weight of heavy machinery moving over the rocks\nB) pressure on the rock formation inside Earth\nC) a sandstorm that caused the rocks to be eroded\nD) a quick burial of the rocks by tons of volcanic ash\n\nProvide an answer to the following question:\n\nQ: A scientist finds a metamorphic rock formation next to a magma chamber and determines that it was originally a sedimentary rock formation. He concludes that the temperature of the magma chamber caused the rock formation to become metamorphic. Which is another reliable explanation of how the rock formation was changed?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "B",
+          "logprob": -0.23798042618727777,
+          "probability": 0.7882181193766277
+        }
+      ],
+      "decision_process": {
+        "selected_text": "B",
+        "matched_choice": "B",
+        "confidence_computation": "exp(logprob) = exp(-0.2380) = 0.7882"
+      },
+      "final_metrics": {
+        "predicted": "B",
+        "correct": true,
+        "confidence": 0.7882181193766277,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

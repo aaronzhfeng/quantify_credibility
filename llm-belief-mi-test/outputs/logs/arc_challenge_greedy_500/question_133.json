@@ -1,0 +1,51 @@
+{
+  "question_id": 133,
+  "question_text": "There is a very slight change in gravity at the top of a mountain. Which property would most likely be less at the top of a mountain?",
+  "choices": [
+    "A: mass",
+    "B: weight",
+    "C: body density",
+    "D: body temperature"
+  ],
+  "gold_answer": "B",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: There is a very slight change in gravity at the top of a mountain. Which property would most likely be less at the top of a mountain?\n\n\nChoices:\nA) mass\nB) weight\nC) body density\nD) body temperature\n\nProvide an answer to the following question:\n\nQ: There is a very slight change in gravity at the top of a mountain. Which property would most likely be less at the top of a mountain?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "B",
+          "logprob": -0.32534411305823596,
+          "probability": 0.7222787653184485
+        }
+      ],
+      "decision_process": {
+        "selected_text": "B",
+        "matched_choice": "B",
+        "confidence_computation": "exp(logprob) = exp(-0.3253) = 0.7223"
+      },
+      "final_metrics": {
+        "predicted": "B",
+        "correct": true,
+        "confidence": 0.7222787653184485,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

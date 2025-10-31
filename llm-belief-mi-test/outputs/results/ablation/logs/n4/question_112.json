@@ -1,0 +1,959 @@
+{
+  "question_id": 112,
+  "question_text": "A plant needs a specific climate to grow and",
+  "choices": [
+    "A: wither",
+    "B: persist",
+    "C: die",
+    "D: decay"
+  ],
+  "gold_answer": "B",
+  "methods": {
+    "mi_method": {
+      "description": "k=10 chains of length n=4, MI estimation",
+      "raw_inputs": [
+        {
+          "chain_id": 0,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A plant needs a specific climate to grow and\n\n\nChoices:\nA) wither\nB) persist\nC) die\nD) decay\n\nProvide an answer to the following question:\n\nQ: A plant needs a specific climate to grow and\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 0,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A plant needs a specific climate to grow and\n\n\nOne answer to question Q is A) wither.\n\n\nChoices:\nA) wither\nB) persist\nC) die\nD) decay\n\nProvide an answer to the following question:\n\nQ: A plant needs a specific climate to grow and\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 0,
+          "step": 2,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A plant needs a specific climate to grow and\n\n\nOne answer to question Q is A) wither. Another answer to question Q is A) wither.\n\n\nChoices:\nA) wither\nB) persist\nC) die\nD) decay\n\nProvide an answer to the following question:\n\nQ: A plant needs a specific climate to grow and\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 0,
+          "step": 3,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A plant needs a specific climate to grow and\n\n\nOne answer to question Q is A) wither. Another answer to question Q is A) wither. Another answer to question Q is B) persist.\n\n\nChoices:\nA) wither\nB) persist\nC) die\nD) decay\n\nProvide an answer to the following question:\n\nQ: A plant needs a specific climate to grow and\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 1,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A plant needs a specific climate to grow and\n\n\nChoices:\nA) wither\nB) persist\nC) die\nD) decay\n\nProvide an answer to the following question:\n\nQ: A plant needs a specific climate to grow and\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 1,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A plant needs a specific climate to grow and\n\n\nOne answer to question Q is B) persist.\n\n\nChoices:\nA) wither\nB) persist\nC) die\nD) decay\n\nProvide an answer to the following question:\n\nQ: A plant needs a specific climate to grow and\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 1,
+          "step": 2,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A plant needs a specific climate to grow and\n\n\nOne answer to question Q is B) persist. Another answer to question Q is B) persist.\n\n\nChoices:\nA) wither\nB) persist\nC) die\nD) decay\n\nProvide an answer to the following question:\n\nQ: A plant needs a specific climate to grow and\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 1,
+          "step": 3,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A plant needs a specific climate to grow and\n\n\nOne answer to question Q is B) persist. Another answer to question Q is B) persist. Another answer to question Q is A) wither.\n\n\nChoices:\nA) wither\nB) persist\nC) die\nD) decay\n\nProvide an answer to the following question:\n\nQ: A plant needs a specific climate to grow and\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 2,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A plant needs a specific climate to grow and\n\n\nChoices:\nA) wither\nB) persist\nC) die\nD) decay\n\nProvide an answer to the following question:\n\nQ: A plant needs a specific climate to grow and\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 2,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A plant needs a specific climate to grow and\n\n\nOne answer to question Q is B) persist.\n\n\nChoices:\nA) wither\nB) persist\nC) die\nD) decay\n\nProvide an answer to the following question:\n\nQ: A plant needs a specific climate to grow and\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 2,
+          "step": 2,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A plant needs a specific climate to grow and\n\n\nOne answer to question Q is B) persist. Another answer to question Q is B) persist.\n\n\nChoices:\nA) wither\nB) persist\nC) die\nD) decay\n\nProvide an answer to the following question:\n\nQ: A plant needs a specific climate to grow and\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 2,
+          "step": 3,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A plant needs a specific climate to grow and\n\n\nOne answer to question Q is B) persist. Another answer to question Q is B) persist. Another answer to question Q is B) persist.\n\n\nChoices:\nA) wither\nB) persist\nC) die\nD) decay\n\nProvide an answer to the following question:\n\nQ: A plant needs a specific climate to grow and\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 3,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A plant needs a specific climate to grow and\n\n\nChoices:\nA) wither\nB) persist\nC) die\nD) decay\n\nProvide an answer to the following question:\n\nQ: A plant needs a specific climate to grow and\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 3,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A plant needs a specific climate to grow and\n\n\nOne answer to question Q is B) persist.\n\n\nChoices:\nA) wither\nB) persist\nC) die\nD) decay\n\nProvide an answer to the following question:\n\nQ: A plant needs a specific climate to grow and\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 3,
+          "step": 2,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A plant needs a specific climate to grow and\n\n\nOne answer to question Q is B) persist. Another answer to question Q is B) persist.\n\n\nChoices:\nA) wither\nB) persist\nC) die\nD) decay\n\nProvide an answer to the following question:\n\nQ: A plant needs a specific climate to grow and\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 3,
+          "step": 3,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A plant needs a specific climate to grow and\n\n\nOne answer to question Q is B) persist. Another answer to question Q is B) persist. Another answer to question Q is B) persist.\n\n\nChoices:\nA) wither\nB) persist\nC) die\nD) decay\n\nProvide an answer to the following question:\n\nQ: A plant needs a specific climate to grow and\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 4,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A plant needs a specific climate to grow and\n\n\nChoices:\nA) wither\nB) persist\nC) die\nD) decay\n\nProvide an answer to the following question:\n\nQ: A plant needs a specific climate to grow and\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 4,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A plant needs a specific climate to grow and\n\n\nOne answer to question Q is B) persist.\n\n\nChoices:\nA) wither\nB) persist\nC) die\nD) decay\n\nProvide an answer to the following question:\n\nQ: A plant needs a specific climate to grow and\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 4,
+          "step": 2,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A plant needs a specific climate to grow and\n\n\nOne answer to question Q is B) persist. Another answer to question Q is B) persist.\n\n\nChoices:\nA) wither\nB) persist\nC) die\nD) decay\n\nProvide an answer to the following question:\n\nQ: A plant needs a specific climate to grow and\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 4,
+          "step": 3,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A plant needs a specific climate to grow and\n\n\nOne answer to question Q is B) persist. Another answer to question Q is B) persist. Another answer to question Q is B) persist.\n\n\nChoices:\nA) wither\nB) persist\nC) die\nD) decay\n\nProvide an answer to the following question:\n\nQ: A plant needs a specific climate to grow and\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 5,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A plant needs a specific climate to grow and\n\n\nChoices:\nA) wither\nB) persist\nC) die\nD) decay\n\nProvide an answer to the following question:\n\nQ: A plant needs a specific climate to grow and\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 5,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A plant needs a specific climate to grow and\n\n\nOne answer to question Q is B) persist.\n\n\nChoices:\nA) wither\nB) persist\nC) die\nD) decay\n\nProvide an answer to the following question:\n\nQ: A plant needs a specific climate to grow and\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 5,
+          "step": 2,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A plant needs a specific climate to grow and\n\n\nOne answer to question Q is B) persist. Another answer to question Q is B) persist.\n\n\nChoices:\nA) wither\nB) persist\nC) die\nD) decay\n\nProvide an answer to the following question:\n\nQ: A plant needs a specific climate to grow and\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 5,
+          "step": 3,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A plant needs a specific climate to grow and\n\n\nOne answer to question Q is B) persist. Another answer to question Q is B) persist. Another answer to question Q is B) persist.\n\n\nChoices:\nA) wither\nB) persist\nC) die\nD) decay\n\nProvide an answer to the following question:\n\nQ: A plant needs a specific climate to grow and\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 6,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A plant needs a specific climate to grow and\n\n\nChoices:\nA) wither\nB) persist\nC) die\nD) decay\n\nProvide an answer to the following question:\n\nQ: A plant needs a specific climate to grow and\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 6,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A plant needs a specific climate to grow and\n\n\nOne answer to question Q is B) persist.\n\n\nChoices:\nA) wither\nB) persist\nC) die\nD) decay\n\nProvide an answer to the following question:\n\nQ: A plant needs a specific climate to grow and\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 6,
+          "step": 2,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A plant needs a specific climate to grow and\n\n\nOne answer to question Q is B) persist. Another answer to question Q is B) persist.\n\n\nChoices:\nA) wither\nB) persist\nC) die\nD) decay\n\nProvide an answer to the following question:\n\nQ: A plant needs a specific climate to grow and\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 6,
+          "step": 3,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A plant needs a specific climate to grow and\n\n\nOne answer to question Q is B) persist. Another answer to question Q is B) persist. Another answer to question Q is B) persist.\n\n\nChoices:\nA) wither\nB) persist\nC) die\nD) decay\n\nProvide an answer to the following question:\n\nQ: A plant needs a specific climate to grow and\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 7,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A plant needs a specific climate to grow and\n\n\nChoices:\nA) wither\nB) persist\nC) die\nD) decay\n\nProvide an answer to the following question:\n\nQ: A plant needs a specific climate to grow and\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 7,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A plant needs a specific climate to grow and\n\n\nOne answer to question Q is B) persist.\n\n\nChoices:\nA) wither\nB) persist\nC) die\nD) decay\n\nProvide an answer to the following question:\n\nQ: A plant needs a specific climate to grow and\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 7,
+          "step": 2,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A plant needs a specific climate to grow and\n\n\nOne answer to question Q is B) persist. Another answer to question Q is B) persist.\n\n\nChoices:\nA) wither\nB) persist\nC) die\nD) decay\n\nProvide an answer to the following question:\n\nQ: A plant needs a specific climate to grow and\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 7,
+          "step": 3,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A plant needs a specific climate to grow and\n\n\nOne answer to question Q is B) persist. Another answer to question Q is B) persist. Another answer to question Q is B) persist.\n\n\nChoices:\nA) wither\nB) persist\nC) die\nD) decay\n\nProvide an answer to the following question:\n\nQ: A plant needs a specific climate to grow and\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 8,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A plant needs a specific climate to grow and\n\n\nChoices:\nA) wither\nB) persist\nC) die\nD) decay\n\nProvide an answer to the following question:\n\nQ: A plant needs a specific climate to grow and\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 8,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A plant needs a specific climate to grow and\n\n\nOne answer to question Q is B) persist.\n\n\nChoices:\nA) wither\nB) persist\nC) die\nD) decay\n\nProvide an answer to the following question:\n\nQ: A plant needs a specific climate to grow and\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 8,
+          "step": 2,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A plant needs a specific climate to grow and\n\n\nOne answer to question Q is B) persist. Another answer to question Q is B) persist.\n\n\nChoices:\nA) wither\nB) persist\nC) die\nD) decay\n\nProvide an answer to the following question:\n\nQ: A plant needs a specific climate to grow and\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 8,
+          "step": 3,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A plant needs a specific climate to grow and\n\n\nOne answer to question Q is B) persist. Another answer to question Q is B) persist. Another answer to question Q is B) persist.\n\n\nChoices:\nA) wither\nB) persist\nC) die\nD) decay\n\nProvide an answer to the following question:\n\nQ: A plant needs a specific climate to grow and\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 9,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A plant needs a specific climate to grow and\n\n\nChoices:\nA) wither\nB) persist\nC) die\nD) decay\n\nProvide an answer to the following question:\n\nQ: A plant needs a specific climate to grow and\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 9,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A plant needs a specific climate to grow and\n\n\nOne answer to question Q is A) wither.\n\n\nChoices:\nA) wither\nB) persist\nC) die\nD) decay\n\nProvide an answer to the following question:\n\nQ: A plant needs a specific climate to grow and\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 9,
+          "step": 2,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A plant needs a specific climate to grow and\n\n\nOne answer to question Q is A) wither. Another answer to question Q is A) wither.\n\n\nChoices:\nA) wither\nB) persist\nC) die\nD) decay\n\nProvide an answer to the following question:\n\nQ: A plant needs a specific climate to grow and\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 9,
+          "step": 3,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A plant needs a specific climate to grow and\n\n\nOne answer to question Q is A) wither. Another answer to question Q is A) wither. Another answer to question Q is A) wither.\n\n\nChoices:\nA) wither\nB) persist\nC) die\nD) decay\n\nProvide an answer to the following question:\n\nQ: A plant needs a specific climate to grow and\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "chain_id": 0,
+          "step": 0,
+          "text": "A",
+          "logprob": -1.6115144491195679,
+          "probability": 0.19958512356505415
+        },
+        {
+          "chain_id": 0,
+          "step": 1,
+          "text": "A",
+          "logprob": -0.06900396198034286,
+          "probability": 0.9333229822635674
+        },
+        {
+          "chain_id": 0,
+          "step": 2,
+          "text": "B",
+          "logprob": -2.0781593322753906,
+          "probability": 0.12516037897329685
+        },
+        {
+          "chain_id": 0,
+          "step": 3,
+          "text": "B",
+          "logprob": -0.5638729929924011,
+          "probability": 0.5690010537112531
+        },
+        {
+          "chain_id": 1,
+          "step": 0,
+          "text": "B",
+          "logprob": -0.22262509167194366,
+          "probability": 0.8004148752525572
+        },
+        {
+          "chain_id": 1,
+          "step": 1,
+          "text": "B",
+          "logprob": 0.0,
+          "probability": 0.5
+        },
+        {
+          "chain_id": 1,
+          "step": 2,
+          "text": "A",
+          "logprob": -2.3251118659973145,
+          "probability": 0.09777250602066868
+        },
+        {
+          "chain_id": 1,
+          "step": 3,
+          "text": "B",
+          "logprob": -1.2930314540863037,
+          "probability": 0.27443757590225937
+        },
+        {
+          "chain_id": 2,
+          "step": 0,
+          "text": "B",
+          "logprob": -0.22262509167194366,
+          "probability": 0.8004148752525572
+        },
+        {
+          "chain_id": 2,
+          "step": 1,
+          "text": "B",
+          "logprob": 0.0,
+          "probability": 0.5
+        },
+        {
+          "chain_id": 2,
+          "step": 2,
+          "text": "B",
+          "logprob": -0.10288859158754349,
+          "probability": 0.9022274836141995
+        },
+        {
+          "chain_id": 2,
+          "step": 3,
+          "text": "B",
+          "logprob": 0.0,
+          "probability": 0.5
+        },
+        {
+          "chain_id": 3,
+          "step": 0,
+          "text": "B",
+          "logprob": -0.22262509167194366,
+          "probability": 0.8004148752525572
+        },
+        {
+          "chain_id": 3,
+          "step": 1,
+          "text": "B",
+          "logprob": 0.0,
+          "probability": 0.5
+        },
+        {
+          "chain_id": 3,
+          "step": 2,
+          "text": "B",
+          "logprob": -0.10288859158754349,
+          "probability": 0.9022274836141995
+        },
+        {
+          "chain_id": 3,
+          "step": 3,
+          "text": "B",
+          "logprob": 0.0,
+          "probability": 0.5
+        },
+        {
+          "chain_id": 4,
+          "step": 0,
+          "text": "B",
+          "logprob": -0.22262509167194366,
+          "probability": 0.8004148752525572
+        },
+        {
+          "chain_id": 4,
+          "step": 1,
+          "text": "B",
+          "logprob": 0.0,
+          "probability": 0.5
+        },
+        {
+          "chain_id": 4,
+          "step": 2,
+          "text": "B",
+          "logprob": -0.10288859158754349,
+          "probability": 0.9022274836141995
+        },
+        {
+          "chain_id": 4,
+          "step": 3,
+          "text": "B",
+          "logprob": 0.0,
+          "probability": 0.5
+        },
+        {
+          "chain_id": 5,
+          "step": 0,
+          "text": "B",
+          "logprob": -0.22262509167194366,
+          "probability": 0.8004148752525572
+        },
+        {
+          "chain_id": 5,
+          "step": 1,
+          "text": "B",
+          "logprob": 0.0,
+          "probability": 0.5
+        },
+        {
+          "chain_id": 5,
+          "step": 2,
+          "text": "B",
+          "logprob": -0.10288859158754349,
+          "probability": 0.9022274836141995
+        },
+        {
+          "chain_id": 5,
+          "step": 3,
+          "text": "B",
+          "logprob": 0.0,
+          "probability": 0.5
+        },
+        {
+          "chain_id": 6,
+          "step": 0,
+          "text": "B",
+          "logprob": -0.22262509167194366,
+          "probability": 0.8004148752525572
+        },
+        {
+          "chain_id": 6,
+          "step": 1,
+          "text": "B",
+          "logprob": 0.0,
+          "probability": 0.5
+        },
+        {
+          "chain_id": 6,
+          "step": 2,
+          "text": "B",
+          "logprob": -0.10288859158754349,
+          "probability": 0.9022274836141995
+        },
+        {
+          "chain_id": 6,
+          "step": 3,
+          "text": "B",
+          "logprob": 0.0,
+          "probability": 0.5
+        },
+        {
+          "chain_id": 7,
+          "step": 0,
+          "text": "B",
+          "logprob": -0.22262509167194366,
+          "probability": 0.8004148752525572
+        },
+        {
+          "chain_id": 7,
+          "step": 1,
+          "text": "B",
+          "logprob": 0.0,
+          "probability": 0.5
+        },
+        {
+          "chain_id": 7,
+          "step": 2,
+          "text": "B",
+          "logprob": -0.10288859158754349,
+          "probability": 0.9022274836141995
+        },
+        {
+          "chain_id": 7,
+          "step": 3,
+          "text": "B",
+          "logprob": 0.0,
+          "probability": 0.5
+        },
+        {
+          "chain_id": 8,
+          "step": 0,
+          "text": "B",
+          "logprob": -0.22262509167194366,
+          "probability": 0.8004148752525572
+        },
+        {
+          "chain_id": 8,
+          "step": 1,
+          "text": "B",
+          "logprob": 0.0,
+          "probability": 0.5
+        },
+        {
+          "chain_id": 8,
+          "step": 2,
+          "text": "B",
+          "logprob": -0.10288859158754349,
+          "probability": 0.9022274836141995
+        },
+        {
+          "chain_id": 8,
+          "step": 3,
+          "text": "B",
+          "logprob": 0.0,
+          "probability": 0.5
+        },
+        {
+          "chain_id": 9,
+          "step": 0,
+          "text": "A",
+          "logprob": -1.6115144491195679,
+          "probability": 0.19958512356505415
+        },
+        {
+          "chain_id": 9,
+          "step": 1,
+          "text": "A",
+          "logprob": -0.06900396198034286,
+          "probability": 0.9333229822635674
+        },
+        {
+          "chain_id": 9,
+          "step": 2,
+          "text": "A",
+          "logprob": -0.2510661482810974,
+          "probability": 0.7779709084185412
+        },
+        {
+          "chain_id": 9,
+          "step": 3,
+          "text": "A",
+          "logprob": -0.07888974994421005,
+          "probability": 0.9241418055144026
+        }
+      ],
+      "decision_process": {
+        "num_chains": 10,
+        "chain_length": 4,
+        "total_inferences": 40,
+        "mi_method": "listing",
+        "mi_nats": 0.3538716845681789,
+        "mi_bits": 0.5105289244375353,
+        "selected_answer": "B",
+        "matched_choice": "B",
+        "confidence_computation": "1/(1 + mi_nats) = 1/(1 + 0.3539) = 0.7386",
+        "agreement": "90.00% (9/10 chains agree on final answer)"
+      },
+      "final_metrics": {
+        "predicted": "B",
+        "correct": true,
+        "confidence": 0.738622434753817,
+        "mi_score": 0.5105289244375353,
+        "agreement": 0.9
+      }
+    }
+  }
+}

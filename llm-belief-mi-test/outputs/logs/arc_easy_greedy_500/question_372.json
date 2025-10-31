@@ -1,0 +1,51 @@
+{
+  "question_id": 372,
+  "question_text": "Soil is important to a forest because the soil ___.",
+  "choices": [
+    "A: stores sunlight in the leaves",
+    "B: attracts insects that eat leaves",
+    "C: provides nutrients to the trees",
+    "D: warms the air around the trees"
+  ],
+  "gold_answer": "C",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Soil is important to a forest because the soil ___.\n\n\nChoices:\nA) stores sunlight in the leaves\nB) attracts insects that eat leaves\nC) provides nutrients to the trees\nD) warms the air around the trees\n\nProvide an answer to the following question:\n\nQ: Soil is important to a forest because the soil ___.\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "C",
+          "logprob": -0.0043140220222994685,
+          "probability": 0.9956952700039008
+        }
+      ],
+      "decision_process": {
+        "selected_text": "C",
+        "matched_choice": "C",
+        "confidence_computation": "exp(logprob) = exp(-0.0043) = 0.9957"
+      },
+      "final_metrics": {
+        "predicted": "C",
+        "correct": true,
+        "confidence": 0.9956952700039008,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

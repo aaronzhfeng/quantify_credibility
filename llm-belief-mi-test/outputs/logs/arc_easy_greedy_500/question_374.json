@@ -1,0 +1,51 @@
+{
+  "question_id": 374,
+  "question_text": "Biologists moved a predator from sea level to a higher altitude, where they noticed that the predator became tired more quickly. If this predator had to live at a higher altitude, which adaptation would be necessary for it to survive?",
+  "choices": [
+    "A: increased digestion rate",
+    "B: growth of additional teeth",
+    "C: reduction of respiration rate",
+    "D: production of more red blood cells"
+  ],
+  "gold_answer": "D",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Biologists moved a predator from sea level to a higher altitude, where they noticed that the predator became tired more quickly. If this predator had to live at a higher altitude, which adaptation would be necessary for it to survive?\n\n\nChoices:\nA) increased digestion rate\nB) growth of additional teeth\nC) reduction of respiration rate\nD) production of more red blood cells\n\nProvide an answer to the following question:\n\nQ: Biologists moved a predator from sea level to a higher altitude, where they noticed that the predator became tired more quickly. If this predator had to live at a higher altitude, which adaptation would be necessary for it to survive?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "D",
+          "logprob": -0.027825287310406566,
+          "probability": 0.9725582702298504
+        }
+      ],
+      "decision_process": {
+        "selected_text": "D",
+        "matched_choice": "D",
+        "confidence_computation": "exp(logprob) = exp(-0.0278) = 0.9726"
+      },
+      "final_metrics": {
+        "predicted": "D",
+        "correct": true,
+        "confidence": 0.9725582702298504,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

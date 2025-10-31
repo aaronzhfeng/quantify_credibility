@@ -1,0 +1,51 @@
+{
+  "question_id": 359,
+  "question_text": "Animals and plants need oxygen to live. Oxygen is released in photosynthesis. Which cycle includes photosynthesis?",
+  "choices": [
+    "A: the carbon cycle",
+    "B: the nitrogen cycle",
+    "C: the water cycle",
+    "D: the rock cycle"
+  ],
+  "gold_answer": "A",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Animals and plants need oxygen to live. Oxygen is released in photosynthesis. Which cycle includes photosynthesis?\n\n\nChoices:\nA) the carbon cycle\nB) the nitrogen cycle\nC) the water cycle\nD) the rock cycle\n\nProvide an answer to the following question:\n\nQ: Animals and plants need oxygen to live. Oxygen is released in photosynthesis. Which cycle includes photosynthesis?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "A",
+          "logprob": -0.09505877643823624,
+          "probability": 0.9093194863368758
+        }
+      ],
+      "decision_process": {
+        "selected_text": "A",
+        "matched_choice": "A",
+        "confidence_computation": "exp(logprob) = exp(-0.0951) = 0.9093"
+      },
+      "final_metrics": {
+        "predicted": "A",
+        "correct": true,
+        "confidence": 0.9093194863368758,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "question_id": 46,
+  "question_text": "Which is the best piece of equipment to determine the topography of the United States?",
+  "choices": [
+    "A: radar",
+    "B: compass",
+    "C: satellite",
+    "D: radio"
+  ],
+  "gold_answer": "C",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Which is the best piece of equipment to determine the topography of the United States?\n\n\nChoices:\nA) radar\nB) compass\nC) satellite\nD) radio\n\nProvide an answer to the following question:\n\nQ: Which is the best piece of equipment to determine the topography of the United States?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "C",
+          "logprob": -0.10695643350481987,
+          "probability": 0.898564819457438
+        }
+      ],
+      "decision_process": {
+        "selected_text": "C",
+        "matched_choice": "C",
+        "confidence_computation": "exp(logprob) = exp(-0.1070) = 0.8986"
+      },
+      "final_metrics": {
+        "predicted": "C",
+        "correct": true,
+        "confidence": 0.898564819457438,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

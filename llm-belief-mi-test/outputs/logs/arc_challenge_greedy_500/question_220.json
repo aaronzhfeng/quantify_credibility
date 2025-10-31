@@ -1,0 +1,51 @@
+{
+  "question_id": 220,
+  "question_text": "Which investigation will best test the effects of gravity on moving objects?",
+  "choices": [
+    "A: pencils falling from the same height",
+    "B: balloons floating upward from the same height",
+    "C: a bicycle speeding up on a flat surface",
+    "D: a ball slowing down on a flat surface"
+  ],
+  "gold_answer": "A",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Which investigation will best test the effects of gravity on moving objects?\n\n\nChoices:\nA) pencils falling from the same height\nB) balloons floating upward from the same height\nC) a bicycle speeding up on a flat surface\nD) a ball slowing down on a flat surface\n\nProvide an answer to the following question:\n\nQ: Which investigation will best test the effects of gravity on moving objects?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "A",
+          "logprob": -0.48183653588057496,
+          "probability": 0.6176480168023732
+        }
+      ],
+      "decision_process": {
+        "selected_text": "A",
+        "matched_choice": "A",
+        "confidence_computation": "exp(logprob) = exp(-0.4818) = 0.6176"
+      },
+      "final_metrics": {
+        "predicted": "A",
+        "correct": true,
+        "confidence": 0.6176480168023732,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

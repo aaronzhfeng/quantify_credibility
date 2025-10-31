@@ -1,0 +1,51 @@
+{
+  "question_id": 38,
+  "question_text": "Which is the greatest benefit of sexual reproduction?",
+  "choices": [
+    "A: capable of reproducing by meiosis",
+    "B: ability to reproduce without a mate",
+    "C: ability to produce genetically different offspring",
+    "D: capable of producing offspring genetically identical to parent"
+  ],
+  "gold_answer": "C",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Which is the greatest benefit of sexual reproduction?\n\n\nChoices:\nA) capable of reproducing by meiosis\nB) ability to reproduce without a mate\nC) ability to produce genetically different offspring\nD) capable of producing offspring genetically identical to parent\n\nProvide an answer to the following question:\n\nQ: Which is the greatest benefit of sexual reproduction?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "C",
+          "logprob": -0.049461787566542625,
+          "probability": 0.9517415258013325
+        }
+      ],
+      "decision_process": {
+        "selected_text": "C",
+        "matched_choice": "C",
+        "confidence_computation": "exp(logprob) = exp(-0.0495) = 0.9517"
+      },
+      "final_metrics": {
+        "predicted": "C",
+        "correct": true,
+        "confidence": 0.9517415258013325,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

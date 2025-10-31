@@ -1,0 +1,51 @@
+{
+  "question_id": 418,
+  "question_text": "In an experiment studying phototropism, students grew bean plants in labeled cardboard milk cartons. Afterward, the plants and soil were properly discarded. Which instruction line BEST conserves the remaining resources?",
+  "choices": [
+    "A: recycle the markers, reuse the milk cartons",
+    "B: reuse the markers, discard the milk cartons",
+    "C: discard the markers, reuse the milk cartons",
+    "D: reuse the markers, recycle the milk cartons"
+  ],
+  "gold_answer": "D",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: In an experiment studying phototropism, students grew bean plants in labeled cardboard milk cartons. Afterward, the plants and soil were properly discarded. Which instruction line BEST conserves the remaining resources?\n\n\nChoices:\nA) recycle the markers, reuse the milk cartons\nB) reuse the markers, discard the milk cartons\nC) discard the markers, reuse the milk cartons\nD) reuse the markers, recycle the milk cartons\n\nProvide an answer to the following question:\n\nQ: In an experiment studying phototropism, students grew bean plants in labeled cardboard milk cartons. Afterward, the plants and soil were properly discarded. Which instruction line BEST conserves the remaining resources?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "D",
+          "logprob": -0.6236629561171867,
+          "probability": 0.5359775751907737
+        }
+      ],
+      "decision_process": {
+        "selected_text": "D",
+        "matched_choice": "D",
+        "confidence_computation": "exp(logprob) = exp(-0.6237) = 0.5360"
+      },
+      "final_metrics": {
+        "predicted": "D",
+        "correct": true,
+        "confidence": 0.5359775751907737,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

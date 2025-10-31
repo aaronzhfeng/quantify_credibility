@@ -1,0 +1,959 @@
+{
+  "question_id": 75,
+  "question_text": "Over a period of time the weather can change",
+  "choices": [
+    "A: The color of my hair",
+    "B: The way I walk",
+    "C: The size of a statue",
+    "D: The sound a computer makes"
+  ],
+  "gold_answer": "C",
+  "methods": {
+    "mi_method": {
+      "description": "k=10 chains of length n=4, MI estimation",
+      "raw_inputs": [
+        {
+          "chain_id": 0,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Over a period of time the weather can change\n\n\nChoices:\nA) The color of my hair\nB) The way I walk\nC) The size of a statue\nD) The sound a computer makes\n\nProvide an answer to the following question:\n\nQ: Over a period of time the weather can change\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 0,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Over a period of time the weather can change\n\n\nOne answer to question Q is A) The color of my hair.\n\n\nChoices:\nA) The color of my hair\nB) The way I walk\nC) The size of a statue\nD) The sound a computer makes\n\nProvide an answer to the following question:\n\nQ: Over a period of time the weather can change\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 0,
+          "step": 2,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Over a period of time the weather can change\n\n\nOne answer to question Q is A) The color of my hair. Another answer to question Q is A) The color of my hair.\n\n\nChoices:\nA) The color of my hair\nB) The way I walk\nC) The size of a statue\nD) The sound a computer makes\n\nProvide an answer to the following question:\n\nQ: Over a period of time the weather can change\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 0,
+          "step": 3,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Over a period of time the weather can change\n\n\nOne answer to question Q is A) The color of my hair. Another answer to question Q is A) The color of my hair. Another answer to question Q is A) The color of my hair.\n\n\nChoices:\nA) The color of my hair\nB) The way I walk\nC) The size of a statue\nD) The sound a computer makes\n\nProvide an answer to the following question:\n\nQ: Over a period of time the weather can change\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 1,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Over a period of time the weather can change\n\n\nChoices:\nA) The color of my hair\nB) The way I walk\nC) The size of a statue\nD) The sound a computer makes\n\nProvide an answer to the following question:\n\nQ: Over a period of time the weather can change\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 1,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Over a period of time the weather can change\n\n\nOne answer to question Q is A) The color of my hair.\n\n\nChoices:\nA) The color of my hair\nB) The way I walk\nC) The size of a statue\nD) The sound a computer makes\n\nProvide an answer to the following question:\n\nQ: Over a period of time the weather can change\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 1,
+          "step": 2,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Over a period of time the weather can change\n\n\nOne answer to question Q is A) The color of my hair. Another answer to question Q is C) The size of a statue.\n\n\nChoices:\nA) The color of my hair\nB) The way I walk\nC) The size of a statue\nD) The sound a computer makes\n\nProvide an answer to the following question:\n\nQ: Over a period of time the weather can change\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 1,
+          "step": 3,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Over a period of time the weather can change\n\n\nOne answer to question Q is A) The color of my hair. Another answer to question Q is C) The size of a statue. Another answer to question Q is C) The size of a statue.\n\n\nChoices:\nA) The color of my hair\nB) The way I walk\nC) The size of a statue\nD) The sound a computer makes\n\nProvide an answer to the following question:\n\nQ: Over a period of time the weather can change\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 2,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Over a period of time the weather can change\n\n\nChoices:\nA) The color of my hair\nB) The way I walk\nC) The size of a statue\nD) The sound a computer makes\n\nProvide an answer to the following question:\n\nQ: Over a period of time the weather can change\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 2,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Over a period of time the weather can change\n\n\nOne answer to question Q is A) The color of my hair.\n\n\nChoices:\nA) The color of my hair\nB) The way I walk\nC) The size of a statue\nD) The sound a computer makes\n\nProvide an answer to the following question:\n\nQ: Over a period of time the weather can change\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 2,
+          "step": 2,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Over a period of time the weather can change\n\n\nOne answer to question Q is A) The color of my hair. Another answer to question Q is A) The color of my hair.\n\n\nChoices:\nA) The color of my hair\nB) The way I walk\nC) The size of a statue\nD) The sound a computer makes\n\nProvide an answer to the following question:\n\nQ: Over a period of time the weather can change\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 2,
+          "step": 3,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Over a period of time the weather can change\n\n\nOne answer to question Q is A) The color of my hair. Another answer to question Q is A) The color of my hair. Another answer to question Q is A) The color of my hair.\n\n\nChoices:\nA) The color of my hair\nB) The way I walk\nC) The size of a statue\nD) The sound a computer makes\n\nProvide an answer to the following question:\n\nQ: Over a period of time the weather can change\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 3,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Over a period of time the weather can change\n\n\nChoices:\nA) The color of my hair\nB) The way I walk\nC) The size of a statue\nD) The sound a computer makes\n\nProvide an answer to the following question:\n\nQ: Over a period of time the weather can change\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 3,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Over a period of time the weather can change\n\n\nOne answer to question Q is A) The color of my hair.\n\n\nChoices:\nA) The color of my hair\nB) The way I walk\nC) The size of a statue\nD) The sound a computer makes\n\nProvide an answer to the following question:\n\nQ: Over a period of time the weather can change\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 3,
+          "step": 2,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Over a period of time the weather can change\n\n\nOne answer to question Q is A) The color of my hair. Another answer to question Q is A) The color of my hair.\n\n\nChoices:\nA) The color of my hair\nB) The way I walk\nC) The size of a statue\nD) The sound a computer makes\n\nProvide an answer to the following question:\n\nQ: Over a period of time the weather can change\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 3,
+          "step": 3,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Over a period of time the weather can change\n\n\nOne answer to question Q is A) The color of my hair. Another answer to question Q is A) The color of my hair. Another answer to question Q is A) The color of my hair.\n\n\nChoices:\nA) The color of my hair\nB) The way I walk\nC) The size of a statue\nD) The sound a computer makes\n\nProvide an answer to the following question:\n\nQ: Over a period of time the weather can change\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 4,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Over a period of time the weather can change\n\n\nChoices:\nA) The color of my hair\nB) The way I walk\nC) The size of a statue\nD) The sound a computer makes\n\nProvide an answer to the following question:\n\nQ: Over a period of time the weather can change\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 4,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Over a period of time the weather can change\n\n\nOne answer to question Q is A) The color of my hair.\n\n\nChoices:\nA) The color of my hair\nB) The way I walk\nC) The size of a statue\nD) The sound a computer makes\n\nProvide an answer to the following question:\n\nQ: Over a period of time the weather can change\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 4,
+          "step": 2,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Over a period of time the weather can change\n\n\nOne answer to question Q is A) The color of my hair. Another answer to question Q is A) The color of my hair.\n\n\nChoices:\nA) The color of my hair\nB) The way I walk\nC) The size of a statue\nD) The sound a computer makes\n\nProvide an answer to the following question:\n\nQ: Over a period of time the weather can change\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 4,
+          "step": 3,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Over a period of time the weather can change\n\n\nOne answer to question Q is A) The color of my hair. Another answer to question Q is A) The color of my hair. Another answer to question Q is D) The sound a computer makes.\n\n\nChoices:\nA) The color of my hair\nB) The way I walk\nC) The size of a statue\nD) The sound a computer makes\n\nProvide an answer to the following question:\n\nQ: Over a period of time the weather can change\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 5,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Over a period of time the weather can change\n\n\nChoices:\nA) The color of my hair\nB) The way I walk\nC) The size of a statue\nD) The sound a computer makes\n\nProvide an answer to the following question:\n\nQ: Over a period of time the weather can change\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 5,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Over a period of time the weather can change\n\n\nOne answer to question Q is A) The color of my hair.\n\n\nChoices:\nA) The color of my hair\nB) The way I walk\nC) The size of a statue\nD) The sound a computer makes\n\nProvide an answer to the following question:\n\nQ: Over a period of time the weather can change\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 5,
+          "step": 2,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Over a period of time the weather can change\n\n\nOne answer to question Q is A) The color of my hair. Another answer to question Q is A) The color of my hair.\n\n\nChoices:\nA) The color of my hair\nB) The way I walk\nC) The size of a statue\nD) The sound a computer makes\n\nProvide an answer to the following question:\n\nQ: Over a period of time the weather can change\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 5,
+          "step": 3,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Over a period of time the weather can change\n\n\nOne answer to question Q is A) The color of my hair. Another answer to question Q is A) The color of my hair. Another answer to question Q is C) The size of a statue.\n\n\nChoices:\nA) The color of my hair\nB) The way I walk\nC) The size of a statue\nD) The sound a computer makes\n\nProvide an answer to the following question:\n\nQ: Over a period of time the weather can change\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 6,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Over a period of time the weather can change\n\n\nChoices:\nA) The color of my hair\nB) The way I walk\nC) The size of a statue\nD) The sound a computer makes\n\nProvide an answer to the following question:\n\nQ: Over a period of time the weather can change\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 6,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Over a period of time the weather can change\n\n\nOne answer to question Q is A) The color of my hair.\n\n\nChoices:\nA) The color of my hair\nB) The way I walk\nC) The size of a statue\nD) The sound a computer makes\n\nProvide an answer to the following question:\n\nQ: Over a period of time the weather can change\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 6,
+          "step": 2,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Over a period of time the weather can change\n\n\nOne answer to question Q is A) The color of my hair. Another answer to question Q is A) The color of my hair.\n\n\nChoices:\nA) The color of my hair\nB) The way I walk\nC) The size of a statue\nD) The sound a computer makes\n\nProvide an answer to the following question:\n\nQ: Over a period of time the weather can change\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 6,
+          "step": 3,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Over a period of time the weather can change\n\n\nOne answer to question Q is A) The color of my hair. Another answer to question Q is A) The color of my hair. Another answer to question Q is D) The sound a computer makes.\n\n\nChoices:\nA) The color of my hair\nB) The way I walk\nC) The size of a statue\nD) The sound a computer makes\n\nProvide an answer to the following question:\n\nQ: Over a period of time the weather can change\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 7,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Over a period of time the weather can change\n\n\nChoices:\nA) The color of my hair\nB) The way I walk\nC) The size of a statue\nD) The sound a computer makes\n\nProvide an answer to the following question:\n\nQ: Over a period of time the weather can change\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 7,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Over a period of time the weather can change\n\n\nOne answer to question Q is A) The color of my hair.\n\n\nChoices:\nA) The color of my hair\nB) The way I walk\nC) The size of a statue\nD) The sound a computer makes\n\nProvide an answer to the following question:\n\nQ: Over a period of time the weather can change\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 7,
+          "step": 2,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Over a period of time the weather can change\n\n\nOne answer to question Q is A) The color of my hair. Another answer to question Q is A) The color of my hair.\n\n\nChoices:\nA) The color of my hair\nB) The way I walk\nC) The size of a statue\nD) The sound a computer makes\n\nProvide an answer to the following question:\n\nQ: Over a period of time the weather can change\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 7,
+          "step": 3,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Over a period of time the weather can change\n\n\nOne answer to question Q is A) The color of my hair. Another answer to question Q is A) The color of my hair. Another answer to question Q is A) The color of my hair.\n\n\nChoices:\nA) The color of my hair\nB) The way I walk\nC) The size of a statue\nD) The sound a computer makes\n\nProvide an answer to the following question:\n\nQ: Over a period of time the weather can change\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 8,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Over a period of time the weather can change\n\n\nChoices:\nA) The color of my hair\nB) The way I walk\nC) The size of a statue\nD) The sound a computer makes\n\nProvide an answer to the following question:\n\nQ: Over a period of time the weather can change\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 8,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Over a period of time the weather can change\n\n\nOne answer to question Q is A) The color of my hair.\n\n\nChoices:\nA) The color of my hair\nB) The way I walk\nC) The size of a statue\nD) The sound a computer makes\n\nProvide an answer to the following question:\n\nQ: Over a period of time the weather can change\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 8,
+          "step": 2,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Over a period of time the weather can change\n\n\nOne answer to question Q is A) The color of my hair. Another answer to question Q is D) The sound a computer makes.\n\n\nChoices:\nA) The color of my hair\nB) The way I walk\nC) The size of a statue\nD) The sound a computer makes\n\nProvide an answer to the following question:\n\nQ: Over a period of time the weather can change\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 8,
+          "step": 3,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Over a period of time the weather can change\n\n\nOne answer to question Q is A) The color of my hair. Another answer to question Q is D) The sound a computer makes. Another answer to question Q is A) The color of my hair.\n\n\nChoices:\nA) The color of my hair\nB) The way I walk\nC) The size of a statue\nD) The sound a computer makes\n\nProvide an answer to the following question:\n\nQ: Over a period of time the weather can change\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 9,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Over a period of time the weather can change\n\n\nChoices:\nA) The color of my hair\nB) The way I walk\nC) The size of a statue\nD) The sound a computer makes\n\nProvide an answer to the following question:\n\nQ: Over a period of time the weather can change\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 9,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Over a period of time the weather can change\n\n\nOne answer to question Q is A) The color of my hair.\n\n\nChoices:\nA) The color of my hair\nB) The way I walk\nC) The size of a statue\nD) The sound a computer makes\n\nProvide an answer to the following question:\n\nQ: Over a period of time the weather can change\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 9,
+          "step": 2,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Over a period of time the weather can change\n\n\nOne answer to question Q is A) The color of my hair. Another answer to question Q is D) The sound a computer makes.\n\n\nChoices:\nA) The color of my hair\nB) The way I walk\nC) The size of a statue\nD) The sound a computer makes\n\nProvide an answer to the following question:\n\nQ: Over a period of time the weather can change\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 9,
+          "step": 3,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Over a period of time the weather can change\n\n\nOne answer to question Q is A) The color of my hair. Another answer to question Q is D) The sound a computer makes. Another answer to question Q is A) The color of my hair.\n\n\nChoices:\nA) The color of my hair\nB) The way I walk\nC) The size of a statue\nD) The sound a computer makes\n\nProvide an answer to the following question:\n\nQ: Over a period of time the weather can change\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "chain_id": 0,
+          "step": 0,
+          "text": "A",
+          "logprob": 0.0,
+          "probability": 0.5
+        },
+        {
+          "chain_id": 0,
+          "step": 1,
+          "text": "A",
+          "logprob": -0.42908844351768494,
+          "probability": 0.651102340853015
+        },
+        {
+          "chain_id": 0,
+          "step": 2,
+          "text": "A",
+          "logprob": -0.59489506483078,
+          "probability": 0.5516204472158559
+        },
+        {
+          "chain_id": 0,
+          "step": 3,
+          "text": "A",
+          "logprob": -0.5674655437469482,
+          "probability": 0.5669605560367611
+        },
+        {
+          "chain_id": 1,
+          "step": 0,
+          "text": "A",
+          "logprob": 0.0,
+          "probability": 0.5
+        },
+        {
+          "chain_id": 1,
+          "step": 1,
+          "text": "C",
+          "logprob": -1.6790884733200073,
+          "probability": 0.18654393834184463
+        },
+        {
+          "chain_id": 1,
+          "step": 2,
+          "text": "C",
+          "logprob": -0.9230274558067322,
+          "probability": 0.3973143667687347
+        },
+        {
+          "chain_id": 1,
+          "step": 3,
+          "text": "A",
+          "logprob": -0.1173514574766159,
+          "probability": 0.8892725967315815
+        },
+        {
+          "chain_id": 2,
+          "step": 0,
+          "text": "A",
+          "logprob": 0.0,
+          "probability": 0.5
+        },
+        {
+          "chain_id": 2,
+          "step": 1,
+          "text": "A",
+          "logprob": -0.42908844351768494,
+          "probability": 0.651102340853015
+        },
+        {
+          "chain_id": 2,
+          "step": 2,
+          "text": "A",
+          "logprob": -0.59489506483078,
+          "probability": 0.5516204472158559
+        },
+        {
+          "chain_id": 2,
+          "step": 3,
+          "text": "A",
+          "logprob": -0.5674655437469482,
+          "probability": 0.5669605560367611
+        },
+        {
+          "chain_id": 3,
+          "step": 0,
+          "text": "A",
+          "logprob": 0.0,
+          "probability": 0.5
+        },
+        {
+          "chain_id": 3,
+          "step": 1,
+          "text": "A",
+          "logprob": -0.42908844351768494,
+          "probability": 0.651102340853015
+        },
+        {
+          "chain_id": 3,
+          "step": 2,
+          "text": "A",
+          "logprob": -0.59489506483078,
+          "probability": 0.5516204472158559
+        },
+        {
+          "chain_id": 3,
+          "step": 3,
+          "text": "A",
+          "logprob": -0.5674655437469482,
+          "probability": 0.5669605560367611
+        },
+        {
+          "chain_id": 4,
+          "step": 0,
+          "text": "A",
+          "logprob": 0.0,
+          "probability": 0.5
+        },
+        {
+          "chain_id": 4,
+          "step": 1,
+          "text": "A",
+          "logprob": -0.42908844351768494,
+          "probability": 0.651102340853015
+        },
+        {
+          "chain_id": 4,
+          "step": 2,
+          "text": "D",
+          "logprob": -1.428227186203003,
+          "probability": 0.2397335486834461
+        },
+        {
+          "chain_id": 4,
+          "step": 3,
+          "text": "A",
+          "logprob": -0.1730080544948578,
+          "probability": 0.8411308399333141
+        },
+        {
+          "chain_id": 5,
+          "step": 0,
+          "text": "A",
+          "logprob": 0.0,
+          "probability": 0.5
+        },
+        {
+          "chain_id": 5,
+          "step": 1,
+          "text": "A",
+          "logprob": -0.42908844351768494,
+          "probability": 0.651102340853015
+        },
+        {
+          "chain_id": 5,
+          "step": 2,
+          "text": "C",
+          "logprob": -1.5671164989471436,
+          "probability": 0.20864594659528704
+        },
+        {
+          "chain_id": 5,
+          "step": 3,
+          "text": "C",
+          "logprob": -1.8179762363433838,
+          "probability": 0.16235398478189622
+        },
+        {
+          "chain_id": 6,
+          "step": 0,
+          "text": "A",
+          "logprob": 0.0,
+          "probability": 0.5
+        },
+        {
+          "chain_id": 6,
+          "step": 1,
+          "text": "A",
+          "logprob": -0.42908844351768494,
+          "probability": 0.651102340853015
+        },
+        {
+          "chain_id": 6,
+          "step": 2,
+          "text": "D",
+          "logprob": -1.428227186203003,
+          "probability": 0.2397335486834461
+        },
+        {
+          "chain_id": 6,
+          "step": 3,
+          "text": "A",
+          "logprob": -0.1730080544948578,
+          "probability": 0.8411308399333141
+        },
+        {
+          "chain_id": 7,
+          "step": 0,
+          "text": "A",
+          "logprob": 0.0,
+          "probability": 0.5
+        },
+        {
+          "chain_id": 7,
+          "step": 1,
+          "text": "A",
+          "logprob": -0.42908844351768494,
+          "probability": 0.651102340853015
+        },
+        {
+          "chain_id": 7,
+          "step": 2,
+          "text": "A",
+          "logprob": -0.59489506483078,
+          "probability": 0.5516204472158559
+        },
+        {
+          "chain_id": 7,
+          "step": 3,
+          "text": "A",
+          "logprob": -0.5674655437469482,
+          "probability": 0.5669605560367611
+        },
+        {
+          "chain_id": 8,
+          "step": 0,
+          "text": "A",
+          "logprob": 0.0,
+          "probability": 0.5
+        },
+        {
+          "chain_id": 8,
+          "step": 1,
+          "text": "D",
+          "logprob": -1.817977786064148,
+          "probability": 0.16235373317874982
+        },
+        {
+          "chain_id": 8,
+          "step": 2,
+          "text": "A",
+          "logprob": -0.23711054027080536,
+          "probability": 0.7889040775271936
+        },
+        {
+          "chain_id": 8,
+          "step": 3,
+          "text": "A",
+          "logprob": -0.5402109622955322,
+          "probability": 0.5826253274316714
+        },
+        {
+          "chain_id": 9,
+          "step": 0,
+          "text": "A",
+          "logprob": 0.0,
+          "probability": 0.5
+        },
+        {
+          "chain_id": 9,
+          "step": 1,
+          "text": "D",
+          "logprob": -1.817977786064148,
+          "probability": 0.16235373317874982
+        },
+        {
+          "chain_id": 9,
+          "step": 2,
+          "text": "A",
+          "logprob": -0.23711054027080536,
+          "probability": 0.7889040775271936
+        },
+        {
+          "chain_id": 9,
+          "step": 3,
+          "text": "A",
+          "logprob": -0.5402109622955322,
+          "probability": 0.5826253274316714
+        }
+      ],
+      "decision_process": {
+        "num_chains": 10,
+        "chain_length": 4,
+        "total_inferences": 40,
+        "mi_method": "listing",
+        "mi_nats": 0.2568724864636452,
+        "mi_bits": 0.3705886623619183,
+        "selected_answer": "A",
+        "matched_choice": "A",
+        "confidence_computation": "1/(1 + mi_nats) = 1/(1 + 0.2569) = 0.7956",
+        "agreement": "90.00% (9/10 chains agree on final answer)"
+      },
+      "final_metrics": {
+        "predicted": "A",
+        "correct": false,
+        "confidence": 0.7956256587441218,
+        "mi_score": 0.3705886623619183,
+        "agreement": 0.9
+      }
+    }
+  }
+}

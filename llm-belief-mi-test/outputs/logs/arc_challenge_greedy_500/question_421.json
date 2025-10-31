@@ -1,0 +1,51 @@
+{
+  "question_id": 421,
+  "question_text": "A scientist studied the number of eggs a species of bird lays each year. He found that the most common number of eggs laid in a year is three. Which statistical measurement did the scientist find?",
+  "choices": [
+    "A: the mean number of eggs laid in a year",
+    "B: the median number of eggs laid in a year",
+    "C: the mode of the number of eggs laid in a year",
+    "D: the range of the number of eggs laid in a year"
+  ],
+  "gold_answer": "C",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A scientist studied the number of eggs a species of bird lays each year. He found that the most common number of eggs laid in a year is three. Which statistical measurement did the scientist find?\n\n\nChoices:\nA) the mean number of eggs laid in a year\nB) the median number of eggs laid in a year\nC) the mode of the number of eggs laid in a year\nD) the range of the number of eggs laid in a year\n\nProvide an answer to the following question:\n\nQ: A scientist studied the number of eggs a species of bird lays each year. He found that the most common number of eggs laid in a year is three. Which statistical measurement did the scientist find?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "C",
+          "logprob": -0.012584978656377643,
+          "probability": 0.9874938810250594
+        }
+      ],
+      "decision_process": {
+        "selected_text": "C",
+        "matched_choice": "C",
+        "confidence_computation": "exp(logprob) = exp(-0.0126) = 0.9875"
+      },
+      "final_metrics": {
+        "predicted": "C",
+        "correct": true,
+        "confidence": 0.9874938810250594,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

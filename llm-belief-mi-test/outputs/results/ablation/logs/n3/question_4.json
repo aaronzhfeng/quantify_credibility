@@ -1,0 +1,729 @@
+{
+  "question_id": 4,
+  "question_text": "An electric car runs on electricity via",
+  "choices": [
+    "A: gasoline",
+    "B: a power station",
+    "C: electrical conductors",
+    "D: fuel"
+  ],
+  "gold_answer": "C",
+  "methods": {
+    "mi_method": {
+      "description": "k=10 chains of length n=3, MI estimation",
+      "raw_inputs": [
+        {
+          "chain_id": 0,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: An electric car runs on electricity via\n\n\nChoices:\nA) gasoline\nB) a power station\nC) electrical conductors\nD) fuel\n\nProvide an answer to the following question:\n\nQ: An electric car runs on electricity via\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 0,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: An electric car runs on electricity via\n\n\nOne answer to question Q is A) gasoline.\n\n\nChoices:\nA) gasoline\nB) a power station\nC) electrical conductors\nD) fuel\n\nProvide an answer to the following question:\n\nQ: An electric car runs on electricity via\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 0,
+          "step": 2,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: An electric car runs on electricity via\n\n\nOne answer to question Q is A) gasoline. Another answer to question Q is C) electrical conductors.\n\n\nChoices:\nA) gasoline\nB) a power station\nC) electrical conductors\nD) fuel\n\nProvide an answer to the following question:\n\nQ: An electric car runs on electricity via\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 1,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: An electric car runs on electricity via\n\n\nChoices:\nA) gasoline\nB) a power station\nC) electrical conductors\nD) fuel\n\nProvide an answer to the following question:\n\nQ: An electric car runs on electricity via\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 1,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: An electric car runs on electricity via\n\n\nOne answer to question Q is A) gasoline.\n\n\nChoices:\nA) gasoline\nB) a power station\nC) electrical conductors\nD) fuel\n\nProvide an answer to the following question:\n\nQ: An electric car runs on electricity via\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 1,
+          "step": 2,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: An electric car runs on electricity via\n\n\nOne answer to question Q is A) gasoline. Another answer to question Q is D) fuel.\n\n\nChoices:\nA) gasoline\nB) a power station\nC) electrical conductors\nD) fuel\n\nProvide an answer to the following question:\n\nQ: An electric car runs on electricity via\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 2,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: An electric car runs on electricity via\n\n\nChoices:\nA) gasoline\nB) a power station\nC) electrical conductors\nD) fuel\n\nProvide an answer to the following question:\n\nQ: An electric car runs on electricity via\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 2,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: An electric car runs on electricity via\n\n\nOne answer to question Q is A) gasoline.\n\n\nChoices:\nA) gasoline\nB) a power station\nC) electrical conductors\nD) fuel\n\nProvide an answer to the following question:\n\nQ: An electric car runs on electricity via\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 2,
+          "step": 2,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: An electric car runs on electricity via\n\n\nOne answer to question Q is A) gasoline. Another answer to question Q is C) electrical conductors.\n\n\nChoices:\nA) gasoline\nB) a power station\nC) electrical conductors\nD) fuel\n\nProvide an answer to the following question:\n\nQ: An electric car runs on electricity via\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 3,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: An electric car runs on electricity via\n\n\nChoices:\nA) gasoline\nB) a power station\nC) electrical conductors\nD) fuel\n\nProvide an answer to the following question:\n\nQ: An electric car runs on electricity via\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 3,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: An electric car runs on electricity via\n\n\nOne answer to question Q is C) electrical conductors.\n\n\nChoices:\nA) gasoline\nB) a power station\nC) electrical conductors\nD) fuel\n\nProvide an answer to the following question:\n\nQ: An electric car runs on electricity via\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 3,
+          "step": 2,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: An electric car runs on electricity via\n\n\nOne answer to question Q is C) electrical conductors. Another answer to question Q is C) electrical conductors.\n\n\nChoices:\nA) gasoline\nB) a power station\nC) electrical conductors\nD) fuel\n\nProvide an answer to the following question:\n\nQ: An electric car runs on electricity via\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 4,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: An electric car runs on electricity via\n\n\nChoices:\nA) gasoline\nB) a power station\nC) electrical conductors\nD) fuel\n\nProvide an answer to the following question:\n\nQ: An electric car runs on electricity via\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 4,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: An electric car runs on electricity via\n\n\nOne answer to question Q is A) gasoline.\n\n\nChoices:\nA) gasoline\nB) a power station\nC) electrical conductors\nD) fuel\n\nProvide an answer to the following question:\n\nQ: An electric car runs on electricity via\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 4,
+          "step": 2,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: An electric car runs on electricity via\n\n\nOne answer to question Q is A) gasoline. Another answer to question Q is B) a power station.\n\n\nChoices:\nA) gasoline\nB) a power station\nC) electrical conductors\nD) fuel\n\nProvide an answer to the following question:\n\nQ: An electric car runs on electricity via\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 5,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: An electric car runs on electricity via\n\n\nChoices:\nA) gasoline\nB) a power station\nC) electrical conductors\nD) fuel\n\nProvide an answer to the following question:\n\nQ: An electric car runs on electricity via\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 5,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: An electric car runs on electricity via\n\n\nOne answer to question Q is C) electrical conductors.\n\n\nChoices:\nA) gasoline\nB) a power station\nC) electrical conductors\nD) fuel\n\nProvide an answer to the following question:\n\nQ: An electric car runs on electricity via\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 5,
+          "step": 2,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: An electric car runs on electricity via\n\n\nOne answer to question Q is C) electrical conductors. Another answer to question Q is C) electrical conductors.\n\n\nChoices:\nA) gasoline\nB) a power station\nC) electrical conductors\nD) fuel\n\nProvide an answer to the following question:\n\nQ: An electric car runs on electricity via\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 6,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: An electric car runs on electricity via\n\n\nChoices:\nA) gasoline\nB) a power station\nC) electrical conductors\nD) fuel\n\nProvide an answer to the following question:\n\nQ: An electric car runs on electricity via\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 6,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: An electric car runs on electricity via\n\n\nOne answer to question Q is C) electrical conductors.\n\n\nChoices:\nA) gasoline\nB) a power station\nC) electrical conductors\nD) fuel\n\nProvide an answer to the following question:\n\nQ: An electric car runs on electricity via\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 6,
+          "step": 2,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: An electric car runs on electricity via\n\n\nOne answer to question Q is C) electrical conductors. Another answer to question Q is C) electrical conductors.\n\n\nChoices:\nA) gasoline\nB) a power station\nC) electrical conductors\nD) fuel\n\nProvide an answer to the following question:\n\nQ: An electric car runs on electricity via\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 7,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: An electric car runs on electricity via\n\n\nChoices:\nA) gasoline\nB) a power station\nC) electrical conductors\nD) fuel\n\nProvide an answer to the following question:\n\nQ: An electric car runs on electricity via\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 7,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: An electric car runs on electricity via\n\n\nOne answer to question Q is C) electrical conductors.\n\n\nChoices:\nA) gasoline\nB) a power station\nC) electrical conductors\nD) fuel\n\nProvide an answer to the following question:\n\nQ: An electric car runs on electricity via\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 7,
+          "step": 2,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: An electric car runs on electricity via\n\n\nOne answer to question Q is C) electrical conductors. Another answer to question Q is C) electrical conductors.\n\n\nChoices:\nA) gasoline\nB) a power station\nC) electrical conductors\nD) fuel\n\nProvide an answer to the following question:\n\nQ: An electric car runs on electricity via\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 8,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: An electric car runs on electricity via\n\n\nChoices:\nA) gasoline\nB) a power station\nC) electrical conductors\nD) fuel\n\nProvide an answer to the following question:\n\nQ: An electric car runs on electricity via\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 8,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: An electric car runs on electricity via\n\n\nOne answer to question Q is C) electrical conductors.\n\n\nChoices:\nA) gasoline\nB) a power station\nC) electrical conductors\nD) fuel\n\nProvide an answer to the following question:\n\nQ: An electric car runs on electricity via\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 8,
+          "step": 2,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: An electric car runs on electricity via\n\n\nOne answer to question Q is C) electrical conductors. Another answer to question Q is A) gasoline.\n\n\nChoices:\nA) gasoline\nB) a power station\nC) electrical conductors\nD) fuel\n\nProvide an answer to the following question:\n\nQ: An electric car runs on electricity via\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 9,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: An electric car runs on electricity via\n\n\nChoices:\nA) gasoline\nB) a power station\nC) electrical conductors\nD) fuel\n\nProvide an answer to the following question:\n\nQ: An electric car runs on electricity via\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 9,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: An electric car runs on electricity via\n\n\nOne answer to question Q is C) electrical conductors.\n\n\nChoices:\nA) gasoline\nB) a power station\nC) electrical conductors\nD) fuel\n\nProvide an answer to the following question:\n\nQ: An electric car runs on electricity via\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 9,
+          "step": 2,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: An electric car runs on electricity via\n\n\nOne answer to question Q is C) electrical conductors. Another answer to question Q is C) electrical conductors.\n\n\nChoices:\nA) gasoline\nB) a power station\nC) electrical conductors\nD) fuel\n\nProvide an answer to the following question:\n\nQ: An electric car runs on electricity via\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "chain_id": 0,
+          "step": 0,
+          "text": "A",
+          "logprob": -1.3956828117370605,
+          "probability": 0.24766387082184832
+        },
+        {
+          "chain_id": 0,
+          "step": 1,
+          "text": "C",
+          "logprob": -1.429714560508728,
+          "probability": 0.23937724021063564
+        },
+        {
+          "chain_id": 0,
+          "step": 2,
+          "text": "A",
+          "logprob": -1.1833370625972748,
+          "probability": 0.30625503924002373
+        },
+        {
+          "chain_id": 1,
+          "step": 0,
+          "text": "A",
+          "logprob": -1.3956828117370605,
+          "probability": 0.24766387082184832
+        },
+        {
+          "chain_id": 1,
+          "step": 1,
+          "text": "D",
+          "logprob": -0.8741592168807983,
+          "probability": 0.4172126576122623
+        },
+        {
+          "chain_id": 1,
+          "step": 2,
+          "text": "A",
+          "logprob": -0.6463664174079895,
+          "probability": 0.5239461236505318
+        },
+        {
+          "chain_id": 2,
+          "step": 0,
+          "text": "A",
+          "logprob": -1.3956828117370605,
+          "probability": 0.24766387082184832
+        },
+        {
+          "chain_id": 2,
+          "step": 1,
+          "text": "C",
+          "logprob": -1.429714560508728,
+          "probability": 0.23937724021063564
+        },
+        {
+          "chain_id": 2,
+          "step": 2,
+          "text": "B",
+          "logprob": -1.1700329780578613,
+          "probability": 0.31035670613530597
+        },
+        {
+          "chain_id": 3,
+          "step": 0,
+          "text": "C",
+          "logprob": -0.2845720648765564,
+          "probability": 0.7523361364995692
+        },
+        {
+          "chain_id": 3,
+          "step": 1,
+          "text": "C",
+          "logprob": -0.2845720648765564,
+          "probability": 0.7523361364995692
+        },
+        {
+          "chain_id": 3,
+          "step": 2,
+          "text": "C",
+          "logprob": -0.1337146908044815,
+          "probability": 0.8748396287908604
+        },
+        {
+          "chain_id": 4,
+          "step": 0,
+          "text": "A",
+          "logprob": -1.3956828117370605,
+          "probability": 0.24766387082184832
+        },
+        {
+          "chain_id": 4,
+          "step": 1,
+          "text": "B",
+          "logprob": -2.2630486488342285,
+          "probability": 0.10403284120890088
+        },
+        {
+          "chain_id": 4,
+          "step": 2,
+          "text": "C",
+          "logprob": -0.32045218348503113,
+          "probability": 0.7258207586980785
+        },
+        {
+          "chain_id": 5,
+          "step": 0,
+          "text": "C",
+          "logprob": -0.2845720648765564,
+          "probability": 0.7523361364995692
+        },
+        {
+          "chain_id": 5,
+          "step": 1,
+          "text": "C",
+          "logprob": -0.2845720648765564,
+          "probability": 0.7523361364995692
+        },
+        {
+          "chain_id": 5,
+          "step": 2,
+          "text": "A",
+          "logprob": -2.0781593322753906,
+          "probability": 0.12516037897329685
+        },
+        {
+          "chain_id": 6,
+          "step": 0,
+          "text": "C",
+          "logprob": -0.2845720648765564,
+          "probability": 0.7523361364995692
+        },
+        {
+          "chain_id": 6,
+          "step": 1,
+          "text": "C",
+          "logprob": -0.2845720648765564,
+          "probability": 0.7523361364995692
+        },
+        {
+          "chain_id": 6,
+          "step": 2,
+          "text": "C",
+          "logprob": -0.1337146908044815,
+          "probability": 0.8748396287908604
+        },
+        {
+          "chain_id": 7,
+          "step": 0,
+          "text": "C",
+          "logprob": -0.2845720648765564,
+          "probability": 0.7523361364995692
+        },
+        {
+          "chain_id": 7,
+          "step": 1,
+          "text": "C",
+          "logprob": -0.2845720648765564,
+          "probability": 0.7523361364995692
+        },
+        {
+          "chain_id": 7,
+          "step": 2,
+          "text": "A",
+          "logprob": -2.0781593322753906,
+          "probability": 0.12516037897329685
+        },
+        {
+          "chain_id": 8,
+          "step": 0,
+          "text": "C",
+          "logprob": -0.2845720648765564,
+          "probability": 0.7523361364995692
+        },
+        {
+          "chain_id": 8,
+          "step": 1,
+          "text": "A",
+          "logprob": -1.3956828117370605,
+          "probability": 0.24766387082184832
+        },
+        {
+          "chain_id": 8,
+          "step": 2,
+          "text": "C",
+          "logprob": -0.25192904472351074,
+          "probability": 0.77729988964086
+        },
+        {
+          "chain_id": 9,
+          "step": 0,
+          "text": "C",
+          "logprob": -0.2845720648765564,
+          "probability": 0.7523361364995692
+        },
+        {
+          "chain_id": 9,
+          "step": 1,
+          "text": "C",
+          "logprob": -0.2845720648765564,
+          "probability": 0.7523361364995692
+        },
+        {
+          "chain_id": 9,
+          "step": 2,
+          "text": "C",
+          "logprob": -0.1337146908044815,
+          "probability": 0.8748396287908604
+        }
+      ],
+      "decision_process": {
+        "num_chains": 10,
+        "chain_length": 3,
+        "total_inferences": 30,
+        "mi_method": "listing",
+        "mi_nats": 0.28646216469816205,
+        "mi_bits": 0.41327754441235587,
+        "selected_answer": "C",
+        "matched_choice": "C",
+        "confidence_computation": "1/(1 + mi_nats) = 1/(1 + 0.2865) = 0.7773",
+        "agreement": "50.00% (5/10 chains agree on final answer)"
+      },
+      "final_metrics": {
+        "predicted": "C",
+        "correct": true,
+        "confidence": 0.7773256201705911,
+        "mi_score": 0.41327754441235587,
+        "agreement": 0.5
+      }
+    }
+  }
+}

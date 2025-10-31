@@ -1,0 +1,51 @@
+{
+  "question_id": 348,
+  "question_text": "Which tool would a student use to measure the mass of a brick?",
+  "choices": [
+    "A: balance",
+    "B: yardstick",
+    "C: thermometer",
+    "D: graduated cylinder"
+  ],
+  "gold_answer": "A",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Which tool would a student use to measure the mass of a brick?\n\n\nChoices:\nA) balance\nB) yardstick\nC) thermometer\nD) graduated cylinder\n\nProvide an answer to the following question:\n\nQ: Which tool would a student use to measure the mass of a brick?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "A",
+          "logprob": -0.0027807777742054895,
+          "probability": 0.9972230850069677
+        }
+      ],
+      "decision_process": {
+        "selected_text": "A",
+        "matched_choice": "A",
+        "confidence_computation": "exp(logprob) = exp(-0.0028) = 0.9972"
+      },
+      "final_metrics": {
+        "predicted": "A",
+        "correct": true,
+        "confidence": 0.9972230850069677,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

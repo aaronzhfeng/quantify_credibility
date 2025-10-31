@@ -1,0 +1,51 @@
+{
+  "question_id": 361,
+  "question_text": "The primary cause of continental drift, earthquakes, and volcanic eruptions is",
+  "choices": [
+    "A: convection currents beneath Earth's crust.",
+    "B: the rotation of Earth on its axis.",
+    "C: the gradual sinking of Earth's crust.",
+    "D: heat from the Sun warming Earth."
+  ],
+  "gold_answer": "A",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: The primary cause of continental drift, earthquakes, and volcanic eruptions is\n\n\nChoices:\nA) convection currents beneath Earth's crust.\nB) the rotation of Earth on its axis.\nC) the gradual sinking of Earth's crust.\nD) heat from the Sun warming Earth.\n\nProvide an answer to the following question:\n\nQ: The primary cause of continental drift, earthquakes, and volcanic eruptions is\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "A",
+          "logprob": -0.006163800240756245,
+          "probability": 0.993855157006388
+        }
+      ],
+      "decision_process": {
+        "selected_text": "A",
+        "matched_choice": "A",
+        "confidence_computation": "exp(logprob) = exp(-0.0062) = 0.9939"
+      },
+      "final_metrics": {
+        "predicted": "A",
+        "correct": true,
+        "confidence": 0.993855157006388,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "question_id": 174,
+  "question_text": "A broken bone heals through the process of",
+  "choices": [
+    "1: adaptation",
+    "2: mutation",
+    "3: cell division",
+    "4: chemical digestion"
+  ],
+  "gold_answer": "3",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A broken bone heals through the process of\n\n\nChoices:\n1) adaptation\n2) mutation\n3) cell division\n4) chemical digestion\n\nProvide an answer to the following question:\n\nQ: A broken bone heals through the process of\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "A",
+          "logprob": -0.1411075050709769,
+          "probability": 0.8683959497111046
+        }
+      ],
+      "decision_process": {
+        "selected_text": "A",
+        "matched_choice": "1",
+        "confidence_computation": "exp(logprob) = exp(-0.1411) = 0.8684"
+      },
+      "final_metrics": {
+        "predicted": "1",
+        "correct": false,
+        "confidence": 0.8683959497111046,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

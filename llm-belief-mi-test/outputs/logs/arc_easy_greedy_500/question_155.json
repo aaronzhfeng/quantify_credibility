@@ -1,0 +1,51 @@
+{
+  "question_id": 155,
+  "question_text": "Which elements are found to the right of the zigzag line in the periodic table?",
+  "choices": [
+    "A: liquids",
+    "B: metals",
+    "C: metals and gases",
+    "D: nonmetals and gases"
+  ],
+  "gold_answer": "D",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Which elements are found to the right of the zigzag line in the periodic table?\n\n\nChoices:\nA) liquids\nB) metals\nC) metals and gases\nD) nonmetals and gases\n\nProvide an answer to the following question:\n\nQ: Which elements are found to the right of the zigzag line in the periodic table?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "D",
+          "logprob": -0.2213743738393532,
+          "probability": 0.8014165947141211
+        }
+      ],
+      "decision_process": {
+        "selected_text": "D",
+        "matched_choice": "D",
+        "confidence_computation": "exp(logprob) = exp(-0.2214) = 0.8014"
+      },
+      "final_metrics": {
+        "predicted": "D",
+        "correct": true,
+        "confidence": 0.8014165947141211,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

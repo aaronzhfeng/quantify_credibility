@@ -1,0 +1,51 @@
+{
+  "question_id": 333,
+  "question_text": "An aluminum ion has a charge of +3, and an oxide ion has a charge of -2. Which would be the product of a reaction between these two elements?",
+  "choices": [
+    "A: Al_{2}O",
+    "B: Al_{2}O_{3}",
+    "C: 2AlO_{3}",
+    "D: Al_{3}O_{2}"
+  ],
+  "gold_answer": "B",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: An aluminum ion has a charge of +3, and an oxide ion has a charge of -2. Which would be the product of a reaction between these two elements?\n\n\nChoices:\nA) Al_{2}O\nB) Al_{2}O_{3}\nC) 2AlO_{3}\nD) Al_{3}O_{2}\n\nProvide an answer to the following question:\n\nQ: An aluminum ion has a charge of +3, and an oxide ion has a charge of -2. Which would be the product of a reaction between these two elements?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "B",
+          "logprob": -0.21974392153788358,
+          "probability": 0.8027243320573845
+        }
+      ],
+      "decision_process": {
+        "selected_text": "B",
+        "matched_choice": "B",
+        "confidence_computation": "exp(logprob) = exp(-0.2197) = 0.8027"
+      },
+      "final_metrics": {
+        "predicted": "B",
+        "correct": true,
+        "confidence": 0.8027243320573845,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

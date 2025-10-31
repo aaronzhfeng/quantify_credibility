@@ -1,0 +1,51 @@
+{
+  "question_id": 402,
+  "question_text": "A forecast for \"wintry mix\" indicates that vapor in the air will form both rain and snow. Which of these is a correct principle illustrated by this event?",
+  "choices": [
+    "A: There is little water in the atmosphere of Earth.",
+    "B: Most water on Earth is found as vapor.",
+    "C: Water exists in all three states on Earth.",
+    "D: Water on Earth tends to form a solid over time."
+  ],
+  "gold_answer": "C",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A forecast for \"wintry mix\" indicates that vapor in the air will form both rain and snow. Which of these is a correct principle illustrated by this event?\n\n\nChoices:\nA) There is little water in the atmosphere of Earth.\nB) Most water on Earth is found as vapor.\nC) Water exists in all three states on Earth.\nD) Water on Earth tends to form a solid over time.\n\nProvide an answer to the following question:\n\nQ: A forecast for \"wintry mix\" indicates that vapor in the air will form both rain and snow. Which of these is a correct principle illustrated by this event?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "C",
+          "logprob": -0.3054380980320275,
+          "probability": 0.7368005128196189
+        }
+      ],
+      "decision_process": {
+        "selected_text": "C",
+        "matched_choice": "C",
+        "confidence_computation": "exp(logprob) = exp(-0.3054) = 0.7368"
+      },
+      "final_metrics": {
+        "predicted": "C",
+        "correct": true,
+        "confidence": 0.7368005128196189,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

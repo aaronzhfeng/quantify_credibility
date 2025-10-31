@@ -1,0 +1,51 @@
+{
+  "question_id": 54,
+  "question_text": "A student mixes a teaspoon of sugar in a large glass of water. What happens to the sugar when it is mixed with the water?",
+  "choices": [
+    "A: It boils.",
+    "B: It melts.",
+    "C: It dissolves.",
+    "D: It evaporates."
+  ],
+  "gold_answer": "C",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A student mixes a teaspoon of sugar in a large glass of water. What happens to the sugar when it is mixed with the water?\n\n\nChoices:\nA) It boils.\nB) It melts.\nC) It dissolves.\nD) It evaporates.\n\nProvide an answer to the following question:\n\nQ: A student mixes a teaspoon of sugar in a large glass of water. What happens to the sugar when it is mixed with the water?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "C",
+          "logprob": -0.0020545384904835373,
+          "probability": 0.9979475706290513
+        }
+      ],
+      "decision_process": {
+        "selected_text": "C",
+        "matched_choice": "C",
+        "confidence_computation": "exp(logprob) = exp(-0.0021) = 0.9979"
+      },
+      "final_metrics": {
+        "predicted": "C",
+        "correct": true,
+        "confidence": 0.9979475706290513,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

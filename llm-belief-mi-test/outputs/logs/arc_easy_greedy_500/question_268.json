@@ -1,0 +1,51 @@
+{
+  "question_id": 268,
+  "question_text": "Most of the United States is a part of which tectonic plate?",
+  "choices": [
+    "A: Pacific Plate",
+    "B: Eurasian Plate",
+    "C: North American Plate",
+    "D: South American Plate"
+  ],
+  "gold_answer": "C",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Most of the United States is a part of which tectonic plate?\n\n\nChoices:\nA) Pacific Plate\nB) Eurasian Plate\nC) North American Plate\nD) South American Plate\n\nProvide an answer to the following question:\n\nQ: Most of the United States is a part of which tectonic plate?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "C",
+          "logprob": -0.004937173041980714,
+          "probability": 0.9950749947637523
+        }
+      ],
+      "decision_process": {
+        "selected_text": "C",
+        "matched_choice": "C",
+        "confidence_computation": "exp(logprob) = exp(-0.0049) = 0.9951"
+      },
+      "final_metrics": {
+        "predicted": "C",
+        "correct": true,
+        "confidence": 0.9950749947637523,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

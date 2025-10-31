@@ -1,0 +1,51 @@
+{
+  "question_id": 190,
+  "question_text": "The biological selection of a particular allele for a trait to be passed to offspring has nothing do with the selection of the allele for another trait. Which of the following supports this statement?",
+  "choices": [
+    "A: law of independent assortment",
+    "B: law of dominance",
+    "C: law of segregation",
+    "D: law of recessiveness"
+  ],
+  "gold_answer": "A",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: The biological selection of a particular allele for a trait to be passed to offspring has nothing do with the selection of the allele for another trait. Which of the following supports this statement?\n\n\nChoices:\nA) law of independent assortment\nB) law of dominance\nC) law of segregation\nD) law of recessiveness\n\nProvide an answer to the following question:\n\nQ: The biological selection of a particular allele for a trait to be passed to offspring has nothing do with the selection of the allele for another trait. Which of the following supports this statement?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "A",
+          "logprob": -0.015055805910378695,
+          "probability": 0.9850569660683866
+        }
+      ],
+      "decision_process": {
+        "selected_text": "A",
+        "matched_choice": "A",
+        "confidence_computation": "exp(logprob) = exp(-0.0151) = 0.9851"
+      },
+      "final_metrics": {
+        "predicted": "A",
+        "correct": true,
+        "confidence": 0.9850569660683866,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

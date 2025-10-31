@@ -1,0 +1,51 @@
+{
+  "question_id": 475,
+  "question_text": "Which physical features are part of an animal that would most likely be classified as a reptile?",
+  "choices": [
+    "A: fur and claws",
+    "B: dry skin and scales",
+    "C: wings, feathers, and claws",
+    "D: scales, moist skin, and fins"
+  ],
+  "gold_answer": "B",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Which physical features are part of an animal that would most likely be classified as a reptile?\n\n\nChoices:\nA) fur and claws\nB) dry skin and scales\nC) wings, feathers, and claws\nD) scales, moist skin, and fins\n\nProvide an answer to the following question:\n\nQ: Which physical features are part of an animal that would most likely be classified as a reptile?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "B",
+          "logprob": -0.0039009632891975343,
+          "probability": 0.996106635583908
+        }
+      ],
+      "decision_process": {
+        "selected_text": "B",
+        "matched_choice": "B",
+        "confidence_computation": "exp(logprob) = exp(-0.0039) = 0.9961"
+      },
+      "final_metrics": {
+        "predicted": "B",
+        "correct": true,
+        "confidence": 0.996106635583908,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

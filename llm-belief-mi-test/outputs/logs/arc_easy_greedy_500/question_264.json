@@ -1,0 +1,51 @@
+{
+  "question_id": 264,
+  "question_text": "Which of these is a threat to the survival of an ecosystem?",
+  "choices": [
+    "A: predator-prey population cycles",
+    "B: less biomass at higher levels of the food web",
+    "C: a shrinking variety of animal and plant species",
+    "D: competition among some consumer populations"
+  ],
+  "gold_answer": "C",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Which of these is a threat to the survival of an ecosystem?\n\n\nChoices:\nA) predator-prey population cycles\nB) less biomass at higher levels of the food web\nC) a shrinking variety of animal and plant species\nD) competition among some consumer populations\n\nProvide an answer to the following question:\n\nQ: Which of these is a threat to the survival of an ecosystem?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "C",
+          "logprob": -0.24452609426225536,
+          "probability": 0.7830755543198801
+        }
+      ],
+      "decision_process": {
+        "selected_text": "C",
+        "matched_choice": "C",
+        "confidence_computation": "exp(logprob) = exp(-0.2445) = 0.7831"
+      },
+      "final_metrics": {
+        "predicted": "C",
+        "correct": true,
+        "confidence": 0.7830755543198801,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

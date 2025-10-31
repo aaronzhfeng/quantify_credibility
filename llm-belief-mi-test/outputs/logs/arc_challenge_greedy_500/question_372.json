@@ -1,0 +1,51 @@
+{
+  "question_id": 372,
+  "question_text": "John drove a truck for one hour at a rate of 80 kilometers per hour. The next hour, he drove at 100 kilometers per hour. What was his average speed during those two hours?",
+  "choices": [
+    "A: 80 kilometers per hour",
+    "B: 90 kilometers per hour",
+    "C: 100 kilometers per hour",
+    "D: 180 kilometers per hour"
+  ],
+  "gold_answer": "B",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: John drove a truck for one hour at a rate of 80 kilometers per hour. The next hour, he drove at 100 kilometers per hour. What was his average speed during those two hours?\n\n\nChoices:\nA) 80 kilometers per hour\nB) 90 kilometers per hour\nC) 100 kilometers per hour\nD) 180 kilometers per hour\n\nProvide an answer to the following question:\n\nQ: John drove a truck for one hour at a rate of 80 kilometers per hour. The next hour, he drove at 100 kilometers per hour. What was his average speed during those two hours?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "B",
+          "logprob": -0.7561218779883347,
+          "probability": 0.46948361583709114
+        }
+      ],
+      "decision_process": {
+        "selected_text": "B",
+        "matched_choice": "B",
+        "confidence_computation": "exp(logprob) = exp(-0.7561) = 0.4695"
+      },
+      "final_metrics": {
+        "predicted": "B",
+        "correct": true,
+        "confidence": 0.46948361583709114,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

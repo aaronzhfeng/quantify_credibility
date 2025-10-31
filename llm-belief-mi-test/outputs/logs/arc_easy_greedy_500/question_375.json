@@ -1,0 +1,51 @@
+{
+  "question_id": 375,
+  "question_text": "Ernie made a diagram to model Earth's orbit. What shape is most like what Ernie drew for the orbit?",
+  "choices": [
+    "A: square",
+    "B: oval",
+    "C: triangle",
+    "D: rectangle"
+  ],
+  "gold_answer": "B",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Ernie made a diagram to model Earth's orbit. What shape is most like what Ernie drew for the orbit?\n\n\nChoices:\nA) square\nB) oval\nC) triangle\nD) rectangle\n\nProvide an answer to the following question:\n\nQ: Ernie made a diagram to model Earth's orbit. What shape is most like what Ernie drew for the orbit?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "B",
+          "logprob": -0.012787556006514933,
+          "probability": 0.9872938573921773
+        }
+      ],
+      "decision_process": {
+        "selected_text": "B",
+        "matched_choice": "B",
+        "confidence_computation": "exp(logprob) = exp(-0.0128) = 0.9873"
+      },
+      "final_metrics": {
+        "predicted": "B",
+        "correct": true,
+        "confidence": 0.9872938573921773,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

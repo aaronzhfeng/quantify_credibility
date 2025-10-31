@@ -1,0 +1,51 @@
+{
+  "question_id": 252,
+  "question_text": "Six puppies were born at the same time. After 6 months, one of the puppies was much heavier than the others. Which of the following is the most likely explanation for difference in size of that puppy?",
+  "choices": [
+    "A: It ate more food.",
+    "B: It was more active.",
+    "C: It drank more water.",
+    "D: It received more sunlight."
+  ],
+  "gold_answer": "A",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Six puppies were born at the same time. After 6 months, one of the puppies was much heavier than the others. Which of the following is the most likely explanation for difference in size of that puppy?\n\n\nChoices:\nA) It ate more food.\nB) It was more active.\nC) It drank more water.\nD) It received more sunlight.\n\nProvide an answer to the following question:\n\nQ: Six puppies were born at the same time. After 6 months, one of the puppies was much heavier than the others. Which of the following is the most likely explanation for difference in size of that puppy?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "A",
+          "logprob": -0.20097625866765156,
+          "probability": 0.8179318501152392
+        }
+      ],
+      "decision_process": {
+        "selected_text": "A",
+        "matched_choice": "A",
+        "confidence_computation": "exp(logprob) = exp(-0.2010) = 0.8179"
+      },
+      "final_metrics": {
+        "predicted": "A",
+        "correct": true,
+        "confidence": 0.8179318501152392,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

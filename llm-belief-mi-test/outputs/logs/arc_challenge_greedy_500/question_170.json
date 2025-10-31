@@ -1,0 +1,51 @@
+{
+  "question_id": 170,
+  "question_text": "Which of these chemical equations demonstrates the law of conservation of mass as it applies to the combustion of ethane?",
+  "choices": [
+    "A: C_{2}H_{6} + 3O_{2} -> 2CO_{2} + 3H_{2}O",
+    "B: C_{2}H_{6} + 5O_{2} -> 2CO_{2} + 3H_{2}O",
+    "C: 2C_{2}H_{6} + 5O_{2} -> 4CO_{2} + 4H_{2}O",
+    "D: 2C_{2}H_{6} + 7O_{2} -> 4CO_{2} + 6H_{2}O"
+  ],
+  "gold_answer": "D",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Which of these chemical equations demonstrates the law of conservation of mass as it applies to the combustion of ethane?\n\n\nChoices:\nA) C_{2}H_{6} + 3O_{2} -> 2CO_{2} + 3H_{2}O\nB) C_{2}H_{6} + 5O_{2} -> 2CO_{2} + 3H_{2}O\nC) 2C_{2}H_{6} + 5O_{2} -> 4CO_{2} + 4H_{2}O\nD) 2C_{2}H_{6} + 7O_{2} -> 4CO_{2} + 6H_{2}O\n\nProvide an answer to the following question:\n\nQ: Which of these chemical equations demonstrates the law of conservation of mass as it applies to the combustion of ethane?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "A",
+          "logprob": -0.7508980762213469,
+          "probability": 0.47194252200669806
+        }
+      ],
+      "decision_process": {
+        "selected_text": "A",
+        "matched_choice": "A",
+        "confidence_computation": "exp(logprob) = exp(-0.7509) = 0.4719"
+      },
+      "final_metrics": {
+        "predicted": "A",
+        "correct": false,
+        "confidence": 0.47194252200669806,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

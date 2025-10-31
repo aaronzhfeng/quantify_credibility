@@ -1,0 +1,51 @@
+{
+  "question_id": 166,
+  "question_text": "What are two resources in terrestrial biomes that most vertebrates (animals with backbones) compete for?",
+  "choices": [
+    "A: sunlight and soil",
+    "B: oxygen and carbon dioxide",
+    "C: food and nesting areas",
+    "D: soil and salt water"
+  ],
+  "gold_answer": "C",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: What are two resources in terrestrial biomes that most vertebrates (animals with backbones) compete for?\n\n\nChoices:\nA) sunlight and soil\nB) oxygen and carbon dioxide\nC) food and nesting areas\nD) soil and salt water\n\nProvide an answer to the following question:\n\nQ: What are two resources in terrestrial biomes that most vertebrates (animals with backbones) compete for?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "C",
+          "logprob": -0.5459408536553383,
+          "probability": 0.5792964936376025
+        }
+      ],
+      "decision_process": {
+        "selected_text": "C",
+        "matched_choice": "C",
+        "confidence_computation": "exp(logprob) = exp(-0.5459) = 0.5793"
+      },
+      "final_metrics": {
+        "predicted": "C",
+        "correct": true,
+        "confidence": 0.5792964936376025,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

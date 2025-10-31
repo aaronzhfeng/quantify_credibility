@@ -1,0 +1,51 @@
+{
+  "question_id": 341,
+  "question_text": "Anne and her father find a 30-million year-old tropical plant fossil in Louisiana. Which question does the fossil help them answer?",
+  "choices": [
+    "A: Were there mountains in Louisiana 30 million years ago?",
+    "B: What was the climate like in Louisiana 30 million years ago?",
+    "C: Were there earthquakes in Louisiana 30 million years ago?",
+    "D: What kind of animals lived in Louisiana 30 million years ago?"
+  ],
+  "gold_answer": "B",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Anne and her father find a 30-million year-old tropical plant fossil in Louisiana. Which question does the fossil help them answer?\n\n\nChoices:\nA) Were there mountains in Louisiana 30 million years ago?\nB) What was the climate like in Louisiana 30 million years ago?\nC) Were there earthquakes in Louisiana 30 million years ago?\nD) What kind of animals lived in Louisiana 30 million years ago?\n\nProvide an answer to the following question:\n\nQ: Anne and her father find a 30-million year-old tropical plant fossil in Louisiana. Which question does the fossil help them answer?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "B",
+          "logprob": -0.13840786409855355,
+          "probability": 0.8707434743082826
+        }
+      ],
+      "decision_process": {
+        "selected_text": "B",
+        "matched_choice": "B",
+        "confidence_computation": "exp(logprob) = exp(-0.1384) = 0.8707"
+      },
+      "final_metrics": {
+        "predicted": "B",
+        "correct": true,
+        "confidence": 0.8707434743082826,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

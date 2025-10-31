@@ -1,0 +1,51 @@
+{
+  "question_id": 63,
+  "question_text": "What are genes composed of?",
+  "choices": [
+    "1: offspring",
+    "2: DNA",
+    "3: cells",
+    "4: traits"
+  ],
+  "gold_answer": "2",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: What are genes composed of?\n\n\nChoices:\n1) offspring\n2) DNA\n3) cells\n4) traits\n\nProvide an answer to the following question:\n\nQ: What are genes composed of?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "B",
+          "logprob": -0.5112120546400547,
+          "probability": 0.5997681862684378
+        }
+      ],
+      "decision_process": {
+        "selected_text": "B",
+        "matched_choice": "1",
+        "confidence_computation": "exp(logprob) = exp(-0.5112) = 0.5998"
+      },
+      "final_metrics": {
+        "predicted": "1",
+        "correct": false,
+        "confidence": 0.5997681862684378,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

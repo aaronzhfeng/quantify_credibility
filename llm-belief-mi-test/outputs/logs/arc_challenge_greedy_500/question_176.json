@@ -1,0 +1,51 @@
+{
+  "question_id": 176,
+  "question_text": "Certain trees, such as the dogwood, can be inhabited by a fungus that damages their leaves. Which of the following best describes the relationship between the tree and the fungus?",
+  "choices": [
+    "A: parasitism",
+    "B: saprophytism",
+    "C: mutualism",
+    "D: commensalism"
+  ],
+  "gold_answer": "A",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Certain trees, such as the dogwood, can be inhabited by a fungus that damages their leaves. Which of the following best describes the relationship between the tree and the fungus?\n\n\nChoices:\nA) parasitism\nB) saprophytism\nC) mutualism\nD) commensalism\n\nProvide an answer to the following question:\n\nQ: Certain trees, such as the dogwood, can be inhabited by a fungus that damages their leaves. Which of the following best describes the relationship between the tree and the fungus?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "A",
+          "logprob": -0.45731952556525357,
+          "probability": 0.6329780550760272
+        }
+      ],
+      "decision_process": {
+        "selected_text": "A",
+        "matched_choice": "A",
+        "confidence_computation": "exp(logprob) = exp(-0.4573) = 0.6330"
+      },
+      "final_metrics": {
+        "predicted": "A",
+        "correct": true,
+        "confidence": 0.6329780550760272,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

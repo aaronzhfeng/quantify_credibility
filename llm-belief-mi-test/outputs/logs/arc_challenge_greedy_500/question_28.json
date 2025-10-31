@@ -1,0 +1,51 @@
+{
+  "question_id": 28,
+  "question_text": "Tiny organisms called plankton live in oceans. Some plankton can take energy from the Sun and turn it into food. How are plankton most useful to the animals that live in the ocean?",
+  "choices": [
+    "A: Plankton are colorful.",
+    "B: Plankton clean the water.",
+    "C: Plankton release oxygen.",
+    "D: Plankton reproduce quickly."
+  ],
+  "gold_answer": "C",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Tiny organisms called plankton live in oceans. Some plankton can take energy from the Sun and turn it into food. How are plankton most useful to the animals that live in the ocean?\n\n\nChoices:\nA) Plankton are colorful.\nB) Plankton clean the water.\nC) Plankton release oxygen.\nD) Plankton reproduce quickly.\n\nProvide an answer to the following question:\n\nQ: Tiny organisms called plankton live in oceans. Some plankton can take energy from the Sun and turn it into food. How are plankton most useful to the animals that live in the ocean?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "C",
+          "logprob": -0.06575154303573072,
+          "probability": 0.9363634814207957
+        }
+      ],
+      "decision_process": {
+        "selected_text": "C",
+        "matched_choice": "C",
+        "confidence_computation": "exp(logprob) = exp(-0.0658) = 0.9364"
+      },
+      "final_metrics": {
+        "predicted": "C",
+        "correct": true,
+        "confidence": 0.9363634814207957,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

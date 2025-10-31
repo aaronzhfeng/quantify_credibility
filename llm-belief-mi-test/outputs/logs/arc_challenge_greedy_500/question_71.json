@@ -1,0 +1,51 @@
+{
+  "question_id": 71,
+  "question_text": "Which is most useful to a student who is separating aluminum screws from steel screws?",
+  "choices": [
+    "A: a large funnel",
+    "B: a screen filter",
+    "C: a horseshoe magnet",
+    "D: a magnifying glass"
+  ],
+  "gold_answer": "C",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Which is most useful to a student who is separating aluminum screws from steel screws?\n\n\nChoices:\nA) a large funnel\nB) a screen filter\nC) a horseshoe magnet\nD) a magnifying glass\n\nProvide an answer to the following question:\n\nQ: Which is most useful to a student who is separating aluminum screws from steel screws?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "C",
+          "logprob": -0.3152801383694168,
+          "probability": 0.729584461037132
+        }
+      ],
+      "decision_process": {
+        "selected_text": "C",
+        "matched_choice": "C",
+        "confidence_computation": "exp(logprob) = exp(-0.3153) = 0.7296"
+      },
+      "final_metrics": {
+        "predicted": "C",
+        "correct": true,
+        "confidence": 0.729584461037132,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

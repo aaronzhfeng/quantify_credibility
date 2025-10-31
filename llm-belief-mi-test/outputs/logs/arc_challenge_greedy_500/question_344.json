@@ -1,0 +1,51 @@
+{
+  "question_id": 344,
+  "question_text": "El Cajon Pass in California is becoming higher than the land around it at a rate of nearly 1 centimeter each year. Which statement is true about the area?",
+  "choices": [
+    "A: Erosion is slower than uplift at El Cajon Pass.",
+    "B: Plates are separating at El Cajon Pass.",
+    "C: Mountain building is slower than erosion at El Cajon Pass.",
+    "D: Erosion and uplift are balanced at El Cajon Pass."
+  ],
+  "gold_answer": "A",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: El Cajon Pass in California is becoming higher than the land around it at a rate of nearly 1 centimeter each year. Which statement is true about the area?\n\n\nChoices:\nA) Erosion is slower than uplift at El Cajon Pass.\nB) Plates are separating at El Cajon Pass.\nC) Mountain building is slower than erosion at El Cajon Pass.\nD) Erosion and uplift are balanced at El Cajon Pass.\n\nProvide an answer to the following question:\n\nQ: El Cajon Pass in California is becoming higher than the land around it at a rate of nearly 1 centimeter each year. Which statement is true about the area?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "D",
+          "logprob": -0.8893484975415049,
+          "probability": 0.41092338315632543
+        }
+      ],
+      "decision_process": {
+        "selected_text": "D",
+        "matched_choice": "D",
+        "confidence_computation": "exp(logprob) = exp(-0.8893) = 0.4109"
+      },
+      "final_metrics": {
+        "predicted": "D",
+        "correct": false,
+        "confidence": 0.41092338315632543,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

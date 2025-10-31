@@ -1,0 +1,51 @@
+{
+  "question_id": 483,
+  "question_text": "Structures in the universe are grouped into large systems, each of which are made up of smaller systems. Which of the following is the largest system of which Earth is only a very small part?",
+  "choices": [
+    "A: Jovian planets",
+    "B: Halley's comet",
+    "C: Milky Way galaxy",
+    "D: Orion's belt"
+  ],
+  "gold_answer": "C",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Structures in the universe are grouped into large systems, each of which are made up of smaller systems. Which of the following is the largest system of which Earth is only a very small part?\n\n\nChoices:\nA) Jovian planets\nB) Halley's comet\nC) Milky Way galaxy\nD) Orion's belt\n\nProvide an answer to the following question:\n\nQ: Structures in the universe are grouped into large systems, each of which are made up of smaller systems. Which of the following is the largest system of which Earth is only a very small part?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "C",
+          "logprob": -0.1587555008009076,
+          "probability": 0.853204941393807
+        }
+      ],
+      "decision_process": {
+        "selected_text": "C",
+        "matched_choice": "C",
+        "confidence_computation": "exp(logprob) = exp(-0.1588) = 0.8532"
+      },
+      "final_metrics": {
+        "predicted": "C",
+        "correct": true,
+        "confidence": 0.853204941393807,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

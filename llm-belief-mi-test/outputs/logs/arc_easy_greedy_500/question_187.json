@@ -1,0 +1,51 @@
+{
+  "question_id": 187,
+  "question_text": "Which energy transformation occurs during active transport in a cell?",
+  "choices": [
+    "A: light energy -> chemical energy",
+    "B: kinetic energy -> potential energy",
+    "C: chemical energy -> mechanical energy",
+    "D: mechanical energy -> electrical energy"
+  ],
+  "gold_answer": "C",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Which energy transformation occurs during active transport in a cell?\n\n\nChoices:\nA) light energy -> chemical energy\nB) kinetic energy -> potential energy\nC) chemical energy -> mechanical energy\nD) mechanical energy -> electrical energy\n\nProvide an answer to the following question:\n\nQ: Which energy transformation occurs during active transport in a cell?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "A",
+          "logprob": -0.18181494576856494,
+          "probability": 0.8337556161453572
+        }
+      ],
+      "decision_process": {
+        "selected_text": "A",
+        "matched_choice": "A",
+        "confidence_computation": "exp(logprob) = exp(-0.1818) = 0.8338"
+      },
+      "final_metrics": {
+        "predicted": "A",
+        "correct": false,
+        "confidence": 0.8337556161453572,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

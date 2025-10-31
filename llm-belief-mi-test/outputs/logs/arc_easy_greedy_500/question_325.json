@@ -1,0 +1,51 @@
+{
+  "question_id": 325,
+  "question_text": "Three scientists conducted the same experiment to analyze the effectiveness of a cleaning agent on household bacteria. What is the main advantage of having the experiment repeated?",
+  "choices": [
+    "A: More bacteria will be destroyed.",
+    "B: The results will be more reliable.",
+    "C: A scientific journal will publish their work.",
+    "D: The conclusion will lead to new discoveries."
+  ],
+  "gold_answer": "B",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Three scientists conducted the same experiment to analyze the effectiveness of a cleaning agent on household bacteria. What is the main advantage of having the experiment repeated?\n\n\nChoices:\nA) More bacteria will be destroyed.\nB) The results will be more reliable.\nC) A scientific journal will publish their work.\nD) The conclusion will lead to new discoveries.\n\nProvide an answer to the following question:\n\nQ: Three scientists conducted the same experiment to analyze the effectiveness of a cleaning agent on household bacteria. What is the main advantage of having the experiment repeated?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "B",
+          "logprob": -0.019308649003505707,
+          "probability": 0.9808765689412186
+        }
+      ],
+      "decision_process": {
+        "selected_text": "B",
+        "matched_choice": "B",
+        "confidence_computation": "exp(logprob) = exp(-0.0193) = 0.9809"
+      },
+      "final_metrics": {
+        "predicted": "B",
+        "correct": true,
+        "confidence": 0.9808765689412186,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

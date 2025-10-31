@@ -1,0 +1,51 @@
+{
+  "question_id": 230,
+  "question_text": "In a forested region, mountain lions and wolves prey upon the deer population to near disappearance. To protect the deer population, most of the mountain lions and wolves in this region were eliminated through hunting. As a result, over-hunting occurred and the deer population increased rapidly. After several years, what most likely will happen to the deer population in the absence of its predators?",
+  "choices": [
+    "A: It will stabilize as the birth rate equals the death rate.",
+    "B: It will continue to increase steadily from year to year.",
+    "C: It will increase as other herbivores move into the region.",
+    "D: It will decrease due to overcrowding causing a food shortage."
+  ],
+  "gold_answer": "D",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: In a forested region, mountain lions and wolves prey upon the deer population to near disappearance. To protect the deer population, most of the mountain lions and wolves in this region were eliminated through hunting. As a result, over-hunting occurred and the deer population increased rapidly. After several years, what most likely will happen to the deer population in the absence of its predators?\n\n\nChoices:\nA) It will stabilize as the birth rate equals the death rate.\nB) It will continue to increase steadily from year to year.\nC) It will increase as other herbivores move into the region.\nD) It will decrease due to overcrowding causing a food shortage.\n\nProvide an answer to the following question:\n\nQ: In a forested region, mountain lions and wolves prey upon the deer population to near disappearance. To protect the deer population, most of the mountain lions and wolves in this region were eliminated through hunting. As a result, over-hunting occurred and the deer population increased rapidly. After several years, what most likely will happen to the deer population in the absence of its predators?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "D",
+          "logprob": -0.7565040905028582,
+          "probability": 0.46930420761197306
+        }
+      ],
+      "decision_process": {
+        "selected_text": "D",
+        "matched_choice": "D",
+        "confidence_computation": "exp(logprob) = exp(-0.7565) = 0.4693"
+      },
+      "final_metrics": {
+        "predicted": "D",
+        "correct": true,
+        "confidence": 0.46930420761197306,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

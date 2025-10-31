@@ -1,0 +1,51 @@
+{
+  "question_id": 135,
+  "question_text": "Part of the east coast of South America and the west coast of Africa have matching fossils within the same series of rock layers. This provides evidence that these two continents were once",
+  "choices": [
+    "1: separated by a much larger ocean",
+    "2: joined together as one landmass",
+    "3: located near the North Pole",
+    "4: in a different hemisphere"
+  ],
+  "gold_answer": "2",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Part of the east coast of South America and the west coast of Africa have matching fossils within the same series of rock layers. This provides evidence that these two continents were once\n\n\nChoices:\n1) separated by a much larger ocean\n2) joined together as one landmass\n3) located near the North Pole\n4) in a different hemisphere\n\nProvide an answer to the following question:\n\nQ: Part of the east coast of South America and the west coast of Africa have matching fossils within the same series of rock layers. This provides evidence that these two continents were once\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "A",
+          "logprob": -0.7017680637072772,
+          "probability": 0.4957080850560325
+        }
+      ],
+      "decision_process": {
+        "selected_text": "A",
+        "matched_choice": "1",
+        "confidence_computation": "exp(logprob) = exp(-0.7018) = 0.4957"
+      },
+      "final_metrics": {
+        "predicted": "1",
+        "correct": false,
+        "confidence": 0.4957080850560325,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

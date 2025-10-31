@@ -1,0 +1,51 @@
+{
+  "question_id": 401,
+  "question_text": "The process of rain forest deforestation affects ecosystems on a global scale. Wildlife, people, and climate can be affected. One of the long-term effects of deforestation is that",
+  "choices": [
+    "A: organisms may become extinct.",
+    "B: biodiversity will continue to increase.",
+    "C: more plants used for medicines can be discovered.",
+    "D: there will be an increase in the gene pool for future organisms."
+  ],
+  "gold_answer": "A",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: The process of rain forest deforestation affects ecosystems on a global scale. Wildlife, people, and climate can be affected. One of the long-term effects of deforestation is that\n\n\nChoices:\nA) organisms may become extinct.\nB) biodiversity will continue to increase.\nC) more plants used for medicines can be discovered.\nD) there will be an increase in the gene pool for future organisms.\n\nProvide an answer to the following question:\n\nQ: The process of rain forest deforestation affects ecosystems on a global scale. Wildlife, people, and climate can be affected. One of the long-term effects of deforestation is that\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "A",
+          "logprob": -0.003489339906082023,
+          "probability": 0.9965167407658416
+        }
+      ],
+      "decision_process": {
+        "selected_text": "A",
+        "matched_choice": "A",
+        "confidence_computation": "exp(logprob) = exp(-0.0035) = 0.9965"
+      },
+      "final_metrics": {
+        "predicted": "A",
+        "correct": true,
+        "confidence": 0.9965167407658416,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "question_id": 166,
+  "question_text": "Peristalsis helps move nutrients through parts of the body by using wavelike contractions. In which system is the function used?",
+  "choices": [
+    "A: circulatory",
+    "B: digestive",
+    "C: endocrine",
+    "D: nervous"
+  ],
+  "gold_answer": "B",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Peristalsis helps move nutrients through parts of the body by using wavelike contractions. In which system is the function used?\n\n\nChoices:\nA) circulatory\nB) digestive\nC) endocrine\nD) nervous\n\nProvide an answer to the following question:\n\nQ: Peristalsis helps move nutrients through parts of the body by using wavelike contractions. In which system is the function used?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "B",
+          "logprob": -0.0007780302839819342,
+          "probability": 0.9992222723031005
+        }
+      ],
+      "decision_process": {
+        "selected_text": "B",
+        "matched_choice": "B",
+        "confidence_computation": "exp(logprob) = exp(-0.0008) = 0.9992"
+      },
+      "final_metrics": {
+        "predicted": "B",
+        "correct": true,
+        "confidence": 0.9992222723031005,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "question_id": 455,
+  "question_text": "An astronomer collects data from observations of a star. The astronomer thinks the data indicate that a large planet orbits the star. How should the astronomer report the findings to best support the scientific reliability of the data?",
+  "choices": [
+    "A: by writing a post to an astronomy-based science blog",
+    "B: by sending an article to a peer-reviewed astronomy journal",
+    "C: by creating a personal webpage that is focused on astronomy",
+    "D: by discussing the data with a reporter who understands astronomy"
+  ],
+  "gold_answer": "B",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: An astronomer collects data from observations of a star. The astronomer thinks the data indicate that a large planet orbits the star. How should the astronomer report the findings to best support the scientific reliability of the data?\n\n\nChoices:\nA) by writing a post to an astronomy-based science blog\nB) by sending an article to a peer-reviewed astronomy journal\nC) by creating a personal webpage that is focused on astronomy\nD) by discussing the data with a reporter who understands astronomy\n\nProvide an answer to the following question:\n\nQ: An astronomer collects data from observations of a star. The astronomer thinks the data indicate that a large planet orbits the star. How should the astronomer report the findings to best support the scientific reliability of the data?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "B",
+          "logprob": -0.004996546660549939,
+          "probability": 0.9950159153144631
+        }
+      ],
+      "decision_process": {
+        "selected_text": "B",
+        "matched_choice": "B",
+        "confidence_computation": "exp(logprob) = exp(-0.0050) = 0.9950"
+      },
+      "final_metrics": {
+        "predicted": "B",
+        "correct": true,
+        "confidence": 0.9950159153144631,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

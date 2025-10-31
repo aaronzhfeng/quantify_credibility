@@ -1,0 +1,51 @@
+{
+  "question_id": 236,
+  "question_text": "When there is an accidental spill in the lab, it is most important to know",
+  "choices": [
+    "A: where the safety goggles are stored.",
+    "B: what number to call for poison control.",
+    "C: where the fire extinguisher is located.",
+    "D: which materials are safe to use for cleaning."
+  ],
+  "gold_answer": "D",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: When there is an accidental spill in the lab, it is most important to know\n\n\nChoices:\nA) where the safety goggles are stored.\nB) what number to call for poison control.\nC) where the fire extinguisher is located.\nD) which materials are safe to use for cleaning.\n\nProvide an answer to the following question:\n\nQ: When there is an accidental spill in the lab, it is most important to know\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "B",
+          "logprob": -0.44557647686451674,
+          "probability": 0.6404549621236552
+        }
+      ],
+      "decision_process": {
+        "selected_text": "B",
+        "matched_choice": "B",
+        "confidence_computation": "exp(logprob) = exp(-0.4456) = 0.6405"
+      },
+      "final_metrics": {
+        "predicted": "B",
+        "correct": false,
+        "confidence": 0.6404549621236552,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

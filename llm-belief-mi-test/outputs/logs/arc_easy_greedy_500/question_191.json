@@ -1,0 +1,51 @@
+{
+  "question_id": 191,
+  "question_text": "Air pollution can influence a person's quality of life. Which best identifies the influence of air pollution?",
+  "choices": [
+    "A: It is a behavioral influence.",
+    "B: It is a genetic influence.",
+    "C: It is an environmental influence.",
+    "D: It is a dietary influence."
+  ],
+  "gold_answer": "C",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Air pollution can influence a person's quality of life. Which best identifies the influence of air pollution?\n\n\nChoices:\nA) It is a behavioral influence.\nB) It is a genetic influence.\nC) It is an environmental influence.\nD) It is a dietary influence.\n\nProvide an answer to the following question:\n\nQ: Air pollution can influence a person's quality of life. Which best identifies the influence of air pollution?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "C",
+          "logprob": -0.021246389485895634,
+          "probability": 0.9789777250328632
+        }
+      ],
+      "decision_process": {
+        "selected_text": "C",
+        "matched_choice": "C",
+        "confidence_computation": "exp(logprob) = exp(-0.0212) = 0.9790"
+      },
+      "final_metrics": {
+        "predicted": "C",
+        "correct": true,
+        "confidence": 0.9789777250328632,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "question_id": 181,
+  "question_text": "Which of the following statements best describes the role of gravity in the formation of stars?",
+  "choices": [
+    "A: Gravity converts solid matter into gases and light energy.",
+    "B: Gravity causes gases and dust particles to condense into spheres.",
+    "C: Gravity cools gases and liquids until they become one solid mass.",
+    "D: Gravity pushes rocks and dust particles outward from a dense center."
+  ],
+  "gold_answer": "B",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Which of the following statements best describes the role of gravity in the formation of stars?\n\n\nChoices:\nA) Gravity converts solid matter into gases and light energy.\nB) Gravity causes gases and dust particles to condense into spheres.\nC) Gravity cools gases and liquids until they become one solid mass.\nD) Gravity pushes rocks and dust particles outward from a dense center.\n\nProvide an answer to the following question:\n\nQ: Which of the following statements best describes the role of gravity in the formation of stars?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "B",
+          "logprob": -0.003593305154936388,
+          "probability": 0.9964131430402753
+        }
+      ],
+      "decision_process": {
+        "selected_text": "B",
+        "matched_choice": "B",
+        "confidence_computation": "exp(logprob) = exp(-0.0036) = 0.9964"
+      },
+      "final_metrics": {
+        "predicted": "B",
+        "correct": true,
+        "confidence": 0.9964131430402753,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

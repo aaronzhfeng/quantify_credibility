@@ -1,0 +1,51 @@
+{
+  "question_id": 64,
+  "question_text": "Dominic is observing a volvox colony and a paramecium under a microscope. He makes a note in his journal that the volvox colony and the paramecium are similar because they have many organelles for movement. What would Dominic most likely notice about the movement of a volvox colony and a paramecium?",
+  "choices": [
+    "A: They both move at the same rate.",
+    "B: They both move away from light.",
+    "C: They both move in the same direction.",
+    "D: They both move toward an energy source."
+  ],
+  "gold_answer": "D",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Dominic is observing a volvox colony and a paramecium under a microscope. He makes a note in his journal that the volvox colony and the paramecium are similar because they have many organelles for movement. What would Dominic most likely notice about the movement of a volvox colony and a paramecium?\n\n\nChoices:\nA) They both move at the same rate.\nB) They both move away from light.\nC) They both move in the same direction.\nD) They both move toward an energy source.\n\nProvide an answer to the following question:\n\nQ: Dominic is observing a volvox colony and a paramecium under a microscope. He makes a note in his journal that the volvox colony and the paramecium are similar because they have many organelles for movement. What would Dominic most likely notice about the movement of a volvox colony and a paramecium?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "B",
+          "logprob": -0.9869915658491664,
+          "probability": 0.37269623822660386
+        }
+      ],
+      "decision_process": {
+        "selected_text": "B",
+        "matched_choice": "B",
+        "confidence_computation": "exp(logprob) = exp(-0.9870) = 0.3727"
+      },
+      "final_metrics": {
+        "predicted": "B",
+        "correct": false,
+        "confidence": 0.37269623822660386,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

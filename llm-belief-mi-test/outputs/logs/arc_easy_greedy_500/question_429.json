@@ -1,0 +1,51 @@
+{
+  "question_id": 429,
+  "question_text": "All of the different organisms interacting in a pond make up",
+  "choices": [
+    "1: a community",
+    "2: a population",
+    "3: the water cycle",
+    "4: the habitat"
+  ],
+  "gold_answer": "1",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: All of the different organisms interacting in a pond make up\n\n\nChoices:\n1) a community\n2) a population\n3) the water cycle\n4) the habitat\n\nProvide an answer to the following question:\n\nQ: All of the different organisms interacting in a pond make up\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "A",
+          "logprob": -0.0034600194194354117,
+          "probability": 0.9965459595499847
+        }
+      ],
+      "decision_process": {
+        "selected_text": "A",
+        "matched_choice": "1",
+        "confidence_computation": "exp(logprob) = exp(-0.0035) = 0.9965"
+      },
+      "final_metrics": {
+        "predicted": "1",
+        "correct": true,
+        "confidence": 0.9965459595499847,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "question_id": 178,
+  "question_text": "Elizabeth uses a specific type of whistle to call her dogs. The noise made by the whistle is heard by the dogs but cannot be heard by the human ear. Which statement best describes why humans cannot hear the sound made by the whistle?",
+  "choices": [
+    "A: The speed of the sound is too fast.",
+    "B: The amplitude of the sound is too low.",
+    "C: The frequency of the sound is too high.",
+    "D: The wavelength of the sound is too long."
+  ],
+  "gold_answer": "C",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Elizabeth uses a specific type of whistle to call her dogs. The noise made by the whistle is heard by the dogs but cannot be heard by the human ear. Which statement best describes why humans cannot hear the sound made by the whistle?\n\n\nChoices:\nA) The speed of the sound is too fast.\nB) The amplitude of the sound is too low.\nC) The frequency of the sound is too high.\nD) The wavelength of the sound is too long.\n\nProvide an answer to the following question:\n\nQ: Elizabeth uses a specific type of whistle to call her dogs. The noise made by the whistle is heard by the dogs but cannot be heard by the human ear. Which statement best describes why humans cannot hear the sound made by the whistle?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "C",
+          "logprob": -0.034528318559750915,
+          "probability": 0.9660609818434887
+        }
+      ],
+      "decision_process": {
+        "selected_text": "C",
+        "matched_choice": "C",
+        "confidence_computation": "exp(logprob) = exp(-0.0345) = 0.9661"
+      },
+      "final_metrics": {
+        "predicted": "C",
+        "correct": true,
+        "confidence": 0.9660609818434887,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

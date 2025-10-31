@@ -1,0 +1,51 @@
+{
+  "question_id": 87,
+  "question_text": "Which of the following statements is a scientific hypothesis?",
+  "choices": [
+    "A: Flossing has proven to be an effective method of improving oral health.",
+    "B: Many infectious diseases, such as gum disease, are caused by microorganisms.",
+    "C: In general, any method that reduces bacteria in the mouth will improve oral health.",
+    "D: An individual who flosses daily will be less likely to get gum disease than one who flosses weekly."
+  ],
+  "gold_answer": "D",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Which of the following statements is a scientific hypothesis?\n\n\nChoices:\nA) Flossing has proven to be an effective method of improving oral health.\nB) Many infectious diseases, such as gum disease, are caused by microorganisms.\nC) In general, any method that reduces bacteria in the mouth will improve oral health.\nD) An individual who flosses daily will be less likely to get gum disease than one who flosses weekly.\n\nProvide an answer to the following question:\n\nQ: Which of the following statements is a scientific hypothesis?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "D",
+          "logprob": -0.6905338141368702,
+          "probability": 0.5013083921208974
+        }
+      ],
+      "decision_process": {
+        "selected_text": "D",
+        "matched_choice": "D",
+        "confidence_computation": "exp(logprob) = exp(-0.6905) = 0.5013"
+      },
+      "final_metrics": {
+        "predicted": "D",
+        "correct": true,
+        "confidence": 0.5013083921208974,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

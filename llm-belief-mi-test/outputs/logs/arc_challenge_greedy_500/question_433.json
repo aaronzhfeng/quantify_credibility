@@ -1,0 +1,51 @@
+{
+  "question_id": 433,
+  "question_text": "A group of friends decided to go camping for the weekend. They gathered some tree branches and built a campfire. What type of energy of the tree branches did the friends use?",
+  "choices": [
+    "A: heat energy",
+    "B: kinetic energy",
+    "C: chemical energy",
+    "D: mechanical energy"
+  ],
+  "gold_answer": "C",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A group of friends decided to go camping for the weekend. They gathered some tree branches and built a campfire. What type of energy of the tree branches did the friends use?\n\n\nChoices:\nA) heat energy\nB) kinetic energy\nC) chemical energy\nD) mechanical energy\n\nProvide an answer to the following question:\n\nQ: A group of friends decided to go camping for the weekend. They gathered some tree branches and built a campfire. What type of energy of the tree branches did the friends use?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "C",
+          "logprob": -0.0646625611698255,
+          "probability": 0.9373837196816179
+        }
+      ],
+      "decision_process": {
+        "selected_text": "C",
+        "matched_choice": "C",
+        "confidence_computation": "exp(logprob) = exp(-0.0647) = 0.9374"
+      },
+      "final_metrics": {
+        "predicted": "C",
+        "correct": true,
+        "confidence": 0.9373837196816179,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

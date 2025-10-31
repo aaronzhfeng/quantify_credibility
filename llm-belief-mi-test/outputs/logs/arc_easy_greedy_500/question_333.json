@@ -1,0 +1,51 @@
+{
+  "question_id": 333,
+  "question_text": "Many flowers attract bees. Bees consume nectar from the flower for energy. How does this interaction benefit the plant?",
+  "choices": [
+    "A: by increasing photosynthesis",
+    "B: by pollinating it",
+    "C: by limiting growth",
+    "D: by reducing competition"
+  ],
+  "gold_answer": "B",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Many flowers attract bees. Bees consume nectar from the flower for energy. How does this interaction benefit the plant?\n\n\nChoices:\nA) by increasing photosynthesis\nB) by pollinating it\nC) by limiting growth\nD) by reducing competition\n\nProvide an answer to the following question:\n\nQ: Many flowers attract bees. Bees consume nectar from the flower for energy. How does this interaction benefit the plant?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "B",
+          "logprob": -0.003831435227766633,
+          "probability": 0.9961758953549795
+        }
+      ],
+      "decision_process": {
+        "selected_text": "B",
+        "matched_choice": "B",
+        "confidence_computation": "exp(logprob) = exp(-0.0038) = 0.9962"
+      },
+      "final_metrics": {
+        "predicted": "B",
+        "correct": true,
+        "confidence": 0.9961758953549795,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

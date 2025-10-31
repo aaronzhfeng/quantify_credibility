@@ -1,0 +1,51 @@
+{
+  "question_id": 428,
+  "question_text": "Work is a product of force and distance. Which of the following is an example of work?",
+  "choices": [
+    "A: sitting at a desk",
+    "B: pushing on a wall",
+    "C: riding a bike",
+    "D: reading a book"
+  ],
+  "gold_answer": "C",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Work is a product of force and distance. Which of the following is an example of work?\n\n\nChoices:\nA) sitting at a desk\nB) pushing on a wall\nC) riding a bike\nD) reading a book\n\nProvide an answer to the following question:\n\nQ: Work is a product of force and distance. Which of the following is an example of work?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "C",
+          "logprob": -0.49087404253077693,
+          "probability": 0.6120911666003324
+        }
+      ],
+      "decision_process": {
+        "selected_text": "C",
+        "matched_choice": "C",
+        "confidence_computation": "exp(logprob) = exp(-0.4909) = 0.6121"
+      },
+      "final_metrics": {
+        "predicted": "C",
+        "correct": true,
+        "confidence": 0.6120911666003324,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

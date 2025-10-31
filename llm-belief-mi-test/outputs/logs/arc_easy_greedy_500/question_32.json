@@ -1,0 +1,51 @@
+{
+  "question_id": 32,
+  "question_text": "Marshall learned that plants need a substance from the air to make their own food. What does a plant take from the air in the presence of sunlight?",
+  "choices": [
+    "A: carbon dioxide",
+    "B: hydrogen",
+    "C: nitrogen",
+    "D: oxygen"
+  ],
+  "gold_answer": "A",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Marshall learned that plants need a substance from the air to make their own food. What does a plant take from the air in the presence of sunlight?\n\n\nChoices:\nA) carbon dioxide\nB) hydrogen\nC) nitrogen\nD) oxygen\n\nProvide an answer to the following question:\n\nQ: Marshall learned that plants need a substance from the air to make their own food. What does a plant take from the air in the presence of sunlight?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "A",
+          "logprob": -0.016493278555572033,
+          "probability": 0.9836419908634316
+        }
+      ],
+      "decision_process": {
+        "selected_text": "A",
+        "matched_choice": "A",
+        "confidence_computation": "exp(logprob) = exp(-0.0165) = 0.9836"
+      },
+      "final_metrics": {
+        "predicted": "A",
+        "correct": true,
+        "confidence": 0.9836419908634316,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

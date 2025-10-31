@@ -1,0 +1,51 @@
+{
+  "question_id": 343,
+  "question_text": "The heath hen, an extinct small wild fowl, was a relative of the prairie chicken. Which of the following most likely caused extinction of the heath hen?",
+  "choices": [
+    "A: overhunting",
+    "B: stable climate",
+    "C: plentiful food supply",
+    "D: abundant nesting sites"
+  ],
+  "gold_answer": "A",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: The heath hen, an extinct small wild fowl, was a relative of the prairie chicken. Which of the following most likely caused extinction of the heath hen?\n\n\nChoices:\nA) overhunting\nB) stable climate\nC) plentiful food supply\nD) abundant nesting sites\n\nProvide an answer to the following question:\n\nQ: The heath hen, an extinct small wild fowl, was a relative of the prairie chicken. Which of the following most likely caused extinction of the heath hen?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "A",
+          "logprob": -0.004953525494784117,
+          "probability": 0.9950587229799067
+        }
+      ],
+      "decision_process": {
+        "selected_text": "A",
+        "matched_choice": "A",
+        "confidence_computation": "exp(logprob) = exp(-0.0050) = 0.9951"
+      },
+      "final_metrics": {
+        "predicted": "A",
+        "correct": true,
+        "confidence": 0.9950587229799067,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

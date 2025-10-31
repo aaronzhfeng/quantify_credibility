@@ -1,0 +1,51 @@
+{
+  "question_id": 68,
+  "question_text": "The salt in ocean water comes from all of the following except",
+  "choices": [
+    "A: eroding land.",
+    "B: melting glacial ice.",
+    "C: volcanic emissions.",
+    "D: reactions on the sea floor."
+  ],
+  "gold_answer": "B",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: The salt in ocean water comes from all of the following except\n\n\nChoices:\nA) eroding land.\nB) melting glacial ice.\nC) volcanic emissions.\nD) reactions on the sea floor.\n\nProvide an answer to the following question:\n\nQ: The salt in ocean water comes from all of the following except\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "D",
+          "logprob": -1.1295479794207495,
+          "probability": 0.3231793071084092
+        }
+      ],
+      "decision_process": {
+        "selected_text": "D",
+        "matched_choice": "D",
+        "confidence_computation": "exp(logprob) = exp(-1.1295) = 0.3232"
+      },
+      "final_metrics": {
+        "predicted": "D",
+        "correct": false,
+        "confidence": 0.3231793071084092,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

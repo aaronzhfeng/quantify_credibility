@@ -1,0 +1,499 @@
+{
+  "question_id": 372,
+  "question_text": "John drove a truck for one hour at a rate of 80 kilometers per hour. The next hour, he drove at 100 kilometers per hour. What was his average speed during those two hours?",
+  "choices": [
+    "A: 80 kilometers per hour",
+    "B: 90 kilometers per hour",
+    "C: 100 kilometers per hour",
+    "D: 180 kilometers per hour"
+  ],
+  "gold_answer": "B",
+  "methods": {
+    "mi_method": {
+      "description": "k=10 chains of length n=2, MI estimation",
+      "raw_inputs": [
+        {
+          "chain_id": 0,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: John drove a truck for one hour at a rate of 80 kilometers per hour. The next hour, he drove at 100 kilometers per hour. What was his average speed during those two hours?\n\n\nChoices:\nA) 80 kilometers per hour\nB) 90 kilometers per hour\nC) 100 kilometers per hour\nD) 180 kilometers per hour\n\nProvide an answer to the following question:\n\nQ: John drove a truck for one hour at a rate of 80 kilometers per hour. The next hour, he drove at 100 kilometers per hour. What was his average speed during those two hours?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 0,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: John drove a truck for one hour at a rate of 80 kilometers per hour. The next hour, he drove at 100 kilometers per hour. What was his average speed during those two hours?\n\n\nOne answer to question Q is B) 90 kilometers per hour.\n\n\nChoices:\nA) 80 kilometers per hour\nB) 90 kilometers per hour\nC) 100 kilometers per hour\nD) 180 kilometers per hour\n\nProvide an answer to the following question:\n\nQ: John drove a truck for one hour at a rate of 80 kilometers per hour. The next hour, he drove at 100 kilometers per hour. What was his average speed during those two hours?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 1,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: John drove a truck for one hour at a rate of 80 kilometers per hour. The next hour, he drove at 100 kilometers per hour. What was his average speed during those two hours?\n\n\nChoices:\nA) 80 kilometers per hour\nB) 90 kilometers per hour\nC) 100 kilometers per hour\nD) 180 kilometers per hour\n\nProvide an answer to the following question:\n\nQ: John drove a truck for one hour at a rate of 80 kilometers per hour. The next hour, he drove at 100 kilometers per hour. What was his average speed during those two hours?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 1,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: John drove a truck for one hour at a rate of 80 kilometers per hour. The next hour, he drove at 100 kilometers per hour. What was his average speed during those two hours?\n\n\nOne answer to question Q is B) 90 kilometers per hour.\n\n\nChoices:\nA) 80 kilometers per hour\nB) 90 kilometers per hour\nC) 100 kilometers per hour\nD) 180 kilometers per hour\n\nProvide an answer to the following question:\n\nQ: John drove a truck for one hour at a rate of 80 kilometers per hour. The next hour, he drove at 100 kilometers per hour. What was his average speed during those two hours?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 2,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: John drove a truck for one hour at a rate of 80 kilometers per hour. The next hour, he drove at 100 kilometers per hour. What was his average speed during those two hours?\n\n\nChoices:\nA) 80 kilometers per hour\nB) 90 kilometers per hour\nC) 100 kilometers per hour\nD) 180 kilometers per hour\n\nProvide an answer to the following question:\n\nQ: John drove a truck for one hour at a rate of 80 kilometers per hour. The next hour, he drove at 100 kilometers per hour. What was his average speed during those two hours?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 2,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: John drove a truck for one hour at a rate of 80 kilometers per hour. The next hour, he drove at 100 kilometers per hour. What was his average speed during those two hours?\n\n\nOne answer to question Q is B) 90 kilometers per hour.\n\n\nChoices:\nA) 80 kilometers per hour\nB) 90 kilometers per hour\nC) 100 kilometers per hour\nD) 180 kilometers per hour\n\nProvide an answer to the following question:\n\nQ: John drove a truck for one hour at a rate of 80 kilometers per hour. The next hour, he drove at 100 kilometers per hour. What was his average speed during those two hours?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 3,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: John drove a truck for one hour at a rate of 80 kilometers per hour. The next hour, he drove at 100 kilometers per hour. What was his average speed during those two hours?\n\n\nChoices:\nA) 80 kilometers per hour\nB) 90 kilometers per hour\nC) 100 kilometers per hour\nD) 180 kilometers per hour\n\nProvide an answer to the following question:\n\nQ: John drove a truck for one hour at a rate of 80 kilometers per hour. The next hour, he drove at 100 kilometers per hour. What was his average speed during those two hours?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 3,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: John drove a truck for one hour at a rate of 80 kilometers per hour. The next hour, he drove at 100 kilometers per hour. What was his average speed during those two hours?\n\n\nOne answer to question Q is B) 90 kilometers per hour.\n\n\nChoices:\nA) 80 kilometers per hour\nB) 90 kilometers per hour\nC) 100 kilometers per hour\nD) 180 kilometers per hour\n\nProvide an answer to the following question:\n\nQ: John drove a truck for one hour at a rate of 80 kilometers per hour. The next hour, he drove at 100 kilometers per hour. What was his average speed during those two hours?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 4,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: John drove a truck for one hour at a rate of 80 kilometers per hour. The next hour, he drove at 100 kilometers per hour. What was his average speed during those two hours?\n\n\nChoices:\nA) 80 kilometers per hour\nB) 90 kilometers per hour\nC) 100 kilometers per hour\nD) 180 kilometers per hour\n\nProvide an answer to the following question:\n\nQ: John drove a truck for one hour at a rate of 80 kilometers per hour. The next hour, he drove at 100 kilometers per hour. What was his average speed during those two hours?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 4,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: John drove a truck for one hour at a rate of 80 kilometers per hour. The next hour, he drove at 100 kilometers per hour. What was his average speed during those two hours?\n\n\nOne answer to question Q is B) 90 kilometers per hour.\n\n\nChoices:\nA) 80 kilometers per hour\nB) 90 kilometers per hour\nC) 100 kilometers per hour\nD) 180 kilometers per hour\n\nProvide an answer to the following question:\n\nQ: John drove a truck for one hour at a rate of 80 kilometers per hour. The next hour, he drove at 100 kilometers per hour. What was his average speed during those two hours?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 5,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: John drove a truck for one hour at a rate of 80 kilometers per hour. The next hour, he drove at 100 kilometers per hour. What was his average speed during those two hours?\n\n\nChoices:\nA) 80 kilometers per hour\nB) 90 kilometers per hour\nC) 100 kilometers per hour\nD) 180 kilometers per hour\n\nProvide an answer to the following question:\n\nQ: John drove a truck for one hour at a rate of 80 kilometers per hour. The next hour, he drove at 100 kilometers per hour. What was his average speed during those two hours?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 5,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: John drove a truck for one hour at a rate of 80 kilometers per hour. The next hour, he drove at 100 kilometers per hour. What was his average speed during those two hours?\n\n\nOne answer to question Q is C) 100 kilometers per hour.\n\n\nChoices:\nA) 80 kilometers per hour\nB) 90 kilometers per hour\nC) 100 kilometers per hour\nD) 180 kilometers per hour\n\nProvide an answer to the following question:\n\nQ: John drove a truck for one hour at a rate of 80 kilometers per hour. The next hour, he drove at 100 kilometers per hour. What was his average speed during those two hours?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 6,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: John drove a truck for one hour at a rate of 80 kilometers per hour. The next hour, he drove at 100 kilometers per hour. What was his average speed during those two hours?\n\n\nChoices:\nA) 80 kilometers per hour\nB) 90 kilometers per hour\nC) 100 kilometers per hour\nD) 180 kilometers per hour\n\nProvide an answer to the following question:\n\nQ: John drove a truck for one hour at a rate of 80 kilometers per hour. The next hour, he drove at 100 kilometers per hour. What was his average speed during those two hours?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 6,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: John drove a truck for one hour at a rate of 80 kilometers per hour. The next hour, he drove at 100 kilometers per hour. What was his average speed during those two hours?\n\n\nOne answer to question Q is B) 90 kilometers per hour.\n\n\nChoices:\nA) 80 kilometers per hour\nB) 90 kilometers per hour\nC) 100 kilometers per hour\nD) 180 kilometers per hour\n\nProvide an answer to the following question:\n\nQ: John drove a truck for one hour at a rate of 80 kilometers per hour. The next hour, he drove at 100 kilometers per hour. What was his average speed during those two hours?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 7,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: John drove a truck for one hour at a rate of 80 kilometers per hour. The next hour, he drove at 100 kilometers per hour. What was his average speed during those two hours?\n\n\nChoices:\nA) 80 kilometers per hour\nB) 90 kilometers per hour\nC) 100 kilometers per hour\nD) 180 kilometers per hour\n\nProvide an answer to the following question:\n\nQ: John drove a truck for one hour at a rate of 80 kilometers per hour. The next hour, he drove at 100 kilometers per hour. What was his average speed during those two hours?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 7,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: John drove a truck for one hour at a rate of 80 kilometers per hour. The next hour, he drove at 100 kilometers per hour. What was his average speed during those two hours?\n\n\nOne answer to question Q is C) 100 kilometers per hour.\n\n\nChoices:\nA) 80 kilometers per hour\nB) 90 kilometers per hour\nC) 100 kilometers per hour\nD) 180 kilometers per hour\n\nProvide an answer to the following question:\n\nQ: John drove a truck for one hour at a rate of 80 kilometers per hour. The next hour, he drove at 100 kilometers per hour. What was his average speed during those two hours?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 8,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: John drove a truck for one hour at a rate of 80 kilometers per hour. The next hour, he drove at 100 kilometers per hour. What was his average speed during those two hours?\n\n\nChoices:\nA) 80 kilometers per hour\nB) 90 kilometers per hour\nC) 100 kilometers per hour\nD) 180 kilometers per hour\n\nProvide an answer to the following question:\n\nQ: John drove a truck for one hour at a rate of 80 kilometers per hour. The next hour, he drove at 100 kilometers per hour. What was his average speed during those two hours?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 8,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: John drove a truck for one hour at a rate of 80 kilometers per hour. The next hour, he drove at 100 kilometers per hour. What was his average speed during those two hours?\n\n\nOne answer to question Q is B) 90 kilometers per hour.\n\n\nChoices:\nA) 80 kilometers per hour\nB) 90 kilometers per hour\nC) 100 kilometers per hour\nD) 180 kilometers per hour\n\nProvide an answer to the following question:\n\nQ: John drove a truck for one hour at a rate of 80 kilometers per hour. The next hour, he drove at 100 kilometers per hour. What was his average speed during those two hours?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 9,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: John drove a truck for one hour at a rate of 80 kilometers per hour. The next hour, he drove at 100 kilometers per hour. What was his average speed during those two hours?\n\n\nChoices:\nA) 80 kilometers per hour\nB) 90 kilometers per hour\nC) 100 kilometers per hour\nD) 180 kilometers per hour\n\nProvide an answer to the following question:\n\nQ: John drove a truck for one hour at a rate of 80 kilometers per hour. The next hour, he drove at 100 kilometers per hour. What was his average speed during those two hours?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 9,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: John drove a truck for one hour at a rate of 80 kilometers per hour. The next hour, he drove at 100 kilometers per hour. What was his average speed during those two hours?\n\n\nOne answer to question Q is B) 90 kilometers per hour.\n\n\nChoices:\nA) 80 kilometers per hour\nB) 90 kilometers per hour\nC) 100 kilometers per hour\nD) 180 kilometers per hour\n\nProvide an answer to the following question:\n\nQ: John drove a truck for one hour at a rate of 80 kilometers per hour. The next hour, he drove at 100 kilometers per hour. What was his average speed during those two hours?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "chain_id": 0,
+          "step": 0,
+          "text": "B",
+          "logprob": -0.6261118650436401,
+          "probability": 0.5346666207816538
+        },
+        {
+          "chain_id": 0,
+          "step": 1,
+          "text": "B",
+          "logprob": -0.1028888076543808,
+          "probability": 0.9022272886727816
+        },
+        {
+          "chain_id": 1,
+          "step": 0,
+          "text": "B",
+          "logprob": -0.6261118650436401,
+          "probability": 0.5346666207816538
+        },
+        {
+          "chain_id": 1,
+          "step": 1,
+          "text": "B",
+          "logprob": -0.1028888076543808,
+          "probability": 0.9022272886727816
+        },
+        {
+          "chain_id": 2,
+          "step": 0,
+          "text": "B",
+          "logprob": -0.6261118650436401,
+          "probability": 0.5346666207816538
+        },
+        {
+          "chain_id": 2,
+          "step": 1,
+          "text": "A",
+          "logprob": -2.3251101970672607,
+          "probability": 0.09777266919627857
+        },
+        {
+          "chain_id": 3,
+          "step": 0,
+          "text": "B",
+          "logprob": -0.6261118650436401,
+          "probability": 0.5346666207816538
+        },
+        {
+          "chain_id": 3,
+          "step": 1,
+          "text": "B",
+          "logprob": -0.1028888076543808,
+          "probability": 0.9022272886727816
+        },
+        {
+          "chain_id": 4,
+          "step": 0,
+          "text": "B",
+          "logprob": -0.6261118650436401,
+          "probability": 0.5346666207816538
+        },
+        {
+          "chain_id": 4,
+          "step": 1,
+          "text": "B",
+          "logprob": -0.1028888076543808,
+          "probability": 0.9022272886727816
+        },
+        {
+          "chain_id": 5,
+          "step": 0,
+          "text": "C",
+          "logprob": -0.7650011777877808,
+          "probability": 0.46533338291001825
+        },
+        {
+          "chain_id": 5,
+          "step": 1,
+          "text": "C",
+          "logprob": -0.11735103279352188,
+          "probability": 0.8892729743906995
+        },
+        {
+          "chain_id": 6,
+          "step": 0,
+          "text": "B",
+          "logprob": -0.6261118650436401,
+          "probability": 0.5346666207816538
+        },
+        {
+          "chain_id": 6,
+          "step": 1,
+          "text": "B",
+          "logprob": -0.1028888076543808,
+          "probability": 0.9022272886727816
+        },
+        {
+          "chain_id": 7,
+          "step": 0,
+          "text": "C",
+          "logprob": -0.7650011777877808,
+          "probability": 0.46533338291001825
+        },
+        {
+          "chain_id": 7,
+          "step": 1,
+          "text": "C",
+          "logprob": -0.11735103279352188,
+          "probability": 0.8892729743906995
+        },
+        {
+          "chain_id": 8,
+          "step": 0,
+          "text": "B",
+          "logprob": -0.6261118650436401,
+          "probability": 0.5346666207816538
+        },
+        {
+          "chain_id": 8,
+          "step": 1,
+          "text": "A",
+          "logprob": -2.3251101970672607,
+          "probability": 0.09777266919627857
+        },
+        {
+          "chain_id": 9,
+          "step": 0,
+          "text": "B",
+          "logprob": -0.6261118650436401,
+          "probability": 0.5346666207816538
+        },
+        {
+          "chain_id": 9,
+          "step": 1,
+          "text": "A",
+          "logprob": -2.3251101970672607,
+          "probability": 0.09777266919627857
+        }
+      ],
+      "decision_process": {
+        "num_chains": 10,
+        "chain_length": 2,
+        "total_inferences": 20,
+        "mi_method": "listing",
+        "mi_nats": 0.2923444676556892,
+        "mi_bits": 0.42176391371818683,
+        "selected_answer": "B",
+        "matched_choice": "B",
+        "confidence_computation": "1/(1 + mi_nats) = 1/(1 + 0.2923) = 0.7738",
+        "agreement": "50.00% (5/10 chains agree on final answer)"
+      },
+      "final_metrics": {
+        "predicted": "B",
+        "correct": true,
+        "confidence": 0.7737875040499058,
+        "mi_score": 0.42176391371818683,
+        "agreement": 0.5
+      }
+    }
+  }
+}

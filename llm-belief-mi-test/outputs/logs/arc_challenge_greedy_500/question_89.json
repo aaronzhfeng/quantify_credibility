@@ -1,0 +1,51 @@
+{
+  "question_id": 89,
+  "question_text": "Which action explains how a somatic cell mutation can harm an organism?",
+  "choices": [
+    "A: creating a dominant allele",
+    "B: affecting gamete formation",
+    "C: leading to tumors in tissue",
+    "D: being passed on to offspring"
+  ],
+  "gold_answer": "C",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Which action explains how a somatic cell mutation can harm an organism?\n\n\nChoices:\nA) creating a dominant allele\nB) affecting gamete formation\nC) leading to tumors in tissue\nD) being passed on to offspring\n\nProvide an answer to the following question:\n\nQ: Which action explains how a somatic cell mutation can harm an organism?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "C",
+          "logprob": -0.20515273127239197,
+          "probability": 0.8145229037913191
+        }
+      ],
+      "decision_process": {
+        "selected_text": "C",
+        "matched_choice": "C",
+        "confidence_computation": "exp(logprob) = exp(-0.2052) = 0.8145"
+      },
+      "final_metrics": {
+        "predicted": "C",
+        "correct": true,
+        "confidence": 0.8145229037913191,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

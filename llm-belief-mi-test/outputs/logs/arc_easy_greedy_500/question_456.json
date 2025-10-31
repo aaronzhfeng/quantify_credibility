@@ -1,0 +1,51 @@
+{
+  "question_id": 456,
+  "question_text": "What process makes it possible for the nutrients from organic material to be added to soil?",
+  "choices": [
+    "A: weathering",
+    "B: erosion",
+    "C: decomposition",
+    "D: succession"
+  ],
+  "gold_answer": "C",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: What process makes it possible for the nutrients from organic material to be added to soil?\n\n\nChoices:\nA) weathering\nB) erosion\nC) decomposition\nD) succession\n\nProvide an answer to the following question:\n\nQ: What process makes it possible for the nutrients from organic material to be added to soil?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "C",
+          "logprob": -0.0806400312576443,
+          "probability": 0.9225257121028699
+        }
+      ],
+      "decision_process": {
+        "selected_text": "C",
+        "matched_choice": "C",
+        "confidence_computation": "exp(logprob) = exp(-0.0806) = 0.9225"
+      },
+      "final_metrics": {
+        "predicted": "C",
+        "correct": true,
+        "confidence": 0.9225257121028699,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

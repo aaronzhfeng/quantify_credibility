@@ -1,0 +1,51 @@
+{
+  "question_id": 186,
+  "question_text": "Which concept was most likely modified due to the invention of the microscope?",
+  "choices": [
+    "A: size of subatomic particles",
+    "B: composition of living things",
+    "C: number of the moons of Jupiter",
+    "D: formation of sedimentary rocks"
+  ],
+  "gold_answer": "B",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Which concept was most likely modified due to the invention of the microscope?\n\n\nChoices:\nA) size of subatomic particles\nB) composition of living things\nC) number of the moons of Jupiter\nD) formation of sedimentary rocks\n\nProvide an answer to the following question:\n\nQ: Which concept was most likely modified due to the invention of the microscope?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "B",
+          "logprob": -0.4802787373191677,
+          "probability": 0.618610937818161
+        }
+      ],
+      "decision_process": {
+        "selected_text": "B",
+        "matched_choice": "B",
+        "confidence_computation": "exp(logprob) = exp(-0.4803) = 0.6186"
+      },
+      "final_metrics": {
+        "predicted": "B",
+        "correct": true,
+        "confidence": 0.618610937818161,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

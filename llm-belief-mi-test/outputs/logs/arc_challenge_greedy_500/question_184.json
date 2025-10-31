@@ -1,0 +1,51 @@
+{
+  "question_id": 184,
+  "question_text": "During an experiment on aerobic cellular respiration, a biologist limits the amount of phosphorous available to a cell culture. How might this affect the cell?",
+  "choices": [
+    "A: The amount of cellular energy would decrease.",
+    "B: The amount of cellular energy would increase.",
+    "C: The amount of glucose produced would increase.",
+    "D: The amount of glucose produced would decrease."
+  ],
+  "gold_answer": "A",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: During an experiment on aerobic cellular respiration, a biologist limits the amount of phosphorous available to a cell culture. How might this affect the cell?\n\n\nChoices:\nA) The amount of cellular energy would decrease.\nB) The amount of cellular energy would increase.\nC) The amount of glucose produced would increase.\nD) The amount of glucose produced would decrease.\n\nProvide an answer to the following question:\n\nQ: During an experiment on aerobic cellular respiration, a biologist limits the amount of phosphorous available to a cell culture. How might this affect the cell?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "A",
+          "logprob": -0.11721070110797882,
+          "probability": 0.8893977763227316
+        }
+      ],
+      "decision_process": {
+        "selected_text": "A",
+        "matched_choice": "A",
+        "confidence_computation": "exp(logprob) = exp(-0.1172) = 0.8894"
+      },
+      "final_metrics": {
+        "predicted": "A",
+        "correct": true,
+        "confidence": 0.8893977763227316,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

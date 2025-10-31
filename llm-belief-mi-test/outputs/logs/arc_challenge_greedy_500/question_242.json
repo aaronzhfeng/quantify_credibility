@@ -1,0 +1,51 @@
+{
+  "question_id": 242,
+  "question_text": "Which step should a student do in order to be able to repeat an experiment?",
+  "choices": [
+    "A: do the experiment many times",
+    "B: keep a record of all procedures",
+    "C: make a model of the set-up of the experiment",
+    "D: change some of the conditions of the experiment"
+  ],
+  "gold_answer": "B",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Which step should a student do in order to be able to repeat an experiment?\n\n\nChoices:\nA) do the experiment many times\nB) keep a record of all procedures\nC) make a model of the set-up of the experiment\nD) change some of the conditions of the experiment\n\nProvide an answer to the following question:\n\nQ: Which step should a student do in order to be able to repeat an experiment?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "B",
+          "logprob": -0.08271681165206246,
+          "probability": 0.9206118168485871
+        }
+      ],
+      "decision_process": {
+        "selected_text": "B",
+        "matched_choice": "B",
+        "confidence_computation": "exp(logprob) = exp(-0.0827) = 0.9206"
+      },
+      "final_metrics": {
+        "predicted": "B",
+        "correct": true,
+        "confidence": 0.9206118168485871,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

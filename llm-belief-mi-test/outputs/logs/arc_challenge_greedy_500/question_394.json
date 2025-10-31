@@ -1,0 +1,51 @@
+{
+  "question_id": 394,
+  "question_text": "A layer of rock is found to contain a fossil of a fish and a fossil of a land-dwelling dinosaur very close to one another. What is the most likely explanation for this?",
+  "choices": [
+    "A: The fish and dinosaur both lived near a shoreline.",
+    "B: The fish was carried far inland by an enormous wave.",
+    "C: The fish and dinosaur were fossilized at very different times.",
+    "D: The dinosaur was swimming from one continent to another when it died."
+  ],
+  "gold_answer": "A",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A layer of rock is found to contain a fossil of a fish and a fossil of a land-dwelling dinosaur very close to one another. What is the most likely explanation for this?\n\n\nChoices:\nA) The fish and dinosaur both lived near a shoreline.\nB) The fish was carried far inland by an enormous wave.\nC) The fish and dinosaur were fossilized at very different times.\nD) The dinosaur was swimming from one continent to another when it died.\n\nProvide an answer to the following question:\n\nQ: A layer of rock is found to contain a fossil of a fish and a fossil of a land-dwelling dinosaur very close to one another. What is the most likely explanation for this?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "A",
+          "logprob": -0.17835020550410263,
+          "probability": 0.8366493729623941
+        }
+      ],
+      "decision_process": {
+        "selected_text": "A",
+        "matched_choice": "A",
+        "confidence_computation": "exp(logprob) = exp(-0.1784) = 0.8366"
+      },
+      "final_metrics": {
+        "predicted": "A",
+        "correct": true,
+        "confidence": 0.8366493729623941,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

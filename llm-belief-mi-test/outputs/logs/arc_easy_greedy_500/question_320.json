@@ -1,0 +1,51 @@
+{
+  "question_id": 320,
+  "question_text": "Often organisms seem similar in their outward appearances. For example, a porpoise and a shark seem closely related, but they are not. Such similarity is the result of",
+  "choices": [
+    "A: convergent evolution.",
+    "B: adaptive radiation.",
+    "C: artificial selection.",
+    "D: genetic equilibrium."
+  ],
+  "gold_answer": "A",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Often organisms seem similar in their outward appearances. For example, a porpoise and a shark seem closely related, but they are not. Such similarity is the result of\n\n\nChoices:\nA) convergent evolution.\nB) adaptive radiation.\nC) artificial selection.\nD) genetic equilibrium.\n\nProvide an answer to the following question:\n\nQ: Often organisms seem similar in their outward appearances. For example, a porpoise and a shark seem closely related, but they are not. Such similarity is the result of\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "A",
+          "logprob": -0.0037564565864158794,
+          "probability": 0.9962505900703787
+        }
+      ],
+      "decision_process": {
+        "selected_text": "A",
+        "matched_choice": "A",
+        "confidence_computation": "exp(logprob) = exp(-0.0038) = 0.9963"
+      },
+      "final_metrics": {
+        "predicted": "A",
+        "correct": true,
+        "confidence": 0.9962505900703787,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

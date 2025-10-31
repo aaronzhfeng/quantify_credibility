@@ -1,0 +1,499 @@
+{
+  "question_id": 92,
+  "question_text": "A person can see",
+  "choices": [
+    "A: a radio recording",
+    "B: an emotion",
+    "C: a written message",
+    "D: an abstract idea"
+  ],
+  "gold_answer": "C",
+  "methods": {
+    "mi_method": {
+      "description": "k=10 chains of length n=2, MI estimation",
+      "raw_inputs": [
+        {
+          "chain_id": 0,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A person can see\n\n\nChoices:\nA) a radio recording\nB) an emotion\nC) a written message\nD) an abstract idea\n\nProvide an answer to the following question:\n\nQ: A person can see\n\nA:"
+            }
+          ],
+          "temperature": 1.3,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 0,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A person can see\n\n\nOne answer to question Q is A) a radio recording.\n\n\nChoices:\nA) a radio recording\nB) an emotion\nC) a written message\nD) an abstract idea\n\nProvide an answer to the following question:\n\nQ: A person can see\n\nA:"
+            }
+          ],
+          "temperature": 1.3,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 1,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A person can see\n\n\nChoices:\nA) a radio recording\nB) an emotion\nC) a written message\nD) an abstract idea\n\nProvide an answer to the following question:\n\nQ: A person can see\n\nA:"
+            }
+          ],
+          "temperature": 1.3,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 1,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A person can see\n\n\nOne answer to question Q is C) a written message.\n\n\nChoices:\nA) a radio recording\nB) an emotion\nC) a written message\nD) an abstract idea\n\nProvide an answer to the following question:\n\nQ: A person can see\n\nA:"
+            }
+          ],
+          "temperature": 1.3,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 2,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A person can see\n\n\nChoices:\nA) a radio recording\nB) an emotion\nC) a written message\nD) an abstract idea\n\nProvide an answer to the following question:\n\nQ: A person can see\n\nA:"
+            }
+          ],
+          "temperature": 1.3,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 2,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A person can see\n\n\nOne answer to question Q is B) an emotion.\n\n\nChoices:\nA) a radio recording\nB) an emotion\nC) a written message\nD) an abstract idea\n\nProvide an answer to the following question:\n\nQ: A person can see\n\nA:"
+            }
+          ],
+          "temperature": 1.3,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 3,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A person can see\n\n\nChoices:\nA) a radio recording\nB) an emotion\nC) a written message\nD) an abstract idea\n\nProvide an answer to the following question:\n\nQ: A person can see\n\nA:"
+            }
+          ],
+          "temperature": 1.3,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 3,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A person can see\n\n\nOne answer to question Q is C) a written message.\n\n\nChoices:\nA) a radio recording\nB) an emotion\nC) a written message\nD) an abstract idea\n\nProvide an answer to the following question:\n\nQ: A person can see\n\nA:"
+            }
+          ],
+          "temperature": 1.3,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 4,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A person can see\n\n\nChoices:\nA) a radio recording\nB) an emotion\nC) a written message\nD) an abstract idea\n\nProvide an answer to the following question:\n\nQ: A person can see\n\nA:"
+            }
+          ],
+          "temperature": 1.3,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 4,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A person can see\n\n\nOne answer to question Q is A) a radio recording.\n\n\nChoices:\nA) a radio recording\nB) an emotion\nC) a written message\nD) an abstract idea\n\nProvide an answer to the following question:\n\nQ: A person can see\n\nA:"
+            }
+          ],
+          "temperature": 1.3,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 5,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A person can see\n\n\nChoices:\nA) a radio recording\nB) an emotion\nC) a written message\nD) an abstract idea\n\nProvide an answer to the following question:\n\nQ: A person can see\n\nA:"
+            }
+          ],
+          "temperature": 1.3,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 5,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A person can see\n\n\nOne answer to question Q is C) a written message.\n\n\nChoices:\nA) a radio recording\nB) an emotion\nC) a written message\nD) an abstract idea\n\nProvide an answer to the following question:\n\nQ: A person can see\n\nA:"
+            }
+          ],
+          "temperature": 1.3,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 6,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A person can see\n\n\nChoices:\nA) a radio recording\nB) an emotion\nC) a written message\nD) an abstract idea\n\nProvide an answer to the following question:\n\nQ: A person can see\n\nA:"
+            }
+          ],
+          "temperature": 1.3,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 6,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A person can see\n\n\nOne answer to question Q is A) a radio recording.\n\n\nChoices:\nA) a radio recording\nB) an emotion\nC) a written message\nD) an abstract idea\n\nProvide an answer to the following question:\n\nQ: A person can see\n\nA:"
+            }
+          ],
+          "temperature": 1.3,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 7,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A person can see\n\n\nChoices:\nA) a radio recording\nB) an emotion\nC) a written message\nD) an abstract idea\n\nProvide an answer to the following question:\n\nQ: A person can see\n\nA:"
+            }
+          ],
+          "temperature": 1.3,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 7,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A person can see\n\n\nOne answer to question Q is C) a written message.\n\n\nChoices:\nA) a radio recording\nB) an emotion\nC) a written message\nD) an abstract idea\n\nProvide an answer to the following question:\n\nQ: A person can see\n\nA:"
+            }
+          ],
+          "temperature": 1.3,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 8,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A person can see\n\n\nChoices:\nA) a radio recording\nB) an emotion\nC) a written message\nD) an abstract idea\n\nProvide an answer to the following question:\n\nQ: A person can see\n\nA:"
+            }
+          ],
+          "temperature": 1.3,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 8,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A person can see\n\n\nOne answer to question Q is D) an abstract idea.\n\n\nChoices:\nA) a radio recording\nB) an emotion\nC) a written message\nD) an abstract idea\n\nProvide an answer to the following question:\n\nQ: A person can see\n\nA:"
+            }
+          ],
+          "temperature": 1.3,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 9,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A person can see\n\n\nChoices:\nA) a radio recording\nB) an emotion\nC) a written message\nD) an abstract idea\n\nProvide an answer to the following question:\n\nQ: A person can see\n\nA:"
+            }
+          ],
+          "temperature": 1.3,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 9,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A person can see\n\n\nOne answer to question Q is C) a written message.\n\n\nChoices:\nA) a radio recording\nB) an emotion\nC) a written message\nD) an abstract idea\n\nProvide an answer to the following question:\n\nQ: A person can see\n\nA:"
+            }
+          ],
+          "temperature": 1.3,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "chain_id": 0,
+          "step": 0,
+          "text": "A",
+          "logprob": -1.4033912420272827,
+          "probability": 0.2457621103490864
+        },
+        {
+          "chain_id": 0,
+          "step": 1,
+          "text": "D",
+          "logprob": -1.8588457107543945,
+          "probability": 0.15585242535881538
+        },
+        {
+          "chain_id": 1,
+          "step": 0,
+          "text": "C",
+          "logprob": -0.8264678716659546,
+          "probability": 0.43759219162646634
+        },
+        {
+          "chain_id": 1,
+          "step": 1,
+          "text": "C",
+          "logprob": -0.19450634717941284,
+          "probability": 0.8232409529819118
+        },
+        {
+          "chain_id": 2,
+          "step": 0,
+          "text": "B",
+          "logprob": -2.172621250152588,
+          "probability": 0.11387872072706226
+        },
+        {
+          "chain_id": 2,
+          "step": 1,
+          "text": "B",
+          "logprob": -0.5351942181587219,
+          "probability": 0.5855555535788526
+        },
+        {
+          "chain_id": 3,
+          "step": 0,
+          "text": "C",
+          "logprob": -0.8264678716659546,
+          "probability": 0.43759219162646634
+        },
+        {
+          "chain_id": 3,
+          "step": 1,
+          "text": "C",
+          "logprob": -0.19450634717941284,
+          "probability": 0.8232409529819118
+        },
+        {
+          "chain_id": 4,
+          "step": 0,
+          "text": "A",
+          "logprob": -1.4033912420272827,
+          "probability": 0.2457621103490864
+        },
+        {
+          "chain_id": 4,
+          "step": 1,
+          "text": "D",
+          "logprob": -1.8588457107543945,
+          "probability": 0.15585242535881538
+        },
+        {
+          "chain_id": 5,
+          "step": 0,
+          "text": "C",
+          "logprob": -0.8264678716659546,
+          "probability": 0.43759219162646634
+        },
+        {
+          "chain_id": 5,
+          "step": 1,
+          "text": "C",
+          "logprob": -0.19450634717941284,
+          "probability": 0.8232409529819118
+        },
+        {
+          "chain_id": 6,
+          "step": 0,
+          "text": "A",
+          "logprob": -1.4033912420272827,
+          "probability": 0.2457621103490864
+        },
+        {
+          "chain_id": 6,
+          "step": 1,
+          "text": "A",
+          "logprob": -0.6088457703590393,
+          "probability": 0.5439783828308493
+        },
+        {
+          "chain_id": 7,
+          "step": 0,
+          "text": "C",
+          "logprob": -0.8264678716659546,
+          "probability": 0.43759219162646634
+        },
+        {
+          "chain_id": 7,
+          "step": 1,
+          "text": "C",
+          "logprob": -0.19450634717941284,
+          "probability": 0.8232409529819118
+        },
+        {
+          "chain_id": 8,
+          "step": 0,
+          "text": "D",
+          "logprob": -1.5956977605819702,
+          "probability": 0.20276699631314313
+        },
+        {
+          "chain_id": 8,
+          "step": 1,
+          "text": "A",
+          "logprob": -1.314577341079712,
+          "probability": 0.2685878202904029
+        },
+        {
+          "chain_id": 9,
+          "step": 0,
+          "text": "C",
+          "logprob": -0.8264678716659546,
+          "probability": 0.43759219162646634
+        },
+        {
+          "chain_id": 9,
+          "step": 1,
+          "text": "C",
+          "logprob": -0.19450634717941284,
+          "probability": 0.8232409529819118
+        }
+      ],
+      "decision_process": {
+        "num_chains": 10,
+        "chain_length": 2,
+        "total_inferences": 20,
+        "mi_method": "listing",
+        "mi_nats": 0.5284005998344005,
+        "mi_bits": 0.7623209249838432,
+        "selected_answer": "C",
+        "matched_choice": "C",
+        "confidence_computation": "1/(1 + mi_nats) = 1/(1 + 0.5284) = 0.6543",
+        "agreement": "50.00% (5/10 chains agree on final answer)"
+      },
+      "final_metrics": {
+        "predicted": "C",
+        "correct": true,
+        "confidence": 0.654278727781413,
+        "mi_score": 0.7623209249838432,
+        "agreement": 0.5
+      }
+    }
+  }
+}

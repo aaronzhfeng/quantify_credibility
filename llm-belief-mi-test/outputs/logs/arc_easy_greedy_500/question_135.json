@@ -1,0 +1,51 @@
+{
+  "question_id": 135,
+  "question_text": "How are igneous and sedimentary rocks similar?",
+  "choices": [
+    "A: They are both formed by erosion.",
+    "B: They are both formed from cooled lava.",
+    "C: Heat and pressure can turn them into lava.",
+    "D: Heat and pressure can turn them into metamorphic rock."
+  ],
+  "gold_answer": "D",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: How are igneous and sedimentary rocks similar?\n\n\nChoices:\nA) They are both formed by erosion.\nB) They are both formed from cooled lava.\nC) Heat and pressure can turn them into lava.\nD) Heat and pressure can turn them into metamorphic rock.\n\nProvide an answer to the following question:\n\nQ: How are igneous and sedimentary rocks similar?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "B",
+          "logprob": -0.6058270698413253,
+          "probability": 0.5456229716684471
+        }
+      ],
+      "decision_process": {
+        "selected_text": "B",
+        "matched_choice": "B",
+        "confidence_computation": "exp(logprob) = exp(-0.6058) = 0.5456"
+      },
+      "final_metrics": {
+        "predicted": "B",
+        "correct": false,
+        "confidence": 0.5456229716684471,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

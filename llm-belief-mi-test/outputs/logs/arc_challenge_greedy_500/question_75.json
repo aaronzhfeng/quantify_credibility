@@ -1,0 +1,51 @@
+{
+  "question_id": 75,
+  "question_text": "Which objects in our solar system give off their own light?",
+  "choices": [
+    "A: only the Sun",
+    "B: the Sun and the Moon",
+    "C: the Sun, the Moon, and some planets",
+    "D: the Sun, the Moon, some planets, and comets"
+  ],
+  "gold_answer": "A",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Which objects in our solar system give off their own light?\n\n\nChoices:\nA) only the Sun\nB) the Sun and the Moon\nC) the Sun, the Moon, and some planets\nD) the Sun, the Moon, some planets, and comets\n\nProvide an answer to the following question:\n\nQ: Which objects in our solar system give off their own light?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "A",
+          "logprob": -0.37194913206622005,
+          "probability": 0.6893893094420653
+        }
+      ],
+      "decision_process": {
+        "selected_text": "A",
+        "matched_choice": "A",
+        "confidence_computation": "exp(logprob) = exp(-0.3719) = 0.6894"
+      },
+      "final_metrics": {
+        "predicted": "A",
+        "correct": true,
+        "confidence": 0.6893893094420653,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "question_id": 439,
+  "question_text": "Two identical sheets of paper are used in an experiment; one is crumpled into a ball and the other is flat. What will most likely happen when they are dropped at the same time from the same height?",
+  "choices": [
+    "A: flat sheet will fall on its edge",
+    "B: both will fall at the same rate",
+    "C: crumpled sheet will fall faster",
+    "D: crumpled sheet will move horizontally"
+  ],
+  "gold_answer": "C",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Two identical sheets of paper are used in an experiment; one is crumpled into a ball and the other is flat. What will most likely happen when they are dropped at the same time from the same height?\n\n\nChoices:\nA) flat sheet will fall on its edge\nB) both will fall at the same rate\nC) crumpled sheet will fall faster\nD) crumpled sheet will move horizontally\n\nProvide an answer to the following question:\n\nQ: Two identical sheets of paper are used in an experiment; one is crumpled into a ball and the other is flat. What will most likely happen when they are dropped at the same time from the same height?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "B",
+          "logprob": -0.09729201649315655,
+          "probability": 0.9072910235025508
+        }
+      ],
+      "decision_process": {
+        "selected_text": "B",
+        "matched_choice": "B",
+        "confidence_computation": "exp(logprob) = exp(-0.0973) = 0.9073"
+      },
+      "final_metrics": {
+        "predicted": "B",
+        "correct": false,
+        "confidence": 0.9072910235025508,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

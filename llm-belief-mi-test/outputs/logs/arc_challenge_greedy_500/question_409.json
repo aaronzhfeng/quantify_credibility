@@ -1,0 +1,51 @@
+{
+  "question_id": 409,
+  "question_text": "Which of these best describes when a lunar eclipse will occur?",
+  "choices": [
+    "A: when Earth is between the Moon and the Sun",
+    "B: when the Moon passes between Earth and the Sun",
+    "C: when the Sun is between Earth and the Moon",
+    "D: when Earth is at a 90° angle to the Moon and the Sun"
+  ],
+  "gold_answer": "A",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Which of these best describes when a lunar eclipse will occur?\n\n\nChoices:\nA) when Earth is between the Moon and the Sun\nB) when the Moon passes between Earth and the Sun\nC) when the Sun is between Earth and the Moon\nD) when Earth is at a 90° angle to the Moon and the Sun\n\nProvide an answer to the following question:\n\nQ: Which of these best describes when a lunar eclipse will occur?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "A",
+          "logprob": -0.28521175420610234,
+          "probability": 0.7518550289968924
+        }
+      ],
+      "decision_process": {
+        "selected_text": "A",
+        "matched_choice": "A",
+        "confidence_computation": "exp(logprob) = exp(-0.2852) = 0.7519"
+      },
+      "final_metrics": {
+        "predicted": "A",
+        "correct": true,
+        "confidence": 0.7518550289968924,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

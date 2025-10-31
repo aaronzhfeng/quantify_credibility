@@ -1,0 +1,51 @@
+{
+  "question_id": 53,
+  "question_text": "The Apollo 11 mission was able to retrieve samples of the Moon's surface because it was the first mission to have astronauts",
+  "choices": [
+    "A: land on the Moon",
+    "B: orbit a planet",
+    "C: return to Earth",
+    "D: walk in space"
+  ],
+  "gold_answer": "A",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: The Apollo 11 mission was able to retrieve samples of the Moon's surface because it was the first mission to have astronauts\n\n\nChoices:\nA) land on the Moon\nB) orbit a planet\nC) return to Earth\nD) walk in space\n\nProvide an answer to the following question:\n\nQ: The Apollo 11 mission was able to retrieve samples of the Moon's surface because it was the first mission to have astronauts\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "A",
+          "logprob": -0.017627599649131298,
+          "probability": 0.9825268575838539
+        }
+      ],
+      "decision_process": {
+        "selected_text": "A",
+        "matched_choice": "A",
+        "confidence_computation": "exp(logprob) = exp(-0.0176) = 0.9825"
+      },
+      "final_metrics": {
+        "predicted": "A",
+        "correct": true,
+        "confidence": 0.9825268575838539,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

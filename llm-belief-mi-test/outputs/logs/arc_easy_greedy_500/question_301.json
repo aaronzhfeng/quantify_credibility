@@ -1,0 +1,51 @@
+{
+  "question_id": 301,
+  "question_text": "Which of these events during a storm at sea can add oxygen from the atmosphere to ocean water?",
+  "choices": [
+    "A: high winds",
+    "B: lightning",
+    "C: pressure change",
+    "D: temperature change"
+  ],
+  "gold_answer": "A",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Which of these events during a storm at sea can add oxygen from the atmosphere to ocean water?\n\n\nChoices:\nA) high winds\nB) lightning\nC) pressure change\nD) temperature change\n\nProvide an answer to the following question:\n\nQ: Which of these events during a storm at sea can add oxygen from the atmosphere to ocean water?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "B",
+          "logprob": -0.34526743009337224,
+          "probability": 0.7080309793558408
+        }
+      ],
+      "decision_process": {
+        "selected_text": "B",
+        "matched_choice": "B",
+        "confidence_computation": "exp(logprob) = exp(-0.3453) = 0.7080"
+      },
+      "final_metrics": {
+        "predicted": "B",
+        "correct": false,
+        "confidence": 0.7080309793558408,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "question_id": 435,
+  "question_text": "Mina wanted to know how much water would evaporate from a graduated cylinder in a day. On Day 1, Mina filled a graduated cylinder with 150 milliliters (mL) of water. On Day 2, she observed the volume of water dropped to 148.5 mL. If the water has a density of 1.0 grams per milliliter (g/mL), what was the mass of the water that evaporated?",
+  "choices": [
+    "A: 1.0 g",
+    "B: 1.5 g",
+    "C: 148.5 g",
+    "D: 298.5 g"
+  ],
+  "gold_answer": "B",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Mina wanted to know how much water would evaporate from a graduated cylinder in a day. On Day 1, Mina filled a graduated cylinder with 150 milliliters (mL) of water. On Day 2, she observed the volume of water dropped to 148.5 mL. If the water has a density of 1.0 grams per milliliter (g/mL), what was the mass of the water that evaporated?\n\n\nChoices:\nA) 1.0 g\nB) 1.5 g\nC) 148.5 g\nD) 298.5 g\n\nProvide an answer to the following question:\n\nQ: Mina wanted to know how much water would evaporate from a graduated cylinder in a day. On Day 1, Mina filled a graduated cylinder with 150 milliliters (mL) of water. On Day 2, she observed the volume of water dropped to 148.5 mL. If the water has a density of 1.0 grams per milliliter (g/mL), what was the mass of the water that evaporated?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "B",
+          "logprob": -0.4961519290227443,
+          "probability": 0.6088691291536806
+        }
+      ],
+      "decision_process": {
+        "selected_text": "B",
+        "matched_choice": "B",
+        "confidence_computation": "exp(logprob) = exp(-0.4962) = 0.6089"
+      },
+      "final_metrics": {
+        "predicted": "B",
+        "correct": true,
+        "confidence": 0.6088691291536806,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

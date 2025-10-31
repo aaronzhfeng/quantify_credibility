@@ -1,0 +1,51 @@
+{
+  "question_id": 291,
+  "question_text": "Scientists theorize that the original atmosphere of Earth was stripped away by the solar wind shortly after the formation of the planet. The Jovian planets are far enough from the Sun that the solar wind has less of an impact. Studies of the Jovian planets suggest the early atmosphere of Earth was mainly composed of which two gases?",
+  "choices": [
+    "A: oxygen and argon",
+    "B: hydrogen and helium",
+    "C: carbon dioxide and nitrogen",
+    "D: sulfur dioxide and water vapor"
+  ],
+  "gold_answer": "B",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Scientists theorize that the original atmosphere of Earth was stripped away by the solar wind shortly after the formation of the planet. The Jovian planets are far enough from the Sun that the solar wind has less of an impact. Studies of the Jovian planets suggest the early atmosphere of Earth was mainly composed of which two gases?\n\n\nChoices:\nA) oxygen and argon\nB) hydrogen and helium\nC) carbon dioxide and nitrogen\nD) sulfur dioxide and water vapor\n\nProvide an answer to the following question:\n\nQ: Scientists theorize that the original atmosphere of Earth was stripped away by the solar wind shortly after the formation of the planet. The Jovian planets are far enough from the Sun that the solar wind has less of an impact. Studies of the Jovian planets suggest the early atmosphere of Earth was mainly composed of which two gases?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "B",
+          "logprob": -0.02029510124702938,
+          "probability": 0.9799094581319042
+        }
+      ],
+      "decision_process": {
+        "selected_text": "B",
+        "matched_choice": "B",
+        "confidence_computation": "exp(logprob) = exp(-0.0203) = 0.9799"
+      },
+      "final_metrics": {
+        "predicted": "B",
+        "correct": true,
+        "confidence": 0.9799094581319042,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

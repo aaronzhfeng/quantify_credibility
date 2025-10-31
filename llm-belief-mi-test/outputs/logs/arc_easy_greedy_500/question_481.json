@@ -1,0 +1,51 @@
+{
+  "question_id": 481,
+  "question_text": "Some processes that shape Earth's surface are slow. Other processes are rapid. Which statement describes a rapid change?",
+  "choices": [
+    "A: Glaciers melt and form rivers.",
+    "B: Wind weathers rocks into sand.",
+    "C: Earthquakes move land and rocks.",
+    "D: Rivers carry sediment and build deltas."
+  ],
+  "gold_answer": "C",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Some processes that shape Earth's surface are slow. Other processes are rapid. Which statement describes a rapid change?\n\n\nChoices:\nA) Glaciers melt and form rivers.\nB) Wind weathers rocks into sand.\nC) Earthquakes move land and rocks.\nD) Rivers carry sediment and build deltas.\n\nProvide an answer to the following question:\n\nQ: Some processes that shape Earth's surface are slow. Other processes are rapid. Which statement describes a rapid change?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "C",
+          "logprob": -0.11693417360947933,
+          "probability": 0.8896437532731171
+        }
+      ],
+      "decision_process": {
+        "selected_text": "C",
+        "matched_choice": "C",
+        "confidence_computation": "exp(logprob) = exp(-0.1169) = 0.8896"
+      },
+      "final_metrics": {
+        "predicted": "C",
+        "correct": true,
+        "confidence": 0.8896437532731171,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

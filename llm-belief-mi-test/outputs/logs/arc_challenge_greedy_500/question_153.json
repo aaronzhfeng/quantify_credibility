@@ -1,0 +1,51 @@
+{
+  "question_id": 153,
+  "question_text": "A student mixes vinegar and baking soda to use in a volcano model. The mixture causes the volcano model to feel cool when it is touched. What energy transformation has taken place?",
+  "choices": [
+    "A: light energy changed to heat energy",
+    "B: heat energy changed to chemical energy",
+    "C: chemical energy changed to heat energy",
+    "D: chemical energy changed to light energy"
+  ],
+  "gold_answer": "B",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A student mixes vinegar and baking soda to use in a volcano model. The mixture causes the volcano model to feel cool when it is touched. What energy transformation has taken place?\n\n\nChoices:\nA) light energy changed to heat energy\nB) heat energy changed to chemical energy\nC) chemical energy changed to heat energy\nD) chemical energy changed to light energy\n\nProvide an answer to the following question:\n\nQ: A student mixes vinegar and baking soda to use in a volcano model. The mixture causes the volcano model to feel cool when it is touched. What energy transformation has taken place?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "C",
+          "logprob": -0.4341086148051545,
+          "probability": 0.6478418864435929
+        }
+      ],
+      "decision_process": {
+        "selected_text": "C",
+        "matched_choice": "C",
+        "confidence_computation": "exp(logprob) = exp(-0.4341) = 0.6478"
+      },
+      "final_metrics": {
+        "predicted": "C",
+        "correct": false,
+        "confidence": 0.6478418864435929,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

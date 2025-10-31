@@ -1,0 +1,51 @@
+{
+  "question_id": 208,
+  "question_text": "Elements are organized on the periodic table according to",
+  "choices": [
+    "A: electronegativity values.",
+    "B: atomic mass.",
+    "C: atomic number.",
+    "D: the number of neutrons."
+  ],
+  "gold_answer": "C",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Elements are organized on the periodic table according to\n\n\nChoices:\nA) electronegativity values.\nB) atomic mass.\nC) atomic number.\nD) the number of neutrons.\n\nProvide an answer to the following question:\n\nQ: Elements are organized on the periodic table according to\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "C",
+          "logprob": -0.38822971293120645,
+          "probability": 0.6782565210740374
+        }
+      ],
+      "decision_process": {
+        "selected_text": "C",
+        "matched_choice": "C",
+        "confidence_computation": "exp(logprob) = exp(-0.3882) = 0.6783"
+      },
+      "final_metrics": {
+        "predicted": "C",
+        "correct": true,
+        "confidence": 0.6782565210740374,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

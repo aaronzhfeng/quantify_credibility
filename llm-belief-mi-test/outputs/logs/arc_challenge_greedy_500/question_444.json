@@ -1,0 +1,51 @@
+{
+  "question_id": 444,
+  "question_text": "A battery-powered cart pulls an 800-gram load across the floor. If the load were reduced to 400 grams, and the force used to move the cart remained the same, the cart would",
+  "choices": [
+    "1: move slower",
+    "2: move faster",
+    "3: move at the same speed",
+    "4: stop moving"
+  ],
+  "gold_answer": "2",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A battery-powered cart pulls an 800-gram load across the floor. If the load were reduced to 400 grams, and the force used to move the cart remained the same, the cart would\n\n\nChoices:\n1) move slower\n2) move faster\n3) move at the same speed\n4) stop moving\n\nProvide an answer to the following question:\n\nQ: A battery-powered cart pulls an 800-gram load across the floor. If the load were reduced to 400 grams, and the force used to move the cart remained the same, the cart would\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "A",
+          "logprob": -0.26017868146300316,
+          "probability": 0.7709138254861381
+        }
+      ],
+      "decision_process": {
+        "selected_text": "A",
+        "matched_choice": "2",
+        "confidence_computation": "exp(logprob) = exp(-0.2602) = 0.7709"
+      },
+      "final_metrics": {
+        "predicted": "2",
+        "correct": true,
+        "confidence": 0.7709138254861381,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "question_id": 214,
+  "question_text": "Which of the following statements best describes sandy soils?",
+  "choices": [
+    "A: Sandy soils allow water to drain quickly.",
+    "B: Sandy soils easily break down into clay sediments.",
+    "C: Sandy soils hold plant roots tightly in place to prevent erosion.",
+    "D: Sandy soils have high levels of decomposed plant and animal matter."
+  ],
+  "gold_answer": "A",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Which of the following statements best describes sandy soils?\n\n\nChoices:\nA) Sandy soils allow water to drain quickly.\nB) Sandy soils easily break down into clay sediments.\nC) Sandy soils hold plant roots tightly in place to prevent erosion.\nD) Sandy soils have high levels of decomposed plant and animal matter.\n\nProvide an answer to the following question:\n\nQ: Which of the following statements best describes sandy soils?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "A",
+          "logprob": -0.000621405168203637,
+          "probability": 0.9993787878640021
+        }
+      ],
+      "decision_process": {
+        "selected_text": "A",
+        "matched_choice": "A",
+        "confidence_computation": "exp(logprob) = exp(-0.0006) = 0.9994"
+      },
+      "final_metrics": {
+        "predicted": "A",
+        "correct": true,
+        "confidence": 0.9993787878640021,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

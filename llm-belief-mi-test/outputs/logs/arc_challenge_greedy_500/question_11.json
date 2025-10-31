@@ -1,0 +1,51 @@
+{
+  "question_id": 11,
+  "question_text": "Which statement best describes the effect of the Sun on the oceans?",
+  "choices": [
+    "A: The Sun influences the formation of waves.",
+    "B: The Sun creates water particles.",
+    "C: The Sun's rays cause organisms to come to the surface.",
+    "D: The Sun provides minerals."
+  ],
+  "gold_answer": "A",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Which statement best describes the effect of the Sun on the oceans?\n\n\nChoices:\nA) The Sun influences the formation of waves.\nB) The Sun creates water particles.\nC) The Sun's rays cause organisms to come to the surface.\nD) The Sun provides minerals.\n\nProvide an answer to the following question:\n\nQ: Which statement best describes the effect of the Sun on the oceans?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "A",
+          "logprob": -0.013211474288254976,
+          "probability": 0.9868754141757102
+        }
+      ],
+      "decision_process": {
+        "selected_text": "A",
+        "matched_choice": "A",
+        "confidence_computation": "exp(logprob) = exp(-0.0132) = 0.9869"
+      },
+      "final_metrics": {
+        "predicted": "A",
+        "correct": true,
+        "confidence": 0.9868754141757102,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

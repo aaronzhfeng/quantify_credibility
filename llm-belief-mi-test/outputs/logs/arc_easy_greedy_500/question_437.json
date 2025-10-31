@@ -1,0 +1,51 @@
+{
+  "question_id": 437,
+  "question_text": "Which term is an example of a life process?",
+  "choices": [
+    "A: coloration",
+    "B: camouflage",
+    "C: migration",
+    "D: reproduction"
+  ],
+  "gold_answer": "D",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Which term is an example of a life process?\n\n\nChoices:\nA) coloration\nB) camouflage\nC) migration\nD) reproduction\n\nProvide an answer to the following question:\n\nQ: Which term is an example of a life process?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "D",
+          "logprob": -0.10100976306421217,
+          "probability": 0.9039242077727007
+        }
+      ],
+      "decision_process": {
+        "selected_text": "D",
+        "matched_choice": "D",
+        "confidence_computation": "exp(logprob) = exp(-0.1010) = 0.9039"
+      },
+      "final_metrics": {
+        "predicted": "D",
+        "correct": true,
+        "confidence": 0.9039242077727007,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

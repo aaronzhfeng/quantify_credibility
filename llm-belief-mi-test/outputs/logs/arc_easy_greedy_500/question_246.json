@@ -1,0 +1,51 @@
+{
+  "question_id": 246,
+  "question_text": "The life cycle of a star includes formation, life, and death. In the Universe, where do new stars originate?",
+  "choices": [
+    "A: from fusion in red giants",
+    "B: in molecular clouds of gas",
+    "C: in radiation from black holes",
+    "D: from large fragments of antimatter"
+  ],
+  "gold_answer": "B",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: The life cycle of a star includes formation, life, and death. In the Universe, where do new stars originate?\n\n\nChoices:\nA) from fusion in red giants\nB) in molecular clouds of gas\nC) in radiation from black holes\nD) from large fragments of antimatter\n\nProvide an answer to the following question:\n\nQ: The life cycle of a star includes formation, life, and death. In the Universe, where do new stars originate?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "B",
+          "logprob": -0.017472362145781517,
+          "probability": 0.9826793944396134
+        }
+      ],
+      "decision_process": {
+        "selected_text": "B",
+        "matched_choice": "B",
+        "confidence_computation": "exp(logprob) = exp(-0.0175) = 0.9827"
+      },
+      "final_metrics": {
+        "predicted": "B",
+        "correct": true,
+        "confidence": 0.9826793944396134,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

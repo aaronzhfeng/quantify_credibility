@@ -1,0 +1,51 @@
+{
+  "question_id": 232,
+  "question_text": "Some bacteria use iron found in their systems as a means to guide their movement. Which stimulus most likely triggers this movement mechanism?",
+  "choices": [
+    "A: magnetism",
+    "B: oxygen",
+    "C: light",
+    "D: heat"
+  ],
+  "gold_answer": "A",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Some bacteria use iron found in their systems as a means to guide their movement. Which stimulus most likely triggers this movement mechanism?\n\n\nChoices:\nA) magnetism\nB) oxygen\nC) light\nD) heat\n\nProvide an answer to the following question:\n\nQ: Some bacteria use iron found in their systems as a means to guide their movement. Which stimulus most likely triggers this movement mechanism?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "A",
+          "logprob": -0.1777972875861451,
+          "probability": 0.8371120993048071
+        }
+      ],
+      "decision_process": {
+        "selected_text": "A",
+        "matched_choice": "A",
+        "confidence_computation": "exp(logprob) = exp(-0.1778) = 0.8371"
+      },
+      "final_metrics": {
+        "predicted": "A",
+        "correct": true,
+        "confidence": 0.8371120993048071,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

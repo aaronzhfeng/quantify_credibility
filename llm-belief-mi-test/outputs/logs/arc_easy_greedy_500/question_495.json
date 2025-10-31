@@ -1,0 +1,51 @@
+{
+  "question_id": 495,
+  "question_text": "Which of these actions causes wind?",
+  "choices": [
+    "A: rotation of Earth on its axis",
+    "B: movement of air from water to land",
+    "C: uneven heating of Earth's surface",
+    "D: air passing Earth as it revolves around the Sun"
+  ],
+  "gold_answer": "C",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Which of these actions causes wind?\n\n\nChoices:\nA) rotation of Earth on its axis\nB) movement of air from water to land\nC) uneven heating of Earth's surface\nD) air passing Earth as it revolves around the Sun\n\nProvide an answer to the following question:\n\nQ: Which of these actions causes wind?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "C",
+          "logprob": -0.45501694781705737,
+          "probability": 0.6344372155312502
+        }
+      ],
+      "decision_process": {
+        "selected_text": "C",
+        "matched_choice": "C",
+        "confidence_computation": "exp(logprob) = exp(-0.4550) = 0.6344"
+      },
+      "final_metrics": {
+        "predicted": "C",
+        "correct": true,
+        "confidence": 0.6344372155312502,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "question_id": 399,
+  "question_text": "Fish breathe oxygen that is in the water where they swim. Which best describes the oxygen that fish breathe?",
+  "choices": [
+    "A: The oxygen is a solution that dissolves the water.",
+    "B: The oxygen is a substance that dissolves the water.",
+    "C: The oxygen is a solute that is dissolved in the water.",
+    "D: The oxygen is a solvent that is dissolved in the water."
+  ],
+  "gold_answer": "C",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Fish breathe oxygen that is in the water where they swim. Which best describes the oxygen that fish breathe?\n\n\nChoices:\nA) The oxygen is a solution that dissolves the water.\nB) The oxygen is a substance that dissolves the water.\nC) The oxygen is a solute that is dissolved in the water.\nD) The oxygen is a solvent that is dissolved in the water.\n\nProvide an answer to the following question:\n\nQ: Fish breathe oxygen that is in the water where they swim. Which best describes the oxygen that fish breathe?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "C",
+          "logprob": -0.33592899423092604,
+          "probability": 0.7146738499808267
+        }
+      ],
+      "decision_process": {
+        "selected_text": "C",
+        "matched_choice": "C",
+        "confidence_computation": "exp(logprob) = exp(-0.3359) = 0.7147"
+      },
+      "final_metrics": {
+        "predicted": "C",
+        "correct": true,
+        "confidence": 0.7146738499808267,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

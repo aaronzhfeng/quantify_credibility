@@ -1,0 +1,51 @@
+{
+  "question_id": 196,
+  "question_text": "A geologist found several types of seashell fossils in a rock layer. Which is the best conclusion about the rock layer?",
+  "choices": [
+    "A: The rock was once buried under a swamp.",
+    "B: Water from a river washed across the rock.",
+    "C: The rock was once sediment at the bottom of an ocean.",
+    "D: Migrating animals dropped the seashell into the rock."
+  ],
+  "gold_answer": "C",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A geologist found several types of seashell fossils in a rock layer. Which is the best conclusion about the rock layer?\n\n\nChoices:\nA) The rock was once buried under a swamp.\nB) Water from a river washed across the rock.\nC) The rock was once sediment at the bottom of an ocean.\nD) Migrating animals dropped the seashell into the rock.\n\nProvide an answer to the following question:\n\nQ: A geologist found several types of seashell fossils in a rock layer. Which is the best conclusion about the rock layer?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "C",
+          "logprob": -0.16414608086051885,
+          "probability": 0.8486180459707662
+        }
+      ],
+      "decision_process": {
+        "selected_text": "C",
+        "matched_choice": "C",
+        "confidence_computation": "exp(logprob) = exp(-0.1641) = 0.8486"
+      },
+      "final_metrics": {
+        "predicted": "C",
+        "correct": true,
+        "confidence": 0.8486180459707662,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

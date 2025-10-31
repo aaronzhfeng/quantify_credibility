@@ -1,0 +1,51 @@
+{
+  "question_id": 301,
+  "question_text": "Soil is a mixture of many substances which may include",
+  "choices": [
+    "A: sun, water, clay, and sand.",
+    "B: sand, clay, wind, and pebbles.",
+    "C: sand, clay, dead plants, and dead animals.",
+    "D: leaves, twigs, sun, and wind."
+  ],
+  "gold_answer": "C",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Soil is a mixture of many substances which may include\n\n\nChoices:\nA) sun, water, clay, and sand.\nB) sand, clay, wind, and pebbles.\nC) sand, clay, dead plants, and dead animals.\nD) leaves, twigs, sun, and wind.\n\nProvide an answer to the following question:\n\nQ: Soil is a mixture of many substances which may include\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "A",
+          "logprob": -0.16122445173095912,
+          "probability": 0.8511010185700778
+        }
+      ],
+      "decision_process": {
+        "selected_text": "A",
+        "matched_choice": "A",
+        "confidence_computation": "exp(logprob) = exp(-0.1612) = 0.8511"
+      },
+      "final_metrics": {
+        "predicted": "A",
+        "correct": false,
+        "confidence": 0.8511010185700778,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

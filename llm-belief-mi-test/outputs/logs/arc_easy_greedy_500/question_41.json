@@ -1,0 +1,51 @@
+{
+  "question_id": 41,
+  "question_text": "During science class, a teacher explains that the samples the students are studying are made of two or more minerals. What are the students studying?",
+  "choices": [
+    "A: gases",
+    "B: rocks",
+    "C: elements",
+    "D: molecules"
+  ],
+  "gold_answer": "B",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: During science class, a teacher explains that the samples the students are studying are made of two or more minerals. What are the students studying?\n\n\nChoices:\nA) gases\nB) rocks\nC) elements\nD) molecules\n\nProvide an answer to the following question:\n\nQ: During science class, a teacher explains that the samples the students are studying are made of two or more minerals. What are the students studying?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "B",
+          "logprob": -0.007696930435486138,
+          "probability": 0.9923326150817187
+        }
+      ],
+      "decision_process": {
+        "selected_text": "B",
+        "matched_choice": "B",
+        "confidence_computation": "exp(logprob) = exp(-0.0077) = 0.9923"
+      },
+      "final_metrics": {
+        "predicted": "B",
+        "correct": true,
+        "confidence": 0.9923326150817187,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

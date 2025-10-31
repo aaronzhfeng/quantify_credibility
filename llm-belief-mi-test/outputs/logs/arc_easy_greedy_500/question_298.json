@@ -1,0 +1,51 @@
+{
+  "question_id": 298,
+  "question_text": "Which of the following lists units of length from smallest to largest?",
+  "choices": [
+    "A: light-year, astronomical unit, kilometer, angstrom",
+    "B: angstrom, kilometer, astronomical unit, light-year",
+    "C: astronomical unit, angstrom, kilometer, light-year",
+    "D: kilometer, angstrom, light-year, astronomical unit"
+  ],
+  "gold_answer": "B",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Which of the following lists units of length from smallest to largest?\n\n\nChoices:\nA) light-year, astronomical unit, kilometer, angstrom\nB) angstrom, kilometer, astronomical unit, light-year\nC) astronomical unit, angstrom, kilometer, light-year\nD) kilometer, angstrom, light-year, astronomical unit\n\nProvide an answer to the following question:\n\nQ: Which of the following lists units of length from smallest to largest?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "A",
+          "logprob": -0.13026822358369827,
+          "probability": 0.8778599366012277
+        }
+      ],
+      "decision_process": {
+        "selected_text": "A",
+        "matched_choice": "A",
+        "confidence_computation": "exp(logprob) = exp(-0.1303) = 0.8779"
+      },
+      "final_metrics": {
+        "predicted": "A",
+        "correct": false,
+        "confidence": 0.8778599366012277,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "question_id": 115,
+  "question_text": "The ash borer moth looks similar to a wasp, but it does not have the ability to sting. This adaptation most likely helps the moth survive because",
+  "choices": [
+    "A: it makes food easier to find.",
+    "B: predators avoid the moth.",
+    "C: it aids in attracting a mate.",
+    "D: the moth blends in with its surroundings."
+  ],
+  "gold_answer": "B",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: The ash borer moth looks similar to a wasp, but it does not have the ability to sting. This adaptation most likely helps the moth survive because\n\n\nChoices:\nA) it makes food easier to find.\nB) predators avoid the moth.\nC) it aids in attracting a mate.\nD) the moth blends in with its surroundings.\n\nProvide an answer to the following question:\n\nQ: The ash borer moth looks similar to a wasp, but it does not have the ability to sting. This adaptation most likely helps the moth survive because\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "B",
+          "logprob": -0.21077359816990793,
+          "probability": 0.8099574219671596
+        }
+      ],
+      "decision_process": {
+        "selected_text": "B",
+        "matched_choice": "B",
+        "confidence_computation": "exp(logprob) = exp(-0.2108) = 0.8100"
+      },
+      "final_metrics": {
+        "predicted": "B",
+        "correct": true,
+        "confidence": 0.8099574219671596,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

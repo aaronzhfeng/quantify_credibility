@@ -1,0 +1,51 @@
+{
+  "question_id": 182,
+  "question_text": "What is the name of the process in which igneous, sedimentary, and metamorphic rocks are converted into one another in stages?",
+  "choices": [
+    "A: rock cycle",
+    "B: erosion cycle",
+    "C: magma cycle",
+    "D: tectonic cycle"
+  ],
+  "gold_answer": "A",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: What is the name of the process in which igneous, sedimentary, and metamorphic rocks are converted into one another in stages?\n\n\nChoices:\nA) rock cycle\nB) erosion cycle\nC) magma cycle\nD) tectonic cycle\n\nProvide an answer to the following question:\n\nQ: What is the name of the process in which igneous, sedimentary, and metamorphic rocks are converted into one another in stages?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "A",
+          "logprob": -0.17994533479122765,
+          "probability": 0.8353158728797956
+        }
+      ],
+      "decision_process": {
+        "selected_text": "A",
+        "matched_choice": "A",
+        "confidence_computation": "exp(logprob) = exp(-0.1799) = 0.8353"
+      },
+      "final_metrics": {
+        "predicted": "A",
+        "correct": true,
+        "confidence": 0.8353158728797956,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

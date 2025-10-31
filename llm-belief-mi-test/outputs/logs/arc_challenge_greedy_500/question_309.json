@@ -1,0 +1,51 @@
+{
+  "question_id": 309,
+  "question_text": "A pot is touching the flame of a gas stove, and the substance in the pot is heating up due to the contact. This is an example of which type of energy transfer?",
+  "choices": [
+    "A: radiation",
+    "B: convection",
+    "C: conduction",
+    "D: vaporization"
+  ],
+  "gold_answer": "C",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A pot is touching the flame of a gas stove, and the substance in the pot is heating up due to the contact. This is an example of which type of energy transfer?\n\n\nChoices:\nA) radiation\nB) convection\nC) conduction\nD) vaporization\n\nProvide an answer to the following question:\n\nQ: A pot is touching the flame of a gas stove, and the substance in the pot is heating up due to the contact. This is an example of which type of energy transfer?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "C",
+          "logprob": -0.0047828423557803035,
+          "probability": 0.9952285772214532
+        }
+      ],
+      "decision_process": {
+        "selected_text": "C",
+        "matched_choice": "C",
+        "confidence_computation": "exp(logprob) = exp(-0.0048) = 0.9952"
+      },
+      "final_metrics": {
+        "predicted": "C",
+        "correct": true,
+        "confidence": 0.9952285772214532,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

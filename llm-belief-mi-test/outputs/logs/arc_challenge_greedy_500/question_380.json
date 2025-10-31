@@ -1,0 +1,51 @@
+{
+  "question_id": 380,
+  "question_text": "Which is an example of electricity flowing in a circuit to produce sound?",
+  "choices": [
+    "A: pushing a button to make a doorbell ring",
+    "B: stepping on a mat to make a door open",
+    "C: flipping a switch to turn on a light",
+    "D: sliding a lever to turn on an electric blanket"
+  ],
+  "gold_answer": "A",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Which is an example of electricity flowing in a circuit to produce sound?\n\n\nChoices:\nA) pushing a button to make a doorbell ring\nB) stepping on a mat to make a door open\nC) flipping a switch to turn on a light\nD) sliding a lever to turn on an electric blanket\n\nProvide an answer to the following question:\n\nQ: Which is an example of electricity flowing in a circuit to produce sound?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "A",
+          "logprob": -0.1777801290154457,
+          "probability": 0.8371264630751769
+        }
+      ],
+      "decision_process": {
+        "selected_text": "A",
+        "matched_choice": "A",
+        "confidence_computation": "exp(logprob) = exp(-0.1778) = 0.8371"
+      },
+      "final_metrics": {
+        "predicted": "A",
+        "correct": true,
+        "confidence": 0.8371264630751769,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

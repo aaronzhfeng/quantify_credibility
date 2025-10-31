@@ -1,0 +1,51 @@
+{
+  "question_id": 376,
+  "question_text": "Classification of galaxies is based on which characteristic?",
+  "choices": [
+    "A: the color of the galaxy",
+    "B: the shape of the galaxy",
+    "C: how many stars make up the galaxy",
+    "D: how many planets make up the galaxy"
+  ],
+  "gold_answer": "B",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Classification of galaxies is based on which characteristic?\n\n\nChoices:\nA) the color of the galaxy\nB) the shape of the galaxy\nC) how many stars make up the galaxy\nD) how many planets make up the galaxy\n\nProvide an answer to the following question:\n\nQ: Classification of galaxies is based on which characteristic?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "B",
+          "logprob": -0.11736401752568781,
+          "probability": 0.8892614274942715
+        }
+      ],
+      "decision_process": {
+        "selected_text": "B",
+        "matched_choice": "B",
+        "confidence_computation": "exp(logprob) = exp(-0.1174) = 0.8893"
+      },
+      "final_metrics": {
+        "predicted": "B",
+        "correct": true,
+        "confidence": 0.8892614274942715,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

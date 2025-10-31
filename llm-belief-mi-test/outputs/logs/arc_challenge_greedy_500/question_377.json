@@ -1,0 +1,51 @@
+{
+  "question_id": 377,
+  "question_text": "Which of the following must get nutrients from a transport system?",
+  "choices": [
+    "A: amoeba",
+    "B: euglena",
+    "C: skin cell",
+    "D: bacterial cell"
+  ],
+  "gold_answer": "C",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Which of the following must get nutrients from a transport system?\n\n\nChoices:\nA) amoeba\nB) euglena\nC) skin cell\nD) bacterial cell\n\nProvide an answer to the following question:\n\nQ: Which of the following must get nutrients from a transport system?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "A",
+          "logprob": -0.39621123747201636,
+          "probability": 0.672864546718436
+        }
+      ],
+      "decision_process": {
+        "selected_text": "A",
+        "matched_choice": "A",
+        "confidence_computation": "exp(logprob) = exp(-0.3962) = 0.6729"
+      },
+      "final_metrics": {
+        "predicted": "A",
+        "correct": false,
+        "confidence": 0.672864546718436,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

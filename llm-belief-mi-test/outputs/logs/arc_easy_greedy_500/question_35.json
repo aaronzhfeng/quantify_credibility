@@ -1,0 +1,51 @@
+{
+  "question_id": 35,
+  "question_text": "When white, fluffy clouds appear in Massachusetts, the weather that day will MOST LIKELY be",
+  "choices": [
+    "A: fair.",
+    "B: stormy.",
+    "C: foggy.",
+    "D: rainy."
+  ],
+  "gold_answer": "A",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: When white, fluffy clouds appear in Massachusetts, the weather that day will MOST LIKELY be\n\n\nChoices:\nA) fair.\nB) stormy.\nC) foggy.\nD) rainy.\n\nProvide an answer to the following question:\n\nQ: When white, fluffy clouds appear in Massachusetts, the weather that day will MOST LIKELY be\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "A",
+          "logprob": -0.16374433226883411,
+          "probability": 0.8489590455690809
+        }
+      ],
+      "decision_process": {
+        "selected_text": "A",
+        "matched_choice": "A",
+        "confidence_computation": "exp(logprob) = exp(-0.1637) = 0.8490"
+      },
+      "final_metrics": {
+        "predicted": "A",
+        "correct": true,
+        "confidence": 0.8489590455690809,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

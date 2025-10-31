@@ -1,0 +1,51 @@
+{
+  "question_id": 55,
+  "question_text": "All natural resources on Earth are either renewable or nonrenewable. Whether a resource is renewable or nonrenewable depends on how fast or slow the resource is replaced. If the resource is used faster than it is replaced, then the resource will, in time, disappear. Which activity shows the use of a nonrenewable natural resource?",
+  "choices": [
+    "A: A group of people swims in a river.",
+    "B: A construction crew builds an iron bridge.",
+    "C: A farmer grows vegetables to sell at a local market.",
+    "D: A person bakes a cake with electricity produced by a hydroelectric power plant."
+  ],
+  "gold_answer": "B",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: All natural resources on Earth are either renewable or nonrenewable. Whether a resource is renewable or nonrenewable depends on how fast or slow the resource is replaced. If the resource is used faster than it is replaced, then the resource will, in time, disappear. Which activity shows the use of a nonrenewable natural resource?\n\n\nChoices:\nA) A group of people swims in a river.\nB) A construction crew builds an iron bridge.\nC) A farmer grows vegetables to sell at a local market.\nD) A person bakes a cake with electricity produced by a hydroelectric power plant.\n\nProvide an answer to the following question:\n\nQ: All natural resources on Earth are either renewable or nonrenewable. Whether a resource is renewable or nonrenewable depends on how fast or slow the resource is replaced. If the resource is used faster than it is replaced, then the resource will, in time, disappear. Which activity shows the use of a nonrenewable natural resource?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "B",
+          "logprob": -0.1686213145367219,
+          "probability": 0.8448287671914197
+        }
+      ],
+      "decision_process": {
+        "selected_text": "B",
+        "matched_choice": "B",
+        "confidence_computation": "exp(logprob) = exp(-0.1686) = 0.8448"
+      },
+      "final_metrics": {
+        "predicted": "B",
+        "correct": true,
+        "confidence": 0.8448287671914197,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "question_id": 129,
+  "question_text": "Which step in asexual reproduction would you expect to find in volvox but not in amoebas?",
+  "choices": [
+    "A: division of cells",
+    "B: replication of DNA",
+    "C: formation of a cell plate",
+    "D: separation of chromatids"
+  ],
+  "gold_answer": "C",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Which step in asexual reproduction would you expect to find in volvox but not in amoebas?\n\n\nChoices:\nA) division of cells\nB) replication of DNA\nC) formation of a cell plate\nD) separation of chromatids\n\nProvide an answer to the following question:\n\nQ: Which step in asexual reproduction would you expect to find in volvox but not in amoebas?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "A",
+          "logprob": -0.6101606702432036,
+          "probability": 0.5432635757711266
+        }
+      ],
+      "decision_process": {
+        "selected_text": "A",
+        "matched_choice": "A",
+        "confidence_computation": "exp(logprob) = exp(-0.6102) = 0.5433"
+      },
+      "final_metrics": {
+        "predicted": "A",
+        "correct": false,
+        "confidence": 0.5432635757711266,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

@@ -52,7 +52,7 @@ def extract_info(filepath: str) -> tuple:
     )
 
 
-def load_all_results(pattern: str = "outputs/results/*_500.json") -> Dict:
+def load_all_results(pattern: str = "outputs/results/*/*_500.json") -> Dict:
     """Load all result files."""
     files = sorted(glob(pattern))
     
@@ -163,7 +163,7 @@ def main():
     parser.add_argument("--dataset", type=str, 
                        choices=['openbookqa', 'arc_challenge', 'arc_easy'],
                        help="Filter by specific dataset")
-    parser.add_argument("--pattern", type=str, default="outputs/results/*_500.json",
+    parser.add_argument("--pattern", type=str, default="outputs/results/*/*_500.json",
                        help="File pattern to match")
     parser.add_argument("--cross-dataset", action="store_true",
                        help="Show cross-dataset comparison by method")

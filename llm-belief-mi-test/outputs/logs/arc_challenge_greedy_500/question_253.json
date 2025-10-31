@@ -1,0 +1,51 @@
+{
+  "question_id": 253,
+  "question_text": "Which component of the cell membrane functions to actively transport molecules into the cell?",
+  "choices": [
+    "A: carbohydrate",
+    "B: cytoplasm",
+    "C: phospholipid",
+    "D: protein"
+  ],
+  "gold_answer": "D",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Which component of the cell membrane functions to actively transport molecules into the cell?\n\n\nChoices:\nA) carbohydrate\nB) cytoplasm\nC) phospholipid\nD) protein\n\nProvide an answer to the following question:\n\nQ: Which component of the cell membrane functions to actively transport molecules into the cell?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "D",
+          "logprob": -0.018570363768958487,
+          "probability": 0.9816010030155662
+        }
+      ],
+      "decision_process": {
+        "selected_text": "D",
+        "matched_choice": "D",
+        "confidence_computation": "exp(logprob) = exp(-0.0186) = 0.9816"
+      },
+      "final_metrics": {
+        "predicted": "D",
+        "correct": true,
+        "confidence": 0.9816010030155662,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

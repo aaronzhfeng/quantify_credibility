@@ -1,0 +1,51 @@
+{
+  "question_id": 344,
+  "question_text": "A stationary air mass over the Gulf of Mexico would typically be",
+  "choices": [
+    "A: warm and dry.",
+    "B: warm and humid.",
+    "C: cool and dry.",
+    "D: cool and humid."
+  ],
+  "gold_answer": "B",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A stationary air mass over the Gulf of Mexico would typically be\n\n\nChoices:\nA) warm and dry.\nB) warm and humid.\nC) cool and dry.\nD) cool and humid.\n\nProvide an answer to the following question:\n\nQ: A stationary air mass over the Gulf of Mexico would typically be\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "B",
+          "logprob": -0.23473237734287977,
+          "probability": 0.7907824526137686
+        }
+      ],
+      "decision_process": {
+        "selected_text": "B",
+        "matched_choice": "B",
+        "confidence_computation": "exp(logprob) = exp(-0.2347) = 0.7908"
+      },
+      "final_metrics": {
+        "predicted": "B",
+        "correct": true,
+        "confidence": 0.7907824526137686,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

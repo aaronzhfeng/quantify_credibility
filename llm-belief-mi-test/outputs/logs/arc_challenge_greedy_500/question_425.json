@@ -1,0 +1,51 @@
+{
+  "question_id": 425,
+  "question_text": "A teacher gives a student an unknown liquid and wants the student to find the boiling point of the liquid. The student performs the investigation and finds the boiling point is 50°C and then repeats the experiment and finds the boiling point is 70°C. How should the student best identify the boiling point?",
+  "choices": [
+    "A: use the second boiling point",
+    "B: average the two numbers",
+    "C: use the first boiling point",
+    "D: repeat the investigation"
+  ],
+  "gold_answer": "D",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A teacher gives a student an unknown liquid and wants the student to find the boiling point of the liquid. The student performs the investigation and finds the boiling point is 50°C and then repeats the experiment and finds the boiling point is 70°C. How should the student best identify the boiling point?\n\n\nChoices:\nA) use the second boiling point\nB) average the two numbers\nC) use the first boiling point\nD) repeat the investigation\n\nProvide an answer to the following question:\n\nQ: A teacher gives a student an unknown liquid and wants the student to find the boiling point of the liquid. The student performs the investigation and finds the boiling point is 50°C and then repeats the experiment and finds the boiling point is 70°C. How should the student best identify the boiling point?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "B",
+          "logprob": -0.2271576849743724,
+          "probability": 0.7967951297640254
+        }
+      ],
+      "decision_process": {
+        "selected_text": "B",
+        "matched_choice": "B",
+        "confidence_computation": "exp(logprob) = exp(-0.2272) = 0.7968"
+      },
+      "final_metrics": {
+        "predicted": "B",
+        "correct": false,
+        "confidence": 0.7967951297640254,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "question_id": 194,
+  "question_text": "Students want to compare rainfall data collected from the homes of different students in the area. What is one way the students can reduce the possibility of uncontrolled variables affecting their data?",
+  "choices": [
+    "A: by checking their rain gauges hourly",
+    "B: by using identical rain gauges in each location",
+    "C: by collecting temperature data along with rainfall",
+    "D: by collecting rainfall data while it is raining"
+  ],
+  "gold_answer": "B",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Students want to compare rainfall data collected from the homes of different students in the area. What is one way the students can reduce the possibility of uncontrolled variables affecting their data?\n\n\nChoices:\nA) by checking their rain gauges hourly\nB) by using identical rain gauges in each location\nC) by collecting temperature data along with rainfall\nD) by collecting rainfall data while it is raining\n\nProvide an answer to the following question:\n\nQ: Students want to compare rainfall data collected from the homes of different students in the area. What is one way the students can reduce the possibility of uncontrolled variables affecting their data?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "B",
+          "logprob": -0.040911291842348874,
+          "probability": 0.9599142783982018
+        }
+      ],
+      "decision_process": {
+        "selected_text": "B",
+        "matched_choice": "B",
+        "confidence_computation": "exp(logprob) = exp(-0.0409) = 0.9599"
+      },
+      "final_metrics": {
+        "predicted": "B",
+        "correct": true,
+        "confidence": 0.9599142783982018,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "question_id": 142,
+  "question_text": "Which change in Earth's surface is most directly related to the water cycle?",
+  "choices": [
+    "A: deposition of sediments",
+    "B: uplifting of a mountain",
+    "C: formation of ocean trenches",
+    "D: movement of tectonic plates"
+  ],
+  "gold_answer": "A",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Which change in Earth's surface is most directly related to the water cycle?\n\n\nChoices:\nA) deposition of sediments\nB) uplifting of a mountain\nC) formation of ocean trenches\nD) movement of tectonic plates\n\nProvide an answer to the following question:\n\nQ: Which change in Earth's surface is most directly related to the water cycle?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "A",
+          "logprob": -0.28042709070723504,
+          "probability": 0.7554610221631813
+        }
+      ],
+      "decision_process": {
+        "selected_text": "A",
+        "matched_choice": "A",
+        "confidence_computation": "exp(logprob) = exp(-0.2804) = 0.7555"
+      },
+      "final_metrics": {
+        "predicted": "A",
+        "correct": true,
+        "confidence": 0.7554610221631813,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

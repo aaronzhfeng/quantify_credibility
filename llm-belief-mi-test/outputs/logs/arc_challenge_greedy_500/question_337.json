@@ -1,0 +1,51 @@
+{
+  "question_id": 337,
+  "question_text": "A researcher notices differences in the shapes of leaves on different trees of the same species. Which of these is the most accurate way to record these differences?",
+  "choices": [
+    "A: record the numbers of leaves in a data table",
+    "B: photograph each leaf type using a camera",
+    "C: record the sizes of different leaves in a notebook",
+    "D: calculate the percentages of all leaf types using a calculator"
+  ],
+  "gold_answer": "B",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A researcher notices differences in the shapes of leaves on different trees of the same species. Which of these is the most accurate way to record these differences?\n\n\nChoices:\nA) record the numbers of leaves in a data table\nB) photograph each leaf type using a camera\nC) record the sizes of different leaves in a notebook\nD) calculate the percentages of all leaf types using a calculator\n\nProvide an answer to the following question:\n\nQ: A researcher notices differences in the shapes of leaves on different trees of the same species. Which of these is the most accurate way to record these differences?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "B",
+          "logprob": -0.4436730775050819,
+          "probability": 0.6416751645862088
+        }
+      ],
+      "decision_process": {
+        "selected_text": "B",
+        "matched_choice": "B",
+        "confidence_computation": "exp(logprob) = exp(-0.4437) = 0.6417"
+      },
+      "final_metrics": {
+        "predicted": "B",
+        "correct": true,
+        "confidence": 0.6416751645862088,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

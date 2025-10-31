@@ -1,0 +1,51 @@
+{
+  "question_id": 257,
+  "question_text": "Which liquid most likely contains a dissolved gas?",
+  "choices": [
+    "A: whole milk",
+    "B: house paint",
+    "C: mud puddle",
+    "D: carbonated soda"
+  ],
+  "gold_answer": "D",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Which liquid most likely contains a dissolved gas?\n\n\nChoices:\nA) whole milk\nB) house paint\nC) mud puddle\nD) carbonated soda\n\nProvide an answer to the following question:\n\nQ: Which liquid most likely contains a dissolved gas?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "D",
+          "logprob": -0.0935914526344277,
+          "probability": 0.9106547318436331
+        }
+      ],
+      "decision_process": {
+        "selected_text": "D",
+        "matched_choice": "D",
+        "confidence_computation": "exp(logprob) = exp(-0.0936) = 0.9107"
+      },
+      "final_metrics": {
+        "predicted": "D",
+        "correct": true,
+        "confidence": 0.9106547318436331,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

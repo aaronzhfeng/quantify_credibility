@@ -1,0 +1,51 @@
+{
+  "question_id": 14,
+  "question_text": "Which of these gases is the most abundant greenhouse gas in the lower atmosphere of Earth?",
+  "choices": [
+    "A: ozone",
+    "B: methane",
+    "C: water vapor",
+    "D: carbon dioxide"
+  ],
+  "gold_answer": "C",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Which of these gases is the most abundant greenhouse gas in the lower atmosphere of Earth?\n\n\nChoices:\nA) ozone\nB) methane\nC) water vapor\nD) carbon dioxide\n\nProvide an answer to the following question:\n\nQ: Which of these gases is the most abundant greenhouse gas in the lower atmosphere of Earth?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "C",
+          "logprob": -0.07159509917255491,
+          "probability": 0.930907744828974
+        }
+      ],
+      "decision_process": {
+        "selected_text": "C",
+        "matched_choice": "C",
+        "confidence_computation": "exp(logprob) = exp(-0.0716) = 0.9309"
+      },
+      "final_metrics": {
+        "predicted": "C",
+        "correct": true,
+        "confidence": 0.930907744828974,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

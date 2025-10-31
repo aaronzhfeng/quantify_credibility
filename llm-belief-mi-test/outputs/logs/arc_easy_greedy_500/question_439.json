@@ -1,0 +1,51 @@
+{
+  "question_id": 439,
+  "question_text": "Use The Periodic Table of the Elements and the information below to answer the question. Magnesium metal (Mg) is grayish-white in color and reacts actively with water. Fluorine (F2) is a greenish-yellow gas at room temperature and is a member of the halogen family. These two elements react to produce magnesium fluoride (MgF2), a chemical commonly used in making windows and lenses. According to the Periodic Table of the Elements, which element is most similar to magnesium (Mg)?",
+  "choices": [
+    "A: calcium (Ca)",
+    "B: iodine (I)",
+    "C: sodium (Na)",
+    "D: sulfur (S)"
+  ],
+  "gold_answer": "A",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Use The Periodic Table of the Elements and the information below to answer the question. Magnesium metal (Mg) is grayish-white in color and reacts actively with water. Fluorine (F2) is a greenish-yellow gas at room temperature and is a member of the halogen family. These two elements react to produce magnesium fluoride (MgF2), a chemical commonly used in making windows and lenses. According to the Periodic Table of the Elements, which element is most similar to magnesium (Mg)?\n\n\nChoices:\nA) calcium (Ca)\nB) iodine (I)\nC) sodium (Na)\nD) sulfur (S)\n\nProvide an answer to the following question:\n\nQ: Use The Periodic Table of the Elements and the information below to answer the question. Magnesium metal (Mg) is grayish-white in color and reacts actively with water. Fluorine (F2) is a greenish-yellow gas at room temperature and is a member of the halogen family. These two elements react to produce magnesium fluoride (MgF2), a chemical commonly used in making windows and lenses. According to the Periodic Table of the Elements, which element is most similar to magnesium (Mg)?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "A",
+          "logprob": -0.31814446998760104,
+          "probability": 0.727497679241518
+        }
+      ],
+      "decision_process": {
+        "selected_text": "A",
+        "matched_choice": "A",
+        "confidence_computation": "exp(logprob) = exp(-0.3181) = 0.7275"
+      },
+      "final_metrics": {
+        "predicted": "A",
+        "correct": true,
+        "confidence": 0.727497679241518,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

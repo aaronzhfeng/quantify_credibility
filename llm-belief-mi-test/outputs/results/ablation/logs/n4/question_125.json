@@ -1,0 +1,959 @@
+{
+  "question_id": 125,
+  "question_text": "Since density = mass / volume, denser liquids such as water sink more than",
+  "choices": [
+    "A: baby oil",
+    "B: corn syrup or",
+    "C: milk",
+    "D: honey"
+  ],
+  "gold_answer": "A",
+  "methods": {
+    "mi_method": {
+      "description": "k=10 chains of length n=4, MI estimation",
+      "raw_inputs": [
+        {
+          "chain_id": 0,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Since density = mass / volume, denser liquids such as water sink more than\n\n\nChoices:\nA) baby oil\nB) corn syrup or\nC) milk\nD) honey\n\nProvide an answer to the following question:\n\nQ: Since density = mass / volume, denser liquids such as water sink more than\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 0,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Since density = mass / volume, denser liquids such as water sink more than\n\n\nOne answer to question Q is B) corn syrup or.\n\n\nChoices:\nA) baby oil\nB) corn syrup or\nC) milk\nD) honey\n\nProvide an answer to the following question:\n\nQ: Since density = mass / volume, denser liquids such as water sink more than\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 0,
+          "step": 2,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Since density = mass / volume, denser liquids such as water sink more than\n\n\nOne answer to question Q is B) corn syrup or. Another answer to question Q is B) corn syrup or.\n\n\nChoices:\nA) baby oil\nB) corn syrup or\nC) milk\nD) honey\n\nProvide an answer to the following question:\n\nQ: Since density = mass / volume, denser liquids such as water sink more than\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 0,
+          "step": 3,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Since density = mass / volume, denser liquids such as water sink more than\n\n\nOne answer to question Q is B) corn syrup or. Another answer to question Q is B) corn syrup or. Another answer to question Q is B) corn syrup or.\n\n\nChoices:\nA) baby oil\nB) corn syrup or\nC) milk\nD) honey\n\nProvide an answer to the following question:\n\nQ: Since density = mass / volume, denser liquids such as water sink more than\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 1,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Since density = mass / volume, denser liquids such as water sink more than\n\n\nChoices:\nA) baby oil\nB) corn syrup or\nC) milk\nD) honey\n\nProvide an answer to the following question:\n\nQ: Since density = mass / volume, denser liquids such as water sink more than\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 1,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Since density = mass / volume, denser liquids such as water sink more than\n\n\nOne answer to question Q is B) corn syrup or.\n\n\nChoices:\nA) baby oil\nB) corn syrup or\nC) milk\nD) honey\n\nProvide an answer to the following question:\n\nQ: Since density = mass / volume, denser liquids such as water sink more than\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 1,
+          "step": 2,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Since density = mass / volume, denser liquids such as water sink more than\n\n\nOne answer to question Q is B) corn syrup or. Another answer to question Q is B) corn syrup or.\n\n\nChoices:\nA) baby oil\nB) corn syrup or\nC) milk\nD) honey\n\nProvide an answer to the following question:\n\nQ: Since density = mass / volume, denser liquids such as water sink more than\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 1,
+          "step": 3,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Since density = mass / volume, denser liquids such as water sink more than\n\n\nOne answer to question Q is B) corn syrup or. Another answer to question Q is B) corn syrup or. Another answer to question Q is B) corn syrup or.\n\n\nChoices:\nA) baby oil\nB) corn syrup or\nC) milk\nD) honey\n\nProvide an answer to the following question:\n\nQ: Since density = mass / volume, denser liquids such as water sink more than\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 2,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Since density = mass / volume, denser liquids such as water sink more than\n\n\nChoices:\nA) baby oil\nB) corn syrup or\nC) milk\nD) honey\n\nProvide an answer to the following question:\n\nQ: Since density = mass / volume, denser liquids such as water sink more than\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 2,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Since density = mass / volume, denser liquids such as water sink more than\n\n\nOne answer to question Q is B) corn syrup or.\n\n\nChoices:\nA) baby oil\nB) corn syrup or\nC) milk\nD) honey\n\nProvide an answer to the following question:\n\nQ: Since density = mass / volume, denser liquids such as water sink more than\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 2,
+          "step": 2,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Since density = mass / volume, denser liquids such as water sink more than\n\n\nOne answer to question Q is B) corn syrup or. Another answer to question Q is B) corn syrup or.\n\n\nChoices:\nA) baby oil\nB) corn syrup or\nC) milk\nD) honey\n\nProvide an answer to the following question:\n\nQ: Since density = mass / volume, denser liquids such as water sink more than\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 2,
+          "step": 3,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Since density = mass / volume, denser liquids such as water sink more than\n\n\nOne answer to question Q is B) corn syrup or. Another answer to question Q is B) corn syrup or. Another answer to question Q is B) corn syrup or.\n\n\nChoices:\nA) baby oil\nB) corn syrup or\nC) milk\nD) honey\n\nProvide an answer to the following question:\n\nQ: Since density = mass / volume, denser liquids such as water sink more than\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 3,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Since density = mass / volume, denser liquids such as water sink more than\n\n\nChoices:\nA) baby oil\nB) corn syrup or\nC) milk\nD) honey\n\nProvide an answer to the following question:\n\nQ: Since density = mass / volume, denser liquids such as water sink more than\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 3,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Since density = mass / volume, denser liquids such as water sink more than\n\n\nOne answer to question Q is B) corn syrup or.\n\n\nChoices:\nA) baby oil\nB) corn syrup or\nC) milk\nD) honey\n\nProvide an answer to the following question:\n\nQ: Since density = mass / volume, denser liquids such as water sink more than\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 3,
+          "step": 2,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Since density = mass / volume, denser liquids such as water sink more than\n\n\nOne answer to question Q is B) corn syrup or. Another answer to question Q is B) corn syrup or.\n\n\nChoices:\nA) baby oil\nB) corn syrup or\nC) milk\nD) honey\n\nProvide an answer to the following question:\n\nQ: Since density = mass / volume, denser liquids such as water sink more than\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 3,
+          "step": 3,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Since density = mass / volume, denser liquids such as water sink more than\n\n\nOne answer to question Q is B) corn syrup or. Another answer to question Q is B) corn syrup or. Another answer to question Q is B) corn syrup or.\n\n\nChoices:\nA) baby oil\nB) corn syrup or\nC) milk\nD) honey\n\nProvide an answer to the following question:\n\nQ: Since density = mass / volume, denser liquids such as water sink more than\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 4,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Since density = mass / volume, denser liquids such as water sink more than\n\n\nChoices:\nA) baby oil\nB) corn syrup or\nC) milk\nD) honey\n\nProvide an answer to the following question:\n\nQ: Since density = mass / volume, denser liquids such as water sink more than\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 4,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Since density = mass / volume, denser liquids such as water sink more than\n\n\nOne answer to question Q is C) milk.\n\n\nChoices:\nA) baby oil\nB) corn syrup or\nC) milk\nD) honey\n\nProvide an answer to the following question:\n\nQ: Since density = mass / volume, denser liquids such as water sink more than\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 4,
+          "step": 2,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Since density = mass / volume, denser liquids such as water sink more than\n\n\nOne answer to question Q is C) milk. Another answer to question Q is B) corn syrup or.\n\n\nChoices:\nA) baby oil\nB) corn syrup or\nC) milk\nD) honey\n\nProvide an answer to the following question:\n\nQ: Since density = mass / volume, denser liquids such as water sink more than\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 4,
+          "step": 3,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Since density = mass / volume, denser liquids such as water sink more than\n\n\nOne answer to question Q is C) milk. Another answer to question Q is B) corn syrup or. Another answer to question Q is A) baby oil.\n\n\nChoices:\nA) baby oil\nB) corn syrup or\nC) milk\nD) honey\n\nProvide an answer to the following question:\n\nQ: Since density = mass / volume, denser liquids such as water sink more than\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 5,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Since density = mass / volume, denser liquids such as water sink more than\n\n\nChoices:\nA) baby oil\nB) corn syrup or\nC) milk\nD) honey\n\nProvide an answer to the following question:\n\nQ: Since density = mass / volume, denser liquids such as water sink more than\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 5,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Since density = mass / volume, denser liquids such as water sink more than\n\n\nOne answer to question Q is B) corn syrup or.\n\n\nChoices:\nA) baby oil\nB) corn syrup or\nC) milk\nD) honey\n\nProvide an answer to the following question:\n\nQ: Since density = mass / volume, denser liquids such as water sink more than\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 5,
+          "step": 2,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Since density = mass / volume, denser liquids such as water sink more than\n\n\nOne answer to question Q is B) corn syrup or. Another answer to question Q is C) milk.\n\n\nChoices:\nA) baby oil\nB) corn syrup or\nC) milk\nD) honey\n\nProvide an answer to the following question:\n\nQ: Since density = mass / volume, denser liquids such as water sink more than\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 5,
+          "step": 3,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Since density = mass / volume, denser liquids such as water sink more than\n\n\nOne answer to question Q is B) corn syrup or. Another answer to question Q is C) milk. Another answer to question Q is B) corn syrup or.\n\n\nChoices:\nA) baby oil\nB) corn syrup or\nC) milk\nD) honey\n\nProvide an answer to the following question:\n\nQ: Since density = mass / volume, denser liquids such as water sink more than\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 6,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Since density = mass / volume, denser liquids such as water sink more than\n\n\nChoices:\nA) baby oil\nB) corn syrup or\nC) milk\nD) honey\n\nProvide an answer to the following question:\n\nQ: Since density = mass / volume, denser liquids such as water sink more than\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 6,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Since density = mass / volume, denser liquids such as water sink more than\n\n\nOne answer to question Q is B) corn syrup or.\n\n\nChoices:\nA) baby oil\nB) corn syrup or\nC) milk\nD) honey\n\nProvide an answer to the following question:\n\nQ: Since density = mass / volume, denser liquids such as water sink more than\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 6,
+          "step": 2,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Since density = mass / volume, denser liquids such as water sink more than\n\n\nOne answer to question Q is B) corn syrup or. Another answer to question Q is B) corn syrup or.\n\n\nChoices:\nA) baby oil\nB) corn syrup or\nC) milk\nD) honey\n\nProvide an answer to the following question:\n\nQ: Since density = mass / volume, denser liquids such as water sink more than\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 6,
+          "step": 3,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Since density = mass / volume, denser liquids such as water sink more than\n\n\nOne answer to question Q is B) corn syrup or. Another answer to question Q is B) corn syrup or. Another answer to question Q is B) corn syrup or.\n\n\nChoices:\nA) baby oil\nB) corn syrup or\nC) milk\nD) honey\n\nProvide an answer to the following question:\n\nQ: Since density = mass / volume, denser liquids such as water sink more than\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 7,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Since density = mass / volume, denser liquids such as water sink more than\n\n\nChoices:\nA) baby oil\nB) corn syrup or\nC) milk\nD) honey\n\nProvide an answer to the following question:\n\nQ: Since density = mass / volume, denser liquids such as water sink more than\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 7,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Since density = mass / volume, denser liquids such as water sink more than\n\n\nOne answer to question Q is A) baby oil.\n\n\nChoices:\nA) baby oil\nB) corn syrup or\nC) milk\nD) honey\n\nProvide an answer to the following question:\n\nQ: Since density = mass / volume, denser liquids such as water sink more than\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 7,
+          "step": 2,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Since density = mass / volume, denser liquids such as water sink more than\n\n\nOne answer to question Q is A) baby oil. Another answer to question Q is B) corn syrup or.\n\n\nChoices:\nA) baby oil\nB) corn syrup or\nC) milk\nD) honey\n\nProvide an answer to the following question:\n\nQ: Since density = mass / volume, denser liquids such as water sink more than\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 7,
+          "step": 3,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Since density = mass / volume, denser liquids such as water sink more than\n\n\nOne answer to question Q is A) baby oil. Another answer to question Q is B) corn syrup or. Another answer to question Q is B) corn syrup or.\n\n\nChoices:\nA) baby oil\nB) corn syrup or\nC) milk\nD) honey\n\nProvide an answer to the following question:\n\nQ: Since density = mass / volume, denser liquids such as water sink more than\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 8,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Since density = mass / volume, denser liquids such as water sink more than\n\n\nChoices:\nA) baby oil\nB) corn syrup or\nC) milk\nD) honey\n\nProvide an answer to the following question:\n\nQ: Since density = mass / volume, denser liquids such as water sink more than\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 8,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Since density = mass / volume, denser liquids such as water sink more than\n\n\nOne answer to question Q is B) corn syrup or.\n\n\nChoices:\nA) baby oil\nB) corn syrup or\nC) milk\nD) honey\n\nProvide an answer to the following question:\n\nQ: Since density = mass / volume, denser liquids such as water sink more than\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 8,
+          "step": 2,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Since density = mass / volume, denser liquids such as water sink more than\n\n\nOne answer to question Q is B) corn syrup or. Another answer to question Q is A) baby oil.\n\n\nChoices:\nA) baby oil\nB) corn syrup or\nC) milk\nD) honey\n\nProvide an answer to the following question:\n\nQ: Since density = mass / volume, denser liquids such as water sink more than\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 8,
+          "step": 3,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Since density = mass / volume, denser liquids such as water sink more than\n\n\nOne answer to question Q is B) corn syrup or. Another answer to question Q is A) baby oil. Another answer to question Q is A) baby oil.\n\n\nChoices:\nA) baby oil\nB) corn syrup or\nC) milk\nD) honey\n\nProvide an answer to the following question:\n\nQ: Since density = mass / volume, denser liquids such as water sink more than\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 9,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Since density = mass / volume, denser liquids such as water sink more than\n\n\nChoices:\nA) baby oil\nB) corn syrup or\nC) milk\nD) honey\n\nProvide an answer to the following question:\n\nQ: Since density = mass / volume, denser liquids such as water sink more than\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 9,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Since density = mass / volume, denser liquids such as water sink more than\n\n\nOne answer to question Q is B) corn syrup or.\n\n\nChoices:\nA) baby oil\nB) corn syrup or\nC) milk\nD) honey\n\nProvide an answer to the following question:\n\nQ: Since density = mass / volume, denser liquids such as water sink more than\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 9,
+          "step": 2,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Since density = mass / volume, denser liquids such as water sink more than\n\n\nOne answer to question Q is B) corn syrup or. Another answer to question Q is B) corn syrup or.\n\n\nChoices:\nA) baby oil\nB) corn syrup or\nC) milk\nD) honey\n\nProvide an answer to the following question:\n\nQ: Since density = mass / volume, denser liquids such as water sink more than\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 9,
+          "step": 3,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Since density = mass / volume, denser liquids such as water sink more than\n\n\nOne answer to question Q is B) corn syrup or. Another answer to question Q is B) corn syrup or. Another answer to question Q is A) baby oil.\n\n\nChoices:\nA) baby oil\nB) corn syrup or\nC) milk\nD) honey\n\nProvide an answer to the following question:\n\nQ: Since density = mass / volume, denser liquids such as water sink more than\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "chain_id": 0,
+          "step": 0,
+          "text": "B",
+          "logprob": -0.5402109622955322,
+          "probability": 0.5826253274316714
+        },
+        {
+          "chain_id": 0,
+          "step": 1,
+          "text": "B",
+          "logprob": -0.4559454917907715,
+          "probability": 0.633848386097387
+        },
+        {
+          "chain_id": 0,
+          "step": 2,
+          "text": "B",
+          "logprob": -0.9580836296081543,
+          "probability": 0.38362735409674775
+        },
+        {
+          "chain_id": 0,
+          "step": 3,
+          "text": "D",
+          "logprob": -2.1612965017557144,
+          "probability": 0.1151756987002509
+        },
+        {
+          "chain_id": 1,
+          "step": 0,
+          "text": "B",
+          "logprob": -0.5402109622955322,
+          "probability": 0.5826253274316714
+        },
+        {
+          "chain_id": 1,
+          "step": 1,
+          "text": "B",
+          "logprob": -0.4559454917907715,
+          "probability": 0.633848386097387
+        },
+        {
+          "chain_id": 1,
+          "step": 2,
+          "text": "B",
+          "logprob": -0.9580836296081543,
+          "probability": 0.38362735409674775
+        },
+        {
+          "chain_id": 1,
+          "step": 3,
+          "text": "A",
+          "logprob": -0.9926722049713135,
+          "probability": 0.3705850874151765
+        },
+        {
+          "chain_id": 2,
+          "step": 0,
+          "text": "B",
+          "logprob": -0.5402109622955322,
+          "probability": 0.5826253274316714
+        },
+        {
+          "chain_id": 2,
+          "step": 1,
+          "text": "B",
+          "logprob": -0.4559454917907715,
+          "probability": 0.633848386097387
+        },
+        {
+          "chain_id": 2,
+          "step": 2,
+          "text": "B",
+          "logprob": -0.9580836296081543,
+          "probability": 0.38362735409674775
+        },
+        {
+          "chain_id": 2,
+          "step": 3,
+          "text": "B",
+          "logprob": -0.7148935794830322,
+          "probability": 0.4892441746439939
+        },
+        {
+          "chain_id": 3,
+          "step": 0,
+          "text": "B",
+          "logprob": -0.5402109622955322,
+          "probability": 0.5826253274316714
+        },
+        {
+          "chain_id": 3,
+          "step": 1,
+          "text": "B",
+          "logprob": -0.4559454917907715,
+          "probability": 0.633848386097387
+        },
+        {
+          "chain_id": 3,
+          "step": 2,
+          "text": "B",
+          "logprob": -0.9580836296081543,
+          "probability": 0.38362735409674775
+        },
+        {
+          "chain_id": 3,
+          "step": 3,
+          "text": "B",
+          "logprob": -0.7148935794830322,
+          "probability": 0.4892441746439939
+        },
+        {
+          "chain_id": 4,
+          "step": 0,
+          "text": "C",
+          "logprob": -2.0679895877838135,
+          "probability": 0.12643972231921355
+        },
+        {
+          "chain_id": 4,
+          "step": 1,
+          "text": "B",
+          "logprob": -0.9334706664085388,
+          "probability": 0.39318671961926904
+        },
+        {
+          "chain_id": 4,
+          "step": 2,
+          "text": "A",
+          "logprob": -1.2438348531723022,
+          "probability": 0.28827659709193065
+        },
+        {
+          "chain_id": 4,
+          "step": 3,
+          "text": "A",
+          "logprob": -0.172801673412323,
+          "probability": 0.8413044513410518
+        },
+        {
+          "chain_id": 5,
+          "step": 0,
+          "text": "B",
+          "logprob": -0.5402109622955322,
+          "probability": 0.5826253274316714
+        },
+        {
+          "chain_id": 5,
+          "step": 1,
+          "text": "C",
+          "logprob": -2.4003920555114746,
+          "probability": 0.09068239378694064
+        },
+        {
+          "chain_id": 5,
+          "step": 2,
+          "text": "B",
+          "logprob": -0.8780417442321777,
+          "probability": 0.4155959585277937
+        },
+        {
+          "chain_id": 5,
+          "step": 3,
+          "text": "A",
+          "logprob": -1.0311455726623535,
+          "probability": 0.356598217322095
+        },
+        {
+          "chain_id": 6,
+          "step": 0,
+          "text": "B",
+          "logprob": -0.5402109622955322,
+          "probability": 0.5826253274316714
+        },
+        {
+          "chain_id": 6,
+          "step": 1,
+          "text": "B",
+          "logprob": -0.4559454917907715,
+          "probability": 0.633848386097387
+        },
+        {
+          "chain_id": 6,
+          "step": 2,
+          "text": "B",
+          "logprob": -0.9580836296081543,
+          "probability": 0.38362735409674775
+        },
+        {
+          "chain_id": 6,
+          "step": 3,
+          "text": "B",
+          "logprob": -0.7148935794830322,
+          "probability": 0.4892441746439939
+        },
+        {
+          "chain_id": 7,
+          "step": 0,
+          "text": "A",
+          "logprob": -1.2346556186676025,
+          "probability": 0.29093493767908685
+        },
+        {
+          "chain_id": 7,
+          "step": 1,
+          "text": "B",
+          "logprob": -0.6008251309394836,
+          "probability": 0.5483589814085117
+        },
+        {
+          "chain_id": 7,
+          "step": 2,
+          "text": "B",
+          "logprob": -0.4534642696380615,
+          "probability": 0.6354230575013495
+        },
+        {
+          "chain_id": 7,
+          "step": 3,
+          "text": "A",
+          "logprob": -0.6141671538352966,
+          "probability": 0.5410913535606325
+        },
+        {
+          "chain_id": 8,
+          "step": 0,
+          "text": "B",
+          "logprob": -0.5402109622955322,
+          "probability": 0.5826253274316714
+        },
+        {
+          "chain_id": 8,
+          "step": 1,
+          "text": "A",
+          "logprob": -1.2892794609069824,
+          "probability": 0.2754691979243722
+        },
+        {
+          "chain_id": 8,
+          "step": 2,
+          "text": "A",
+          "logprob": -0.1337144821882248,
+          "probability": 0.874839811296648
+        },
+        {
+          "chain_id": 8,
+          "step": 3,
+          "text": "A",
+          "logprob": -0.11735124886035919,
+          "probability": 0.8892727822483212
+        },
+        {
+          "chain_id": 9,
+          "step": 0,
+          "text": "B",
+          "logprob": -0.5402109622955322,
+          "probability": 0.5826253274316714
+        },
+        {
+          "chain_id": 9,
+          "step": 1,
+          "text": "B",
+          "logprob": -0.4559454917907715,
+          "probability": 0.633848386097387
+        },
+        {
+          "chain_id": 9,
+          "step": 2,
+          "text": "A",
+          "logprob": -0.6803069114685059,
+          "probability": 0.5064615296583569
+        },
+        {
+          "chain_id": 9,
+          "step": 3,
+          "text": "A",
+          "logprob": -0.06032007187604904,
+          "probability": 0.9414631494780491
+        }
+      ],
+      "decision_process": {
+        "num_chains": 10,
+        "chain_length": 4,
+        "total_inferences": 40,
+        "mi_method": "listing",
+        "mi_nats": 0.31652495540334613,
+        "mi_bits": 0.4566489834780078,
+        "selected_answer": "A",
+        "matched_choice": "A",
+        "confidence_computation": "1/(1 + mi_nats) = 1/(1 + 0.3165) = 0.7596",
+        "agreement": "60.00% (6/10 chains agree on final answer)"
+      },
+      "final_metrics": {
+        "predicted": "A",
+        "correct": true,
+        "confidence": 0.7595754230831335,
+        "mi_score": 0.4566489834780078,
+        "agreement": 0.6
+      }
+    }
+  }
+}

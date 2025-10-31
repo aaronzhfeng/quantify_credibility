@@ -1,0 +1,959 @@
+{
+  "question_id": 141,
+  "question_text": "The eighth month of the year is winter in",
+  "choices": [
+    "A: Brazil",
+    "B: Indiana",
+    "C: London",
+    "D: Canada"
+  ],
+  "gold_answer": "A",
+  "methods": {
+    "mi_method": {
+      "description": "k=10 chains of length n=4, MI estimation",
+      "raw_inputs": [
+        {
+          "chain_id": 0,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: The eighth month of the year is winter in\n\n\nChoices:\nA) Brazil\nB) Indiana\nC) London\nD) Canada\n\nProvide an answer to the following question:\n\nQ: The eighth month of the year is winter in\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 0,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: The eighth month of the year is winter in\n\n\nOne answer to question Q is A) Brazil.\n\n\nChoices:\nA) Brazil\nB) Indiana\nC) London\nD) Canada\n\nProvide an answer to the following question:\n\nQ: The eighth month of the year is winter in\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 0,
+          "step": 2,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: The eighth month of the year is winter in\n\n\nOne answer to question Q is A) Brazil. Another answer to question Q is A) Brazil.\n\n\nChoices:\nA) Brazil\nB) Indiana\nC) London\nD) Canada\n\nProvide an answer to the following question:\n\nQ: The eighth month of the year is winter in\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 0,
+          "step": 3,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: The eighth month of the year is winter in\n\n\nOne answer to question Q is A) Brazil. Another answer to question Q is A) Brazil. Another answer to question Q is A) Brazil.\n\n\nChoices:\nA) Brazil\nB) Indiana\nC) London\nD) Canada\n\nProvide an answer to the following question:\n\nQ: The eighth month of the year is winter in\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 1,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: The eighth month of the year is winter in\n\n\nChoices:\nA) Brazil\nB) Indiana\nC) London\nD) Canada\n\nProvide an answer to the following question:\n\nQ: The eighth month of the year is winter in\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 1,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: The eighth month of the year is winter in\n\n\nOne answer to question Q is B) Indiana.\n\n\nChoices:\nA) Brazil\nB) Indiana\nC) London\nD) Canada\n\nProvide an answer to the following question:\n\nQ: The eighth month of the year is winter in\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 1,
+          "step": 2,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: The eighth month of the year is winter in\n\n\nOne answer to question Q is B) Indiana. Another answer to question Q is A) Brazil.\n\n\nChoices:\nA) Brazil\nB) Indiana\nC) London\nD) Canada\n\nProvide an answer to the following question:\n\nQ: The eighth month of the year is winter in\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 1,
+          "step": 3,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: The eighth month of the year is winter in\n\n\nOne answer to question Q is B) Indiana. Another answer to question Q is A) Brazil. Another answer to question Q is A) Brazil.\n\n\nChoices:\nA) Brazil\nB) Indiana\nC) London\nD) Canada\n\nProvide an answer to the following question:\n\nQ: The eighth month of the year is winter in\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 2,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: The eighth month of the year is winter in\n\n\nChoices:\nA) Brazil\nB) Indiana\nC) London\nD) Canada\n\nProvide an answer to the following question:\n\nQ: The eighth month of the year is winter in\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 2,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: The eighth month of the year is winter in\n\n\nOne answer to question Q is A) Brazil.\n\n\nChoices:\nA) Brazil\nB) Indiana\nC) London\nD) Canada\n\nProvide an answer to the following question:\n\nQ: The eighth month of the year is winter in\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 2,
+          "step": 2,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: The eighth month of the year is winter in\n\n\nOne answer to question Q is A) Brazil. Another answer to question Q is A) Brazil.\n\n\nChoices:\nA) Brazil\nB) Indiana\nC) London\nD) Canada\n\nProvide an answer to the following question:\n\nQ: The eighth month of the year is winter in\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 2,
+          "step": 3,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: The eighth month of the year is winter in\n\n\nOne answer to question Q is A) Brazil. Another answer to question Q is A) Brazil. Another answer to question Q is A) Brazil.\n\n\nChoices:\nA) Brazil\nB) Indiana\nC) London\nD) Canada\n\nProvide an answer to the following question:\n\nQ: The eighth month of the year is winter in\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 3,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: The eighth month of the year is winter in\n\n\nChoices:\nA) Brazil\nB) Indiana\nC) London\nD) Canada\n\nProvide an answer to the following question:\n\nQ: The eighth month of the year is winter in\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 3,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: The eighth month of the year is winter in\n\n\nOne answer to question Q is B) Indiana.\n\n\nChoices:\nA) Brazil\nB) Indiana\nC) London\nD) Canada\n\nProvide an answer to the following question:\n\nQ: The eighth month of the year is winter in\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 3,
+          "step": 2,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: The eighth month of the year is winter in\n\n\nOne answer to question Q is B) Indiana. Another answer to question Q is B) Indiana.\n\n\nChoices:\nA) Brazil\nB) Indiana\nC) London\nD) Canada\n\nProvide an answer to the following question:\n\nQ: The eighth month of the year is winter in\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 3,
+          "step": 3,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: The eighth month of the year is winter in\n\n\nOne answer to question Q is B) Indiana. Another answer to question Q is B) Indiana. Another answer to question Q is B) Indiana.\n\n\nChoices:\nA) Brazil\nB) Indiana\nC) London\nD) Canada\n\nProvide an answer to the following question:\n\nQ: The eighth month of the year is winter in\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 4,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: The eighth month of the year is winter in\n\n\nChoices:\nA) Brazil\nB) Indiana\nC) London\nD) Canada\n\nProvide an answer to the following question:\n\nQ: The eighth month of the year is winter in\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 4,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: The eighth month of the year is winter in\n\n\nOne answer to question Q is D) Canada.\n\n\nChoices:\nA) Brazil\nB) Indiana\nC) London\nD) Canada\n\nProvide an answer to the following question:\n\nQ: The eighth month of the year is winter in\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 4,
+          "step": 2,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: The eighth month of the year is winter in\n\n\nOne answer to question Q is D) Canada. Another answer to question Q is A) Brazil.\n\n\nChoices:\nA) Brazil\nB) Indiana\nC) London\nD) Canada\n\nProvide an answer to the following question:\n\nQ: The eighth month of the year is winter in\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 4,
+          "step": 3,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: The eighth month of the year is winter in\n\n\nOne answer to question Q is D) Canada. Another answer to question Q is A) Brazil. Another answer to question Q is A) Brazil.\n\n\nChoices:\nA) Brazil\nB) Indiana\nC) London\nD) Canada\n\nProvide an answer to the following question:\n\nQ: The eighth month of the year is winter in\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 5,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: The eighth month of the year is winter in\n\n\nChoices:\nA) Brazil\nB) Indiana\nC) London\nD) Canada\n\nProvide an answer to the following question:\n\nQ: The eighth month of the year is winter in\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 5,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: The eighth month of the year is winter in\n\n\nOne answer to question Q is A) Brazil.\n\n\nChoices:\nA) Brazil\nB) Indiana\nC) London\nD) Canada\n\nProvide an answer to the following question:\n\nQ: The eighth month of the year is winter in\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 5,
+          "step": 2,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: The eighth month of the year is winter in\n\n\nOne answer to question Q is A) Brazil. Another answer to question Q is A) Brazil.\n\n\nChoices:\nA) Brazil\nB) Indiana\nC) London\nD) Canada\n\nProvide an answer to the following question:\n\nQ: The eighth month of the year is winter in\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 5,
+          "step": 3,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: The eighth month of the year is winter in\n\n\nOne answer to question Q is A) Brazil. Another answer to question Q is A) Brazil. Another answer to question Q is A) Brazil.\n\n\nChoices:\nA) Brazil\nB) Indiana\nC) London\nD) Canada\n\nProvide an answer to the following question:\n\nQ: The eighth month of the year is winter in\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 6,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: The eighth month of the year is winter in\n\n\nChoices:\nA) Brazil\nB) Indiana\nC) London\nD) Canada\n\nProvide an answer to the following question:\n\nQ: The eighth month of the year is winter in\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 6,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: The eighth month of the year is winter in\n\n\nOne answer to question Q is C) London.\n\n\nChoices:\nA) Brazil\nB) Indiana\nC) London\nD) Canada\n\nProvide an answer to the following question:\n\nQ: The eighth month of the year is winter in\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 6,
+          "step": 2,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: The eighth month of the year is winter in\n\n\nOne answer to question Q is C) London. Another answer to question Q is D) Canada.\n\n\nChoices:\nA) Brazil\nB) Indiana\nC) London\nD) Canada\n\nProvide an answer to the following question:\n\nQ: The eighth month of the year is winter in\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 6,
+          "step": 3,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: The eighth month of the year is winter in\n\n\nOne answer to question Q is C) London. Another answer to question Q is D) Canada. Another answer to question Q is A) Brazil.\n\n\nChoices:\nA) Brazil\nB) Indiana\nC) London\nD) Canada\n\nProvide an answer to the following question:\n\nQ: The eighth month of the year is winter in\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 7,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: The eighth month of the year is winter in\n\n\nChoices:\nA) Brazil\nB) Indiana\nC) London\nD) Canada\n\nProvide an answer to the following question:\n\nQ: The eighth month of the year is winter in\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 7,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: The eighth month of the year is winter in\n\n\nOne answer to question Q is B) Indiana.\n\n\nChoices:\nA) Brazil\nB) Indiana\nC) London\nD) Canada\n\nProvide an answer to the following question:\n\nQ: The eighth month of the year is winter in\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 7,
+          "step": 2,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: The eighth month of the year is winter in\n\n\nOne answer to question Q is B) Indiana. Another answer to question Q is A) Brazil.\n\n\nChoices:\nA) Brazil\nB) Indiana\nC) London\nD) Canada\n\nProvide an answer to the following question:\n\nQ: The eighth month of the year is winter in\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 7,
+          "step": 3,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: The eighth month of the year is winter in\n\n\nOne answer to question Q is B) Indiana. Another answer to question Q is A) Brazil. Another answer to question Q is D) Canada.\n\n\nChoices:\nA) Brazil\nB) Indiana\nC) London\nD) Canada\n\nProvide an answer to the following question:\n\nQ: The eighth month of the year is winter in\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 8,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: The eighth month of the year is winter in\n\n\nChoices:\nA) Brazil\nB) Indiana\nC) London\nD) Canada\n\nProvide an answer to the following question:\n\nQ: The eighth month of the year is winter in\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 8,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: The eighth month of the year is winter in\n\n\nOne answer to question Q is C) London.\n\n\nChoices:\nA) Brazil\nB) Indiana\nC) London\nD) Canada\n\nProvide an answer to the following question:\n\nQ: The eighth month of the year is winter in\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 8,
+          "step": 2,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: The eighth month of the year is winter in\n\n\nOne answer to question Q is C) London. Another answer to question Q is D) Canada.\n\n\nChoices:\nA) Brazil\nB) Indiana\nC) London\nD) Canada\n\nProvide an answer to the following question:\n\nQ: The eighth month of the year is winter in\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 8,
+          "step": 3,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: The eighth month of the year is winter in\n\n\nOne answer to question Q is C) London. Another answer to question Q is D) Canada. Another answer to question Q is A) Brazil.\n\n\nChoices:\nA) Brazil\nB) Indiana\nC) London\nD) Canada\n\nProvide an answer to the following question:\n\nQ: The eighth month of the year is winter in\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 9,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: The eighth month of the year is winter in\n\n\nChoices:\nA) Brazil\nB) Indiana\nC) London\nD) Canada\n\nProvide an answer to the following question:\n\nQ: The eighth month of the year is winter in\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 9,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: The eighth month of the year is winter in\n\n\nOne answer to question Q is B) Indiana.\n\n\nChoices:\nA) Brazil\nB) Indiana\nC) London\nD) Canada\n\nProvide an answer to the following question:\n\nQ: The eighth month of the year is winter in\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 9,
+          "step": 2,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: The eighth month of the year is winter in\n\n\nOne answer to question Q is B) Indiana. Another answer to question Q is B) Indiana.\n\n\nChoices:\nA) Brazil\nB) Indiana\nC) London\nD) Canada\n\nProvide an answer to the following question:\n\nQ: The eighth month of the year is winter in\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 9,
+          "step": 3,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: The eighth month of the year is winter in\n\n\nOne answer to question Q is B) Indiana. Another answer to question Q is B) Indiana. Another answer to question Q is A) Brazil.\n\n\nChoices:\nA) Brazil\nB) Indiana\nC) London\nD) Canada\n\nProvide an answer to the following question:\n\nQ: The eighth month of the year is winter in\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "chain_id": 0,
+          "step": 0,
+          "text": "A",
+          "logprob": -1.1497325897216797,
+          "probability": 0.31672145262776025
+        },
+        {
+          "chain_id": 0,
+          "step": 1,
+          "text": "A",
+          "logprob": -0.26024189591407776,
+          "probability": 0.7708650941321132
+        },
+        {
+          "chain_id": 0,
+          "step": 2,
+          "text": "A",
+          "logprob": -0.06900407373905182,
+          "probability": 0.9333228779566016
+        },
+        {
+          "chain_id": 0,
+          "step": 3,
+          "text": "A",
+          "logprob": 0.0,
+          "probability": 0.5
+        },
+        {
+          "chain_id": 1,
+          "step": 0,
+          "text": "B",
+          "logprob": -1.010843276977539,
+          "probability": 0.36391197155585686
+        },
+        {
+          "chain_id": 1,
+          "step": 1,
+          "text": "A",
+          "logprob": -0.7290470600128174,
+          "probability": 0.48236843931604323
+        },
+        {
+          "chain_id": 1,
+          "step": 2,
+          "text": "A",
+          "logprob": -0.7223174571990967,
+          "probability": 0.48562553450885465
+        },
+        {
+          "chain_id": 1,
+          "step": 3,
+          "text": "A",
+          "logprob": -0.1964029222726822,
+          "probability": 0.8216810943568028
+        },
+        {
+          "chain_id": 2,
+          "step": 0,
+          "text": "A",
+          "logprob": -1.1497325897216797,
+          "probability": 0.31672145262776025
+        },
+        {
+          "chain_id": 2,
+          "step": 1,
+          "text": "A",
+          "logprob": -0.26024189591407776,
+          "probability": 0.7708650941321132
+        },
+        {
+          "chain_id": 2,
+          "step": 2,
+          "text": "A",
+          "logprob": -0.06900407373905182,
+          "probability": 0.9333228779566016
+        },
+        {
+          "chain_id": 2,
+          "step": 3,
+          "text": "A",
+          "logprob": 0.0,
+          "probability": 0.5
+        },
+        {
+          "chain_id": 3,
+          "step": 0,
+          "text": "B",
+          "logprob": -1.010843276977539,
+          "probability": 0.36391197155585686
+        },
+        {
+          "chain_id": 3,
+          "step": 1,
+          "text": "B",
+          "logprob": -1.2846043109893799,
+          "probability": 0.2767600728881174
+        },
+        {
+          "chain_id": 3,
+          "step": 2,
+          "text": "B",
+          "logprob": -1.155665636062622,
+          "probability": 0.3148478930260527
+        },
+        {
+          "chain_id": 3,
+          "step": 3,
+          "text": "A",
+          "logprob": -0.8106423616409302,
+          "probability": 0.4445723982264455
+        },
+        {
+          "chain_id": 4,
+          "step": 0,
+          "text": "D",
+          "logprob": -1.7052879333496094,
+          "probability": 0.18172005537760205
+        },
+        {
+          "chain_id": 4,
+          "step": 1,
+          "text": "A",
+          "logprob": -0.9157726764678955,
+          "probability": 0.40020727584805493
+        },
+        {
+          "chain_id": 4,
+          "step": 2,
+          "text": "A",
+          "logprob": -0.7587981224060059,
+          "probability": 0.46822884271971454
+        },
+        {
+          "chain_id": 4,
+          "step": 3,
+          "text": "A",
+          "logprob": -0.2845720648765564,
+          "probability": 0.7523361364995692
+        },
+        {
+          "chain_id": 5,
+          "step": 0,
+          "text": "A",
+          "logprob": -1.1497325897216797,
+          "probability": 0.31672145262776025
+        },
+        {
+          "chain_id": 5,
+          "step": 1,
+          "text": "A",
+          "logprob": -0.26024189591407776,
+          "probability": 0.7708650941321132
+        },
+        {
+          "chain_id": 5,
+          "step": 2,
+          "text": "A",
+          "logprob": -0.06900407373905182,
+          "probability": 0.9333228779566016
+        },
+        {
+          "chain_id": 5,
+          "step": 3,
+          "text": "A",
+          "logprob": 0.0,
+          "probability": 0.5
+        },
+        {
+          "chain_id": 6,
+          "step": 0,
+          "text": "C",
+          "logprob": -1.9830665588378906,
+          "probability": 0.13764648839447574
+        },
+        {
+          "chain_id": 6,
+          "step": 1,
+          "text": "D",
+          "logprob": -1.2221531867980957,
+          "probability": 0.2945951651102885
+        },
+        {
+          "chain_id": 6,
+          "step": 2,
+          "text": "A",
+          "logprob": -0.1730080544948578,
+          "probability": 0.8411308399333141
+        },
+        {
+          "chain_id": 6,
+          "step": 3,
+          "text": "A",
+          "logprob": -0.2938118875026703,
+          "probability": 0.7454167004524151
+        },
+        {
+          "chain_id": 7,
+          "step": 0,
+          "text": "B",
+          "logprob": -1.010843276977539,
+          "probability": 0.36391197155585686
+        },
+        {
+          "chain_id": 7,
+          "step": 1,
+          "text": "A",
+          "logprob": -0.7290470600128174,
+          "probability": 0.48236843931604323
+        },
+        {
+          "chain_id": 7,
+          "step": 2,
+          "text": "D",
+          "logprob": -2.3889853954315186,
+          "probability": 0.091722698952156
+        },
+        {
+          "chain_id": 7,
+          "step": 3,
+          "text": "A",
+          "logprob": -0.6434035897254944,
+          "probability": 0.5255007876933695
+        },
+        {
+          "chain_id": 8,
+          "step": 0,
+          "text": "C",
+          "logprob": -1.9830665588378906,
+          "probability": 0.13764648839447574
+        },
+        {
+          "chain_id": 8,
+          "step": 1,
+          "text": "D",
+          "logprob": -1.2221531867980957,
+          "probability": 0.2945951651102885
+        },
+        {
+          "chain_id": 8,
+          "step": 2,
+          "text": "A",
+          "logprob": -0.1730080544948578,
+          "probability": 0.8411308399333141
+        },
+        {
+          "chain_id": 8,
+          "step": 3,
+          "text": "A",
+          "logprob": -0.2938118875026703,
+          "probability": 0.7454167004524151
+        },
+        {
+          "chain_id": 9,
+          "step": 0,
+          "text": "B",
+          "logprob": -1.010843276977539,
+          "probability": 0.36391197155585686
+        },
+        {
+          "chain_id": 9,
+          "step": 1,
+          "text": "B",
+          "logprob": -1.2846043109893799,
+          "probability": 0.2767600728881174
+        },
+        {
+          "chain_id": 9,
+          "step": 2,
+          "text": "A",
+          "logprob": -0.7389996647834778,
+          "probability": 0.4775914281695628
+        },
+        {
+          "chain_id": 9,
+          "step": 3,
+          "text": "A",
+          "logprob": -0.1173514574766159,
+          "probability": 0.8892725967315815
+        }
+      ],
+      "decision_process": {
+        "num_chains": 10,
+        "chain_length": 4,
+        "total_inferences": 40,
+        "mi_method": "listing",
+        "mi_nats": 0.43401916057383333,
+        "mi_bits": 0.6261572906106601,
+        "selected_answer": "A",
+        "matched_choice": "A",
+        "confidence_computation": "1/(1 + mi_nats) = 1/(1 + 0.4340) = 0.6973",
+        "agreement": "100.00% (10/10 chains agree on final answer)"
+      },
+      "final_metrics": {
+        "predicted": "A",
+        "correct": true,
+        "confidence": 0.6973407521276374,
+        "mi_score": 0.6261572906106601,
+        "agreement": 1.0
+      }
+    }
+  }
+}

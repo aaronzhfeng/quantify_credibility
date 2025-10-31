@@ -1,0 +1,51 @@
+{
+  "question_id": 276,
+  "question_text": "Jeremy walked at an average rate of speed of 3 kilometers per hour (km/h). How far had Jeremy walked in 30 minutes?",
+  "choices": [
+    "A: 0.1 km",
+    "B: 1.5 km",
+    "C: 10 km",
+    "D: 90 km"
+  ],
+  "gold_answer": "B",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Jeremy walked at an average rate of speed of 3 kilometers per hour (km/h). How far had Jeremy walked in 30 minutes?\n\n\nChoices:\nA) 0.1 km\nB) 1.5 km\nC) 10 km\nD) 90 km\n\nProvide an answer to the following question:\n\nQ: Jeremy walked at an average rate of speed of 3 kilometers per hour (km/h). How far had Jeremy walked in 30 minutes?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "B",
+          "logprob": -0.41685374605003744,
+          "probability": 0.6591173114054146
+        }
+      ],
+      "decision_process": {
+        "selected_text": "B",
+        "matched_choice": "B",
+        "confidence_computation": "exp(logprob) = exp(-0.4169) = 0.6591"
+      },
+      "final_metrics": {
+        "predicted": "B",
+        "correct": true,
+        "confidence": 0.6591173114054146,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

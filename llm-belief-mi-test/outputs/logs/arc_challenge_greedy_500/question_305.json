@@ -1,0 +1,51 @@
+{
+  "question_id": 305,
+  "question_text": "When a dog sees a cat, a message travels from the dog's eyes to the dog's",
+  "choices": [
+    "A: brain",
+    "B: nose",
+    "C: paws",
+    "D: muscles"
+  ],
+  "gold_answer": "A",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: When a dog sees a cat, a message travels from the dog's eyes to the dog's\n\n\nChoices:\nA) brain\nB) nose\nC) paws\nD) muscles\n\nProvide an answer to the following question:\n\nQ: When a dog sees a cat, a message travels from the dog's eyes to the dog's\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "A",
+          "logprob": -0.07373201032169163,
+          "probability": 0.9289206016206419
+        }
+      ],
+      "decision_process": {
+        "selected_text": "A",
+        "matched_choice": "A",
+        "confidence_computation": "exp(logprob) = exp(-0.0737) = 0.9289"
+      },
+      "final_metrics": {
+        "predicted": "A",
+        "correct": true,
+        "confidence": 0.9289206016206419,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

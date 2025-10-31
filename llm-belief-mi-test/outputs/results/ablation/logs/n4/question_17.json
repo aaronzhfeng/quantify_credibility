@@ -1,0 +1,959 @@
+{
+  "question_id": 17,
+  "question_text": "A Mola Mola might live where?",
+  "choices": [
+    "A: Lake Michigan",
+    "B: The Mississippi River",
+    "C: Bay of Bengal",
+    "D: Lake Eerie"
+  ],
+  "gold_answer": "C",
+  "methods": {
+    "mi_method": {
+      "description": "k=10 chains of length n=4, MI estimation",
+      "raw_inputs": [
+        {
+          "chain_id": 0,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A Mola Mola might live where?\n\n\nChoices:\nA) Lake Michigan\nB) The Mississippi River\nC) Bay of Bengal\nD) Lake Eerie\n\nProvide an answer to the following question:\n\nQ: A Mola Mola might live where?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 0,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A Mola Mola might live where?\n\n\nOne answer to question Q is A) Lake Michigan.\n\n\nChoices:\nA) Lake Michigan\nB) The Mississippi River\nC) Bay of Bengal\nD) Lake Eerie\n\nProvide an answer to the following question:\n\nQ: A Mola Mola might live where?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 0,
+          "step": 2,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A Mola Mola might live where?\n\n\nOne answer to question Q is A) Lake Michigan. Another answer to question Q is C) Bay of Bengal.\n\n\nChoices:\nA) Lake Michigan\nB) The Mississippi River\nC) Bay of Bengal\nD) Lake Eerie\n\nProvide an answer to the following question:\n\nQ: A Mola Mola might live where?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 0,
+          "step": 3,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A Mola Mola might live where?\n\n\nOne answer to question Q is A) Lake Michigan. Another answer to question Q is C) Bay of Bengal. Another answer to question Q is A) Lake Michigan.\n\n\nChoices:\nA) Lake Michigan\nB) The Mississippi River\nC) Bay of Bengal\nD) Lake Eerie\n\nProvide an answer to the following question:\n\nQ: A Mola Mola might live where?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 1,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A Mola Mola might live where?\n\n\nChoices:\nA) Lake Michigan\nB) The Mississippi River\nC) Bay of Bengal\nD) Lake Eerie\n\nProvide an answer to the following question:\n\nQ: A Mola Mola might live where?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 1,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A Mola Mola might live where?\n\n\nOne answer to question Q is C) Bay of Bengal.\n\n\nChoices:\nA) Lake Michigan\nB) The Mississippi River\nC) Bay of Bengal\nD) Lake Eerie\n\nProvide an answer to the following question:\n\nQ: A Mola Mola might live where?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 1,
+          "step": 2,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A Mola Mola might live where?\n\n\nOne answer to question Q is C) Bay of Bengal. Another answer to question Q is A) Lake Michigan.\n\n\nChoices:\nA) Lake Michigan\nB) The Mississippi River\nC) Bay of Bengal\nD) Lake Eerie\n\nProvide an answer to the following question:\n\nQ: A Mola Mola might live where?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 1,
+          "step": 3,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A Mola Mola might live where?\n\n\nOne answer to question Q is C) Bay of Bengal. Another answer to question Q is A) Lake Michigan. Another answer to question Q is A) Lake Michigan.\n\n\nChoices:\nA) Lake Michigan\nB) The Mississippi River\nC) Bay of Bengal\nD) Lake Eerie\n\nProvide an answer to the following question:\n\nQ: A Mola Mola might live where?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 2,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A Mola Mola might live where?\n\n\nChoices:\nA) Lake Michigan\nB) The Mississippi River\nC) Bay of Bengal\nD) Lake Eerie\n\nProvide an answer to the following question:\n\nQ: A Mola Mola might live where?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 2,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A Mola Mola might live where?\n\n\nOne answer to question Q is C) Bay of Bengal.\n\n\nChoices:\nA) Lake Michigan\nB) The Mississippi River\nC) Bay of Bengal\nD) Lake Eerie\n\nProvide an answer to the following question:\n\nQ: A Mola Mola might live where?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 2,
+          "step": 2,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A Mola Mola might live where?\n\n\nOne answer to question Q is C) Bay of Bengal. Another answer to question Q is A) Lake Michigan.\n\n\nChoices:\nA) Lake Michigan\nB) The Mississippi River\nC) Bay of Bengal\nD) Lake Eerie\n\nProvide an answer to the following question:\n\nQ: A Mola Mola might live where?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 2,
+          "step": 3,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A Mola Mola might live where?\n\n\nOne answer to question Q is C) Bay of Bengal. Another answer to question Q is A) Lake Michigan. Another answer to question Q is A) Lake Michigan.\n\n\nChoices:\nA) Lake Michigan\nB) The Mississippi River\nC) Bay of Bengal\nD) Lake Eerie\n\nProvide an answer to the following question:\n\nQ: A Mola Mola might live where?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 3,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A Mola Mola might live where?\n\n\nChoices:\nA) Lake Michigan\nB) The Mississippi River\nC) Bay of Bengal\nD) Lake Eerie\n\nProvide an answer to the following question:\n\nQ: A Mola Mola might live where?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 3,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A Mola Mola might live where?\n\n\nOne answer to question Q is C) Bay of Bengal.\n\n\nChoices:\nA) Lake Michigan\nB) The Mississippi River\nC) Bay of Bengal\nD) Lake Eerie\n\nProvide an answer to the following question:\n\nQ: A Mola Mola might live where?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 3,
+          "step": 2,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A Mola Mola might live where?\n\n\nOne answer to question Q is C) Bay of Bengal. Another answer to question Q is C) Bay of Bengal.\n\n\nChoices:\nA) Lake Michigan\nB) The Mississippi River\nC) Bay of Bengal\nD) Lake Eerie\n\nProvide an answer to the following question:\n\nQ: A Mola Mola might live where?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 3,
+          "step": 3,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A Mola Mola might live where?\n\n\nOne answer to question Q is C) Bay of Bengal. Another answer to question Q is C) Bay of Bengal. Another answer to question Q is A) Lake Michigan.\n\n\nChoices:\nA) Lake Michigan\nB) The Mississippi River\nC) Bay of Bengal\nD) Lake Eerie\n\nProvide an answer to the following question:\n\nQ: A Mola Mola might live where?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 4,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A Mola Mola might live where?\n\n\nChoices:\nA) Lake Michigan\nB) The Mississippi River\nC) Bay of Bengal\nD) Lake Eerie\n\nProvide an answer to the following question:\n\nQ: A Mola Mola might live where?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 4,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A Mola Mola might live where?\n\n\nOne answer to question Q is C) Bay of Bengal.\n\n\nChoices:\nA) Lake Michigan\nB) The Mississippi River\nC) Bay of Bengal\nD) Lake Eerie\n\nProvide an answer to the following question:\n\nQ: A Mola Mola might live where?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 4,
+          "step": 2,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A Mola Mola might live where?\n\n\nOne answer to question Q is C) Bay of Bengal. Another answer to question Q is C) Bay of Bengal.\n\n\nChoices:\nA) Lake Michigan\nB) The Mississippi River\nC) Bay of Bengal\nD) Lake Eerie\n\nProvide an answer to the following question:\n\nQ: A Mola Mola might live where?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 4,
+          "step": 3,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A Mola Mola might live where?\n\n\nOne answer to question Q is C) Bay of Bengal. Another answer to question Q is C) Bay of Bengal. Another answer to question Q is C) Bay of Bengal.\n\n\nChoices:\nA) Lake Michigan\nB) The Mississippi River\nC) Bay of Bengal\nD) Lake Eerie\n\nProvide an answer to the following question:\n\nQ: A Mola Mola might live where?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 5,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A Mola Mola might live where?\n\n\nChoices:\nA) Lake Michigan\nB) The Mississippi River\nC) Bay of Bengal\nD) Lake Eerie\n\nProvide an answer to the following question:\n\nQ: A Mola Mola might live where?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 5,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A Mola Mola might live where?\n\n\nOne answer to question Q is C) Bay of Bengal.\n\n\nChoices:\nA) Lake Michigan\nB) The Mississippi River\nC) Bay of Bengal\nD) Lake Eerie\n\nProvide an answer to the following question:\n\nQ: A Mola Mola might live where?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 5,
+          "step": 2,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A Mola Mola might live where?\n\n\nOne answer to question Q is C) Bay of Bengal. Another answer to question Q is A) Lake Michigan.\n\n\nChoices:\nA) Lake Michigan\nB) The Mississippi River\nC) Bay of Bengal\nD) Lake Eerie\n\nProvide an answer to the following question:\n\nQ: A Mola Mola might live where?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 5,
+          "step": 3,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A Mola Mola might live where?\n\n\nOne answer to question Q is C) Bay of Bengal. Another answer to question Q is A) Lake Michigan. Another answer to question Q is A) Lake Michigan.\n\n\nChoices:\nA) Lake Michigan\nB) The Mississippi River\nC) Bay of Bengal\nD) Lake Eerie\n\nProvide an answer to the following question:\n\nQ: A Mola Mola might live where?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 6,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A Mola Mola might live where?\n\n\nChoices:\nA) Lake Michigan\nB) The Mississippi River\nC) Bay of Bengal\nD) Lake Eerie\n\nProvide an answer to the following question:\n\nQ: A Mola Mola might live where?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 6,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A Mola Mola might live where?\n\n\nOne answer to question Q is C) Bay of Bengal.\n\n\nChoices:\nA) Lake Michigan\nB) The Mississippi River\nC) Bay of Bengal\nD) Lake Eerie\n\nProvide an answer to the following question:\n\nQ: A Mola Mola might live where?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 6,
+          "step": 2,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A Mola Mola might live where?\n\n\nOne answer to question Q is C) Bay of Bengal. Another answer to question Q is C) Bay of Bengal.\n\n\nChoices:\nA) Lake Michigan\nB) The Mississippi River\nC) Bay of Bengal\nD) Lake Eerie\n\nProvide an answer to the following question:\n\nQ: A Mola Mola might live where?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 6,
+          "step": 3,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A Mola Mola might live where?\n\n\nOne answer to question Q is C) Bay of Bengal. Another answer to question Q is C) Bay of Bengal. Another answer to question Q is C) Bay of Bengal.\n\n\nChoices:\nA) Lake Michigan\nB) The Mississippi River\nC) Bay of Bengal\nD) Lake Eerie\n\nProvide an answer to the following question:\n\nQ: A Mola Mola might live where?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 7,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A Mola Mola might live where?\n\n\nChoices:\nA) Lake Michigan\nB) The Mississippi River\nC) Bay of Bengal\nD) Lake Eerie\n\nProvide an answer to the following question:\n\nQ: A Mola Mola might live where?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 7,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A Mola Mola might live where?\n\n\nOne answer to question Q is A) Lake Michigan.\n\n\nChoices:\nA) Lake Michigan\nB) The Mississippi River\nC) Bay of Bengal\nD) Lake Eerie\n\nProvide an answer to the following question:\n\nQ: A Mola Mola might live where?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 7,
+          "step": 2,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A Mola Mola might live where?\n\n\nOne answer to question Q is A) Lake Michigan. Another answer to question Q is C) Bay of Bengal.\n\n\nChoices:\nA) Lake Michigan\nB) The Mississippi River\nC) Bay of Bengal\nD) Lake Eerie\n\nProvide an answer to the following question:\n\nQ: A Mola Mola might live where?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 7,
+          "step": 3,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A Mola Mola might live where?\n\n\nOne answer to question Q is A) Lake Michigan. Another answer to question Q is C) Bay of Bengal. Another answer to question Q is A) Lake Michigan.\n\n\nChoices:\nA) Lake Michigan\nB) The Mississippi River\nC) Bay of Bengal\nD) Lake Eerie\n\nProvide an answer to the following question:\n\nQ: A Mola Mola might live where?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 8,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A Mola Mola might live where?\n\n\nChoices:\nA) Lake Michigan\nB) The Mississippi River\nC) Bay of Bengal\nD) Lake Eerie\n\nProvide an answer to the following question:\n\nQ: A Mola Mola might live where?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 8,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A Mola Mola might live where?\n\n\nOne answer to question Q is C) Bay of Bengal.\n\n\nChoices:\nA) Lake Michigan\nB) The Mississippi River\nC) Bay of Bengal\nD) Lake Eerie\n\nProvide an answer to the following question:\n\nQ: A Mola Mola might live where?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 8,
+          "step": 2,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A Mola Mola might live where?\n\n\nOne answer to question Q is C) Bay of Bengal. Another answer to question Q is C) Bay of Bengal.\n\n\nChoices:\nA) Lake Michigan\nB) The Mississippi River\nC) Bay of Bengal\nD) Lake Eerie\n\nProvide an answer to the following question:\n\nQ: A Mola Mola might live where?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 8,
+          "step": 3,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A Mola Mola might live where?\n\n\nOne answer to question Q is C) Bay of Bengal. Another answer to question Q is C) Bay of Bengal. Another answer to question Q is C) Bay of Bengal.\n\n\nChoices:\nA) Lake Michigan\nB) The Mississippi River\nC) Bay of Bengal\nD) Lake Eerie\n\nProvide an answer to the following question:\n\nQ: A Mola Mola might live where?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 9,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A Mola Mola might live where?\n\n\nChoices:\nA) Lake Michigan\nB) The Mississippi River\nC) Bay of Bengal\nD) Lake Eerie\n\nProvide an answer to the following question:\n\nQ: A Mola Mola might live where?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 9,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A Mola Mola might live where?\n\n\nOne answer to question Q is C) Bay of Bengal.\n\n\nChoices:\nA) Lake Michigan\nB) The Mississippi River\nC) Bay of Bengal\nD) Lake Eerie\n\nProvide an answer to the following question:\n\nQ: A Mola Mola might live where?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 9,
+          "step": 2,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A Mola Mola might live where?\n\n\nOne answer to question Q is C) Bay of Bengal. Another answer to question Q is A) Lake Michigan.\n\n\nChoices:\nA) Lake Michigan\nB) The Mississippi River\nC) Bay of Bengal\nD) Lake Eerie\n\nProvide an answer to the following question:\n\nQ: A Mola Mola might live where?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 9,
+          "step": 3,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A Mola Mola might live where?\n\n\nOne answer to question Q is C) Bay of Bengal. Another answer to question Q is A) Lake Michigan. Another answer to question Q is D) Lake Eerie.\n\n\nChoices:\nA) Lake Michigan\nB) The Mississippi River\nC) Bay of Bengal\nD) Lake Eerie\n\nProvide an answer to the following question:\n\nQ: A Mola Mola might live where?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "chain_id": 0,
+          "step": 0,
+          "text": "A",
+          "logprob": -2.2006852626800537,
+          "probability": 0.11072725510288184
+        },
+        {
+          "chain_id": 0,
+          "step": 1,
+          "text": "C",
+          "logprob": -0.5349922180175781,
+          "probability": 0.5856738478306487
+        },
+        {
+          "chain_id": 0,
+          "step": 2,
+          "text": "A",
+          "logprob": 0.0,
+          "probability": 0.5
+        },
+        {
+          "chain_id": 0,
+          "step": 3,
+          "text": "A",
+          "logprob": -0.09012897312641144,
+          "probability": 0.9138133203098086
+        },
+        {
+          "chain_id": 1,
+          "step": 0,
+          "text": "C",
+          "logprob": -0.11735124886035919,
+          "probability": 0.8892727822483212
+        },
+        {
+          "chain_id": 1,
+          "step": 1,
+          "text": "A",
+          "logprob": -1.293030023574829,
+          "probability": 0.2744379684886416
+        },
+        {
+          "chain_id": 1,
+          "step": 2,
+          "text": "A",
+          "logprob": -0.22236619889736176,
+          "probability": 0.800622123706834
+        },
+        {
+          "chain_id": 1,
+          "step": 3,
+          "text": "C",
+          "logprob": -0.9230263233184814,
+          "probability": 0.3973148167228417
+        },
+        {
+          "chain_id": 2,
+          "step": 0,
+          "text": "C",
+          "logprob": -0.11735124886035919,
+          "probability": 0.8892727822483212
+        },
+        {
+          "chain_id": 2,
+          "step": 1,
+          "text": "A",
+          "logprob": -1.293030023574829,
+          "probability": 0.2744379684886416
+        },
+        {
+          "chain_id": 2,
+          "step": 2,
+          "text": "A",
+          "logprob": -0.22236619889736176,
+          "probability": 0.800622123706834
+        },
+        {
+          "chain_id": 2,
+          "step": 3,
+          "text": "C",
+          "logprob": -0.9230263233184814,
+          "probability": 0.3973148167228417
+        },
+        {
+          "chain_id": 3,
+          "step": 0,
+          "text": "C",
+          "logprob": -0.11735124886035919,
+          "probability": 0.8892727822483212
+        },
+        {
+          "chain_id": 3,
+          "step": 1,
+          "text": "C",
+          "logprob": -0.3208087086677551,
+          "probability": 0.7255620314435902
+        },
+        {
+          "chain_id": 3,
+          "step": 2,
+          "text": "A",
+          "logprob": -1.009018898010254,
+          "probability": 0.36457649088593796
+        },
+        {
+          "chain_id": 3,
+          "step": 3,
+          "text": "A",
+          "logprob": -0.1964029222726822,
+          "probability": 0.8216810943568028
+        },
+        {
+          "chain_id": 4,
+          "step": 0,
+          "text": "C",
+          "logprob": -0.11735124886035919,
+          "probability": 0.8892727822483212
+        },
+        {
+          "chain_id": 4,
+          "step": 1,
+          "text": "C",
+          "logprob": -0.3208087086677551,
+          "probability": 0.7255620314435902
+        },
+        {
+          "chain_id": 4,
+          "step": 2,
+          "text": "C",
+          "logprob": -0.4534635841846466,
+          "probability": 0.6354234930544035
+        },
+        {
+          "chain_id": 4,
+          "step": 3,
+          "text": "C",
+          "logprob": 0.0,
+          "probability": 0.5
+        },
+        {
+          "chain_id": 5,
+          "step": 0,
+          "text": "C",
+          "logprob": -0.11735124886035919,
+          "probability": 0.8892727822483212
+        },
+        {
+          "chain_id": 5,
+          "step": 1,
+          "text": "A",
+          "logprob": -1.293030023574829,
+          "probability": 0.2744379684886416
+        },
+        {
+          "chain_id": 5,
+          "step": 2,
+          "text": "A",
+          "logprob": -0.22236619889736176,
+          "probability": 0.800622123706834
+        },
+        {
+          "chain_id": 5,
+          "step": 3,
+          "text": "C",
+          "logprob": -0.9230263233184814,
+          "probability": 0.3973148167228417
+        },
+        {
+          "chain_id": 6,
+          "step": 0,
+          "text": "C",
+          "logprob": -0.11735124886035919,
+          "probability": 0.8892727822483212
+        },
+        {
+          "chain_id": 6,
+          "step": 1,
+          "text": "C",
+          "logprob": -0.3208087086677551,
+          "probability": 0.7255620314435902
+        },
+        {
+          "chain_id": 6,
+          "step": 2,
+          "text": "C",
+          "logprob": -0.4534635841846466,
+          "probability": 0.6354234930544035
+        },
+        {
+          "chain_id": 6,
+          "step": 3,
+          "text": "C",
+          "logprob": 0.0,
+          "probability": 0.5
+        },
+        {
+          "chain_id": 7,
+          "step": 0,
+          "text": "A",
+          "logprob": -2.2006852626800537,
+          "probability": 0.11072725510288184
+        },
+        {
+          "chain_id": 7,
+          "step": 1,
+          "text": "C",
+          "logprob": -0.5349922180175781,
+          "probability": 0.5856738478306487
+        },
+        {
+          "chain_id": 7,
+          "step": 2,
+          "text": "A",
+          "logprob": 0.0,
+          "probability": 0.5
+        },
+        {
+          "chain_id": 7,
+          "step": 3,
+          "text": "A",
+          "logprob": -0.09012897312641144,
+          "probability": 0.9138133203098086
+        },
+        {
+          "chain_id": 8,
+          "step": 0,
+          "text": "C",
+          "logprob": -0.11735124886035919,
+          "probability": 0.8892727822483212
+        },
+        {
+          "chain_id": 8,
+          "step": 1,
+          "text": "C",
+          "logprob": -0.3208087086677551,
+          "probability": 0.7255620314435902
+        },
+        {
+          "chain_id": 8,
+          "step": 2,
+          "text": "C",
+          "logprob": -0.4534635841846466,
+          "probability": 0.6354234930544035
+        },
+        {
+          "chain_id": 8,
+          "step": 3,
+          "text": "C",
+          "logprob": 0.0,
+          "probability": 0.5
+        },
+        {
+          "chain_id": 9,
+          "step": 0,
+          "text": "C",
+          "logprob": -0.11735124886035919,
+          "probability": 0.8892727822483212
+        },
+        {
+          "chain_id": 9,
+          "step": 1,
+          "text": "A",
+          "logprob": -1.293030023574829,
+          "probability": 0.2744379684886416
+        },
+        {
+          "chain_id": 9,
+          "step": 2,
+          "text": "D",
+          "logprob": -2.3057000637054443,
+          "probability": 0.09968898757763393
+        },
+        {
+          "chain_id": 9,
+          "step": 3,
+          "text": "A",
+          "logprob": -0.28170305490493774,
+          "probability": 0.7544976956619025
+        }
+      ],
+      "decision_process": {
+        "num_chains": 10,
+        "chain_length": 4,
+        "total_inferences": 40,
+        "mi_method": "listing",
+        "mi_nats": 0.6340892978746913,
+        "mi_bits": 0.9147974855245818,
+        "selected_answer": "C",
+        "matched_choice": "C",
+        "confidence_computation": "1/(1 + mi_nats) = 1/(1 + 0.6341) = 0.6120",
+        "agreement": "60.00% (6/10 chains agree on final answer)"
+      },
+      "final_metrics": {
+        "predicted": "C",
+        "correct": true,
+        "confidence": 0.6119616604188078,
+        "mi_score": 0.9147974855245818,
+        "agreement": 0.6
+      }
+    }
+  }
+}

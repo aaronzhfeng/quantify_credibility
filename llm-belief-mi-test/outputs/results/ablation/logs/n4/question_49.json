@@ -1,0 +1,959 @@
+{
+  "question_id": 49,
+  "question_text": "When the eggs hatch, the offspring are",
+  "choices": [
+    "A: killed",
+    "B: hurt",
+    "C: born",
+    "D: cold"
+  ],
+  "gold_answer": "C",
+  "methods": {
+    "mi_method": {
+      "description": "k=10 chains of length n=4, MI estimation",
+      "raw_inputs": [
+        {
+          "chain_id": 0,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: When the eggs hatch, the offspring are\n\n\nChoices:\nA) killed\nB) hurt\nC) born\nD) cold\n\nProvide an answer to the following question:\n\nQ: When the eggs hatch, the offspring are\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 0,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: When the eggs hatch, the offspring are\n\n\nOne answer to question Q is A) killed.\n\n\nChoices:\nA) killed\nB) hurt\nC) born\nD) cold\n\nProvide an answer to the following question:\n\nQ: When the eggs hatch, the offspring are\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 0,
+          "step": 2,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: When the eggs hatch, the offspring are\n\n\nOne answer to question Q is A) killed. Another answer to question Q is C) born.\n\n\nChoices:\nA) killed\nB) hurt\nC) born\nD) cold\n\nProvide an answer to the following question:\n\nQ: When the eggs hatch, the offspring are\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 0,
+          "step": 3,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: When the eggs hatch, the offspring are\n\n\nOne answer to question Q is A) killed. Another answer to question Q is C) born. Another answer to question Q is C) born.\n\n\nChoices:\nA) killed\nB) hurt\nC) born\nD) cold\n\nProvide an answer to the following question:\n\nQ: When the eggs hatch, the offspring are\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 1,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: When the eggs hatch, the offspring are\n\n\nChoices:\nA) killed\nB) hurt\nC) born\nD) cold\n\nProvide an answer to the following question:\n\nQ: When the eggs hatch, the offspring are\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 1,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: When the eggs hatch, the offspring are\n\n\nOne answer to question Q is C) born.\n\n\nChoices:\nA) killed\nB) hurt\nC) born\nD) cold\n\nProvide an answer to the following question:\n\nQ: When the eggs hatch, the offspring are\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 1,
+          "step": 2,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: When the eggs hatch, the offspring are\n\n\nOne answer to question Q is C) born. Another answer to question Q is C) born.\n\n\nChoices:\nA) killed\nB) hurt\nC) born\nD) cold\n\nProvide an answer to the following question:\n\nQ: When the eggs hatch, the offspring are\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 1,
+          "step": 3,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: When the eggs hatch, the offspring are\n\n\nOne answer to question Q is C) born. Another answer to question Q is C) born. Another answer to question Q is A) killed.\n\n\nChoices:\nA) killed\nB) hurt\nC) born\nD) cold\n\nProvide an answer to the following question:\n\nQ: When the eggs hatch, the offspring are\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 2,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: When the eggs hatch, the offspring are\n\n\nChoices:\nA) killed\nB) hurt\nC) born\nD) cold\n\nProvide an answer to the following question:\n\nQ: When the eggs hatch, the offspring are\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 2,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: When the eggs hatch, the offspring are\n\n\nOne answer to question Q is C) born.\n\n\nChoices:\nA) killed\nB) hurt\nC) born\nD) cold\n\nProvide an answer to the following question:\n\nQ: When the eggs hatch, the offspring are\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 2,
+          "step": 2,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: When the eggs hatch, the offspring are\n\n\nOne answer to question Q is C) born. Another answer to question Q is C) born.\n\n\nChoices:\nA) killed\nB) hurt\nC) born\nD) cold\n\nProvide an answer to the following question:\n\nQ: When the eggs hatch, the offspring are\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 2,
+          "step": 3,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: When the eggs hatch, the offspring are\n\n\nOne answer to question Q is C) born. Another answer to question Q is C) born. Another answer to question Q is C) born.\n\n\nChoices:\nA) killed\nB) hurt\nC) born\nD) cold\n\nProvide an answer to the following question:\n\nQ: When the eggs hatch, the offspring are\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 3,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: When the eggs hatch, the offspring are\n\n\nChoices:\nA) killed\nB) hurt\nC) born\nD) cold\n\nProvide an answer to the following question:\n\nQ: When the eggs hatch, the offspring are\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 3,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: When the eggs hatch, the offspring are\n\n\nOne answer to question Q is C) born.\n\n\nChoices:\nA) killed\nB) hurt\nC) born\nD) cold\n\nProvide an answer to the following question:\n\nQ: When the eggs hatch, the offspring are\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 3,
+          "step": 2,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: When the eggs hatch, the offspring are\n\n\nOne answer to question Q is C) born. Another answer to question Q is A) killed.\n\n\nChoices:\nA) killed\nB) hurt\nC) born\nD) cold\n\nProvide an answer to the following question:\n\nQ: When the eggs hatch, the offspring are\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 3,
+          "step": 3,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: When the eggs hatch, the offspring are\n\n\nOne answer to question Q is C) born. Another answer to question Q is A) killed. Another answer to question Q is C) born.\n\n\nChoices:\nA) killed\nB) hurt\nC) born\nD) cold\n\nProvide an answer to the following question:\n\nQ: When the eggs hatch, the offspring are\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 4,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: When the eggs hatch, the offspring are\n\n\nChoices:\nA) killed\nB) hurt\nC) born\nD) cold\n\nProvide an answer to the following question:\n\nQ: When the eggs hatch, the offspring are\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 4,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: When the eggs hatch, the offspring are\n\n\nOne answer to question Q is C) born.\n\n\nChoices:\nA) killed\nB) hurt\nC) born\nD) cold\n\nProvide an answer to the following question:\n\nQ: When the eggs hatch, the offspring are\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 4,
+          "step": 2,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: When the eggs hatch, the offspring are\n\n\nOne answer to question Q is C) born. Another answer to question Q is C) born.\n\n\nChoices:\nA) killed\nB) hurt\nC) born\nD) cold\n\nProvide an answer to the following question:\n\nQ: When the eggs hatch, the offspring are\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 4,
+          "step": 3,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: When the eggs hatch, the offspring are\n\n\nOne answer to question Q is C) born. Another answer to question Q is C) born. Another answer to question Q is A) killed.\n\n\nChoices:\nA) killed\nB) hurt\nC) born\nD) cold\n\nProvide an answer to the following question:\n\nQ: When the eggs hatch, the offspring are\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 5,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: When the eggs hatch, the offspring are\n\n\nChoices:\nA) killed\nB) hurt\nC) born\nD) cold\n\nProvide an answer to the following question:\n\nQ: When the eggs hatch, the offspring are\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 5,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: When the eggs hatch, the offspring are\n\n\nOne answer to question Q is C) born.\n\n\nChoices:\nA) killed\nB) hurt\nC) born\nD) cold\n\nProvide an answer to the following question:\n\nQ: When the eggs hatch, the offspring are\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 5,
+          "step": 2,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: When the eggs hatch, the offspring are\n\n\nOne answer to question Q is C) born. Another answer to question Q is A) killed.\n\n\nChoices:\nA) killed\nB) hurt\nC) born\nD) cold\n\nProvide an answer to the following question:\n\nQ: When the eggs hatch, the offspring are\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 5,
+          "step": 3,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: When the eggs hatch, the offspring are\n\n\nOne answer to question Q is C) born. Another answer to question Q is A) killed. Another answer to question Q is C) born.\n\n\nChoices:\nA) killed\nB) hurt\nC) born\nD) cold\n\nProvide an answer to the following question:\n\nQ: When the eggs hatch, the offspring are\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 6,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: When the eggs hatch, the offspring are\n\n\nChoices:\nA) killed\nB) hurt\nC) born\nD) cold\n\nProvide an answer to the following question:\n\nQ: When the eggs hatch, the offspring are\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 6,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: When the eggs hatch, the offspring are\n\n\nOne answer to question Q is C) born.\n\n\nChoices:\nA) killed\nB) hurt\nC) born\nD) cold\n\nProvide an answer to the following question:\n\nQ: When the eggs hatch, the offspring are\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 6,
+          "step": 2,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: When the eggs hatch, the offspring are\n\n\nOne answer to question Q is C) born. Another answer to question Q is A) killed.\n\n\nChoices:\nA) killed\nB) hurt\nC) born\nD) cold\n\nProvide an answer to the following question:\n\nQ: When the eggs hatch, the offspring are\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 6,
+          "step": 3,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: When the eggs hatch, the offspring are\n\n\nOne answer to question Q is C) born. Another answer to question Q is A) killed. Another answer to question Q is C) born.\n\n\nChoices:\nA) killed\nB) hurt\nC) born\nD) cold\n\nProvide an answer to the following question:\n\nQ: When the eggs hatch, the offspring are\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 7,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: When the eggs hatch, the offspring are\n\n\nChoices:\nA) killed\nB) hurt\nC) born\nD) cold\n\nProvide an answer to the following question:\n\nQ: When the eggs hatch, the offspring are\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 7,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: When the eggs hatch, the offspring are\n\n\nOne answer to question Q is C) born.\n\n\nChoices:\nA) killed\nB) hurt\nC) born\nD) cold\n\nProvide an answer to the following question:\n\nQ: When the eggs hatch, the offspring are\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 7,
+          "step": 2,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: When the eggs hatch, the offspring are\n\n\nOne answer to question Q is C) born. Another answer to question Q is C) born.\n\n\nChoices:\nA) killed\nB) hurt\nC) born\nD) cold\n\nProvide an answer to the following question:\n\nQ: When the eggs hatch, the offspring are\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 7,
+          "step": 3,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: When the eggs hatch, the offspring are\n\n\nOne answer to question Q is C) born. Another answer to question Q is C) born. Another answer to question Q is C) born.\n\n\nChoices:\nA) killed\nB) hurt\nC) born\nD) cold\n\nProvide an answer to the following question:\n\nQ: When the eggs hatch, the offspring are\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 8,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: When the eggs hatch, the offspring are\n\n\nChoices:\nA) killed\nB) hurt\nC) born\nD) cold\n\nProvide an answer to the following question:\n\nQ: When the eggs hatch, the offspring are\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 8,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: When the eggs hatch, the offspring are\n\n\nOne answer to question Q is C) born.\n\n\nChoices:\nA) killed\nB) hurt\nC) born\nD) cold\n\nProvide an answer to the following question:\n\nQ: When the eggs hatch, the offspring are\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 8,
+          "step": 2,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: When the eggs hatch, the offspring are\n\n\nOne answer to question Q is C) born. Another answer to question Q is A) killed.\n\n\nChoices:\nA) killed\nB) hurt\nC) born\nD) cold\n\nProvide an answer to the following question:\n\nQ: When the eggs hatch, the offspring are\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 8,
+          "step": 3,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: When the eggs hatch, the offspring are\n\n\nOne answer to question Q is C) born. Another answer to question Q is A) killed. Another answer to question Q is C) born.\n\n\nChoices:\nA) killed\nB) hurt\nC) born\nD) cold\n\nProvide an answer to the following question:\n\nQ: When the eggs hatch, the offspring are\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 9,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: When the eggs hatch, the offspring are\n\n\nChoices:\nA) killed\nB) hurt\nC) born\nD) cold\n\nProvide an answer to the following question:\n\nQ: When the eggs hatch, the offspring are\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 9,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: When the eggs hatch, the offspring are\n\n\nOne answer to question Q is C) born.\n\n\nChoices:\nA) killed\nB) hurt\nC) born\nD) cold\n\nProvide an answer to the following question:\n\nQ: When the eggs hatch, the offspring are\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 9,
+          "step": 2,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: When the eggs hatch, the offspring are\n\n\nOne answer to question Q is C) born. Another answer to question Q is C) born.\n\n\nChoices:\nA) killed\nB) hurt\nC) born\nD) cold\n\nProvide an answer to the following question:\n\nQ: When the eggs hatch, the offspring are\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 9,
+          "step": 3,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: When the eggs hatch, the offspring are\n\n\nOne answer to question Q is C) born. Another answer to question Q is C) born. Another answer to question Q is A) killed.\n\n\nChoices:\nA) killed\nB) hurt\nC) born\nD) cold\n\nProvide an answer to the following question:\n\nQ: When the eggs hatch, the offspring are\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "chain_id": 0,
+          "step": 0,
+          "text": "A",
+          "logprob": -1.95774507522583,
+          "probability": 0.1411764044437547
+        },
+        {
+          "chain_id": 0,
+          "step": 1,
+          "text": "C",
+          "logprob": -0.25192904472351074,
+          "probability": 0.77729988964086
+        },
+        {
+          "chain_id": 0,
+          "step": 2,
+          "text": "C",
+          "logprob": -0.2845720648765564,
+          "probability": 0.7523361364995692
+        },
+        {
+          "chain_id": 0,
+          "step": 3,
+          "text": "A",
+          "logprob": -1.3956828117370605,
+          "probability": 0.24766387082184832
+        },
+        {
+          "chain_id": 1,
+          "step": 0,
+          "text": "C",
+          "logprob": -0.15219168365001678,
+          "probability": 0.8588236425118818
+        },
+        {
+          "chain_id": 1,
+          "step": 1,
+          "text": "C",
+          "logprob": -0.6261118650436401,
+          "probability": 0.5346666207816538
+        },
+        {
+          "chain_id": 1,
+          "step": 2,
+          "text": "A",
+          "logprob": -0.7650011777877808,
+          "probability": 0.46533338291001825
+        },
+        {
+          "chain_id": 1,
+          "step": 3,
+          "text": "C",
+          "logprob": -0.36088407039642334,
+          "probability": 0.6970598036496322
+        },
+        {
+          "chain_id": 2,
+          "step": 0,
+          "text": "C",
+          "logprob": -0.15219168365001678,
+          "probability": 0.8588236425118818
+        },
+        {
+          "chain_id": 2,
+          "step": 1,
+          "text": "C",
+          "logprob": -0.6261118650436401,
+          "probability": 0.5346666207816538
+        },
+        {
+          "chain_id": 2,
+          "step": 2,
+          "text": "C",
+          "logprob": -0.6261118650436401,
+          "probability": 0.5346666207816538
+        },
+        {
+          "chain_id": 2,
+          "step": 3,
+          "text": "A",
+          "logprob": -1.2930314540863037,
+          "probability": 0.27443757590225937
+        },
+        {
+          "chain_id": 3,
+          "step": 0,
+          "text": "C",
+          "logprob": -0.15219168365001678,
+          "probability": 0.8588236425118818
+        },
+        {
+          "chain_id": 3,
+          "step": 1,
+          "text": "A",
+          "logprob": -0.7650011777877808,
+          "probability": 0.46533338291001825
+        },
+        {
+          "chain_id": 3,
+          "step": 2,
+          "text": "C",
+          "logprob": 0.0,
+          "probability": 0.5
+        },
+        {
+          "chain_id": 3,
+          "step": 3,
+          "text": "C",
+          "logprob": -0.36088523268699646,
+          "probability": 0.6970589934640643
+        },
+        {
+          "chain_id": 4,
+          "step": 0,
+          "text": "C",
+          "logprob": -0.15219168365001678,
+          "probability": 0.8588236425118818
+        },
+        {
+          "chain_id": 4,
+          "step": 1,
+          "text": "C",
+          "logprob": -0.6261118650436401,
+          "probability": 0.5346666207816538
+        },
+        {
+          "chain_id": 4,
+          "step": 2,
+          "text": "A",
+          "logprob": -0.7650011777877808,
+          "probability": 0.46533338291001825
+        },
+        {
+          "chain_id": 4,
+          "step": 3,
+          "text": "A",
+          "logprob": -1.194219946861267,
+          "probability": 0.30294017147075036
+        },
+        {
+          "chain_id": 5,
+          "step": 0,
+          "text": "C",
+          "logprob": -0.15219168365001678,
+          "probability": 0.8588236425118818
+        },
+        {
+          "chain_id": 5,
+          "step": 1,
+          "text": "A",
+          "logprob": -0.7650011777877808,
+          "probability": 0.46533338291001825
+        },
+        {
+          "chain_id": 5,
+          "step": 2,
+          "text": "C",
+          "logprob": 0.0,
+          "probability": 0.5
+        },
+        {
+          "chain_id": 5,
+          "step": 3,
+          "text": "C",
+          "logprob": -0.36088523268699646,
+          "probability": 0.6970589934640643
+        },
+        {
+          "chain_id": 6,
+          "step": 0,
+          "text": "C",
+          "logprob": -0.15219168365001678,
+          "probability": 0.8588236425118818
+        },
+        {
+          "chain_id": 6,
+          "step": 1,
+          "text": "A",
+          "logprob": -0.7650011777877808,
+          "probability": 0.46533338291001825
+        },
+        {
+          "chain_id": 6,
+          "step": 2,
+          "text": "C",
+          "logprob": 0.0,
+          "probability": 0.5
+        },
+        {
+          "chain_id": 6,
+          "step": 3,
+          "text": "A",
+          "logprob": -1.194217324256897,
+          "probability": 0.30294096596400977
+        },
+        {
+          "chain_id": 7,
+          "step": 0,
+          "text": "C",
+          "logprob": -0.15219168365001678,
+          "probability": 0.8588236425118818
+        },
+        {
+          "chain_id": 7,
+          "step": 1,
+          "text": "C",
+          "logprob": -0.6261118650436401,
+          "probability": 0.5346666207816538
+        },
+        {
+          "chain_id": 7,
+          "step": 2,
+          "text": "C",
+          "logprob": -0.6261118650436401,
+          "probability": 0.5346666207816538
+        },
+        {
+          "chain_id": 7,
+          "step": 3,
+          "text": "C",
+          "logprob": -0.32080817222595215,
+          "probability": 0.7255624206654989
+        },
+        {
+          "chain_id": 8,
+          "step": 0,
+          "text": "C",
+          "logprob": -0.15219168365001678,
+          "probability": 0.8588236425118818
+        },
+        {
+          "chain_id": 8,
+          "step": 1,
+          "text": "A",
+          "logprob": -0.7650011777877808,
+          "probability": 0.46533338291001825
+        },
+        {
+          "chain_id": 8,
+          "step": 2,
+          "text": "C",
+          "logprob": 0.0,
+          "probability": 0.5
+        },
+        {
+          "chain_id": 8,
+          "step": 3,
+          "text": "C",
+          "logprob": -0.36088523268699646,
+          "probability": 0.6970589934640643
+        },
+        {
+          "chain_id": 9,
+          "step": 0,
+          "text": "C",
+          "logprob": -0.15219168365001678,
+          "probability": 0.8588236425118818
+        },
+        {
+          "chain_id": 9,
+          "step": 1,
+          "text": "C",
+          "logprob": -0.6261118650436401,
+          "probability": 0.5346666207816538
+        },
+        {
+          "chain_id": 9,
+          "step": 2,
+          "text": "A",
+          "logprob": -0.7650011777877808,
+          "probability": 0.46533338291001825
+        },
+        {
+          "chain_id": 9,
+          "step": 3,
+          "text": "C",
+          "logprob": -0.36088407039642334,
+          "probability": 0.6970598036496322
+        }
+      ],
+      "decision_process": {
+        "num_chains": 10,
+        "chain_length": 4,
+        "total_inferences": 40,
+        "mi_method": "listing",
+        "mi_nats": 0.2243257361990368,
+        "mi_bits": 0.3236336271581162,
+        "selected_answer": "C",
+        "matched_choice": "C",
+        "confidence_computation": "1/(1 + mi_nats) = 1/(1 + 0.2243) = 0.8168",
+        "agreement": "60.00% (6/10 chains agree on final answer)"
+      },
+      "final_metrics": {
+        "predicted": "C",
+        "correct": true,
+        "confidence": 0.816776100047146,
+        "mi_score": 0.3236336271581162,
+        "agreement": 0.6
+      }
+    }
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "question_id": 103,
+  "question_text": "Mount Arenal, a volcano in Costa Rica, is erupting. Heat is being released during the eruption. What is the source of the heat?",
+  "choices": [
+    "A: The heat comes from the Sun.",
+    "B: The heat comes from pools of underground water.",
+    "C: The heat comes from deep within Earth.",
+    "D: The heat comes from decaying plants and animals."
+  ],
+  "gold_answer": "C",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Mount Arenal, a volcano in Costa Rica, is erupting. Heat is being released during the eruption. What is the source of the heat?\n\n\nChoices:\nA) The heat comes from the Sun.\nB) The heat comes from pools of underground water.\nC) The heat comes from deep within Earth.\nD) The heat comes from decaying plants and animals.\n\nProvide an answer to the following question:\n\nQ: Mount Arenal, a volcano in Costa Rica, is erupting. Heat is being released during the eruption. What is the source of the heat?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "C",
+          "logprob": -0.0024235316086560488,
+          "probability": 0.9975794027730721
+        }
+      ],
+      "decision_process": {
+        "selected_text": "C",
+        "matched_choice": "C",
+        "confidence_computation": "exp(logprob) = exp(-0.0024) = 0.9976"
+      },
+      "final_metrics": {
+        "predicted": "C",
+        "correct": true,
+        "confidence": 0.9975794027730721,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

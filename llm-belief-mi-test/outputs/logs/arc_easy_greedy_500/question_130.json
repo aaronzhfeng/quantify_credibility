@@ -1,0 +1,51 @@
+{
+  "question_id": 130,
+  "question_text": "What characteristic of carbon [C] makes it essential to living organisms?",
+  "choices": [
+    "A: Carbon forms crystal structures under certain conditions.",
+    "B: Carbon can exist as a solid, liquid, or gas.",
+    "C: Carbon bonds in many ways with itself to form chains.",
+    "D: Carbon exists in radioactive forms."
+  ],
+  "gold_answer": "C",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: What characteristic of carbon [C] makes it essential to living organisms?\n\n\nChoices:\nA) Carbon forms crystal structures under certain conditions.\nB) Carbon can exist as a solid, liquid, or gas.\nC) Carbon bonds in many ways with itself to form chains.\nD) Carbon exists in radioactive forms.\n\nProvide an answer to the following question:\n\nQ: What characteristic of carbon [C] makes it essential to living organisms?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "C",
+          "logprob": -0.1463518749224022,
+          "probability": 0.8638536812518753
+        }
+      ],
+      "decision_process": {
+        "selected_text": "C",
+        "matched_choice": "C",
+        "confidence_computation": "exp(logprob) = exp(-0.1464) = 0.8639"
+      },
+      "final_metrics": {
+        "predicted": "C",
+        "correct": true,
+        "confidence": 0.8638536812518753,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

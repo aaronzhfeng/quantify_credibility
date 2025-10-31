@@ -1,0 +1,499 @@
+{
+  "question_id": 285,
+  "question_text": "A certain atom has 20 electrons, 21 neutrons, and 20 protons. What is the atomic mass of the atom?",
+  "choices": [
+    "A: 20",
+    "B: 21",
+    "C: 41",
+    "D: 61"
+  ],
+  "gold_answer": "C",
+  "methods": {
+    "mi_method": {
+      "description": "k=10 chains of length n=2, MI estimation",
+      "raw_inputs": [
+        {
+          "chain_id": 0,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A certain atom has 20 electrons, 21 neutrons, and 20 protons. What is the atomic mass of the atom?\n\n\nChoices:\nA) 20\nB) 21\nC) 41\nD) 61\n\nProvide an answer to the following question:\n\nQ: A certain atom has 20 electrons, 21 neutrons, and 20 protons. What is the atomic mass of the atom?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 0,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A certain atom has 20 electrons, 21 neutrons, and 20 protons. What is the atomic mass of the atom?\n\n\nOne answer to question Q is C) 41.\n\n\nChoices:\nA) 20\nB) 21\nC) 41\nD) 61\n\nProvide an answer to the following question:\n\nQ: A certain atom has 20 electrons, 21 neutrons, and 20 protons. What is the atomic mass of the atom?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 1,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A certain atom has 20 electrons, 21 neutrons, and 20 protons. What is the atomic mass of the atom?\n\n\nChoices:\nA) 20\nB) 21\nC) 41\nD) 61\n\nProvide an answer to the following question:\n\nQ: A certain atom has 20 electrons, 21 neutrons, and 20 protons. What is the atomic mass of the atom?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 1,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A certain atom has 20 electrons, 21 neutrons, and 20 protons. What is the atomic mass of the atom?\n\n\nOne answer to question Q is C) 41.\n\n\nChoices:\nA) 20\nB) 21\nC) 41\nD) 61\n\nProvide an answer to the following question:\n\nQ: A certain atom has 20 electrons, 21 neutrons, and 20 protons. What is the atomic mass of the atom?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 2,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A certain atom has 20 electrons, 21 neutrons, and 20 protons. What is the atomic mass of the atom?\n\n\nChoices:\nA) 20\nB) 21\nC) 41\nD) 61\n\nProvide an answer to the following question:\n\nQ: A certain atom has 20 electrons, 21 neutrons, and 20 protons. What is the atomic mass of the atom?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 2,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A certain atom has 20 electrons, 21 neutrons, and 20 protons. What is the atomic mass of the atom?\n\n\nOne answer to question Q is A) 20.\n\n\nChoices:\nA) 20\nB) 21\nC) 41\nD) 61\n\nProvide an answer to the following question:\n\nQ: A certain atom has 20 electrons, 21 neutrons, and 20 protons. What is the atomic mass of the atom?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 3,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A certain atom has 20 electrons, 21 neutrons, and 20 protons. What is the atomic mass of the atom?\n\n\nChoices:\nA) 20\nB) 21\nC) 41\nD) 61\n\nProvide an answer to the following question:\n\nQ: A certain atom has 20 electrons, 21 neutrons, and 20 protons. What is the atomic mass of the atom?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 3,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A certain atom has 20 electrons, 21 neutrons, and 20 protons. What is the atomic mass of the atom?\n\n\nOne answer to question Q is C) 41.\n\n\nChoices:\nA) 20\nB) 21\nC) 41\nD) 61\n\nProvide an answer to the following question:\n\nQ: A certain atom has 20 electrons, 21 neutrons, and 20 protons. What is the atomic mass of the atom?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 4,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A certain atom has 20 electrons, 21 neutrons, and 20 protons. What is the atomic mass of the atom?\n\n\nChoices:\nA) 20\nB) 21\nC) 41\nD) 61\n\nProvide an answer to the following question:\n\nQ: A certain atom has 20 electrons, 21 neutrons, and 20 protons. What is the atomic mass of the atom?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 4,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A certain atom has 20 electrons, 21 neutrons, and 20 protons. What is the atomic mass of the atom?\n\n\nOne answer to question Q is A) 20.\n\n\nChoices:\nA) 20\nB) 21\nC) 41\nD) 61\n\nProvide an answer to the following question:\n\nQ: A certain atom has 20 electrons, 21 neutrons, and 20 protons. What is the atomic mass of the atom?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 5,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A certain atom has 20 electrons, 21 neutrons, and 20 protons. What is the atomic mass of the atom?\n\n\nChoices:\nA) 20\nB) 21\nC) 41\nD) 61\n\nProvide an answer to the following question:\n\nQ: A certain atom has 20 electrons, 21 neutrons, and 20 protons. What is the atomic mass of the atom?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 5,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A certain atom has 20 electrons, 21 neutrons, and 20 protons. What is the atomic mass of the atom?\n\n\nOne answer to question Q is D) 61.\n\n\nChoices:\nA) 20\nB) 21\nC) 41\nD) 61\n\nProvide an answer to the following question:\n\nQ: A certain atom has 20 electrons, 21 neutrons, and 20 protons. What is the atomic mass of the atom?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 6,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A certain atom has 20 electrons, 21 neutrons, and 20 protons. What is the atomic mass of the atom?\n\n\nChoices:\nA) 20\nB) 21\nC) 41\nD) 61\n\nProvide an answer to the following question:\n\nQ: A certain atom has 20 electrons, 21 neutrons, and 20 protons. What is the atomic mass of the atom?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 6,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A certain atom has 20 electrons, 21 neutrons, and 20 protons. What is the atomic mass of the atom?\n\n\nOne answer to question Q is D) 61.\n\n\nChoices:\nA) 20\nB) 21\nC) 41\nD) 61\n\nProvide an answer to the following question:\n\nQ: A certain atom has 20 electrons, 21 neutrons, and 20 protons. What is the atomic mass of the atom?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 7,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A certain atom has 20 electrons, 21 neutrons, and 20 protons. What is the atomic mass of the atom?\n\n\nChoices:\nA) 20\nB) 21\nC) 41\nD) 61\n\nProvide an answer to the following question:\n\nQ: A certain atom has 20 electrons, 21 neutrons, and 20 protons. What is the atomic mass of the atom?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 7,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A certain atom has 20 electrons, 21 neutrons, and 20 protons. What is the atomic mass of the atom?\n\n\nOne answer to question Q is C) 41.\n\n\nChoices:\nA) 20\nB) 21\nC) 41\nD) 61\n\nProvide an answer to the following question:\n\nQ: A certain atom has 20 electrons, 21 neutrons, and 20 protons. What is the atomic mass of the atom?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 8,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A certain atom has 20 electrons, 21 neutrons, and 20 protons. What is the atomic mass of the atom?\n\n\nChoices:\nA) 20\nB) 21\nC) 41\nD) 61\n\nProvide an answer to the following question:\n\nQ: A certain atom has 20 electrons, 21 neutrons, and 20 protons. What is the atomic mass of the atom?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 8,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A certain atom has 20 electrons, 21 neutrons, and 20 protons. What is the atomic mass of the atom?\n\n\nOne answer to question Q is C) 41.\n\n\nChoices:\nA) 20\nB) 21\nC) 41\nD) 61\n\nProvide an answer to the following question:\n\nQ: A certain atom has 20 electrons, 21 neutrons, and 20 protons. What is the atomic mass of the atom?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 9,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A certain atom has 20 electrons, 21 neutrons, and 20 protons. What is the atomic mass of the atom?\n\n\nChoices:\nA) 20\nB) 21\nC) 41\nD) 61\n\nProvide an answer to the following question:\n\nQ: A certain atom has 20 electrons, 21 neutrons, and 20 protons. What is the atomic mass of the atom?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "chain_id": 9,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A certain atom has 20 electrons, 21 neutrons, and 20 protons. What is the atomic mass of the atom?\n\n\nOne answer to question Q is C) 41.\n\n\nChoices:\nA) 20\nB) 21\nC) 41\nD) 61\n\nProvide an answer to the following question:\n\nQ: A certain atom has 20 electrons, 21 neutrons, and 20 protons. What is the atomic mass of the atom?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "chain_id": 0,
+          "step": 0,
+          "text": "C",
+          "logprob": -0.41743898391723633,
+          "probability": 0.6587316838487848
+        },
+        {
+          "chain_id": 0,
+          "step": 1,
+          "text": "C",
+          "logprob": -0.22262509167194366,
+          "probability": 0.8004148752525572
+        },
+        {
+          "chain_id": 1,
+          "step": 0,
+          "text": "C",
+          "logprob": -0.41743898391723633,
+          "probability": 0.6587316838487848
+        },
+        {
+          "chain_id": 1,
+          "step": 1,
+          "text": "C",
+          "logprob": -0.22262509167194366,
+          "probability": 0.8004148752525572
+        },
+        {
+          "chain_id": 2,
+          "step": 0,
+          "text": "A",
+          "logprob": -2.0841050148010254,
+          "probability": 0.12441842299821929
+        },
+        {
+          "chain_id": 2,
+          "step": 1,
+          "text": "B",
+          "logprob": -1.590075969696045,
+          "probability": 0.2039101201559269
+        },
+        {
+          "chain_id": 3,
+          "step": 0,
+          "text": "C",
+          "logprob": -0.41743898391723633,
+          "probability": 0.6587316838487848
+        },
+        {
+          "chain_id": 3,
+          "step": 1,
+          "text": "C",
+          "logprob": -0.22262509167194366,
+          "probability": 0.8004148752525572
+        },
+        {
+          "chain_id": 4,
+          "step": 0,
+          "text": "A",
+          "logprob": -2.0841050148010254,
+          "probability": 0.12441842299821929
+        },
+        {
+          "chain_id": 4,
+          "step": 1,
+          "text": "A",
+          "logprob": -1.173408031463623,
+          "probability": 0.30931100132468814
+        },
+        {
+          "chain_id": 5,
+          "step": 0,
+          "text": "D",
+          "logprob": -1.5285496711730957,
+          "probability": 0.21684994308288186
+        },
+        {
+          "chain_id": 5,
+          "step": 1,
+          "text": "D",
+          "logprob": -0.13371489942073822,
+          "probability": 0.8748394462851108
+        },
+        {
+          "chain_id": 6,
+          "step": 0,
+          "text": "D",
+          "logprob": -1.5285496711730957,
+          "probability": 0.21684994308288186
+        },
+        {
+          "chain_id": 6,
+          "step": 1,
+          "text": "D",
+          "logprob": -0.13371489942073822,
+          "probability": 0.8748394462851108
+        },
+        {
+          "chain_id": 7,
+          "step": 0,
+          "text": "C",
+          "logprob": -0.41743898391723633,
+          "probability": 0.6587316838487848
+        },
+        {
+          "chain_id": 7,
+          "step": 1,
+          "text": "C",
+          "logprob": -0.22262509167194366,
+          "probability": 0.8004148752525572
+        },
+        {
+          "chain_id": 8,
+          "step": 0,
+          "text": "C",
+          "logprob": -0.41743898391723633,
+          "probability": 0.6587316838487848
+        },
+        {
+          "chain_id": 8,
+          "step": 1,
+          "text": "C",
+          "logprob": -0.22262509167194366,
+          "probability": 0.8004148752525572
+        },
+        {
+          "chain_id": 9,
+          "step": 0,
+          "text": "C",
+          "logprob": -0.41743898391723633,
+          "probability": 0.6587316838487848
+        },
+        {
+          "chain_id": 9,
+          "step": 1,
+          "text": "C",
+          "logprob": -0.22262509167194366,
+          "probability": 0.8004148752525572
+        }
+      ],
+      "decision_process": {
+        "num_chains": 10,
+        "chain_length": 2,
+        "total_inferences": 20,
+        "mi_method": "listing",
+        "mi_nats": 0.506505442498736,
+        "mi_bits": 0.7307328900761965,
+        "selected_answer": "C",
+        "matched_choice": "C",
+        "confidence_computation": "1/(1 + mi_nats) = 1/(1 + 0.5065) = 0.6638",
+        "agreement": "60.00% (6/10 chains agree on final answer)"
+      },
+      "final_metrics": {
+        "predicted": "C",
+        "correct": true,
+        "confidence": 0.6637878442319926,
+        "mi_score": 0.7307328900761965,
+        "agreement": 0.6
+      }
+    }
+  }
+}

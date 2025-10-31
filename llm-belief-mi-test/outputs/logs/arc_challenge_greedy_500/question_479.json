@@ -1,0 +1,51 @@
+{
+  "question_id": 479,
+  "question_text": "The evidence gained from a design activity is often used to gather information about a technological problem. A design activity is more valid if it",
+  "choices": [
+    "A: includes many steps.",
+    "B: is recorded by a team of scientists.",
+    "C: includes repeated trials.",
+    "D: is performed in a laboratory."
+  ],
+  "gold_answer": "C",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: The evidence gained from a design activity is often used to gather information about a technological problem. A design activity is more valid if it\n\n\nChoices:\nA) includes many steps.\nB) is recorded by a team of scientists.\nC) includes repeated trials.\nD) is performed in a laboratory.\n\nProvide an answer to the following question:\n\nQ: The evidence gained from a design activity is often used to gather information about a technological problem. A design activity is more valid if it\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "C",
+          "logprob": -0.1178093624766916,
+          "probability": 0.8888654875788796
+        }
+      ],
+      "decision_process": {
+        "selected_text": "C",
+        "matched_choice": "C",
+        "confidence_computation": "exp(logprob) = exp(-0.1178) = 0.8889"
+      },
+      "final_metrics": {
+        "predicted": "C",
+        "correct": true,
+        "confidence": 0.8888654875788796,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

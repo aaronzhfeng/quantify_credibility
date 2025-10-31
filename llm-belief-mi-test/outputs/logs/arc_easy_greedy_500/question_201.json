@@ -1,0 +1,51 @@
+{
+  "question_id": 201,
+  "question_text": "Carmine's mother drinks four cans of soft drink each day. After drinking the soft drinks, Carmine's mother should",
+  "choices": [
+    "A: throw the cans in the trash.",
+    "B: send the cans to a landfill.",
+    "C: take the cans to be recycled.",
+    "D: crush the cans before putting them in the trash."
+  ],
+  "gold_answer": "C",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Carmine's mother drinks four cans of soft drink each day. After drinking the soft drinks, Carmine's mother should\n\n\nChoices:\nA) throw the cans in the trash.\nB) send the cans to a landfill.\nC) take the cans to be recycled.\nD) crush the cans before putting them in the trash.\n\nProvide an answer to the following question:\n\nQ: Carmine's mother drinks four cans of soft drink each day. After drinking the soft drinks, Carmine's mother should\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "C",
+          "logprob": -0.011902526719495654,
+          "probability": 0.9881680281471639
+        }
+      ],
+      "decision_process": {
+        "selected_text": "C",
+        "matched_choice": "C",
+        "confidence_computation": "exp(logprob) = exp(-0.0119) = 0.9882"
+      },
+      "final_metrics": {
+        "predicted": "C",
+        "correct": true,
+        "confidence": 0.9881680281471639,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

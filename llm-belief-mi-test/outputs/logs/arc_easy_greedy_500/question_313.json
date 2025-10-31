@@ -1,0 +1,51 @@
+{
+  "question_id": 313,
+  "question_text": "People take in and release gases from the air when they breathe. Which exhaled gas is a waste product of respiration?",
+  "choices": [
+    "A: oxygen",
+    "B: helium",
+    "C: hydrogen",
+    "D: carbon dioxide"
+  ],
+  "gold_answer": "D",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: People take in and release gases from the air when they breathe. Which exhaled gas is a waste product of respiration?\n\n\nChoices:\nA) oxygen\nB) helium\nC) hydrogen\nD) carbon dioxide\n\nProvide an answer to the following question:\n\nQ: People take in and release gases from the air when they breathe. Which exhaled gas is a waste product of respiration?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "D",
+          "logprob": -0.0005509088805411011,
+          "probability": 0.9994492428418932
+        }
+      ],
+      "decision_process": {
+        "selected_text": "D",
+        "matched_choice": "D",
+        "confidence_computation": "exp(logprob) = exp(-0.0006) = 0.9994"
+      },
+      "final_metrics": {
+        "predicted": "D",
+        "correct": true,
+        "confidence": 0.9994492428418932,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

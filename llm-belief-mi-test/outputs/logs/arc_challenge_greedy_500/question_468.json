@@ -1,0 +1,51 @@
+{
+  "question_id": 468,
+  "question_text": "Many countries depend on the energy from fossil fuels. Some scientists suggest using renewable sources of energy instead. Why would scientists most likely suggest using renewable sources of energy?",
+  "choices": [
+    "A: They are safer for the environment.",
+    "B: They are cheaper to develop.",
+    "C: They are easier to transport.",
+    "D: They produce more energy."
+  ],
+  "gold_answer": "A",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Many countries depend on the energy from fossil fuels. Some scientists suggest using renewable sources of energy instead. Why would scientists most likely suggest using renewable sources of energy?\n\n\nChoices:\nA) They are safer for the environment.\nB) They are cheaper to develop.\nC) They are easier to transport.\nD) They produce more energy.\n\nProvide an answer to the following question:\n\nQ: Many countries depend on the energy from fossil fuels. Some scientists suggest using renewable sources of energy instead. Why would scientists most likely suggest using renewable sources of energy?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "A",
+          "logprob": -0.1432538861699868,
+          "probability": 0.8665340399569508
+        }
+      ],
+      "decision_process": {
+        "selected_text": "A",
+        "matched_choice": "A",
+        "confidence_computation": "exp(logprob) = exp(-0.1433) = 0.8665"
+      },
+      "final_metrics": {
+        "predicted": "A",
+        "correct": true,
+        "confidence": 0.8665340399569508,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

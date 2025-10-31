@@ -1,0 +1,51 @@
+{
+  "question_id": 373,
+  "question_text": "Which is most similar to the way a glacier makes a valley?",
+  "choices": [
+    "A: A bulldozer pushes a pile of dirt.",
+    "B: A shoe makes a footprint in soil.",
+    "C: A tree root splits a rock in half.",
+    "D: A drill makes a hole in a board."
+  ],
+  "gold_answer": "A",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Which is most similar to the way a glacier makes a valley?\n\n\nChoices:\nA) A bulldozer pushes a pile of dirt.\nB) A shoe makes a footprint in soil.\nC) A tree root splits a rock in half.\nD) A drill makes a hole in a board.\n\nProvide an answer to the following question:\n\nQ: Which is most similar to the way a glacier makes a valley?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "B",
+          "logprob": -0.6484425303060561,
+          "probability": 0.522859480732326
+        }
+      ],
+      "decision_process": {
+        "selected_text": "B",
+        "matched_choice": "B",
+        "confidence_computation": "exp(logprob) = exp(-0.6484) = 0.5229"
+      },
+      "final_metrics": {
+        "predicted": "B",
+        "correct": false,
+        "confidence": 0.522859480732326,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

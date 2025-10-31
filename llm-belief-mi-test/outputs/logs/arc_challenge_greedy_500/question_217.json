@@ -1,0 +1,51 @@
+{
+  "question_id": 217,
+  "question_text": "What are two ways ice can change Earth's surface?",
+  "choices": [
+    "A: cracking a rock and making a U-shaped valley",
+    "B: making a dune and making a U-shaped valley",
+    "C: making a dune and making a V-shaped valley",
+    "D: cracking a rock and making a V-shaped valley"
+  ],
+  "gold_answer": "A",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: What are two ways ice can change Earth's surface?\n\n\nChoices:\nA) cracking a rock and making a U-shaped valley\nB) making a dune and making a U-shaped valley\nC) making a dune and making a V-shaped valley\nD) cracking a rock and making a V-shaped valley\n\nProvide an answer to the following question:\n\nQ: What are two ways ice can change Earth's surface?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "A",
+          "logprob": -0.7070933133363724,
+          "probability": 0.4930753320152189
+        }
+      ],
+      "decision_process": {
+        "selected_text": "A",
+        "matched_choice": "A",
+        "confidence_computation": "exp(logprob) = exp(-0.7071) = 0.4931"
+      },
+      "final_metrics": {
+        "predicted": "A",
+        "correct": true,
+        "confidence": 0.4930753320152189,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

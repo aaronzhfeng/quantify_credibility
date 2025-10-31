@@ -1,0 +1,51 @@
+{
+  "question_id": 206,
+  "question_text": "What is the most important way an artificial reef, such as a sunken ship or railroad car, may support the development of a complex ecosystem?",
+  "choices": [
+    "A: by providing habitat for large fish and plants",
+    "B: by providing habitat for algae and small invertebrates",
+    "C: by providing habitat for marine mammals and plants",
+    "D: by providing habitat for bacteria and fungi"
+  ],
+  "gold_answer": "B",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: What is the most important way an artificial reef, such as a sunken ship or railroad car, may support the development of a complex ecosystem?\n\n\nChoices:\nA) by providing habitat for large fish and plants\nB) by providing habitat for algae and small invertebrates\nC) by providing habitat for marine mammals and plants\nD) by providing habitat for bacteria and fungi\n\nProvide an answer to the following question:\n\nQ: What is the most important way an artificial reef, such as a sunken ship or railroad car, may support the development of a complex ecosystem?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "A",
+          "logprob": -0.09685565903782845,
+          "probability": 0.9076870130950305
+        }
+      ],
+      "decision_process": {
+        "selected_text": "A",
+        "matched_choice": "A",
+        "confidence_computation": "exp(logprob) = exp(-0.0969) = 0.9077"
+      },
+      "final_metrics": {
+        "predicted": "A",
+        "correct": false,
+        "confidence": 0.9076870130950305,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

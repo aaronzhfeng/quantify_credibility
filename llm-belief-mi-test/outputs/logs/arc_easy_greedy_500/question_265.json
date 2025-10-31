@@ -1,0 +1,51 @@
+{
+  "question_id": 265,
+  "question_text": "Which human organ system produces most of the hormones that regulate body functions?",
+  "choices": [
+    "1: digestive",
+    "2: nervous",
+    "3: muscular",
+    "4: endocrine"
+  ],
+  "gold_answer": "4",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Which human organ system produces most of the hormones that regulate body functions?\n\n\nChoices:\n1) digestive\n2) nervous\n3) muscular\n4) endocrine\n\nProvide an answer to the following question:\n\nQ: Which human organ system produces most of the hormones that regulate body functions?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "D",
+          "logprob": -0.04850240983068943,
+          "probability": 0.9526550435657083
+        }
+      ],
+      "decision_process": {
+        "selected_text": "D",
+        "matched_choice": "1",
+        "confidence_computation": "exp(logprob) = exp(-0.0485) = 0.9527"
+      },
+      "final_metrics": {
+        "predicted": "1",
+        "correct": false,
+        "confidence": 0.9526550435657083,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

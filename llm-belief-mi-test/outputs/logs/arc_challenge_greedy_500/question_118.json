@@ -1,0 +1,51 @@
+{
+  "question_id": 118,
+  "question_text": "An airplane flies in a straight line between two cities that are separated by 840 kilometers. If it takes 4 hours for the airplane to make the trip, what is its average speed?",
+  "choices": [
+    "A: 84 km/h",
+    "B: 105 km/h",
+    "C: 180 km/h",
+    "D: 210 km/h"
+  ],
+  "gold_answer": "D",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: An airplane flies in a straight line between two cities that are separated by 840 kilometers. If it takes 4 hours for the airplane to make the trip, what is its average speed?\n\n\nChoices:\nA) 84 km/h\nB) 105 km/h\nC) 180 km/h\nD) 210 km/h\n\nProvide an answer to the following question:\n\nQ: An airplane flies in a straight line between two cities that are separated by 840 kilometers. If it takes 4 hours for the airplane to make the trip, what is its average speed?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "A",
+          "logprob": -1.0236643478274345,
+          "probability": 0.3592760128674929
+        }
+      ],
+      "decision_process": {
+        "selected_text": "A",
+        "matched_choice": "A",
+        "confidence_computation": "exp(logprob) = exp(-1.0237) = 0.3593"
+      },
+      "final_metrics": {
+        "predicted": "A",
+        "correct": false,
+        "confidence": 0.3592760128674929,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

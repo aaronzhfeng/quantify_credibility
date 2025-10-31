@@ -1,0 +1,51 @@
+{
+  "question_id": 299,
+  "question_text": "A farmer has three large fields where he plans to grow grasses to harvest for hay. Grasses should be harvested only after two years of growth. What could the farmer do to make sure he has a hay crop each year?",
+  "choices": [
+    "A: Plant each field at one-year intervals.",
+    "B: Plant the grasses as close together as possible.",
+    "C: Plant all the fields at the same time, but with different types of grasses.",
+    "D: Plant warm-season grasses and cool-season grasses in each field at the same time."
+  ],
+  "gold_answer": "A",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A farmer has three large fields where he plans to grow grasses to harvest for hay. Grasses should be harvested only after two years of growth. What could the farmer do to make sure he has a hay crop each year?\n\n\nChoices:\nA) Plant each field at one-year intervals.\nB) Plant the grasses as close together as possible.\nC) Plant all the fields at the same time, but with different types of grasses.\nD) Plant warm-season grasses and cool-season grasses in each field at the same time.\n\nProvide an answer to the following question:\n\nQ: A farmer has three large fields where he plans to grow grasses to harvest for hay. Grasses should be harvested only after two years of growth. What could the farmer do to make sure he has a hay crop each year?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "A",
+          "logprob": -1.0795269993832335,
+          "probability": 0.3397561925327934
+        }
+      ],
+      "decision_process": {
+        "selected_text": "A",
+        "matched_choice": "A",
+        "confidence_computation": "exp(logprob) = exp(-1.0795) = 0.3398"
+      },
+      "final_metrics": {
+        "predicted": "A",
+        "correct": true,
+        "confidence": 0.3397561925327934,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

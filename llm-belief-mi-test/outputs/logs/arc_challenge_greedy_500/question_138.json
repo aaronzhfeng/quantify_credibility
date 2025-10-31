@@ -1,0 +1,51 @@
+{
+  "question_id": 138,
+  "question_text": "An engineer is using a computer to design a bridge. Which test is the most important for safety purposes?",
+  "choices": [
+    "A: maximum load the bridge can support",
+    "B: cost of material used to build the bridge",
+    "C: percent of materials that can be recycled",
+    "D: speed with which the bridge can be constructed"
+  ],
+  "gold_answer": "A",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: An engineer is using a computer to design a bridge. Which test is the most important for safety purposes?\n\n\nChoices:\nA) maximum load the bridge can support\nB) cost of material used to build the bridge\nC) percent of materials that can be recycled\nD) speed with which the bridge can be constructed\n\nProvide an answer to the following question:\n\nQ: An engineer is using a computer to design a bridge. Which test is the most important for safety purposes?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "A",
+          "logprob": -0.0005153888487257063,
+          "probability": 0.9994847439412932
+        }
+      ],
+      "decision_process": {
+        "selected_text": "A",
+        "matched_choice": "A",
+        "confidence_computation": "exp(logprob) = exp(-0.0005) = 0.9995"
+      },
+      "final_metrics": {
+        "predicted": "A",
+        "correct": true,
+        "confidence": 0.9994847439412932,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

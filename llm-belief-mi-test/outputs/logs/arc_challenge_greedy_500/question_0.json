@@ -1,0 +1,51 @@
+{
+  "question_id": 0,
+  "question_text": "An astronomer observes that a planet rotates faster after a meteorite impact. Which is the most likely effect of this increase in rotation?",
+  "choices": [
+    "A: Planetary density will decrease.",
+    "B: Planetary years will become longer.",
+    "C: Planetary days will become shorter.",
+    "D: Planetary gravity will become stronger."
+  ],
+  "gold_answer": "C",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: An astronomer observes that a planet rotates faster after a meteorite impact. Which is the most likely effect of this increase in rotation?\n\n\nChoices:\nA) Planetary density will decrease.\nB) Planetary years will become longer.\nC) Planetary days will become shorter.\nD) Planetary gravity will become stronger.\n\nProvide an answer to the following question:\n\nQ: An astronomer observes that a planet rotates faster after a meteorite impact. Which is the most likely effect of this increase in rotation?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "C",
+          "logprob": -0.4229856426245533,
+          "probability": 0.6550880383892064
+        }
+      ],
+      "decision_process": {
+        "selected_text": "C",
+        "matched_choice": "C",
+        "confidence_computation": "exp(logprob) = exp(-0.4230) = 0.6551"
+      },
+      "final_metrics": {
+        "predicted": "C",
+        "correct": true,
+        "confidence": 0.6550880383892064,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "question_id": 290,
+  "question_text": "For years, many astronomers thought that our solar system formed from a slowly condensing cloud of dust and gas. New evidence indicates that our solar system may have formed when short-lived, massive stars in a nebula exploded. What is most likely going to result from the new evidence?",
+  "choices": [
+    "A: The old hypothesis will become obsolete.",
+    "B: The new hypothesis will be rejected due to conflict.",
+    "C: The evidence for the old hypothesis will be disregarded.",
+    "D: The evidence will be verified before the old hypothesis is revised."
+  ],
+  "gold_answer": "D",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: For years, many astronomers thought that our solar system formed from a slowly condensing cloud of dust and gas. New evidence indicates that our solar system may have formed when short-lived, massive stars in a nebula exploded. What is most likely going to result from the new evidence?\n\n\nChoices:\nA) The old hypothesis will become obsolete.\nB) The new hypothesis will be rejected due to conflict.\nC) The evidence for the old hypothesis will be disregarded.\nD) The evidence will be verified before the old hypothesis is revised.\n\nProvide an answer to the following question:\n\nQ: For years, many astronomers thought that our solar system formed from a slowly condensing cloud of dust and gas. New evidence indicates that our solar system may have formed when short-lived, massive stars in a nebula exploded. What is most likely going to result from the new evidence?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "A",
+          "logprob": -0.0045914893271401525,
+          "probability": 0.9954190354456917
+        }
+      ],
+      "decision_process": {
+        "selected_text": "A",
+        "matched_choice": "A",
+        "confidence_computation": "exp(logprob) = exp(-0.0046) = 0.9954"
+      },
+      "final_metrics": {
+        "predicted": "A",
+        "correct": false,
+        "confidence": 0.9954190354456917,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

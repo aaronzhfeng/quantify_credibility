@@ -1,0 +1,51 @@
+{
+  "question_id": 123,
+  "question_text": "Hurricanes form over equatorial areas. This is because",
+  "choices": [
+    "A: solar heating is greatest near the equator.",
+    "B: the Moon's plane of orbit is close to the equator.",
+    "C: Earth's volcanic activity is clustered around the equator.",
+    "D: the rate of rotation of Earth's surface is less at the equator."
+  ],
+  "gold_answer": "A",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Hurricanes form over equatorial areas. This is because\n\n\nChoices:\nA) solar heating is greatest near the equator.\nB) the Moon's plane of orbit is close to the equator.\nC) Earth's volcanic activity is clustered around the equator.\nD) the rate of rotation of Earth's surface is less at the equator.\n\nProvide an answer to the following question:\n\nQ: Hurricanes form over equatorial areas. This is because\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "A",
+          "logprob": -0.084526244958397,
+          "probability": 0.9189475373204584
+        }
+      ],
+      "decision_process": {
+        "selected_text": "A",
+        "matched_choice": "A",
+        "confidence_computation": "exp(logprob) = exp(-0.0845) = 0.9189"
+      },
+      "final_metrics": {
+        "predicted": "A",
+        "correct": true,
+        "confidence": 0.9189475373204584,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "question_id": 315,
+  "question_text": "Matt is a tall, eleven-year-old boy. He has a scar on his right cheek. He is intelligent and an excellent drummer. Which of his traits did he most likely inherit?",
+  "choices": [
+    "A: his height",
+    "B: his scar on his right cheek",
+    "C: his intelligence",
+    "D: his ability to play the drums"
+  ],
+  "gold_answer": "A",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Matt is a tall, eleven-year-old boy. He has a scar on his right cheek. He is intelligent and an excellent drummer. Which of his traits did he most likely inherit?\n\n\nChoices:\nA) his height\nB) his scar on his right cheek\nC) his intelligence\nD) his ability to play the drums\n\nProvide an answer to the following question:\n\nQ: Matt is a tall, eleven-year-old boy. He has a scar on his right cheek. He is intelligent and an excellent drummer. Which of his traits did he most likely inherit?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "C",
+          "logprob": -0.65985968298628,
+          "probability": 0.5169238626158382
+        }
+      ],
+      "decision_process": {
+        "selected_text": "C",
+        "matched_choice": "C",
+        "confidence_computation": "exp(logprob) = exp(-0.6599) = 0.5169"
+      },
+      "final_metrics": {
+        "predicted": "C",
+        "correct": false,
+        "confidence": 0.5169238626158382,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

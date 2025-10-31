@@ -1,0 +1,51 @@
+{
+  "question_id": 367,
+  "question_text": "What causes the tectonic plates of Earth to continually move?",
+  "choices": [
+    "A: convection currents in the mantle",
+    "B: volcanic and seismic activity in the crust",
+    "C: strong winds and storms",
+    "D: rotation of the solid core"
+  ],
+  "gold_answer": "A",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: What causes the tectonic plates of Earth to continually move?\n\n\nChoices:\nA) convection currents in the mantle\nB) volcanic and seismic activity in the crust\nC) strong winds and storms\nD) rotation of the solid core\n\nProvide an answer to the following question:\n\nQ: What causes the tectonic plates of Earth to continually move?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "A",
+          "logprob": -0.0302494633895094,
+          "probability": 0.9702034731102389
+        }
+      ],
+      "decision_process": {
+        "selected_text": "A",
+        "matched_choice": "A",
+        "confidence_computation": "exp(logprob) = exp(-0.0302) = 0.9702"
+      },
+      "final_metrics": {
+        "predicted": "A",
+        "correct": true,
+        "confidence": 0.9702034731102389,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

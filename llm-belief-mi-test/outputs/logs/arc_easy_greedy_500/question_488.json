@@ -1,0 +1,51 @@
+{
+  "question_id": 488,
+  "question_text": "Scientists determined that cabbages grown using Fertilizer A grew bigger than cabbages grown using Fertilizer B or no fertilizer at all. The scientists repeated the investigation and produced the same results. Which best explains the purpose of repeating this investigation?",
+  "choices": [
+    "A: to ensure that the cabbages are safe for human consumption",
+    "B: to discover the scientific principle that causes the increased growth",
+    "C: to confirm that the observed differences were caused by the fertilizer",
+    "D: to determine the difference between the experimental and control groups"
+  ],
+  "gold_answer": "C",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Scientists determined that cabbages grown using Fertilizer A grew bigger than cabbages grown using Fertilizer B or no fertilizer at all. The scientists repeated the investigation and produced the same results. Which best explains the purpose of repeating this investigation?\n\n\nChoices:\nA) to ensure that the cabbages are safe for human consumption\nB) to discover the scientific principle that causes the increased growth\nC) to confirm that the observed differences were caused by the fertilizer\nD) to determine the difference between the experimental and control groups\n\nProvide an answer to the following question:\n\nQ: Scientists determined that cabbages grown using Fertilizer A grew bigger than cabbages grown using Fertilizer B or no fertilizer at all. The scientists repeated the investigation and produced the same results. Which best explains the purpose of repeating this investigation?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "C",
+          "logprob": -0.05154222727287561,
+          "probability": 0.9497635431911001
+        }
+      ],
+      "decision_process": {
+        "selected_text": "C",
+        "matched_choice": "C",
+        "confidence_computation": "exp(logprob) = exp(-0.0515) = 0.9498"
+      },
+      "final_metrics": {
+        "predicted": "C",
+        "correct": true,
+        "confidence": 0.9497635431911001,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

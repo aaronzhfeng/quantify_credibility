@@ -1,0 +1,51 @@
+{
+  "question_id": 312,
+  "question_text": "Energy appears in many forms. What form of energy is lightning?",
+  "choices": [
+    "A: electrical energy",
+    "B: mechanical energy",
+    "C: magnetic energy",
+    "D: sound energy"
+  ],
+  "gold_answer": "A",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Energy appears in many forms. What form of energy is lightning?\n\n\nChoices:\nA) electrical energy\nB) mechanical energy\nC) magnetic energy\nD) sound energy\n\nProvide an answer to the following question:\n\nQ: Energy appears in many forms. What form of energy is lightning?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "A",
+          "logprob": -0.00416997259890195,
+          "probability": 0.9958387096643767
+        }
+      ],
+      "decision_process": {
+        "selected_text": "A",
+        "matched_choice": "A",
+        "confidence_computation": "exp(logprob) = exp(-0.0042) = 0.9958"
+      },
+      "final_metrics": {
+        "predicted": "A",
+        "correct": true,
+        "confidence": 0.9958387096643767,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

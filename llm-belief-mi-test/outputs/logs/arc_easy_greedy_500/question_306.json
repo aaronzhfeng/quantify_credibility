@@ -1,0 +1,51 @@
+{
+  "question_id": 306,
+  "question_text": "About how long is a lunar cycle?",
+  "choices": [
+    "A: 1 day",
+    "B: 1 week",
+    "C: 28 days",
+    "D: 52 weeks"
+  ],
+  "gold_answer": "C",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: About how long is a lunar cycle?\n\n\nChoices:\nA) 1 day\nB) 1 week\nC) 28 days\nD) 52 weeks\n\nProvide an answer to the following question:\n\nQ: About how long is a lunar cycle?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "C",
+          "logprob": -0.09232089924626052,
+          "probability": 0.9118125026476868
+        }
+      ],
+      "decision_process": {
+        "selected_text": "C",
+        "matched_choice": "C",
+        "confidence_computation": "exp(logprob) = exp(-0.0923) = 0.9118"
+      },
+      "final_metrics": {
+        "predicted": "C",
+        "correct": true,
+        "confidence": 0.9118125026476868,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

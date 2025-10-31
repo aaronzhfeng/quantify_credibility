@@ -1,0 +1,51 @@
+{
+  "question_id": 446,
+  "question_text": "Which fact best explains why most evaporation happens in the oceans?",
+  "choices": [
+    "A: Ocean water is salty.",
+    "B: There are mountain ranges on the ocean floor.",
+    "C: About 97 percent of Earth's water is ocean water.",
+    "D: Fewer clouds block sunlight over the ocean."
+  ],
+  "gold_answer": "C",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Which fact best explains why most evaporation happens in the oceans?\n\n\nChoices:\nA) Ocean water is salty.\nB) There are mountain ranges on the ocean floor.\nC) About 97 percent of Earth's water is ocean water.\nD) Fewer clouds block sunlight over the ocean.\n\nProvide an answer to the following question:\n\nQ: Which fact best explains why most evaporation happens in the oceans?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "C",
+          "logprob": -0.44671703432686627,
+          "probability": 0.6397249028537232
+        }
+      ],
+      "decision_process": {
+        "selected_text": "C",
+        "matched_choice": "C",
+        "confidence_computation": "exp(logprob) = exp(-0.4467) = 0.6397"
+      },
+      "final_metrics": {
+        "predicted": "C",
+        "correct": true,
+        "confidence": 0.6397249028537232,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

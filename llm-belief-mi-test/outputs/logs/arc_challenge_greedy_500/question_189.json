@@ -1,0 +1,51 @@
+{
+  "question_id": 189,
+  "question_text": "Beavers build their homes in ponds and streams. Which characteristic is least critical to building homes in an aquatic environment?",
+  "choices": [
+    "A: waterproof fur",
+    "B: webbed hind feet",
+    "C: large, sharp teeth",
+    "D: flat, wide tail"
+  ],
+  "gold_answer": "C",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Beavers build their homes in ponds and streams. Which characteristic is least critical to building homes in an aquatic environment?\n\n\nChoices:\nA) waterproof fur\nB) webbed hind feet\nC) large, sharp teeth\nD) flat, wide tail\n\nProvide an answer to the following question:\n\nQ: Beavers build their homes in ponds and streams. Which characteristic is least critical to building homes in an aquatic environment?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "A",
+          "logprob": -1.0832407646812499,
+          "probability": 0.3384967578451135
+        }
+      ],
+      "decision_process": {
+        "selected_text": "A",
+        "matched_choice": "A",
+        "confidence_computation": "exp(logprob) = exp(-1.0832) = 0.3385"
+      },
+      "final_metrics": {
+        "predicted": "A",
+        "correct": false,
+        "confidence": 0.3384967578451135,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

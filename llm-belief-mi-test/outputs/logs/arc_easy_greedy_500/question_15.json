@@ -1,0 +1,51 @@
+{
+  "question_id": 15,
+  "question_text": "Which process best explains how the Grand Canyon became so wide?",
+  "choices": [
+    "A: folding",
+    "B: erosion",
+    "C: deposition",
+    "D: sedimentation"
+  ],
+  "gold_answer": "B",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Which process best explains how the Grand Canyon became so wide?\n\n\nChoices:\nA) folding\nB) erosion\nC) deposition\nD) sedimentation\n\nProvide an answer to the following question:\n\nQ: Which process best explains how the Grand Canyon became so wide?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "B",
+          "logprob": -0.014934316161088645,
+          "probability": 0.9851766476621268
+        }
+      ],
+      "decision_process": {
+        "selected_text": "B",
+        "matched_choice": "B",
+        "confidence_computation": "exp(logprob) = exp(-0.0149) = 0.9852"
+      },
+      "final_metrics": {
+        "predicted": "B",
+        "correct": true,
+        "confidence": 0.9851766476621268,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "question_id": 387,
+  "question_text": "A blacksmith bends a metal rod into a round wheel. Which statement best describes the wheel?",
+  "choices": [
+    "A: The wheel weighs less than the rod.",
+    "B: The wheel weighs more than the rod.",
+    "C: The wheel is made of the same substance as the rod.",
+    "D: The wheel is made of a different substance than the rod."
+  ],
+  "gold_answer": "C",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A blacksmith bends a metal rod into a round wheel. Which statement best describes the wheel?\n\n\nChoices:\nA) The wheel weighs less than the rod.\nB) The wheel weighs more than the rod.\nC) The wheel is made of the same substance as the rod.\nD) The wheel is made of a different substance than the rod.\n\nProvide an answer to the following question:\n\nQ: A blacksmith bends a metal rod into a round wheel. Which statement best describes the wheel?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "C",
+          "logprob": -0.32189543632557616,
+          "probability": 0.7247739713974365
+        }
+      ],
+      "decision_process": {
+        "selected_text": "C",
+        "matched_choice": "C",
+        "confidence_computation": "exp(logprob) = exp(-0.3219) = 0.7248"
+      },
+      "final_metrics": {
+        "predicted": "C",
+        "correct": true,
+        "confidence": 0.7247739713974365,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

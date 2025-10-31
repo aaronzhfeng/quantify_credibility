@@ -1,0 +1,51 @@
+{
+  "question_id": 125,
+  "question_text": "If a nerve cell stopped functioning, the cell would",
+  "choices": [
+    "A: start producing oxygen.",
+    "B: begin dividing into more cells.",
+    "C: become a different type of cell.",
+    "D: stop sending signals to the brain."
+  ],
+  "gold_answer": "D",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: If a nerve cell stopped functioning, the cell would\n\n\nChoices:\nA) start producing oxygen.\nB) begin dividing into more cells.\nC) become a different type of cell.\nD) stop sending signals to the brain.\n\nProvide an answer to the following question:\n\nQ: If a nerve cell stopped functioning, the cell would\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "D",
+          "logprob": -0.08974792598746717,
+          "probability": 0.9141615926109097
+        }
+      ],
+      "decision_process": {
+        "selected_text": "D",
+        "matched_choice": "D",
+        "confidence_computation": "exp(logprob) = exp(-0.0897) = 0.9142"
+      },
+      "final_metrics": {
+        "predicted": "D",
+        "correct": true,
+        "confidence": 0.9141615926109097,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "question_id": 454,
+  "question_text": "In the design process, a trade-off occurs when a problem is solved but a feature is sacrificed. Which of the following is an example of a trade-off?",
+  "choices": [
+    "A: A car's gas mileage is increased and the engine has less power.",
+    "B: An airplane uses a more efficient engine and has higher performance.",
+    "C: A sports drink's taste is improved and has the same nutritional content.",
+    "D: A computer company upgrades the hardware and the price remains unchanged."
+  ],
+  "gold_answer": "A",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: In the design process, a trade-off occurs when a problem is solved but a feature is sacrificed. Which of the following is an example of a trade-off?\n\n\nChoices:\nA) A car's gas mileage is increased and the engine has less power.\nB) An airplane uses a more efficient engine and has higher performance.\nC) A sports drink's taste is improved and has the same nutritional content.\nD) A computer company upgrades the hardware and the price remains unchanged.\n\nProvide an answer to the following question:\n\nQ: In the design process, a trade-off occurs when a problem is solved but a feature is sacrificed. Which of the following is an example of a trade-off?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "A",
+          "logprob": -0.38036260672379285,
+          "probability": 0.6836134814200918
+        }
+      ],
+      "decision_process": {
+        "selected_text": "A",
+        "matched_choice": "A",
+        "confidence_computation": "exp(logprob) = exp(-0.3804) = 0.6836"
+      },
+      "final_metrics": {
+        "predicted": "A",
+        "correct": true,
+        "confidence": 0.6836134814200918,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

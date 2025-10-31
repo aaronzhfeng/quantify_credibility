@@ -1,0 +1,51 @@
+{
+  "question_id": 438,
+  "question_text": "A student divides several cubes into two groups, based on whether or not each cube can float in later. What property is the student using to classify the cubes?",
+  "choices": [
+    "A: weight",
+    "B: density",
+    "C: conductivity",
+    "D: mass"
+  ],
+  "gold_answer": "B",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A student divides several cubes into two groups, based on whether or not each cube can float in later. What property is the student using to classify the cubes?\n\n\nChoices:\nA) weight\nB) density\nC) conductivity\nD) mass\n\nProvide an answer to the following question:\n\nQ: A student divides several cubes into two groups, based on whether or not each cube can float in later. What property is the student using to classify the cubes?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "B",
+          "logprob": -0.1507162939378759,
+          "probability": 0.8600916772712878
+        }
+      ],
+      "decision_process": {
+        "selected_text": "B",
+        "matched_choice": "B",
+        "confidence_computation": "exp(logprob) = exp(-0.1507) = 0.8601"
+      },
+      "final_metrics": {
+        "predicted": "B",
+        "correct": true,
+        "confidence": 0.8600916772712878,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

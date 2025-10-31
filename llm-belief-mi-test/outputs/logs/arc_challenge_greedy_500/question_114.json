@@ -1,0 +1,51 @@
+{
+  "question_id": 114,
+  "question_text": "Coal-powered plants are designed specifically to convert",
+  "choices": [
+    "A: electrical energy to heat energy.",
+    "B: chemical energy to electrical energy.",
+    "C: electrical energy to radiant energy.",
+    "D: kinetic energy to potential energy."
+  ],
+  "gold_answer": "B",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Coal-powered plants are designed specifically to convert\n\n\nChoices:\nA) electrical energy to heat energy.\nB) chemical energy to electrical energy.\nC) electrical energy to radiant energy.\nD) kinetic energy to potential energy.\n\nProvide an answer to the following question:\n\nQ: Coal-powered plants are designed specifically to convert\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "B",
+          "logprob": -0.05932427570223808,
+          "probability": 0.942401121817208
+        }
+      ],
+      "decision_process": {
+        "selected_text": "B",
+        "matched_choice": "B",
+        "confidence_computation": "exp(logprob) = exp(-0.0593) = 0.9424"
+      },
+      "final_metrics": {
+        "predicted": "B",
+        "correct": true,
+        "confidence": 0.942401121817208,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

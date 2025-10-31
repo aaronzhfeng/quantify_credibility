@@ -1,0 +1,51 @@
+{
+  "question_id": 272,
+  "question_text": "Which of these is the best example of physical weathering?",
+  "choices": [
+    "A: insects eating a dead tree",
+    "B: a bulldozer pushing soil",
+    "C: ice fracturing a stone",
+    "D: acid rain dissolving limestone"
+  ],
+  "gold_answer": "C",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Which of these is the best example of physical weathering?\n\n\nChoices:\nA) insects eating a dead tree\nB) a bulldozer pushing soil\nC) ice fracturing a stone\nD) acid rain dissolving limestone\n\nProvide an answer to the following question:\n\nQ: Which of these is the best example of physical weathering?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "C",
+          "logprob": -0.16239709548244718,
+          "probability": 0.8501035652217839
+        }
+      ],
+      "decision_process": {
+        "selected_text": "C",
+        "matched_choice": "C",
+        "confidence_computation": "exp(logprob) = exp(-0.1624) = 0.8501"
+      },
+      "final_metrics": {
+        "predicted": "C",
+        "correct": true,
+        "confidence": 0.8501035652217839,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

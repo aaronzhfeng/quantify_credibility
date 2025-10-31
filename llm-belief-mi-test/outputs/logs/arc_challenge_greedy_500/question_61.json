@@ -1,0 +1,51 @@
+{
+  "question_id": 61,
+  "question_text": "Why do most of the leaves of forest trees grow at the top of the tree?",
+  "choices": [
+    "A: to scatter seeds",
+    "B: to capture sunlight",
+    "C: to shade the trunk",
+    "D: to collect water"
+  ],
+  "gold_answer": "B",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Why do most of the leaves of forest trees grow at the top of the tree?\n\n\nChoices:\nA) to scatter seeds\nB) to capture sunlight\nC) to shade the trunk\nD) to collect water\n\nProvide an answer to the following question:\n\nQ: Why do most of the leaves of forest trees grow at the top of the tree?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "B",
+          "logprob": -0.021223763469606638,
+          "probability": 0.9789998756494055
+        }
+      ],
+      "decision_process": {
+        "selected_text": "B",
+        "matched_choice": "B",
+        "confidence_computation": "exp(logprob) = exp(-0.0212) = 0.9790"
+      },
+      "final_metrics": {
+        "predicted": "B",
+        "correct": true,
+        "confidence": 0.9789998756494055,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

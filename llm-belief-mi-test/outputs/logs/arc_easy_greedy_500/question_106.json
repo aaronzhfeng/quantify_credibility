@@ -1,0 +1,51 @@
+{
+  "question_id": 106,
+  "question_text": "In their science classroom, Sam and Julia cross a heterozygous tall (Tt) pea plant with a homozygous short (tt) pea plant. What ratio represents the results Sam and Julia can expect?",
+  "choices": [
+    "A: 1 tall plant to 3 short plants",
+    "B: 2 tall plants to 2 short plants",
+    "C: 3 tall plants to 1 short plant",
+    "D: 4 tall plants to 0 short plants"
+  ],
+  "gold_answer": "B",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: In their science classroom, Sam and Julia cross a heterozygous tall (Tt) pea plant with a homozygous short (tt) pea plant. What ratio represents the results Sam and Julia can expect?\n\n\nChoices:\nA) 1 tall plant to 3 short plants\nB) 2 tall plants to 2 short plants\nC) 3 tall plants to 1 short plant\nD) 4 tall plants to 0 short plants\n\nProvide an answer to the following question:\n\nQ: In their science classroom, Sam and Julia cross a heterozygous tall (Tt) pea plant with a homozygous short (tt) pea plant. What ratio represents the results Sam and Julia can expect?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "A",
+          "logprob": -0.5437228847295046,
+          "probability": 0.58058278120495
+        }
+      ],
+      "decision_process": {
+        "selected_text": "A",
+        "matched_choice": "A",
+        "confidence_computation": "exp(logprob) = exp(-0.5437) = 0.5806"
+      },
+      "final_metrics": {
+        "predicted": "A",
+        "correct": false,
+        "confidence": 0.58058278120495,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

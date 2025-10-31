@@ -1,0 +1,51 @@
+{
+  "question_id": 336,
+  "question_text": "In a rubber duck race, the winning duck traveled 300 meters in 10 minutes. What was the duck's average speed?",
+  "choices": [
+    "A: 0.5 m/s",
+    "B: 1.0 m/s",
+    "C: 7.5 m/s",
+    "D: 30 m/s"
+  ],
+  "gold_answer": "A",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: In a rubber duck race, the winning duck traveled 300 meters in 10 minutes. What was the duck's average speed?\n\n\nChoices:\nA) 0.5 m/s\nB) 1.0 m/s\nC) 7.5 m/s\nD) 30 m/s\n\nProvide an answer to the following question:\n\nQ: In a rubber duck race, the winning duck traveled 300 meters in 10 minutes. What was the duck's average speed?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "B",
+          "logprob": -0.640520788525464,
+          "probability": 0.5270178876929383
+        }
+      ],
+      "decision_process": {
+        "selected_text": "B",
+        "matched_choice": "B",
+        "confidence_computation": "exp(logprob) = exp(-0.6405) = 0.5270"
+      },
+      "final_metrics": {
+        "predicted": "B",
+        "correct": false,
+        "confidence": 0.5270178876929383,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

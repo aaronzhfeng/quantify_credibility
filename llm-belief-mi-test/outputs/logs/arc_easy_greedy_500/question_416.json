@@ -1,0 +1,51 @@
+{
+  "question_id": 416,
+  "question_text": "A bright object with a long tail of glowing gases is in orbit around the Sun. This object is most likely",
+  "choices": [
+    "1: a planet",
+    "2: a star",
+    "3: an asteroid",
+    "4: a comet"
+  ],
+  "gold_answer": "4",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: A bright object with a long tail of glowing gases is in orbit around the Sun. This object is most likely\n\n\nChoices:\n1) a planet\n2) a star\n3) an asteroid\n4) a comet\n\nProvide an answer to the following question:\n\nQ: A bright object with a long tail of glowing gases is in orbit around the Sun. This object is most likely\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "D",
+          "logprob": -0.02239184034988284,
+          "probability": 0.9778569961443753
+        }
+      ],
+      "decision_process": {
+        "selected_text": "D",
+        "matched_choice": "3",
+        "confidence_computation": "exp(logprob) = exp(-0.0224) = 0.9779"
+      },
+      "final_metrics": {
+        "predicted": "3",
+        "correct": false,
+        "confidence": 0.9778569961443753,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

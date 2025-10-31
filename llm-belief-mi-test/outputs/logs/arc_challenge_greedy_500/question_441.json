@@ -1,0 +1,51 @@
+{
+  "question_id": 441,
+  "question_text": "Which of these occurs in the life cycles of all plants?",
+  "choices": [
+    "A: fertilization",
+    "B: germination",
+    "C: maturation",
+    "D: sexual reproduction"
+  ],
+  "gold_answer": "C",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Which of these occurs in the life cycles of all plants?\n\n\nChoices:\nA) fertilization\nB) germination\nC) maturation\nD) sexual reproduction\n\nProvide an answer to the following question:\n\nQ: Which of these occurs in the life cycles of all plants?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "A",
+          "logprob": -0.20562764926580712,
+          "probability": 0.8141361640503597
+        }
+      ],
+      "decision_process": {
+        "selected_text": "A",
+        "matched_choice": "A",
+        "confidence_computation": "exp(logprob) = exp(-0.2056) = 0.8141"
+      },
+      "final_metrics": {
+        "predicted": "A",
+        "correct": false,
+        "confidence": 0.8141361640503597,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

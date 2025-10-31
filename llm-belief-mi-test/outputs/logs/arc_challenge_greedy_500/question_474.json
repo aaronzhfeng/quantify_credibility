@@ -1,0 +1,51 @@
+{
+  "question_id": 474,
+  "question_text": "In your garden, you want to plant marigolds all around your pepper plants because you read that this flower repels whiteflies. How can you test to see if marigolds really do repel whiteflies?",
+  "choices": [
+    "A: Count the number of whiteflies on the peppers before and after planting marigolds.",
+    "B: Count the number of whiteflies on the marigolds near the peppers.",
+    "C: Kill the whiteflies on other plants in the garden except on the peppers.",
+    "D: Put whiteflies on other garden plants and see what happens."
+  ],
+  "gold_answer": "A",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: In your garden, you want to plant marigolds all around your pepper plants because you read that this flower repels whiteflies. How can you test to see if marigolds really do repel whiteflies?\n\n\nChoices:\nA) Count the number of whiteflies on the peppers before and after planting marigolds.\nB) Count the number of whiteflies on the marigolds near the peppers.\nC) Kill the whiteflies on other plants in the garden except on the peppers.\nD) Put whiteflies on other garden plants and see what happens.\n\nProvide an answer to the following question:\n\nQ: In your garden, you want to plant marigolds all around your pepper plants because you read that this flower repels whiteflies. How can you test to see if marigolds really do repel whiteflies?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "A",
+          "logprob": -0.00204386655241251,
+          "probability": 0.9979582207205515
+        }
+      ],
+      "decision_process": {
+        "selected_text": "A",
+        "matched_choice": "A",
+        "confidence_computation": "exp(logprob) = exp(-0.0020) = 0.9980"
+      },
+      "final_metrics": {
+        "predicted": "A",
+        "correct": true,
+        "confidence": 0.9979582207205515,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "question_id": 202,
+  "question_text": "Which characteristic would most affect the acceleration of an object?",
+  "choices": [
+    "A: the mass",
+    "B: the speed",
+    "C: the texture",
+    "D: the volume"
+  ],
+  "gold_answer": "A",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Which characteristic would most affect the acceleration of an object?\n\n\nChoices:\nA) the mass\nB) the speed\nC) the texture\nD) the volume\n\nProvide an answer to the following question:\n\nQ: Which characteristic would most affect the acceleration of an object?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "A",
+          "logprob": -0.04331711045233533,
+          "probability": 0.9576076745110631
+        }
+      ],
+      "decision_process": {
+        "selected_text": "A",
+        "matched_choice": "A",
+        "confidence_computation": "exp(logprob) = exp(-0.0433) = 0.9576"
+      },
+      "final_metrics": {
+        "predicted": "A",
+        "correct": true,
+        "confidence": 0.9576076745110631,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}
