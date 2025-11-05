@@ -37,6 +37,7 @@ All detailed guides are in the [`docs/`](docs/) folder:
 - **[docs/QUICK_START_BASELINES.md](docs/QUICK_START_BASELINES.md)**: Quick reference for running baselines
 - **[docs/COMMANDS_500_EXAMPLES.txt](docs/COMMANDS_500_EXAMPLES.txt)**: Copy-paste commands for 500-example runs
 - **[docs/AUTHENTICATION_GUIDE.md](docs/AUTHENTICATION_GUIDE.md)**: HuggingFace authentication for Llama models
+- **[LOGPROB_DIAGNOSTIC.md](LOGPROB_DIAGNOSTIC.md)**: ⚠️ **Diagnostic report** - Log probability validation and troubleshooting
 
 See [`docs/`](docs/) folder for complete documentation index.
 
