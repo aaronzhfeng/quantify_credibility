@@ -1,4 +1,4 @@
-# Open-Ended Datasets - Evaluation Commands
+# Open-Ended Datasets - Evaluation Commands (Multi-GPU Optimized)
 
 This guide contains all commands for evaluating **open-ended** datasets (TruthfulQA, extractive QA) using the MI-based uncertainty quantification framework with correctness-based evaluation.
 
@@ -14,6 +14,46 @@ This guide contains all commands for evaluating **open-ended** datasets (Truthfu
 3. MI (k chains of length n + mutual information on correctness)
 
 **Key difference from MCQ:** Uses **correctness-based MI** (agreement on whether answer is correct) instead of choice-based MI (agreement on which choice).
+
+**🚀 Multi-GPU Acceleration:** All commands use `--multi-gpu` flag for automatic parallelization across available GPUs. Time estimates assume 4 GPUs (4× speedup).
+
+---
+
+## 🖥️ Multi-GPU Operation
+
+### What Happens When You Run with `--multi-GPU`:
+
+1. **GPU Detection**: System detects all available GPUs and displays:
+   ```
+   Detected GPUs        : 4
+   GPU 0                : NVIDIA GeForce RTX 4090D (24 GB)
+   GPU 1                : NVIDIA GeForce RTX 4090D (24 GB)
+   GPU 2                : NVIDIA GeForce RTX 4090D (24 GB)
+   GPU 3                : NVIDIA GeForce RTX 4090D (24 GB)
+   ```
+
+2. **Work Distribution**: Automatically splits 500 examples across GPUs:
+   ```
+   GPU 0 → Examples    0-124    (125 examples)
+   GPU 1 → Examples  125-249    (125 examples)
+   GPU 2 → Examples  250-374    (125 examples)
+   GPU 3 → Examples  375-499    (125 examples)
+   ```
+
+3. **Progress Monitoring**: Shows status every 30 seconds:
+   ```
+   [10:30:45] GPU0: 45/125 | GPU1: 42/125 | GPU2: 48/125 | GPU3: 40/125 → Total: 175/500 (35%)
+   ```
+
+4. **Automatic Merging**: Combines results from all GPUs into single output file
+
+5. **Unified Output**: Same format as single-GPU (CSV + JSON), with merged logprob statistics
+
+**Benefits:**
+- ✅ 4× faster (500 examples in ~1 hour instead of ~4 hours)
+- ✅ Automatic - just add `--multi-gpu` flag
+- ✅ No changes to evaluation logic or results
+- ✅ Falls back to single-GPU if only 1 GPU available
 
 ---
 
@@ -79,31 +119,34 @@ python -m llm_belief_mi_test.cli \
 **Individual Methods:**
 
 ```bash
-# 1. Greedy baseline (~5 min)
+# 1. Greedy baseline (~1 min with 4 GPUs)
 python -m llm_belief_mi_test.cli \
   --method greedy \
   --dataset truthfulqa-mc1 --split validation --limit 500 \
   --load-in-4bit --max-tokens 10 \
   --answer-format strict \
-  --output outputs/results/truthfulqa/greedy_500.csv
+  --output outputs/results/truthfulqa/greedy_500.csv \
+  --multi-gpu
 
-# 2. Self-Consistency baseline (~1.5 hours)
+# 2. Self-Consistency baseline (~25 min with 4 GPUs)
 python -m llm_belief_mi_test.cli \
   --method self-consistency \
   --dataset truthfulqa-mc1 --split validation --limit 500 \
   --k 10 --temperature 0.9 \
   --load-in-4bit --max-tokens 10 \
   --answer-format strict \
-  --output outputs/results/truthfulqa/selfcons_500.csv
+  --output outputs/results/truthfulqa/selfcons_500.csv \
+  --multi-gpu
 
-# 3. MI method (~2.5 hours)
+# 3. MI method (~35 min with 4 GPUs)
 python -m llm_belief_mi_test.cli \
   --method mi \
   --dataset truthfulqa-mc1 --split validation --limit 500 \
   --k 10 --n 2 --temperature 0.9 \
   --load-in-4bit --max-tokens 10 \
   --answer-format strict \
-  --output outputs/results/truthfulqa/mi_500.csv
+  --output outputs/results/truthfulqa/mi_500.csv \
+  --multi-gpu
 ```
 
 ---
@@ -113,31 +156,34 @@ python -m llm_belief_mi_test.cli \
 **Individual Methods:**
 
 ```bash
-# 1. Greedy baseline (~5 min)
+# 1. Greedy baseline (~1 min with 4 GPUs)
 python -m llm_belief_mi_test.cli \
   --method greedy \
   --dataset truthfulqa-mc2 --split validation --limit 500 \
   --load-in-4bit --max-tokens 10 \
   --answer-format strict \
-  --output outputs/results/truthfulqa_mc2/greedy_500.csv
+  --output outputs/results/truthfulqa_mc2/greedy_500.csv \
+  --multi-gpu
 
-# 2. Self-Consistency baseline (~1.5 hours)
+# 2. Self-Consistency baseline (~25 min with 4 GPUs)
 python -m llm_belief_mi_test.cli \
   --method self-consistency \
   --dataset truthfulqa-mc2 --split validation --limit 500 \
   --k 10 --temperature 0.9 \
   --load-in-4bit --max-tokens 10 \
   --answer-format strict \
-  --output outputs/results/truthfulqa_mc2/selfcons_500.csv
+  --output outputs/results/truthfulqa_mc2/selfcons_500.csv \
+  --multi-gpu
 
-# 3. MI method (~2.5 hours)
+# 3. MI method (~35 min with 4 GPUs)
 python -m llm_belief_mi_test.cli \
   --method mi \
   --dataset truthfulqa-mc2 --split validation --limit 500 \
   --k 10 --n 2 --temperature 0.9 \
   --load-in-4bit --max-tokens 10 \
   --answer-format strict \
-  --output outputs/results/truthfulqa_mc2/mi_500.csv
+  --output outputs/results/truthfulqa_mc2/mi_500.csv \
+  --multi-gpu
 ```
 
 ---
@@ -147,28 +193,31 @@ python -m llm_belief_mi_test.cli \
 **Individual Methods:**
 
 ```bash
-# 1. Greedy baseline (~5 min)
+# 1. Greedy baseline (~1 min with 4 GPUs)
 python -m llm_belief_mi_test.cli \
   --method greedy \
   --dataset squad-v2 --split validation --limit 500 \
   --load-in-4bit --max-tokens 50 \
-  --output outputs/results/squad_v2/greedy_500.csv
+  --output outputs/results/squad_v2/greedy_500.csv \
+  --multi-gpu
 
-# 2. Self-Consistency baseline (~1.5 hours)
+# 2. Self-Consistency baseline (~22 min with 4 GPUs)
 python -m llm_belief_mi_test.cli \
   --method self-consistency \
   --dataset squad-v2 --split validation --limit 500 \
   --k 10 --temperature 0.9 \
   --load-in-4bit --max-tokens 50 \
-  --output outputs/results/squad_v2/selfcons_500.csv
+  --output outputs/results/squad_v2/selfcons_500.csv \
+  --multi-gpu
 
-# 3. MI method (~2 hours)
+# 3. MI method (~30 min with 4 GPUs)
 python -m llm_belief_mi_test.cli \
   --method mi \
   --dataset squad-v2 --split validation --limit 500 \
   --k 10 --n 2 --temperature 0.9 \
   --load-in-4bit --max-tokens 50 \
-  --output outputs/results/squad_v2/mi_500.csv
+  --output outputs/results/squad_v2/mi_500.csv \
+  --multi-gpu
 ```
 
 ---
@@ -178,65 +227,68 @@ python -m llm_belief_mi_test.cli \
 **Individual Methods:**
 
 ```bash
-# 1. Greedy baseline (~5 min)
+# 1. Greedy baseline (~1 min with 4 GPUs)
 python -m llm_belief_mi_test.cli \
   --method greedy \
   --dataset triviaqa --split validation --limit 500 \
   --load-in-4bit --max-tokens 50 \
-  --output outputs/results/triviaqa/greedy_500.csv
+  --output outputs/results/triviaqa/greedy_500.csv \
+  --multi-gpu
 
-# 2. Self-Consistency baseline (~1.5 hours)
+# 2. Self-Consistency baseline (~25 min with 4 GPUs)
 python -m llm_belief_mi_test.cli \
   --method self-consistency \
   --dataset triviaqa --split validation --limit 500 \
   --k 10 --temperature 0.9 \
   --load-in-4bit --max-tokens 50 \
-  --output outputs/results/triviaqa/selfcons_500.csv
+  --output outputs/results/triviaqa/selfcons_500.csv \
+  --multi-gpu
 
-# 3. MI method (~2.5 hours)
+# 3. MI method (~35 min with 4 GPUs)
 python -m llm_belief_mi_test.cli \
   --method mi \
   --dataset triviaqa --split validation --limit 500 \
   --k 10 --n 2 --temperature 0.9 \
   --load-in-4bit --max-tokens 50 \
-  --output outputs/results/triviaqa/mi_500.csv
+  --output outputs/results/triviaqa/mi_500.csv \
+  --multi-gpu
 ```
 
 ---
 
 ## 🚀 Phase 3: Run All Datasets & Methods (One Command)
 
-**Total time: ~16 hours for all 4 datasets × 3 methods**
+**Total time: ~4 hours with 4 GPUs (vs ~16 hours on 1 GPU)**
 
-This command runs all 12 evaluations (4 datasets × 3 methods) sequentially:
+This command runs all 12 evaluations (4 datasets × 3 methods) sequentially with multi-GPU acceleration:
 
 ```bash
 cd /teamspace/studios/this_studio/quantify_credibility/llm-belief-mi-test && \
 \
-# ========== TruthfulQA MC1 (500 examples, ~4 hours) ==========
-python -m llm_belief_mi_test.cli --method greedy --dataset truthfulqa-mc1 --split validation --limit 500 --load-in-4bit --max-tokens 10 --answer-format strict --output outputs/results/truthfulqa/greedy_500.csv 2>&1 | tee outputs/logs/truthfulqa_mc1_greedy_500.log && \
-python -m llm_belief_mi_test.cli --method self-consistency --dataset truthfulqa-mc1 --split validation --limit 500 --k 10 --temperature 0.9 --load-in-4bit --max-tokens 10 --answer-format strict --output outputs/results/truthfulqa/selfcons_500.csv 2>&1 | tee outputs/logs/truthfulqa_mc1_selfcons_500.log && \
-python -m llm_belief_mi_test.cli --method mi --dataset truthfulqa-mc1 --split validation --limit 500 --k 10 --n 2 --temperature 0.9 --load-in-4bit --max-tokens 10 --answer-format strict --output outputs/results/truthfulqa/mi_500.csv 2>&1 | tee outputs/logs/truthfulqa_mc1_mi_500.log && \
+# ========== TruthfulQA MC1 (500 examples, ~1 hour with 4 GPUs) ==========
+python -m llm_belief_mi_test.cli --method greedy --dataset truthfulqa-mc1 --split validation --limit 500 --load-in-4bit --max-tokens 10 --answer-format strict --output outputs/results/truthfulqa/greedy_500.csv --multi-gpu 2>&1 | tee outputs/logs/truthfulqa_mc1_greedy_500.log && \
+python -m llm_belief_mi_test.cli --method self-consistency --dataset truthfulqa-mc1 --split validation --limit 500 --k 10 --temperature 0.9 --load-in-4bit --max-tokens 10 --answer-format strict --output outputs/results/truthfulqa/selfcons_500.csv --multi-gpu 2>&1 | tee outputs/logs/truthfulqa_mc1_selfcons_500.log && \
+python -m llm_belief_mi_test.cli --method mi --dataset truthfulqa-mc1 --split validation --limit 500 --k 10 --n 2 --temperature 0.9 --load-in-4bit --max-tokens 10 --answer-format strict --output outputs/results/truthfulqa/mi_500.csv --multi-gpu 2>&1 | tee outputs/logs/truthfulqa_mc1_mi_500.log && \
 \
-# ========== TruthfulQA MC2 (500 examples, ~4 hours) ==========
-python -m llm_belief_mi_test.cli --method greedy --dataset truthfulqa-mc2 --split validation --limit 500 --load-in-4bit --max-tokens 10 --answer-format strict --output outputs/results/truthfulqa_mc2/greedy_500.csv 2>&1 | tee outputs/logs/truthfulqa_mc2_greedy_500.log && \
-python -m llm_belief_mi_test.cli --method self-consistency --dataset truthfulqa-mc2 --split validation --limit 500 --k 10 --temperature 0.9 --load-in-4bit --max-tokens 10 --answer-format strict --output outputs/results/truthfulqa_mc2/selfcons_500.csv 2>&1 | tee outputs/logs/truthfulqa_mc2_selfcons_500.log && \
-python -m llm_belief_mi_test.cli --method mi --dataset truthfulqa-mc2 --split validation --limit 500 --k 10 --n 2 --temperature 0.9 --load-in-4bit --max-tokens 10 --answer-format strict --output outputs/results/truthfulqa_mc2/mi_500.csv 2>&1 | tee outputs/logs/truthfulqa_mc2_mi_500.log && \
+# ========== TruthfulQA MC2 (500 examples, ~1 hour with 4 GPUs) ==========
+python -m llm_belief_mi_test.cli --method greedy --dataset truthfulqa-mc2 --split validation --limit 500 --load-in-4bit --max-tokens 10 --answer-format strict --output outputs/results/truthfulqa_mc2/greedy_500.csv --multi-gpu 2>&1 | tee outputs/logs/truthfulqa_mc2_greedy_500.log && \
+python -m llm_belief_mi_test.cli --method self-consistency --dataset truthfulqa-mc2 --split validation --limit 500 --k 10 --temperature 0.9 --load-in-4bit --max-tokens 10 --answer-format strict --output outputs/results/truthfulqa_mc2/selfcons_500.csv --multi-gpu 2>&1 | tee outputs/logs/truthfulqa_mc2_selfcons_500.log && \
+python -m llm_belief_mi_test.cli --method mi --dataset truthfulqa-mc2 --split validation --limit 500 --k 10 --n 2 --temperature 0.9 --load-in-4bit --max-tokens 10 --answer-format strict --output outputs/results/truthfulqa_mc2/mi_500.csv --multi-gpu 2>&1 | tee outputs/logs/truthfulqa_mc2_mi_500.log && \
 \
-# ========== SQuAD v2 (500 examples, ~3.5 hours) ==========
-python -m llm_belief_mi_test.cli --method greedy --dataset squad-v2 --split validation --limit 500 --load-in-4bit --max-tokens 50 --output outputs/results/squad_v2/greedy_500.csv 2>&1 | tee outputs/logs/squad_v2_greedy_500.log && \
-python -m llm_belief_mi_test.cli --method self-consistency --dataset squad-v2 --split validation --limit 500 --k 10 --temperature 0.9 --load-in-4bit --max-tokens 50 --output outputs/results/squad_v2/selfcons_500.csv 2>&1 | tee outputs/logs/squad_v2_selfcons_500.log && \
-python -m llm_belief_mi_test.cli --method mi --dataset squad-v2 --split validation --limit 500 --k 10 --n 2 --temperature 0.9 --load-in-4bit --max-tokens 50 --output outputs/results/squad_v2/mi_500.csv 2>&1 | tee outputs/logs/squad_v2_mi_500.log && \
+# ========== SQuAD v2 (500 examples, ~1 hour with 4 GPUs) ==========
+python -m llm_belief_mi_test.cli --method greedy --dataset squad-v2 --split validation --limit 500 --load-in-4bit --max-tokens 50 --output outputs/results/squad_v2/greedy_500.csv --multi-gpu 2>&1 | tee outputs/logs/squad_v2_greedy_500.log && \
+python -m llm_belief_mi_test.cli --method self-consistency --dataset squad-v2 --split validation --limit 500 --k 10 --temperature 0.9 --load-in-4bit --max-tokens 50 --output outputs/results/squad_v2/selfcons_500.csv --multi-gpu 2>&1 | tee outputs/logs/squad_v2_selfcons_500.log && \
+python -m llm_belief_mi_test.cli --method mi --dataset squad-v2 --split validation --limit 500 --k 10 --n 2 --temperature 0.9 --load-in-4bit --max-tokens 50 --output outputs/results/squad_v2/mi_500.csv --multi-gpu 2>&1 | tee outputs/logs/squad_v2_mi_500.log && \
 \
-# ========== TriviaQA (500 examples, ~4 hours) ==========
-python -m llm_belief_mi_test.cli --method greedy --dataset triviaqa --split validation --limit 500 --load-in-4bit --max-tokens 50 --output outputs/results/triviaqa/greedy_500.csv 2>&1 | tee outputs/logs/triviaqa_greedy_500.log && \
-python -m llm_belief_mi_test.cli --method self-consistency --dataset triviaqa --split validation --limit 500 --k 10 --temperature 0.9 --load-in-4bit --max-tokens 50 --output outputs/results/triviaqa/selfcons_500.csv 2>&1 | tee outputs/logs/triviaqa_selfcons_500.log && \
-python -m llm_belief_mi_test.cli --method mi --dataset triviaqa --split validation --limit 500 --k 10 --n 2 --temperature 0.9 --load-in-4bit --max-tokens 50 --output outputs/results/triviaqa/mi_500.csv 2>&1 | tee outputs/logs/triviaqa_mi_500.log
+# ========== TriviaQA (500 examples, ~1 hour with 4 GPUs) ==========
+python -m llm_belief_mi_test.cli --method greedy --dataset triviaqa --split validation --limit 500 --load-in-4bit --max-tokens 50 --output outputs/results/triviaqa/greedy_500.csv --multi-gpu 2>&1 | tee outputs/logs/triviaqa_greedy_500.log && \
+python -m llm_belief_mi_test.cli --method self-consistency --dataset triviaqa --split validation --limit 500 --k 10 --temperature 0.9 --load-in-4bit --max-tokens 50 --output outputs/results/triviaqa/selfcons_500.csv --multi-gpu 2>&1 | tee outputs/logs/triviaqa_selfcons_500.log && \
+python -m llm_belief_mi_test.cli --method mi --dataset triviaqa --split validation --limit 500 --k 10 --n 2 --temperature 0.9 --load-in-4bit --max-tokens 50 --output outputs/results/triviaqa/mi_500.csv --multi-gpu 2>&1 | tee outputs/logs/triviaqa_mi_500.log
 ```
 
 **Expected results summary:**
 - Total: 12 evaluations (4 datasets × 3 methods)
-- Total time: ~15.5 hours
+- Total time with 4 GPUs: **~4 hours** (vs ~16 hours on 1 GPU)
 - Files created: 12 CSV files + 12 JSON files + detailed logs
 - Expected ECE ranking: MI < Self-Consistency < Greedy
 
@@ -336,14 +388,18 @@ Unlike MCQ datasets (which measure agreement on which choice A/B/C/D), these dat
 
 ## 💡 Tips
 
-- **Test first**: Always run the 5-example test before committing to 500 examples
+- **Test first**: Always run the 5-example test before committing to 500 examples (single-GPU is fine for testing)
+- **Multi-GPU requirements**:
+  - Requires `--limit` parameter (must specify number of examples)
+  - Each GPU needs ~8 GB VRAM with 4-bit quantization
+  - System needs ~32 GB RAM for 4 GPUs (240 GB is perfect!)
 - **max-tokens matters**:
   - MCQ (TruthfulQA): use `--max-tokens 10` with `--answer-format strict`
   - Extractive QA (SQuAD, TriviaQA): use `--max-tokens 50` for longer answers
 - **Validation split**: TruthfulQA, SQuAD, and TriviaQA use `--split validation`
 - **Check logs**: Verify correctness-based MI in `outputs/logs/{run_name}/question_*.json`
-- **Monitor progress**: Use `tee` to save logs while watching progress
-- **Interruption**: If interrupted, re-run from the failed command
+- **Monitor progress**: Multi-GPU shows per-GPU status every 30 seconds
+- **Interruption**: If interrupted, re-run from the failed command (results are merged automatically)
 
 ---
 
@@ -356,7 +412,8 @@ Unlike MCQ datasets (which measure agreement on which choice A/B/C/D), these dat
 | **Evaluation** | Accuracy only | EM + F1 (richer) |
 | **Answer space** | Discrete {A,B,C,D} | Free-form text |
 | **Normalization** | Not needed | Critical for voting |
-| **Time (500 ex)** | ~6.5 hours | ~4 hours |
+| **Time (500 ex, 1 GPU)** | ~6.5 hours | ~4 hours |
+| **Time (500 ex, 4 GPUs)** | **~1.6 hours** | **~1 hour** |
 
 **Why correctness-based MI?**
 - Free-form answers have infinite output space
