@@ -346,7 +346,6 @@ def evaluate_mcq_greedy_baseline(
         else:
             response = client.chat_completion(messages, temperature=0.0, max_tokens=max_tokens)
             logprob = 0.0
-            logprob_tracker.record(logprob)
         
         # Track logprob
         logprob_tracker.record(logprob)
@@ -495,7 +494,6 @@ def evaluate_mcq_self_consistency(
             else:
                 response = client.chat_completion(messages, temperature=temperature, max_tokens=max_tokens)
                 logprob = 0.0
-                logprob_tracker.record(logprob)
             
             # Track logprob
             logprob_tracker.record(logprob)
@@ -799,7 +797,6 @@ def evaluate_mcq_semantic_entropy(
         correct = (predicted_choice == ex.answer_key)
         
         results.append(EvaluationResult(
-        write_progress(len(results))
             question=ex.question,
             predicted=predicted_choice,
             gold=ex.answer_key,
@@ -809,6 +806,7 @@ def evaluate_mcq_semantic_entropy(
             agreement=agreement,
             chains=chains
         ))
+        write_progress(len(results))
     
     # Compute aggregate metrics
     correct_arr = np.array([r.correct for r in results], dtype=int)
@@ -827,7 +825,7 @@ def evaluate_mcq_semantic_entropy(
         "avg_mi_bits": float(avg_entropy),  # Actually entropy, but using same field
         "avg_agreement": float(avg_agreement),
         "n_samples": len(results),
-    "logprob_stats": logprob_tracker.get_stats()
+        "logprob_stats": logprob_tracker.get_stats()
     }
     
     return metrics, results
@@ -958,7 +956,6 @@ A:"""
         correct = (predicted_choice == ex.answer_key)
         
         results.append(EvaluationResult(
-        write_progress(len(results))
             question=ex.question,
             predicted=predicted_choice,
             gold=ex.answer_key,
@@ -968,6 +965,7 @@ A:"""
             agreement=agreement,
             chains=chains
         ))
+        write_progress(len(results))
     
     # Compute aggregate metrics
     correct_arr = np.array([r.correct for r in results], dtype=int)
@@ -985,7 +983,7 @@ A:"""
         "avg_mi_bits": 0.0,
         "avg_agreement": float(avg_agreement),
         "n_samples": len(results),
-    "logprob_stats": logprob_tracker.get_stats()
+        "logprob_stats": logprob_tracker.get_stats()
     }
     
     return metrics, results
@@ -1341,7 +1339,7 @@ def evaluate_extractive_qa_greedy(
         "avg_mi_bits": 0.0,
         "avg_agreement": 1.0,
         "n_samples": len(results),
-    "logprob_stats": logprob_tracker.get_stats()
+        "logprob_stats": logprob_tracker.get_stats()
     }
     
     return metrics, results
@@ -1422,7 +1420,9 @@ def evaluate_extractive_qa_self_consistency(
             else:
                 response = client.chat_completion(messages, temperature=temperature, max_tokens=max_tokens)
                 logprob = 0.0
-                logprob_tracker.record(logprob)
+            
+            # Track logprob
+            logprob_tracker.record(logprob)
             
             responses.append(response)
             
@@ -1524,7 +1524,7 @@ def evaluate_extractive_qa_self_consistency(
         "avg_mi_bits": 0.0,
         "avg_agreement": float(sum(r["agreement"] for r in results) / len(results)),
         "n_samples": len(results),
-    "logprob_stats": logprob_tracker.get_stats()
+        "logprob_stats": logprob_tracker.get_stats()
     }
     
     return metrics, results
@@ -1598,10 +1598,10 @@ def evaluate_extractive_qa_with_mi(
                 else:
                     response = client.chat_completion(messages, temperature=temperature, max_tokens=max_tokens)
                     logprob = 0.0
-                    logprob_tracker.record(logprob)
                 
-                chain.append((response, logprob))
+                # Track logprob
                 logprob_tracker.record(logprob)
+                chain.append((response, logprob))
                 previous_answers.append(response)
             
             chains_with_logprobs.append(chain)
@@ -1729,7 +1729,7 @@ def evaluate_extractive_qa_with_mi(
         "avg_mi_bits": float(sum(r["mi_score"] for r in results) / len(results)),
         "avg_agreement": float(sum(r["agreement"] for r in results) / len(results)),
         "n_samples": len(results),
-    "logprob_stats": logprob_tracker.get_stats()
+        "logprob_stats": logprob_tracker.get_stats()
     }
     
     return metrics, results
@@ -1802,10 +1802,10 @@ def evaluate_triviaqa_with_mi(
                 else:
                     response = client.chat_completion(messages, temperature=temperature, max_tokens=max_tokens)
                     logprob = 0.0
-                    logprob_tracker.record(logprob)
                 
-                chain.append((response, logprob))
+                # Track logprob
                 logprob_tracker.record(logprob)
+                chain.append((response, logprob))
                 previous_answers.append(response)
             
             chains_with_logprobs.append(chain)
@@ -1936,7 +1936,7 @@ def evaluate_triviaqa_with_mi(
         "avg_mi_bits": float(sum(r["mi_score"] for r in results) / len(results)),
         "avg_correctness_agreement": float(sum(r["agreement"] for r in results) / len(results)),
         "n_samples": len(results),
-    "logprob_stats": logprob_tracker.get_stats()
+        "logprob_stats": logprob_tracker.get_stats()
     }
     
     return metrics, results
@@ -2158,7 +2158,7 @@ def evaluate_truthfulqa_with_correctness_mi(
         "avg_mi_bits": float(sum(r.mi_score for r in results) / len(results)),
         "avg_correctness_agreement": float(sum(r.agreement for r in results) / len(results)),
         "n_samples": len(results),
-    "logprob_stats": logprob_tracker.get_stats()
+        "logprob_stats": logprob_tracker.get_stats()
     }
     
     return metrics, results
@@ -2383,7 +2383,7 @@ def evaluate_truthfulqa_mc2_with_correctness_mi(
         "avg_mi_bits": float(sum(r.mi_score for r in results) / len(results)),
         "avg_correctness_agreement": float(sum(r.agreement for r in results) / len(results)),
         "n_samples": len(results),
-    "logprob_stats": logprob_tracker.get_stats()
+        "logprob_stats": logprob_tracker.get_stats()
     }
     
     return metrics, results
