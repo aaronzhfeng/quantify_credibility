@@ -23,6 +23,55 @@ class EvaluationResult:
     chains: List[List[Tuple[str, float]]]  # Chain of (text, logprob) tuples
 
 
+class LogprobTracker:
+    """Track logprob extraction statistics during evaluation."""
+    
+    def __init__(self):
+        self.captured = 0  # Count of successfully extracted logprobs (logprob < 0)
+        self.fallback = 0  # Count of fallback cases (logprob == 0.0)
+    
+    def record(self, logprob: float):
+        """Record a single logprob value."""
+        if logprob < 0:
+            self.captured += 1
+        else:
+            self.fallback += 1
+    
+    def get_stats(self) -> Dict[str, any]:
+        """Get statistics dictionary for metrics."""
+        total = self.captured + self.fallback
+        return {
+            "total_inferences": total,
+            "captured": self.captured,
+            "fallback": self.fallback,
+            "capture_rate": self.captured / total if total > 0 else 0.0
+        }
+    
+    @property
+    def total(self) -> int:
+        return self.captured + self.fallback
+
+
+def write_progress(completed_count: int):
+    """
+    Write progress to file for multi-GPU monitoring.
+    
+    Checks for MULTI_GPU_PROGRESS_FILE environment variable.
+    If present, writes the completed count to that file.
+    
+    Args:
+        completed_count: Number of examples completed so far
+    """
+    import os
+    progress_file = os.environ.get('MULTI_GPU_PROGRESS_FILE')
+    if progress_file:
+        try:
+            with open(progress_file, 'w') as f:
+                f.write(str(completed_count))
+        except:
+            pass  # Silently fail if progress writing fails
+
+
 def compute_ece(
     predictions: np.ndarray,
     confidences: np.ndarray,
@@ -278,6 +327,7 @@ def evaluate_mcq_greedy_baseline(
     from .iterative_prompting import compose_prompt
     
     results = []
+    logprob_tracker = LogprobTracker()
     iterator = tqdm(examples, desc="Evaluating (Greedy Baseline)") if verbose else examples
     
     for ex_idx, ex in enumerate(iterator):
@@ -296,6 +346,10 @@ def evaluate_mcq_greedy_baseline(
         else:
             response = client.chat_completion(messages, temperature=0.0, max_tokens=max_tokens)
             logprob = 0.0
+            logprob_tracker.record(logprob)
+        
+        # Track logprob
+        logprob_tracker.record(logprob)
         
         # Match to MCQ choices
         predicted_choice = match_answer_to_choices(
@@ -325,6 +379,7 @@ def evaluate_mcq_greedy_baseline(
             chains=[chain]
         )
         results.append(result)
+        write_progress(len(results))
         
         # Log detailed trace if logger provided
         if detailed_logger:
@@ -377,6 +432,7 @@ def evaluate_mcq_greedy_baseline(
         "avg_mi_bits": 0.0,
         "avg_agreement": 1.0,
         "n_samples": len(results),
+        "logprob_stats": logprob_tracker.get_stats()
     }
     
     return metrics, results
@@ -416,6 +472,7 @@ def evaluate_mcq_self_consistency(
     from .iterative_prompting import compose_prompt
     
     results = []
+    logprob_tracker = LogprobTracker()
     iterator = tqdm(examples, desc="Evaluating (Self-Consistency)") if verbose else examples
     
     for ex_idx, ex in enumerate(iterator):
@@ -438,6 +495,10 @@ def evaluate_mcq_self_consistency(
             else:
                 response = client.chat_completion(messages, temperature=temperature, max_tokens=max_tokens)
                 logprob = 0.0
+                logprob_tracker.record(logprob)
+            
+            # Track logprob
+            logprob_tracker.record(logprob)
             
             responses.append(response)
             chains.append([(response, logprob)])
@@ -484,6 +545,7 @@ def evaluate_mcq_self_consistency(
             chains=chains
         )
         results.append(result)
+        write_progress(len(results))
         
         # Log detailed trace if logger provided
         if detailed_logger:
@@ -531,6 +593,7 @@ def evaluate_mcq_self_consistency(
         "avg_mi_bits": 0.0,
         "avg_agreement": float(avg_agreement),
         "n_samples": len(results),
+        "logprob_stats": logprob_tracker.get_stats()
     }
     
     return metrics, results
@@ -652,6 +715,7 @@ def evaluate_mcq_semantic_entropy(
     from .iterative_prompting import compose_prompt
     
     results = []
+    logprob_tracker = LogprobTracker()
     iterator = tqdm(examples, desc="Evaluating (Semantic Entropy)") if verbose else examples
     
     for ex_idx, ex in enumerate(iterator):
@@ -675,6 +739,9 @@ def evaluate_mcq_semantic_entropy(
                 response = client.chat_completion(messages, temperature=temperature, max_tokens=max_tokens)
                 prob = 1.0 / k  # Uniform if no logprobs
                 logprob = math.log(prob)
+            
+            # Track logprob
+            logprob_tracker.record(logprob)
             
             samples.append((response, prob))
             chains.append([(response, logprob)])
@@ -732,6 +799,7 @@ def evaluate_mcq_semantic_entropy(
         correct = (predicted_choice == ex.answer_key)
         
         results.append(EvaluationResult(
+        write_progress(len(results))
             question=ex.question,
             predicted=predicted_choice,
             gold=ex.answer_key,
@@ -759,6 +827,7 @@ def evaluate_mcq_semantic_entropy(
         "avg_mi_bits": float(avg_entropy),  # Actually entropy, but using same field
         "avg_agreement": float(avg_agreement),
         "n_samples": len(results),
+    "logprob_stats": logprob_tracker.get_stats()
     }
     
     return metrics, results
@@ -798,6 +867,7 @@ def evaluate_mcq_self_verification(
     from .iterative_prompting import compose_prompt
     
     results = []
+    logprob_tracker = LogprobTracker()
     iterator = tqdm(examples, desc="Evaluating (Self-Verification)") if verbose else examples
     
     for ex_idx, ex in enumerate(iterator):
@@ -821,6 +891,9 @@ def evaluate_mcq_self_verification(
                 response = client.chat_completion(messages, temperature=temperature, max_tokens=max_tokens)
                 prob = 1.0
                 logprob = 0.0
+            
+            # Track logprob
+            logprob_tracker.record(logprob)
             
             samples.append((response, prob))
             chains.append([(response, logprob)])
@@ -861,6 +934,8 @@ A:"""
                 temperature=0.0,  # Greedy for verification
                 max_tokens=5
             )
+            # Track verification logprob
+            logprob_tracker.record(verification_logprob)
             
             # Parse response for True/False
             response_lower = verification_response.strip().lower()
@@ -883,6 +958,7 @@ A:"""
         correct = (predicted_choice == ex.answer_key)
         
         results.append(EvaluationResult(
+        write_progress(len(results))
             question=ex.question,
             predicted=predicted_choice,
             gold=ex.answer_key,
@@ -909,6 +985,7 @@ A:"""
         "avg_mi_bits": 0.0,
         "avg_agreement": float(avg_agreement),
         "n_samples": len(results),
+    "logprob_stats": logprob_tracker.get_stats()
     }
     
     return metrics, results
@@ -955,6 +1032,7 @@ def evaluate_mcq_with_mi(
     from .datasets import match_answer_to_choices
     
     results = []
+    logprob_tracker = LogprobTracker()
     iterator = tqdm(examples, desc="Evaluating") if verbose else examples
     
     for ex_idx, ex in enumerate(iterator):
@@ -973,6 +1051,10 @@ def evaluate_mcq_with_mi(
                 answer_format=answer_format
             )
             chains_with_logprobs.append(chain)
+            
+            # Track logprobs from this chain
+            for _, logprob in chain:
+                logprob_tracker.record(logprob)
         
         # Select answer using marginalized pseudo joint (paper's method)
         predicted_answer_text = select_answer_via_pseudo_joint(chains_with_logprobs, n)
@@ -1017,6 +1099,7 @@ def evaluate_mcq_with_mi(
             chains=chains_with_logprobs
         )
         results.append(result)
+        write_progress(len(results))
         
         # Log detailed trace if logger provided
         if detailed_logger:
@@ -1107,6 +1190,1200 @@ def evaluate_mcq_with_mi(
         "avg_mi_bits": float(avg_mi),
         "avg_agreement": float(avg_agreement),
         "n_samples": len(results),
+        "logprob_stats": logprob_tracker.get_stats()
+    }
+    
+    return metrics, results
+
+
+def evaluate_extractive_qa_greedy(
+    client,
+    examples: List,  # ExtractiveQAExample instances
+    max_tokens: int = 50,
+    prompt_composer=None,  # Optional: compose_prompt_extractive or compose_prompt_trivia
+    dataset_name: str = "Extractive QA",
+    detailed_logger=None,
+    verbose: bool = True
+) -> Tuple[Dict[str, float], List]:
+    """
+    Evaluate extractive QA using greedy (temperature=0) baseline.
+    
+    This is the simplest baseline: single greedy decode per question.
+    Confidence is based on the logprob of the greedy response.
+    
+    Args:
+        client: LLM client with chat_completion_with_logprobs method
+        examples: List of ExtractiveQAExample instances
+        max_tokens: Max tokens per generation
+        prompt_composer: Function to compose prompts (compose_prompt_extractive or compose_prompt_trivia)
+        dataset_name: Name for logging/display
+        detailed_logger: Optional logger for saving traces
+        verbose: Show progress bar
+        
+    Returns:
+        (metrics_dict, results_list)
+    """
+    from tqdm import tqdm
+    from .datasets import compute_exact_match, compute_f1_score
+    from .iterative_prompting import compose_prompt_extractive
+    
+    # Default to extractive prompt if not provided
+    if prompt_composer is None:
+        prompt_composer = compose_prompt_extractive
+    
+    results = []
+    logprob_tracker = LogprobTracker()
+    iterator = tqdm(examples, desc=f"Evaluating {dataset_name} (Greedy)") if verbose else examples
+    
+    for ex_idx, ex in enumerate(iterator):
+        # Single greedy generation
+        if prompt_composer == compose_prompt_extractive:
+            messages = prompt_composer(
+                question=ex.question,
+                context=ex.context,
+                previous_answers=[],
+                answer_format="strict"
+            )
+        else:  # compose_prompt_trivia
+            messages = prompt_composer(
+                question=ex.question,
+                previous_answers=[],
+                answer_format="strict"
+            )
+        
+        # Get response with logprob
+        if hasattr(client, 'chat_completion_with_logprobs'):
+            response, logprob = client.chat_completion_with_logprobs(
+                messages, 
+                temperature=0.0,  # Greedy
+                max_tokens=max_tokens
+            )
+        else:
+            response = client.chat_completion(messages, temperature=0.0, max_tokens=max_tokens)
+            logprob = 0.0
+        
+        # Track logprob
+        logprob_tracker.record(logprob)
+        
+        # Confidence from logprob
+        confidence = np.exp(logprob) if logprob < 0 else 0.5
+        
+        # Evaluate with extractive QA metrics
+        exact_match = compute_exact_match(response, ex.answers)
+        f1 = compute_f1_score(response, ex.answers)
+        
+        result = {
+            "id": ex.id,
+            "question": ex.question,
+            "predicted": response,
+            "gold_answers": ex.answers,
+            "exact_match": exact_match,
+            "f1": f1,
+            "confidence": confidence,
+            "mi_score": 0.0,  # No MI for greedy baseline
+            "agreement": 1.0,  # Single sample, perfect agreement
+        }
+        if hasattr(ex, 'is_impossible'):
+            result["is_impossible"] = ex.is_impossible
+        
+        results.append(result)
+        write_progress(len(results))
+        
+        # Log detailed trace if logger provided
+        if detailed_logger:
+            detailed_logger.log_question(
+                question_id=ex_idx,
+                question_text=ex.question,
+                choices=[],
+                gold_answer=str(ex.answers),
+                method_name=f"{dataset_name.lower()}_greedy",
+                method_description="Single greedy decode (temperature=0)",
+                raw_inputs=[{
+                    "prompt": messages,
+                    "temperature": 0.0,
+                    "max_tokens": max_tokens
+                }],
+                raw_outputs=[{
+                    "text": response,
+                    "logprob": logprob,
+                    "probability": confidence
+                }],
+                decision_process={
+                    "method": "greedy",
+                    "temperature": 0.0,
+                    "selected_answer": response,
+                    "confidence_from_logprob": f"{confidence:.4f}"
+                },
+                final_metrics={
+                    "predicted": response,
+                    "gold_answers": ex.answers,
+                    "exact_match": exact_match,
+                    "f1": f1,
+                    "confidence": float(confidence),
+                    "mi_score": 0.0,
+                    "agreement": 1.0
+                }
+            )
+    
+    # Compute aggregate metrics
+    exact_match_arr = np.array([r["exact_match"] for r in results])
+    f1_arr = np.array([r["f1"] for r in results])
+    confidence_arr = np.array([r["confidence"] for r in results])
+    
+    # ECE using exact match as correctness
+    ece = compute_ece(exact_match_arr, confidence_arr, exact_match_arr)
+    
+    metrics = {
+        "exact_match": float(exact_match_arr.mean()),
+        "f1": float(f1_arr.mean()),
+        "ece": float(ece),
+        "avg_confidence": float(confidence_arr.mean()),
+        "avg_mi_bits": 0.0,
+        "avg_agreement": 1.0,
+        "n_samples": len(results),
+    "logprob_stats": logprob_tracker.get_stats()
+    }
+    
+    return metrics, results
+
+
+def evaluate_extractive_qa_self_consistency(
+    client,
+    examples: List,  # ExtractiveQAExample instances
+    k: int = 10,
+    temperature: float = 0.9,
+    max_tokens: int = 50,
+    prompt_composer=None,  # Optional: compose_prompt_extractive or compose_prompt_trivia
+    dataset_name: str = "Extractive QA",
+    detailed_logger=None,
+    verbose: bool = True
+) -> Tuple[Dict[str, float], List]:
+    """
+    Evaluate extractive QA using self-consistency baseline.
+    
+    This baseline:
+    1. Generates k samples at temperature > 0
+    2. Normalizes answers and uses majority voting
+    3. Confidence is the fraction of samples agreeing with majority
+    
+    Args:
+        client: LLM client
+        examples: List of ExtractiveQAExample instances
+        k: Number of samples per question
+        temperature: Sampling temperature
+        max_tokens: Max tokens per generation
+        prompt_composer: Function to compose prompts
+        dataset_name: Name for logging/display
+        detailed_logger: Optional logger for saving traces
+        verbose: Show progress bar
+        
+    Returns:
+        (metrics_dict, results_list)
+    """
+    from tqdm import tqdm
+    from collections import Counter
+    from .datasets import compute_exact_match, compute_f1_score, normalize_answer
+    from .iterative_prompting import compose_prompt_extractive
+    
+    # Default to extractive prompt if not provided
+    if prompt_composer is None:
+        prompt_composer = compose_prompt_extractive
+    
+    results = []
+    logprob_tracker = LogprobTracker()
+    iterator = tqdm(examples, desc=f"Evaluating {dataset_name} (Self-Consistency)") if verbose else examples
+    
+    for ex_idx, ex in enumerate(iterator):
+        # Generate k samples
+        responses = []
+        sample_data = []  # For logging
+        
+        for sample_idx in range(k):
+            if prompt_composer == compose_prompt_extractive:
+                messages = prompt_composer(
+                    question=ex.question,
+                    context=ex.context,
+                    previous_answers=[],
+                    answer_format="strict"
+                )
+            else:  # compose_prompt_trivia
+                messages = prompt_composer(
+                    question=ex.question,
+                    previous_answers=[],
+                    answer_format="strict"
+                )
+            
+            if hasattr(client, 'chat_completion_with_logprobs'):
+                response, logprob = client.chat_completion_with_logprobs(
+                    messages, 
+                    temperature=temperature,
+                    max_tokens=max_tokens
+                )
+            else:
+                response = client.chat_completion(messages, temperature=temperature, max_tokens=max_tokens)
+                logprob = 0.0
+                logprob_tracker.record(logprob)
+            
+            responses.append(response)
+            
+            # Capture for logging
+            if detailed_logger:
+                sample_data.append({
+                    "sample_id": sample_idx,
+                    "prompt": messages,
+                    "temperature": temperature,
+                    "max_tokens": max_tokens,
+                    "response": response,
+                    "logprob": logprob,
+                    "probability": np.exp(logprob) if logprob < 0 else 0.5
+                })
+        
+        # Majority voting on NORMALIZED answers
+        normalized_responses = [normalize_answer(r) for r in responses]
+        vote_counts = Counter(normalized_responses)
+        predicted_normalized, max_count = vote_counts.most_common(1)[0]
+        
+        # Get original (non-normalized) answer corresponding to the majority
+        # Find first response that normalizes to the majority answer
+        predicted_answer = responses[normalized_responses.index(predicted_normalized)]
+        
+        # Confidence = agreement fraction (fraction voting for majority)
+        confidence = max_count / k
+        agreement = confidence  # Same as confidence for this method
+        
+        # Evaluate with extractive QA metrics
+        exact_match = compute_exact_match(predicted_answer, ex.answers)
+        f1 = compute_f1_score(predicted_answer, ex.answers)
+        
+        result = {
+            "id": ex.id,
+            "question": ex.question,
+            "predicted": predicted_answer,
+            "gold_answers": ex.answers,
+            "exact_match": exact_match,
+            "f1": f1,
+            "confidence": confidence,
+            "mi_score": 0.0,  # No MI for self-consistency
+            "agreement": agreement,
+        }
+        if hasattr(ex, 'is_impossible'):
+            result["is_impossible"] = ex.is_impossible
+        
+        results.append(result)
+        write_progress(len(results))
+        
+        # Log detailed trace if logger provided
+        if detailed_logger:
+            detailed_logger.log_question(
+                question_id=ex_idx,
+                question_text=ex.question,
+                choices=[],
+                gold_answer=str(ex.answers),
+                method_name=f"{dataset_name.lower()}_self_consistency",
+                method_description=f"k={k} samples with majority voting (temperature={temperature})",
+                raw_inputs=[s["prompt"] for s in sample_data],
+                raw_outputs=[{
+                    "sample_id": s["sample_id"],
+                    "text": s["response"],
+                    "logprob": s["logprob"],
+                    "probability": s["probability"]
+                } for s in sample_data],
+                decision_process={
+                    "method": "self-consistency",
+                    "k": k,
+                    "temperature": temperature,
+                    "vote_distribution": dict(vote_counts),
+                    "selected_answer": predicted_answer,
+                    "majority_count": max_count,
+                    "confidence": f"{confidence:.4f} ({max_count}/{k} votes)"
+                },
+                final_metrics={
+                    "predicted": predicted_answer,
+                    "gold_answers": ex.answers,
+                    "exact_match": exact_match,
+                    "f1": f1,
+                    "confidence": float(confidence),
+                    "mi_score": 0.0,
+                    "agreement": float(agreement)
+                }
+            )
+    
+    # Compute aggregate metrics
+    exact_match_arr = np.array([r["exact_match"] for r in results])
+    f1_arr = np.array([r["f1"] for r in results])
+    confidence_arr = np.array([r["confidence"] for r in results])
+    
+    # ECE using exact match as correctness
+    ece = compute_ece(exact_match_arr, confidence_arr, exact_match_arr)
+    
+    metrics = {
+        "exact_match": float(exact_match_arr.mean()),
+        "f1": float(f1_arr.mean()),
+        "ece": float(ece),
+        "avg_confidence": float(confidence_arr.mean()),
+        "avg_mi_bits": 0.0,
+        "avg_agreement": float(sum(r["agreement"] for r in results) / len(results)),
+        "n_samples": len(results),
+    "logprob_stats": logprob_tracker.get_stats()
+    }
+    
+    return metrics, results
+
+
+def evaluate_extractive_qa_with_mi(
+    client,
+    examples: List,  # ExtractiveQAExample instances
+    k: int = 10,
+    n: int = 2,
+    temperature: float = 0.9,
+    max_tokens: int = 50,
+    mi_method: str = "listing",
+    confidence_method: str = "inverse",
+    detailed_logger=None,
+    verbose: bool = True
+) -> Tuple[Dict[str, float], List]:
+    """
+    Evaluate extractive QA (SQuAD-style) using MI method.
+    
+    Similar to evaluate_mcq_with_mi but adapted for extractive answers.
+    Uses exact match and F1 score instead of MCQ accuracy.
+    
+    Args:
+        client: LLM client with chat_completion_with_logprobs method
+        examples: List of ExtractiveQAExample instances
+        k: Number of independent chains per question (default 10, from paper)
+        n: Chain length / pseudo joint dimension (default 2, from paper)
+        temperature: Sampling temperature
+        max_tokens: Max tokens per generation (50 for extractive answers)
+        mi_method: MI estimator ("plugin" or "listing")
+        confidence_method: How to convert MI to confidence
+        detailed_logger: Optional logger for saving traces
+        verbose: Show progress bar
+        
+    Returns:
+        (metrics_dict, results_list)
+        metrics include: exact_match, f1, ece, avg_confidence, avg_mi_bits
+    """
+    from tqdm import tqdm
+    from .mi_estimator import estimate_mi_listing_nats, estimate_mi_nats, nats_to_bits
+    from .datasets import compute_exact_match, compute_f1_score
+    from .iterative_prompting import compose_prompt_extractive
+    from .evaluation import compute_agreement_fraction
+    
+    results = []
+    logprob_tracker = LogprobTracker()
+    iterator = tqdm(examples, desc="Evaluating (Extractive QA + MI)") if verbose else examples
+    
+    for ex_idx, ex in enumerate(iterator):
+        # Generate K chains of length n with logprobs
+        chains_with_logprobs = []
+        for _ in range(k):
+            chain = []
+            previous_answers = []
+            
+            for _ in range(n):
+                messages = compose_prompt_extractive(
+                    question=ex.question,
+                    context=ex.context,
+                    previous_answers=previous_answers,
+                    answer_format="strict"
+                )
+                
+                if hasattr(client, 'chat_completion_with_logprobs'):
+                    response, logprob = client.chat_completion_with_logprobs(
+                        messages,
+                        temperature=temperature,
+                        max_tokens=max_tokens
+                    )
+                else:
+                    response = client.chat_completion(messages, temperature=temperature, max_tokens=max_tokens)
+                    logprob = 0.0
+                    logprob_tracker.record(logprob)
+                
+                chain.append((response, logprob))
+                logprob_tracker.record(logprob)
+                previous_answers.append(response)
+            
+            chains_with_logprobs.append(chain)
+        
+        # Select answer via pseudo-joint marginalization
+        predicted_answer = select_answer_via_pseudo_joint(chains_with_logprobs, n)
+        
+        # Compute MI for uncertainty estimation
+        chains_text = [[text for text, _ in chain] for chain in chains_with_logprobs]
+        
+        if mi_method == "listing":
+            mi_nats = estimate_mi_listing_nats(chains_text)
+        else:
+            mi_nats = estimate_mi_nats(chains_text)
+        
+        mi_bits = nats_to_bits(mi_nats)
+        
+        # Get final answers for agreement computation
+        final_answers = [chain[-1][0] for chain in chains_with_logprobs]
+        agreement = compute_agreement_fraction(final_answers)
+        
+        # Convert MI to confidence
+        confidence = mi_to_confidence(mi_nats, method=confidence_method)
+        
+        # Evaluate with SQuAD metrics
+        exact_match = compute_exact_match(predicted_answer, ex.answers)
+        f1 = compute_f1_score(predicted_answer, ex.answers)
+        
+        result = {
+            "id": ex.id,
+            "question": ex.question,
+            "predicted": predicted_answer,
+            "gold_answers": ex.answers,
+            "exact_match": exact_match,
+            "f1": f1,
+            "confidence": confidence,
+            "mi_score": mi_bits,
+            "agreement": agreement,
+            "is_impossible": ex.is_impossible
+        }
+        results.append(result)
+        write_progress(len(results))
+        
+        # Log detailed trace if logger provided
+        if detailed_logger:
+            # Capture chain data for logging
+            raw_inputs = []
+            raw_outputs = []
+            for chain_idx, chain in enumerate(chains_with_logprobs):
+                previous_answers = []
+                for step_idx, (response, logprob) in enumerate(chain):
+                    # Generate the prompt that was used for this step
+                    prompt = compose_prompt_extractive(
+                        question=ex.question,
+                        context=ex.context,
+                        previous_answers=previous_answers,
+                        answer_format="strict"
+                    )
+                    
+                    raw_inputs.append({
+                        "chain_id": chain_idx,
+                        "step": step_idx,
+                        "prompt": prompt,
+                        "temperature": temperature,
+                        "max_tokens": max_tokens
+                    })
+                    raw_outputs.append({
+                        "chain_id": chain_idx,
+                        "step": step_idx,
+                        "text": response,
+                        "logprob": logprob,
+                        "probability": math.exp(logprob) if logprob < 0 else 0.5
+                    })
+                    
+                    previous_answers.append(response)
+            
+            method_data = {
+                "description": f"k={k} chains of length n={n}, MI estimation (Extractive QA)",
+                "raw_inputs": raw_inputs,
+                "raw_outputs": raw_outputs,
+                "decision_process": {
+                    "num_chains": k,
+                    "chain_length": n,
+                    "total_inferences": k * n,
+                    "mi_method": mi_method,
+                    "mi_nats": mi_nats,
+                    "mi_bits": mi_bits,
+                    "selected_answer": predicted_answer,
+                    "confidence_computation": f"1/(1 + mi_nats) = 1/(1 + {mi_nats:.4f}) = {confidence:.4f}",
+                    "agreement": f"{agreement:.2%} ({agreement*k:.0f}/{k} chains agree on final answer)"
+                },
+                "final_metrics": {
+                    "predicted": predicted_answer,
+                    "gold_answers": ex.answers,
+                    "exact_match": exact_match,
+                    "f1": f1,
+                    "confidence": confidence,
+                    "mi_score": mi_bits,
+                    "agreement": agreement,
+                    "is_impossible": ex.is_impossible
+                }
+            }
+            detailed_logger.log_question(
+                question_id=ex_idx,
+                question_text=ex.question,
+                choices=[],  # No choices for extractive QA
+                choice_texts=[],
+                gold_answer=str(ex.answers),  # Convert list to string
+                method_data=method_data
+            )
+    
+    # Compute aggregate metrics
+    exact_match_arr = np.array([r["exact_match"] for r in results])
+    f1_arr = np.array([r["f1"] for r in results])
+    confidence_arr = np.array([r["confidence"] for r in results])
+    
+    # ECE using exact match as correctness
+    ece = compute_ece(exact_match_arr, confidence_arr, exact_match_arr)
+    
+    metrics = {
+        "exact_match": float(exact_match_arr.mean()),
+        "f1": float(f1_arr.mean()),
+        "ece": float(ece),
+        "avg_confidence": float(confidence_arr.mean()),
+        "avg_mi_bits": float(sum(r["mi_score"] for r in results) / len(results)),
+        "avg_agreement": float(sum(r["agreement"] for r in results) / len(results)),
+        "n_samples": len(results),
+    "logprob_stats": logprob_tracker.get_stats()
+    }
+    
+    return metrics, results
+
+
+def evaluate_triviaqa_with_mi(
+    client,
+    examples: List,  # ExtractiveQAExample instances (from TriviaQA)
+    k: int = 10,
+    n: int = 2,
+    temperature: float = 0.9,
+    max_tokens: int = 50,
+    mi_method: str = "listing",
+    confidence_method: str = "inverse",
+    detailed_logger=None,
+    verbose: bool = True
+) -> Tuple[Dict[str, float], List]:
+    """
+    Evaluate TriviaQA using MI method with correctness-based MI.
+    
+    Similar to evaluate_extractive_qa_with_mi but uses trivia-specific prompts
+    (no context) and maps chains to binary correctness for MI computation.
+    
+    Args:
+        client: LLM client with chat_completion_with_logprobs method
+        examples: List of ExtractiveQAExample instances (from load_triviaqa)
+        k: Number of independent chains per question
+        n: Chain length / pseudo joint dimension
+        temperature: Sampling temperature
+        max_tokens: Max tokens per generation
+        mi_method: MI estimator ("plugin" or "listing")
+        confidence_method: How to convert MI to confidence
+        detailed_logger: Optional logger for saving traces
+        verbose: Show progress bar
+        
+    Returns:
+        (metrics_dict, results_list)
+        metrics include: exact_match, f1, ece, avg_confidence, avg_mi_bits
+    """
+    from tqdm import tqdm
+    from .mi_estimator import estimate_mi_listing_nats, estimate_mi_nats, nats_to_bits
+    from .datasets import compute_exact_match, compute_f1_score
+    from .iterative_prompting import compose_prompt_trivia
+    from .evaluation import compute_agreement_fraction
+    
+    results = []
+    logprob_tracker = LogprobTracker()
+    iterator = tqdm(examples, desc="Evaluating TriviaQA (MI)") if verbose else examples
+    
+    for ex_idx, ex in enumerate(iterator):
+        # Generate K chains of length n
+        chains_with_logprobs = []
+        for _ in range(k):
+            chain = []
+            previous_answers = []
+            
+            for _ in range(n):
+                messages = compose_prompt_trivia(
+                    question=ex.question,
+                    previous_answers=previous_answers,
+                    answer_format="strict"
+                )
+                
+                if hasattr(client, 'chat_completion_with_logprobs'):
+                    response, logprob = client.chat_completion_with_logprobs(
+                        messages,
+                        temperature=temperature,
+                        max_tokens=max_tokens
+                    )
+                else:
+                    response = client.chat_completion(messages, temperature=temperature, max_tokens=max_tokens)
+                    logprob = 0.0
+                    logprob_tracker.record(logprob)
+                
+                chain.append((response, logprob))
+                logprob_tracker.record(logprob)
+                previous_answers.append(response)
+            
+            chains_with_logprobs.append(chain)
+        
+        # Select answer via pseudo-joint marginalization
+        predicted_answer = select_answer_via_pseudo_joint(chains_with_logprobs, n)
+        
+        # ===== CORRECTNESS-BASED MI =====
+        # Transform chains to binary correctness for MI computation
+        chains_text = [[text for text, _ in chain] for chain in chains_with_logprobs]
+        
+        correctness_chains = []
+        for chain in chains_text:
+            correctness_chain = []
+            for answer_text in chain:
+                # Check if answer is correct (matches any alias)
+                is_correct = compute_exact_match(answer_text, ex.answers) == 1.0
+                correctness_chain.append("correct" if is_correct else "incorrect")
+            correctness_chains.append(correctness_chain)
+        
+        # Compute MI on correctness (binary space)
+        if mi_method == "listing":
+            mi_nats = estimate_mi_listing_nats(correctness_chains)
+        else:
+            mi_nats = estimate_mi_nats(correctness_chains)
+        
+        mi_bits = nats_to_bits(mi_nats)
+        
+        # Compute correctness agreement
+        final_correctness = [chain[-1] for chain in correctness_chains]
+        agreement = compute_agreement_fraction(final_correctness)
+        
+        # Convert MI to confidence
+        confidence = mi_to_confidence(mi_nats, method=confidence_method)
+        
+        # Evaluate with TriviaQA metrics (EM + F1)
+        exact_match = compute_exact_match(predicted_answer, ex.answers)
+        f1 = compute_f1_score(predicted_answer, ex.answers)
+        
+        result = {
+            "id": ex.id,
+            "question": ex.question,
+            "predicted": predicted_answer,
+            "gold_answers": ex.answers,
+            "exact_match": exact_match,
+            "f1": f1,
+            "confidence": confidence,
+            "mi_score": mi_bits,
+            "agreement": agreement,  # Agreement on correctness
+        }
+        results.append(result)
+        write_progress(len(results))
+        
+        # Log detailed trace if logger provided
+        if detailed_logger:
+            raw_inputs = []
+            raw_outputs = []
+            for chain_idx, chain in enumerate(chains_with_logprobs):
+                previous_answers = []
+                for step_idx, (response, logprob) in enumerate(chain):
+                    prompt = compose_prompt_trivia(
+                        question=ex.question,
+                        previous_answers=previous_answers,
+                        answer_format="strict"
+                    )
+                    
+                    raw_inputs.append({
+                        "chain_id": chain_idx,
+                        "step": step_idx,
+                        "prompt": prompt,
+                        "temperature": temperature,
+                        "max_tokens": max_tokens
+                    })
+                    raw_outputs.append({
+                        "chain_id": chain_idx,
+                        "step": step_idx,
+                        "text": response,
+                        "logprob": logprob,
+                        "probability": np.exp(logprob) if logprob != 0.0 else 0.5
+                    })
+                    
+                    previous_answers.append(response)
+            
+            detailed_logger.log_question(
+                question_id=ex_idx,
+                question_text=ex.question,
+                choices=[],
+                gold_answer=str(ex.answers),
+                method_name="triviaqa_correctness_mi",
+                method_description=f"k={k} chains of length n={n}, correctness-based MI (TriviaQA)",
+                raw_inputs=raw_inputs,
+                raw_outputs=raw_outputs,
+                decision_process={
+                    "num_chains": k,
+                    "chain_length": n,
+                    "total_inferences": k * n,
+                    "mi_method": mi_method,
+                    "mi_nats": float(mi_nats),
+                    "mi_bits": float(mi_bits),
+                    "selected_answer": predicted_answer,
+                    "confidence_computation": f"MI-based ({confidence_method}): {confidence:.4f}",
+                    "correctness_agreement": f"{agreement*100:.2f}% ({int(agreement*k)}/{k} chains agree on correctness)"
+                },
+                final_metrics={
+                    "predicted": predicted_answer,
+                    "gold_answers": ex.answers,
+                    "exact_match": exact_match,
+                    "f1": f1,
+                    "confidence": float(confidence),
+                    "mi_score": float(mi_bits),
+                    "agreement": float(agreement)
+                }
+            )
+    
+    # Compute aggregate metrics
+    exact_match_arr = np.array([r["exact_match"] for r in results])
+    f1_arr = np.array([r["f1"] for r in results])
+    confidence_arr = np.array([r["confidence"] for r in results])
+    
+    # ECE using exact match as correctness
+    ece = compute_ece(exact_match_arr, confidence_arr, exact_match_arr)
+    
+    metrics = {
+        "exact_match": float(exact_match_arr.mean()),
+        "f1": float(f1_arr.mean()),
+        "ece": float(ece),
+        "avg_confidence": float(confidence_arr.mean()),
+        "avg_mi_bits": float(sum(r["mi_score"] for r in results) / len(results)),
+        "avg_correctness_agreement": float(sum(r["agreement"] for r in results) / len(results)),
+        "n_samples": len(results),
+    "logprob_stats": logprob_tracker.get_stats()
+    }
+    
+    return metrics, results
+
+
+def evaluate_truthfulqa_with_correctness_mi(
+    client,
+    examples: List,  # MCQExample instances
+    k: int = 10,
+    n: int = 2,
+    temperature: float = 0.5,
+    max_tokens: int = 64,
+    mi_method: str = "listing",
+    confidence_method: str = "inverse",
+    answer_format: str = "default",
+    detailed_logger=None,
+    verbose: bool = True
+) -> Tuple[Dict[str, float], List[EvaluationResult]]:
+    """
+    Evaluate TruthfulQA using correctness-based MI instead of choice-based MI.
+    
+    Key difference from standard MCQ evaluation:
+    - Instead of computing MI over answer choices (A, B, C, ...),
+    - We compute MI over correctness (correct vs incorrect)
+    - This measures uncertainty about WHETHER the answer is truthful,
+    - Rather than uncertainty about WHICH answer to choose.
+    
+    This approach is more appropriate for TruthfulQA because:
+    1. Questions can have many answer choices (>26)
+    2. The task is to distinguish truthful from false statements
+    3. We care about correctness agreement, not choice agreement
+    
+    Args:
+        client: LLM client with chat_completion_with_logprobs method
+        examples: List of MCQExample instances (TruthfulQA MC1)
+        k: Number of independent chains per question
+        n: Chain length / pseudo joint dimension
+        temperature: Sampling temperature
+        max_tokens: Max tokens per generation
+        mi_method: MI estimator ("plugin" or "listing")
+        confidence_method: How to convert MI to confidence
+        answer_format: Answer format for prompting
+        detailed_logger: Optional logger for detailed traces
+        verbose: Show progress bar
+        
+    Returns:
+        (metrics_dict, results_list)
+    """
+    from tqdm import tqdm
+    from .mi_estimator import estimate_mi_nats, estimate_mi_listing_nats
+    from .datasets import match_answer_to_choices
+    
+    results = []
+    logprob_tracker = LogprobTracker()
+    iterator = tqdm(examples, desc="Evaluating TruthfulQA (correctness MI)") if verbose else examples
+    
+    for ex_idx, ex in enumerate(iterator):
+        # Generate K chains of length n
+        chains_with_logprobs = []
+        for _ in range(k):
+            chain = run_chain_with_logprobs(
+                client=client,
+                query=ex.question,
+                n=n,
+                temperature=temperature,
+                max_tokens=max_tokens,
+                prompt_style="naive",
+                choices=ex.choices,
+                choice_texts=ex.choice_texts,
+                answer_format=answer_format
+            )
+            chains_with_logprobs.append(chain)
+            
+            # Track logprobs from this chain
+            for _, logprob in chain:
+                logprob_tracker.record(logprob)
+        
+        # Select answer using marginalized pseudo joint
+        predicted_answer_text = select_answer_via_pseudo_joint(chains_with_logprobs, n)
+        
+        # Match to MCQ choices
+        predicted_choice = match_answer_to_choices(
+            predicted_answer_text,
+            ex.choice_texts,
+            ex.choices,
+            answer_format=answer_format
+        )
+        
+        # ===== CORRECTNESS-BASED MI =====
+        # Transform chains from choices to binary correctness
+        chains_text = [[text for text, _ in chain] for chain in chains_with_logprobs]
+        
+        # Map each answer in each chain to "correct" or "incorrect"
+        correctness_chains = []
+        for chain in chains_text:
+            correctness_chain = []
+            for answer_text in chain:
+                # Match this answer to a choice
+                matched_choice = match_answer_to_choices(
+                    answer_text,
+                    ex.choice_texts,
+                    ex.choices,
+                    answer_format=answer_format
+                )
+                # Check if it's correct
+                is_correct = (matched_choice == ex.answer_key)
+                correctness_chain.append("correct" if is_correct else "incorrect")
+            correctness_chains.append(correctness_chain)
+        
+        # Compute MI on correctness (binary space) instead of choices
+        if mi_method == "listing":
+            mi_nats = estimate_mi_listing_nats(correctness_chains)
+        else:
+            mi_nats = estimate_mi_nats(correctness_chains)
+        
+        mi_bits = nats_to_bits(mi_nats)
+        
+        # Compute correctness agreement (what fraction agree on correctness)
+        final_correctness = [chain[-1] for chain in correctness_chains]
+        agreement = compute_agreement_fraction(final_correctness)
+        
+        # Convert MI to confidence
+        confidence = mi_to_confidence(mi_nats, method=confidence_method)
+        
+        # Check if prediction is correct
+        correct = (predicted_choice == ex.answer_key)
+        
+        result = EvaluationResult(
+            question=ex.question,
+            predicted=predicted_choice,
+            gold=ex.answer_key,
+            correct=correct,
+            confidence=confidence,
+            mi_score=mi_bits,
+            agreement=agreement,  # Now: agreement on correctness, not on choice
+            chains=chains_with_logprobs
+        )
+        results.append(result)
+        write_progress(len(results))
+        
+        # Log detailed trace if logger provided
+        if detailed_logger:
+            from .iterative_prompting import compose_prompt
+            
+            raw_inputs = []
+            raw_outputs = []
+            for chain_idx, chain in enumerate(chains_with_logprobs):
+                previous_answers = []
+                for step_idx, (response, logprob) in enumerate(chain):
+                    prompt = compose_prompt(
+                        ex.question, 
+                        previous_answers,
+                        prompt_style="naive",
+                        choices=ex.choices,
+                        choice_texts=ex.choice_texts,
+                        answer_format=answer_format
+                    )
+                    
+                    raw_inputs.append({
+                        "chain_id": chain_idx,
+                        "step": step_idx,
+                        "prompt": prompt,
+                        "temperature": temperature,
+                        "max_tokens": max_tokens
+                    })
+                    
+                    raw_outputs.append({
+                        "chain_id": chain_idx,
+                        "step": step_idx,
+                        "text": response,
+                        "logprob": logprob,
+                        "probability": np.exp(logprob) if logprob != 0.0 else 0.5
+                    })
+                    
+                    previous_answers.append(response)
+            
+            # Log the question with correctness-based MI metadata
+            detailed_logger.log_question(
+                question_id=ex_idx,
+                question_text=ex.question,
+                choices=[f"{c}: {t}" for c, t in zip(ex.choices, ex.choice_texts)],
+                gold_answer=ex.answer_key,
+                method_name="truthfulqa_correctness_mi",
+                method_description=f"k={k} chains of length n={n}, correctness-based MI estimation",
+                raw_inputs=raw_inputs,
+                raw_outputs=raw_outputs,
+                decision_process={
+                    "num_chains": k,
+                    "chain_length": n,
+                    "total_inferences": k * n,
+                    "mi_method": mi_method,
+                    "mi_nats": float(mi_nats),
+                    "mi_bits": float(mi_bits),
+                    "selected_answer": predicted_choice,
+                    "matched_choice": predicted_choice,
+                    "confidence_computation": f"MI-based ({confidence_method}): {confidence:.4f}",
+                    "correctness_agreement": f"{agreement*100:.2f}% ({int(agreement*k)}/{k} chains agree on correctness)"
+                },
+                final_metrics={
+                    "predicted": predicted_choice,
+                    "correct": correct,
+                    "confidence": float(confidence),
+                    "mi_score": float(mi_bits),
+                    "agreement": float(agreement)
+                }
+            )
+    
+    # Compute overall metrics
+    correct_arr = np.array([r.correct for r in results], dtype=float)
+    confidence_arr = np.array([r.confidence for r in results], dtype=float)
+    
+    accuracy = correct_arr.mean()
+    ece = compute_ece(correct_arr, confidence_arr, correct_arr)
+    
+    metrics = {
+        "accuracy": float(accuracy),
+        "ece": float(ece),
+        "avg_confidence": float(confidence_arr.mean()),
+        "avg_mi_bits": float(sum(r.mi_score for r in results) / len(results)),
+        "avg_correctness_agreement": float(sum(r.agreement for r in results) / len(results)),
+        "n_samples": len(results),
+    "logprob_stats": logprob_tracker.get_stats()
+    }
+    
+    return metrics, results
+
+
+def evaluate_truthfulqa_mc2_with_correctness_mi(
+    client,
+    examples: List,  # MCQExample instances with MC2 metadata
+    k: int = 10,
+    n: int = 2,
+    temperature: float = 0.5,
+    max_tokens: int = 64,
+    mi_method: str = "listing",
+    confidence_method: str = "inverse",
+    answer_format: str = "default",
+    detailed_logger=None,
+    verbose: bool = True
+) -> Tuple[Dict[str, float], List[EvaluationResult]]:
+    """
+    Evaluate TruthfulQA MC2 (multi-true) using correctness-based MI.
+    
+    Key difference from MC1:
+    - MC1: Exactly 1 correct answer per question
+    - MC2: Multiple correct answers per question (≥1)
+    - Correctness check: Answer is correct if it matches ANY of the true answers
+    
+    This approach measures uncertainty about WHETHER the answer is truthful,
+    using the same correctness-based MI as MC1, but with multi-label correctness.
+    
+    Args:
+        client: LLM client with chat_completion_with_logprobs method
+        examples: List of MCQExample instances (TruthfulQA MC2 with metadata)
+        k: Number of independent chains per question
+        n: Chain length / pseudo joint dimension
+        temperature: Sampling temperature
+        max_tokens: Max tokens per generation
+        mi_method: MI estimator ("plugin" or "listing")
+        confidence_method: How to convert MI to confidence
+        answer_format: Answer format for prompting
+        detailed_logger: Optional logger for detailed traces
+        verbose: Show progress bar
+        
+    Returns:
+        (metrics_dict, results_list)
+    """
+    from tqdm import tqdm
+    from .mi_estimator import estimate_mi_nats, estimate_mi_listing_nats
+    from .datasets import match_answer_to_choices, is_answer_correct_mc2
+    
+    results = []
+    logprob_tracker = LogprobTracker()
+    iterator = tqdm(examples, desc="Evaluating TruthfulQA MC2 (multi-true correctness MI)") if verbose else examples
+    
+    for ex_idx, ex in enumerate(iterator):
+        # Generate K chains of length n
+        chains_with_logprobs = []
+        for _ in range(k):
+            chain = run_chain_with_logprobs(
+                client=client,
+                query=ex.question,
+                n=n,
+                temperature=temperature,
+                max_tokens=max_tokens,
+                prompt_style="naive",
+                choices=ex.choices,
+                choice_texts=ex.choice_texts,
+                answer_format=answer_format
+            )
+            chains_with_logprobs.append(chain)
+            
+            # Track logprobs from this chain
+            for _, logprob in chain:
+                logprob_tracker.record(logprob)
+        
+        # Select answer using marginalized pseudo joint
+        predicted_answer_text = select_answer_via_pseudo_joint(chains_with_logprobs, n)
+        
+        # Match to MCQ choices
+        predicted_choice = match_answer_to_choices(
+            predicted_answer_text,
+            ex.choice_texts,
+            ex.choices,
+            answer_format=answer_format
+        )
+        
+        # ===== CORRECTNESS-BASED MI (MC2 variant) =====
+        # Transform chains from choices to binary correctness
+        chains_text = [[text for text, _ in chain] for chain in chains_with_logprobs]
+        
+        # Map each answer in each chain to "correct" or "incorrect"
+        # MC2: Answer is correct if it matches ANY of the true answers
+        correctness_chains = []
+        for chain in chains_text:
+            correctness_chain = []
+            for answer_text in chain:
+                # Match this answer to a choice
+                matched_choice = match_answer_to_choices(
+                    answer_text,
+                    ex.choice_texts,
+                    ex.choices,
+                    answer_format=answer_format
+                )
+                # Check if it's correct using MC2 logic (matches any true answer)
+                is_correct = is_answer_correct_mc2(matched_choice, ex)
+                correctness_chain.append("correct" if is_correct else "incorrect")
+            correctness_chains.append(correctness_chain)
+        
+        # Compute MI on correctness (binary space) instead of choices
+        if mi_method == "listing":
+            mi_nats = estimate_mi_listing_nats(correctness_chains)
+        else:
+            mi_nats = estimate_mi_nats(correctness_chains)
+        
+        mi_bits = nats_to_bits(mi_nats)
+        
+        # Compute correctness agreement (what fraction agree on correctness)
+        final_correctness = [chain[-1] for chain in correctness_chains]
+        agreement = compute_agreement_fraction(final_correctness)
+        
+        # Convert MI to confidence
+        confidence = mi_to_confidence(mi_nats, method=confidence_method)
+        
+        # Check if prediction is correct (MC2: matches any true answer)
+        correct = is_answer_correct_mc2(predicted_choice, ex)
+        
+        result = EvaluationResult(
+            question=ex.question,
+            predicted=predicted_choice,
+            gold=ex.answer_key,  # Primary answer (first correct one)
+            correct=correct,
+            confidence=confidence,
+            mi_score=mi_bits,
+            agreement=agreement,  # Agreement on correctness, not on specific choice
+            chains=chains_with_logprobs
+        )
+        results.append(result)
+        write_progress(len(results))
+        
+        # Log detailed trace if logger provided
+        if detailed_logger:
+            from .iterative_prompting import compose_prompt
+            
+            raw_inputs = []
+            raw_outputs = []
+            for chain_idx, chain in enumerate(chains_with_logprobs):
+                previous_answers = []
+                for step_idx, (response, logprob) in enumerate(chain):
+                    prompt = compose_prompt(
+                        ex.question, 
+                        previous_answers,
+                        prompt_style="naive",
+                        choices=ex.choices,
+                        choice_texts=ex.choice_texts,
+                        answer_format=answer_format
+                    )
+                    
+                    raw_inputs.append({
+                        "chain_id": chain_idx,
+                        "step": step_idx,
+                        "prompt": prompt,
+                        "temperature": temperature,
+                        "max_tokens": max_tokens
+                    })
+                    
+                    raw_outputs.append({
+                        "chain_id": chain_idx,
+                        "step": step_idx,
+                        "text": response,
+                        "logprob": logprob,
+                        "probability": np.exp(logprob) if logprob != 0.0 else 0.5
+                    })
+                    
+                    previous_answers.append(response)
+            
+            # Get MC2 metadata for logging
+            num_correct = ex.metadata.get("num_correct", 1) if ex.metadata else 1
+            correct_choices_str = ", ".join(ex.metadata.get("correct_choices", [ex.answer_key])) if ex.metadata else ex.answer_key
+            
+            # Log the question with MC2 correctness-based MI metadata
+            detailed_logger.log_question(
+                question_id=ex_idx,
+                question_text=ex.question,
+                choices=[f"{c}: {t}" for c, t in zip(ex.choices, ex.choice_texts)],
+                gold_answer=f"{correct_choices_str} (MC2: {num_correct} correct answers)",
+                method_name="truthfulqa_mc2_correctness_mi",
+                method_description=f"k={k} chains of length n={n}, MC2 correctness-based MI (multi-true)",
+                raw_inputs=raw_inputs,
+                raw_outputs=raw_outputs,
+                decision_process={
+                    "num_chains": k,
+                    "chain_length": n,
+                    "total_inferences": k * n,
+                    "mi_method": mi_method,
+                    "mi_nats": float(mi_nats),
+                    "mi_bits": float(mi_bits),
+                    "selected_answer": predicted_choice,
+                    "matched_choice": predicted_choice,
+                    "confidence_computation": f"MI-based ({confidence_method}): {confidence:.4f}",
+                    "correctness_agreement": f"{agreement*100:.2f}% ({int(agreement*k)}/{k} chains agree on correctness)",
+                    "mc2_info": f"{num_correct} correct answers: {correct_choices_str}"
+                },
+                final_metrics={
+                    "predicted": predicted_choice,
+                    "correct": correct,
+                    "confidence": float(confidence),
+                    "mi_score": float(mi_bits),
+                    "agreement": float(agreement)
+                }
+            )
+    
+    # Compute overall metrics
+    correct_arr = np.array([r.correct for r in results], dtype=float)
+    confidence_arr = np.array([r.confidence for r in results], dtype=float)
+    
+    accuracy = correct_arr.mean()
+    ece = compute_ece(correct_arr, confidence_arr, correct_arr)
+    
+    metrics = {
+        "accuracy": float(accuracy),
+        "ece": float(ece),
+        "avg_confidence": float(confidence_arr.mean()),
+        "avg_mi_bits": float(sum(r.mi_score for r in results) / len(results)),
+        "avg_correctness_agreement": float(sum(r.agreement for r in results) / len(results)),
+        "n_samples": len(results),
+    "logprob_stats": logprob_tracker.get_stats()
     }
     
     return metrics, results

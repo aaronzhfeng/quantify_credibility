@@ -23,6 +23,20 @@ SYSTEM_PROMPT_CODEBLOCK = (
     "You may include brief explanation before or after the code block, but the answer MUST be in the code block."
 )
 
+SYSTEM_PROMPT_EXTRACTIVE_STRICT = (
+    "You are answering a question based on a given context. "
+    "Your response MUST be ONLY the direct answer from the context. "
+    "Do NOT include explanations, reasoning, or additional text. "
+    "If the question cannot be answered from the context, respond with: UNANSWERABLE"
+)
+
+SYSTEM_PROMPT_TRIVIA = (
+    "You are answering a trivia question. "
+    "Your response MUST be ONLY the answer to the question. "
+    "Do NOT include explanations, reasoning, or additional text. "
+    "Provide a concise, direct answer."
+)
+
 
 def compose_prompt(
     query: str, 
@@ -193,5 +207,106 @@ def run_k_chains_for_query(
             )
         )
     return chains
+
+
+def compose_prompt_extractive(
+    question: str,
+    context: str,
+    previous_answers: List[str],
+    answer_format: str = "strict"
+) -> List[dict]:
+    """
+    Compose prompt for extractive QA (SQuAD-style).
+    
+    Similar to MCQ strict format but adapted for extractive answers.
+    
+    Args:
+        question: The question to answer
+        context: Background paragraph containing the answer
+        previous_answers: List of previous answers in the chain (for MI)
+        answer_format: "strict" (direct answer only) or "default"
+        
+    Returns:
+        OpenAI-style chat messages
+    """
+    # System prompt
+    if answer_format == "strict":
+        system_prompt = SYSTEM_PROMPT_EXTRACTIVE_STRICT
+    else:
+        system_prompt = SYSTEM_PROMPT_DEFAULT
+    
+    # Build previous answers history (for MI chaining)
+    if previous_answers:
+        if len(previous_answers) == 1:
+            history = f"\n\nOne answer to this question is: {previous_answers[0]}"
+        else:
+            history = f"\n\nOne answer to this question is: {previous_answers[0]}."
+            for ans in previous_answers[1:]:
+                history += f" Another answer is: {ans}."
+    else:
+        history = ""
+    
+    # Main prompt structure
+    user_content = (
+        f"Context:\n{context}\n\n"
+        f"Question: {question}"
+        f"{history}\n\n"
+        f"Provide a direct answer to the question based on the context above.\n\n"
+        f"Answer:"
+    )
+    
+    return [
+        {"role": "system", "content": system_prompt},
+        {"role": "user", "content": user_content}
+    ]
+
+
+def compose_prompt_trivia(
+    question: str,
+    previous_answers: List[str],
+    answer_format: str = "strict"
+) -> List[dict]:
+    """
+    Compose prompt for trivia QA (TriviaQA-style).
+    
+    Similar to extractive QA but without context - pure knowledge testing.
+    
+    Args:
+        question: The trivia question to answer
+        previous_answers: List of previous answers in the chain (for MI)
+        answer_format: "strict" (direct answer only) or "default"
+        
+    Returns:
+        OpenAI-style chat messages
+    """
+    # System prompt
+    if answer_format == "strict":
+        system_prompt = SYSTEM_PROMPT_TRIVIA
+    else:
+        system_prompt = SYSTEM_PROMPT_DEFAULT
+    
+    # Build previous answers history (for MI chaining)
+    if previous_answers:
+        if len(previous_answers) == 1:
+            history = f"\n\nOne answer to this question is: {previous_answers[0]}"
+        else:
+            history = f"\n\nOne answer to this question is: {previous_answers[0]}."
+            for ans in previous_answers[1:]:
+                history += f" Another answer is: {ans}."
+    else:
+        history = ""
+    
+    # Main prompt structure (no context needed for trivia)
+    user_content = (
+        f"Question: {question}"
+        f"{history}\n\n"
+        f"Provide a direct answer to the question.\n\n"
+        f"Answer:"
+    )
+    
+    return [
+        {"role": "system", "content": system_prompt},
+        {"role": "user", "content": user_content}
+    ]
 
 

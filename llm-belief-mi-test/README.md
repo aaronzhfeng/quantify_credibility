@@ -1,6 +1,6 @@
 # LLM Belief MI - Benchmark Evaluation
 
-Evaluation of the Mutual Information (MI) and iterative prompting method from "To Believe or Not to Believe Your LLM" on multiple-choice benchmarks (ARC-Challenge, ARC-Easy, OpenBookQA).
+Evaluation of the Mutual Information (MI) and iterative prompting method from "To Believe or Not to Believe Your LLM" on multiple-choice benchmarks (ARC-Challenge, ARC-Easy, OpenBookQA, TruthfulQA MC1/MC2) and extractive QA datasets (SQuAD v2, TriviaQA).
 
 ## 📋 Current Status
 
@@ -9,8 +9,9 @@ Evaluation of the Mutual Information (MI) and iterative prompting method from "T
 - ✅ Logprobs extraction for probability-weighted selection
 - ✅ MI estimation for uncertainty quantification
 - ✅ ECE computation for calibration evaluation
-- ✅ Full CLI with all benchmarks (ARC/OpenBookQA)
-- ✅ **Baseline methods** for comparison (greedy, self-consistency)
+- ✅ Full CLI with all benchmarks (ARC/OpenBookQA/TruthfulQA MC1&MC2/SQuAD v2/TriviaQA)
+- ✅ **Baseline methods** for comparison (greedy, self-consistency, semantic-entropy, self-verification)
+- ✅ **Correctness-based MI** for extractive QA and truthfulness evaluation
 
 **See [docs/IMPLEMENTATION_COMPLETE.md](docs/IMPLEMENTATION_COMPLETE.md) for usage instructions!** ⭐
 **See [docs/BASELINE_COMPARISON_GUIDE.md](docs/BASELINE_COMPARISON_GUIDE.md) for baseline comparisons!** 📊
@@ -30,14 +31,27 @@ The paper's method is designed for **uncertainty quantification**, not accuracy 
 
 ## 📚 Documentation
 
-All detailed guides are in the [`docs/`](docs/) folder:
+### Command Reference Guides (Quick Access):
+
+- **[MCQ_DATASETS_COMMANDS.md](MCQ_DATASETS_COMMANDS.md)**: 📋 **MCQ datasets** - ARC-Challenge, ARC-Easy, OpenBookQA (all 5 methods)
+- **[OPEN_ENDED_DATASETS_COMMANDS.md](OPEN_ENDED_DATASETS_COMMANDS.md)**: 📋 **Open-ended datasets** - TruthfulQA, SQuAD v2, TriviaQA (3 methods)
+
+### Detailed Guides:
 
 - **[docs/IMPLEMENTATION_COMPLETE.md](docs/IMPLEMENTATION_COMPLETE.md)**: ⭐ **START HERE** - Implementation complete, ready to use!
 - **[docs/BASELINE_COMPARISON_GUIDE.md](docs/BASELINE_COMPARISON_GUIDE.md)**: 📊 **Baseline comparison guide**
 - **[docs/QUICK_START_BASELINES.md](docs/QUICK_START_BASELINES.md)**: Quick reference for running baselines
 - **[docs/COMMANDS_500_EXAMPLES.txt](docs/COMMANDS_500_EXAMPLES.txt)**: Copy-paste commands for 500-example runs
 - **[docs/AUTHENTICATION_GUIDE.md](docs/AUTHENTICATION_GUIDE.md)**: HuggingFace authentication for Llama models
-- **[LOGPROB_DIAGNOSTIC.md](LOGPROB_DIAGNOSTIC.md)**: ⚠️ **Diagnostic report** - Log probability validation and troubleshooting
+
+### Diagnostics & Troubleshooting:
+
+- **[docs/LOGPROB_DIAGNOSTIC.md](docs/LOGPROB_DIAGNOSTIC.md)**: ⚠️ **Log probability validation** - Impact analysis by method, verification commands, remediation strategies
+
+### Theory & Algorithms:
+
+- **[theory/MI_ALGORITHMS.md](../theory/MI_ALGORITHMS.md)**: 📐 **MI estimators explained** - Listing, Plugin, and Original paper algorithm
+- **[theory/MI_ESTIMATOR_EXAMPLE.md](../theory/MI_ESTIMATOR_EXAMPLE.md)**: 📊 **Worked example** - Step-by-step MI calculation
 
 See [`docs/`](docs/) folder for complete documentation index.
 
@@ -93,7 +107,7 @@ Before running evaluations, let's understand all the arguments for `python -m ll
   - `self-verification`: k samples + verification query
 
 #### **Dataset Selection**
-- `--dataset {arc-challenge,arc-easy,openbookqa}` **[REQUIRED]**
+- `--dataset {arc-challenge,arc-easy,openbookqa,squad-v2,truthfulqa-mc1,truthfulqa-mc2,triviaqa}` **[REQUIRED]**
   - Benchmark dataset to evaluate
 - `--split {test,validation}` (default: `test`)
   - Dataset split to use
@@ -456,6 +470,335 @@ python -m llm_belief_mi_test.cli --method self-verification --dataset openbookqa
 
 ---
 
+#### **SQuAD v2 (500 examples - Extractive QA)**
+
+**Quick test (5 examples):**
+
+```bash
+# Test with 5 examples (~2 minutes)
+python -m llm_belief_mi_test.cli \
+  --method mi \
+  --dataset squad-v2 --split validation --limit 5 \
+  --k 10 --n 2 \
+  --load-in-4bit \
+  --temperature 0.9 --max-tokens 50 \
+  --output outputs/results/squad_v2/mi_test_5.csv
+```
+
+**Full evaluation (500 examples - all methods):**
+
+```bash
+# 1. Greedy baseline (~5 min for 500 examples)
+python -m llm_belief_mi_test.cli \
+  --method greedy \
+  --dataset squad-v2 --split validation --limit 500 \
+  --load-in-4bit \
+  --max-tokens 50 \
+  --output outputs/results/squad_v2/greedy_500.csv
+
+# 2. Self-Consistency baseline (~1.5 hours for 500 examples)
+python -m llm_belief_mi_test.cli \
+  --method self-consistency \
+  --dataset squad-v2 --split validation --limit 500 \
+  --k 10 --temperature 0.9 \
+  --load-in-4bit \
+  --max-tokens 50 \
+  --output outputs/results/squad_v2/selfcons_500.csv
+
+# 3. MI method (~2 hours for 500 examples)
+python -m llm_belief_mi_test.cli \
+  --method mi \
+  --dataset squad-v2 --split validation --limit 500 \
+  --k 10 --n 2 \
+  --load-in-4bit \
+  --temperature 0.9 --max-tokens 50 \
+  --output outputs/results/squad_v2/mi_500.csv
+```
+
+**Run all 3 methods sequentially (~3.5 hours):**
+
+```bash
+cd /teamspace/studios/this_studio/quantify_credibility/llm-belief-mi-test && \
+python -m llm_belief_mi_test.cli --method greedy --dataset squad-v2 --split validation --limit 500 --load-in-4bit --max-tokens 50 --output outputs/results/squad_v2/greedy_500.csv 2>&1 | tee outputs/logs/squad_v2_greedy_500.log && \
+python -m llm_belief_mi_test.cli --method self-consistency --dataset squad-v2 --split validation --limit 500 --k 10 --temperature 0.9 --load-in-4bit --max-tokens 50 --output outputs/results/squad_v2/selfcons_500.csv 2>&1 | tee outputs/logs/squad_v2_selfcons_500.log && \
+python -m llm_belief_mi_test.cli --method mi --dataset squad-v2 --split validation --limit 500 --k 10 --n 2 --temperature 0.9 --load-in-4bit --max-tokens 50 --output outputs/results/squad_v2/mi_500.csv 2>&1 | tee outputs/logs/squad_v2_mi_500.log
+```
+
+**Key differences from MCQ datasets:**
+- **No answer-format flag**: Extractive QA uses strict format by default
+- **max-tokens=50**: Longer to accommodate extractive answers (vs 10 for MCQ)
+- **Metrics**: Uses Exact Match (EM) and F1 score instead of accuracy
+- **Unanswerable questions**: SQuAD v2 includes ~50k adversarial unanswerable questions
+- **Context**: Each question includes a Wikipedia paragraph as context
+
+**Expected output metrics:**
+```
+exact_match        : 0.6500  # Exact string match with ground truth
+f1                 : 0.7200  # Token-level F1 score (standard SQuAD metric)
+ece                : 0.0800  # Expected Calibration Error (lower is better)
+avg_confidence     : 0.6800
+avg_mi_bits        : 0.5200
+avg_agreement      : 0.7100
+```
+
+**Dataset info:**
+- Total: ~12k validation examples
+- ~6k answerable + ~6k unanswerable
+- Answers are text spans extracted from context
+- Model must learn to output "UNANSWERABLE" for impossible questions
+
+---
+
+#### **TruthfulQA MC1 (817 examples - Truthfulness Evaluation)**
+
+**Quick test (5 examples):**
+
+```bash
+# Test with 5 examples (~2 minutes)
+python -m llm_belief_mi_test.cli \
+  --method mi \
+  --dataset truthfulqa-mc1 --split validation --limit 5 \
+  --k 10 --n 2 \
+  --load-in-4bit \
+  --temperature 0.9 --max-tokens 10 \
+  --answer-format strict \
+  --output outputs/results/truthfulqa/mi_test_5.csv
+```
+
+**Full evaluation (500 examples - all available methods):**
+
+```bash
+# 1. Greedy baseline (~5 min for 500 examples)
+python -m llm_belief_mi_test.cli \
+  --method greedy \
+  --dataset truthfulqa-mc1 --split validation --limit 500 \
+  --load-in-4bit \
+  --max-tokens 10 \
+  --answer-format strict \
+  --output outputs/results/truthfulqa/greedy_500.csv
+
+# 2. Self-Consistency baseline (~1.5 hours for 500 examples)
+python -m llm_belief_mi_test.cli \
+  --method self-consistency \
+  --dataset truthfulqa-mc1 --split validation --limit 500 \
+  --k 10 --temperature 0.9 \
+  --load-in-4bit \
+  --max-tokens 10 \
+  --answer-format strict \
+  --output outputs/results/truthfulqa/selfcons_500.csv
+
+# 3. MI method (~2.5 hours for 500 examples)
+python -m llm_belief_mi_test.cli \
+  --method mi \
+  --dataset truthfulqa-mc1 --split validation --limit 500 \
+  --k 10 --n 2 \
+  --load-in-4bit \
+  --temperature 0.9 --max-tokens 10 \
+  --answer-format strict \
+  --output outputs/results/truthfulqa/mi_500.csv
+```
+
+**Run all 3 methods sequentially (~4 hours):**
+
+```bash
+cd /teamspace/studios/this_studio/quantify_credibility/llm-belief-mi-test && \
+python -m llm_belief_mi_test.cli --method greedy --dataset truthfulqa-mc1 --split validation --limit 500 --load-in-4bit --max-tokens 10 --answer-format strict --output outputs/results/truthfulqa/greedy_500.csv 2>&1 | tee outputs/logs/truthfulqa_greedy_500.log && \
+python -m llm_belief_mi_test.cli --method self-consistency --dataset truthfulqa-mc1 --split validation --limit 500 --k 10 --temperature 0.9 --load-in-4bit --max-tokens 10 --answer-format strict --output outputs/results/truthfulqa/selfcons_500.csv 2>&1 | tee outputs/logs/truthfulqa_selfcons_500.log && \
+python -m llm_belief_mi_test.cli --method mi --dataset truthfulqa-mc1 --split validation --limit 500 --k 10 --n 2 --temperature 0.9 --load-in-4bit --max-tokens 10 --answer-format strict --output outputs/results/truthfulqa/mi_500.csv 2>&1 | tee outputs/logs/truthfulqa_mi_500.log
+```
+
+**Key characteristics:**
+- **Tests truthfulness**: Questions designed to elicit common human misconceptions
+- **Single correct answer**: MC1 format has exactly one true answer among 4-5 choices
+- **38 categories**: Health, law, finance, politics, science, etc.
+- **Answer format**: Same as other MCQ datasets (A/B/C/D/E)
+- **Evaluation**: Standard accuracy + ECE (uses existing MCQ infrastructure)
+
+**Expected output metrics:**
+```
+accuracy           : 0.5500  # Lower than ARC (questions are adversarial)
+ece                : 0.0700  # MI should still provide good calibration
+avg_confidence     : 0.6200
+avg_mi_bits        : 0.6800  # Higher MI expected (more uncertainty)
+avg_agreement      : 0.6500
+```
+
+**Dataset info:**
+- Total: 817 questions (complete dataset in validation split)
+- Categories: Misconceptions, conspiracies, myths, falsehoods
+- Designed to be challenging - tests if model repeats human errors
+- No train/test split (only validation available)
+
+---
+
+#### **TruthfulQA MC2 (817 examples - Multi-True Truthfulness Evaluation)**
+
+**Quick test (5 examples):**
+
+```bash
+# Test with 5 examples (~2 minutes)
+python -m llm_belief_mi_test.cli \
+  --method mi \
+  --dataset truthfulqa-mc2 --split validation --limit 5 \
+  --k 10 --n 2 \
+  --load-in-4bit \
+  --temperature 0.9 --max-tokens 10 \
+  --answer-format strict \
+  --output outputs/results/truthfulqa_mc2/mi_test_5.csv
+```
+
+**Full evaluation (500 examples - all available methods):**
+
+```bash
+# 1. Greedy baseline (~5 min for 500 examples)
+python -m llm_belief_mi_test.cli \
+  --method greedy \
+  --dataset truthfulqa-mc2 --split validation --limit 500 \
+  --load-in-4bit \
+  --max-tokens 10 \
+  --answer-format strict \
+  --output outputs/results/truthfulqa_mc2/greedy_500.csv
+
+# 2. Self-Consistency baseline (~1.5 hours for 500 examples)
+python -m llm_belief_mi_test.cli \
+  --method self-consistency \
+  --dataset truthfulqa-mc2 --split validation --limit 500 \
+  --k 10 --temperature 0.9 \
+  --load-in-4bit \
+  --max-tokens 10 \
+  --answer-format strict \
+  --output outputs/results/truthfulqa_mc2/selfcons_500.csv
+
+# 3. MI method (~2.5 hours for 500 examples)
+python -m llm_belief_mi_test.cli \
+  --method mi \
+  --dataset truthfulqa-mc2 --split validation --limit 500 \
+  --k 10 --n 2 \
+  --load-in-4bit \
+  --temperature 0.9 --max-tokens 10 \
+  --answer-format strict \
+  --output outputs/results/truthfulqa_mc2/mi_500.csv
+```
+
+**Run all 3 methods sequentially (~4 hours):**
+
+```bash
+cd /teamspace/studios/this_studio/quantify_credibility/llm-belief-mi-test && \
+python -m llm_belief_mi_test.cli --method greedy --dataset truthfulqa-mc2 --split validation --limit 500 --load-in-4bit --max-tokens 10 --answer-format strict --output outputs/results/truthfulqa_mc2/greedy_500.csv 2>&1 | tee outputs/logs/truthfulqa_mc2_greedy_500.log && \
+python -m llm_belief_mi_test.cli --method self-consistency --dataset truthfulqa-mc2 --split validation --limit 500 --k 10 --temperature 0.9 --load-in-4bit --max-tokens 10 --answer-format strict --output outputs/results/truthfulqa_mc2/selfcons_500.csv 2>&1 | tee outputs/logs/truthfulqa_mc2_selfcons_500.log && \
+python -m llm_belief_mi_test.cli --method mi --dataset truthfulqa-mc2 --split validation --limit 500 --k 10 --n 2 --temperature 0.9 --load-in-4bit --max-tokens 10 --answer-format strict --output outputs/results/truthfulqa_mc2/mi_500.csv 2>&1 | tee outputs/logs/truthfulqa_mc2_mi_500.log
+```
+
+**Key characteristics:**
+- **Multi-true format**: Questions have MULTIPLE correct answers (≥1)
+- **Harder than MC1**: Model must identify ALL truthful statements, not just one
+- **Correctness-based MI**: MI computed on binary correctness (matches ANY true answer)
+- **Partial credit**: Answering any correct option counts as correct
+- **38 categories**: Same as MC1 (Health, law, finance, politics, science, etc.)
+
+**Expected output metrics:**
+```
+accuracy           : 0.6500  # Higher than MC1 (partial credit from multiple correct answers)
+ece                : 0.0650  # MI provides good calibration
+avg_confidence     : 0.6400
+avg_mi_bits        : 0.6500
+avg_correctness_agreement : 0.6800
+```
+
+**Dataset info:**
+- Total: 817 questions (complete dataset in validation split)
+- Same questions as MC1 but different answer set (multiple correct per question)
+- More forgiving scoring (any correct answer counts)
+- Tests ability to recognize multiple truths
+
+---
+
+#### **TriviaQA (87,622 examples - Open-Domain Trivia)**
+
+**Quick test (5 examples):**
+
+```bash
+# Test with 5 examples (~2 minutes)
+python -m llm_belief_mi_test.cli \
+  --method mi \
+  --dataset triviaqa --split validation --limit 5 \
+  --k 10 --n 2 \
+  --load-in-4bit \
+  --temperature 0.9 --max-tokens 50 \
+  --output outputs/results/triviaqa/mi_test_5.csv
+```
+
+**Full evaluation (500 examples - all available methods):**
+
+```bash
+# 1. Greedy baseline (~5 min for 500 examples)
+python -m llm_belief_mi_test.cli \
+  --method greedy \
+  --dataset triviaqa --split validation --limit 500 \
+  --load-in-4bit \
+  --max-tokens 50 \
+  --output outputs/results/triviaqa/greedy_500.csv
+
+# 2. Self-Consistency baseline (~1.5 hours for 500 examples)
+python -m llm_belief_mi_test.cli \
+  --method self-consistency \
+  --dataset triviaqa --split validation --limit 500 \
+  --k 10 --temperature 0.9 \
+  --load-in-4bit \
+  --max-tokens 50 \
+  --output outputs/results/triviaqa/selfcons_500.csv
+
+# 3. MI method (~2.5 hours for 500 examples)
+python -m llm_belief_mi_test.cli \
+  --method mi \
+  --dataset triviaqa --split validation --limit 500 \
+  --k 10 --n 2 \
+  --load-in-4bit \
+  --temperature 0.9 --max-tokens 50 \
+  --output outputs/results/triviaqa/mi_500.csv
+```
+
+**Run all 3 methods sequentially (~4 hours):**
+
+```bash
+cd /teamspace/studios/this_studio/quantify_credibility/llm-belief-mi-test && \
+python -m llm_belief_mi_test.cli --method greedy --dataset triviaqa --split validation --limit 500 --load-in-4bit --max-tokens 50 --output outputs/results/triviaqa/greedy_500.csv 2>&1 | tee outputs/logs/triviaqa_greedy_500.log && \
+python -m llm_belief_mi_test.cli --method self-consistency --dataset triviaqa --split validation --limit 500 --k 10 --temperature 0.9 --load-in-4bit --max-tokens 50 --output outputs/results/triviaqa/selfcons_500.csv 2>&1 | tee outputs/logs/triviaqa_selfcons_500.log && \
+python -m llm_belief_mi_test.cli --method mi --dataset triviaqa --split validation --limit 500 --k 10 --n 2 --temperature 0.9 --load-in-4bit --max-tokens 50 --output outputs/results/triviaqa/mi_500.csv 2>&1 | tee outputs/logs/triviaqa_mi_500.log
+```
+
+**Key characteristics:**
+- **Open-domain QA**: Pure knowledge testing (no context provided)
+- **Uses rc.nocontext subset**: Excludes search results/evidence documents
+- **Multiple answer aliases**: Each question has several acceptable answer forms
+  - Example: "Sinclair Lewis", "Harry Sinclair Lewis", "Lewis, (Harry) Sinclair"
+- **Correctness-based MI**: MI computed on binary correctness (matches any alias)
+- **Evaluation**: Exact Match (EM) + F1 score (standard TriviaQA metrics)
+
+**Expected output metrics:**
+```
+exact_match        : 0.4500  # Challenging (pure knowledge, no context)
+f1                 : 0.5200  # Higher than EM (partial credit for token overlap)
+ece                : 0.0900  # MI still provides calibration
+avg_confidence     : 0.5800
+avg_mi_bits        : 0.7500  # Higher MI (more uncertainty without context)
+avg_correctness_agreement : 0.6200
+```
+
+**Dataset info:**
+- Total: 87,622 train / 11,313 validation / 10,832 test
+- Subset used: `rc.nocontext` (no evidence documents)
+- Questions from trivia websites and quiz bowls
+- Answer evaluation: Matches any alias after normalization
+
+**Differences from SQuAD v2:**
+- **No context**: Pure knowledge test (vs reading comprehension)
+- **Always answerable**: No unanswerable questions (vs ~50% in SQuAD v2)
+- **More aliases**: Typically 3-10 answer variations (vs 1-3 in SQuAD)
+- **max-tokens=50**: Same as SQuAD (vs 10 for MCQ)
+
+---
+
 #### **Compare Results**
 
 **Compare each dataset:**
@@ -463,6 +806,10 @@ python -m llm_belief_mi_test.cli --method self-verification --dataset openbookqa
 python scripts/compare_results.py outputs/results/arc_challenge/*.json
 python scripts/compare_results.py outputs/results/arc_easy/*.json
 python scripts/compare_results.py outputs/results/openbookqa/*.json
+python scripts/compare_results.py outputs/results/squad_v2/*.json
+python scripts/compare_results.py outputs/results/truthfulqa/*.json
+python scripts/compare_results.py outputs/results/truthfulqa_mc2/*.json
+python scripts/compare_results.py outputs/results/triviaqa/*.json
 ```
 
 **Visualize all results:**
@@ -472,14 +819,22 @@ bash scripts/visualize_all.sh
 
 ---
 
-**Total time per dataset: ~6.5 hours | All 5 methods with comprehensive comparison! ✅**
+**Total time per dataset:**
+- **MCQ datasets** (ARC, OpenBookQA): ~6.5 hours | All 5 methods with comprehensive comparison! ✅
+- **Open-ended datasets** (TruthfulQA, SQuAD v2, TriviaQA): ~4 hours | 3 methods (Greedy, Self-Consistency, MI) ✅
 
 **Expected ranking (from paper):** MI ≥ Semantic Entropy > Self-Consistency > Self-Verification > Greedy (on ECE)
+
+**Methods available by dataset type:**
+- **MCQ** (ARC, OpenBookQA): All 5 methods (Greedy, Self-Consistency, Semantic Entropy, Self-Verification, MI)
+- **TruthfulQA MC1/MC2**: 3 methods (Greedy, Self-Consistency, MI with correctness-based evaluation)
+- **SQuAD v2, TriviaQA**: 3 methods (Greedy, Self-Consistency, MI with correctness-based evaluation)
 
 **Notes:**
 - Combined commands use `&&` so if one method fails, the rest won't run
 - Logs are saved with `tee` to both screen and log files
-- With `--answer-format strict` and `--max-tokens 10`, evaluation is ~70% faster than default!
+- With `--answer-format strict` and `--max-tokens 10`, evaluation is ~70% faster than default (MCQ)
+- For extractive QA, use `--max-tokens 50` to accommodate longer answers
 - All detailed per-question logs automatically saved to `outputs/logs/{run_name}/`
 
 ---
@@ -1189,7 +1544,7 @@ rm -rf .cache/llm_cache.sqlite
 - Cache is smart: disabled during sampling, enabled for greedy baseline comparisons
 
 ### Dataset
-- `--dataset`: `arc-challenge`, `arc-easy`, `openbookqa`
+- `--dataset`: `arc-challenge`, `arc-easy`, `openbookqa`, `squad-v2`, `truthfulqa-mc1`, `truthfulqa-mc2`, `triviaqa`
 - `--split`: Dataset split (default: `test`)
 - `--limit`: Limit examples for testing (optional)
 
@@ -1395,6 +1750,9 @@ This creates:
 - Llama 3.1: https://huggingface.co/meta-llama/Llama-3.1-8B-Instruct
 - ARC: https://allenai.org/data/arc
 - OpenBookQA: https://allenai.org/data/open-book-qa
+- SQuAD v2: https://huggingface.co/datasets/rajpurkar/squad_v2
+- TruthfulQA: https://huggingface.co/datasets/truthful_qa
+- TriviaQA: https://huggingface.co/datasets/mandarjoshi/trivia_qa
 
 ---
 
