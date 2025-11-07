@@ -362,8 +362,9 @@ def evaluate_mcq_greedy_baseline(
         # Confidence from logprob (exp of average token logprob)
         confidence = math.exp(logprob) if logprob < 0 else 0.5
         
-        # Check correctness
-        correct = (predicted_choice == ex.answer_key)
+        # Check correctness (MC2-aware: matches any correct answer)
+        from .datasets import is_answer_correct_mc2
+        correct = is_answer_correct_mc2(predicted_choice, ex)
         
         # Create a single chain for consistency with MI results
         chain = [(response, logprob)]
@@ -408,12 +409,21 @@ def evaluate_mcq_greedy_baseline(
                     "agreement": 1.0
                 }
             }
+            
+            # Format gold answer for MC2 (show all correct answers)
+            if ex.metadata and "correct_choices" in ex.metadata:
+                num_correct = ex.metadata.get("num_correct", 1)
+                correct_choices_str = ", ".join(ex.metadata.get("correct_choices", [ex.answer_key]))
+                gold_answer_formatted = f"{correct_choices_str} (MC2: {num_correct} correct answers)"
+            else:
+                gold_answer_formatted = ex.answer_key
+            
             detailed_logger.log_question(
                 question_id=offset + ex_idx,
                 question_text=ex.question,
                 choices=ex.choices,
                 choice_texts=ex.choice_texts,
-                gold_answer=ex.answer_key,
+                gold_answer=gold_answer_formatted,
                 method_data=method_data
             )
     
@@ -531,8 +541,9 @@ def evaluate_mcq_self_consistency(
         confidence = max_count / k
         agreement = confidence  # Same as confidence for this method
         
-        # Check correctness
-        correct = (predicted_choice == ex.answer_key)
+        # Check correctness (MC2-aware: matches any correct answer)
+        from .datasets import is_answer_correct_mc2
+        correct = is_answer_correct_mc2(predicted_choice, ex)
         
         result = EvaluationResult(
             question=ex.question,
@@ -568,12 +579,21 @@ def evaluate_mcq_self_consistency(
                     "agreement": agreement
                 }
             }
+            
+            # Format gold answer for MC2 (show all correct answers)
+            if ex.metadata and "correct_choices" in ex.metadata:
+                num_correct = ex.metadata.get("num_correct", 1)
+                correct_choices_str = ", ".join(ex.metadata.get("correct_choices", [ex.answer_key]))
+                gold_answer_formatted = f"{correct_choices_str} (MC2: {num_correct} correct answers)"
+            else:
+                gold_answer_formatted = ex.answer_key
+            
             detailed_logger.log_question(
                 question_id=offset + ex_idx,
                 question_text=ex.question,
                 choices=ex.choices,
                 choice_texts=ex.choice_texts,
-                gold_answer=ex.answer_key,
+                gold_answer=gold_answer_formatted,
                 method_data=method_data
             )
     

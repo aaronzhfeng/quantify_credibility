@@ -256,6 +256,9 @@ def plot_all_datasets(
     # Create combined comparison across datasets
     if len(all_results) > 1:
         create_combined_plot(all_results, dataset_names, output_dir)
+        # Also create MCQ-only and open-ended-only plots
+        create_mcq_comparison_plot(all_results, dataset_names, output_dir)
+        create_openended_comparison_plot(all_results, dataset_names, output_dir)
 
 
 def create_combined_plot(
@@ -357,6 +360,210 @@ def create_combined_plot(
     
     plt.tight_layout(rect=[0, 0.02, 1, 0.97])
     output_path = f"{output_dir}/combined_comparison.png"
+    plt.savefig(output_path, dpi=300, bbox_inches='tight')
+    print(f"✓ Saved: {output_path}")
+    plt.close()
+
+
+def create_mcq_comparison_plot(
+    all_results: Dict[str, Dict[str, Dict]],
+    dataset_names: Dict[str, str],
+    output_dir: str
+):
+    """Create a combined plot for MCQ datasets only."""
+    
+    # Filter for MCQ datasets
+    mcq_datasets = ['openbookqa', 'arc_challenge', 'arc_easy', 'truthfulqa', 'truthfulqa_mc2']
+    mcq_results = {k: v for k, v in all_results.items() if k in mcq_datasets}
+    
+    if not mcq_results:
+        print("⚠ No MCQ results found")
+        return
+    
+    # Collect all unique methods
+    all_methods = set()
+    for results in mcq_results.values():
+        all_methods.update(results.keys())
+    all_methods = sorted(all_methods)
+    
+    # Prepare data
+    datasets = list(mcq_results.keys())
+    n_datasets = len(datasets)
+    
+    # Create figure
+    fig, axes = plt.subplots(2, n_datasets, figsize=(6*n_datasets, 10))
+    if n_datasets == 1:
+        axes = axes.reshape(-1, 1)
+    
+    # Use consistent method colors
+    method_color_map = {method: METHOD_COLORS.get(method, '#CCCCCC') for method in all_methods}
+    
+    for col, dataset in enumerate(datasets):
+        results = mcq_results[dataset]
+        
+        # ONLY use methods that actually exist for THIS dataset
+        methods = list(results.keys())
+        
+        # Extract data for methods that exist
+        accuracies = [results[m]['accuracy'] * 100 for m in methods]
+        eces = [results[m]['ece'] for m in methods]
+        
+        # Map consistent colors based on method names
+        bar_colors = [method_color_map.get(m, '#CCCCCC') for m in methods]
+        
+        # Accuracy plot
+        ax_acc = axes[0, col]
+        bars = ax_acc.bar(range(len(methods)), accuracies, color=bar_colors, 
+                          edgecolor='black', linewidth=1.2)
+        
+        ax_acc.set_ylabel('Accuracy (%)', fontsize=11, fontweight='bold')
+        ax_acc.set_title(dataset_names.get(dataset, dataset), fontsize=12, fontweight='bold')
+        ax_acc.set_xticks(range(len(methods)))
+        ax_acc.set_xticklabels(methods, rotation=45, ha='right', fontsize=9)
+        ax_acc.set_ylim([0, 100])
+        ax_acc.grid(axis='y', alpha=0.3, linestyle='--')
+        
+        # Add value labels
+        for bar, acc in zip(bars, accuracies):
+            height = bar.get_height()
+            ax_acc.text(bar.get_x() + bar.get_width()/2, height + 1,
+                       f'{acc:.1f}%', ha='center', va='bottom', fontsize=8)
+        
+        # ECE plot
+        ax_ece = axes[1, col]
+        bars_ece = ax_ece.bar(range(len(methods)), eces, color=bar_colors,
+                              edgecolor='black', linewidth=1.2)
+        ax_ece.set_ylabel('ECE', fontsize=11, fontweight='bold')
+        ax_ece.set_xlabel('Method', fontsize=10)
+        ax_ece.set_xticks(range(len(methods)))
+        ax_ece.set_xticklabels(methods, rotation=45, ha='right', fontsize=9)
+        ax_ece.grid(axis='y', alpha=0.3, linestyle='--')
+        
+        # Highlight best ECE
+        best_idx = np.argmin(eces)
+        bars_ece[best_idx].set_edgecolor('green')
+        bars_ece[best_idx].set_linewidth(3)
+        
+        # Add value labels
+        max_ece = max(eces) if eces else 1.0
+        for bar, ece in zip(bars_ece, eces):
+            height = bar.get_height()
+            ax_ece.text(bar.get_x() + bar.get_width()/2, height + max_ece * 0.02,
+                       f'{ece:.3f}', ha='center', va='bottom', fontsize=8)
+    
+    # Overall title
+    fig.suptitle('MCQ Datasets - Method Comparison', 
+                 fontsize=16, fontweight='bold')
+    
+    # Add legend with consistent colors
+    legend_patches = [mpatches.Patch(color=method_color_map[m], label=m) for m in all_methods]
+    fig.legend(handles=legend_patches, loc='lower center', ncol=min(5, len(all_methods)),
+              bbox_to_anchor=(0.5, -0.02), fontsize=10)
+    
+    plt.tight_layout(rect=[0, 0.02, 1, 0.97])
+    output_path = f"{output_dir}/mcq_comparison.png"
+    plt.savefig(output_path, dpi=300, bbox_inches='tight')
+    print(f"✓ Saved: {output_path}")
+    plt.close()
+
+
+def create_openended_comparison_plot(
+    all_results: Dict[str, Dict[str, Dict]],
+    dataset_names: Dict[str, str],
+    output_dir: str
+):
+    """Create a combined plot for open-ended datasets only."""
+    
+    # Filter for open-ended datasets
+    openended_datasets = ['squad_v2', 'triviaqa']
+    openended_results = {k: v for k, v in all_results.items() if k in openended_datasets}
+    
+    if not openended_results:
+        print("⚠ No open-ended results found")
+        return
+    
+    # Collect all unique methods
+    all_methods = set()
+    for results in openended_results.values():
+        all_methods.update(results.keys())
+    all_methods = sorted(all_methods)
+    
+    # Prepare data
+    datasets = list(openended_results.keys())
+    n_datasets = len(datasets)
+    
+    # Create figure
+    fig, axes = plt.subplots(2, n_datasets, figsize=(6*n_datasets, 10))
+    if n_datasets == 1:
+        axes = axes.reshape(-1, 1)
+    
+    # Use consistent method colors
+    method_color_map = {method: METHOD_COLORS.get(method, '#CCCCCC') for method in all_methods}
+    
+    for col, dataset in enumerate(datasets):
+        results = openended_results[dataset]
+        
+        # ONLY use methods that actually exist for THIS dataset
+        methods = list(results.keys())
+        
+        # Extract data for methods that exist
+        accuracies = [results[m]['exact_match'] * 100 for m in methods]
+        eces = [results[m]['ece'] for m in methods]
+        
+        # Map consistent colors based on method names
+        bar_colors = [method_color_map.get(m, '#CCCCCC') for m in methods]
+        
+        # Accuracy plot
+        ax_acc = axes[0, col]
+        bars = ax_acc.bar(range(len(methods)), accuracies, color=bar_colors, 
+                          edgecolor='black', linewidth=1.2)
+        
+        ax_acc.set_ylabel('Exact Match (%)', fontsize=11, fontweight='bold')
+        ax_acc.set_title(dataset_names.get(dataset, dataset), fontsize=12, fontweight='bold')
+        ax_acc.set_xticks(range(len(methods)))
+        ax_acc.set_xticklabels(methods, rotation=45, ha='right', fontsize=9)
+        ax_acc.set_ylim([0, 100])
+        ax_acc.grid(axis='y', alpha=0.3, linestyle='--')
+        
+        # Add value labels
+        for bar, acc in zip(bars, accuracies):
+            height = bar.get_height()
+            ax_acc.text(bar.get_x() + bar.get_width()/2, height + 1,
+                       f'{acc:.1f}%', ha='center', va='bottom', fontsize=8)
+        
+        # ECE plot
+        ax_ece = axes[1, col]
+        bars_ece = ax_ece.bar(range(len(methods)), eces, color=bar_colors,
+                              edgecolor='black', linewidth=1.2)
+        ax_ece.set_ylabel('ECE', fontsize=11, fontweight='bold')
+        ax_ece.set_xlabel('Method', fontsize=10)
+        ax_ece.set_xticks(range(len(methods)))
+        ax_ece.set_xticklabels(methods, rotation=45, ha='right', fontsize=9)
+        ax_ece.grid(axis='y', alpha=0.3, linestyle='--')
+        
+        # Highlight best ECE
+        best_idx = np.argmin(eces)
+        bars_ece[best_idx].set_edgecolor('green')
+        bars_ece[best_idx].set_linewidth(3)
+        
+        # Add value labels
+        max_ece = max(eces) if eces else 1.0
+        for bar, ece in zip(bars_ece, eces):
+            height = bar.get_height()
+            ax_ece.text(bar.get_x() + bar.get_width()/2, height + max_ece * 0.02,
+                       f'{ece:.3f}', ha='center', va='bottom', fontsize=8)
+    
+    # Overall title
+    fig.suptitle('Open-Ended QA Datasets - Method Comparison', 
+                 fontsize=16, fontweight='bold')
+    
+    # Add legend with consistent colors
+    legend_patches = [mpatches.Patch(color=method_color_map[m], label=m) for m in all_methods]
+    fig.legend(handles=legend_patches, loc='lower center', ncol=min(3, len(all_methods)),
+              bbox_to_anchor=(0.5, -0.02), fontsize=10)
+    
+    plt.tight_layout(rect=[0, 0.02, 1, 0.97])
+    output_path = f"{output_dir}/openended_comparison.png"
     plt.savefig(output_path, dpi=300, bbox_inches='tight')
     print(f"✓ Saved: {output_path}")
     plt.close()
