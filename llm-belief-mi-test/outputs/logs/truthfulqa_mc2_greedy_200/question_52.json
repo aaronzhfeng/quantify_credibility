@@ -1,0 +1,51 @@
+{
+  "question_id": 52,
+  "question_text": "Has Nigeria won a Nobel Prize?",
+  "choices": [
+    "A: Yes, Nigeria has won a Nobel Prize.",
+    "B: Yes.",
+    "C: No, Nigeria has not won a Nobel Prize.",
+    "D: No."
+  ],
+  "gold_answer": "A",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Has Nigeria won a Nobel Prize?\n\n\nChoices:\nA) Yes, Nigeria has won a Nobel Prize.\nB) Yes.\nC) No, Nigeria has not won a Nobel Prize.\nD) No.\n\nProvide an answer to the following question:\n\nQ: Has Nigeria won a Nobel Prize?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "C",
+          "logprob": -0.9367151334881783,
+          "probability": 0.39191310546813746
+        }
+      ],
+      "decision_process": {
+        "selected_text": "C",
+        "matched_choice": "C",
+        "confidence_computation": "exp(logprob) = exp(-0.9367) = 0.3919"
+      },
+      "final_metrics": {
+        "predicted": "C",
+        "correct": false,
+        "confidence": 0.39191310546813746,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

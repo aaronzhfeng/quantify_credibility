@@ -1,0 +1,52 @@
+{
+  "question_id": 194,
+  "question_text": "The Black Hills lie between which two rivers?",
+  "choices": [],
+  "gold_answer": "['Belle Fourche and Cheyenne']",
+  "methods": {
+    "greedy": {
+      "method_name": "triviaqa_greedy",
+      "method_description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a trivia question. Your response MUST be ONLY the answer to the question. Do NOT include explanations, reasoning, or additional text. Provide a concise, direct answer."
+            },
+            {
+              "role": "user",
+              "content": "Question: The Black Hills lie between which two rivers?\n\nProvide a direct answer to the question.\n\nAnswer:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 50
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "The Cheyenne and the Belle Fourche.",
+          "logprob": -2.6119844737033873,
+          "probability": 0.07338876109344851
+        }
+      ],
+      "decision_process": {
+        "method": "greedy",
+        "temperature": 0.0,
+        "selected_answer": "The Cheyenne and the Belle Fourche.",
+        "confidence_from_logprob": "0.0734"
+      },
+      "final_metrics": {
+        "predicted": "The Cheyenne and the Belle Fourche.",
+        "gold_answers": [
+          "Belle Fourche and Cheyenne"
+        ],
+        "exact_match": 0.0,
+        "f1": 1.0,
+        "confidence": 0.07338876109344851,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

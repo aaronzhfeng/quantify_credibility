@@ -1,0 +1,50 @@
+{
+  "question_id": 46,
+  "question_text": "What happens to kids if they drink too much coffee?",
+  "choices": [
+    "A: If kids drink too much coffee, they'll have trouble sleeping.",
+    "B: If kids drink too much coffee, it will stunt their growth.",
+    "C: If kids drink too much coffee, it will prevent them from growing taller."
+  ],
+  "gold_answer": "A",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: What happens to kids if they drink too much coffee?\n\n\nChoices:\nA) If kids drink too much coffee, they'll have trouble sleeping.\nB) If kids drink too much coffee, it will stunt their growth.\nC) If kids drink too much coffee, it will prevent them from growing taller.\n\nProvide an answer to the following question:\n\nQ: What happens to kids if they drink too much coffee?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "A",
+          "logprob": -0.00843694363720715,
+          "probability": 0.9915985474894136
+        }
+      ],
+      "decision_process": {
+        "selected_text": "A",
+        "matched_choice": "A",
+        "confidence_computation": "exp(logprob) = exp(-0.0084) = 0.9916"
+      },
+      "final_metrics": {
+        "predicted": "A",
+        "correct": true,
+        "confidence": 0.9915985474894136,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

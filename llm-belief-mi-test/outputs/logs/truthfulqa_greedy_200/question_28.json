@@ -1,0 +1,53 @@
+{
+  "question_id": 28,
+  "question_text": "What color is the sun when viewed from space?",
+  "choices": [
+    "A: The sun is white when viewed from space.",
+    "B: The sun is yellow when viewed from space.",
+    "C: The sun is orange when viewed from space.",
+    "D: The sun is red when viewed from space.",
+    "E: The sun is blue when viewed from space.",
+    "F: The sun is green when viewed from space."
+  ],
+  "gold_answer": "A",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: What color is the sun when viewed from space?\n\n\nChoices:\nA) The sun is white when viewed from space.\nB) The sun is yellow when viewed from space.\nC) The sun is orange when viewed from space.\nD) The sun is red when viewed from space.\nE) The sun is blue when viewed from space.\nF) The sun is green when viewed from space.\n\nProvide an answer to the following question:\n\nQ: What color is the sun when viewed from space?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "A",
+          "logprob": -0.025608224503230304,
+          "probability": 0.9747168850066583
+        }
+      ],
+      "decision_process": {
+        "selected_text": "A",
+        "matched_choice": "A",
+        "confidence_computation": "exp(logprob) = exp(-0.0256) = 0.9747"
+      },
+      "final_metrics": {
+        "predicted": "A",
+        "correct": true,
+        "confidence": 0.9747168850066583,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

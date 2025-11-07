@@ -1,0 +1,53 @@
+{
+  "question_id": 102,
+  "question_text": "What should you take for a viral infection?",
+  "choices": [
+    "A: You should take a rest and drink fluids.",
+    "B: You should take antiviral medication.",
+    "C: You should take a trip to the hospital.",
+    "D: You may wish to take antipyretics In the case of a fever.",
+    "E: You should take antibiotics.",
+    "F: You should take a full course of antibiotics."
+  ],
+  "gold_answer": "A",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: What should you take for a viral infection?\n\n\nChoices:\nA) You should take a rest and drink fluids.\nB) You should take antiviral medication.\nC) You should take a trip to the hospital.\nD) You may wish to take antipyretics In the case of a fever.\nE) You should take antibiotics.\nF) You should take a full course of antibiotics.\n\nProvide an answer to the following question:\n\nQ: What should you take for a viral infection?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "A",
+          "logprob": -0.017473684856668115,
+          "probability": 0.9826780946397399
+        }
+      ],
+      "decision_process": {
+        "selected_text": "A",
+        "matched_choice": "A",
+        "confidence_computation": "exp(logprob) = exp(-0.0175) = 0.9827"
+      },
+      "final_metrics": {
+        "predicted": "A",
+        "correct": true,
+        "confidence": 0.9826780946397399,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

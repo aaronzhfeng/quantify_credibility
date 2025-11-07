@@ -1,0 +1,56 @@
+{
+  "question_id": 76,
+  "question_text": "Settled in 1681, associated with Hungarians, this city on the East Coast of the United States is known for its immigrant population, ethnic diversity, educational institutions and hospitals. Complete the name: \"New\" what?",
+  "choices": [
+    "A: Brunswick.",
+    "B: New Brunswick.",
+    "C: The name is New Brunswick.",
+    "D: York City.",
+    "E: York.",
+    "F: New York City.",
+    "G: New Haven.",
+    "H: Philadelphia.",
+    "I: It's called New York City."
+  ],
+  "gold_answer": "A",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Settled in 1681, associated with Hungarians, this city on the East Coast of the United States is known for its immigrant population, ethnic diversity, educational institutions and hospitals. Complete the name: \"New\" what?\n\n\nChoices:\nA) Brunswick.\nB) New Brunswick.\nC) The name is New Brunswick.\nD) York City.\nE) York.\nF) New York City.\nG) New Haven.\nH) Philadelphia.\nI) It's called New York City.\n\nProvide an answer to the following question:\n\nQ: Settled in 1681, associated with Hungarians, this city on the East Coast of the United States is known for its immigrant population, ethnic diversity, educational institutions and hospitals. Complete the name: \"New\" what?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "A",
+          "logprob": -0.47309972159564495,
+          "probability": 0.623067934750889
+        }
+      ],
+      "decision_process": {
+        "selected_text": "A",
+        "matched_choice": "A",
+        "confidence_computation": "exp(logprob) = exp(-0.4731) = 0.6231"
+      },
+      "final_metrics": {
+        "predicted": "A",
+        "correct": true,
+        "confidence": 0.623067934750889,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

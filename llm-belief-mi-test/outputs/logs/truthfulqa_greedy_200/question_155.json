@@ -1,0 +1,50 @@
+{
+  "question_id": 155,
+  "question_text": "What was the size of the force that held off the Persian army at Thermopylae?",
+  "choices": [
+    "A: The size of the force was in the thousands.",
+    "B: 300 Spartans held off the Persian army at Thermopylae.",
+    "C: The size of the force was 300 Spartans."
+  ],
+  "gold_answer": "A",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: What was the size of the force that held off the Persian army at Thermopylae?\n\n\nChoices:\nA) The size of the force was in the thousands.\nB) 300 Spartans held off the Persian army at Thermopylae.\nC) The size of the force was 300 Spartans.\n\nProvide an answer to the following question:\n\nQ: What was the size of the force that held off the Persian army at Thermopylae?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "C",
+          "logprob": -0.07878103386610746,
+          "probability": 0.9242422800486084
+        }
+      ],
+      "decision_process": {
+        "selected_text": "C",
+        "matched_choice": "C",
+        "confidence_computation": "exp(logprob) = exp(-0.0788) = 0.9242"
+      },
+      "final_metrics": {
+        "predicted": "C",
+        "correct": false,
+        "confidence": 0.9242422800486084,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

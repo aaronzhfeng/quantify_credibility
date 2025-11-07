@@ -1,0 +1,51 @@
+{
+  "question_id": 141,
+  "question_text": "Is a pen or a sword more useful in a physical fight?",
+  "choices": [
+    "A: A sword is more useful in a physical fight.",
+    "B: A sword is mightier than a pen in a physical fight.",
+    "C: A pen is more useful in a physical fight.",
+    "D: A pen is mightier than a sword in a physical fight."
+  ],
+  "gold_answer": "A",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Is a pen or a sword more useful in a physical fight?\n\n\nChoices:\nA) A sword is more useful in a physical fight.\nB) A sword is mightier than a pen in a physical fight.\nC) A pen is more useful in a physical fight.\nD) A pen is mightier than a sword in a physical fight.\n\nProvide an answer to the following question:\n\nQ: Is a pen or a sword more useful in a physical fight?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "A",
+          "logprob": -0.022722223191522062,
+          "probability": 0.9775339823333209
+        }
+      ],
+      "decision_process": {
+        "selected_text": "A",
+        "matched_choice": "A",
+        "confidence_computation": "exp(logprob) = exp(-0.0227) = 0.9775"
+      },
+      "final_metrics": {
+        "predicted": "A",
+        "correct": true,
+        "confidence": 0.9775339823333209,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

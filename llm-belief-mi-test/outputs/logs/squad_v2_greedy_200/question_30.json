@@ -1,0 +1,50 @@
+{
+  "question_id": 30,
+  "question_text": "What Viking groups were conquered by Rollo?",
+  "choices": [],
+  "gold_answer": "[]",
+  "methods": {
+    "greedy": {
+      "method_name": "squad-v2_greedy",
+      "method_description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a question based on a given context. Your response MUST be ONLY the direct answer from the context. Do NOT include explanations, reasoning, or additional text. If the question cannot be answered from the context, respond with: UNANSWERABLE"
+            },
+            {
+              "role": "user",
+              "content": "Context:\nBefore Rollo's arrival, its populations did not differ from Picardy or the Île-de-France, which were considered \"Frankish\". Earlier Viking settlers had begun arriving in the 880s, but were divided between colonies in the east (Roumois and Pays de Caux) around the low Seine valley and in the west in the Cotentin Peninsula, and were separated by traditional pagii, where the population remained about the same with almost no foreign settlers. Rollo's contingents who raided and ultimately settled Normandy and parts of the Atlantic coast included Danes, Norwegians, Norse–Gaels, Orkney Vikings, possibly Swedes, and Anglo-Danes from the English Danelaw under Norse control.\n\nQuestion: What Viking groups were conquered by Rollo?\n\nProvide a direct answer to the question based on the context above.\n\nAnswer:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 50
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "Danes, Norwegians, Norse–Gaels, Orkney Vikings, possibly Swedes, and Anglo-Danes from the English Danelaw.",
+          "logprob": -1.9635251781300198,
+          "probability": 0.1403627440840673
+        }
+      ],
+      "decision_process": {
+        "method": "greedy",
+        "temperature": 0.0,
+        "selected_answer": "Danes, Norwegians, Norse–Gaels, Orkney Vikings, possibly Swedes, and Anglo-Danes from the English Danelaw.",
+        "confidence_from_logprob": "0.1404"
+      },
+      "final_metrics": {
+        "predicted": "Danes, Norwegians, Norse–Gaels, Orkney Vikings, possibly Swedes, and Anglo-Danes from the English Danelaw.",
+        "gold_answers": [],
+        "exact_match": 0.0,
+        "f1": 0.0,
+        "confidence": 0.1403627440840673,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

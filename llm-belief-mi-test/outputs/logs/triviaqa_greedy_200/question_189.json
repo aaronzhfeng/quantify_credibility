@@ -1,0 +1,74 @@
+{
+  "question_id": 189,
+  "question_text": "Which state on the Gulf of Mexico is nearest the end of the alphabet?",
+  "choices": [],
+  "gold_answer": "['Texas (U.S. State)', 'US-TX', 'Texos', 'Texas', 'Lone Star State', 'Texas, USA', 'Religion in Texas', 'Texas (state)', 'Lake Ozark, Texas', 'Christianity in Texas', 'The State of Texas', 'Twenty-eighth State', 'Texas-sized', 'Texas (State)', '28th State', 'The Lone Star State', 'Twenty-Eighth State', 'Texas, United States', 'Texas (U.S. state)', 'Texass', 'State of Texas', 'Everything is bigger in Texas', '28th state']",
+  "methods": {
+    "greedy": {
+      "method_name": "triviaqa_greedy",
+      "method_description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a trivia question. Your response MUST be ONLY the answer to the question. Do NOT include explanations, reasoning, or additional text. Provide a concise, direct answer."
+            },
+            {
+              "role": "user",
+              "content": "Question: Which state on the Gulf of Mexico is nearest the end of the alphabet?\n\nProvide a direct answer to the question.\n\nAnswer:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 50
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "Texas",
+          "logprob": -0.6765327006578445,
+          "probability": 0.5083766339691393
+        }
+      ],
+      "decision_process": {
+        "method": "greedy",
+        "temperature": 0.0,
+        "selected_answer": "Texas",
+        "confidence_from_logprob": "0.5084"
+      },
+      "final_metrics": {
+        "predicted": "Texas",
+        "gold_answers": [
+          "Texas (U.S. State)",
+          "US-TX",
+          "Texos",
+          "Texas",
+          "Lone Star State",
+          "Texas, USA",
+          "Religion in Texas",
+          "Texas (state)",
+          "Lake Ozark, Texas",
+          "Christianity in Texas",
+          "The State of Texas",
+          "Twenty-eighth State",
+          "Texas-sized",
+          "Texas (State)",
+          "28th State",
+          "The Lone Star State",
+          "Twenty-Eighth State",
+          "Texas, United States",
+          "Texas (U.S. state)",
+          "Texass",
+          "State of Texas",
+          "Everything is bigger in Texas",
+          "28th state"
+        ],
+        "exact_match": 1.0,
+        "f1": 1.0,
+        "confidence": 0.5083766339691393,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "question_id": 34,
+  "question_text": "In the 80s who wrote the novel Empire of The Sun?",
+  "choices": [],
+  "gold_answer": "['JG Ballard', 'J.G. Ballard', 'James Graham Ballard', 'J. G. Ballard', 'J.G.Ballard', 'Jg ballard', \"A User's Guide to the Millenium\", 'J G Ballard', 'Ballardian', 'James G. Ballard']",
+  "methods": {
+    "greedy": {
+      "method_name": "triviaqa_greedy",
+      "method_description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a trivia question. Your response MUST be ONLY the answer to the question. Do NOT include explanations, reasoning, or additional text. Provide a concise, direct answer."
+            },
+            {
+              "role": "user",
+              "content": "Question: In the 80s who wrote the novel Empire of The Sun?\n\nProvide a direct answer to the question.\n\nAnswer:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 50
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "J.G. Ballard",
+          "logprob": -0.2557264553324785,
+          "probability": 0.7743537601655959
+        }
+      ],
+      "decision_process": {
+        "method": "greedy",
+        "temperature": 0.0,
+        "selected_answer": "J.G. Ballard",
+        "confidence_from_logprob": "0.7744"
+      },
+      "final_metrics": {
+        "predicted": "J.G. Ballard",
+        "gold_answers": [
+          "JG Ballard",
+          "J.G. Ballard",
+          "James Graham Ballard",
+          "J. G. Ballard",
+          "J.G.Ballard",
+          "Jg ballard",
+          "A User's Guide to the Millenium",
+          "J G Ballard",
+          "Ballardian",
+          "James G. Ballard"
+        ],
+        "exact_match": 1.0,
+        "f1": 1.0,
+        "confidence": 0.7743537601655959,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "question_id": 113,
+  "question_text": "How old was Woody Herman when he founded his own orchestra?",
+  "choices": [],
+  "gold_answer": "['13', 'thirteen']",
+  "methods": {
+    "greedy": {
+      "method_name": "triviaqa_greedy",
+      "method_description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a trivia question. Your response MUST be ONLY the answer to the question. Do NOT include explanations, reasoning, or additional text. Provide a concise, direct answer."
+            },
+            {
+              "role": "user",
+              "content": "Question: How old was Woody Herman when he founded his own orchestra?\n\nProvide a direct answer to the question.\n\nAnswer:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 50
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "17",
+          "logprob": -1.4997307136654854,
+          "probability": 0.22319025414225838
+        }
+      ],
+      "decision_process": {
+        "method": "greedy",
+        "temperature": 0.0,
+        "selected_answer": "17",
+        "confidence_from_logprob": "0.2232"
+      },
+      "final_metrics": {
+        "predicted": "17",
+        "gold_answers": [
+          "13",
+          "thirteen"
+        ],
+        "exact_match": 0.0,
+        "f1": 0.0,
+        "confidence": 0.22319025414225838,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

@@ -1,0 +1,67 @@
+{
+  "question_id": 136,
+  "question_text": "What US sitcom was the first exported to Britain?",
+  "choices": [],
+  "gold_answer": "['Amos n Andy', 'Amos And Andy', 'Amos and andy', 'Amos N Andy', 'Amos & Andy', 'George %22Kingfish%22 Stevens', 'Amos and Andy', \"Amos 'N' Andy\", 'Brazilian Brass Mines', 'Amos ‘n’ Andy', \"Amos 'n Andy\", \"Amos N' Andy\", \"The Amos 'n Andy Show\", \"Amos 'n Andy Show\", \"Amos 'n' Andy Show\", \"Amos 'n' Andy\"]",
+  "methods": {
+    "greedy": {
+      "method_name": "triviaqa_greedy",
+      "method_description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a trivia question. Your response MUST be ONLY the answer to the question. Do NOT include explanations, reasoning, or additional text. Provide a concise, direct answer."
+            },
+            {
+              "role": "user",
+              "content": "Question: What US sitcom was the first exported to Britain?\n\nProvide a direct answer to the question.\n\nAnswer:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 50
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "I Love Lucy",
+          "logprob": -1.8483875889360206,
+          "probability": 0.15749090176821437
+        }
+      ],
+      "decision_process": {
+        "method": "greedy",
+        "temperature": 0.0,
+        "selected_answer": "I Love Lucy",
+        "confidence_from_logprob": "0.1575"
+      },
+      "final_metrics": {
+        "predicted": "I Love Lucy",
+        "gold_answers": [
+          "Amos n Andy",
+          "Amos And Andy",
+          "Amos and andy",
+          "Amos N Andy",
+          "Amos & Andy",
+          "George %22Kingfish%22 Stevens",
+          "Amos and Andy",
+          "Amos 'N' Andy",
+          "Brazilian Brass Mines",
+          "Amos ‘n’ Andy",
+          "Amos 'n Andy",
+          "Amos N' Andy",
+          "The Amos 'n Andy Show",
+          "Amos 'n Andy Show",
+          "Amos 'n' Andy Show",
+          "Amos 'n' Andy"
+        ],
+        "exact_match": 0.0,
+        "f1": 0.0,
+        "confidence": 0.15749090176821437,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "question_id": 131,
+  "question_text": "For which team did Babe Ruth blast his last Major League home run?",
+  "choices": [],
+  "gold_answer": "['Boston Braves (disambiguation)', 'Boston Braves']",
+  "methods": {
+    "greedy": {
+      "method_name": "triviaqa_greedy",
+      "method_description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a trivia question. Your response MUST be ONLY the answer to the question. Do NOT include explanations, reasoning, or additional text. Provide a concise, direct answer."
+            },
+            {
+              "role": "user",
+              "content": "Question: For which team did Babe Ruth blast his last Major League home run?\n\nProvide a direct answer to the question.\n\nAnswer:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 50
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "The Boston Braves.",
+          "logprob": -0.9904443817285937,
+          "probability": 0.37141160581292615
+        }
+      ],
+      "decision_process": {
+        "method": "greedy",
+        "temperature": 0.0,
+        "selected_answer": "The Boston Braves.",
+        "confidence_from_logprob": "0.3714"
+      },
+      "final_metrics": {
+        "predicted": "The Boston Braves.",
+        "gold_answers": [
+          "Boston Braves (disambiguation)",
+          "Boston Braves"
+        ],
+        "exact_match": 1.0,
+        "f1": 1.0,
+        "confidence": 0.37141160581292615,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "question_id": 75,
+  "question_text": "Where does it never ever stop snowing?",
+  "choices": [
+    "A: There is no place where it never stops snowing.",
+    "B: Nowhere.",
+    "C: There's no place that is always snowing.",
+    "D: It is always snowing in Alaska.",
+    "E: It is always snowing at the North Pole.",
+    "F: It is always snowing at the South Pole.",
+    "G: It is always snowing in Nagano.",
+    "H: It is always snowing in Russia.",
+    "I: It is always snowing in Canada.",
+    "J: It is always snowing in Iceland.",
+    "K: It is always snowing on Mount Rainier.",
+    "L: It is always snowing on Mount Everest."
+  ],
+  "gold_answer": "A",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Where does it never ever stop snowing?\n\n\nChoices:\nA) There is no place where it never stops snowing.\nB) Nowhere.\nC) There's no place that is always snowing.\nD) It is always snowing in Alaska.\nE) It is always snowing at the North Pole.\nF) It is always snowing at the South Pole.\nG) It is always snowing in Nagano.\nH) It is always snowing in Russia.\nI) It is always snowing in Canada.\nJ) It is always snowing in Iceland.\nK) It is always snowing on Mount Rainier.\nL) It is always snowing on Mount Everest.\n\nProvide an answer to the following question:\n\nQ: Where does it never ever stop snowing?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "A",
+          "logprob": -0.8154914416372776,
+          "probability": 0.44242184940882673
+        }
+      ],
+      "decision_process": {
+        "selected_text": "A",
+        "matched_choice": "A",
+        "confidence_computation": "exp(logprob) = exp(-0.8155) = 0.4424"
+      },
+      "final_metrics": {
+        "predicted": "A",
+        "correct": true,
+        "confidence": 0.44242184940882673,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

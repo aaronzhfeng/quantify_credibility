@@ -1,0 +1,64 @@
+{
+  "question_id": 41,
+  "question_text": "Where in England was actor Nigel Hawthorne born?",
+  "choices": [],
+  "gold_answer": "['Cofantre', 'Coventry (city)', 'Coventry, Warwickshire', 'Coventry', 'Coventry, UK', 'Coventry, England', 'City of Coventry', 'COVENTRY', 'County Borough of Coventry', 'Coventry (borough)', 'Coventry City council', 'Coventry, United Kingdom', 'Metropolitan Borough of Coventry']",
+  "methods": {
+    "greedy": {
+      "method_name": "triviaqa_greedy",
+      "method_description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a trivia question. Your response MUST be ONLY the answer to the question. Do NOT include explanations, reasoning, or additional text. Provide a concise, direct answer."
+            },
+            {
+              "role": "user",
+              "content": "Question: Where in England was actor Nigel Hawthorne born?\n\nProvide a direct answer to the question.\n\nAnswer:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 50
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "Kettering.",
+          "logprob": -4.0169902495035785,
+          "probability": 0.018007080280628418
+        }
+      ],
+      "decision_process": {
+        "method": "greedy",
+        "temperature": 0.0,
+        "selected_answer": "Kettering.",
+        "confidence_from_logprob": "0.0180"
+      },
+      "final_metrics": {
+        "predicted": "Kettering.",
+        "gold_answers": [
+          "Cofantre",
+          "Coventry (city)",
+          "Coventry, Warwickshire",
+          "Coventry",
+          "Coventry, UK",
+          "Coventry, England",
+          "City of Coventry",
+          "COVENTRY",
+          "County Borough of Coventry",
+          "Coventry (borough)",
+          "Coventry City council",
+          "Coventry, United Kingdom",
+          "Metropolitan Borough of Coventry"
+        ],
+        "exact_match": 0.0,
+        "f1": 0.0,
+        "confidence": 0.018007080280628418,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

@@ -1,0 +1,73 @@
+{
+  "question_id": 90,
+  "question_text": "Beloved in 1999 was whose first movie since The Color Purple in 1985?",
+  "choices": [],
+  "gold_answer": "['Oprah', 'Ophra', 'Oprah Winfrey', 'Oprah Winfery', 'Winfrey, Oprah Gail', 'Oprah Gail Winfrey', 'Opera Winfrey', 'Oprahism', 'Oprah!', 'Vernon Winfrey', 'Oprah G Winfrey', 'Harpo Radio, Inc.', 'Orpah Winfrey', 'Patricia Lee-Lloyd', \"Oprah's Last Chapter\", \"Oprah's Angels\", 'Oprah winfre', 'Harpo Winfrey', 'Oprah G. Winfrey', 'Oprah winfrey', 'Harpo Inc.', 'Oprah Winfry']",
+  "methods": {
+    "greedy": {
+      "method_name": "triviaqa_greedy",
+      "method_description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a trivia question. Your response MUST be ONLY the answer to the question. Do NOT include explanations, reasoning, or additional text. Provide a concise, direct answer."
+            },
+            {
+              "role": "user",
+              "content": "Question: Beloved in 1999 was whose first movie since The Color Purple in 1985?\n\nProvide a direct answer to the question.\n\nAnswer:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 50
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "Halle Berry",
+          "logprob": -1.9462003463413566,
+          "probability": 0.1428156921167309
+        }
+      ],
+      "decision_process": {
+        "method": "greedy",
+        "temperature": 0.0,
+        "selected_answer": "Halle Berry",
+        "confidence_from_logprob": "0.1428"
+      },
+      "final_metrics": {
+        "predicted": "Halle Berry",
+        "gold_answers": [
+          "Oprah",
+          "Ophra",
+          "Oprah Winfrey",
+          "Oprah Winfery",
+          "Winfrey, Oprah Gail",
+          "Oprah Gail Winfrey",
+          "Opera Winfrey",
+          "Oprahism",
+          "Oprah!",
+          "Vernon Winfrey",
+          "Oprah G Winfrey",
+          "Harpo Radio, Inc.",
+          "Orpah Winfrey",
+          "Patricia Lee-Lloyd",
+          "Oprah's Last Chapter",
+          "Oprah's Angels",
+          "Oprah winfre",
+          "Harpo Winfrey",
+          "Oprah G. Winfrey",
+          "Oprah winfrey",
+          "Harpo Inc.",
+          "Oprah Winfry"
+        ],
+        "exact_match": 0.0,
+        "f1": 0.0,
+        "confidence": 0.1428156921167309,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

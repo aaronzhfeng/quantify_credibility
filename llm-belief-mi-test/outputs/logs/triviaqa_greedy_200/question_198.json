@@ -1,0 +1,93 @@
+{
+  "question_id": 198,
+  "question_text": "Which caped crusader operated in Gotham City?",
+  "choices": [],
+  "gold_answer": "['BatMan', 'Batman: War on Crime', 'Bat-man', 'The Bat-Man', 'Fictional history of Batman', 'Bruce Wayne / Batman', 'Bat-Embargo', 'Batmarine', 'History of Batman', 'Brucewayne', 'The Caped Crusader', 'Batman/Bruce Wayne', 'Batman', 'Batsy', 'Bruce Wayne (Batman)', 'Bat man', 'Skills and abilities of Batman', 'Bat-Man', 'The Bat-man', 'New Look Batman', 'Batman (Bruce Wayne)', 'Matches Malone', 'Silver Age Batman', 'Batman (DC Comics)', 'Bruno Diaz', 'The bat-man', 'Batman (comics)', 'Bat Man', 'Bruce Wayne', 'Golden Age Batman', 'Batdude', 'Na na na na na na na na', 'Batman Emblem', 'THE BAT-MAN', 'Skills, abilities, resources and equipment of Batman', 'THE BATMAN', 'Caped Crusader', 'BAT-MAN', 'Batman / Bruce Wayne', 'The batman', 'Batman emblem', 'The Batman Handbook: The Ultimate Training Manual']",
+  "methods": {
+    "greedy": {
+      "method_name": "triviaqa_greedy",
+      "method_description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a trivia question. Your response MUST be ONLY the answer to the question. Do NOT include explanations, reasoning, or additional text. Provide a concise, direct answer."
+            },
+            {
+              "role": "user",
+              "content": "Question: Which caped crusader operated in Gotham City?\n\nProvide a direct answer to the question.\n\nAnswer:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 50
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "Batman",
+          "logprob": -0.229368346510455,
+          "probability": 0.7950356309632384
+        }
+      ],
+      "decision_process": {
+        "method": "greedy",
+        "temperature": 0.0,
+        "selected_answer": "Batman",
+        "confidence_from_logprob": "0.7950"
+      },
+      "final_metrics": {
+        "predicted": "Batman",
+        "gold_answers": [
+          "BatMan",
+          "Batman: War on Crime",
+          "Bat-man",
+          "The Bat-Man",
+          "Fictional history of Batman",
+          "Bruce Wayne / Batman",
+          "Bat-Embargo",
+          "Batmarine",
+          "History of Batman",
+          "Brucewayne",
+          "The Caped Crusader",
+          "Batman/Bruce Wayne",
+          "Batman",
+          "Batsy",
+          "Bruce Wayne (Batman)",
+          "Bat man",
+          "Skills and abilities of Batman",
+          "Bat-Man",
+          "The Bat-man",
+          "New Look Batman",
+          "Batman (Bruce Wayne)",
+          "Matches Malone",
+          "Silver Age Batman",
+          "Batman (DC Comics)",
+          "Bruno Diaz",
+          "The bat-man",
+          "Batman (comics)",
+          "Bat Man",
+          "Bruce Wayne",
+          "Golden Age Batman",
+          "Batdude",
+          "Na na na na na na na na",
+          "Batman Emblem",
+          "THE BAT-MAN",
+          "Skills, abilities, resources and equipment of Batman",
+          "THE BATMAN",
+          "Caped Crusader",
+          "BAT-MAN",
+          "Batman / Bruce Wayne",
+          "The batman",
+          "Batman emblem",
+          "The Batman Handbook: The Ultimate Training Manual"
+        ],
+        "exact_match": 1.0,
+        "f1": 1.0,
+        "confidence": 0.7950356309632384,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

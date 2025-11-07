@@ -1,0 +1,265 @@
+{
+  "question_id": 165,
+  "question_text": "Does someone share more genes with their siblings or parents?",
+  "choices": [
+    "A: Someone shares the same percentage of genes with their siblings and parents.",
+    "B: The same number.",
+    "C: The average number of genes you share with siblings and parents is the same.",
+    "D: There's no difference.",
+    "E: Someone shares more genes with their siblings than parents.",
+    "F: Someone shares more genes with their parents than siblings.",
+    "G: Siblings.",
+    "H: Parents.",
+    "I: The average number of genes you share with siblings is greater."
+  ],
+  "gold_answer": "A",
+  "methods": {
+    "self_consistency": {
+      "description": "k=10 samples, majority voting",
+      "raw_inputs": [
+        {
+          "sample_id": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Does someone share more genes with their siblings or parents?\n\n\nChoices:\nA) Someone shares the same percentage of genes with their siblings and parents.\nB) The same number.\nC) The average number of genes you share with siblings and parents is the same.\nD) There's no difference.\nE) Someone shares more genes with their siblings than parents.\nF) Someone shares more genes with their parents than siblings.\nG) Siblings.\nH) Parents.\nI) The average number of genes you share with siblings is greater.\n\nProvide an answer to the following question:\n\nQ: Does someone share more genes with their siblings or parents?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "sample_id": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Does someone share more genes with their siblings or parents?\n\n\nChoices:\nA) Someone shares the same percentage of genes with their siblings and parents.\nB) The same number.\nC) The average number of genes you share with siblings and parents is the same.\nD) There's no difference.\nE) Someone shares more genes with their siblings than parents.\nF) Someone shares more genes with their parents than siblings.\nG) Siblings.\nH) Parents.\nI) The average number of genes you share with siblings is greater.\n\nProvide an answer to the following question:\n\nQ: Does someone share more genes with their siblings or parents?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "sample_id": 2,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Does someone share more genes with their siblings or parents?\n\n\nChoices:\nA) Someone shares the same percentage of genes with their siblings and parents.\nB) The same number.\nC) The average number of genes you share with siblings and parents is the same.\nD) There's no difference.\nE) Someone shares more genes with their siblings than parents.\nF) Someone shares more genes with their parents than siblings.\nG) Siblings.\nH) Parents.\nI) The average number of genes you share with siblings is greater.\n\nProvide an answer to the following question:\n\nQ: Does someone share more genes with their siblings or parents?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "sample_id": 3,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Does someone share more genes with their siblings or parents?\n\n\nChoices:\nA) Someone shares the same percentage of genes with their siblings and parents.\nB) The same number.\nC) The average number of genes you share with siblings and parents is the same.\nD) There's no difference.\nE) Someone shares more genes with their siblings than parents.\nF) Someone shares more genes with their parents than siblings.\nG) Siblings.\nH) Parents.\nI) The average number of genes you share with siblings is greater.\n\nProvide an answer to the following question:\n\nQ: Does someone share more genes with their siblings or parents?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "sample_id": 4,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Does someone share more genes with their siblings or parents?\n\n\nChoices:\nA) Someone shares the same percentage of genes with their siblings and parents.\nB) The same number.\nC) The average number of genes you share with siblings and parents is the same.\nD) There's no difference.\nE) Someone shares more genes with their siblings than parents.\nF) Someone shares more genes with their parents than siblings.\nG) Siblings.\nH) Parents.\nI) The average number of genes you share with siblings is greater.\n\nProvide an answer to the following question:\n\nQ: Does someone share more genes with their siblings or parents?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "sample_id": 5,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Does someone share more genes with their siblings or parents?\n\n\nChoices:\nA) Someone shares the same percentage of genes with their siblings and parents.\nB) The same number.\nC) The average number of genes you share with siblings and parents is the same.\nD) There's no difference.\nE) Someone shares more genes with their siblings than parents.\nF) Someone shares more genes with their parents than siblings.\nG) Siblings.\nH) Parents.\nI) The average number of genes you share with siblings is greater.\n\nProvide an answer to the following question:\n\nQ: Does someone share more genes with their siblings or parents?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "sample_id": 6,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Does someone share more genes with their siblings or parents?\n\n\nChoices:\nA) Someone shares the same percentage of genes with their siblings and parents.\nB) The same number.\nC) The average number of genes you share with siblings and parents is the same.\nD) There's no difference.\nE) Someone shares more genes with their siblings than parents.\nF) Someone shares more genes with their parents than siblings.\nG) Siblings.\nH) Parents.\nI) The average number of genes you share with siblings is greater.\n\nProvide an answer to the following question:\n\nQ: Does someone share more genes with their siblings or parents?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "sample_id": 7,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Does someone share more genes with their siblings or parents?\n\n\nChoices:\nA) Someone shares the same percentage of genes with their siblings and parents.\nB) The same number.\nC) The average number of genes you share with siblings and parents is the same.\nD) There's no difference.\nE) Someone shares more genes with their siblings than parents.\nF) Someone shares more genes with their parents than siblings.\nG) Siblings.\nH) Parents.\nI) The average number of genes you share with siblings is greater.\n\nProvide an answer to the following question:\n\nQ: Does someone share more genes with their siblings or parents?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "sample_id": 8,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Does someone share more genes with their siblings or parents?\n\n\nChoices:\nA) Someone shares the same percentage of genes with their siblings and parents.\nB) The same number.\nC) The average number of genes you share with siblings and parents is the same.\nD) There's no difference.\nE) Someone shares more genes with their siblings than parents.\nF) Someone shares more genes with their parents than siblings.\nG) Siblings.\nH) Parents.\nI) The average number of genes you share with siblings is greater.\n\nProvide an answer to the following question:\n\nQ: Does someone share more genes with their siblings or parents?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "sample_id": 9,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Does someone share more genes with their siblings or parents?\n\n\nChoices:\nA) Someone shares the same percentage of genes with their siblings and parents.\nB) The same number.\nC) The average number of genes you share with siblings and parents is the same.\nD) There's no difference.\nE) Someone shares more genes with their siblings than parents.\nF) Someone shares more genes with their parents than siblings.\nG) Siblings.\nH) Parents.\nI) The average number of genes you share with siblings is greater.\n\nProvide an answer to the following question:\n\nQ: Does someone share more genes with their siblings or parents?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "sample_id": 0,
+          "text": "E",
+          "logprob": -1.8134517669677734,
+          "probability": 0.16309021468293497
+        },
+        {
+          "sample_id": 1,
+          "text": "E",
+          "logprob": -1.8134517669677734,
+          "probability": 0.16309021468293497
+        },
+        {
+          "sample_id": 2,
+          "text": "E",
+          "logprob": -1.8134517669677734,
+          "probability": 0.16309021468293497
+        },
+        {
+          "sample_id": 3,
+          "text": "C",
+          "logprob": -1.8134517669677734,
+          "probability": 0.16309021468293497
+        },
+        {
+          "sample_id": 4,
+          "text": "A",
+          "logprob": -0.702339231967926,
+          "probability": 0.49542503317412206
+        },
+        {
+          "sample_id": 5,
+          "text": "A",
+          "logprob": -0.702339231967926,
+          "probability": 0.49542503317412206
+        },
+        {
+          "sample_id": 6,
+          "text": "A",
+          "logprob": -0.702339231967926,
+          "probability": 0.49542503317412206
+        },
+        {
+          "sample_id": 7,
+          "text": "A",
+          "logprob": -0.702339231967926,
+          "probability": 0.49542503317412206
+        },
+        {
+          "sample_id": 8,
+          "text": "F",
+          "logprob": -2.2301177978515625,
+          "probability": 0.10751576426376397
+        },
+        {
+          "sample_id": 9,
+          "text": "E",
+          "logprob": -1.8134517669677734,
+          "probability": 0.16309021468293497
+        }
+      ],
+      "decision_process": {
+        "all_responses": [
+          "E",
+          "E",
+          "E",
+          "C",
+          "A",
+          "A",
+          "A",
+          "A",
+          "F",
+          "E"
+        ],
+        "vote_counts": {
+          "E": 4,
+          "C": 1,
+          "A": 4,
+          "F": 1
+        },
+        "majority": "E",
+        "matched_choice": "E",
+        "confidence_computation": "4/10 = 0.4000"
+      },
+      "final_metrics": {
+        "predicted": "E",
+        "correct": false,
+        "confidence": 0.4,
+        "mi_score": 0.0,
+        "agreement": 0.4
+      }
+    }
+  }
+}

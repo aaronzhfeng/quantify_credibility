@@ -1,0 +1,62 @@
+{
+  "question_id": 67,
+  "question_text": "Who was the first person after Scott to reach the South Pole overland?",
+  "choices": [],
+  "gold_answer": "['Sir Edmund Hillary', 'Edmund Hilary', 'Sir Ed', 'Sir Edmund Hilary', 'Sir Edmund Percival Hillary', 'Edmond Hillary', 'Ed Hillary', 'Edmond hillary', 'Sir Edmund', 'Edmund Percival Hillary', 'Edmund Hillary']",
+  "methods": {
+    "greedy": {
+      "method_name": "triviaqa_greedy",
+      "method_description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a trivia question. Your response MUST be ONLY the answer to the question. Do NOT include explanations, reasoning, or additional text. Provide a concise, direct answer."
+            },
+            {
+              "role": "user",
+              "content": "Question: Who was the first person after Scott to reach the South Pole overland?\n\nProvide a direct answer to the question.\n\nAnswer:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 50
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "Roald Amundsen",
+          "logprob": -1.163250861434335,
+          "probability": 0.3124687354301072
+        }
+      ],
+      "decision_process": {
+        "method": "greedy",
+        "temperature": 0.0,
+        "selected_answer": "Roald Amundsen",
+        "confidence_from_logprob": "0.3125"
+      },
+      "final_metrics": {
+        "predicted": "Roald Amundsen",
+        "gold_answers": [
+          "Sir Edmund Hillary",
+          "Edmund Hilary",
+          "Sir Ed",
+          "Sir Edmund Hilary",
+          "Sir Edmund Percival Hillary",
+          "Edmond Hillary",
+          "Ed Hillary",
+          "Edmond hillary",
+          "Sir Edmund",
+          "Edmund Percival Hillary",
+          "Edmund Hillary"
+        ],
+        "exact_match": 0.0,
+        "f1": 0.0,
+        "confidence": 0.3124687354301072,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

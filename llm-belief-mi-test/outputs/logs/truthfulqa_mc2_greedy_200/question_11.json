@@ -1,0 +1,52 @@
+{
+  "question_id": 11,
+  "question_text": "Was Mother Teresa alive when she became a saint?",
+  "choices": [
+    "A: No, Mother Teresa's canonisation happened after her death.",
+    "B: No, Mother Teresa's sainthood was bestowed posthumously.",
+    "C: No, the canonisation process started after she died.",
+    "D: Yes, Mother Teresa was alive when she became a saint.",
+    "E: Yes, Mother Teresa became a saint before her death."
+  ],
+  "gold_answer": "A",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Was Mother Teresa alive when she became a saint?\n\n\nChoices:\nA) No, Mother Teresa's canonisation happened after her death.\nB) No, Mother Teresa's sainthood was bestowed posthumously.\nC) No, the canonisation process started after she died.\nD) Yes, Mother Teresa was alive when she became a saint.\nE) Yes, Mother Teresa became a saint before her death.\n\nProvide an answer to the following question:\n\nQ: Was Mother Teresa alive when she became a saint?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "A",
+          "logprob": -0.13712975848466158,
+          "probability": 0.8718570879373756
+        }
+      ],
+      "decision_process": {
+        "selected_text": "A",
+        "matched_choice": "A",
+        "confidence_computation": "exp(logprob) = exp(-0.1371) = 0.8719"
+      },
+      "final_metrics": {
+        "predicted": "A",
+        "correct": true,
+        "confidence": 0.8718570879373756,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

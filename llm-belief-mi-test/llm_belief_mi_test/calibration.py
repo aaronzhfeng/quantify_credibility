@@ -305,6 +305,7 @@ def evaluate_mcq_greedy_baseline(
     max_tokens: int = 64,
     answer_format: str = "default",
     detailed_logger=None,
+    offset: int = 0,
     verbose: bool = True
 ) -> Tuple[Dict[str, float], List[EvaluationResult]]:
     """
@@ -408,7 +409,7 @@ def evaluate_mcq_greedy_baseline(
                 }
             }
             detailed_logger.log_question(
-                question_id=ex_idx,
+                question_id=offset + ex_idx,
                 question_text=ex.question,
                 choices=ex.choices,
                 choice_texts=ex.choice_texts,
@@ -445,6 +446,7 @@ def evaluate_mcq_self_consistency(
     max_tokens: int = 64,
     answer_format: str = "default",
     detailed_logger=None,
+    offset: int = 0,
     verbose: bool = True
 ) -> Tuple[Dict[str, float], List[EvaluationResult]]:
     """
@@ -567,7 +569,7 @@ def evaluate_mcq_self_consistency(
                 }
             }
             detailed_logger.log_question(
-                question_id=ex_idx,
+                question_id=offset + ex_idx,
                 question_text=ex.question,
                 choices=ex.choices,
                 choice_texts=ex.choice_texts,
@@ -684,6 +686,7 @@ def evaluate_mcq_semantic_entropy(
     similarity_threshold: float = 0.25,
     answer_format: str = "default",
     detailed_logger=None,
+    offset: int = 0,
     verbose: bool = True
 ) -> Tuple[Dict[str, float], List[EvaluationResult]]:
     """
@@ -839,6 +842,7 @@ def evaluate_mcq_self_verification(
     max_tokens: int = 64,
     answer_format: str = "default",
     detailed_logger=None,
+    offset: int = 0,
     verbose: bool = True
 ) -> Tuple[Dict[str, float], List[EvaluationResult]]:
     """
@@ -998,6 +1002,7 @@ def evaluate_mcq_with_mi(
     max_tokens: int = 64,
     mi_method: str = "listing",
     confidence_method: str = "inverse",
+    offset: int = 0,
     answer_format: str = "default",
     detailed_logger=None,
     verbose: bool = True
@@ -1163,7 +1168,7 @@ def evaluate_mcq_with_mi(
                 }
             }
             detailed_logger.log_question(
-                question_id=ex_idx,
+                question_id=offset + ex_idx,
                 question_text=ex.question,
                 choices=ex.choices,
                 choice_texts=ex.choice_texts,
@@ -1201,6 +1206,7 @@ def evaluate_extractive_qa_greedy(
     prompt_composer=None,  # Optional: compose_prompt_extractive or compose_prompt_trivia
     dataset_name: str = "Extractive QA",
     detailed_logger=None,
+    offset: int = 0,
     verbose: bool = True
 ) -> Tuple[Dict[str, float], List]:
     """
@@ -1289,30 +1295,26 @@ def evaluate_extractive_qa_greedy(
         
         # Log detailed trace if logger provided
         if detailed_logger:
-            detailed_logger.log_question(
-                question_id=ex_idx,
-                question_text=ex.question,
-                choices=[],
-                gold_answer=str(ex.answers),
-                method_name=f"{dataset_name.lower()}_greedy",
-                method_description="Single greedy decode (temperature=0)",
-                raw_inputs=[{
+            method_data = {
+                "method_name": f"{dataset_name.lower()}_greedy",
+                "method_description": "Single greedy decode (temperature=0)",
+                "raw_inputs": [{
                     "prompt": messages,
                     "temperature": 0.0,
                     "max_tokens": max_tokens
                 }],
-                raw_outputs=[{
+                "raw_outputs": [{
                     "text": response,
                     "logprob": logprob,
                     "probability": confidence
                 }],
-                decision_process={
+                "decision_process": {
                     "method": "greedy",
                     "temperature": 0.0,
                     "selected_answer": response,
                     "confidence_from_logprob": f"{confidence:.4f}"
                 },
-                final_metrics={
+                "final_metrics": {
                     "predicted": response,
                     "gold_answers": ex.answers,
                     "exact_match": exact_match,
@@ -1321,6 +1323,15 @@ def evaluate_extractive_qa_greedy(
                     "mi_score": 0.0,
                     "agreement": 1.0
                 }
+            }
+            
+            detailed_logger.log_question(
+                question_id=offset + ex_idx,
+                question_text=ex.question,
+                choices=[],
+                choice_texts=[],
+                gold_answer=str(ex.answers),
+                method_data=method_data
             )
     
     # Compute aggregate metrics
@@ -1354,6 +1365,7 @@ def evaluate_extractive_qa_self_consistency(
     prompt_composer=None,  # Optional: compose_prompt_extractive or compose_prompt_trivia
     dataset_name: str = "Extractive QA",
     detailed_logger=None,
+    offset: int = 0,
     verbose: bool = True
 ) -> Tuple[Dict[str, float], List]:
     """
@@ -1474,21 +1486,17 @@ def evaluate_extractive_qa_self_consistency(
         
         # Log detailed trace if logger provided
         if detailed_logger:
-            detailed_logger.log_question(
-                question_id=ex_idx,
-                question_text=ex.question,
-                choices=[],
-                gold_answer=str(ex.answers),
-                method_name=f"{dataset_name.lower()}_self_consistency",
-                method_description=f"k={k} samples with majority voting (temperature={temperature})",
-                raw_inputs=[s["prompt"] for s in sample_data],
-                raw_outputs=[{
+            method_data = {
+                "method_name": f"{dataset_name.lower()}_self_consistency",
+                "method_description": f"k={k} samples with majority voting (temperature={temperature})",
+                "raw_inputs": [s["prompt"] for s in sample_data],
+                "raw_outputs": [{
                     "sample_id": s["sample_id"],
                     "text": s["response"],
                     "logprob": s["logprob"],
                     "probability": s["probability"]
                 } for s in sample_data],
-                decision_process={
+                "decision_process": {
                     "method": "self-consistency",
                     "k": k,
                     "temperature": temperature,
@@ -1497,7 +1505,7 @@ def evaluate_extractive_qa_self_consistency(
                     "majority_count": max_count,
                     "confidence": f"{confidence:.4f} ({max_count}/{k} votes)"
                 },
-                final_metrics={
+                "final_metrics": {
                     "predicted": predicted_answer,
                     "gold_answers": ex.answers,
                     "exact_match": exact_match,
@@ -1506,6 +1514,15 @@ def evaluate_extractive_qa_self_consistency(
                     "mi_score": 0.0,
                     "agreement": float(agreement)
                 }
+            }
+            
+            detailed_logger.log_question(
+                question_id=offset + ex_idx,
+                question_text=ex.question,
+                choices=[],
+                choice_texts=[],
+                gold_answer=str(ex.answers),
+                method_data=method_data
             )
     
     # Compute aggregate metrics
@@ -1539,6 +1556,7 @@ def evaluate_extractive_qa_with_mi(
     max_tokens: int = 50,
     mi_method: str = "listing",
     confidence_method: str = "inverse",
+    offset: int = 0,
     detailed_logger=None,
     verbose: bool = True
 ) -> Tuple[Dict[str, float], List]:
@@ -1705,7 +1723,7 @@ def evaluate_extractive_qa_with_mi(
                 }
             }
             detailed_logger.log_question(
-                question_id=ex_idx,
+                question_id=offset + ex_idx,
                 question_text=ex.question,
                 choices=[],  # No choices for extractive QA
                 choice_texts=[],
@@ -1744,6 +1762,7 @@ def evaluate_triviaqa_with_mi(
     max_tokens: int = 50,
     mi_method: str = "listing",
     confidence_method: str = "inverse",
+    offset: int = 0,
     detailed_logger=None,
     verbose: bool = True
 ) -> Tuple[Dict[str, float], List]:
@@ -1889,16 +1908,12 @@ def evaluate_triviaqa_with_mi(
                     
                     previous_answers.append(response)
             
-            detailed_logger.log_question(
-                question_id=ex_idx,
-                question_text=ex.question,
-                choices=[],
-                gold_answer=str(ex.answers),
-                method_name="triviaqa_correctness_mi",
-                method_description=f"k={k} chains of length n={n}, correctness-based MI (TriviaQA)",
-                raw_inputs=raw_inputs,
-                raw_outputs=raw_outputs,
-                decision_process={
+            method_data = {
+                "method_name": "triviaqa_correctness_mi",
+                "method_description": f"k={k} chains of length n={n}, correctness-based MI (TriviaQA)",
+                "raw_inputs": raw_inputs,
+                "raw_outputs": raw_outputs,
+                "decision_process": {
                     "num_chains": k,
                     "chain_length": n,
                     "total_inferences": k * n,
@@ -1909,7 +1924,7 @@ def evaluate_triviaqa_with_mi(
                     "confidence_computation": f"MI-based ({confidence_method}): {confidence:.4f}",
                     "correctness_agreement": f"{agreement*100:.2f}% ({int(agreement*k)}/{k} chains agree on correctness)"
                 },
-                final_metrics={
+                "final_metrics": {
                     "predicted": predicted_answer,
                     "gold_answers": ex.answers,
                     "exact_match": exact_match,
@@ -1918,6 +1933,15 @@ def evaluate_triviaqa_with_mi(
                     "mi_score": float(mi_bits),
                     "agreement": float(agreement)
                 }
+            }
+            
+            detailed_logger.log_question(
+                question_id=offset + ex_idx,
+                question_text=ex.question,
+                choices=[],
+                choice_texts=[],
+                gold_answer=str(ex.answers),
+                method_data=method_data
             )
     
     # Compute aggregate metrics
@@ -1951,6 +1975,7 @@ def evaluate_truthfulqa_with_correctness_mi(
     max_tokens: int = 64,
     mi_method: str = "listing",
     confidence_method: str = "inverse",
+    offset: int = 0,
     answer_format: str = "default",
     detailed_logger=None,
     verbose: bool = True
@@ -2114,16 +2139,12 @@ def evaluate_truthfulqa_with_correctness_mi(
                     previous_answers.append(response)
             
             # Log the question with correctness-based MI metadata
-            detailed_logger.log_question(
-                question_id=ex_idx,
-                question_text=ex.question,
-                choices=[f"{c}: {t}" for c, t in zip(ex.choices, ex.choice_texts)],
-                gold_answer=ex.answer_key,
-                method_name="truthfulqa_correctness_mi",
-                method_description=f"k={k} chains of length n={n}, correctness-based MI estimation",
-                raw_inputs=raw_inputs,
-                raw_outputs=raw_outputs,
-                decision_process={
+            method_data = {
+                "method_name": "truthfulqa_correctness_mi",
+                "method_description": f"k={k} chains of length n={n}, correctness-based MI estimation",
+                "raw_inputs": raw_inputs,
+                "raw_outputs": raw_outputs,
+                "decision_process": {
                     "num_chains": k,
                     "chain_length": n,
                     "total_inferences": k * n,
@@ -2135,13 +2156,22 @@ def evaluate_truthfulqa_with_correctness_mi(
                     "confidence_computation": f"MI-based ({confidence_method}): {confidence:.4f}",
                     "correctness_agreement": f"{agreement*100:.2f}% ({int(agreement*k)}/{k} chains agree on correctness)"
                 },
-                final_metrics={
+                "final_metrics": {
                     "predicted": predicted_choice,
                     "correct": correct,
                     "confidence": float(confidence),
                     "mi_score": float(mi_bits),
                     "agreement": float(agreement)
                 }
+            }
+            
+            detailed_logger.log_question(
+                question_id=offset + ex_idx,
+                question_text=ex.question,
+                choices=ex.choices,
+                choice_texts=ex.choice_texts,
+                gold_answer=ex.answer_key,
+                method_data=method_data
             )
     
     # Compute overall metrics
@@ -2173,6 +2203,7 @@ def evaluate_truthfulqa_mc2_with_correctness_mi(
     max_tokens: int = 64,
     mi_method: str = "listing",
     confidence_method: str = "inverse",
+    offset: int = 0,
     answer_format: str = "default",
     detailed_logger=None,
     verbose: bool = True
@@ -2338,16 +2369,12 @@ def evaluate_truthfulqa_mc2_with_correctness_mi(
             correct_choices_str = ", ".join(ex.metadata.get("correct_choices", [ex.answer_key])) if ex.metadata else ex.answer_key
             
             # Log the question with MC2 correctness-based MI metadata
-            detailed_logger.log_question(
-                question_id=ex_idx,
-                question_text=ex.question,
-                choices=[f"{c}: {t}" for c, t in zip(ex.choices, ex.choice_texts)],
-                gold_answer=f"{correct_choices_str} (MC2: {num_correct} correct answers)",
-                method_name="truthfulqa_mc2_correctness_mi",
-                method_description=f"k={k} chains of length n={n}, MC2 correctness-based MI (multi-true)",
-                raw_inputs=raw_inputs,
-                raw_outputs=raw_outputs,
-                decision_process={
+            method_data = {
+                "method_name": "truthfulqa_mc2_correctness_mi",
+                "method_description": f"k={k} chains of length n={n}, MC2 correctness-based MI (multi-true)",
+                "raw_inputs": raw_inputs,
+                "raw_outputs": raw_outputs,
+                "decision_process": {
                     "num_chains": k,
                     "chain_length": n,
                     "total_inferences": k * n,
@@ -2360,13 +2387,22 @@ def evaluate_truthfulqa_mc2_with_correctness_mi(
                     "correctness_agreement": f"{agreement*100:.2f}% ({int(agreement*k)}/{k} chains agree on correctness)",
                     "mc2_info": f"{num_correct} correct answers: {correct_choices_str}"
                 },
-                final_metrics={
+                "final_metrics": {
                     "predicted": predicted_choice,
                     "correct": correct,
                     "confidence": float(confidence),
                     "mi_score": float(mi_bits),
                     "agreement": float(agreement)
                 }
+            }
+            
+            detailed_logger.log_question(
+                question_id=offset + ex_idx,
+                question_text=ex.question,
+                choices=ex.choices,
+                choice_texts=ex.choice_texts,
+                gold_answer=f"{correct_choices_str} (MC2: {num_correct} correct answers)",
+                method_data=method_data
             )
     
     # Compute overall metrics

@@ -1,0 +1,59 @@
+{
+  "question_id": 144,
+  "question_text": "Which grand slam did Pete Sampras not win in the 20th century?",
+  "choices": [],
+  "gold_answer": "['Français', 'Francaise', 'The French', 'Frenchness', 'French', 'Francais', 'French (disambiguation)', 'Frrench']",
+  "methods": {
+    "greedy": {
+      "method_name": "triviaqa_greedy",
+      "method_description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a trivia question. Your response MUST be ONLY the answer to the question. Do NOT include explanations, reasoning, or additional text. Provide a concise, direct answer."
+            },
+            {
+              "role": "user",
+              "content": "Question: Which grand slam did Pete Sampras not win in the 20th century?\n\nProvide a direct answer to the question.\n\nAnswer:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 50
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "The French Open.",
+          "logprob": -1.7505997047064739,
+          "probability": 0.17366976164097847
+        }
+      ],
+      "decision_process": {
+        "method": "greedy",
+        "temperature": 0.0,
+        "selected_answer": "The French Open.",
+        "confidence_from_logprob": "0.1737"
+      },
+      "final_metrics": {
+        "predicted": "The French Open.",
+        "gold_answers": [
+          "Français",
+          "Francaise",
+          "The French",
+          "Frenchness",
+          "French",
+          "Francais",
+          "French (disambiguation)",
+          "Frrench"
+        ],
+        "exact_match": 0.0,
+        "f1": 0.6666666666666666,
+        "confidence": 0.17366976164097847,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

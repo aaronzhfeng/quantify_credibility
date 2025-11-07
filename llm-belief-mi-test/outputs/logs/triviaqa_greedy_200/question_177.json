@@ -1,0 +1,56 @@
+{
+  "question_id": 177,
+  "question_text": "What was the name of Michael Jackson's second wife?",
+  "choices": [],
+  "gold_answer": "['Deborah Jeanne Rowe', 'Deborah Rowe Jackson', 'Debbie Jackson', 'Deborah Rowe', 'Debbie Rowe']",
+  "methods": {
+    "greedy": {
+      "method_name": "triviaqa_greedy",
+      "method_description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a trivia question. Your response MUST be ONLY the answer to the question. Do NOT include explanations, reasoning, or additional text. Provide a concise, direct answer."
+            },
+            {
+              "role": "user",
+              "content": "Question: What was the name of Michael Jackson's second wife?\n\nProvide a direct answer to the question.\n\nAnswer:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 50
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "Lisa Marie Presley",
+          "logprob": -0.2663992679645162,
+          "probability": 0.7661331739934378
+        }
+      ],
+      "decision_process": {
+        "method": "greedy",
+        "temperature": 0.0,
+        "selected_answer": "Lisa Marie Presley",
+        "confidence_from_logprob": "0.7661"
+      },
+      "final_metrics": {
+        "predicted": "Lisa Marie Presley",
+        "gold_answers": [
+          "Deborah Jeanne Rowe",
+          "Deborah Rowe Jackson",
+          "Debbie Jackson",
+          "Deborah Rowe",
+          "Debbie Rowe"
+        ],
+        "exact_match": 0.0,
+        "f1": 0.0,
+        "confidence": 0.7661331739934378,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "question_id": 14,
+  "question_text": "Of which African country is Niamey the capital?",
+  "choices": [],
+  "gold_answer": "['Niger Republic', 'Nigerois', 'Republic Of Niger', 'Republic of Niger', 'The Republic of Niger', 'Nigerien', 'Niger (country)', 'République du Niger', 'Republique du Niger', 'ISO 3166-1:NE', 'Niger', 'NG-NI']",
+  "methods": {
+    "greedy": {
+      "method_name": "triviaqa_greedy",
+      "method_description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a trivia question. Your response MUST be ONLY the answer to the question. Do NOT include explanations, reasoning, or additional text. Provide a concise, direct answer."
+            },
+            {
+              "role": "user",
+              "content": "Question: Of which African country is Niamey the capital?\n\nProvide a direct answer to the question.\n\nAnswer:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 50
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "Niger.",
+          "logprob": -0.300010075366572,
+          "probability": 0.7408107567041825
+        }
+      ],
+      "decision_process": {
+        "method": "greedy",
+        "temperature": 0.0,
+        "selected_answer": "Niger.",
+        "confidence_from_logprob": "0.7408"
+      },
+      "final_metrics": {
+        "predicted": "Niger.",
+        "gold_answers": [
+          "Niger Republic",
+          "Nigerois",
+          "Republic Of Niger",
+          "Republic of Niger",
+          "The Republic of Niger",
+          "Nigerien",
+          "Niger (country)",
+          "République du Niger",
+          "Republique du Niger",
+          "ISO 3166-1:NE",
+          "Niger",
+          "NG-NI"
+        ],
+        "exact_match": 1.0,
+        "f1": 1.0,
+        "confidence": 0.7408107567041825,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

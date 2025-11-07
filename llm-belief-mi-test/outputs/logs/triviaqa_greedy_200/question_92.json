@@ -1,0 +1,66 @@
+{
+  "question_id": 92,
+  "question_text": "Which sitcom star appeared on the big screening The Object of My Affection?",
+  "choices": [],
+  "gold_answer": "['Jennifer Anniston', 'Jen Aniston', 'Jennifer Aniston', 'Jennifer aniston', 'Jennifer Pitt', 'Jennifer anniston', 'Jenifer Anniston', 'Jenifer Aniston', 'Pumas (film)', 'Jennifer Anistion', 'Jennifer Joanna Aniston', 'Jennifer Joanna Anastassakis', 'Aniston, Jennifer', 'Counter Clockwise (film)', 'Jennifer anastassakis']",
+  "methods": {
+    "greedy": {
+      "method_name": "triviaqa_greedy",
+      "method_description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a trivia question. Your response MUST be ONLY the answer to the question. Do NOT include explanations, reasoning, or additional text. Provide a concise, direct answer."
+            },
+            {
+              "role": "user",
+              "content": "Question: Which sitcom star appeared on the big screening The Object of My Affection?\n\nProvide a direct answer to the question.\n\nAnswer:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 50
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "Jennifer Aniston",
+          "logprob": -0.5205976230245142,
+          "probability": 0.5941653549485161
+        }
+      ],
+      "decision_process": {
+        "method": "greedy",
+        "temperature": 0.0,
+        "selected_answer": "Jennifer Aniston",
+        "confidence_from_logprob": "0.5942"
+      },
+      "final_metrics": {
+        "predicted": "Jennifer Aniston",
+        "gold_answers": [
+          "Jennifer Anniston",
+          "Jen Aniston",
+          "Jennifer Aniston",
+          "Jennifer aniston",
+          "Jennifer Pitt",
+          "Jennifer anniston",
+          "Jenifer Anniston",
+          "Jenifer Aniston",
+          "Pumas (film)",
+          "Jennifer Anistion",
+          "Jennifer Joanna Aniston",
+          "Jennifer Joanna Anastassakis",
+          "Aniston, Jennifer",
+          "Counter Clockwise (film)",
+          "Jennifer anastassakis"
+        ],
+        "exact_match": 1.0,
+        "f1": 1.0,
+        "confidence": 0.5941653549485161,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

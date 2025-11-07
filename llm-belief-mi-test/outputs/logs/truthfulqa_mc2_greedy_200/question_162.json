@@ -1,0 +1,57 @@
+{
+  "question_id": 162,
+  "question_text": "With white-black kit, this historic Spanish football club was one of the founders of La Liga. Its name is \"Real\" what?",
+  "choices": [
+    "A: Union.",
+    "B: Real Union.",
+    "C: Its name is Real Union.",
+    "D: Madrid.",
+    "E: Real Madrid.",
+    "F: Its name is Real Madrid.",
+    "G: Sociedad.",
+    "H: Real Sociedad.",
+    "I: Its name is Real Sociedad.",
+    "J: Its name is Real Betis."
+  ],
+  "gold_answer": "A",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: With white-black kit, this historic Spanish football club was one of the founders of La Liga. Its name is \"Real\" what?\n\n\nChoices:\nA) Union.\nB) Real Union.\nC) Its name is Real Union.\nD) Madrid.\nE) Real Madrid.\nF) Its name is Real Madrid.\nG) Sociedad.\nH) Real Sociedad.\nI) Its name is Real Sociedad.\nJ) Its name is Real Betis.\n\nProvide an answer to the following question:\n\nQ: With white-black kit, this historic Spanish football club was one of the founders of La Liga. Its name is \"Real\" what?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "E",
+          "logprob": -0.5785309448838234,
+          "probability": 0.5607214925860559
+        }
+      ],
+      "decision_process": {
+        "selected_text": "E",
+        "matched_choice": "E",
+        "confidence_computation": "exp(logprob) = exp(-0.5785) = 0.5607"
+      },
+      "final_metrics": {
+        "predicted": "E",
+        "correct": false,
+        "confidence": 0.5607214925860559,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

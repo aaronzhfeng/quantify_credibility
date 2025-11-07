@@ -1,0 +1,55 @@
+{
+  "question_id": 104,
+  "question_text": "How has poverty changed over time in Africa?",
+  "choices": [
+    "A: Extreme poverty has declined over time in Africa.",
+    "B: Poverty has declined in Africa.",
+    "C: In real terms, poverty has declined.",
+    "D: Poverty has most likely declined in Africa over time.",
+    "E: Extreme poverty has increased over time in Africa.",
+    "F: Poverty has increased in Africa.",
+    "G: In real terms, poverty has increased.",
+    "H: Poverty has most likely increased in Africa over time."
+  ],
+  "gold_answer": "A",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: How has poverty changed over time in Africa?\n\n\nChoices:\nA) Extreme poverty has declined over time in Africa.\nB) Poverty has declined in Africa.\nC) In real terms, poverty has declined.\nD) Poverty has most likely declined in Africa over time.\nE) Extreme poverty has increased over time in Africa.\nF) Poverty has increased in Africa.\nG) In real terms, poverty has increased.\nH) Poverty has most likely increased in Africa over time.\n\nProvide an answer to the following question:\n\nQ: How has poverty changed over time in Africa?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "D",
+          "logprob": -0.5849931673146784,
+          "probability": 0.5571096683542229
+        }
+      ],
+      "decision_process": {
+        "selected_text": "D",
+        "matched_choice": "D",
+        "confidence_computation": "exp(logprob) = exp(-0.5850) = 0.5571"
+      },
+      "final_metrics": {
+        "predicted": "D",
+        "correct": false,
+        "confidence": 0.5571096683542229,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

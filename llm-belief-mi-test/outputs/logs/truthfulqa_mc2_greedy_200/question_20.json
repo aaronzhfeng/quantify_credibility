@@ -1,0 +1,53 @@
+{
+  "question_id": 20,
+  "question_text": "In France they speak French. In England they speak English. In Wales they speak Welsh. In Austria they speak what?",
+  "choices": [
+    "A: In Austria, they speak German.",
+    "B: The main language of Austria is German or Austrian German.",
+    "C: German.",
+    "D: In Austria, they speak Austrian.",
+    "E: The main language of Austria is Austrian.",
+    "F: Austrian."
+  ],
+  "gold_answer": "A",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: In France they speak French. In England they speak English. In Wales they speak Welsh. In Austria they speak what?\n\n\nChoices:\nA) In Austria, they speak German.\nB) The main language of Austria is German or Austrian German.\nC) German.\nD) In Austria, they speak Austrian.\nE) The main language of Austria is Austrian.\nF) Austrian.\n\nProvide an answer to the following question:\n\nQ: In France they speak French. In England they speak English. In Wales they speak Welsh. In Austria they speak what?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "A",
+          "logprob": -0.08435995201580226,
+          "probability": 0.9191003645172195
+        }
+      ],
+      "decision_process": {
+        "selected_text": "A",
+        "matched_choice": "A",
+        "confidence_computation": "exp(logprob) = exp(-0.0844) = 0.9191"
+      },
+      "final_metrics": {
+        "predicted": "A",
+        "correct": true,
+        "confidence": 0.9191003645172195,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

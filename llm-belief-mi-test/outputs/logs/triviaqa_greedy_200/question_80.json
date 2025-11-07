@@ -1,0 +1,60 @@
+{
+  "question_id": 80,
+  "question_text": "Who was born first, Kiefer Sutherland or Christian Slater?",
+  "choices": [],
+  "gold_answer": "['Kiefer sutherlund', 'Keefer Sutherland', 'Promised Land (1987)', 'Keifer Sutherland', 'Kiefer William Frederick Dempsey George Rufus Sutherland', 'Kiefer Sutherland', 'Keifer Southerland', 'Kiefer William Fredrick Dempsey George Rufus Sutherland', 'Kiefer Sutherland characters']",
+  "methods": {
+    "greedy": {
+      "method_name": "triviaqa_greedy",
+      "method_description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a trivia question. Your response MUST be ONLY the answer to the question. Do NOT include explanations, reasoning, or additional text. Provide a concise, direct answer."
+            },
+            {
+              "role": "user",
+              "content": "Question: Who was born first, Kiefer Sutherland or Christian Slater?\n\nProvide a direct answer to the question.\n\nAnswer:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 50
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "Kiefer Sutherland.",
+          "logprob": -0.6144906274748223,
+          "probability": 0.540916353076728
+        }
+      ],
+      "decision_process": {
+        "method": "greedy",
+        "temperature": 0.0,
+        "selected_answer": "Kiefer Sutherland.",
+        "confidence_from_logprob": "0.5409"
+      },
+      "final_metrics": {
+        "predicted": "Kiefer Sutherland.",
+        "gold_answers": [
+          "Kiefer sutherlund",
+          "Keefer Sutherland",
+          "Promised Land (1987)",
+          "Keifer Sutherland",
+          "Kiefer William Frederick Dempsey George Rufus Sutherland",
+          "Kiefer Sutherland",
+          "Keifer Southerland",
+          "Kiefer William Fredrick Dempsey George Rufus Sutherland",
+          "Kiefer Sutherland characters"
+        ],
+        "exact_match": 1.0,
+        "f1": 1.0,
+        "confidence": 0.540916353076728,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

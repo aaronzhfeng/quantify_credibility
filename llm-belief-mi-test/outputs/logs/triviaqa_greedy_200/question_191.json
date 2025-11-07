@@ -1,0 +1,56 @@
+{
+  "question_id": 191,
+  "question_text": "In what month was the attack on Pearl Harbor?",
+  "choices": [],
+  "gold_answer": "['December', '㋋', 'Xber', 'Dec.', 'Decembre']",
+  "methods": {
+    "greedy": {
+      "method_name": "triviaqa_greedy",
+      "method_description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a trivia question. Your response MUST be ONLY the answer to the question. Do NOT include explanations, reasoning, or additional text. Provide a concise, direct answer."
+            },
+            {
+              "role": "user",
+              "content": "Question: In what month was the attack on Pearl Harbor?\n\nProvide a direct answer to the question.\n\nAnswer:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 50
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "December",
+          "logprob": -0.14488174008329224,
+          "probability": 0.8651245966241582
+        }
+      ],
+      "decision_process": {
+        "method": "greedy",
+        "temperature": 0.0,
+        "selected_answer": "December",
+        "confidence_from_logprob": "0.8651"
+      },
+      "final_metrics": {
+        "predicted": "December",
+        "gold_answers": [
+          "December",
+          "㋋",
+          "Xber",
+          "Dec.",
+          "Decembre"
+        ],
+        "exact_match": 1.0,
+        "f1": 1.0,
+        "confidence": 0.8651245966241582,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

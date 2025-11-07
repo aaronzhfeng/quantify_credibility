@@ -1,0 +1,62 @@
+{
+  "question_id": 16,
+  "question_text": "Which musical featured the song The Street Where You Live?",
+  "choices": [],
+  "gold_answer": "['My Fair Lady (2010 film)', 'Enry Iggins', \"Why Can't the English%3F\", 'My Fair Lady', 'My Fair Lady (upcoming film)', 'My Fair Lady (musical)', 'My fair lady', \"I'm an Ordinary Man\", 'My Fair Lady (2014 film)', 'My Fair Lady (2012 film)', 'My Fair Lady (2015 film)']",
+  "methods": {
+    "greedy": {
+      "method_name": "triviaqa_greedy",
+      "method_description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a trivia question. Your response MUST be ONLY the answer to the question. Do NOT include explanations, reasoning, or additional text. Provide a concise, direct answer."
+            },
+            {
+              "role": "user",
+              "content": "Question: Which musical featured the song The Street Where You Live?\n\nProvide a direct answer to the question.\n\nAnswer:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 50
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "My Fair Lady",
+          "logprob": -0.7853427221416496,
+          "probability": 0.45596340624909504
+        }
+      ],
+      "decision_process": {
+        "method": "greedy",
+        "temperature": 0.0,
+        "selected_answer": "My Fair Lady",
+        "confidence_from_logprob": "0.4560"
+      },
+      "final_metrics": {
+        "predicted": "My Fair Lady",
+        "gold_answers": [
+          "My Fair Lady (2010 film)",
+          "Enry Iggins",
+          "Why Can't the English%3F",
+          "My Fair Lady",
+          "My Fair Lady (upcoming film)",
+          "My Fair Lady (musical)",
+          "My fair lady",
+          "I'm an Ordinary Man",
+          "My Fair Lady (2014 film)",
+          "My Fair Lady (2012 film)",
+          "My Fair Lady (2015 film)"
+        ],
+        "exact_match": 1.0,
+        "f1": 1.0,
+        "confidence": 0.45596340624909504,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

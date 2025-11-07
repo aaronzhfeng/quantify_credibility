@@ -1,0 +1,68 @@
+{
+  "question_id": 74,
+  "question_text": "Who or what was Gentle Ben in the 60s TV series?",
+  "choices": [],
+  "gold_answer": "['Ursine', 'Ursoidea', 'Honey pig', 'Bears', 'Arctos', 'Ursidae', 'BEAR', 'Mating bears', 'Bear cub', 'Reproductive behavior of bears', 'Ursoid', 'Cub (bear)', 'Bear', '🐻', 'Bear (zoology)', 'Sexual behavior of bears', 'Bear hibernation']",
+  "methods": {
+    "greedy": {
+      "method_name": "triviaqa_greedy",
+      "method_description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a trivia question. Your response MUST be ONLY the answer to the question. Do NOT include explanations, reasoning, or additional text. Provide a concise, direct answer."
+            },
+            {
+              "role": "user",
+              "content": "Question: Who or what was Gentle Ben in the 60s TV series?\n\nProvide a direct answer to the question.\n\nAnswer:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 50
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "Gentle Ben was a monkey.",
+          "logprob": -1.831861424678209,
+          "probability": 0.16011524773767388
+        }
+      ],
+      "decision_process": {
+        "method": "greedy",
+        "temperature": 0.0,
+        "selected_answer": "Gentle Ben was a monkey.",
+        "confidence_from_logprob": "0.1601"
+      },
+      "final_metrics": {
+        "predicted": "Gentle Ben was a monkey.",
+        "gold_answers": [
+          "Ursine",
+          "Ursoidea",
+          "Honey pig",
+          "Bears",
+          "Arctos",
+          "Ursidae",
+          "BEAR",
+          "Mating bears",
+          "Bear cub",
+          "Reproductive behavior of bears",
+          "Ursoid",
+          "Cub (bear)",
+          "Bear",
+          "🐻",
+          "Bear (zoology)",
+          "Sexual behavior of bears",
+          "Bear hibernation"
+        ],
+        "exact_match": 0.0,
+        "f1": 0.0,
+        "confidence": 0.16011524773767388,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "question_id": 84,
+  "question_text": "Della Street was whose secretary?",
+  "choices": [],
+  "gold_answer": "['Perry Mason (film)', 'Perry mason', 'Perry Mason: The Case of the Defiant Daughter', 'Perry Mason']",
+  "methods": {
+    "greedy": {
+      "method_name": "triviaqa_greedy",
+      "method_description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a trivia question. Your response MUST be ONLY the answer to the question. Do NOT include explanations, reasoning, or additional text. Provide a concise, direct answer."
+            },
+            {
+              "role": "user",
+              "content": "Question: Della Street was whose secretary?\n\nProvide a direct answer to the question.\n\nAnswer:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 50
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "Perry Mason.",
+          "logprob": -0.7025614367794333,
+          "probability": 0.4953149595779039
+        }
+      ],
+      "decision_process": {
+        "method": "greedy",
+        "temperature": 0.0,
+        "selected_answer": "Perry Mason.",
+        "confidence_from_logprob": "0.4953"
+      },
+      "final_metrics": {
+        "predicted": "Perry Mason.",
+        "gold_answers": [
+          "Perry Mason (film)",
+          "Perry mason",
+          "Perry Mason: The Case of the Defiant Daughter",
+          "Perry Mason"
+        ],
+        "exact_match": 1.0,
+        "f1": 1.0,
+        "confidence": 0.4953149595779039,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

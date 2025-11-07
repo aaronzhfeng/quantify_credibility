@@ -1,0 +1,87 @@
+{
+  "question_id": 162,
+  "question_text": "Aung San Suu Kyi is a controversial leader in which country?",
+  "choices": [],
+  "gold_answer": "['Economic sanctions against Myanmar', 'Economic sanctions against Burma', 'ISO 3166-1:MM', 'Birman Empire', 'Etymology of Burma', 'Republic of The Union of Myanmar', 'Pyidaunzu Thanmăda Myăma Nainngandaw', 'Mianmar', 'Borders of Burma', 'Myanmar (Burma)', 'Mayanmar', 'မြန်မာပြည်', 'Pyi-daung-zu Myan-ma Naing-ngan-daw', 'Myammar', 'Burma/Myanmar', 'Burmese Republic', 'Burma-Myanmar', 'Burma (Myanmar)', 'Union of Myanmar', 'ပြည်ထောင်စု သမ္မတ မြန်မာနိုင်ငံတော်', 'Sanctions against Burma', 'Myanmar (formerly Burma)', 'Birma', 'ပြည်ထောင်စု သမ္မတ မြန်မာနိုင်ငံတော', 'Birmanie', 'Myanmar/(Burma)', 'Burma', 'Myanmar/Burma', 'Myanmar', 'Myanmer', 'Socialist Republic of the Union of Burma', 'Republic of the Union of Myanmar', 'Eastern Burma', 'Union of burma', 'Myanma', 'Birmania']",
+  "methods": {
+    "greedy": {
+      "method_name": "triviaqa_greedy",
+      "method_description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a trivia question. Your response MUST be ONLY the answer to the question. Do NOT include explanations, reasoning, or additional text. Provide a concise, direct answer."
+            },
+            {
+              "role": "user",
+              "content": "Question: Aung San Suu Kyi is a controversial leader in which country?\n\nProvide a direct answer to the question.\n\nAnswer:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 50
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "Myanmar (Burma)",
+          "logprob": -0.45715147335806705,
+          "probability": 0.633084437373923
+        }
+      ],
+      "decision_process": {
+        "method": "greedy",
+        "temperature": 0.0,
+        "selected_answer": "Myanmar (Burma)",
+        "confidence_from_logprob": "0.6331"
+      },
+      "final_metrics": {
+        "predicted": "Myanmar (Burma)",
+        "gold_answers": [
+          "Economic sanctions against Myanmar",
+          "Economic sanctions against Burma",
+          "ISO 3166-1:MM",
+          "Birman Empire",
+          "Etymology of Burma",
+          "Republic of The Union of Myanmar",
+          "Pyidaunzu Thanmăda Myăma Nainngandaw",
+          "Mianmar",
+          "Borders of Burma",
+          "Myanmar (Burma)",
+          "Mayanmar",
+          "မြန်မာပြည်",
+          "Pyi-daung-zu Myan-ma Naing-ngan-daw",
+          "Myammar",
+          "Burma/Myanmar",
+          "Burmese Republic",
+          "Burma-Myanmar",
+          "Burma (Myanmar)",
+          "Union of Myanmar",
+          "ပြည်ထောင်စု သမ္မတ မြန်မာနိုင်ငံတော်",
+          "Sanctions against Burma",
+          "Myanmar (formerly Burma)",
+          "Birma",
+          "ပြည်ထောင်စု သမ္မတ မြန်မာနိုင်ငံတော",
+          "Birmanie",
+          "Myanmar/(Burma)",
+          "Burma",
+          "Myanmar/Burma",
+          "Myanmar",
+          "Myanmer",
+          "Socialist Republic of the Union of Burma",
+          "Republic of the Union of Myanmar",
+          "Eastern Burma",
+          "Union of burma",
+          "Myanma",
+          "Birmania"
+        ],
+        "exact_match": 1.0,
+        "f1": 1.0,
+        "confidence": 0.633084437373923,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "question_id": 119,
+  "question_text": "In the late 60s Owen Finlay MacLaren pioneered what useful item for parents of small chldren?",
+  "choices": [],
+  "gold_answer": "['Baby Buggy', 'Baby buggy']",
+  "methods": {
+    "greedy": {
+      "method_name": "triviaqa_greedy",
+      "method_description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a trivia question. Your response MUST be ONLY the answer to the question. Do NOT include explanations, reasoning, or additional text. Provide a concise, direct answer."
+            },
+            {
+              "role": "user",
+              "content": "Question: In the late 60s Owen Finlay MacLaren pioneered what useful item for parents of small chldren?\n\nProvide a direct answer to the question.\n\nAnswer:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 50
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "Baby food pouches.",
+          "logprob": -4.643243733487907,
+          "probability": 0.009626421383650633
+        }
+      ],
+      "decision_process": {
+        "method": "greedy",
+        "temperature": 0.0,
+        "selected_answer": "Baby food pouches.",
+        "confidence_from_logprob": "0.0096"
+      },
+      "final_metrics": {
+        "predicted": "Baby food pouches.",
+        "gold_answers": [
+          "Baby Buggy",
+          "Baby buggy"
+        ],
+        "exact_match": 0.0,
+        "f1": 0.4,
+        "confidence": 0.009626421383650633,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

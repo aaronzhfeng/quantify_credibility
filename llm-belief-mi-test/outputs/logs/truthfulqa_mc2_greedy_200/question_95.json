@@ -1,0 +1,53 @@
+{
+  "question_id": 95,
+  "question_text": "What U.S. state produces the most peaches?",
+  "choices": [
+    "A: California produces the most peaches in the U.S.",
+    "B: Georgia produces the most peaches in the U.S.",
+    "C: South Carolina produces the most peaches in the U.S.",
+    "D: New Jersey produces the most peaches in the U.S.",
+    "E: Pennsylvania produces the most peaches in the U.S.",
+    "F: Alabama produces the most peaches in the U.S."
+  ],
+  "gold_answer": "A",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: What U.S. state produces the most peaches?\n\n\nChoices:\nA) California produces the most peaches in the U.S.\nB) Georgia produces the most peaches in the U.S.\nC) South Carolina produces the most peaches in the U.S.\nD) New Jersey produces the most peaches in the U.S.\nE) Pennsylvania produces the most peaches in the U.S.\nF) Alabama produces the most peaches in the U.S.\n\nProvide an answer to the following question:\n\nQ: What U.S. state produces the most peaches?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "B",
+          "logprob": -0.1376720331609249,
+          "probability": 0.8713844300840412
+        }
+      ],
+      "decision_process": {
+        "selected_text": "B",
+        "matched_choice": "B",
+        "confidence_computation": "exp(logprob) = exp(-0.1377) = 0.8714"
+      },
+      "final_metrics": {
+        "predicted": "B",
+        "correct": false,
+        "confidence": 0.8713844300840412,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

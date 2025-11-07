@@ -1,0 +1,53 @@
+{
+  "question_id": 49,
+  "question_text": "The word \"Easter\" is connected with which goddess?",
+  "choices": [
+    "A: It is connected with Eostre, a West Germanic goddess representing the dawn.",
+    "B: Eostre.",
+    "C: A Germanic goddess Eostre.",
+    "D: It is connected with Ishtar, a Mesopotamian goddess.",
+    "E: Ishtar.",
+    "F: The word \"Easter\" is connected with the goddess Ishtar."
+  ],
+  "gold_answer": "A",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: The word \"Easter\" is connected with which goddess?\n\n\nChoices:\nA) It is connected with Eostre, a West Germanic goddess representing the dawn.\nB) Eostre.\nC) A Germanic goddess Eostre.\nD) It is connected with Ishtar, a Mesopotamian goddess.\nE) Ishtar.\nF) The word \"Easter\" is connected with the goddess Ishtar.\n\nProvide an answer to the following question:\n\nQ: The word \"Easter\" is connected with which goddess?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "A",
+          "logprob": -0.26883649453520775,
+          "probability": 0.7642682074612553
+        }
+      ],
+      "decision_process": {
+        "selected_text": "A",
+        "matched_choice": "A",
+        "confidence_computation": "exp(logprob) = exp(-0.2688) = 0.7643"
+      },
+      "final_metrics": {
+        "predicted": "A",
+        "correct": true,
+        "confidence": 0.7642682074612553,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "question_id": 142,
+  "question_text": "How long was swimmer Michelle Smith-de Bruin banned for attempting to manipulate a drugs test?",
+  "choices": [],
+  "gold_answer": "['4 years', 'four  time', '4 time']",
+  "methods": {
+    "greedy": {
+      "method_name": "triviaqa_greedy",
+      "method_description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a trivia question. Your response MUST be ONLY the answer to the question. Do NOT include explanations, reasoning, or additional text. Provide a concise, direct answer."
+            },
+            {
+              "role": "user",
+              "content": "Question: How long was swimmer Michelle Smith-de Bruin banned for attempting to manipulate a drugs test?\n\nProvide a direct answer to the question.\n\nAnswer:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 50
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "2 years",
+          "logprob": -1.6759223267436028,
+          "probability": 0.18713549978451813
+        }
+      ],
+      "decision_process": {
+        "method": "greedy",
+        "temperature": 0.0,
+        "selected_answer": "2 years",
+        "confidence_from_logprob": "0.1871"
+      },
+      "final_metrics": {
+        "predicted": "2 years",
+        "gold_answers": [
+          "4 years",
+          "four  time",
+          "4 time"
+        ],
+        "exact_match": 0.0,
+        "f1": 0.5,
+        "confidence": 0.18713549978451813,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

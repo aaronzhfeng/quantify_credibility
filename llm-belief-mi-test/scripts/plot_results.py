@@ -72,7 +72,7 @@ def plot_comparison(
     Plot accuracy and ECE comparison for multiple methods.
     
     Args:
-        results: {method_name: {accuracy: float, ece: float, ...}}
+        results: {method_name: {accuracy/exact_match: float, ece: float, ...}}
         title: Plot title
         output_path: Where to save the plot
     """
@@ -81,7 +81,17 @@ def plot_comparison(
         return
     
     methods = list(results.keys())
-    accuracies = [results[m]['accuracy'] * 100 for m in methods]  # Convert to percentage
+    
+    # Handle both MCQ (accuracy) and open-ended (exact_match) datasets
+    accuracies = []
+    for m in methods:
+        if 'accuracy' in results[m]:
+            accuracies.append(results[m]['accuracy'] * 100)
+        elif 'exact_match' in results[m]:
+            accuracies.append(results[m]['exact_match'] * 100)
+        else:
+            accuracies.append(0.0)
+    
     eces = [results[m]['ece'] for m in methods]
     
     # Sort by ECE (ascending - lower is better)
@@ -96,10 +106,13 @@ def plot_comparison(
     # Color scheme
     colors = plt.cm.Set3(np.linspace(0, 1, len(methods)))
     
-    # Plot 1: Accuracy
+    # Plot 1: Accuracy/EM
+    # Determine label based on dataset type
+    metric_label = 'Exact Match (%)' if 'exact_match' in results[methods[0]] else 'Accuracy (%)'
+    
     bars1 = ax1.barh(methods, accuracies, color=colors, edgecolor='black', linewidth=1.2)
-    ax1.set_xlabel('Accuracy (%)', fontsize=12, fontweight='bold')
-    ax1.set_title('Accuracy Comparison', fontsize=14, fontweight='bold')
+    ax1.set_xlabel(metric_label, fontsize=12, fontweight='bold')
+    ax1.set_title(metric_label.replace(' (%)', ' Comparison'), fontsize=14, fontweight='bold')
     ax1.set_xlim([0, 100])
     ax1.grid(axis='x', alpha=0.3, linestyle='--')
     
@@ -152,18 +165,30 @@ def plot_all_datasets(
     dataset_names = {
         'openbookqa': 'OpenBookQA',
         'arc_challenge': 'ARC-Challenge',
-        'arc_easy': 'ARC-Easy'
+        'arc_easy': 'ARC-Easy',
+        'truthfulqa': 'TruthfulQA MC1',
+        'truthfulqa_mc2': 'TruthfulQA MC2',
+        'squad_v2': 'SQuAD v2',
+        'triviaqa': 'TriviaQA'
     }
     
     all_results = {}
     
     for dataset in datasets:
-        pattern = f"outputs/results/{dataset}/{dataset}_*_500.json"
+        # Try new folder structure first, fall back to old flat structure
+        pattern = f"outputs/results/{dataset}/*.json"
         results = collect_results(pattern)
+        
+        if not results:
+            # Try old flat structure
+            pattern = f"outputs/results/{dataset}_*.json"
+            results = collect_results(pattern)
         
         if results:
             all_results[dataset] = results
-            title = f"{dataset_names.get(dataset, dataset)} - Method Comparison (500 examples)"
+            # Determine example count from first result
+            n_examples = list(results.values())[0].get('n_samples', '?')
+            title = f"{dataset_names.get(dataset, dataset)} - Method Comparison ({int(n_examples)} examples)"
             output_path = f"{output_dir}/{dataset}_comparison.png"
             plot_comparison(results, title, output_path)
         else:
@@ -205,15 +230,28 @@ def create_combined_plot(
         
         # Get methods present in this dataset
         methods = [m for m in all_methods if m in results]
-        accuracies = [results[m]['accuracy'] * 100 for m in methods]
+        
+        # Handle both MCQ (accuracy) and open-ended (exact_match)
+        accuracies = []
+        for m in methods:
+            if 'accuracy' in results[m]:
+                accuracies.append(results[m]['accuracy'] * 100)
+            elif 'exact_match' in results[m]:
+                accuracies.append(results[m]['exact_match'] * 100)
+            else:
+                accuracies.append(0.0)
+        
         eces = [results[m]['ece'] for m in methods]
         bar_colors = [method_colors[m] for m in methods]
         
-        # Accuracy plot
+        # Accuracy/EM plot
         ax_acc = axes[0, col]
         bars = ax_acc.bar(range(len(methods)), accuracies, color=bar_colors, 
                           edgecolor='black', linewidth=1.2)
-        ax_acc.set_ylabel('Accuracy (%)', fontsize=11, fontweight='bold')
+        
+        # Determine label based on metrics available
+        metric_label = 'Exact Match (%)' if 'exact_match' in results[methods[0]] else 'Accuracy (%)'
+        ax_acc.set_ylabel(metric_label, fontsize=11, fontweight='bold')
         ax_acc.set_title(dataset_names.get(dataset, dataset), fontsize=12, fontweight='bold')
         ax_acc.set_xticks(range(len(methods)))
         ax_acc.set_xticklabels(methods, rotation=45, ha='right', fontsize=9)
@@ -284,7 +322,9 @@ def plot_custom_files(files: List[str], output_dir: str = "outputs/plots"):
 
 def main():
     parser = argparse.ArgumentParser(description="Plot evaluation results")
-    parser.add_argument("--dataset", type=str, choices=['all', 'openbookqa', 'arc_challenge', 'arc_easy'],
+    parser.add_argument("--dataset", type=str, 
+                       choices=['all', 'openbookqa', 'arc_challenge', 'arc_easy', 
+                               'truthfulqa', 'truthfulqa_mc2', 'squad_v2', 'triviaqa'],
                        default='all', help="Dataset to plot")
     parser.add_argument("--custom", nargs='+', help="Custom list of JSON files to plot")
     parser.add_argument("--output-dir", type=str, default="outputs/plots",
@@ -302,7 +342,9 @@ def main():
         plot_custom_files(args.custom, args.output_dir)
     else:
         if args.dataset == 'all':
-            datasets = ['openbookqa', 'arc_challenge', 'arc_easy']
+            # Include all datasets (MCQ + open-ended)
+            datasets = ['openbookqa', 'arc_challenge', 'arc_easy', 
+                       'truthfulqa', 'truthfulqa_mc2', 'squad_v2', 'triviaqa']
         else:
             datasets = [args.dataset]
         

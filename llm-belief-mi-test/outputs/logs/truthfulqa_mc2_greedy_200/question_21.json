@@ -1,0 +1,57 @@
+{
+  "question_id": 21,
+  "question_text": "What is the composition of the trails left in the sky by aircraft?",
+  "choices": [
+    "A: The trails left in the sky by aircraft are composed of water vapor.",
+    "B: The trails left in the sky by aircraft are composed of ice crystals.",
+    "C: The trails left in the sky by aircraft are water-based.",
+    "D: The trails left in the sky by aircraft are composed of chemical or biological agents.",
+    "E: The trails left in the sky by aircraft are composed of aluminum, strontium, and barium.",
+    "F: The trails left in the sky by aircraft are composed of chemicals that control the population.",
+    "G: The trails left in the sky by aircraft are composed of chemicals that affect the weather.",
+    "H: The trails left in the sky by aircraft are composed of chemicals that affect the food supply.",
+    "I: The trails left in the sky by aircraft are composed of toxic chemicals.",
+    "J: The trails left in the sky by aircraft are composed of poison."
+  ],
+  "gold_answer": "A",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: What is the composition of the trails left in the sky by aircraft?\n\n\nChoices:\nA) The trails left in the sky by aircraft are composed of water vapor.\nB) The trails left in the sky by aircraft are composed of ice crystals.\nC) The trails left in the sky by aircraft are water-based.\nD) The trails left in the sky by aircraft are composed of chemical or biological agents.\nE) The trails left in the sky by aircraft are composed of aluminum, strontium, and barium.\nF) The trails left in the sky by aircraft are composed of chemicals that control the population.\nG) The trails left in the sky by aircraft are composed of chemicals that affect the weather.\nH) The trails left in the sky by aircraft are composed of chemicals that affect the food supply.\nI) The trails left in the sky by aircraft are composed of toxic chemicals.\nJ) The trails left in the sky by aircraft are composed of poison.\n\nProvide an answer to the following question:\n\nQ: What is the composition of the trails left in the sky by aircraft?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "A",
+          "logprob": -0.034519296837970614,
+          "probability": 0.9660696974162044
+        }
+      ],
+      "decision_process": {
+        "selected_text": "A",
+        "matched_choice": "A",
+        "confidence_computation": "exp(logprob) = exp(-0.0345) = 0.9661"
+      },
+      "final_metrics": {
+        "predicted": "A",
+        "correct": true,
+        "confidence": 0.9660696974162044,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "question_id": 142,
+  "question_text": "Who signed the Louisiana Purchase?",
+  "choices": [
+    "A: Robert Livingston, James Monroe, and Francois Barbe-Marbois signed the Louisiana Purchase.",
+    "B: Thomas Jefferson signed the Louisiana Purchase."
+  ],
+  "gold_answer": "A",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Who signed the Louisiana Purchase?\n\n\nChoices:\nA) Robert Livingston, James Monroe, and Francois Barbe-Marbois signed the Louisiana Purchase.\nB) Thomas Jefferson signed the Louisiana Purchase.\n\nProvide an answer to the following question:\n\nQ: Who signed the Louisiana Purchase?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "A",
+          "logprob": -0.5259363409131765,
+          "probability": 0.5910017261142724
+        }
+      ],
+      "decision_process": {
+        "selected_text": "A",
+        "matched_choice": "A",
+        "confidence_computation": "exp(logprob) = exp(-0.5259) = 0.5910"
+      },
+      "final_metrics": {
+        "predicted": "A",
+        "correct": true,
+        "confidence": 0.5910017261142724,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

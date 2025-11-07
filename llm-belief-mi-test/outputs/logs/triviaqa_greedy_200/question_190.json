@@ -1,0 +1,82 @@
+{
+  "question_id": 190,
+  "question_text": "Truax Field international airport is in which US state?",
+  "choices": [],
+  "gold_answer": "['Badger State', 'State of Wisconsin', 'Wis.', 'Transportation in Wisconsin', 'Government of Wisconsin', 'Climate of Wisconsin', 'Wisconsin, USA', 'Wiscosin, USA', 'Wisconsin', '30th State', 'Wisconson', 'Politics of Wisconsin', 'Demographics of Wisconsin', \"America's Dairyland\", 'Winconsin', 'Religion in Wisconsin', 'Transport in Wisconsin', 'US-WI', 'Wisconsin state', 'Economy of Wisconsin', 'The Badger State', 'Wisconsin (state)', 'Education in Wisconsin', 'Geography of Wisconsin', 'Wiskonsin', 'Wisconsin (U.S. state)', 'Thirtieth State', 'Film industry in Wisconsin', 'Wisc.', 'Badger state', 'Wisconsin, United States']",
+  "methods": {
+    "greedy": {
+      "method_name": "triviaqa_greedy",
+      "method_description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a trivia question. Your response MUST be ONLY the answer to the question. Do NOT include explanations, reasoning, or additional text. Provide a concise, direct answer."
+            },
+            {
+              "role": "user",
+              "content": "Question: Truax Field international airport is in which US state?\n\nProvide a direct answer to the question.\n\nAnswer:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 50
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "Nebraska",
+          "logprob": -0.7406599213281879,
+          "probability": 0.47679916173999626
+        }
+      ],
+      "decision_process": {
+        "method": "greedy",
+        "temperature": 0.0,
+        "selected_answer": "Nebraska",
+        "confidence_from_logprob": "0.4768"
+      },
+      "final_metrics": {
+        "predicted": "Nebraska",
+        "gold_answers": [
+          "Badger State",
+          "State of Wisconsin",
+          "Wis.",
+          "Transportation in Wisconsin",
+          "Government of Wisconsin",
+          "Climate of Wisconsin",
+          "Wisconsin, USA",
+          "Wiscosin, USA",
+          "Wisconsin",
+          "30th State",
+          "Wisconson",
+          "Politics of Wisconsin",
+          "Demographics of Wisconsin",
+          "America's Dairyland",
+          "Winconsin",
+          "Religion in Wisconsin",
+          "Transport in Wisconsin",
+          "US-WI",
+          "Wisconsin state",
+          "Economy of Wisconsin",
+          "The Badger State",
+          "Wisconsin (state)",
+          "Education in Wisconsin",
+          "Geography of Wisconsin",
+          "Wiskonsin",
+          "Wisconsin (U.S. state)",
+          "Thirtieth State",
+          "Film industry in Wisconsin",
+          "Wisc.",
+          "Badger state",
+          "Wisconsin, United States"
+        ],
+        "exact_match": 0.0,
+        "f1": 0.0,
+        "confidence": 0.47679916173999626,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

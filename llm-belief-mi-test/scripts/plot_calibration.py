@@ -148,7 +148,8 @@ def plot_calibration_curves(files: list, title: str, output_path: str, n_bins: i
 def main():
     parser = argparse.ArgumentParser(description="Plot calibration curves")
     parser.add_argument("--dataset", type=str,
-                       choices=['all', 'openbookqa', 'arc_challenge', 'arc_easy'],
+                       choices=['all', 'openbookqa', 'arc_challenge', 'arc_easy',
+                               'truthfulqa', 'truthfulqa_mc2', 'squad_v2', 'triviaqa'],
                        default='all', help="Dataset to plot")
     parser.add_argument("--files", nargs='+', help="Custom list of CSV files")
     parser.add_argument("--output-dir", type=str, default="outputs/plots",
@@ -172,17 +173,28 @@ def main():
         plot_calibration_curves(args.files, title, str(output_path), args.bins)
     else:
         # By dataset
-        datasets = ['openbookqa', 'arc_challenge', 'arc_easy'] if args.dataset == 'all' else [args.dataset]
+        datasets = ['openbookqa', 'arc_challenge', 'arc_easy', 
+                   'truthfulqa', 'truthfulqa_mc2', 'squad_v2', 'triviaqa'] if args.dataset == 'all' else [args.dataset]
         
         dataset_names = {
             'openbookqa': 'OpenBookQA',
             'arc_challenge': 'ARC-Challenge',
-            'arc_easy': 'ARC-Easy'
+            'arc_easy': 'ARC-Easy',
+            'truthfulqa': 'TruthfulQA MC1',
+            'truthfulqa_mc2': 'TruthfulQA MC2',
+            'squad_v2': 'SQuAD v2',
+            'triviaqa': 'TriviaQA'
         }
         
         for dataset in datasets:
-            pattern = f"outputs/results/{dataset}/{dataset}_*_500.csv"
+            # Try new folder structure first
+            pattern = f"outputs/results/{dataset}/*.csv"
             files = sorted(glob(pattern))
+            
+            # Fall back to old flat structure if no files found
+            if not files:
+                pattern = f"outputs/results/{dataset}_*.csv"
+                files = sorted(glob(pattern))
             
             if files:
                 title = f"{dataset_names.get(dataset, dataset)} - Calibration Analysis"

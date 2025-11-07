@@ -1,0 +1,50 @@
+{
+  "question_id": 150,
+  "question_text": "Who left Messina in the 11th century?",
+  "choices": [],
+  "gold_answer": "[]",
+  "methods": {
+    "greedy": {
+      "method_name": "squad-v2_greedy",
+      "method_description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a question based on a given context. Your response MUST be ONLY the direct answer from the context. Do NOT include explanations, reasoning, or additional text. If the question cannot be answered from the context, respond with: UNANSWERABLE"
+            },
+            {
+              "role": "user",
+              "content": "Context:\nIn April 1191 Richard the Lion-hearted left Messina with a large fleet in order to reach Acre. But a storm dispersed the fleet. After some searching, it was discovered that the boat carrying his sister and his fiancée Berengaria was anchored on the south coast of Cyprus, together with the wrecks of several other ships, including the treasure ship. Survivors of the wrecks had been taken prisoner by the island's despot Isaac Komnenos. On 1 May 1191, Richard's fleet arrived in the port of Limassol on Cyprus. He ordered Isaac to release the prisoners and the treasure. Isaac refused, so Richard landed his troops and took Limassol.\n\nQuestion: Who left Messina in the 11th century?\n\nProvide a direct answer to the question based on the context above.\n\nAnswer:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 50
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "Richard the Lion-hearted",
+          "logprob": -0.810026701688912,
+          "probability": 0.44484618791983294
+        }
+      ],
+      "decision_process": {
+        "method": "greedy",
+        "temperature": 0.0,
+        "selected_answer": "Richard the Lion-hearted",
+        "confidence_from_logprob": "0.4448"
+      },
+      "final_metrics": {
+        "predicted": "Richard the Lion-hearted",
+        "gold_answers": [],
+        "exact_match": 0.0,
+        "f1": 0.0,
+        "confidence": 0.44484618791983294,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

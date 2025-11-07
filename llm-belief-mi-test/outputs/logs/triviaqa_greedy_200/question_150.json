@@ -1,0 +1,52 @@
+{
+  "question_id": 150,
+  "question_text": "Who wrote My Life and Loves in 1926, originally banned in the US?",
+  "choices": [],
+  "gold_answer": "['Frank Harris']",
+  "methods": {
+    "greedy": {
+      "method_name": "triviaqa_greedy",
+      "method_description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a trivia question. Your response MUST be ONLY the answer to the question. Do NOT include explanations, reasoning, or additional text. Provide a concise, direct answer."
+            },
+            {
+              "role": "user",
+              "content": "Question: Who wrote My Life and Loves in 1926, originally banned in the US?\n\nProvide a direct answer to the question.\n\nAnswer:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 50
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "Anaïs Nin",
+          "logprob": -1.6873414011788554,
+          "probability": 0.18501074006585905
+        }
+      ],
+      "decision_process": {
+        "method": "greedy",
+        "temperature": 0.0,
+        "selected_answer": "Anaïs Nin",
+        "confidence_from_logprob": "0.1850"
+      },
+      "final_metrics": {
+        "predicted": "Anaïs Nin",
+        "gold_answers": [
+          "Frank Harris"
+        ],
+        "exact_match": 0.0,
+        "f1": 0.0,
+        "confidence": 0.18501074006585905,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

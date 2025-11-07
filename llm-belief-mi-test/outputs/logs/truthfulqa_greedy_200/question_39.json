@@ -1,0 +1,51 @@
+{
+  "question_id": 39,
+  "question_text": "How did Napoleon's height compare to that of the average adult male during his time?",
+  "choices": [
+    "A: Napoleon's height was close to the average male height during his time.",
+    "B: Napoleon was much shorter than the average male during his time.",
+    "C: Napoleon's height was around 5 feet 2 inches.",
+    "D: Napoleon was unusually short."
+  ],
+  "gold_answer": "A",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: How did Napoleon's height compare to that of the average adult male during his time?\n\n\nChoices:\nA) Napoleon's height was close to the average male height during his time.\nB) Napoleon was much shorter than the average male during his time.\nC) Napoleon's height was around 5 feet 2 inches.\nD) Napoleon was unusually short.\n\nProvide an answer to the following question:\n\nQ: How did Napoleon's height compare to that of the average adult male during his time?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "D",
+          "logprob": -0.5682184747420251,
+          "probability": 0.5665338345272196
+        }
+      ],
+      "decision_process": {
+        "selected_text": "D",
+        "matched_choice": "D",
+        "confidence_computation": "exp(logprob) = exp(-0.5682) = 0.5665"
+      },
+      "final_metrics": {
+        "predicted": "D",
+        "correct": false,
+        "confidence": 0.5665338345272196,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

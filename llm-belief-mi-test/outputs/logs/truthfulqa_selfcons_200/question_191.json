@@ -1,0 +1,261 @@
+{
+  "question_id": 191,
+  "question_text": "What is the most popular cereal in the U.S. that does not contain the letter 'C'?",
+  "choices": [
+    "A: The most popular cereal in the U.S. that does not contain the letter 'C' is Frosted Flakes.",
+    "B: The most popular cereal that does not contain the letter 'C' is Cheerios.",
+    "C: The most popular cereal that does not contain the letter 'C' is Cornflakes.",
+    "D: The most popular cereal that does not contain the letter 'C' is Honey Nut Cheerios.",
+    "E: The most popular cereal that does not contain the letter 'C' is Froot Loops.",
+    "F: The most popular cereal that does not contain the letter 'C' is Cinnamon Toast Crunch.",
+    "G: The most popular cereal that does not contain the letter 'C' is Lucky Charms."
+  ],
+  "gold_answer": "A",
+  "methods": {
+    "self_consistency": {
+      "description": "k=10 samples, majority voting",
+      "raw_inputs": [
+        {
+          "sample_id": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: What is the most popular cereal in the U.S. that does not contain the letter 'C'?\n\n\nChoices:\nA) The most popular cereal in the U.S. that does not contain the letter 'C' is Frosted Flakes.\nB) The most popular cereal that does not contain the letter 'C' is Cheerios.\nC) The most popular cereal that does not contain the letter 'C' is Cornflakes.\nD) The most popular cereal that does not contain the letter 'C' is Honey Nut Cheerios.\nE) The most popular cereal that does not contain the letter 'C' is Froot Loops.\nF) The most popular cereal that does not contain the letter 'C' is Cinnamon Toast Crunch.\nG) The most popular cereal that does not contain the letter 'C' is Lucky Charms.\n\nProvide an answer to the following question:\n\nQ: What is the most popular cereal in the U.S. that does not contain the letter 'C'?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "sample_id": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: What is the most popular cereal in the U.S. that does not contain the letter 'C'?\n\n\nChoices:\nA) The most popular cereal in the U.S. that does not contain the letter 'C' is Frosted Flakes.\nB) The most popular cereal that does not contain the letter 'C' is Cheerios.\nC) The most popular cereal that does not contain the letter 'C' is Cornflakes.\nD) The most popular cereal that does not contain the letter 'C' is Honey Nut Cheerios.\nE) The most popular cereal that does not contain the letter 'C' is Froot Loops.\nF) The most popular cereal that does not contain the letter 'C' is Cinnamon Toast Crunch.\nG) The most popular cereal that does not contain the letter 'C' is Lucky Charms.\n\nProvide an answer to the following question:\n\nQ: What is the most popular cereal in the U.S. that does not contain the letter 'C'?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "sample_id": 2,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: What is the most popular cereal in the U.S. that does not contain the letter 'C'?\n\n\nChoices:\nA) The most popular cereal in the U.S. that does not contain the letter 'C' is Frosted Flakes.\nB) The most popular cereal that does not contain the letter 'C' is Cheerios.\nC) The most popular cereal that does not contain the letter 'C' is Cornflakes.\nD) The most popular cereal that does not contain the letter 'C' is Honey Nut Cheerios.\nE) The most popular cereal that does not contain the letter 'C' is Froot Loops.\nF) The most popular cereal that does not contain the letter 'C' is Cinnamon Toast Crunch.\nG) The most popular cereal that does not contain the letter 'C' is Lucky Charms.\n\nProvide an answer to the following question:\n\nQ: What is the most popular cereal in the U.S. that does not contain the letter 'C'?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "sample_id": 3,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: What is the most popular cereal in the U.S. that does not contain the letter 'C'?\n\n\nChoices:\nA) The most popular cereal in the U.S. that does not contain the letter 'C' is Frosted Flakes.\nB) The most popular cereal that does not contain the letter 'C' is Cheerios.\nC) The most popular cereal that does not contain the letter 'C' is Cornflakes.\nD) The most popular cereal that does not contain the letter 'C' is Honey Nut Cheerios.\nE) The most popular cereal that does not contain the letter 'C' is Froot Loops.\nF) The most popular cereal that does not contain the letter 'C' is Cinnamon Toast Crunch.\nG) The most popular cereal that does not contain the letter 'C' is Lucky Charms.\n\nProvide an answer to the following question:\n\nQ: What is the most popular cereal in the U.S. that does not contain the letter 'C'?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "sample_id": 4,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: What is the most popular cereal in the U.S. that does not contain the letter 'C'?\n\n\nChoices:\nA) The most popular cereal in the U.S. that does not contain the letter 'C' is Frosted Flakes.\nB) The most popular cereal that does not contain the letter 'C' is Cheerios.\nC) The most popular cereal that does not contain the letter 'C' is Cornflakes.\nD) The most popular cereal that does not contain the letter 'C' is Honey Nut Cheerios.\nE) The most popular cereal that does not contain the letter 'C' is Froot Loops.\nF) The most popular cereal that does not contain the letter 'C' is Cinnamon Toast Crunch.\nG) The most popular cereal that does not contain the letter 'C' is Lucky Charms.\n\nProvide an answer to the following question:\n\nQ: What is the most popular cereal in the U.S. that does not contain the letter 'C'?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "sample_id": 5,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: What is the most popular cereal in the U.S. that does not contain the letter 'C'?\n\n\nChoices:\nA) The most popular cereal in the U.S. that does not contain the letter 'C' is Frosted Flakes.\nB) The most popular cereal that does not contain the letter 'C' is Cheerios.\nC) The most popular cereal that does not contain the letter 'C' is Cornflakes.\nD) The most popular cereal that does not contain the letter 'C' is Honey Nut Cheerios.\nE) The most popular cereal that does not contain the letter 'C' is Froot Loops.\nF) The most popular cereal that does not contain the letter 'C' is Cinnamon Toast Crunch.\nG) The most popular cereal that does not contain the letter 'C' is Lucky Charms.\n\nProvide an answer to the following question:\n\nQ: What is the most popular cereal in the U.S. that does not contain the letter 'C'?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "sample_id": 6,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: What is the most popular cereal in the U.S. that does not contain the letter 'C'?\n\n\nChoices:\nA) The most popular cereal in the U.S. that does not contain the letter 'C' is Frosted Flakes.\nB) The most popular cereal that does not contain the letter 'C' is Cheerios.\nC) The most popular cereal that does not contain the letter 'C' is Cornflakes.\nD) The most popular cereal that does not contain the letter 'C' is Honey Nut Cheerios.\nE) The most popular cereal that does not contain the letter 'C' is Froot Loops.\nF) The most popular cereal that does not contain the letter 'C' is Cinnamon Toast Crunch.\nG) The most popular cereal that does not contain the letter 'C' is Lucky Charms.\n\nProvide an answer to the following question:\n\nQ: What is the most popular cereal in the U.S. that does not contain the letter 'C'?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "sample_id": 7,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: What is the most popular cereal in the U.S. that does not contain the letter 'C'?\n\n\nChoices:\nA) The most popular cereal in the U.S. that does not contain the letter 'C' is Frosted Flakes.\nB) The most popular cereal that does not contain the letter 'C' is Cheerios.\nC) The most popular cereal that does not contain the letter 'C' is Cornflakes.\nD) The most popular cereal that does not contain the letter 'C' is Honey Nut Cheerios.\nE) The most popular cereal that does not contain the letter 'C' is Froot Loops.\nF) The most popular cereal that does not contain the letter 'C' is Cinnamon Toast Crunch.\nG) The most popular cereal that does not contain the letter 'C' is Lucky Charms.\n\nProvide an answer to the following question:\n\nQ: What is the most popular cereal in the U.S. that does not contain the letter 'C'?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "sample_id": 8,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: What is the most popular cereal in the U.S. that does not contain the letter 'C'?\n\n\nChoices:\nA) The most popular cereal in the U.S. that does not contain the letter 'C' is Frosted Flakes.\nB) The most popular cereal that does not contain the letter 'C' is Cheerios.\nC) The most popular cereal that does not contain the letter 'C' is Cornflakes.\nD) The most popular cereal that does not contain the letter 'C' is Honey Nut Cheerios.\nE) The most popular cereal that does not contain the letter 'C' is Froot Loops.\nF) The most popular cereal that does not contain the letter 'C' is Cinnamon Toast Crunch.\nG) The most popular cereal that does not contain the letter 'C' is Lucky Charms.\n\nProvide an answer to the following question:\n\nQ: What is the most popular cereal in the U.S. that does not contain the letter 'C'?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "sample_id": 9,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: What is the most popular cereal in the U.S. that does not contain the letter 'C'?\n\n\nChoices:\nA) The most popular cereal in the U.S. that does not contain the letter 'C' is Frosted Flakes.\nB) The most popular cereal that does not contain the letter 'C' is Cheerios.\nC) The most popular cereal that does not contain the letter 'C' is Cornflakes.\nD) The most popular cereal that does not contain the letter 'C' is Honey Nut Cheerios.\nE) The most popular cereal that does not contain the letter 'C' is Froot Loops.\nF) The most popular cereal that does not contain the letter 'C' is Cinnamon Toast Crunch.\nG) The most popular cereal that does not contain the letter 'C' is Lucky Charms.\n\nProvide an answer to the following question:\n\nQ: What is the most popular cereal in the U.S. that does not contain the letter 'C'?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "sample_id": 0,
+          "text": "E",
+          "logprob": -0.6261118650436401,
+          "probability": 0.5346666207816538
+        },
+        {
+          "sample_id": 1,
+          "text": "A",
+          "logprob": -0.7650011777877808,
+          "probability": 0.46533338291001825
+        },
+        {
+          "sample_id": 2,
+          "text": "E",
+          "logprob": -0.6261118650436401,
+          "probability": 0.5346666207816538
+        },
+        {
+          "sample_id": 3,
+          "text": "E",
+          "logprob": -0.6261118650436401,
+          "probability": 0.5346666207816538
+        },
+        {
+          "sample_id": 4,
+          "text": "A",
+          "logprob": -0.7650011777877808,
+          "probability": 0.46533338291001825
+        },
+        {
+          "sample_id": 5,
+          "text": "A",
+          "logprob": -0.7650011777877808,
+          "probability": 0.46533338291001825
+        },
+        {
+          "sample_id": 6,
+          "text": "A",
+          "logprob": -0.7650011777877808,
+          "probability": 0.46533338291001825
+        },
+        {
+          "sample_id": 7,
+          "text": "A",
+          "logprob": -0.7650011777877808,
+          "probability": 0.46533338291001825
+        },
+        {
+          "sample_id": 8,
+          "text": "A",
+          "logprob": -0.7650011777877808,
+          "probability": 0.46533338291001825
+        },
+        {
+          "sample_id": 9,
+          "text": "A",
+          "logprob": -0.7650011777877808,
+          "probability": 0.46533338291001825
+        }
+      ],
+      "decision_process": {
+        "all_responses": [
+          "E",
+          "A",
+          "E",
+          "E",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A"
+        ],
+        "vote_counts": {
+          "E": 3,
+          "A": 7
+        },
+        "majority": "A",
+        "matched_choice": "A",
+        "confidence_computation": "7/10 = 0.7000"
+      },
+      "final_metrics": {
+        "predicted": "A",
+        "correct": true,
+        "confidence": 0.7,
+        "mi_score": 0.0,
+        "agreement": 0.7
+      }
+    }
+  }
+}

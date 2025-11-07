@@ -1,0 +1,111 @@
+{
+  "question_id": 17,
+  "question_text": "\"Who was the target of the failed \"\"Bomb Plot\"\" of 1944?\"",
+  "choices": [],
+  "gold_answer": "['Hitlerian', 'Adolph Schicklgruber', 'HitlerAdolf', \"Hitler's medical health\", 'Adolf Hitle', 'Hitlar', 'Adolph Hiedler', 'Adolf Hiedler', 'Adolph Hittler', 'Day of Potsdam', 'Adolpf Hitler', 'Adolf Hister', 'Adolf Hitlier', \"Adolph Hitler's health\", \"Hitler's health\", 'Hitlers', 'Aldof Hilter', 'HITLER', 'Hitler, Adolph', 'History of Adolf Hitler', 'Hitler,Adolph', 'Adolph Hiter', 'Adolf Hittler', 'Herr Hitler', 'Hitler,Adolf', 'Adolf Schicklegruber', 'Adolf hitler', 'Adlof hitler', 'Adolph Schickelgruber', 'Hitler Adolf', 'Hitlers medical health', 'HitlerAdolph', 'Adolph Schicklegruber', 'Adolf Hiler', \"Adolf Hitler's medical condition\", 'Hittler', 'Adolf Schickelgruber', 'Adolf Hitler', \"Hitler's\", 'Hitler, adolf', 'Nazi leader', 'Hitler, Adolf', 'Herr Wolf', \"Adolph Hitler's medical health\", 'Adolph Hitler', \"Adolf Hitler's health\", 'Adolf Schicklgruber', 'AdolphHitler', 'Adolf Hilter', 'Health of Adolf Hitler', \"Adolf Hitler's medical health\", 'Hitler Adolph', 'AdolfHitler', 'Adolf HItler', 'Hitlet', 'Hitler adolf', 'Adoff Hitler', 'Adolfus Hitler', 'Hitler', 'Adolph hitler']",
+  "methods": {
+    "greedy": {
+      "method_name": "triviaqa_greedy",
+      "method_description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a trivia question. Your response MUST be ONLY the answer to the question. Do NOT include explanations, reasoning, or additional text. Provide a concise, direct answer."
+            },
+            {
+              "role": "user",
+              "content": "Question: \"Who was the target of the failed \"\"Bomb Plot\"\" of 1944?\"\n\nProvide a direct answer to the question.\n\nAnswer:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 50
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "Adolf Hitler",
+          "logprob": -0.8794792362459702,
+          "probability": 0.41499897184104306
+        }
+      ],
+      "decision_process": {
+        "method": "greedy",
+        "temperature": 0.0,
+        "selected_answer": "Adolf Hitler",
+        "confidence_from_logprob": "0.4150"
+      },
+      "final_metrics": {
+        "predicted": "Adolf Hitler",
+        "gold_answers": [
+          "Hitlerian",
+          "Adolph Schicklgruber",
+          "HitlerAdolf",
+          "Hitler's medical health",
+          "Adolf Hitle",
+          "Hitlar",
+          "Adolph Hiedler",
+          "Adolf Hiedler",
+          "Adolph Hittler",
+          "Day of Potsdam",
+          "Adolpf Hitler",
+          "Adolf Hister",
+          "Adolf Hitlier",
+          "Adolph Hitler's health",
+          "Hitler's health",
+          "Hitlers",
+          "Aldof Hilter",
+          "HITLER",
+          "Hitler, Adolph",
+          "History of Adolf Hitler",
+          "Hitler,Adolph",
+          "Adolph Hiter",
+          "Adolf Hittler",
+          "Herr Hitler",
+          "Hitler,Adolf",
+          "Adolf Schicklegruber",
+          "Adolf hitler",
+          "Adlof hitler",
+          "Adolph Schickelgruber",
+          "Hitler Adolf",
+          "Hitlers medical health",
+          "HitlerAdolph",
+          "Adolph Schicklegruber",
+          "Adolf Hiler",
+          "Adolf Hitler's medical condition",
+          "Hittler",
+          "Adolf Schickelgruber",
+          "Adolf Hitler",
+          "Hitler's",
+          "Hitler, adolf",
+          "Nazi leader",
+          "Hitler, Adolf",
+          "Herr Wolf",
+          "Adolph Hitler's medical health",
+          "Adolph Hitler",
+          "Adolf Hitler's health",
+          "Adolf Schicklgruber",
+          "AdolphHitler",
+          "Adolf Hilter",
+          "Health of Adolf Hitler",
+          "Adolf Hitler's medical health",
+          "Hitler Adolph",
+          "AdolfHitler",
+          "Adolf HItler",
+          "Hitlet",
+          "Hitler adolf",
+          "Adoff Hitler",
+          "Adolfus Hitler",
+          "Hitler",
+          "Adolph hitler"
+        ],
+        "exact_match": 1.0,
+        "f1": 1.0,
+        "confidence": 0.41499897184104306,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

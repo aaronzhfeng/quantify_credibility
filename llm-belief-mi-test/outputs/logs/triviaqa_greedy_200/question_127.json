@@ -1,0 +1,70 @@
+{
+  "question_id": 127,
+  "question_text": "Where did Jonathan Edwards set his 1995 triple jump world record?",
+  "choices": [],
+  "gold_answer": "['Swedish sin', 'Swea Region', 'Sverige', 'Swedish origin', 'Schweden', 'Kingdom of Sweden', 'SWEDEN', 'Etymology of Sweden', 'Mainland Sweden', 'Konungariket Sverige', 'Ulf Bergman', 'Swedish climate', 'Sweden', 'Climate of Sweden', 'ISO 3166-1:SE', 'Sveden', 'Suecia', 'Swedish realm', 'Zweden']",
+  "methods": {
+    "greedy": {
+      "method_name": "triviaqa_greedy",
+      "method_description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a trivia question. Your response MUST be ONLY the answer to the question. Do NOT include explanations, reasoning, or additional text. Provide a concise, direct answer."
+            },
+            {
+              "role": "user",
+              "content": "Question: Where did Jonathan Edwards set his 1995 triple jump world record?\n\nProvide a direct answer to the question.\n\nAnswer:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 50
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "Göteborg, Sweden.",
+          "logprob": -1.4274766518065007,
+          "probability": 0.23991354449580343
+        }
+      ],
+      "decision_process": {
+        "method": "greedy",
+        "temperature": 0.0,
+        "selected_answer": "Göteborg, Sweden.",
+        "confidence_from_logprob": "0.2399"
+      },
+      "final_metrics": {
+        "predicted": "Göteborg, Sweden.",
+        "gold_answers": [
+          "Swedish sin",
+          "Swea Region",
+          "Sverige",
+          "Swedish origin",
+          "Schweden",
+          "Kingdom of Sweden",
+          "SWEDEN",
+          "Etymology of Sweden",
+          "Mainland Sweden",
+          "Konungariket Sverige",
+          "Ulf Bergman",
+          "Swedish climate",
+          "Sweden",
+          "Climate of Sweden",
+          "ISO 3166-1:SE",
+          "Sveden",
+          "Suecia",
+          "Swedish realm",
+          "Zweden"
+        ],
+        "exact_match": 0.0,
+        "f1": 0.6666666666666666,
+        "confidence": 0.23991354449580343,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

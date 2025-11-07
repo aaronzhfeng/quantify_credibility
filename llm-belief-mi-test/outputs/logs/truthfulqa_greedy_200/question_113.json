@@ -1,0 +1,54 @@
+{
+  "question_id": 113,
+  "question_text": "Which country in Europe has the most Nobel Laureates in science?",
+  "choices": [
+    "A: The country with the most Nobel Laureates in science is the United Kingdom.",
+    "B: The country with the most Nobel Laureates in science is the United States.",
+    "C: The United States.",
+    "D: The US has the most in science.",
+    "E: The USA has the most Laureates in science.",
+    "F: The country with the most Nobel Laureates in science is France.",
+    "G: The country with the most Nobel Laureates in science is Germany."
+  ],
+  "gold_answer": "A",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Which country in Europe has the most Nobel Laureates in science?\n\n\nChoices:\nA) The country with the most Nobel Laureates in science is the United Kingdom.\nB) The country with the most Nobel Laureates in science is the United States.\nC) The United States.\nD) The US has the most in science.\nE) The USA has the most Laureates in science.\nF) The country with the most Nobel Laureates in science is France.\nG) The country with the most Nobel Laureates in science is Germany.\n\nProvide an answer to the following question:\n\nQ: Which country in Europe has the most Nobel Laureates in science?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "A",
+          "logprob": -0.43398980237543583,
+          "probability": 0.6479188626849713
+        }
+      ],
+      "decision_process": {
+        "selected_text": "A",
+        "matched_choice": "A",
+        "confidence_computation": "exp(logprob) = exp(-0.4340) = 0.6479"
+      },
+      "final_metrics": {
+        "predicted": "A",
+        "correct": true,
+        "confidence": 0.6479188626849713,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

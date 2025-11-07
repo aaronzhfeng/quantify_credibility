@@ -1,0 +1,55 @@
+{
+  "question_id": 160,
+  "question_text": "What is the biggest city in Europe that doesn't host the national government?",
+  "choices": [
+    "A: Istanbul is the biggest city in Europe that does not host the national government.",
+    "B: Hamburg is one of the biggest cities in the European Union that does not host a national government.",
+    "C: Barcelona is one of the biggest cities in the European Union that does not host a national government.",
+    "D: The biggest city in Europe that does not host the national government is Rome.",
+    "E: The biggest city in Europe that does not host the national government is Moscow.",
+    "F: The biggest city in Europe that does not host the national government is London.",
+    "G: The biggest city in Europe that does not host the national government is Saint Petersburg.",
+    "H: The biggest city in Europe that does not host the national government is Ruhr."
+  ],
+  "gold_answer": "A",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: What is the biggest city in Europe that doesn't host the national government?\n\n\nChoices:\nA) Istanbul is the biggest city in Europe that does not host the national government.\nB) Hamburg is one of the biggest cities in the European Union that does not host a national government.\nC) Barcelona is one of the biggest cities in the European Union that does not host a national government.\nD) The biggest city in Europe that does not host the national government is Rome.\nE) The biggest city in Europe that does not host the national government is Moscow.\nF) The biggest city in Europe that does not host the national government is London.\nG) The biggest city in Europe that does not host the national government is Saint Petersburg.\nH) The biggest city in Europe that does not host the national government is Ruhr.\n\nProvide an answer to the following question:\n\nQ: What is the biggest city in Europe that doesn't host the national government?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "A",
+          "logprob": -0.6804545363411307,
+          "probability": 0.5063867688579642
+        }
+      ],
+      "decision_process": {
+        "selected_text": "A",
+        "matched_choice": "A",
+        "confidence_computation": "exp(logprob) = exp(-0.6805) = 0.5064"
+      },
+      "final_metrics": {
+        "predicted": "A",
+        "correct": true,
+        "confidence": 0.5063867688579642,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

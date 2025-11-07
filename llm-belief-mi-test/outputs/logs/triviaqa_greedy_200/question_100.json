@@ -1,0 +1,56 @@
+{
+  "question_id": 100,
+  "question_text": "Which Oscar-nominated film had You Sexy Thing as its theme song?",
+  "choices": [],
+  "gold_answer": "['Full Monty', 'The Full Monty (film)', 'The Full Monty (soundtrack)', 'Full monty', 'The Full Monty']",
+  "methods": {
+    "greedy": {
+      "method_name": "triviaqa_greedy",
+      "method_description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a trivia question. Your response MUST be ONLY the answer to the question. Do NOT include explanations, reasoning, or additional text. Provide a concise, direct answer."
+            },
+            {
+              "role": "user",
+              "content": "Question: Which Oscar-nominated film had You Sexy Thing as its theme song?\n\nProvide a direct answer to the question.\n\nAnswer:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 50
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "You Sexy Thing",
+          "logprob": -1.9987424760474823,
+          "probability": 0.13550557764911336
+        }
+      ],
+      "decision_process": {
+        "method": "greedy",
+        "temperature": 0.0,
+        "selected_answer": "You Sexy Thing",
+        "confidence_from_logprob": "0.1355"
+      },
+      "final_metrics": {
+        "predicted": "You Sexy Thing",
+        "gold_answers": [
+          "Full Monty",
+          "The Full Monty (film)",
+          "The Full Monty (soundtrack)",
+          "Full monty",
+          "The Full Monty"
+        ],
+        "exact_match": 0.0,
+        "f1": 0.0,
+        "confidence": 0.13550557764911336,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

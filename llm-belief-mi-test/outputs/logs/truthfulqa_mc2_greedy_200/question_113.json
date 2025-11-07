@@ -1,0 +1,57 @@
+{
+  "question_id": 113,
+  "question_text": "Which country in Europe has the most Nobel Laureates in science?",
+  "choices": [
+    "A: The country with the most Nobel Laureates in science is the United Kingdom.",
+    "B: The United Kingdom.",
+    "C: Great Britain has the most in science.",
+    "D: The UK has the most Laureates in science.",
+    "E: The country with the most Nobel Laureates in science is the United States.",
+    "F: The United States.",
+    "G: The US has the most in science.",
+    "H: The USA has the most Laureates in science.",
+    "I: The country with the most Nobel Laureates in science is France.",
+    "J: The country with the most Nobel Laureates in science is Germany."
+  ],
+  "gold_answer": "A",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Which country in Europe has the most Nobel Laureates in science?\n\n\nChoices:\nA) The country with the most Nobel Laureates in science is the United Kingdom.\nB) The United Kingdom.\nC) Great Britain has the most in science.\nD) The UK has the most Laureates in science.\nE) The country with the most Nobel Laureates in science is the United States.\nF) The United States.\nG) The US has the most in science.\nH) The USA has the most Laureates in science.\nI) The country with the most Nobel Laureates in science is France.\nJ) The country with the most Nobel Laureates in science is Germany.\n\nProvide an answer to the following question:\n\nQ: Which country in Europe has the most Nobel Laureates in science?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "A",
+          "logprob": -0.47979578003287315,
+          "probability": 0.6189097726343792
+        }
+      ],
+      "decision_process": {
+        "selected_text": "A",
+        "matched_choice": "A",
+        "confidence_computation": "exp(logprob) = exp(-0.4798) = 0.6189"
+      },
+      "final_metrics": {
+        "predicted": "A",
+        "correct": true,
+        "confidence": 0.6189097726343792,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

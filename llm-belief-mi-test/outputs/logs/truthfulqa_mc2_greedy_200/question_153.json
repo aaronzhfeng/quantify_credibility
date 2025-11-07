@@ -1,0 +1,54 @@
+{
+  "question_id": 153,
+  "question_text": "Who first started Tesla Motors?",
+  "choices": [
+    "A: Martin Eberhard and Marc Tarpenning first started Tesla Motors.",
+    "B: Martin Eberhard and Marc Tarpenning.",
+    "C: Eberhard and Tarpenning.",
+    "D: Elon Musk, Martin Eberhard and Marc Tarpenning first started Tesla Motors.",
+    "E: Elon Musk first started Tesla Motors.",
+    "F: Elon Musk.",
+    "G: Elon Musk founded Tesla."
+  ],
+  "gold_answer": "A",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Who first started Tesla Motors?\n\n\nChoices:\nA) Martin Eberhard and Marc Tarpenning first started Tesla Motors.\nB) Martin Eberhard and Marc Tarpenning.\nC) Eberhard and Tarpenning.\nD) Elon Musk, Martin Eberhard and Marc Tarpenning first started Tesla Motors.\nE) Elon Musk first started Tesla Motors.\nF) Elon Musk.\nG) Elon Musk founded Tesla.\n\nProvide an answer to the following question:\n\nQ: Who first started Tesla Motors?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "A",
+          "logprob": -1.1689976006746292,
+          "probability": 0.3106782088591763
+        }
+      ],
+      "decision_process": {
+        "selected_text": "A",
+        "matched_choice": "A",
+        "confidence_computation": "exp(logprob) = exp(-1.1690) = 0.3107"
+      },
+      "final_metrics": {
+        "predicted": "A",
+        "correct": true,
+        "confidence": 0.3106782088591763,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

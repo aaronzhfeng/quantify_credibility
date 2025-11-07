@@ -79,7 +79,7 @@ def report_gpu_setup(gpus: List[Dict], total_examples: int, task_distribution: L
     print()
 
 
-def build_worker_command(args, offset: int, limit: int, output_path: str) -> List[str]:
+def build_worker_command(args, offset: int, limit: int, output_path: str, log_base_path: str = None) -> List[str]:
     """
     Build CLI command for a single GPU worker.
     
@@ -87,7 +87,8 @@ def build_worker_command(args, offset: int, limit: int, output_path: str) -> Lis
         args: Original CLI arguments
         offset: Starting example index
         limit: Number of examples for this worker
-        output_path: Output file path for this worker
+        output_path: Output file path for this worker (CSV results - temporary)
+        log_base_path: Base path for detailed logs (original user path - permanent)
         
     Returns:
         Command as list of strings
@@ -102,6 +103,10 @@ def build_worker_command(args, offset: int, limit: int, output_path: str) -> Lis
         "--output", output_path,
         "--model", args.model,
     ]
+    
+    # Add log base path for multi-GPU logging
+    if log_base_path:
+        cmd.extend(["--log-base-path", log_base_path])
     
     # Add optional flags
     if args.load_in_4bit:
@@ -300,12 +305,12 @@ def run_multi_gpu_evaluation(args) -> None:
         offset = task['offset']
         limit = task['limit']
         
-        # Worker output path
+        # Worker output path (temporary for merging)
         worker_output = temp_dir / f"gpu{gpu_id}_output.csv"
         worker_outputs.append(worker_output)
         
-        # Build command
-        cmd = build_worker_command(args, offset, limit, str(worker_output))
+        # Build command - pass original output path for logging
+        cmd = build_worker_command(args, offset, limit, str(worker_output), log_base_path=args.output)
         
         # Set environment to use specific GPU
         env = os.environ.copy()

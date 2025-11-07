@@ -1,0 +1,54 @@
+{
+  "question_id": 192,
+  "question_text": "Who commissioned the Tapestry?",
+  "choices": [],
+  "gold_answer": "['Odo', 'Odo', 'Odo']",
+  "methods": {
+    "greedy": {
+      "method_name": "squad-v2_greedy",
+      "method_description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a question based on a given context. Your response MUST be ONLY the direct answer from the context. Do NOT include explanations, reasoning, or additional text. If the question cannot be answered from the context, respond with: UNANSWERABLE"
+            },
+            {
+              "role": "user",
+              "content": "Context:\nBy far the most famous work of Norman art is the Bayeux Tapestry, which is not a tapestry but a work of embroidery. It was commissioned by Odo, the Bishop of Bayeux and first Earl of Kent, employing natives from Kent who were learned in the Nordic traditions imported in the previous half century by the Danish Vikings.\n\nQuestion: Who commissioned the Tapestry?\n\nProvide a direct answer to the question based on the context above.\n\nAnswer:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 50
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "Odo, the Bishop of Bayeux and first Earl of Kent.",
+          "logprob": -0.3247460579538526,
+          "probability": 0.7227108570152785
+        }
+      ],
+      "decision_process": {
+        "method": "greedy",
+        "temperature": 0.0,
+        "selected_answer": "Odo, the Bishop of Bayeux and first Earl of Kent.",
+        "confidence_from_logprob": "0.7227"
+      },
+      "final_metrics": {
+        "predicted": "Odo, the Bishop of Bayeux and first Earl of Kent.",
+        "gold_answers": [
+          "Odo",
+          "Odo",
+          "Odo"
+        ],
+        "exact_match": 0.0,
+        "f1": 0.19999999999999998,
+        "confidence": 0.7227108570152785,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

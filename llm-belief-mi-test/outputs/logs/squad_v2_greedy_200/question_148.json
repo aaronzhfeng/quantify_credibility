@@ -1,0 +1,54 @@
+{
+  "question_id": 148,
+  "question_text": "What year did the storm hit Richard's fleet?",
+  "choices": [],
+  "gold_answer": "['1191', '1191', '1191']",
+  "methods": {
+    "greedy": {
+      "method_name": "squad-v2_greedy",
+      "method_description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a question based on a given context. Your response MUST be ONLY the direct answer from the context. Do NOT include explanations, reasoning, or additional text. If the question cannot be answered from the context, respond with: UNANSWERABLE"
+            },
+            {
+              "role": "user",
+              "content": "Context:\nIn April 1191 Richard the Lion-hearted left Messina with a large fleet in order to reach Acre. But a storm dispersed the fleet. After some searching, it was discovered that the boat carrying his sister and his fiancée Berengaria was anchored on the south coast of Cyprus, together with the wrecks of several other ships, including the treasure ship. Survivors of the wrecks had been taken prisoner by the island's despot Isaac Komnenos. On 1 May 1191, Richard's fleet arrived in the port of Limassol on Cyprus. He ordered Isaac to release the prisoners and the treasure. Isaac refused, so Richard landed his troops and took Limassol.\n\nQuestion: What year did the storm hit Richard's fleet?\n\nProvide a direct answer to the question based on the context above.\n\nAnswer:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 50
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "1191",
+          "logprob": -0.27301073921262287,
+          "probability": 0.7610846141355507
+        }
+      ],
+      "decision_process": {
+        "method": "greedy",
+        "temperature": 0.0,
+        "selected_answer": "1191",
+        "confidence_from_logprob": "0.7611"
+      },
+      "final_metrics": {
+        "predicted": "1191",
+        "gold_answers": [
+          "1191",
+          "1191",
+          "1191"
+        ],
+        "exact_match": 1.0,
+        "f1": 1.0,
+        "confidence": 0.7610846141355507,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

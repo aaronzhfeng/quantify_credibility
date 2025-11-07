@@ -1,0 +1,83 @@
+{
+  "question_id": 164,
+  "question_text": "In La Cage Aux Folles, what was La Cage Aux Folles?",
+  "choices": [],
+  "gold_answer": "['Discotheque', 'Night clubs', 'Diskotek', 'Dance club', 'Clubbers', 'Night club', 'Discothèque', 'Nightclubs', 'Clubber', 'Theque', 'Discoteck', 'Dance Club', 'Discotech', 'Discothèques', 'Clubgoer', 'Nightclub culture', 'List of nightclubs', 'Nightclub', 'Discoteque', 'Discotheques', 'Discothek', 'History of discotheques', 'Disco Bar', 'Dance clubs', 'Night Clubs', 'Disco pub', 'Discotek', 'Discotheke', 'Club scene', 'Night-club', 'Club night', 'History of nightclubs']",
+  "methods": {
+    "greedy": {
+      "method_name": "triviaqa_greedy",
+      "method_description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a trivia question. Your response MUST be ONLY the answer to the question. Do NOT include explanations, reasoning, or additional text. Provide a concise, direct answer."
+            },
+            {
+              "role": "user",
+              "content": "Question: In La Cage Aux Folles, what was La Cage Aux Folles?\n\nProvide a direct answer to the question.\n\nAnswer:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 50
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "A drag club.",
+          "logprob": -1.0842209116526647,
+          "probability": 0.33816514381486973
+        }
+      ],
+      "decision_process": {
+        "method": "greedy",
+        "temperature": 0.0,
+        "selected_answer": "A drag club.",
+        "confidence_from_logprob": "0.3382"
+      },
+      "final_metrics": {
+        "predicted": "A drag club.",
+        "gold_answers": [
+          "Discotheque",
+          "Night clubs",
+          "Diskotek",
+          "Dance club",
+          "Clubbers",
+          "Night club",
+          "Discothèque",
+          "Nightclubs",
+          "Clubber",
+          "Theque",
+          "Discoteck",
+          "Dance Club",
+          "Discotech",
+          "Discothèques",
+          "Clubgoer",
+          "Nightclub culture",
+          "List of nightclubs",
+          "Nightclub",
+          "Discoteque",
+          "Discotheques",
+          "Discothek",
+          "History of discotheques",
+          "Disco Bar",
+          "Dance clubs",
+          "Night Clubs",
+          "Disco pub",
+          "Discotek",
+          "Discotheke",
+          "Club scene",
+          "Night-club",
+          "Club night",
+          "History of nightclubs"
+        ],
+        "exact_match": 0.0,
+        "f1": 0.5,
+        "confidence": 0.33816514381486973,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "question_id": 37,
+  "question_text": "Kim Carnes' nine weeks at No 1 with Bette Davis Eyes was interrupted for one week by which song?",
+  "choices": [],
+  "gold_answer": "['Stars on 45 (Single)', 'Stars On 45 Medley', 'Stars on 45 medley', 'Stars on 45 (song)', 'Stars on 45 Medley', \"Medley: Intro Venus / Sugar Sugar / No Reply / I'll Be Back / Drive My Car / Do You Want to Know a Secret / We Can Work It Out / I Should Have Known Better / Nowhere Man / You're Going to Lose That Girl / Stars on 45\"]",
+  "methods": {
+    "greedy": {
+      "method_name": "triviaqa_greedy",
+      "method_description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a trivia question. Your response MUST be ONLY the answer to the question. Do NOT include explanations, reasoning, or additional text. Provide a concise, direct answer."
+            },
+            {
+              "role": "user",
+              "content": "Question: Kim Carnes' nine weeks at No 1 with Bette Davis Eyes was interrupted for one week by which song?\n\nProvide a direct answer to the question.\n\nAnswer:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 50
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "You Don't Have to Say You Love Me",
+          "logprob": -3.146965986543364,
+          "probability": 0.04298233822822574
+        }
+      ],
+      "decision_process": {
+        "method": "greedy",
+        "temperature": 0.0,
+        "selected_answer": "You Don't Have to Say You Love Me",
+        "confidence_from_logprob": "0.0430"
+      },
+      "final_metrics": {
+        "predicted": "You Don't Have to Say You Love Me",
+        "gold_answers": [
+          "Stars on 45 (Single)",
+          "Stars On 45 Medley",
+          "Stars on 45 medley",
+          "Stars on 45 (song)",
+          "Stars on 45 Medley",
+          "Medley: Intro Venus / Sugar Sugar / No Reply / I'll Be Back / Drive My Car / Do You Want to Know a Secret / We Can Work It Out / I Should Have Known Better / Nowhere Man / You're Going to Lose That Girl / Stars on 45"
+        ],
+        "exact_match": 0.0,
+        "f1": 0.11764705882352941,
+        "confidence": 0.04298233822822574,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

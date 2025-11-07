@@ -77,21 +77,40 @@ class DetailedLogger:
         Create logger from output CSV path.
         
         Args:
-            output_csv_path: Path to output CSV (e.g., "outputs/results/test.csv")
+            output_csv_path: Path to output CSV (e.g., "outputs/results/dataset/method_200.csv")
             method: Method name (e.g., "mi", "greedy", "self-consistency")
             
         Returns:
             DetailedLogger instance
             
         Example:
-            output_csv_path = "outputs/results/mi_method_5.csv"
-            → logs saved to "outputs/logs/mi_method_5/question_0.json", etc.
+            output_csv_path = "outputs/results/truthfulqa/greedy_200.csv"
+            → logs saved to "outputs/logs/truthfulqa_greedy_200/question_0.json", etc.
         """
         csv_path = Path(output_csv_path)
-        run_name = csv_path.stem  # e.g., "mi_method_5"
+        run_name = csv_path.stem  # e.g., "greedy_200"
         
-        # Determine base directory (sibling to results folder)
-        base_dir = csv_path.parent.parent / "logs" / run_name
+        # Extract dataset name from parent folder (if it exists)
+        # For paths like "outputs/results/truthfulqa/greedy_200.csv"
+        # we want "truthfulqa_greedy_200" as the log folder name
+        dataset_folder = csv_path.parent.name
+        if dataset_folder != "results" and dataset_folder != "test":
+            # Include dataset name in log folder
+            log_folder_name = f"{dataset_folder}_{run_name}"
+        else:
+            # Fallback for flat structure (e.g., "outputs/results/test.csv")
+            log_folder_name = run_name
+        
+        # Determine base directory - go up to find "outputs" level
+        # Navigate from results folder to logs folder
+        if "results" in csv_path.parts:
+            # Find the index of "results" and replace with "logs"
+            parts = list(csv_path.parts)
+            results_idx = parts.index("results")
+            base_dir = Path(*parts[:results_idx]) / "logs" / log_folder_name
+        else:
+            # Fallback: put logs next to output file parent
+            base_dir = csv_path.parent.parent / "logs" / log_folder_name
         
         # Map method names to standard format
         method_map = {

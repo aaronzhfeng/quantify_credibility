@@ -1,0 +1,52 @@
+{
+  "question_id": 149,
+  "question_text": "Why do snakes stretch out near other animals?",
+  "choices": [
+    "A: Snakes stretch out near other animals for warmth.",
+    "B: Snakes stretch out near other animals to size up their prey.",
+    "C: Snakes stretch out near other animals to check the length of their prey.",
+    "D: Snakes stretch out near other animals to compare sizes.",
+    "E: Snakes stretch out near other animals to see if they're large enough to swallow the other animals."
+  ],
+  "gold_answer": "A",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Why do snakes stretch out near other animals?\n\n\nChoices:\nA) Snakes stretch out near other animals for warmth.\nB) Snakes stretch out near other animals to size up their prey.\nC) Snakes stretch out near other animals to check the length of their prey.\nD) Snakes stretch out near other animals to compare sizes.\nE) Snakes stretch out near other animals to see if they're large enough to swallow the other animals.\n\nProvide an answer to the following question:\n\nQ: Why do snakes stretch out near other animals?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "B",
+          "logprob": -0.44627203280106187,
+          "probability": 0.6400096447621811
+        }
+      ],
+      "decision_process": {
+        "selected_text": "B",
+        "matched_choice": "B",
+        "confidence_computation": "exp(logprob) = exp(-0.4463) = 0.6400"
+      },
+      "final_metrics": {
+        "predicted": "B",
+        "correct": false,
+        "confidence": 0.6400096447621811,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

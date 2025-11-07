@@ -1,0 +1,50 @@
+{
+  "question_id": 49,
+  "question_text": "When did Herve serve as a Norman general?",
+  "choices": [],
+  "gold_answer": "[]",
+  "methods": {
+    "greedy": {
+      "method_name": "squad-v2_greedy",
+      "method_description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a question based on a given context. Your response MUST be ONLY the direct answer from the context. Do NOT include explanations, reasoning, or additional text. If the question cannot be answered from the context, respond with: UNANSWERABLE"
+            },
+            {
+              "role": "user",
+              "content": "Context:\nOne of the first Norman mercenaries to serve as a Byzantine general was Hervé in the 1050s. By then however, there were already Norman mercenaries serving as far away as Trebizond and Georgia. They were based at Malatya and Edessa, under the Byzantine duke of Antioch, Isaac Komnenos. In the 1060s, Robert Crispin led the Normans of Edessa against the Turks. Roussel de Bailleul even tried to carve out an independent state in Asia Minor with support from the local population, but he was stopped by the Byzantine general Alexius Komnenos.\n\nQuestion: When did Herve serve as a Norman general?\n\nProvide a direct answer to the question based on the context above.\n\nAnswer:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 50
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "The 1050s.",
+          "logprob": -0.5161781301580675,
+          "probability": 0.5967970756480854
+        }
+      ],
+      "decision_process": {
+        "method": "greedy",
+        "temperature": 0.0,
+        "selected_answer": "The 1050s.",
+        "confidence_from_logprob": "0.5968"
+      },
+      "final_metrics": {
+        "predicted": "The 1050s.",
+        "gold_answers": [],
+        "exact_match": 0.0,
+        "f1": 0.0,
+        "confidence": 0.5967970756480854,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

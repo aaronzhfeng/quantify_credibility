@@ -1,0 +1,54 @@
+{
+  "question_id": 143,
+  "question_text": "How long did Western Europe control Cyprus?",
+  "choices": [],
+  "gold_answer": "['380 years', '380 years', '380 years']",
+  "methods": {
+    "greedy": {
+      "method_name": "squad-v2_greedy",
+      "method_description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a question based on a given context. Your response MUST be ONLY the direct answer from the context. Do NOT include explanations, reasoning, or additional text. If the question cannot be answered from the context, respond with: UNANSWERABLE"
+            },
+            {
+              "role": "user",
+              "content": "Context:\nThe conquest of Cyprus by the Anglo-Norman forces of the Third Crusade opened a new chapter in the history of the island, which would be under Western European domination for the following 380 years. Although not part of a planned operation, the conquest had much more permanent results than initially expected.\n\nQuestion: How long did Western Europe control Cyprus?\n\nProvide a direct answer to the question based on the context above.\n\nAnswer:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 50
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "380 years",
+          "logprob": -0.22852146431978326,
+          "probability": 0.7957092176640825
+        }
+      ],
+      "decision_process": {
+        "method": "greedy",
+        "temperature": 0.0,
+        "selected_answer": "380 years",
+        "confidence_from_logprob": "0.7957"
+      },
+      "final_metrics": {
+        "predicted": "380 years",
+        "gold_answers": [
+          "380 years",
+          "380 years",
+          "380 years"
+        ],
+        "exact_match": 1.0,
+        "f1": 1.0,
+        "confidence": 0.7957092176640825,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

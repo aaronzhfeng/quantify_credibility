@@ -1,0 +1,55 @@
+{
+  "question_id": 57,
+  "question_text": "New York City has way fewer international arrivals per year than which cities?",
+  "choices": [
+    "A: New York City has way fewer international arrivals per year than Hong Kong, Bangkok and London.",
+    "B: Hong Kong, Bangkok and London.",
+    "C: Hong Kong.",
+    "D: New York City has way fewer international arrivals per year than London.",
+    "E: New York City has way fewer international arrivals per year than Los Angeles and London.",
+    "F: Los Angeles and Miami.",
+    "G: New York City has way fewer international arrivals per year than London and Miami.",
+    "H: New York City has way fewer international arrivals per year than San Francisco."
+  ],
+  "gold_answer": "A",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: New York City has way fewer international arrivals per year than which cities?\n\n\nChoices:\nA) New York City has way fewer international arrivals per year than Hong Kong, Bangkok and London.\nB) Hong Kong, Bangkok and London.\nC) Hong Kong.\nD) New York City has way fewer international arrivals per year than London.\nE) New York City has way fewer international arrivals per year than Los Angeles and London.\nF) Los Angeles and Miami.\nG) New York City has way fewer international arrivals per year than London and Miami.\nH) New York City has way fewer international arrivals per year than San Francisco.\n\nProvide an answer to the following question:\n\nQ: New York City has way fewer international arrivals per year than which cities?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "A",
+          "logprob": -0.4324771361425519,
+          "probability": 0.6488996893148412
+        }
+      ],
+      "decision_process": {
+        "selected_text": "A",
+        "matched_choice": "A",
+        "confidence_computation": "exp(logprob) = exp(-0.4325) = 0.6489"
+      },
+      "final_metrics": {
+        "predicted": "A",
+        "correct": true,
+        "confidence": 0.6488996893148412,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

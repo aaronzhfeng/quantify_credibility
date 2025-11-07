@@ -1,0 +1,54 @@
+{
+  "question_id": 90,
+  "question_text": "When did Edward return?",
+  "choices": [],
+  "gold_answer": "['1041', 'in 1041', '1041']",
+  "methods": {
+    "greedy": {
+      "method_name": "squad-v2_greedy",
+      "method_description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a question based on a given context. Your response MUST be ONLY the direct answer from the context. Do NOT include explanations, reasoning, or additional text. If the question cannot be answered from the context, respond with: UNANSWERABLE"
+            },
+            {
+              "role": "user",
+              "content": "Context:\nWhen finally Edward the Confessor returned from his father's refuge in 1041, at the invitation of his half-brother Harthacnut, he brought with him a Norman-educated mind. He also brought many Norman counsellors and fighters, some of whom established an English cavalry force. This concept never really took root, but it is a typical example of the attitudes of Edward. He appointed Robert of Jumièges archbishop of Canterbury and made Ralph the Timid earl of Hereford. He invited his brother-in-law Eustace II, Count of Boulogne to his court in 1051, an event which resulted in the greatest of early conflicts between Saxon and Norman and ultimately resulted in the exile of Earl Godwin of Wessex.\n\nQuestion: When did Edward return?\n\nProvide a direct answer to the question based on the context above.\n\nAnswer:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 50
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "1041",
+          "logprob": -0.01856295320794743,
+          "probability": 0.9816082772566406
+        }
+      ],
+      "decision_process": {
+        "method": "greedy",
+        "temperature": 0.0,
+        "selected_answer": "1041",
+        "confidence_from_logprob": "0.9816"
+      },
+      "final_metrics": {
+        "predicted": "1041",
+        "gold_answers": [
+          "1041",
+          "in 1041",
+          "1041"
+        ],
+        "exact_match": 1.0,
+        "f1": 1.0,
+        "confidence": 0.9816082772566406,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

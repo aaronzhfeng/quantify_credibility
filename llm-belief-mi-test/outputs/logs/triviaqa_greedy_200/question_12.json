@@ -1,0 +1,78 @@
+{
+  "question_id": 12,
+  "question_text": "Which volcano in Tanzania is the highest mountain in Africa?",
+  "choices": [],
+  "gold_answer": "['Mawensi', 'Mt. Kilimanjaro', 'Kibo (volcano)', 'Mount killimanjaro', 'Highest mountain in Africa', 'Kilimanjaro Massif', 'Stella Point', 'Kilimandjaro', 'Kilimonjaro', 'Kilimanjaro', \"Gilman's Point\", 'Killimanjaro', 'Kilima-Njaro', 'Kiliminjaro', 'Mt Kilimanjaro', 'Kilimanjaro Mountain', 'Mount Kilimanjaro', 'Mawenzi', 'Uhuru Peak', 'Kilimanjiro', 'Kaiser-Wilhelm-Spitze', 'Mt Kilamanjaro', 'Mount Kiliminjaro', 'Mount Kilimandjaro', 'Mount Kilamanjaro', 'Tussock Grassland (Tanzania)', 'Kilamanjaro']",
+  "methods": {
+    "greedy": {
+      "method_name": "triviaqa_greedy",
+      "method_description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a trivia question. Your response MUST be ONLY the answer to the question. Do NOT include explanations, reasoning, or additional text. Provide a concise, direct answer."
+            },
+            {
+              "role": "user",
+              "content": "Question: Which volcano in Tanzania is the highest mountain in Africa?\n\nProvide a direct answer to the question.\n\nAnswer:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 50
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "Mount Kilimanjaro",
+          "logprob": -0.9558811550692781,
+          "probability": 0.38447321472788243
+        }
+      ],
+      "decision_process": {
+        "method": "greedy",
+        "temperature": 0.0,
+        "selected_answer": "Mount Kilimanjaro",
+        "confidence_from_logprob": "0.3845"
+      },
+      "final_metrics": {
+        "predicted": "Mount Kilimanjaro",
+        "gold_answers": [
+          "Mawensi",
+          "Mt. Kilimanjaro",
+          "Kibo (volcano)",
+          "Mount killimanjaro",
+          "Highest mountain in Africa",
+          "Kilimanjaro Massif",
+          "Stella Point",
+          "Kilimandjaro",
+          "Kilimonjaro",
+          "Kilimanjaro",
+          "Gilman's Point",
+          "Killimanjaro",
+          "Kilima-Njaro",
+          "Kiliminjaro",
+          "Mt Kilimanjaro",
+          "Kilimanjaro Mountain",
+          "Mount Kilimanjaro",
+          "Mawenzi",
+          "Uhuru Peak",
+          "Kilimanjiro",
+          "Kaiser-Wilhelm-Spitze",
+          "Mt Kilamanjaro",
+          "Mount Kiliminjaro",
+          "Mount Kilimandjaro",
+          "Mount Kilamanjaro",
+          "Tussock Grassland (Tanzania)",
+          "Kilamanjaro"
+        ],
+        "exact_match": 1.0,
+        "f1": 1.0,
+        "confidence": 0.38447321472788243,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

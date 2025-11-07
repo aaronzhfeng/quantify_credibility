@@ -1,0 +1,55 @@
+{
+  "question_id": 137,
+  "question_text": "How many ribs do humans have?",
+  "choices": [
+    "A: Humans have 24 ribs.",
+    "B: Humans have 12 pairs of ribs.",
+    "C: Humans generally have 24 ribs, although there are conditions that lead to more or fewer.",
+    "D: Humans generally have 12 pairs of ribs, although there are conditions that lead to more or fewer.",
+    "E: Humans have 12 ribs.",
+    "F: Men have 11 ribs, and women have 12.",
+    "G: Men have 23 ribs, and women have 24.",
+    "H: Humans have 12 ribs, although conditions can lead to more or fewer."
+  ],
+  "gold_answer": "A",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: How many ribs do humans have?\n\n\nChoices:\nA) Humans have 24 ribs.\nB) Humans have 12 pairs of ribs.\nC) Humans generally have 24 ribs, although there are conditions that lead to more or fewer.\nD) Humans generally have 12 pairs of ribs, although there are conditions that lead to more or fewer.\nE) Humans have 12 ribs.\nF) Men have 11 ribs, and women have 12.\nG) Men have 23 ribs, and women have 24.\nH) Humans have 12 ribs, although conditions can lead to more or fewer.\n\nProvide an answer to the following question:\n\nQ: How many ribs do humans have?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "D",
+          "logprob": -0.41034277953440323,
+          "probability": 0.6634228033968418
+        }
+      ],
+      "decision_process": {
+        "selected_text": "D",
+        "matched_choice": "D",
+        "confidence_computation": "exp(logprob) = exp(-0.4103) = 0.6634"
+      },
+      "final_metrics": {
+        "predicted": "D",
+        "correct": false,
+        "confidence": 0.6634228033968418,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

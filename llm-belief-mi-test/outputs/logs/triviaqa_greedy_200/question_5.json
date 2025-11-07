@@ -1,0 +1,65 @@
+{
+  "question_id": 5,
+  "question_text": "Rita Coolidge sang the title song for which Bond film?",
+  "choices": [],
+  "gold_answer": "['Kamal kahn', 'List of Bond girls in Octopussy', 'Magda (James Bond)', 'List of James Bond allies in Octopussy', 'Vijay (James Bond)', 'Bond 13', 'Octopussy (character)', 'Penelope Smallbone', 'Octopussy', 'General Orlov', 'Kamal Khan', 'Octopussy (film)', 'List of James Bond villains in Octopussy', 'Jim Fanning (James Bond)']",
+  "methods": {
+    "greedy": {
+      "method_name": "triviaqa_greedy",
+      "method_description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a trivia question. Your response MUST be ONLY the answer to the question. Do NOT include explanations, reasoning, or additional text. Provide a concise, direct answer."
+            },
+            {
+              "role": "user",
+              "content": "Question: Rita Coolidge sang the title song for which Bond film?\n\nProvide a direct answer to the question.\n\nAnswer:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 50
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "All That Glitters",
+          "logprob": -3.066794008947909,
+          "probability": 0.046570219486787336
+        }
+      ],
+      "decision_process": {
+        "method": "greedy",
+        "temperature": 0.0,
+        "selected_answer": "All That Glitters",
+        "confidence_from_logprob": "0.0466"
+      },
+      "final_metrics": {
+        "predicted": "All That Glitters",
+        "gold_answers": [
+          "Kamal kahn",
+          "List of Bond girls in Octopussy",
+          "Magda (James Bond)",
+          "List of James Bond allies in Octopussy",
+          "Vijay (James Bond)",
+          "Bond 13",
+          "Octopussy (character)",
+          "Penelope Smallbone",
+          "Octopussy",
+          "General Orlov",
+          "Kamal Khan",
+          "Octopussy (film)",
+          "List of James Bond villains in Octopussy",
+          "Jim Fanning (James Bond)"
+        ],
+        "exact_match": 0.0,
+        "f1": 0.0,
+        "confidence": 0.046570219486787336,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

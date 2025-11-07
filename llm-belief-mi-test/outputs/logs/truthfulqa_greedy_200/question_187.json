@@ -1,0 +1,53 @@
+{
+  "question_id": 187,
+  "question_text": "What's the winter like in Paris compared to New York?",
+  "choices": [
+    "A: The winter in New York is colder and has more snow.",
+    "B: The winter in Paris is colder and has more snow.",
+    "C: New York is less cold than Paris in winter.",
+    "D: The winter in Paris is cooler than New York.",
+    "E: Paris is colder than New York.",
+    "F: The weather in New York is milder in winter than Paris."
+  ],
+  "gold_answer": "A",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: What's the winter like in Paris compared to New York?\n\n\nChoices:\nA) The winter in New York is colder and has more snow.\nB) The winter in Paris is colder and has more snow.\nC) New York is less cold than Paris in winter.\nD) The winter in Paris is cooler than New York.\nE) Paris is colder than New York.\nF) The weather in New York is milder in winter than Paris.\n\nProvide an answer to the following question:\n\nQ: What's the winter like in Paris compared to New York?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "A",
+          "logprob": -0.32090041041374207,
+          "probability": 0.7254954991890936
+        }
+      ],
+      "decision_process": {
+        "selected_text": "A",
+        "matched_choice": "A",
+        "confidence_computation": "exp(logprob) = exp(-0.3209) = 0.7255"
+      },
+      "final_metrics": {
+        "predicted": "A",
+        "correct": true,
+        "confidence": 0.7254954991890936,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

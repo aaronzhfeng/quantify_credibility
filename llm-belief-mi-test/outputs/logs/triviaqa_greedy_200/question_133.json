@@ -1,0 +1,54 @@
+{
+  "question_id": 133,
+  "question_text": "Which future Hollywood star got her break as Wonder Girl, Wonder Woman's sister Drusilla?",
+  "choices": [],
+  "gold_answer": "['Mary Debra Winger', 'Debra Winger', 'Deborah Winger']",
+  "methods": {
+    "greedy": {
+      "method_name": "triviaqa_greedy",
+      "method_description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a trivia question. Your response MUST be ONLY the answer to the question. Do NOT include explanations, reasoning, or additional text. Provide a concise, direct answer."
+            },
+            {
+              "role": "user",
+              "content": "Question: Which future Hollywood star got her break as Wonder Girl, Wonder Woman's sister Drusilla?\n\nProvide a direct answer to the question.\n\nAnswer:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 50
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "Lynda Carter",
+          "logprob": -1.0251939261288499,
+          "probability": 0.35872689214262526
+        }
+      ],
+      "decision_process": {
+        "method": "greedy",
+        "temperature": 0.0,
+        "selected_answer": "Lynda Carter",
+        "confidence_from_logprob": "0.3587"
+      },
+      "final_metrics": {
+        "predicted": "Lynda Carter",
+        "gold_answers": [
+          "Mary Debra Winger",
+          "Debra Winger",
+          "Deborah Winger"
+        ],
+        "exact_match": 0.0,
+        "f1": 0.0,
+        "confidence": 0.35872689214262526,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

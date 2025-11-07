@@ -1,0 +1,79 @@
+{
+  "question_id": 20,
+  "question_text": "Dave Gilmore and Roger Waters were in which rock group?",
+  "choices": [],
+  "gold_answer": "['Grey Floyd', 'Pink Floyd trivia', 'The Screaming Ab Dabs', 'Pink flowd', 'The Meggadeaths', 'The Architectural Abdabs', 'PINK FLOYD', 'Pink Flod', 'Pink Floyd', 'Pink Floyd Trivia', 'The Pink Floyd', 'Notable or frequent contributors to pink floyd', 'The Tea Set', 'Pinkfloyd', 'Pi5', 'Pink floid', 'Pink Floyd (band)', 'The T Set', 'Screaming abdabs', 'Notable or frequent contributors to Pink Floyd', 'The Megadeaths', 'Pik floyd', 'The Pink Floyd Sound', 'Pink floyd', 'The T-Set', 'The Screaming Abdabs', 'Clive Metcalfe', 'Meggadeaths']",
+  "methods": {
+    "greedy": {
+      "method_name": "triviaqa_greedy",
+      "method_description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a trivia question. Your response MUST be ONLY the answer to the question. Do NOT include explanations, reasoning, or additional text. Provide a concise, direct answer."
+            },
+            {
+              "role": "user",
+              "content": "Question: Dave Gilmore and Roger Waters were in which rock group?\n\nProvide a direct answer to the question.\n\nAnswer:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 50
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "Pink Floyd",
+          "logprob": -0.20330327961710282,
+          "probability": 0.816030718409341
+        }
+      ],
+      "decision_process": {
+        "method": "greedy",
+        "temperature": 0.0,
+        "selected_answer": "Pink Floyd",
+        "confidence_from_logprob": "0.8160"
+      },
+      "final_metrics": {
+        "predicted": "Pink Floyd",
+        "gold_answers": [
+          "Grey Floyd",
+          "Pink Floyd trivia",
+          "The Screaming Ab Dabs",
+          "Pink flowd",
+          "The Meggadeaths",
+          "The Architectural Abdabs",
+          "PINK FLOYD",
+          "Pink Flod",
+          "Pink Floyd",
+          "Pink Floyd Trivia",
+          "The Pink Floyd",
+          "Notable or frequent contributors to pink floyd",
+          "The Tea Set",
+          "Pinkfloyd",
+          "Pi5",
+          "Pink floid",
+          "Pink Floyd (band)",
+          "The T Set",
+          "Screaming abdabs",
+          "Notable or frequent contributors to Pink Floyd",
+          "The Megadeaths",
+          "Pik floyd",
+          "The Pink Floyd Sound",
+          "Pink floyd",
+          "The T-Set",
+          "The Screaming Abdabs",
+          "Clive Metcalfe",
+          "Meggadeaths"
+        ],
+        "exact_match": 1.0,
+        "f1": 1.0,
+        "confidence": 0.816030718409341,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

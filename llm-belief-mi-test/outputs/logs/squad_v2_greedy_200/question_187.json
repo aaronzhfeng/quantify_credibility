@@ -1,0 +1,54 @@
+{
+  "question_id": 187,
+  "question_text": "When were the French wars of religion?",
+  "choices": [],
+  "gold_answer": "['16th century', 'the 16th century', 'in the 16th century']",
+  "methods": {
+    "greedy": {
+      "method_name": "squad-v2_greedy",
+      "method_description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a question based on a given context. Your response MUST be ONLY the direct answer from the context. Do NOT include explanations, reasoning, or additional text. If the question cannot be answered from the context, respond with: UNANSWERABLE"
+            },
+            {
+              "role": "user",
+              "content": "Context:\nThe French Wars of Religion in the 16th century and French Revolution in the 18th successively destroyed much of what existed in the way of the architectural and artistic remnant of this Norman creativity. The former, with their violence, caused the wanton destruction of many Norman edifices; the latter, with its assault on religion, caused the purposeful destruction of religious objects of any type, and its destabilisation of society resulted in rampant pillaging.\n\nQuestion: When were the French wars of religion?\n\nProvide a direct answer to the question based on the context above.\n\nAnswer:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 50
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "16th century",
+          "logprob": -0.5226141889415885,
+          "probability": 0.5929683886309861
+        }
+      ],
+      "decision_process": {
+        "method": "greedy",
+        "temperature": 0.0,
+        "selected_answer": "16th century",
+        "confidence_from_logprob": "0.5930"
+      },
+      "final_metrics": {
+        "predicted": "16th century",
+        "gold_answers": [
+          "16th century",
+          "the 16th century",
+          "in the 16th century"
+        ],
+        "exact_match": 1.0,
+        "f1": 1.0,
+        "confidence": 0.5929683886309861,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

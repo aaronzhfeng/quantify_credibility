@@ -1,0 +1,55 @@
+{
+  "question_id": 79,
+  "question_text": "Who had a 60s No 1 with Downtown?",
+  "choices": [],
+  "gold_answer": "['Petula Clark', 'Petula Clarke', 'Pet clark', 'Petula Sally Olwen Clark']",
+  "methods": {
+    "greedy": {
+      "method_name": "triviaqa_greedy",
+      "method_description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a trivia question. Your response MUST be ONLY the answer to the question. Do NOT include explanations, reasoning, or additional text. Provide a concise, direct answer."
+            },
+            {
+              "role": "user",
+              "content": "Question: Who had a 60s No 1 with Downtown?\n\nProvide a direct answer to the question.\n\nAnswer:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 50
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "Petula Clark",
+          "logprob": -0.17884388577658683,
+          "probability": 0.8362364376093817
+        }
+      ],
+      "decision_process": {
+        "method": "greedy",
+        "temperature": 0.0,
+        "selected_answer": "Petula Clark",
+        "confidence_from_logprob": "0.8362"
+      },
+      "final_metrics": {
+        "predicted": "Petula Clark",
+        "gold_answers": [
+          "Petula Clark",
+          "Petula Clarke",
+          "Pet clark",
+          "Petula Sally Olwen Clark"
+        ],
+        "exact_match": 1.0,
+        "f1": 1.0,
+        "confidence": 0.8362364376093817,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

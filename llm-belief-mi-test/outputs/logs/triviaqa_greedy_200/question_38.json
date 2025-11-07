@@ -1,0 +1,87 @@
+{
+  "question_id": 38,
+  "question_text": "Where in Canada is the Lion's Gate bridge?",
+  "choices": [],
+  "gold_answer": "['Vancouver, Canada', 'Vancouver (Canada)', 'Corpus Christi Elementary School (Canada)', 'UN/LOCODE:CAVAN', 'Vancouver, British Columbia, Canada', 'Vancouver, BC, Canada', 'Vancouver, British-Columbia', 'Vancouver, B.C., Canada', 'Vancouver', 'Vancouver, British Colombia', 'Vancover, British Columbia', 'Vansterdam', 'Vancouver (BC)', 'Hastings East (Vancouver)', 'Vancouver British Columbia', 'Vancouver Canada', 'City of Vancouver', 'Vancouver, BC', 'Vancouver (B.C.)', 'Vancouver City Centre, British Columbia', 'Vancouver, B.C.', 'South Vancouver, British Columbia', 'Vancouverite', 'Vancouver, British Columbia', 'Vancouver Christian School', 'Vancouvr', 'Hong kouver', 'Vancouverites', 'Hongcouver', 'Vancouver, bc', 'Corpus Christi Elementary', 'Hong couver', 'Greater Vancouver Bridges', 'Vancover', 'Vanocuver', 'Vancouver BC']",
+  "methods": {
+    "greedy": {
+      "method_name": "triviaqa_greedy",
+      "method_description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a trivia question. Your response MUST be ONLY the answer to the question. Do NOT include explanations, reasoning, or additional text. Provide a concise, direct answer."
+            },
+            {
+              "role": "user",
+              "content": "Question: Where in Canada is the Lion's Gate bridge?\n\nProvide a direct answer to the question.\n\nAnswer:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 50
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "Vancouver, British Columbia.",
+          "logprob": -0.6984692553814966,
+          "probability": 0.49734603116393855
+        }
+      ],
+      "decision_process": {
+        "method": "greedy",
+        "temperature": 0.0,
+        "selected_answer": "Vancouver, British Columbia.",
+        "confidence_from_logprob": "0.4973"
+      },
+      "final_metrics": {
+        "predicted": "Vancouver, British Columbia.",
+        "gold_answers": [
+          "Vancouver, Canada",
+          "Vancouver (Canada)",
+          "Corpus Christi Elementary School (Canada)",
+          "UN/LOCODE:CAVAN",
+          "Vancouver, British Columbia, Canada",
+          "Vancouver, BC, Canada",
+          "Vancouver, British-Columbia",
+          "Vancouver, B.C., Canada",
+          "Vancouver",
+          "Vancouver, British Colombia",
+          "Vancover, British Columbia",
+          "Vansterdam",
+          "Vancouver (BC)",
+          "Hastings East (Vancouver)",
+          "Vancouver British Columbia",
+          "Vancouver Canada",
+          "City of Vancouver",
+          "Vancouver, BC",
+          "Vancouver (B.C.)",
+          "Vancouver City Centre, British Columbia",
+          "Vancouver, B.C.",
+          "South Vancouver, British Columbia",
+          "Vancouverite",
+          "Vancouver, British Columbia",
+          "Vancouver Christian School",
+          "Vancouvr",
+          "Hong kouver",
+          "Vancouverites",
+          "Hongcouver",
+          "Vancouver, bc",
+          "Corpus Christi Elementary",
+          "Hong couver",
+          "Greater Vancouver Bridges",
+          "Vancover",
+          "Vanocuver",
+          "Vancouver BC"
+        ],
+        "exact_match": 1.0,
+        "f1": 1.0,
+        "confidence": 0.49734603116393855,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

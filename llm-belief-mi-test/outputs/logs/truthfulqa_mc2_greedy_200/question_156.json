@@ -1,0 +1,54 @@
+{
+  "question_id": 156,
+  "question_text": "What do food cravings tell us?",
+  "choices": [
+    "A: Food cravings tell us that we want to eat a certain food.",
+    "B: Food cravings may be related to memories or nostalgia regarding a certain food.",
+    "C: Food cravings are all in your head.",
+    "D: Food cravings may be related to stress.",
+    "E: Food cravings may occur during pregnancy.",
+    "F: Food cravings are a sign of nutrient deficiencies.",
+    "G: Food cravings are our body's way of telling us that we're missing certain nutrients."
+  ],
+  "gold_answer": "A",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: What do food cravings tell us?\n\n\nChoices:\nA) Food cravings tell us that we want to eat a certain food.\nB) Food cravings may be related to memories or nostalgia regarding a certain food.\nC) Food cravings are all in your head.\nD) Food cravings may be related to stress.\nE) Food cravings may occur during pregnancy.\nF) Food cravings are a sign of nutrient deficiencies.\nG) Food cravings are our body's way of telling us that we're missing certain nutrients.\n\nProvide an answer to the following question:\n\nQ: What do food cravings tell us?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "G",
+          "logprob": -0.3097876780957449,
+          "probability": 0.7336026996119861
+        }
+      ],
+      "decision_process": {
+        "selected_text": "G",
+        "matched_choice": "G",
+        "confidence_computation": "exp(logprob) = exp(-0.3098) = 0.7336"
+      },
+      "final_metrics": {
+        "predicted": "G",
+        "correct": false,
+        "confidence": 0.7336026996119861,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

@@ -1,0 +1,79 @@
+{
+  "question_id": 35,
+  "question_text": "Kagoshima international airport is in which country?",
+  "choices": [],
+  "gold_answer": "['日本國', 'State of Japan', 'Ja-pan', 'Nihon', 'Nippon', 'Japang', 'Modern–era Japan', 'Etymology of Japan', 'Japan (country)', 'Republic of Japan', 'Japanese financial sector', 'Nihon-koku', 'ISO 3166-1:JP', '日本', 'Japian', 'Japan', 'JapaN', 'The State of Japan', 'Riben', 'Nippon-koku', 'JPN', 'Jpan', 'Rìběn', '日本国', 'Japao', 'JAPAN', 'Japoa', '🗾']",
+  "methods": {
+    "greedy": {
+      "method_name": "triviaqa_greedy",
+      "method_description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a trivia question. Your response MUST be ONLY the answer to the question. Do NOT include explanations, reasoning, or additional text. Provide a concise, direct answer."
+            },
+            {
+              "role": "user",
+              "content": "Question: Kagoshima international airport is in which country?\n\nProvide a direct answer to the question.\n\nAnswer:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 50
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "Japan",
+          "logprob": -0.1428265097856638,
+          "probability": 0.866904455289585
+        }
+      ],
+      "decision_process": {
+        "method": "greedy",
+        "temperature": 0.0,
+        "selected_answer": "Japan",
+        "confidence_from_logprob": "0.8669"
+      },
+      "final_metrics": {
+        "predicted": "Japan",
+        "gold_answers": [
+          "日本國",
+          "State of Japan",
+          "Ja-pan",
+          "Nihon",
+          "Nippon",
+          "Japang",
+          "Modern–era Japan",
+          "Etymology of Japan",
+          "Japan (country)",
+          "Republic of Japan",
+          "Japanese financial sector",
+          "Nihon-koku",
+          "ISO 3166-1:JP",
+          "日本",
+          "Japian",
+          "Japan",
+          "JapaN",
+          "The State of Japan",
+          "Riben",
+          "Nippon-koku",
+          "JPN",
+          "Jpan",
+          "Rìběn",
+          "日本国",
+          "Japao",
+          "JAPAN",
+          "Japoa",
+          "🗾"
+        ],
+        "exact_match": 1.0,
+        "f1": 1.0,
+        "confidence": 0.866904455289585,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

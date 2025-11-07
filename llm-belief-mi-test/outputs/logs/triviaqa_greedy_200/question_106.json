@@ -1,0 +1,54 @@
+{
+  "question_id": 106,
+  "question_text": "What relation is Joey Richardson to Vanessa Redgrave?",
+  "choices": [],
+  "gold_answer": "['Daughterhood', 'Daughter', 'Daughters']",
+  "methods": {
+    "greedy": {
+      "method_name": "triviaqa_greedy",
+      "method_description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a trivia question. Your response MUST be ONLY the answer to the question. Do NOT include explanations, reasoning, or additional text. Provide a concise, direct answer."
+            },
+            {
+              "role": "user",
+              "content": "Question: What relation is Joey Richardson to Vanessa Redgrave?\n\nProvide a direct answer to the question.\n\nAnswer:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 50
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "Carrie Fisher's daughter.",
+          "logprob": -5.374197475379333,
+          "probability": 0.004634636651494023
+        }
+      ],
+      "decision_process": {
+        "method": "greedy",
+        "temperature": 0.0,
+        "selected_answer": "Carrie Fisher's daughter.",
+        "confidence_from_logprob": "0.0046"
+      },
+      "final_metrics": {
+        "predicted": "Carrie Fisher's daughter.",
+        "gold_answers": [
+          "Daughterhood",
+          "Daughter",
+          "Daughters"
+        ],
+        "exact_match": 0.0,
+        "f1": 0.4,
+        "confidence": 0.004634636651494023,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

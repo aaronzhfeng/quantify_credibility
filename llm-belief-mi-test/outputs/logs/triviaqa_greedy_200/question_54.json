@@ -1,0 +1,85 @@
+{
+  "question_id": 54,
+  "question_text": "Who is the most successful UK solo artist in the USA?",
+  "choices": [],
+  "gold_answer": "['Sir Elton', 'Rockaday Johnny', 'Elthon John', 'Eltonjohn', 'List of Elton John awards', 'John, Elton', 'Reggie Dwight', 'Lord Choc Ice', 'Redget Buntovan', \"Elton John's discography\", 'Elton john discography', 'Reginald K. Dwight', 'Elton John', 'Mrs. Elton John', 'Lady Choc Ice', 'Reg Kenneth Dwight', 'Renate Blauel', 'Reginald Kenneth Dwight', 'Ann Orson', 'Reg Dwight', 'Elton John Band', 'Reginald Dwight', 'Sir John Elton', 'Elton john', 'Elton John Discography', 'Reginald Kenneth', 'Elton Hercules John', 'Sir Elton Hercules John CBE', 'Elton H. John', 'Nancy Treadlight', 'Reginald kenneth dwight', 'Reginald dwight', 'Sir Elton John', 'Kenneth Dwight']",
+  "methods": {
+    "greedy": {
+      "method_name": "triviaqa_greedy",
+      "method_description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a trivia question. Your response MUST be ONLY the answer to the question. Do NOT include explanations, reasoning, or additional text. Provide a concise, direct answer."
+            },
+            {
+              "role": "user",
+              "content": "Question: Who is the most successful UK solo artist in the USA?\n\nProvide a direct answer to the question.\n\nAnswer:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 50
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "Elton John",
+          "logprob": -1.006114120609709,
+          "probability": 0.3656370440271099
+        }
+      ],
+      "decision_process": {
+        "method": "greedy",
+        "temperature": 0.0,
+        "selected_answer": "Elton John",
+        "confidence_from_logprob": "0.3656"
+      },
+      "final_metrics": {
+        "predicted": "Elton John",
+        "gold_answers": [
+          "Sir Elton",
+          "Rockaday Johnny",
+          "Elthon John",
+          "Eltonjohn",
+          "List of Elton John awards",
+          "John, Elton",
+          "Reggie Dwight",
+          "Lord Choc Ice",
+          "Redget Buntovan",
+          "Elton John's discography",
+          "Elton john discography",
+          "Reginald K. Dwight",
+          "Elton John",
+          "Mrs. Elton John",
+          "Lady Choc Ice",
+          "Reg Kenneth Dwight",
+          "Renate Blauel",
+          "Reginald Kenneth Dwight",
+          "Ann Orson",
+          "Reg Dwight",
+          "Elton John Band",
+          "Reginald Dwight",
+          "Sir John Elton",
+          "Elton john",
+          "Elton John Discography",
+          "Reginald Kenneth",
+          "Elton Hercules John",
+          "Sir Elton Hercules John CBE",
+          "Elton H. John",
+          "Nancy Treadlight",
+          "Reginald kenneth dwight",
+          "Reginald dwight",
+          "Sir Elton John",
+          "Kenneth Dwight"
+        ],
+        "exact_match": 1.0,
+        "f1": 1.0,
+        "confidence": 0.3656370440271099,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

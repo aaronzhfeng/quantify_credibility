@@ -1,0 +1,51 @@
+{
+  "question_id": 49,
+  "question_text": "The word \"Easter\" is connected with which goddess?",
+  "choices": [
+    "A: It is connected with Eostre, a West Germanic goddess representing the dawn.",
+    "B: It is connected with Ishtar, a Mesopotamian goddess.",
+    "C: Ishtar.",
+    "D: The word \"Easter\" is connected with the goddess Ishtar."
+  ],
+  "gold_answer": "A",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: The word \"Easter\" is connected with which goddess?\n\n\nChoices:\nA) It is connected with Eostre, a West Germanic goddess representing the dawn.\nB) It is connected with Ishtar, a Mesopotamian goddess.\nC) Ishtar.\nD) The word \"Easter\" is connected with the goddess Ishtar.\n\nProvide an answer to the following question:\n\nQ: The word \"Easter\" is connected with which goddess?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "A",
+          "logprob": -0.04395887383725494,
+          "probability": 0.9569933141265298
+        }
+      ],
+      "decision_process": {
+        "selected_text": "A",
+        "matched_choice": "A",
+        "confidence_computation": "exp(logprob) = exp(-0.0440) = 0.9570"
+      },
+      "final_metrics": {
+        "predicted": "A",
+        "correct": true,
+        "confidence": 0.9569933141265298,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

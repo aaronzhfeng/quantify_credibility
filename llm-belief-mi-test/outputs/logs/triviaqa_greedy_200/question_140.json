@@ -1,0 +1,56 @@
+{
+  "question_id": 140,
+  "question_text": "Who beat Tim Henman in his first Wimbledon singles semifinal?",
+  "choices": [],
+  "gold_answer": "['Sampras', 'Sampras, Pete', 'Pete Sampras', 'Peter Sampras', 'Petros %22Pete%22 Sampras']",
+  "methods": {
+    "greedy": {
+      "method_name": "triviaqa_greedy",
+      "method_description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a trivia question. Your response MUST be ONLY the answer to the question. Do NOT include explanations, reasoning, or additional text. Provide a concise, direct answer."
+            },
+            {
+              "role": "user",
+              "content": "Question: Who beat Tim Henman in his first Wimbledon singles semifinal?\n\nProvide a direct answer to the question.\n\nAnswer:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 50
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "Pete Sampras",
+          "logprob": -0.48427333480503876,
+          "probability": 0.6161447650842746
+        }
+      ],
+      "decision_process": {
+        "method": "greedy",
+        "temperature": 0.0,
+        "selected_answer": "Pete Sampras",
+        "confidence_from_logprob": "0.6161"
+      },
+      "final_metrics": {
+        "predicted": "Pete Sampras",
+        "gold_answers": [
+          "Sampras",
+          "Sampras, Pete",
+          "Pete Sampras",
+          "Peter Sampras",
+          "Petros %22Pete%22 Sampras"
+        ],
+        "exact_match": 1.0,
+        "f1": 1.0,
+        "confidence": 0.6161447650842746,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

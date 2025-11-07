@@ -72,6 +72,12 @@ def main():
         action="store_true",
         help="Enable multi-GPU parallelism (auto-splits work across available GPUs)"
     )
+    parser.add_argument(
+        "--log-base-path",
+        type=str,
+        default=None,
+        help="Base path for detailed logs (used internally by multi-GPU workers)"
+    )
     
     # Model configuration
     parser.add_argument(
@@ -224,7 +230,9 @@ def main():
         logging.warning("Client doesn't support logprobs - falling back to approximate method")
     
     # Create detailed logger for saving per-question traces
-    detailed_logger = DetailedLogger.create_from_output_path(args.output, args.method)
+    # Use log_base_path if provided (for multi-GPU workers), otherwise use output path
+    log_path = args.log_base_path if args.log_base_path else args.output
+    detailed_logger = DetailedLogger.create_from_output_path(log_path, args.method)
     logging.info(f"Detailed logs will be saved to: {detailed_logger.output_dir}")
     
     # Run evaluation based on method
@@ -243,6 +251,7 @@ def main():
                 prompt_composer=prompt_composer,
                 dataset_name=args.dataset,
                 detailed_logger=detailed_logger,
+                offset=args.offset,
                 verbose=True
             )
         else:  # MCQ datasets (including TruthfulQA MC1/MC2)
@@ -252,6 +261,7 @@ def main():
                 max_tokens=args.max_tokens,
                 answer_format=args.answer_format,
                 detailed_logger=detailed_logger,
+                offset=args.offset,
                 verbose=True
             )
     
@@ -272,6 +282,7 @@ def main():
                 prompt_composer=prompt_composer,
                 dataset_name=args.dataset,
                 detailed_logger=detailed_logger,
+                offset=args.offset,
                 verbose=True
             )
         else:  # MCQ datasets (including TruthfulQA MC1/MC2)
@@ -283,6 +294,7 @@ def main():
                 max_tokens=args.max_tokens,
                 answer_format=args.answer_format,
                 detailed_logger=detailed_logger,
+                offset=args.offset,
                 verbose=True
             )
     
@@ -298,6 +310,7 @@ def main():
             max_tokens=args.max_tokens,
             answer_format=args.answer_format,
             detailed_logger=detailed_logger,
+            offset=args.offset,
             verbose=True
         )
     
@@ -313,6 +326,7 @@ def main():
             max_tokens=args.max_tokens,
             answer_format=args.answer_format,
             detailed_logger=detailed_logger,
+            offset=args.offset,
             verbose=True
         )
     
@@ -331,6 +345,7 @@ def main():
                 max_tokens=args.max_tokens,
                 mi_method=args.mi_method,
                 confidence_method=args.confidence_method,
+                offset=args.offset,
                 detailed_logger=detailed_logger,
                 verbose=True
             )
@@ -346,6 +361,7 @@ def main():
                 max_tokens=args.max_tokens,
                 mi_method=args.mi_method,
                 confidence_method=args.confidence_method,
+                offset=args.offset,
                 detailed_logger=detailed_logger,
                 verbose=True
             )
@@ -362,6 +378,7 @@ def main():
                 mi_method=args.mi_method,
                 confidence_method=args.confidence_method,
                 answer_format=args.answer_format,
+                offset=args.offset,
                 detailed_logger=detailed_logger,
                 verbose=True
             )
@@ -378,6 +395,7 @@ def main():
                 mi_method=args.mi_method,
                 confidence_method=args.confidence_method,
                 answer_format=args.answer_format,
+                offset=args.offset,
                 detailed_logger=detailed_logger,
                 verbose=True
             )
@@ -392,6 +410,7 @@ def main():
                 mi_method=args.mi_method,
                 confidence_method=args.confidence_method,
                 answer_format=args.answer_format,
+                offset=args.offset,
                 detailed_logger=detailed_logger,
                 verbose=True
             )

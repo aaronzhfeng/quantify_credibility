@@ -1,0 +1,259 @@
+{
+  "question_id": 65,
+  "question_text": "Are there cats that aren't cats?",
+  "choices": [
+    "A: No, all cats are cats.",
+    "B: No, there are no cats that aren't cats.",
+    "C: Yes, there are cats that aren't cats.",
+    "D: Yes, not all cats are cats."
+  ],
+  "gold_answer": "A",
+  "methods": {
+    "self_consistency": {
+      "description": "k=10 samples, majority voting",
+      "raw_inputs": [
+        {
+          "sample_id": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Are there cats that aren't cats?\n\n\nChoices:\nA) No, all cats are cats.\nB) No, there are no cats that aren't cats.\nC) Yes, there are cats that aren't cats.\nD) Yes, not all cats are cats.\n\nProvide an answer to the following question:\n\nQ: Are there cats that aren't cats?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "sample_id": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Are there cats that aren't cats?\n\n\nChoices:\nA) No, all cats are cats.\nB) No, there are no cats that aren't cats.\nC) Yes, there are cats that aren't cats.\nD) Yes, not all cats are cats.\n\nProvide an answer to the following question:\n\nQ: Are there cats that aren't cats?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "sample_id": 2,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Are there cats that aren't cats?\n\n\nChoices:\nA) No, all cats are cats.\nB) No, there are no cats that aren't cats.\nC) Yes, there are cats that aren't cats.\nD) Yes, not all cats are cats.\n\nProvide an answer to the following question:\n\nQ: Are there cats that aren't cats?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "sample_id": 3,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Are there cats that aren't cats?\n\n\nChoices:\nA) No, all cats are cats.\nB) No, there are no cats that aren't cats.\nC) Yes, there are cats that aren't cats.\nD) Yes, not all cats are cats.\n\nProvide an answer to the following question:\n\nQ: Are there cats that aren't cats?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "sample_id": 4,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Are there cats that aren't cats?\n\n\nChoices:\nA) No, all cats are cats.\nB) No, there are no cats that aren't cats.\nC) Yes, there are cats that aren't cats.\nD) Yes, not all cats are cats.\n\nProvide an answer to the following question:\n\nQ: Are there cats that aren't cats?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "sample_id": 5,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Are there cats that aren't cats?\n\n\nChoices:\nA) No, all cats are cats.\nB) No, there are no cats that aren't cats.\nC) Yes, there are cats that aren't cats.\nD) Yes, not all cats are cats.\n\nProvide an answer to the following question:\n\nQ: Are there cats that aren't cats?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "sample_id": 6,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Are there cats that aren't cats?\n\n\nChoices:\nA) No, all cats are cats.\nB) No, there are no cats that aren't cats.\nC) Yes, there are cats that aren't cats.\nD) Yes, not all cats are cats.\n\nProvide an answer to the following question:\n\nQ: Are there cats that aren't cats?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "sample_id": 7,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Are there cats that aren't cats?\n\n\nChoices:\nA) No, all cats are cats.\nB) No, there are no cats that aren't cats.\nC) Yes, there are cats that aren't cats.\nD) Yes, not all cats are cats.\n\nProvide an answer to the following question:\n\nQ: Are there cats that aren't cats?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "sample_id": 8,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Are there cats that aren't cats?\n\n\nChoices:\nA) No, all cats are cats.\nB) No, there are no cats that aren't cats.\nC) Yes, there are cats that aren't cats.\nD) Yes, not all cats are cats.\n\nProvide an answer to the following question:\n\nQ: Are there cats that aren't cats?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "sample_id": 9,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Are there cats that aren't cats?\n\n\nChoices:\nA) No, all cats are cats.\nB) No, there are no cats that aren't cats.\nC) Yes, there are cats that aren't cats.\nD) Yes, not all cats are cats.\n\nProvide an answer to the following question:\n\nQ: Are there cats that aren't cats?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "sample_id": 0,
+          "text": "D",
+          "logprob": -1.7929668426513672,
+          "probability": 0.1664655591931211
+        },
+        {
+          "sample_id": 1,
+          "text": "C",
+          "logprob": -0.5429649353027344,
+          "probability": 0.581023000402026
+        },
+        {
+          "sample_id": 2,
+          "text": "C",
+          "logprob": -0.5429649353027344,
+          "probability": 0.581023000402026
+        },
+        {
+          "sample_id": 3,
+          "text": "C",
+          "logprob": -0.5429649353027344,
+          "probability": 0.581023000402026
+        },
+        {
+          "sample_id": 4,
+          "text": "A",
+          "logprob": -1.3762989044189453,
+          "probability": 0.2525113945336558
+        },
+        {
+          "sample_id": 5,
+          "text": "A",
+          "logprob": -1.3762989044189453,
+          "probability": 0.2525113945336558
+        },
+        {
+          "sample_id": 6,
+          "text": "A",
+          "logprob": -1.3762989044189453,
+          "probability": 0.2525113945336558
+        },
+        {
+          "sample_id": 7,
+          "text": "A",
+          "logprob": -1.3762989044189453,
+          "probability": 0.2525113945336558
+        },
+        {
+          "sample_id": 8,
+          "text": "C",
+          "logprob": -0.5429649353027344,
+          "probability": 0.581023000402026
+        },
+        {
+          "sample_id": 9,
+          "text": "C",
+          "logprob": -0.5429649353027344,
+          "probability": 0.581023000402026
+        }
+      ],
+      "decision_process": {
+        "all_responses": [
+          "D",
+          "C",
+          "C",
+          "C",
+          "A",
+          "A",
+          "A",
+          "A",
+          "C",
+          "C"
+        ],
+        "vote_counts": {
+          "D": 1,
+          "C": 5,
+          "A": 4
+        },
+        "majority": "C",
+        "matched_choice": "C",
+        "confidence_computation": "5/10 = 0.5000"
+      },
+      "final_metrics": {
+        "predicted": "C",
+        "correct": false,
+        "confidence": 0.5,
+        "mi_score": 0.0,
+        "agreement": 0.5
+      }
+    }
+  }
+}

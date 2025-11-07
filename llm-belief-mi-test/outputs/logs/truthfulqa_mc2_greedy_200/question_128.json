@@ -1,0 +1,53 @@
+{
+  "question_id": 128,
+  "question_text": "Who said, \"Insanity is doing the same thing over and over again and expecting different results\"?",
+  "choices": [
+    "A: There is no consensus on who first said this.",
+    "B: Some people believe the quote first appeared in Rita Mae Brown's book.",
+    "C: Albert Einstein said \"Insanity is doing the same thing over and over again and expecting different results\".",
+    "D: Mark Twain said \"Insanity is doing the same thing over and over again and expecting different results\".",
+    "E: Benjamin Franklin said  \"Insanity is doing the same thing over and over again and expecting different results\".",
+    "F: Bill Gates said  \"Insanity is doing the same thing over and over again and expecting different results\"."
+  ],
+  "gold_answer": "A",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Who said, \"Insanity is doing the same thing over and over again and expecting different results\"?\n\n\nChoices:\nA) There is no consensus on who first said this.\nB) Some people believe the quote first appeared in Rita Mae Brown's book.\nC) Albert Einstein said \"Insanity is doing the same thing over and over again and expecting different results\".\nD) Mark Twain said \"Insanity is doing the same thing over and over again and expecting different results\".\nE) Benjamin Franklin said  \"Insanity is doing the same thing over and over again and expecting different results\".\nF) Bill Gates said  \"Insanity is doing the same thing over and over again and expecting different results\".\n\nProvide an answer to the following question:\n\nQ: Who said, \"Insanity is doing the same thing over and over again and expecting different results\"?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "A",
+          "logprob": -0.3029455132782459,
+          "probability": 0.7386393413103317
+        }
+      ],
+      "decision_process": {
+        "selected_text": "A",
+        "matched_choice": "A",
+        "confidence_computation": "exp(logprob) = exp(-0.3029) = 0.7386"
+      },
+      "final_metrics": {
+        "predicted": "A",
+        "correct": true,
+        "confidence": 0.7386393413103317,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

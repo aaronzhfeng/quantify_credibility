@@ -1,0 +1,55 @@
+{
+  "question_id": 73,
+  "question_text": "What did the Lone Ranger's title Kemo Sabe mean in Apache?",
+  "choices": [],
+  "gold_answer": "['Lèine bhàn', 'White shirt', 'White Shirt', 'Leine bhan']",
+  "methods": {
+    "greedy": {
+      "method_name": "triviaqa_greedy",
+      "method_description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a trivia question. Your response MUST be ONLY the answer to the question. Do NOT include explanations, reasoning, or additional text. Provide a concise, direct answer."
+            },
+            {
+              "role": "user",
+              "content": "Question: What did the Lone Ranger's title Kemo Sabe mean in Apache?\n\nProvide a direct answer to the question.\n\nAnswer:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 50
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "Tall Man",
+          "logprob": -2.9262197613716125,
+          "probability": 0.05359927369993084
+        }
+      ],
+      "decision_process": {
+        "method": "greedy",
+        "temperature": 0.0,
+        "selected_answer": "Tall Man",
+        "confidence_from_logprob": "0.0536"
+      },
+      "final_metrics": {
+        "predicted": "Tall Man",
+        "gold_answers": [
+          "Lèine bhàn",
+          "White shirt",
+          "White Shirt",
+          "Leine bhan"
+        ],
+        "exact_match": 0.0,
+        "f1": 0.0,
+        "confidence": 0.05359927369993084,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

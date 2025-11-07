@@ -1,0 +1,50 @@
+{
+  "question_id": 118,
+  "question_text": "Who invaded Scotland in the 10th century?",
+  "choices": [],
+  "gold_answer": "[]",
+  "methods": {
+    "greedy": {
+      "method_name": "squad-v2_greedy",
+      "method_description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a question based on a given context. Your response MUST be ONLY the direct answer from the context. Do NOT include explanations, reasoning, or additional text. If the question cannot be answered from the context, respond with: UNANSWERABLE"
+            },
+            {
+              "role": "user",
+              "content": "Context:\nOne of the claimants of the English throne opposing William the Conqueror, Edgar Atheling, eventually fled to Scotland. King Malcolm III of Scotland married Edgar's sister Margaret, and came into opposition to William who had already disputed Scotland's southern borders. William invaded Scotland in 1072, riding as far as Abernethy where he met up with his fleet of ships. Malcolm submitted, paid homage to William and surrendered his son Duncan as a hostage, beginning a series of arguments as to whether the Scottish Crown owed allegiance to the King of England.\n\nQuestion: Who invaded Scotland in the 10th century?\n\nProvide a direct answer to the question based on the context above.\n\nAnswer:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 50
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "UNANSWERABLE",
+          "logprob": -0.5254355386672387,
+          "probability": 0.5912977752309072
+        }
+      ],
+      "decision_process": {
+        "method": "greedy",
+        "temperature": 0.0,
+        "selected_answer": "UNANSWERABLE",
+        "confidence_from_logprob": "0.5913"
+      },
+      "final_metrics": {
+        "predicted": "UNANSWERABLE",
+        "gold_answers": [],
+        "exact_match": 1.0,
+        "f1": 1.0,
+        "confidence": 0.5912977752309072,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

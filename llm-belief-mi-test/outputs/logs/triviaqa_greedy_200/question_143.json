@@ -1,0 +1,55 @@
+{
+  "question_id": 143,
+  "question_text": "Yuan Yuan was caught carrying drugs for which Chinese team?",
+  "choices": [],
+  "gold_answer": "['Swam', 'Swimming (disambiguation)', 'To-suijutsu', 'Swimming']",
+  "methods": {
+    "greedy": {
+      "method_name": "triviaqa_greedy",
+      "method_description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a trivia question. Your response MUST be ONLY the answer to the question. Do NOT include explanations, reasoning, or additional text. Provide a concise, direct answer."
+            },
+            {
+              "role": "user",
+              "content": "Question: Yuan Yuan was caught carrying drugs for which Chinese team?\n\nProvide a direct answer to the question.\n\nAnswer:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 50
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "The Chinese national basketball team.",
+          "logprob": -3.2122185944717785,
+          "probability": 0.04026717756039857
+        }
+      ],
+      "decision_process": {
+        "method": "greedy",
+        "temperature": 0.0,
+        "selected_answer": "The Chinese national basketball team.",
+        "confidence_from_logprob": "0.0403"
+      },
+      "final_metrics": {
+        "predicted": "The Chinese national basketball team.",
+        "gold_answers": [
+          "Swam",
+          "Swimming (disambiguation)",
+          "To-suijutsu",
+          "Swimming"
+        ],
+        "exact_match": 0.0,
+        "f1": 0.0,
+        "confidence": 0.04026717756039857,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

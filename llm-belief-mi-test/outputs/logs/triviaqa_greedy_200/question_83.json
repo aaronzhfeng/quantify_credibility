@@ -1,0 +1,73 @@
+{
+  "question_id": 83,
+  "question_text": "Who set fire to his guitar at the Monterey Pop festival in 19676?",
+  "choices": [],
+  "gold_answer": "['Hendrix', 'Lithofayne Pridgeon', 'Jimi hendrix', 'Early life of jimi hendrix', 'Villanova Junction', 'James Marshall Hendrix', 'Jimmi Hendrix', 'Jimy Hendrix', 'Johnny Allen Hendrix', 'Jimmy hendrix', 'Jimmy Hendricks', 'Gypsy Sun and Rainbows', 'Jimmy Hendrix', 'Electric Church', 'Janie Hendrix', 'Early life of Jimi Hendrix', 'Heaven Research', 'Jim Hendrix', 'Al Hendrix', 'Gypsy Suns and Rainbows', 'James Hendrix', 'Jimi Hendrix']",
+  "methods": {
+    "greedy": {
+      "method_name": "triviaqa_greedy",
+      "method_description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a trivia question. Your response MUST be ONLY the answer to the question. Do NOT include explanations, reasoning, or additional text. Provide a concise, direct answer."
+            },
+            {
+              "role": "user",
+              "content": "Question: Who set fire to his guitar at the Monterey Pop festival in 19676?\n\nProvide a direct answer to the question.\n\nAnswer:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 50
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "Jimi Hendrix.",
+          "logprob": -1.2420972855816217,
+          "probability": 0.28877793259021267
+        }
+      ],
+      "decision_process": {
+        "method": "greedy",
+        "temperature": 0.0,
+        "selected_answer": "Jimi Hendrix.",
+        "confidence_from_logprob": "0.2888"
+      },
+      "final_metrics": {
+        "predicted": "Jimi Hendrix.",
+        "gold_answers": [
+          "Hendrix",
+          "Lithofayne Pridgeon",
+          "Jimi hendrix",
+          "Early life of jimi hendrix",
+          "Villanova Junction",
+          "James Marshall Hendrix",
+          "Jimmi Hendrix",
+          "Jimy Hendrix",
+          "Johnny Allen Hendrix",
+          "Jimmy hendrix",
+          "Jimmy Hendricks",
+          "Gypsy Sun and Rainbows",
+          "Jimmy Hendrix",
+          "Electric Church",
+          "Janie Hendrix",
+          "Early life of Jimi Hendrix",
+          "Heaven Research",
+          "Jim Hendrix",
+          "Al Hendrix",
+          "Gypsy Suns and Rainbows",
+          "James Hendrix",
+          "Jimi Hendrix"
+        ],
+        "exact_match": 1.0,
+        "f1": 1.0,
+        "confidence": 0.28877793259021267,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

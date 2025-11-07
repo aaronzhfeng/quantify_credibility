@@ -1,0 +1,56 @@
+{
+  "question_id": 51,
+  "question_text": "Who had a 70s No 1 hit with Let's Do It Again?",
+  "choices": [],
+  "gold_answer": "['The Staple Singers', 'Staple Singers', 'The Staples Singers', 'Staples Singers', 'Cleotha Staples']",
+  "methods": {
+    "greedy": {
+      "method_name": "triviaqa_greedy",
+      "method_description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a trivia question. Your response MUST be ONLY the answer to the question. Do NOT include explanations, reasoning, or additional text. Provide a concise, direct answer."
+            },
+            {
+              "role": "user",
+              "content": "Question: Who had a 70s No 1 hit with Let's Do It Again?\n\nProvide a direct answer to the question.\n\nAnswer:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 50
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "The Staple Singers",
+          "logprob": -0.9360704275861735,
+          "probability": 0.3921658556263106
+        }
+      ],
+      "decision_process": {
+        "method": "greedy",
+        "temperature": 0.0,
+        "selected_answer": "The Staple Singers",
+        "confidence_from_logprob": "0.3922"
+      },
+      "final_metrics": {
+        "predicted": "The Staple Singers",
+        "gold_answers": [
+          "The Staple Singers",
+          "Staple Singers",
+          "The Staples Singers",
+          "Staples Singers",
+          "Cleotha Staples"
+        ],
+        "exact_match": 1.0,
+        "f1": 1.0,
+        "confidence": 0.3921658556263106,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

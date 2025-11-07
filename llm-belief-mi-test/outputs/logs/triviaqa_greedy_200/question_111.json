@@ -1,0 +1,56 @@
+{
+  "question_id": 111,
+  "question_text": "Which sports event was first held at Worcester, Massachusetts in 1927?",
+  "choices": [],
+  "gold_answer": "['Ryder Cup Matches', 'Rider cup', 'The Ryder Cup', 'Ryder cup', 'Ryder Cup']",
+  "methods": {
+    "greedy": {
+      "method_name": "triviaqa_greedy",
+      "method_description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a trivia question. Your response MUST be ONLY the answer to the question. Do NOT include explanations, reasoning, or additional text. Provide a concise, direct answer."
+            },
+            {
+              "role": "user",
+              "content": "Question: Which sports event was first held at Worcester, Massachusetts in 1927?\n\nProvide a direct answer to the question.\n\nAnswer:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 50
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "The College World Series.",
+          "logprob": -3.1038980694502243,
+          "probability": 0.04487393928975191
+        }
+      ],
+      "decision_process": {
+        "method": "greedy",
+        "temperature": 0.0,
+        "selected_answer": "The College World Series.",
+        "confidence_from_logprob": "0.0449"
+      },
+      "final_metrics": {
+        "predicted": "The College World Series.",
+        "gold_answers": [
+          "Ryder Cup Matches",
+          "Rider cup",
+          "The Ryder Cup",
+          "Ryder cup",
+          "Ryder Cup"
+        ],
+        "exact_match": 0.0,
+        "f1": 0.0,
+        "confidence": 0.04487393928975191,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

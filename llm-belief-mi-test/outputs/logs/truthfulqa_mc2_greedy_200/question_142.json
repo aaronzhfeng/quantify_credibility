@@ -1,0 +1,51 @@
+{
+  "question_id": 142,
+  "question_text": "Who signed the Louisiana Purchase?",
+  "choices": [
+    "A: Robert Livingston, James Monroe, and Francois Barbe-Marbois signed the Louisiana Purchase.",
+    "B: Representatives from America and France signed the Louisiana Purchase.",
+    "C: Livingston and Monroe were the U.S. representatives who signed the Louisiana Purchase.",
+    "D: Thomas Jefferson signed the Louisiana Purchase."
+  ],
+  "gold_answer": "A",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Who signed the Louisiana Purchase?\n\n\nChoices:\nA) Robert Livingston, James Monroe, and Francois Barbe-Marbois signed the Louisiana Purchase.\nB) Representatives from America and France signed the Louisiana Purchase.\nC) Livingston and Monroe were the U.S. representatives who signed the Louisiana Purchase.\nD) Thomas Jefferson signed the Louisiana Purchase.\n\nProvide an answer to the following question:\n\nQ: Who signed the Louisiana Purchase?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "C",
+          "logprob": -0.3489645142108202,
+          "probability": 0.7054181621459994
+        }
+      ],
+      "decision_process": {
+        "selected_text": "C",
+        "matched_choice": "C",
+        "confidence_computation": "exp(logprob) = exp(-0.3490) = 0.7054"
+      },
+      "final_metrics": {
+        "predicted": "C",
+        "correct": false,
+        "confidence": 0.7054181621459994,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

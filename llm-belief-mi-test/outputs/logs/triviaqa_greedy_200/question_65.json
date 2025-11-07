@@ -1,0 +1,73 @@
+{
+  "question_id": 65,
+  "question_text": "In which country is the Sky Train Rail bridge?",
+  "choices": [],
+  "gold_answer": "['Canada', 'Canadá', 'The Dominion of Canada', 'Commonwealth of Canada', 'Dominion of canada', 'ISO 3166-1:CA', 'Etymology of Canada', 'CANADA', 'Canadiophile', \"Canada's\", 'ᑲᓇᑕ', 'Canada/References', \"America's top hat\", 'Canada.', 'Cnada', 'Čanada', 'Canadian Federation', 'Kenadian', 'Canadialand', 'Xanada', 'Dominion of Canada', 'Canadaa']",
+  "methods": {
+    "greedy": {
+      "method_name": "triviaqa_greedy",
+      "method_description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a trivia question. Your response MUST be ONLY the answer to the question. Do NOT include explanations, reasoning, or additional text. Provide a concise, direct answer."
+            },
+            {
+              "role": "user",
+              "content": "Question: In which country is the Sky Train Rail bridge?\n\nProvide a direct answer to the question.\n\nAnswer:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 50
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "Thailand",
+          "logprob": -1.387117727783334,
+          "probability": 0.24979424305246894
+        }
+      ],
+      "decision_process": {
+        "method": "greedy",
+        "temperature": 0.0,
+        "selected_answer": "Thailand",
+        "confidence_from_logprob": "0.2498"
+      },
+      "final_metrics": {
+        "predicted": "Thailand",
+        "gold_answers": [
+          "Canada",
+          "Canadá",
+          "The Dominion of Canada",
+          "Commonwealth of Canada",
+          "Dominion of canada",
+          "ISO 3166-1:CA",
+          "Etymology of Canada",
+          "CANADA",
+          "Canadiophile",
+          "Canada's",
+          "ᑲᓇᑕ",
+          "Canada/References",
+          "America's top hat",
+          "Canada.",
+          "Cnada",
+          "Čanada",
+          "Canadian Federation",
+          "Kenadian",
+          "Canadialand",
+          "Xanada",
+          "Dominion of Canada",
+          "Canadaa"
+        ],
+        "exact_match": 0.0,
+        "f1": 0.0,
+        "confidence": 0.24979424305246894,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

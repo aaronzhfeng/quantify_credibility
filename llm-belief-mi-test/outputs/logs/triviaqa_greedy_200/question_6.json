@@ -1,0 +1,80 @@
+{
+  "question_id": 6,
+  "question_text": "What was the last US state to reintroduce alcohol after prohibition?",
+  "choices": [],
+  "gold_answer": "['Utah (State)', 'Forty-Fifth State', 'Sports in Utah', 'Climate of Utah', 'Education in Utah', 'UT (state)', 'Utahn', 'Yutas', 'Geography of Utah', 'Utah', 'Utah, United States', 'Utah state nickname', 'History of mining in Utah', 'State of Utah', 'Religion in Utah', 'Utah (U.S. state)', 'Transportation in Utah', 'Beehive State', 'US-UT', 'Utah (state)', 'Forty-fifth State', 'Utahan', 'Politics of Utah', 'Salt Lake Seagulls', '45th State', 'History of Utah (to 1847)', 'The Beehive State', 'Youtah', 'Transport in Utah']",
+  "methods": {
+    "greedy": {
+      "method_name": "triviaqa_greedy",
+      "method_description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a trivia question. Your response MUST be ONLY the answer to the question. Do NOT include explanations, reasoning, or additional text. Provide a concise, direct answer."
+            },
+            {
+              "role": "user",
+              "content": "Question: What was the last US state to reintroduce alcohol after prohibition?\n\nProvide a direct answer to the question.\n\nAnswer:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 50
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "Mississippi.",
+          "logprob": -1.7278862288221717,
+          "probability": 0.17765954498106148
+        }
+      ],
+      "decision_process": {
+        "method": "greedy",
+        "temperature": 0.0,
+        "selected_answer": "Mississippi.",
+        "confidence_from_logprob": "0.1777"
+      },
+      "final_metrics": {
+        "predicted": "Mississippi.",
+        "gold_answers": [
+          "Utah (State)",
+          "Forty-Fifth State",
+          "Sports in Utah",
+          "Climate of Utah",
+          "Education in Utah",
+          "UT (state)",
+          "Utahn",
+          "Yutas",
+          "Geography of Utah",
+          "Utah",
+          "Utah, United States",
+          "Utah state nickname",
+          "History of mining in Utah",
+          "State of Utah",
+          "Religion in Utah",
+          "Utah (U.S. state)",
+          "Transportation in Utah",
+          "Beehive State",
+          "US-UT",
+          "Utah (state)",
+          "Forty-fifth State",
+          "Utahan",
+          "Politics of Utah",
+          "Salt Lake Seagulls",
+          "45th State",
+          "History of Utah (to 1847)",
+          "The Beehive State",
+          "Youtah",
+          "Transport in Utah"
+        ],
+        "exact_match": 0.0,
+        "f1": 0.0,
+        "confidence": 0.17765954498106148,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

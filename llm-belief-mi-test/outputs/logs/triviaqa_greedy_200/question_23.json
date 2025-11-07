@@ -1,0 +1,52 @@
+{
+  "question_id": 23,
+  "question_text": "Which 90s sci fi series with James Belushi was based on Bruce Wagner's comic strip of the same name?",
+  "choices": [],
+  "gold_answer": "['Wild Palms']",
+  "methods": {
+    "greedy": {
+      "method_name": "triviaqa_greedy",
+      "method_description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a trivia question. Your response MUST be ONLY the answer to the question. Do NOT include explanations, reasoning, or additional text. Provide a concise, direct answer."
+            },
+            {
+              "role": "user",
+              "content": "Question: Which 90s sci fi series with James Belushi was based on Bruce Wagner's comic strip of the same name?\n\nProvide a direct answer to the question.\n\nAnswer:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 50
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "Wild Palms",
+          "logprob": -0.7486536204105505,
+          "probability": 0.4730029657569739
+        }
+      ],
+      "decision_process": {
+        "method": "greedy",
+        "temperature": 0.0,
+        "selected_answer": "Wild Palms",
+        "confidence_from_logprob": "0.4730"
+      },
+      "final_metrics": {
+        "predicted": "Wild Palms",
+        "gold_answers": [
+          "Wild Palms"
+        ],
+        "exact_match": 1.0,
+        "f1": 1.0,
+        "confidence": 0.4730029657569739,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

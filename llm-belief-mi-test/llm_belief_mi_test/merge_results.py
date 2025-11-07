@@ -38,6 +38,8 @@ def merge_csv_files(csv_files: List[str], output_path: str):
                 all_rows.append(row)
     
     # Write merged CSV
+    # Ensure parent directory exists
+    Path(output_path).parent.mkdir(parents=True, exist_ok=True)
     with open(output_path, 'w', newline='') as f:
         writer = csv.DictWriter(f, fieldnames=fieldnames)
         writer.writeheader()
@@ -106,6 +108,8 @@ def merge_json_metrics(json_files: List[str], output_path: str) -> Dict[str, Any
         merged['logprob_stats'] = merged_logprob_stats
     
     # Save merged metrics
+    # Ensure parent directory exists
+    Path(output_path).parent.mkdir(parents=True, exist_ok=True)
     with open(output_path, 'w') as f:
         json.dump(merged, f, indent=2)
     

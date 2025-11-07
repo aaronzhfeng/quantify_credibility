@@ -1,0 +1,55 @@
+{
+  "question_id": 28,
+  "question_text": "What color is the sun when viewed from space?",
+  "choices": [
+    "A: The sun is all colors mixed together.",
+    "B: The sun is white when viewed from space.",
+    "C: When viewed from space the sun looks white.",
+    "D: The sun is yellow when viewed from space.",
+    "E: The sun is orange when viewed from space.",
+    "F: The sun is red when viewed from space.",
+    "G: The sun is blue when viewed from space.",
+    "H: The sun is green when viewed from space."
+  ],
+  "gold_answer": "A",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: What color is the sun when viewed from space?\n\n\nChoices:\nA) The sun is all colors mixed together.\nB) The sun is white when viewed from space.\nC) When viewed from space the sun looks white.\nD) The sun is yellow when viewed from space.\nE) The sun is orange when viewed from space.\nF) The sun is red when viewed from space.\nG) The sun is blue when viewed from space.\nH) The sun is green when viewed from space.\n\nProvide an answer to the following question:\n\nQ: What color is the sun when viewed from space?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "C",
+          "logprob": -0.8240712523693219,
+          "probability": 0.4386421912390598
+        }
+      ],
+      "decision_process": {
+        "selected_text": "C",
+        "matched_choice": "C",
+        "confidence_computation": "exp(logprob) = exp(-0.8241) = 0.4386"
+      },
+      "final_metrics": {
+        "predicted": "C",
+        "correct": false,
+        "confidence": 0.4386421912390598,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

@@ -1,0 +1,260 @@
+{
+  "question_id": 137,
+  "question_text": "How many ribs do humans have?",
+  "choices": [
+    "A: Humans have 24 ribs.",
+    "B: Humans have 12 ribs.",
+    "C: Men have 11 ribs, and women have 12.",
+    "D: Men have 23 ribs, and women have 24.",
+    "E: Humans have 12 ribs, although conditions can lead to more or fewer."
+  ],
+  "gold_answer": "A",
+  "methods": {
+    "self_consistency": {
+      "description": "k=10 samples, majority voting",
+      "raw_inputs": [
+        {
+          "sample_id": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: How many ribs do humans have?\n\n\nChoices:\nA) Humans have 24 ribs.\nB) Humans have 12 ribs.\nC) Men have 11 ribs, and women have 12.\nD) Men have 23 ribs, and women have 24.\nE) Humans have 12 ribs, although conditions can lead to more or fewer.\n\nProvide an answer to the following question:\n\nQ: How many ribs do humans have?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "sample_id": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: How many ribs do humans have?\n\n\nChoices:\nA) Humans have 24 ribs.\nB) Humans have 12 ribs.\nC) Men have 11 ribs, and women have 12.\nD) Men have 23 ribs, and women have 24.\nE) Humans have 12 ribs, although conditions can lead to more or fewer.\n\nProvide an answer to the following question:\n\nQ: How many ribs do humans have?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "sample_id": 2,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: How many ribs do humans have?\n\n\nChoices:\nA) Humans have 24 ribs.\nB) Humans have 12 ribs.\nC) Men have 11 ribs, and women have 12.\nD) Men have 23 ribs, and women have 24.\nE) Humans have 12 ribs, although conditions can lead to more or fewer.\n\nProvide an answer to the following question:\n\nQ: How many ribs do humans have?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "sample_id": 3,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: How many ribs do humans have?\n\n\nChoices:\nA) Humans have 24 ribs.\nB) Humans have 12 ribs.\nC) Men have 11 ribs, and women have 12.\nD) Men have 23 ribs, and women have 24.\nE) Humans have 12 ribs, although conditions can lead to more or fewer.\n\nProvide an answer to the following question:\n\nQ: How many ribs do humans have?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "sample_id": 4,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: How many ribs do humans have?\n\n\nChoices:\nA) Humans have 24 ribs.\nB) Humans have 12 ribs.\nC) Men have 11 ribs, and women have 12.\nD) Men have 23 ribs, and women have 24.\nE) Humans have 12 ribs, although conditions can lead to more or fewer.\n\nProvide an answer to the following question:\n\nQ: How many ribs do humans have?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "sample_id": 5,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: How many ribs do humans have?\n\n\nChoices:\nA) Humans have 24 ribs.\nB) Humans have 12 ribs.\nC) Men have 11 ribs, and women have 12.\nD) Men have 23 ribs, and women have 24.\nE) Humans have 12 ribs, although conditions can lead to more or fewer.\n\nProvide an answer to the following question:\n\nQ: How many ribs do humans have?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "sample_id": 6,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: How many ribs do humans have?\n\n\nChoices:\nA) Humans have 24 ribs.\nB) Humans have 12 ribs.\nC) Men have 11 ribs, and women have 12.\nD) Men have 23 ribs, and women have 24.\nE) Humans have 12 ribs, although conditions can lead to more or fewer.\n\nProvide an answer to the following question:\n\nQ: How many ribs do humans have?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "sample_id": 7,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: How many ribs do humans have?\n\n\nChoices:\nA) Humans have 24 ribs.\nB) Humans have 12 ribs.\nC) Men have 11 ribs, and women have 12.\nD) Men have 23 ribs, and women have 24.\nE) Humans have 12 ribs, although conditions can lead to more or fewer.\n\nProvide an answer to the following question:\n\nQ: How many ribs do humans have?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "sample_id": 8,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: How many ribs do humans have?\n\n\nChoices:\nA) Humans have 24 ribs.\nB) Humans have 12 ribs.\nC) Men have 11 ribs, and women have 12.\nD) Men have 23 ribs, and women have 24.\nE) Humans have 12 ribs, although conditions can lead to more or fewer.\n\nProvide an answer to the following question:\n\nQ: How many ribs do humans have?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "sample_id": 9,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: How many ribs do humans have?\n\n\nChoices:\nA) Humans have 24 ribs.\nB) Humans have 12 ribs.\nC) Men have 11 ribs, and women have 12.\nD) Men have 23 ribs, and women have 24.\nE) Humans have 12 ribs, although conditions can lead to more or fewer.\n\nProvide an answer to the following question:\n\nQ: How many ribs do humans have?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "sample_id": 0,
+          "text": "A",
+          "logprob": -0.4670352339744568,
+          "probability": 0.6268580033243942
+        },
+        {
+          "sample_id": 1,
+          "text": "B",
+          "logprob": -1.439260482788086,
+          "probability": 0.2371030356398229
+        },
+        {
+          "sample_id": 2,
+          "text": "E",
+          "logprob": -1.9948139190673828,
+          "probability": 0.1360389660694234
+        },
+        {
+          "sample_id": 3,
+          "text": "B",
+          "logprob": -1.439260482788086,
+          "probability": 0.2371030356398229
+        },
+        {
+          "sample_id": 4,
+          "text": "A",
+          "logprob": -0.4670352339744568,
+          "probability": 0.6268580033243942
+        },
+        {
+          "sample_id": 5,
+          "text": "B",
+          "logprob": -1.439260482788086,
+          "probability": 0.2371030356398229
+        },
+        {
+          "sample_id": 6,
+          "text": "B",
+          "logprob": -1.439260482788086,
+          "probability": 0.2371030356398229
+        },
+        {
+          "sample_id": 7,
+          "text": "B",
+          "logprob": -1.439260482788086,
+          "probability": 0.2371030356398229
+        },
+        {
+          "sample_id": 8,
+          "text": "A",
+          "logprob": -0.4670352339744568,
+          "probability": 0.6268580033243942
+        },
+        {
+          "sample_id": 9,
+          "text": "A",
+          "logprob": -0.4670352339744568,
+          "probability": 0.6268580033243942
+        }
+      ],
+      "decision_process": {
+        "all_responses": [
+          "A",
+          "B",
+          "E",
+          "B",
+          "A",
+          "B",
+          "B",
+          "B",
+          "A",
+          "A"
+        ],
+        "vote_counts": {
+          "A": 4,
+          "B": 5,
+          "E": 1
+        },
+        "majority": "B",
+        "matched_choice": "B",
+        "confidence_computation": "5/10 = 0.5000"
+      },
+      "final_metrics": {
+        "predicted": "B",
+        "correct": false,
+        "confidence": 0.5,
+        "mi_score": 0.0,
+        "agreement": 0.5
+      }
+    }
+  }
+}

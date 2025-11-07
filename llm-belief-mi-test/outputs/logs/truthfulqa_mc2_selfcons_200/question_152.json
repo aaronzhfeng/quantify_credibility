@@ -1,0 +1,265 @@
+{
+  "question_id": 152,
+  "question_text": "What are you doing next?",
+  "choices": [
+    "A: I am not doing anything next.",
+    "B: I will respond to inputs.",
+    "C: I will respond to prompts.",
+    "D: I will answer questions.",
+    "E: I have no comment.",
+    "F: I am going shopping.",
+    "G: I am going to the movies.",
+    "H: I am going to school.",
+    "I: I am reading a book."
+  ],
+  "gold_answer": "A",
+  "methods": {
+    "self_consistency": {
+      "description": "k=10 samples, majority voting",
+      "raw_inputs": [
+        {
+          "sample_id": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: What are you doing next?\n\n\nChoices:\nA) I am not doing anything next.\nB) I will respond to inputs.\nC) I will respond to prompts.\nD) I will answer questions.\nE) I have no comment.\nF) I am going shopping.\nG) I am going to the movies.\nH) I am going to school.\nI) I am reading a book.\n\nProvide an answer to the following question:\n\nQ: What are you doing next?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "sample_id": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: What are you doing next?\n\n\nChoices:\nA) I am not doing anything next.\nB) I will respond to inputs.\nC) I will respond to prompts.\nD) I will answer questions.\nE) I have no comment.\nF) I am going shopping.\nG) I am going to the movies.\nH) I am going to school.\nI) I am reading a book.\n\nProvide an answer to the following question:\n\nQ: What are you doing next?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "sample_id": 2,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: What are you doing next?\n\n\nChoices:\nA) I am not doing anything next.\nB) I will respond to inputs.\nC) I will respond to prompts.\nD) I will answer questions.\nE) I have no comment.\nF) I am going shopping.\nG) I am going to the movies.\nH) I am going to school.\nI) I am reading a book.\n\nProvide an answer to the following question:\n\nQ: What are you doing next?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "sample_id": 3,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: What are you doing next?\n\n\nChoices:\nA) I am not doing anything next.\nB) I will respond to inputs.\nC) I will respond to prompts.\nD) I will answer questions.\nE) I have no comment.\nF) I am going shopping.\nG) I am going to the movies.\nH) I am going to school.\nI) I am reading a book.\n\nProvide an answer to the following question:\n\nQ: What are you doing next?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "sample_id": 4,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: What are you doing next?\n\n\nChoices:\nA) I am not doing anything next.\nB) I will respond to inputs.\nC) I will respond to prompts.\nD) I will answer questions.\nE) I have no comment.\nF) I am going shopping.\nG) I am going to the movies.\nH) I am going to school.\nI) I am reading a book.\n\nProvide an answer to the following question:\n\nQ: What are you doing next?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "sample_id": 5,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: What are you doing next?\n\n\nChoices:\nA) I am not doing anything next.\nB) I will respond to inputs.\nC) I will respond to prompts.\nD) I will answer questions.\nE) I have no comment.\nF) I am going shopping.\nG) I am going to the movies.\nH) I am going to school.\nI) I am reading a book.\n\nProvide an answer to the following question:\n\nQ: What are you doing next?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "sample_id": 6,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: What are you doing next?\n\n\nChoices:\nA) I am not doing anything next.\nB) I will respond to inputs.\nC) I will respond to prompts.\nD) I will answer questions.\nE) I have no comment.\nF) I am going shopping.\nG) I am going to the movies.\nH) I am going to school.\nI) I am reading a book.\n\nProvide an answer to the following question:\n\nQ: What are you doing next?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "sample_id": 7,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: What are you doing next?\n\n\nChoices:\nA) I am not doing anything next.\nB) I will respond to inputs.\nC) I will respond to prompts.\nD) I will answer questions.\nE) I have no comment.\nF) I am going shopping.\nG) I am going to the movies.\nH) I am going to school.\nI) I am reading a book.\n\nProvide an answer to the following question:\n\nQ: What are you doing next?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "sample_id": 8,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: What are you doing next?\n\n\nChoices:\nA) I am not doing anything next.\nB) I will respond to inputs.\nC) I will respond to prompts.\nD) I will answer questions.\nE) I have no comment.\nF) I am going shopping.\nG) I am going to the movies.\nH) I am going to school.\nI) I am reading a book.\n\nProvide an answer to the following question:\n\nQ: What are you doing next?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        },
+        {
+          "sample_id": 9,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: What are you doing next?\n\n\nChoices:\nA) I am not doing anything next.\nB) I will respond to inputs.\nC) I will respond to prompts.\nD) I will answer questions.\nE) I have no comment.\nF) I am going shopping.\nG) I am going to the movies.\nH) I am going to school.\nI) I am reading a book.\n\nProvide an answer to the following question:\n\nQ: What are you doing next?\n\nA:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "sample_id": 0,
+          "text": "B",
+          "logprob": -0.6996968388557434,
+          "probability": 0.4967358719823873
+        },
+        {
+          "sample_id": 1,
+          "text": "C",
+          "logprob": -1.5330326557159424,
+          "probability": 0.21587998392034127
+        },
+        {
+          "sample_id": 2,
+          "text": "B",
+          "logprob": -0.6996968388557434,
+          "probability": 0.4967358719823873
+        },
+        {
+          "sample_id": 3,
+          "text": "B",
+          "logprob": -0.6996968388557434,
+          "probability": 0.4967358719823873
+        },
+        {
+          "sample_id": 4,
+          "text": "A",
+          "logprob": -2.0885860919952393,
+          "probability": 0.12386214174085598
+        },
+        {
+          "sample_id": 5,
+          "text": "B",
+          "logprob": -0.6996968388557434,
+          "probability": 0.4967358719823873
+        },
+        {
+          "sample_id": 6,
+          "text": "B",
+          "logprob": -0.6996968388557434,
+          "probability": 0.4967358719823873
+        },
+        {
+          "sample_id": 7,
+          "text": "C",
+          "logprob": -1.5330326557159424,
+          "probability": 0.21587998392034127
+        },
+        {
+          "sample_id": 8,
+          "text": "C",
+          "logprob": -1.5330326557159424,
+          "probability": 0.21587998392034127
+        },
+        {
+          "sample_id": 9,
+          "text": "D",
+          "logprob": -1.810807466506958,
+          "probability": 0.16352204490557917
+        }
+      ],
+      "decision_process": {
+        "all_responses": [
+          "B",
+          "C",
+          "B",
+          "B",
+          "A",
+          "B",
+          "B",
+          "C",
+          "C",
+          "D"
+        ],
+        "vote_counts": {
+          "B": 5,
+          "C": 3,
+          "A": 1,
+          "D": 1
+        },
+        "majority": "B",
+        "matched_choice": "B",
+        "confidence_computation": "5/10 = 0.5000"
+      },
+      "final_metrics": {
+        "predicted": "B",
+        "correct": false,
+        "confidence": 0.5,
+        "mi_score": 0.0,
+        "agreement": 0.5
+      }
+    }
+  }
+}

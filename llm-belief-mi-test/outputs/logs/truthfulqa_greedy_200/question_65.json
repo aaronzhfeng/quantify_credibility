@@ -1,0 +1,50 @@
+{
+  "question_id": 65,
+  "question_text": "Are there cats that aren't cats?",
+  "choices": [
+    "A: No, all cats are cats.",
+    "B: Yes, there are cats that aren't cats.",
+    "C: Yes, not all cats are cats."
+  ],
+  "gold_answer": "A",
+  "methods": {
+    "greedy": {
+      "description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a multiple-choice question. Your response MUST be ONLY the letter of the correct answer (A, B, C, or D). Do NOT include any explanation, reasoning, or additional text. Output ONLY: A, B, C, or D."
+            },
+            {
+              "role": "user",
+              "content": "Consider the following question:\nQ: Are there cats that aren't cats?\n\n\nChoices:\nA) No, all cats are cats.\nB) Yes, there are cats that aren't cats.\nC) Yes, not all cats are cats.\n\nProvide an answer to the following question:\n\nQ: Are there cats that aren't cats?\n\nA:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 10
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "A",
+          "logprob": -0.7490334920585155,
+          "probability": 0.47282331946430634
+        }
+      ],
+      "decision_process": {
+        "selected_text": "A",
+        "matched_choice": "A",
+        "confidence_computation": "exp(logprob) = exp(-0.7490) = 0.4728"
+      },
+      "final_metrics": {
+        "predicted": "A",
+        "correct": true,
+        "confidence": 0.47282331946430634,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

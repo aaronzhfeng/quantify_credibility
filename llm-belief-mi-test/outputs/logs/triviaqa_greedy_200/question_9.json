@@ -1,0 +1,64 @@
+{
+  "question_id": 9,
+  "question_text": "What was the name of Michael Jackson's autobiography written in 1988?",
+  "choices": [],
+  "gold_answer": "['Walk on the Moon', 'Walk on the moon', 'Moonwalk (disambiguation)', 'Lunar walks', 'Moonwalk', 'Moon Walk', 'Moonwalking', 'Lunar walk', 'Moon walk', 'Moonwalks', 'Moon walks', 'Lunar walking', 'Moon walking']",
+  "methods": {
+    "greedy": {
+      "method_name": "triviaqa_greedy",
+      "method_description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a trivia question. Your response MUST be ONLY the answer to the question. Do NOT include explanations, reasoning, or additional text. Provide a concise, direct answer."
+            },
+            {
+              "role": "user",
+              "content": "Question: What was the name of Michael Jackson's autobiography written in 1988?\n\nProvide a direct answer to the question.\n\nAnswer:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 50
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "\"Dancing the Dream\"",
+          "logprob": -0.7528689778409898,
+          "probability": 0.471013285743123
+        }
+      ],
+      "decision_process": {
+        "method": "greedy",
+        "temperature": 0.0,
+        "selected_answer": "\"Dancing the Dream\"",
+        "confidence_from_logprob": "0.4710"
+      },
+      "final_metrics": {
+        "predicted": "\"Dancing the Dream\"",
+        "gold_answers": [
+          "Walk on the Moon",
+          "Walk on the moon",
+          "Moonwalk (disambiguation)",
+          "Lunar walks",
+          "Moonwalk",
+          "Moon Walk",
+          "Moonwalking",
+          "Lunar walk",
+          "Moon walk",
+          "Moonwalks",
+          "Moon walks",
+          "Lunar walking",
+          "Moon walking"
+        ],
+        "exact_match": 0.0,
+        "f1": 0.0,
+        "confidence": 0.471013285743123,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

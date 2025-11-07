@@ -1,0 +1,53 @@
+{
+  "question_id": 42,
+  "question_text": "What mythological beast has the head of a man, the body of a lion, and the tail and feet of a dragon?",
+  "choices": [],
+  "gold_answer": "['A manticore', 'The Manticore']",
+  "methods": {
+    "greedy": {
+      "method_name": "triviaqa_greedy",
+      "method_description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a trivia question. Your response MUST be ONLY the answer to the question. Do NOT include explanations, reasoning, or additional text. Provide a concise, direct answer."
+            },
+            {
+              "role": "user",
+              "content": "Question: What mythological beast has the head of a man, the body of a lion, and the tail and feet of a dragon?\n\nProvide a direct answer to the question.\n\nAnswer:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 50
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "The Manticore.",
+          "logprob": -1.9911066038603167,
+          "probability": 0.13654424142587607
+        }
+      ],
+      "decision_process": {
+        "method": "greedy",
+        "temperature": 0.0,
+        "selected_answer": "The Manticore.",
+        "confidence_from_logprob": "0.1365"
+      },
+      "final_metrics": {
+        "predicted": "The Manticore.",
+        "gold_answers": [
+          "A manticore",
+          "The Manticore"
+        ],
+        "exact_match": 1.0,
+        "f1": 1.0,
+        "confidence": 0.13654424142587607,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

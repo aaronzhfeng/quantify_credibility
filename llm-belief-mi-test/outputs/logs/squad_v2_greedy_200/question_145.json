@@ -1,0 +1,50 @@
+{
+  "question_id": 145,
+  "question_text": "Who dominated Western Europe for 380 years?",
+  "choices": [],
+  "gold_answer": "[]",
+  "methods": {
+    "greedy": {
+      "method_name": "squad-v2_greedy",
+      "method_description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a question based on a given context. Your response MUST be ONLY the direct answer from the context. Do NOT include explanations, reasoning, or additional text. If the question cannot be answered from the context, respond with: UNANSWERABLE"
+            },
+            {
+              "role": "user",
+              "content": "Context:\nThe conquest of Cyprus by the Anglo-Norman forces of the Third Crusade opened a new chapter in the history of the island, which would be under Western European domination for the following 380 years. Although not part of a planned operation, the conquest had much more permanent results than initially expected.\n\nQuestion: Who dominated Western Europe for 380 years?\n\nProvide a direct answer to the question based on the context above.\n\nAnswer:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 50
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "The Anglo-Norman forces.",
+          "logprob": -1.3265930892048345,
+          "probability": 0.26537984838022577
+        }
+      ],
+      "decision_process": {
+        "method": "greedy",
+        "temperature": 0.0,
+        "selected_answer": "The Anglo-Norman forces.",
+        "confidence_from_logprob": "0.2654"
+      },
+      "final_metrics": {
+        "predicted": "The Anglo-Norman forces.",
+        "gold_answers": [],
+        "exact_match": 0.0,
+        "f1": 0.0,
+        "confidence": 0.26537984838022577,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}
