@@ -17,6 +17,16 @@ import matplotlib.patches as mpatches
 import numpy as np
 
 
+# Consistent color scheme for methods across all plots
+METHOD_COLORS = {
+    'Greedy': '#FDBF6F',           # Orange
+    'Self-Consistency': '#B2DF8A',  # Light green
+    'MI Method': '#CAB2D6',         # Light purple
+    'Semantic Entropy': '#FB9A99',  # Light red
+    'Self-Verification': '#A6CEE3'  # Light blue
+}
+
+
 def load_result(filepath: str) -> Dict:
     """Load a single result JSON file."""
     with open(filepath, 'r') as f:
@@ -24,24 +34,47 @@ def load_result(filepath: str) -> Dict:
 
 
 def extract_method_name(filepath: str) -> str:
-    """Extract method name from filepath."""
-    stem = Path(filepath).stem
+    """Extract a human-friendly method name from the JSON filepath."""
+    path = Path(filepath)
+    stem = path.stem
+    parent = path.parent.name
     
-    # Remove dataset prefix and _500 suffix
-    for dataset in ['openbookqa', 'arc_challenge', 'arc_easy']:
-        if dataset in stem:
-            name = stem.replace(dataset + '_', '').replace('_500', '')
-            # Pretty names
-            name_map = {
-                'greedy': 'Greedy',
-                'selfcons': 'Self-Consistency',
-                'semantic_entropy': 'Semantic Entropy',
-                'self_verification': 'Self-Verification',
-                'mi': 'MI Method'
-            }
-            return name_map.get(name, name.replace('_', ' ').title())
+    # List of all dataset folder names
+    dataset_names = {
+        'openbookqa', 'arc_challenge', 'arc_easy',
+        'truthfulqa', 'truthfulqa_mc2', 'squad_v2', 'triviaqa'
+    }
     
-    return stem
+    # Determine the raw method name
+    method = stem
+    
+    # Check if stem contains dataset prefix (old structure inside dataset folder)
+    # e.g., openbookqa/openbookqa_greedy_500.json
+    has_dataset_prefix = False
+    for dataset in dataset_names:
+        if stem.startswith(f"{dataset}_"):
+            method = stem.replace(f"{dataset}_", "")
+            has_dataset_prefix = True
+            break
+    
+    # If no dataset prefix found and parent is a dataset folder, it's new structure
+    # e.g., truthfulqa/greedy_200.json
+    if not has_dataset_prefix and parent in dataset_names:
+        method = stem
+    
+    # Remove _200 and _500 suffixes
+    method = method.replace('_200', '').replace('_500', '')
+    
+    # Map to pretty names
+    name_map = {
+        'greedy': 'Greedy',
+        'selfcons': 'Self-Consistency',
+        'semantic_entropy': 'Semantic Entropy',
+        'self_verification': 'Self-Verification',
+        'mi': 'MI Method'
+    }
+    
+    return name_map.get(method, method.replace('_', ' ').title())
 
 
 def collect_results(pattern: str) -> Dict[str, Dict[str, float]]:
@@ -69,10 +102,13 @@ def plot_comparison(
     output_path: str
 ):
     """
-    Plot accuracy and ECE comparison for multiple methods.
+    Plot performance metrics and ECE comparison for multiple methods.
+    
+    For MCQ datasets: Shows Accuracy + ECE
+    For open-ended datasets: Shows (Exact Match + F1) + ECE
     
     Args:
-        results: {method_name: {accuracy/exact_match: float, ece: float, ...}}
+        results: {method_name: {accuracy/exact_match/f1: float, ece: float, ...}}
         title: Plot title
         output_path: Where to save the plot
     """
@@ -82,48 +118,71 @@ def plot_comparison(
     
     methods = list(results.keys())
     
-    # Handle both MCQ (accuracy) and open-ended (exact_match) datasets
-    accuracies = []
-    for m in methods:
-        if 'accuracy' in results[m]:
-            accuracies.append(results[m]['accuracy'] * 100)
-        elif 'exact_match' in results[m]:
-            accuracies.append(results[m]['exact_match'] * 100)
-        else:
-            accuracies.append(0.0)
+    # Detect dataset type
+    is_open_ended = 'exact_match' in list(results.values())[0]
     
+    # Extract ECE for sorting
     eces = [results[m]['ece'] for m in methods]
     
     # Sort by ECE (ascending - lower is better)
     sorted_indices = np.argsort(eces)
     methods = [methods[i] for i in sorted_indices]
-    accuracies = [accuracies[i] for i in sorted_indices]
     eces = [eces[i] for i in sorted_indices]
+    
+    # Get method colors
+    method_colors = [METHOD_COLORS.get(m, '#CCCCCC') for m in methods]
     
     # Create figure with two subplots
     fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(14, 6))
     
-    # Color scheme
-    colors = plt.cm.Set3(np.linspace(0, 1, len(methods)))
+    if is_open_ended:
+        # Open-ended: Show EM + F1 as grouped bars
+        em_scores = [results[methods[i]]['exact_match'] * 100 for i in range(len(methods))]
+        f1_scores = [results[methods[i]]['f1'] * 100 for i in range(len(methods))]
+        
+        y_pos = np.arange(len(methods))
+        bar_height = 0.35
+        
+        # Plot EM and F1 as grouped horizontal bars
+        bars1_em = ax1.barh(y_pos - bar_height/2, em_scores, bar_height, 
+                           label='Exact Match', color='#8DD3C7', edgecolor='black', linewidth=1.2)
+        bars1_f1 = ax1.barh(y_pos + bar_height/2, f1_scores, bar_height,
+                           label='F1 Score', color='#BEBADA', edgecolor='black', linewidth=1.2)
+        
+        ax1.set_yticks(y_pos)
+        ax1.set_yticklabels(methods)
+        ax1.set_xlabel('Score (%)', fontsize=12, fontweight='bold')
+        ax1.set_title('Performance Metrics', fontsize=14, fontweight='bold')
+        ax1.set_xlim([0, 100])
+        ax1.legend(loc='lower right', fontsize=10)
+        ax1.grid(axis='x', alpha=0.3, linestyle='--')
+        
+        # Add value labels
+        for i, (em, f1) in enumerate(zip(em_scores, f1_scores)):
+            ax1.text(em + 1, y_pos[i] - bar_height/2, f'{em:.1f}%', 
+                    ha='left', va='center', fontsize=9)
+            ax1.text(f1 + 1, y_pos[i] + bar_height/2, f'{f1:.1f}%',
+                    ha='left', va='center', fontsize=9)
+        
+    else:
+        # MCQ: Show Accuracy only
+        accuracies = [results[m]['accuracy'] * 100 for m in methods]
+        
+        bars1 = ax1.barh(methods, accuracies, color=method_colors, 
+                        edgecolor='black', linewidth=1.2)
+        ax1.set_xlabel('Accuracy (%)', fontsize=12, fontweight='bold')
+        ax1.set_title('Accuracy Comparison', fontsize=14, fontweight='bold')
+        ax1.set_xlim([0, 100])
+        ax1.grid(axis='x', alpha=0.3, linestyle='--')
+        
+        # Add value labels on bars
+        for bar, acc in zip(bars1, accuracies):
+            width = bar.get_width()
+            ax1.text(width + 1, bar.get_y() + bar.get_height()/2,
+                    f'{acc:.1f}%', ha='left', va='center', fontsize=10)
     
-    # Plot 1: Accuracy/EM
-    # Determine label based on dataset type
-    metric_label = 'Exact Match (%)' if 'exact_match' in results[methods[0]] else 'Accuracy (%)'
-    
-    bars1 = ax1.barh(methods, accuracies, color=colors, edgecolor='black', linewidth=1.2)
-    ax1.set_xlabel(metric_label, fontsize=12, fontweight='bold')
-    ax1.set_title(metric_label.replace(' (%)', ' Comparison'), fontsize=14, fontweight='bold')
-    ax1.set_xlim([0, 100])
-    ax1.grid(axis='x', alpha=0.3, linestyle='--')
-    
-    # Add value labels on bars
-    for bar, acc in zip(bars1, accuracies):
-        width = bar.get_width()
-        ax1.text(width + 1, bar.get_y() + bar.get_height()/2,
-                f'{acc:.1f}%', ha='left', va='center', fontsize=10)
-    
-    # Plot 2: ECE (lower is better)
-    bars2 = ax2.barh(methods, eces, color=colors, edgecolor='black', linewidth=1.2)
+    # Plot 2: ECE (same for both types)
+    bars2 = ax2.barh(methods, eces, color=method_colors, edgecolor='black', linewidth=1.2)
     ax2.set_xlabel('ECE (Expected Calibration Error)', fontsize=12, fontweight='bold')
     ax2.set_title('ECE Comparison (Lower is Better)', fontsize=14, fontweight='bold')
     ax2.set_xlim([0, max(eces) * 1.1])
@@ -222,16 +281,16 @@ def create_combined_plot(
     if n_datasets == 1:
         axes = axes.reshape(-1, 1)
     
-    colors = plt.cm.Set3(np.linspace(0, 1, n_methods))
-    method_colors = {method: colors[i] for i, method in enumerate(all_methods)}
+    # Use consistent method colors
+    method_color_map = {method: METHOD_COLORS.get(method, '#CCCCCC') for method in all_methods}
     
     for col, dataset in enumerate(datasets):
         results = all_results[dataset]
         
-        # Get methods present in this dataset
-        methods = [m for m in all_methods if m in results]
+        # ONLY use methods that actually exist for THIS dataset
+        methods = list(results.keys())
         
-        # Handle both MCQ (accuracy) and open-ended (exact_match)
+        # Extract data for methods that exist
         accuracies = []
         for m in methods:
             if 'accuracy' in results[m]:
@@ -242,16 +301,17 @@ def create_combined_plot(
                 accuracies.append(0.0)
         
         eces = [results[m]['ece'] for m in methods]
-        bar_colors = [method_colors[m] for m in methods]
         
-        # Accuracy/EM plot
+        # Map consistent colors based on method names
+        bar_colors = [method_color_map.get(m, '#CCCCCC') for m in methods]
+        
+        # Accuracy plot (use universal label for all datasets)
         ax_acc = axes[0, col]
         bars = ax_acc.bar(range(len(methods)), accuracies, color=bar_colors, 
                           edgecolor='black', linewidth=1.2)
         
-        # Determine label based on metrics available
-        metric_label = 'Exact Match (%)' if 'exact_match' in results[methods[0]] else 'Accuracy (%)'
-        ax_acc.set_ylabel(metric_label, fontsize=11, fontweight='bold')
+        # Use "Accuracy" as universal label for clean cross-dataset comparison
+        ax_acc.set_ylabel('Accuracy (%)', fontsize=11, fontweight='bold')
         ax_acc.set_title(dataset_names.get(dataset, dataset), fontsize=12, fontweight='bold')
         ax_acc.set_xticks(range(len(methods)))
         ax_acc.set_xticklabels(methods, rotation=45, ha='right', fontsize=9)
@@ -266,8 +326,8 @@ def create_combined_plot(
         
         # ECE plot
         ax_ece = axes[1, col]
-        bars = ax_ece.bar(range(len(methods)), eces, color=bar_colors,
-                         edgecolor='black', linewidth=1.2)
+        bars_ece = ax_ece.bar(range(len(methods)), eces, color=bar_colors,
+                              edgecolor='black', linewidth=1.2)
         ax_ece.set_ylabel('ECE', fontsize=11, fontweight='bold')
         ax_ece.set_xlabel('Method', fontsize=10)
         ax_ece.set_xticks(range(len(methods)))
@@ -276,21 +336,22 @@ def create_combined_plot(
         
         # Highlight best ECE
         best_idx = np.argmin(eces)
-        bars[best_idx].set_edgecolor('green')
-        bars[best_idx].set_linewidth(3)
+        bars_ece[best_idx].set_edgecolor('green')
+        bars_ece[best_idx].set_linewidth(3)
         
         # Add value labels
-        for bar, ece in zip(bars, eces):
+        max_ece = max(eces) if eces else 1.0
+        for bar, ece in zip(bars_ece, eces):
             height = bar.get_height()
-            ax_ece.text(bar.get_x() + bar.get_width()/2, height + max(eces) * 0.02,
+            ax_ece.text(bar.get_x() + bar.get_width()/2, height + max_ece * 0.02,
                        f'{ece:.3f}', ha='center', va='bottom', fontsize=8)
     
     # Overall title
-    fig.suptitle('Method Comparison Across All Datasets (500 examples each)', 
+    fig.suptitle('Method Comparison Across All Datasets', 
                  fontsize=16, fontweight='bold')
     
-    # Add legend
-    legend_patches = [mpatches.Patch(color=method_colors[m], label=m) for m in all_methods]
+    # Add legend with consistent colors
+    legend_patches = [mpatches.Patch(color=method_color_map[m], label=m) for m in all_methods]
     fig.legend(handles=legend_patches, loc='lower center', ncol=min(5, len(all_methods)),
               bbox_to_anchor=(0.5, -0.02), fontsize=10)
     

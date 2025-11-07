@@ -19,35 +19,104 @@ import numpy as np
 
 
 def extract_method_name(filepath: str) -> str:
-    """Extract method name from filepath."""
-    stem = Path(filepath).stem
-    
-    for dataset in ['openbookqa', 'arc_challenge', 'arc_easy']:
-        if dataset in stem:
-            name = stem.replace(dataset + '_', '').replace('_500', '')
-            name_map = {
-                'greedy': 'Greedy',
-                'selfcons': 'Self-Consistency',
-                'semantic_entropy': 'Semantic Entropy',
-                'self_verification': 'Self-Verification',
-                'mi': 'MI Method'
-            }
-            return name_map.get(name, name.replace('_', ' ').title())
-    
-    return stem
+    """Extract a human-friendly method name from the CSV filepath."""
+    path = Path(filepath)
+    stem = path.stem
+    parent = path.parent.name
+
+    dataset_names = {
+        'openbookqa', 'arc_challenge', 'arc_easy',
+        'truthfulqa', 'truthfulqa_mc2', 'squad_v2', 'triviaqa'
+    }
+
+    method = stem
+
+    if parent in dataset_names:
+        method = stem
+    else:
+        for dataset in dataset_names:
+            if stem.startswith(f"{dataset}_"):
+                method = stem.replace(f"{dataset}_", "")
+                break
+
+    method = method.replace('_200', '').replace('_500', '')
+
+    name_map = {
+        'greedy': 'Greedy',
+        'selfcons': 'Self-Consistency',
+        'semantic_entropy': 'Semantic Entropy',
+        'self_verification': 'Self-Verification',
+        'mi': 'MI Method'
+    }
+
+    return name_map.get(method, method.replace('_', ' ').title())
 
 
-def compute_calibration_curve(df: pd.DataFrame, n_bins: int = 10) -> tuple:
+def _series_to_numeric(series: pd.Series) -> pd.Series:
+    """Convert a series to numeric values in [0, 1] where possible."""
+    if series.dtype == bool:
+        return series.astype(float)
+
+    if pd.api.types.is_numeric_dtype(series):
+        return pd.to_numeric(series, errors='coerce')
+
+    lowercase = series.astype(str).str.lower()
+    mapped = lowercase.map({'true': 1.0, 'false': 0.0, 'yes': 1.0, 'no': 0.0})
+
+    if not mapped.isna().all():
+        return mapped
+
+    return pd.to_numeric(series, errors='coerce')
+
+
+def extract_confidence_and_correct(df: pd.DataFrame) -> tuple:
+    """Extract confidence scores and correctness labels from a results DataFrame."""
+    confidence_candidates = [
+        'confidence', 'confidence_score', 'probability', 'avg_confidence'
+    ]
+    confidence_series = None
+
+    for col in confidence_candidates:
+        if col in df.columns:
+            confidence_series = _series_to_numeric(df[col])
+            break
+
+    if confidence_series is None:
+        raise KeyError("No confidence column found in results CSV.")
+
+    correct_candidates = [
+        'correct', 'is_correct', 'label', 'exact_match'
+    ]
+    correct_series = None
+
+    for col in correct_candidates:
+        if col in df.columns:
+            candidate = _series_to_numeric(df[col])
+            if not candidate.isna().all():
+                correct_series = candidate
+                break
+
+    if correct_series is None:
+        raise KeyError("No correctness column found (expected one of: correct, is_correct, exact_match).")
+
+    confidence_values = confidence_series.fillna(0.0).clip(0.0, 1.0).to_numpy(dtype=float)
+    correct_values = correct_series.fillna(0.0)
+    correct_values = correct_values.clip(0.0, 1.0)
+    correct_values = (correct_values >= 0.5).astype(float)
+
+    return confidence_values, correct_values
+
+
+def compute_calibration_curve(confidences: np.ndarray, correct: np.ndarray, n_bins: int = 10) -> tuple:
     """
     Compute calibration curve data.
     
     Returns:
         (bin_confidences, bin_accuracies, bin_counts)
     """
-    # Extract data
-    confidences = df['confidence'].values
-    correct = df['correct'].values
-    
+    confidences = np.asarray(confidences, dtype=float)
+    correct = np.asarray(correct, dtype=float)
+
     # Create bins
     bin_edges = np.linspace(0, 1, n_bins + 1)
     bin_confidences = []
@@ -98,9 +167,10 @@ def plot_calibration_curves(files: list, title: str, output_path: str, n_bins: i
         
         method = extract_method_name(filepath)
         df = pd.read_csv(filepath)
-        
+        confidences, correct = extract_confidence_and_correct(df)
+
         # Compute calibration curve
-        bin_confs, bin_accs, bin_counts = compute_calibration_curve(df, n_bins)
+        bin_confs, bin_accs, bin_counts = compute_calibration_curve(confidences, correct, n_bins)
         
         # Filter out empty bins
         valid = ~np.isnan(bin_confs)
@@ -113,8 +183,8 @@ def plot_calibration_curves(files: list, title: str, output_path: str, n_bins: i
                 label=method, color=colors[idx], linewidth=2, markersize=8)
         
         # Plot histogram of confidences
-        df['confidence'].hist(bins=20, alpha=0.5, label=method, 
-                             color=colors[idx], ax=ax2, edgecolor='black')
+        ax2.hist(confidences, bins=20, alpha=0.5, label=method,
+                 color=colors[idx], edgecolor='black')
     
     # Perfect calibration line
     ax1.plot([0, 1], [0, 1], 'k--', label='Perfect Calibration', linewidth=2, alpha=0.7)
