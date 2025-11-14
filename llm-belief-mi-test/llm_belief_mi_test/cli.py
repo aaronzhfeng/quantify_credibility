@@ -122,6 +122,25 @@ def main():
         help="How to convert MI to confidence"
     )
     
+    # NLI clustering parameters
+    parser.add_argument(
+        "--use-nli-clustering",
+        action="store_true",
+        help="Enable NLI-based semantic clustering for MI computation (measures semantic uncertainty)"
+    )
+    parser.add_argument(
+        "--nli-threshold",
+        type=float,
+        default=0.5,
+        help="Threshold for NLI mutual entailment (default: 0.5)"
+    )
+    parser.add_argument(
+        "--nli-model",
+        type=str,
+        default="microsoft/deberta-v2-xlarge-mnli",
+        help="NLI model for semantic clustering (default: microsoft/deberta-v2-xlarge-mnli)"
+    )
+    
     # Generation parameters
     parser.add_argument(
         "--temperature",
@@ -347,7 +366,10 @@ def main():
                 confidence_method=args.confidence_method,
                 offset=args.offset,
                 detailed_logger=detailed_logger,
-                verbose=True
+                verbose=True,
+                use_nli_clustering=args.use_nli_clustering,
+                nli_threshold=args.nli_threshold,
+                nli_model=args.nli_model
             )
         elif dataset_type == "triviaqa":
             # TriviaQA uses correctness-based MI (similar to SQuAD but no context)
@@ -363,7 +385,10 @@ def main():
                 confidence_method=args.confidence_method,
                 offset=args.offset,
                 detailed_logger=detailed_logger,
-                verbose=True
+                verbose=True,
+                use_nli_clustering=args.use_nli_clustering,
+                nli_threshold=args.nli_threshold,
+                nli_model=args.nli_model
             )
         elif args.dataset == "truthfulqa-mc1":
             # TruthfulQA MC1 uses correctness-based MI instead of choice-based MI

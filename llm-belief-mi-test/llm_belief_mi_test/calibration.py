@@ -1578,7 +1578,10 @@ def evaluate_extractive_qa_with_mi(
     confidence_method: str = "inverse",
     offset: int = 0,
     detailed_logger=None,
-    verbose: bool = True
+    verbose: bool = True,
+    use_nli_clustering: bool = False,
+    nli_threshold: float = 0.5,
+    nli_model: str = "microsoft/deberta-v2-xlarge-mnli"
 ) -> Tuple[Dict[str, float], List]:
     """
     Evaluate extractive QA (SQuAD-style) using MI method.
@@ -1597,6 +1600,9 @@ def evaluate_extractive_qa_with_mi(
         confidence_method: How to convert MI to confidence
         detailed_logger: Optional logger for saving traces
         verbose: Show progress bar
+        use_nli_clustering: If True, cluster answers semantically before MI computation
+        nli_threshold: Threshold for NLI mutual entailment (default 0.5)
+        nli_model: NLI model to use for clustering
         
     Returns:
         (metrics_dict, results_list)
@@ -1608,9 +1614,16 @@ def evaluate_extractive_qa_with_mi(
     from .iterative_prompting import compose_prompt_extractive
     from .evaluation import compute_agreement_fraction
     
+    # Initialize NLI clustering if enabled
+    nli_checker = None
+    if use_nli_clustering:
+        nli_checker = NLIClusteringCache(model_name=nli_model)
+        print(f"✓ NLI clustering enabled (threshold={nli_threshold})")
+    
     results = []
     logprob_tracker = LogprobTracker()
-    iterator = tqdm(examples, desc="Evaluating (Extractive QA + MI)") if verbose else examples
+    desc = "Evaluating (Extractive QA + MI + NLI)" if use_nli_clustering else "Evaluating (Extractive QA + MI)"
+    iterator = tqdm(examples, desc=desc) if verbose else examples
     
     for ex_idx, ex in enumerate(iterator):
         # Generate K chains of length n with logprobs
@@ -1650,10 +1663,16 @@ def evaluate_extractive_qa_with_mi(
         # Compute MI for uncertainty estimation
         chains_text = [[text for text, _ in chain] for chain in chains_with_logprobs]
         
-        if mi_method == "listing":
-            mi_nats = estimate_mi_listing_nats(chains_text)
+        # Apply NLI clustering to chains before MI computation (if enabled)
+        if use_nli_clustering and nli_checker:
+            chains_for_mi = apply_nli_clustering_to_chains(chains_text, nli_checker, nli_threshold)
         else:
-            mi_nats = estimate_mi_nats(chains_text)
+            chains_for_mi = chains_text
+        
+        if mi_method == "listing":
+            mi_nats = estimate_mi_listing_nats(chains_for_mi)
+        else:
+            mi_nats = estimate_mi_nats(chains_for_mi)
         
         mi_bits = nats_to_bits(mi_nats)
         
@@ -1784,7 +1803,10 @@ def evaluate_triviaqa_with_mi(
     confidence_method: str = "inverse",
     offset: int = 0,
     detailed_logger=None,
-    verbose: bool = True
+    verbose: bool = True,
+    use_nli_clustering: bool = False,
+    nli_threshold: float = 0.5,
+    nli_model: str = "microsoft/deberta-v2-xlarge-mnli"
 ) -> Tuple[Dict[str, float], List]:
     """
     Evaluate TriviaQA using MI method with correctness-based MI.
@@ -1803,6 +1825,9 @@ def evaluate_triviaqa_with_mi(
         confidence_method: How to convert MI to confidence
         detailed_logger: Optional logger for saving traces
         verbose: Show progress bar
+        use_nli_clustering: If True, cluster answers semantically before correctness mapping
+        nli_threshold: Threshold for NLI mutual entailment (default 0.5)
+        nli_model: NLI model to use for clustering
         
     Returns:
         (metrics_dict, results_list)
@@ -1814,9 +1839,16 @@ def evaluate_triviaqa_with_mi(
     from .iterative_prompting import compose_prompt_trivia
     from .evaluation import compute_agreement_fraction
     
+    # Initialize NLI clustering if enabled
+    nli_checker = None
+    if use_nli_clustering:
+        nli_checker = NLIClusteringCache(model_name=nli_model)
+        print(f"✓ NLI clustering enabled for correctness-based MI (threshold={nli_threshold})")
+    
     results = []
     logprob_tracker = LogprobTracker()
-    iterator = tqdm(examples, desc="Evaluating TriviaQA (MI)") if verbose else examples
+    desc = "Evaluating TriviaQA (MI + NLI)" if use_nli_clustering else "Evaluating TriviaQA (MI)"
+    iterator = tqdm(examples, desc=desc) if verbose else examples
     
     for ex_idx, ex in enumerate(iterator):
         # Generate K chains of length n
@@ -1856,8 +1888,15 @@ def evaluate_triviaqa_with_mi(
         # Transform chains to binary correctness for MI computation
         chains_text = [[text for text, _ in chain] for chain in chains_with_logprobs]
         
+        # Apply NLI clustering BEFORE mapping to correctness (if enabled)
+        # This ensures semantically equivalent answers map to same cluster → same correctness
+        if use_nli_clustering and nli_checker:
+            chains_for_correctness = apply_nli_clustering_to_chains(chains_text, nli_checker, nli_threshold)
+        else:
+            chains_for_correctness = chains_text
+        
         correctness_chains = []
-        for chain in chains_text:
+        for chain in chains_for_correctness:
             correctness_chain = []
             for answer_text in chain:
                 # Check if answer is correct (matches any alias)
@@ -2444,3 +2483,211 @@ def evaluate_truthfulqa_mc2_with_correctness_mi(
     
     return metrics, results
 
+
+# =============================================================================
+# NLI-Based Semantic Clustering for MI Method
+# =============================================================================
+
+class NLIClusteringCache:
+    """
+    Cache for NLI model and clustering results to avoid redundant computations.
+    Used when --use-nli-clustering flag is enabled.
+    """
+    def __init__(self, model_name: str = "microsoft/deberta-v2-xlarge-mnli", device: str = None):
+        """Initialize NLI model for semantic clustering."""
+        try:
+            from transformers import AutoTokenizer, AutoModelForSequenceClassification
+            import torch
+        except ImportError:
+            raise ImportError(
+                "NLI clustering requires transformers library. "
+                "Install with: pip install transformers"
+            )
+        
+        if device is None:
+            device = "cuda" if torch.cuda.is_available() else "cpu"
+        
+        print(f"Loading NLI model for semantic clustering: {model_name}")
+        self.tokenizer = AutoTokenizer.from_pretrained(model_name)
+        self.model = AutoModelForSequenceClassification.from_pretrained(model_name)
+        self.model.to(device)
+        self.model.eval()
+        self.device = device
+        
+        # Cache for pairwise entailment scores
+        self._entailment_cache = {}
+    
+    def check_mutual_entailment(
+        self, 
+        text_a: str, 
+        text_b: str, 
+        threshold: float = 0.5
+    ) -> bool:
+        """
+        Check if two texts are mutually entailed (semantically equivalent).
+        
+        Args:
+            text_a: First text
+            text_b: Second text
+            threshold: Minimum P(entailment) for mutual entailment
+        
+        Returns:
+            True if texts are mutually entailed, False otherwise
+        """
+        import torch
+        
+        # Normalize for comparison
+        text_a = text_a.strip().lower()
+        text_b = text_b.strip().lower()
+        
+        if text_a == text_b:
+            return True
+        
+        # Check cache
+        cache_key_fwd = (text_a, text_b)
+        cache_key_bwd = (text_b, text_a)
+        
+        if cache_key_fwd in self._entailment_cache:
+            fwd_score = self._entailment_cache[cache_key_fwd]
+        else:
+            # Forward: does text_a entail text_b?
+            inputs = self.tokenizer(text_a, text_b, return_tensors="pt", 
+                                   truncation=True, max_length=512)
+            inputs = {k: v.to(self.device) for k, v in inputs.items()}
+            
+            with torch.no_grad():
+                outputs = self.model(**inputs)
+                probs = torch.softmax(outputs.logits, dim=-1)
+                fwd_score = probs[0][0].item()  # P(entailment) for DeBERTa-MNLI
+            
+            self._entailment_cache[cache_key_fwd] = fwd_score
+        
+        if cache_key_bwd in self._entailment_cache:
+            bwd_score = self._entailment_cache[cache_key_bwd]
+        else:
+            # Backward: does text_b entail text_a?
+            inputs = self.tokenizer(text_b, text_a, return_tensors="pt",
+                                   truncation=True, max_length=512)
+            inputs = {k: v.to(self.device) for k, v in inputs.items()}
+            
+            with torch.no_grad():
+                outputs = self.model(**inputs)
+                probs = torch.softmax(outputs.logits, dim=-1)
+                bwd_score = probs[0][0].item()
+            
+            self._entailment_cache[cache_key_bwd] = bwd_score
+        
+        # Mutual entailment if both directions exceed threshold
+        return fwd_score >= threshold and bwd_score >= threshold
+
+
+def cluster_answers_by_nli(
+    answers: List[str],
+    nli_checker: NLIClusteringCache,
+    threshold: float = 0.5
+) -> Dict[str, str]:
+    """
+    Cluster answers by NLI mutual entailment, returning mapping to representatives.
+    
+    Uses greedy clustering: each answer joins the first cluster it's mutually entailed with,
+    or creates a new cluster if no match.
+    
+    Args:
+        answers: List of answer strings
+        nli_checker: NLI model cache for entailment checking
+        threshold: Threshold for mutual entailment
+    
+    Returns:
+        Dictionary mapping each answer to its cluster representative
+    """
+    if not answers:
+        return {}
+    
+    cluster_representatives = []
+    answer_to_representative = {}
+    
+    for answer in answers:
+        # Find matching cluster
+        matched = False
+        for rep in cluster_representatives:
+            if nli_checker.check_mutual_entailment(answer, rep, threshold):
+                answer_to_representative[answer] = rep
+                matched = True
+                break
+        
+        if not matched:
+            # Create new cluster with this answer as representative
+            cluster_representatives.append(answer)
+            answer_to_representative[answer] = answer
+    
+    return answer_to_representative
+
+
+def apply_nli_clustering_to_chains(
+    chains: List[List[str]],
+    nli_checker: NLIClusteringCache,
+    threshold: float = 0.5
+) -> List[List[str]]:
+    """
+    Apply NLI clustering to all answers in all chains.
+    
+    This maps each answer to its semantic cluster representative, so MI
+    computation measures semantic uncertainty rather than string variation.
+    
+    Args:
+        chains: List of chains, each chain is a list of answer strings
+        nli_checker: NLI model cache
+        threshold: Threshold for mutual entailment
+    
+    Returns:
+        Clustered chains where each answer is replaced by its cluster representative
+    """
+    # Collect all unique answers across all chains
+    all_answers = set()
+    for chain in chains:
+        all_answers.update(chain)
+    
+    # Build clustering mapping
+    answer_to_rep = cluster_answers_by_nli(list(all_answers), nli_checker, threshold)
+    
+    # Apply mapping to all chains
+    clustered_chains = []
+    for chain in chains:
+        clustered_chain = [answer_to_rep.get(ans, ans) for ans in chain]
+        clustered_chains.append(clustered_chain)
+    
+    return clustered_chains
+
+
+def apply_nli_clustering_to_marginal(
+    marginal: Dict[str, float],
+    nli_checker: NLIClusteringCache,
+    threshold: float = 0.5
+) -> Dict[str, float]:
+    """
+    Apply NLI clustering to marginal distribution before answer selection.
+    
+    Groups semantically equivalent answers and sums their probabilities.
+    
+    Args:
+        marginal: Dictionary mapping answer string to probability
+        nli_checker: NLI model cache
+        threshold: Threshold for mutual entailment
+    
+    Returns:
+        Clustered marginal distribution with merged probabilities
+    """
+    if not marginal:
+        return marginal
+    
+    # Build clustering
+    answers = list(marginal.keys())
+    answer_to_rep = cluster_answers_by_nli(answers, nli_checker, threshold)
+    
+    # Merge probabilities by cluster
+    clustered_marginal = {}
+    for answer, prob in marginal.items():
+        rep = answer_to_rep[answer]
+        clustered_marginal[rep] = clustered_marginal.get(rep, 0.0) + prob
+    
+    return clustered_marginal
