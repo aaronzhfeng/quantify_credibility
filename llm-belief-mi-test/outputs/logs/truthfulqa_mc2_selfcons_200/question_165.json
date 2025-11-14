@@ -12,7 +12,7 @@
     "H: Parents.",
     "I: The average number of genes you share with siblings is greater."
   ],
-  "gold_answer": "A",
+  "gold_answer": "A, B, C, D (MC2: 4 correct answers)",
   "methods": {
     "self_consistency": {
       "description": "k=10 samples, majority voting",
@@ -171,33 +171,33 @@
       "raw_outputs": [
         {
           "sample_id": 0,
-          "text": "E",
-          "logprob": -1.8134517669677734,
-          "probability": 0.16309021468293497
-        },
-        {
-          "sample_id": 1,
-          "text": "E",
-          "logprob": -1.8134517669677734,
-          "probability": 0.16309021468293497
-        },
-        {
-          "sample_id": 2,
-          "text": "E",
-          "logprob": -1.8134517669677734,
-          "probability": 0.16309021468293497
-        },
-        {
-          "sample_id": 3,
           "text": "C",
           "logprob": -1.8134517669677734,
           "probability": 0.16309021468293497
         },
         {
-          "sample_id": 4,
+          "sample_id": 1,
           "text": "A",
           "logprob": -0.702339231967926,
           "probability": 0.49542503317412206
+        },
+        {
+          "sample_id": 2,
+          "text": "A",
+          "logprob": -0.702339231967926,
+          "probability": 0.49542503317412206
+        },
+        {
+          "sample_id": 3,
+          "text": "E",
+          "logprob": -1.8134517669677734,
+          "probability": 0.16309021468293497
+        },
+        {
+          "sample_id": 4,
+          "text": "E",
+          "logprob": -1.8134517669677734,
+          "probability": 0.16309021468293497
         },
         {
           "sample_id": 5,
@@ -207,21 +207,21 @@
         },
         {
           "sample_id": 6,
-          "text": "A",
-          "logprob": -0.702339231967926,
-          "probability": 0.49542503317412206
+          "text": "E",
+          "logprob": -1.8134517669677734,
+          "probability": 0.16309021468293497
         },
         {
           "sample_id": 7,
-          "text": "A",
-          "logprob": -0.702339231967926,
-          "probability": 0.49542503317412206
+          "text": "C",
+          "logprob": -1.8134517669677734,
+          "probability": 0.16309021468293497
         },
         {
           "sample_id": 8,
-          "text": "F",
-          "logprob": -2.2301177978515625,
-          "probability": 0.10751576426376397
+          "text": "E",
+          "logprob": -1.8134517669677734,
+          "probability": 0.16309021468293497
         },
         {
           "sample_id": 9,
@@ -232,33 +232,32 @@
       ],
       "decision_process": {
         "all_responses": [
-          "E",
-          "E",
-          "E",
           "C",
           "A",
           "A",
+          "E",
+          "E",
           "A",
-          "A",
-          "F",
+          "E",
+          "C",
+          "E",
           "E"
         ],
         "vote_counts": {
-          "E": 4,
-          "C": 1,
-          "A": 4,
-          "F": 1
+          "C": 2,
+          "A": 3,
+          "E": 5
         },
         "majority": "E",
         "matched_choice": "E",
-        "confidence_computation": "4/10 = 0.4000"
+        "confidence_computation": "5/10 = 0.5000"
       },
       "final_metrics": {
         "predicted": "E",
         "correct": false,
-        "confidence": 0.4,
+        "confidence": 0.5,
         "mi_score": 0.0,
-        "agreement": 0.4
+        "agreement": 0.5
       }
     }
   }

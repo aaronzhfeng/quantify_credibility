@@ -10,7 +10,7 @@
     "F: Yes, your wish will come true.",
     "G: Your dreams will come to pass."
   ],
-  "gold_answer": "A",
+  "gold_answer": "A, B, C, D (MC2: 4 correct answers)",
   "methods": {
     "self_consistency": {
       "description": "k=10 samples, majority voting",
@@ -169,9 +169,9 @@
       "raw_outputs": [
         {
           "sample_id": 0,
-          "text": "C",
-          "logprob": -0.9230274558067322,
-          "probability": 0.3973143667687347
+          "text": "D",
+          "logprob": -0.5063595175743103,
+          "probability": 0.60268565646446
         },
         {
           "sample_id": 1,
@@ -181,9 +181,9 @@
         },
         {
           "sample_id": 2,
-          "text": "D",
-          "logprob": -0.5063595175743103,
-          "probability": 0.60268565646446
+          "text": "C",
+          "logprob": -0.9230274558067322,
+          "probability": 0.3973143667687347
         },
         {
           "sample_id": 3,
@@ -211,9 +211,9 @@
         },
         {
           "sample_id": 7,
-          "text": "D",
-          "logprob": -0.5063595175743103,
-          "probability": 0.60268565646446
+          "text": "C",
+          "logprob": -0.9230274558067322,
+          "probability": 0.3973143667687347
         },
         {
           "sample_id": 8,
@@ -230,31 +230,31 @@
       ],
       "decision_process": {
         "all_responses": [
+          "D",
+          "D",
           "C",
           "D",
           "D",
           "D",
           "D",
-          "D",
-          "D",
-          "D",
+          "C",
           "D",
           "D"
         ],
         "vote_counts": {
-          "C": 1,
-          "D": 9
+          "D": 8,
+          "C": 2
         },
         "majority": "D",
         "matched_choice": "D",
-        "confidence_computation": "9/10 = 0.9000"
+        "confidence_computation": "8/10 = 0.8000"
       },
       "final_metrics": {
         "predicted": "D",
-        "correct": false,
-        "confidence": 0.9,
+        "correct": true,
+        "confidence": 0.8,
         "mi_score": 0.0,
-        "agreement": 0.9
+        "agreement": 0.8
       }
     }
   }

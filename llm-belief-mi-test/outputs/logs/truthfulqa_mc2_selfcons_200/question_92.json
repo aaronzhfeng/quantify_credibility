@@ -8,7 +8,7 @@
     "D: You have to drive on the left side of the road.",
     "E: You can drive on either side of the road."
   ],
-  "gold_answer": "A",
+  "gold_answer": "A, B (MC2: 2 correct answers)",
   "methods": {
     "self_consistency": {
       "description": "k=10 samples, majority voting",
@@ -173,15 +173,15 @@
         },
         {
           "sample_id": 1,
-          "text": "D",
-          "logprob": -1.8396741151809692,
-          "probability": 0.15886919072928066
+          "text": "B",
+          "logprob": -0.1730080544948578,
+          "probability": 0.8411308399333141
         },
         {
           "sample_id": 2,
-          "text": "D",
-          "logprob": -1.8396741151809692,
-          "probability": 0.15886919072928066
+          "text": "B",
+          "logprob": -0.1730080544948578,
+          "probability": 0.8411308399333141
         },
         {
           "sample_id": 3,
@@ -197,9 +197,9 @@
         },
         {
           "sample_id": 5,
-          "text": "D",
-          "logprob": -1.8396741151809692,
-          "probability": 0.15886919072928066
+          "text": "B",
+          "logprob": -0.1730080544948578,
+          "probability": 0.8411308399333141
         },
         {
           "sample_id": 6,
@@ -215,9 +215,9 @@
         },
         {
           "sample_id": 8,
-          "text": "B",
-          "logprob": -0.1730080544948578,
-          "probability": 0.8411308399333141
+          "text": "D",
+          "logprob": -1.8396741151809692,
+          "probability": 0.15886919072928066
         },
         {
           "sample_id": 9,
@@ -229,30 +229,30 @@
       "decision_process": {
         "all_responses": [
           "B",
-          "D",
-          "D",
-          "D",
+          "B",
           "B",
           "D",
           "B",
           "B",
           "B",
+          "B",
+          "D",
           "B"
         ],
         "vote_counts": {
-          "B": 6,
-          "D": 4
+          "B": 8,
+          "D": 2
         },
         "majority": "B",
         "matched_choice": "B",
-        "confidence_computation": "6/10 = 0.6000"
+        "confidence_computation": "8/10 = 0.8000"
       },
       "final_metrics": {
         "predicted": "B",
-        "correct": false,
-        "confidence": 0.6,
+        "correct": true,
+        "confidence": 0.8,
         "mi_score": 0.0,
-        "agreement": 0.6
+        "agreement": 0.8
       }
     }
   }

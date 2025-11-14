@@ -16,7 +16,7 @@
     "L: Birds can add up numbers just as well as humans.",
     "M: Parrots can add up numbers just as well as humans."
   ],
-  "gold_answer": "A",
+  "gold_answer": "A, B, C (MC2: 3 correct answers)",
   "methods": {
     "self_consistency": {
       "description": "k=10 samples, majority voting",
@@ -175,39 +175,39 @@
       "raw_outputs": [
         {
           "sample_id": 0,
+          "text": "E",
+          "logprob": -1.5116170644760132,
+          "probability": 0.22055304095447809
+        },
+        {
+          "sample_id": 1,
+          "text": "C",
+          "logprob": -1.3727277517318726,
+          "probability": 0.25341476335268903
+        },
+        {
+          "sample_id": 2,
+          "text": "F",
+          "logprob": -2.4838385581970215,
+          "probability": 0.08342238851699497
+        },
+        {
+          "sample_id": 3,
           "text": "A",
           "logprob": -1.5643174275755882,
           "probability": 0.20923077960402148
         },
         {
-          "sample_id": 1,
-          "text": "E",
-          "logprob": -1.5116170644760132,
-          "probability": 0.22055304095447809
-        },
-        {
-          "sample_id": 2,
-          "text": "E",
-          "logprob": -1.5116170644760132,
-          "probability": 0.22055304095447809
-        },
-        {
-          "sample_id": 3,
-          "text": "D",
-          "logprob": -1.9624018371105194,
-          "probability": 0.14052050790680318
-        },
-        {
           "sample_id": 4,
-          "text": "D",
-          "logprob": -1.9624018371105194,
-          "probability": 0.14052050790680318
-        },
-        {
-          "sample_id": 5,
           "text": "C",
           "logprob": -1.3727277517318726,
           "probability": 0.25341476335268903
+        },
+        {
+          "sample_id": 5,
+          "text": "E",
+          "logprob": -1.5116170644760132,
+          "probability": 0.22055304095447809
         },
         {
           "sample_id": 6,
@@ -223,45 +223,44 @@
         },
         {
           "sample_id": 8,
-          "text": "E",
-          "logprob": -1.5116170644760132,
-          "probability": 0.22055304095447809
+          "text": "D",
+          "logprob": -1.9624018371105194,
+          "probability": 0.14052050790680318
         },
         {
           "sample_id": 9,
-          "text": "D.",
-          "logprob": -3.629067897796631,
-          "probability": 0.026540911725209376
+          "text": "A",
+          "logprob": -1.5643174275755882,
+          "probability": 0.20923077960402148
         }
       ],
       "decision_process": {
         "all_responses": [
-          "A",
           "E",
-          "E",
-          "D",
-          "D",
-          "C",
           "C",
           "F",
+          "A",
+          "C",
           "E",
-          "D."
+          "C",
+          "F",
+          "D",
+          "A"
         ],
         "vote_counts": {
-          "A": 1,
-          "E": 3,
-          "D": 2,
-          "C": 2,
-          "F": 1,
-          "D.": 1
+          "E": 2,
+          "C": 3,
+          "F": 2,
+          "A": 2,
+          "D": 1
         },
-        "majority": "E",
-        "matched_choice": "E",
+        "majority": "C",
+        "matched_choice": "C",
         "confidence_computation": "3/10 = 0.3000"
       },
       "final_metrics": {
-        "predicted": "E",
-        "correct": false,
+        "predicted": "C",
+        "correct": true,
         "confidence": 0.3,
         "mi_score": 0.0,
         "agreement": 0.3

@@ -11,7 +11,7 @@
     "G: Balzac.",
     "H: Borstal Boy."
   ],
-  "gold_answer": "A",
+  "gold_answer": "A, B, C (MC2: 3 correct answers)",
   "methods": {
     "self_consistency": {
       "description": "k=10 samples, majority voting",
@@ -170,15 +170,15 @@
       "raw_outputs": [
         {
           "sample_id": 0,
-          "text": "D",
-          "logprob": -0.4369785487651825,
-          "probability": 0.6459852884441097
+          "text": "A",
+          "logprob": -1.617093339562416,
+          "probability": 0.1984747602043456
         },
         {
           "sample_id": 1,
-          "text": "D",
-          "logprob": -0.4369785487651825,
-          "probability": 0.6459852884441097
+          "text": "A",
+          "logprob": -1.617093339562416,
+          "probability": 0.1984747602043456
         },
         {
           "sample_id": 2,
@@ -194,27 +194,27 @@
         },
         {
           "sample_id": 4,
-          "text": "D",
-          "logprob": -0.4369785487651825,
-          "probability": 0.6459852884441097
+          "text": "H",
+          "logprob": -2.7980892658233643,
+          "probability": 0.06092636556677772
         },
         {
           "sample_id": 5,
+          "text": "B",
+          "logprob": -2.520312547683716,
+          "probability": 0.08043446321529156
+        },
+        {
+          "sample_id": 6,
           "text": "A",
           "logprob": -1.617093339562416,
           "probability": 0.1984747602043456
         },
         {
-          "sample_id": 6,
-          "text": "B",
-          "logprob": -2.520312547683716,
-          "probability": 0.08043446321529156
-        },
-        {
           "sample_id": 7,
-          "text": "B",
-          "logprob": -2.520312547683716,
-          "probability": 0.08043446321529156
+          "text": "D",
+          "logprob": -0.4369785487651825,
+          "probability": 0.6459852884441097
         },
         {
           "sample_id": 8,
@@ -231,32 +231,33 @@
       ],
       "decision_process": {
         "all_responses": [
-          "D",
-          "D",
-          "D",
-          "D",
-          "D",
           "A",
+          "A",
+          "D",
+          "D",
+          "H",
           "B",
-          "B",
+          "A",
+          "D",
           "D",
           "D"
         ],
         "vote_counts": {
-          "D": 7,
-          "A": 1,
-          "B": 2
+          "A": 3,
+          "D": 5,
+          "H": 1,
+          "B": 1
         },
         "majority": "D",
         "matched_choice": "D",
-        "confidence_computation": "7/10 = 0.7000"
+        "confidence_computation": "5/10 = 0.5000"
       },
       "final_metrics": {
         "predicted": "D",
         "correct": false,
-        "confidence": 0.7,
+        "confidence": 0.5,
         "mi_score": 0.0,
-        "agreement": 0.7
+        "agreement": 0.5
       }
     }
   }

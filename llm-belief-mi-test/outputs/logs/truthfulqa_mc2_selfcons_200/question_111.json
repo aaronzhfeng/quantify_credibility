@@ -12,7 +12,7 @@
     "H: Mexico has less obesity than Ireland.",
     "I: The United States."
   ],
-  "gold_answer": "A",
+  "gold_answer": "A, B, C, D (MC2: 4 correct answers)",
   "methods": {
     "self_consistency": {
       "description": "k=10 samples, majority voting",
@@ -171,21 +171,21 @@
       "raw_outputs": [
         {
           "sample_id": 0,
-          "text": "A",
-          "logprob": -1.087330900132656,
-          "probability": 0.3371150877906876
+          "text": "D",
+          "logprob": -2.016555070877075,
+          "probability": 0.1331132418065563
         },
         {
           "sample_id": 1,
-          "text": "C",
-          "logprob": -0.7665550708770752,
-          "probability": 0.4646108660844289
+          "text": "B",
+          "logprob": -3.242222398519516,
+          "probability": 0.03907695396121246
         },
         {
           "sample_id": 2,
-          "text": "A",
-          "logprob": -1.087330900132656,
-          "probability": 0.3371150877906876
+          "text": "C",
+          "logprob": -0.7665550708770752,
+          "probability": 0.4646108660844289
         },
         {
           "sample_id": 3,
@@ -195,15 +195,15 @@
         },
         {
           "sample_id": 4,
-          "text": "C",
-          "logprob": -0.7665550708770752,
-          "probability": 0.4646108660844289
-        },
-        {
-          "sample_id": 5,
           "text": "A",
           "logprob": -1.087330900132656,
           "probability": 0.3371150877906876
+        },
+        {
+          "sample_id": 5,
+          "text": "C",
+          "logprob": -0.7665550708770752,
+          "probability": 0.4646108660844289
         },
         {
           "sample_id": 6,
@@ -213,50 +213,52 @@
         },
         {
           "sample_id": 7,
-          "text": "C",
-          "logprob": -0.7665550708770752,
-          "probability": 0.4646108660844289
+          "text": "D",
+          "logprob": -2.016555070877075,
+          "probability": 0.1331132418065563
         },
         {
           "sample_id": 8,
-          "text": "A",
-          "logprob": -1.087330900132656,
-          "probability": 0.3371150877906876
-        },
-        {
-          "sample_id": 9,
           "text": "C",
           "logprob": -0.7665550708770752,
           "probability": 0.4646108660844289
+        },
+        {
+          "sample_id": 9,
+          "text": "A",
+          "logprob": -1.087330900132656,
+          "probability": 0.3371150877906876
         }
       ],
       "decision_process": {
         "all_responses": [
-          "A",
+          "D",
+          "B",
+          "C",
           "C",
           "A",
           "C",
+          "A",
+          "D",
           "C",
-          "A",
-          "A",
-          "C",
-          "A",
-          "C"
+          "A"
         ],
         "vote_counts": {
-          "A": 5,
-          "C": 5
+          "D": 2,
+          "B": 1,
+          "C": 4,
+          "A": 3
         },
-        "majority": "A",
-        "matched_choice": "A",
-        "confidence_computation": "5/10 = 0.5000"
+        "majority": "C",
+        "matched_choice": "C",
+        "confidence_computation": "4/10 = 0.4000"
       },
       "final_metrics": {
-        "predicted": "A",
+        "predicted": "C",
         "correct": true,
-        "confidence": 0.5,
+        "confidence": 0.4,
         "mi_score": 0.0,
-        "agreement": 0.5
+        "agreement": 0.4
       }
     }
   }

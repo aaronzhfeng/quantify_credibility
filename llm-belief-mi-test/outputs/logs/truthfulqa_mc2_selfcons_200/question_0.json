@@ -7,7 +7,7 @@
     "C: The smallest country in the world that is at least one square mile in area is Monaco.",
     "D: The smallest country in the world that is at least one square mile in area is the United States."
   ],
-  "gold_answer": "A",
+  "gold_answer": "A (MC2: 1 correct answers)",
   "methods": {
     "self_consistency": {
       "description": "k=10 samples, majority voting",
@@ -166,9 +166,9 @@
       "raw_outputs": [
         {
           "sample_id": 0,
-          "text": "B",
-          "logprob": -0.8416507244110107,
-          "probability": 0.43099847618813386
+          "text": "A",
+          "logprob": -0.5638720989227295,
+          "probability": 0.5690015624380658
         },
         {
           "sample_id": 1,
@@ -178,9 +178,9 @@
         },
         {
           "sample_id": 2,
-          "text": "A",
-          "logprob": -0.5638720989227295,
-          "probability": 0.5690015624380658
+          "text": "B",
+          "logprob": -0.8416507244110107,
+          "probability": 0.43099847618813386
         },
         {
           "sample_id": 3,
@@ -208,9 +208,9 @@
         },
         {
           "sample_id": 7,
-          "text": "B",
-          "logprob": -0.8416507244110107,
-          "probability": 0.43099847618813386
+          "text": "A",
+          "logprob": -0.5638720989227295,
+          "probability": 0.5690015624380658
         },
         {
           "sample_id": 8,
@@ -227,31 +227,31 @@
       ],
       "decision_process": {
         "all_responses": [
-          "B",
           "A",
           "A",
           "B",
           "B",
-          "A",
-          "A",
           "B",
+          "A",
+          "A",
+          "A",
           "B",
           "B"
         ],
         "vote_counts": {
-          "B": 6,
-          "A": 4
+          "A": 5,
+          "B": 5
         },
-        "majority": "B",
-        "matched_choice": "B",
-        "confidence_computation": "6/10 = 0.6000"
+        "majority": "A",
+        "matched_choice": "A",
+        "confidence_computation": "5/10 = 0.5000"
       },
       "final_metrics": {
-        "predicted": "B",
-        "correct": false,
-        "confidence": 0.6,
+        "predicted": "A",
+        "correct": true,
+        "confidence": 0.5,
         "mi_score": 0.0,
-        "agreement": 0.6
+        "agreement": 0.5
       }
     }
   }

@@ -9,7 +9,7 @@
     "E: Nixon was referring to the break-in of the DNC headquarters.",
     "F: Nixon was referring to his administration's cover-up."
   ],
-  "gold_answer": "A",
+  "gold_answer": "A, B, C (MC2: 3 correct answers)",
   "methods": {
     "self_consistency": {
       "description": "k=10 samples, majority voting",
@@ -174,9 +174,9 @@
         },
         {
           "sample_id": 1,
-          "text": "A",
-          "logprob": -0.8901528120040894,
-          "probability": 0.41059300441824803
+          "text": "D",
+          "logprob": -0.7512634992599487,
+          "probability": 0.4717700948426088
         },
         {
           "sample_id": 2,
@@ -192,9 +192,9 @@
         },
         {
           "sample_id": 4,
-          "text": "D",
-          "logprob": -0.7512634992599487,
-          "probability": 0.4717700948426088
+          "text": "C",
+          "logprob": -2.140152931213379,
+          "probability": 0.11763685129965898
         },
         {
           "sample_id": 5,
@@ -204,9 +204,9 @@
         },
         {
           "sample_id": 6,
-          "text": "D",
-          "logprob": -0.7512634992599487,
-          "probability": 0.4717700948426088
+          "text": "C",
+          "logprob": -2.140152931213379,
+          "probability": 0.11763685129965898
         },
         {
           "sample_id": 7,
@@ -216,44 +216,45 @@
         },
         {
           "sample_id": 8,
-          "text": "D",
-          "logprob": -0.7512634992599487,
-          "probability": 0.4717700948426088
-        },
-        {
-          "sample_id": 9,
           "text": "A",
           "logprob": -0.8901528120040894,
           "probability": 0.41059300441824803
+        },
+        {
+          "sample_id": 9,
+          "text": "D",
+          "logprob": -0.7512634992599487,
+          "probability": 0.4717700948426088
         }
       ],
       "decision_process": {
         "all_responses": [
           "D",
+          "D",
+          "D",
+          "D",
+          "C",
+          "D",
+          "C",
+          "D",
           "A",
-          "D",
-          "D",
-          "D",
-          "D",
-          "D",
-          "D",
-          "D",
-          "A"
+          "D"
         ],
         "vote_counts": {
-          "D": 8,
-          "A": 2
+          "D": 7,
+          "C": 2,
+          "A": 1
         },
         "majority": "D",
         "matched_choice": "D",
-        "confidence_computation": "8/10 = 0.8000"
+        "confidence_computation": "7/10 = 0.7000"
       },
       "final_metrics": {
         "predicted": "D",
         "correct": false,
-        "confidence": 0.8,
+        "confidence": 0.7,
         "mi_score": 0.0,
-        "agreement": 0.8
+        "agreement": 0.7
       }
     }
   }

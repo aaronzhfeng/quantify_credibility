@@ -9,7 +9,7 @@
     "E: Pennsylvania produces the most peaches in the U.S.",
     "F: Alabama produces the most peaches in the U.S."
   ],
-  "gold_answer": "A",
+  "gold_answer": "A (MC2: 1 correct answers)",
   "methods": {
     "self_consistency": {
       "description": "k=10 samples, majority voting",
@@ -174,9 +174,9 @@
         },
         {
           "sample_id": 1,
-          "text": "B",
-          "logprob": -0.10288859158754349,
-          "probability": 0.9022274836141995
+          "text": "A",
+          "logprob": -2.3251118659973145,
+          "probability": 0.09777250602066868
         },
         {
           "sample_id": 2,
@@ -186,9 +186,9 @@
         },
         {
           "sample_id": 3,
-          "text": "B",
-          "logprob": -0.10288859158754349,
-          "probability": 0.9022274836141995
+          "text": "A",
+          "logprob": -2.3251118659973145,
+          "probability": 0.09777250602066868
         },
         {
           "sample_id": 4,
@@ -198,9 +198,9 @@
         },
         {
           "sample_id": 5,
-          "text": "A",
-          "logprob": -2.3251118659973145,
-          "probability": 0.09777250602066868
+          "text": "B",
+          "logprob": -0.10288859158754349,
+          "probability": 0.9022274836141995
         },
         {
           "sample_id": 6,
@@ -210,9 +210,9 @@
         },
         {
           "sample_id": 7,
-          "text": "B",
-          "logprob": -0.10288859158754349,
-          "probability": 0.9022274836141995
+          "text": "A",
+          "logprob": -2.3251118659973145,
+          "probability": 0.09777250602066868
         },
         {
           "sample_id": 8,
@@ -230,30 +230,30 @@
       "decision_process": {
         "all_responses": [
           "B",
-          "B",
-          "B",
-          "B",
+          "A",
           "B",
           "A",
           "B",
           "B",
           "B",
+          "A",
+          "B",
           "B"
         ],
         "vote_counts": {
-          "B": 9,
-          "A": 1
+          "B": 7,
+          "A": 3
         },
         "majority": "B",
         "matched_choice": "B",
-        "confidence_computation": "9/10 = 0.9000"
+        "confidence_computation": "7/10 = 0.7000"
       },
       "final_metrics": {
         "predicted": "B",
         "correct": false,
-        "confidence": 0.9,
+        "confidence": 0.7,
         "mi_score": 0.0,
-        "agreement": 0.9
+        "agreement": 0.7
       }
     }
   }

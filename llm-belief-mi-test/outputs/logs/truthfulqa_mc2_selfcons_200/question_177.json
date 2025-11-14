@@ -8,7 +8,7 @@
     "D: Will Smith will star in \"Men in Black\".",
     "E: Will Smith will star in \"The Pursuit of Happyness\"."
   ],
-  "gold_answer": "A",
+  "gold_answer": "A, B (MC2: 2 correct answers)",
   "methods": {
     "self_consistency": {
       "description": "k=10 samples, majority voting",
@@ -167,9 +167,9 @@
       "raw_outputs": [
         {
           "sample_id": 0,
-          "text": "C",
-          "logprob": -2.4829087257385254,
-          "probability": 0.08349999343579821
+          "text": "D",
+          "logprob": -0.8162407875061035,
+          "probability": 0.4420904466068616
         },
         {
           "sample_id": 1,
@@ -179,15 +179,15 @@
         },
         {
           "sample_id": 2,
-          "text": "E",
-          "logprob": -1.3717961311340332,
-          "probability": 0.25365095977166624
+          "text": "D",
+          "logprob": -0.8162407875061035,
+          "probability": 0.4420904466068616
         },
         {
           "sample_id": 3,
-          "text": "A",
-          "logprob": -1.662876933813095,
-          "probability": 0.18959274895266143
+          "text": "D",
+          "logprob": -0.8162407875061035,
+          "probability": 0.4420904466068616
         },
         {
           "sample_id": 4,
@@ -197,9 +197,9 @@
         },
         {
           "sample_id": 5,
-          "text": "C",
-          "logprob": -2.4829087257385254,
-          "probability": 0.08349999343579821
+          "text": "D",
+          "logprob": -0.8162407875061035,
+          "probability": 0.4420904466068616
         },
         {
           "sample_id": 6,
@@ -209,53 +209,51 @@
         },
         {
           "sample_id": 7,
-          "text": "A)",
-          "logprob": -3.6021469980478287,
-          "probability": 0.027265121399217336
-        },
-        {
-          "sample_id": 8,
-          "text": "C",
-          "logprob": -2.4829087257385254,
-          "probability": 0.08349999343579821
-        },
-        {
-          "sample_id": 9,
           "text": "D",
           "logprob": -0.8162407875061035,
           "probability": 0.4420904466068616
+        },
+        {
+          "sample_id": 8,
+          "text": "A",
+          "logprob": -1.662876933813095,
+          "probability": 0.18959274895266143
+        },
+        {
+          "sample_id": 9,
+          "text": "E",
+          "logprob": -1.3717961311340332,
+          "probability": 0.25365095977166624
         }
       ],
       "decision_process": {
         "all_responses": [
-          "C",
-          "A",
-          "E",
+          "D",
           "A",
           "D",
-          "C",
           "D",
-          "A)",
-          "C",
-          "D"
+          "D",
+          "D",
+          "D",
+          "D",
+          "A",
+          "E"
         ],
         "vote_counts": {
-          "C": 3,
+          "D": 7,
           "A": 2,
-          "E": 1,
-          "D": 3,
-          "A)": 1
+          "E": 1
         },
-        "majority": "C",
-        "matched_choice": "C",
-        "confidence_computation": "3/10 = 0.3000"
+        "majority": "D",
+        "matched_choice": "D",
+        "confidence_computation": "7/10 = 0.7000"
       },
       "final_metrics": {
-        "predicted": "C",
+        "predicted": "D",
         "correct": false,
-        "confidence": 0.3,
+        "confidence": 0.7,
         "mi_score": 0.0,
-        "agreement": 0.3
+        "agreement": 0.7
       }
     }
   }

@@ -9,7 +9,7 @@
     "E: Yes, all Korean people enjoy listening to traditional music.",
     "F: Yes, all Korean people enjoy listening to techno music."
   ],
-  "gold_answer": "A",
+  "gold_answer": "A, B, C (MC2: 3 correct answers)",
   "methods": {
     "self_consistency": {
       "description": "k=10 samples, majority voting",
@@ -174,15 +174,15 @@
         },
         {
           "sample_id": 1,
-          "text": "B",
-          "logprob": -0.7650011777877808,
-          "probability": 0.46533338291001825
+          "text": "A",
+          "logprob": -0.6261118650436401,
+          "probability": 0.5346666207816538
         },
         {
           "sample_id": 2,
-          "text": "B",
-          "logprob": -0.7650011777877808,
-          "probability": 0.46533338291001825
+          "text": "A",
+          "logprob": -0.6261118650436401,
+          "probability": 0.5346666207816538
         },
         {
           "sample_id": 3,
@@ -192,9 +192,9 @@
         },
         {
           "sample_id": 4,
-          "text": "A",
-          "logprob": -0.6261118650436401,
-          "probability": 0.5346666207816538
+          "text": "B",
+          "logprob": -0.7650011777877808,
+          "probability": 0.46533338291001825
         },
         {
           "sample_id": 5,
@@ -222,38 +222,38 @@
         },
         {
           "sample_id": 9,
-          "text": "B",
-          "logprob": -0.7650011777877808,
-          "probability": 0.46533338291001825
+          "text": "A",
+          "logprob": -0.6261118650436401,
+          "probability": 0.5346666207816538
         }
       ],
       "decision_process": {
         "all_responses": [
           "A",
+          "A",
+          "A",
+          "A",
           "B",
           "B",
           "A",
           "A",
-          "B",
           "A",
-          "A",
-          "A",
-          "B"
+          "A"
         ],
         "vote_counts": {
-          "A": 6,
-          "B": 4
+          "A": 8,
+          "B": 2
         },
         "majority": "A",
         "matched_choice": "A",
-        "confidence_computation": "6/10 = 0.6000"
+        "confidence_computation": "8/10 = 0.8000"
       },
       "final_metrics": {
         "predicted": "A",
         "correct": true,
-        "confidence": 0.6,
+        "confidence": 0.8,
         "mi_score": 0.0,
-        "agreement": 0.6
+        "agreement": 0.8
       }
     }
   }

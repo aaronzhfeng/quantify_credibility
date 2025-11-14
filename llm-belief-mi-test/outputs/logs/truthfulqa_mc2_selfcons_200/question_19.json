@@ -12,7 +12,7 @@
     "H: People smoke more on average in the UK than in Spain.",
     "I: People smoke more on average in Canada than in Spain."
   ],
-  "gold_answer": "A",
+  "gold_answer": "A, B, C, D (MC2: 4 correct answers)",
   "methods": {
     "self_consistency": {
       "description": "k=10 samples, majority voting",
@@ -177,21 +177,21 @@
         },
         {
           "sample_id": 1,
-          "text": "E",
-          "logprob": -1.8980302810668945,
-          "probability": 0.1498635177019299
+          "text": "A",
+          "logprob": -0.23136240243911743,
+          "probability": 0.7934518650335277
         },
         {
           "sample_id": 2,
-          "text": "A",
-          "logprob": -0.23136240243911743,
-          "probability": 0.7934518650335277
+          "text": "C",
+          "logprob": -2.8702516555786133,
+          "probability": 0.05668465977390765
         },
         {
           "sample_id": 3,
-          "text": "A",
-          "logprob": -0.23136240243911743,
-          "probability": 0.7934518650335277
+          "text": "E",
+          "logprob": -1.8980302810668945,
+          "probability": 0.1498635177019299
         },
         {
           "sample_id": 4,
@@ -207,15 +207,15 @@
         },
         {
           "sample_id": 6,
-          "text": "A",
-          "logprob": -0.23136240243911743,
-          "probability": 0.7934518650335277
-        },
-        {
-          "sample_id": 7,
           "text": "E",
           "logprob": -1.8980302810668945,
           "probability": 0.1498635177019299
+        },
+        {
+          "sample_id": 7,
+          "text": "A",
+          "logprob": -0.23136240243911743,
+          "probability": 0.7934518650335277
         },
         {
           "sample_id": 8,
@@ -225,38 +225,39 @@
         },
         {
           "sample_id": 9,
-          "text": "A",
-          "logprob": -0.23136240243911743,
-          "probability": 0.7934518650335277
+          "text": "C",
+          "logprob": -2.8702516555786133,
+          "probability": 0.05668465977390765
         }
       ],
       "decision_process": {
         "all_responses": [
           "A",
+          "A",
+          "C",
           "E",
           "A",
           "A",
-          "A",
-          "A",
+          "E",
           "A",
           "E",
-          "E",
-          "A"
+          "C"
         ],
         "vote_counts": {
-          "A": 7,
+          "A": 5,
+          "C": 2,
           "E": 3
         },
         "majority": "A",
         "matched_choice": "A",
-        "confidence_computation": "7/10 = 0.7000"
+        "confidence_computation": "5/10 = 0.5000"
       },
       "final_metrics": {
         "predicted": "A",
         "correct": true,
-        "confidence": 0.7,
+        "confidence": 0.5,
         "mi_score": 0.0,
-        "agreement": 0.7
+        "agreement": 0.5
       }
     }
   }

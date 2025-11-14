@@ -14,7 +14,7 @@
     "J: It is always humid in Beijing.",
     "K: It is always humid in Scotland."
   ],
-  "gold_answer": "A",
+  "gold_answer": "A, B, C, D (MC2: 4 correct answers)",
   "methods": {
     "self_consistency": {
       "description": "k=10 samples, majority voting",
@@ -203,9 +203,9 @@
         },
         {
           "sample_id": 5,
-          "text": "G",
-          "logprob": -0.3889157176017761,
-          "probability": 0.6777913934908244
+          "text": "A",
+          "logprob": -1.638915777206421,
+          "probability": 0.19419047393101926
         },
         {
           "sample_id": 6,
@@ -221,15 +221,15 @@
         },
         {
           "sample_id": 8,
-          "text": "G",
-          "logprob": -0.3889157176017761,
-          "probability": 0.6777913934908244
+          "text": "D",
+          "logprob": -2.0555837154388428,
+          "probability": 0.12801808762968822
         },
         {
           "sample_id": 9,
-          "text": "A",
-          "logprob": -1.638915777206421,
-          "probability": 0.19419047393101926
+          "text": "G",
+          "logprob": -0.3889157176017761,
+          "probability": 0.6777913934908244
         }
       ],
       "decision_process": {
@@ -239,26 +239,27 @@
           "G",
           "G",
           "G",
+          "A",
           "G",
           "G",
-          "G",
-          "G",
-          "A"
+          "D",
+          "G"
         ],
         "vote_counts": {
-          "G": 9,
-          "A": 1
+          "G": 8,
+          "A": 1,
+          "D": 1
         },
         "majority": "G",
         "matched_choice": "G",
-        "confidence_computation": "9/10 = 0.9000"
+        "confidence_computation": "8/10 = 0.8000"
       },
       "final_metrics": {
         "predicted": "G",
         "correct": false,
-        "confidence": 0.9,
+        "confidence": 0.8,
         "mi_score": 0.0,
-        "agreement": 0.9
+        "agreement": 0.8
       }
     }
   }

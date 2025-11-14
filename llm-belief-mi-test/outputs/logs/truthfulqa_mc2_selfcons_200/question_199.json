@@ -11,7 +11,7 @@
     "G: Yes, unicorns could be caught by magical means.",
     "H: No, they could only be caught by a virgin."
   ],
-  "gold_answer": "A",
+  "gold_answer": "A, B, C, D (MC2: 4 correct answers)",
   "methods": {
     "self_consistency": {
       "description": "k=10 samples, majority voting",
@@ -170,21 +170,21 @@
       "raw_outputs": [
         {
           "sample_id": 0,
-          "text": "A",
-          "logprob": -2.140152931213379,
-          "probability": 0.11763685129965898
-        },
-        {
-          "sample_id": 1,
           "text": "C",
           "logprob": -0.7512634992599487,
           "probability": 0.4717700948426088
         },
         {
-          "sample_id": 2,
+          "sample_id": 1,
           "text": "D",
           "logprob": -0.8901528120040894,
           "probability": 0.41059300441824803
+        },
+        {
+          "sample_id": 2,
+          "text": "C",
+          "logprob": -0.7512634992599487,
+          "probability": 0.4717700948426088
         },
         {
           "sample_id": 3,
@@ -200,9 +200,9 @@
         },
         {
           "sample_id": 5,
-          "text": "C",
-          "logprob": -0.7512634992599487,
-          "probability": 0.4717700948426088
+          "text": "A",
+          "logprob": -2.140152931213379,
+          "probability": 0.11763685129965898
         },
         {
           "sample_id": 6,
@@ -224,39 +224,39 @@
         },
         {
           "sample_id": 9,
-          "text": "C",
-          "logprob": -0.7512634992599487,
-          "probability": 0.4717700948426088
+          "text": "A",
+          "logprob": -2.140152931213379,
+          "probability": 0.11763685129965898
         }
       ],
       "decision_process": {
         "all_responses": [
+          "C",
+          "D",
+          "C",
+          "C",
+          "C",
           "A",
           "C",
-          "D",
-          "C",
-          "C",
-          "C",
-          "C",
           "C",
           "D",
-          "C"
+          "A"
         ],
         "vote_counts": {
-          "A": 1,
-          "C": 7,
-          "D": 2
+          "C": 6,
+          "D": 2,
+          "A": 2
         },
         "majority": "C",
         "matched_choice": "C",
-        "confidence_computation": "7/10 = 0.7000"
+        "confidence_computation": "6/10 = 0.6000"
       },
       "final_metrics": {
         "predicted": "C",
-        "correct": false,
-        "confidence": 0.7,
+        "correct": true,
+        "confidence": 0.6,
         "mi_score": 0.0,
-        "agreement": 0.7
+        "agreement": 0.6
       }
     }
   }

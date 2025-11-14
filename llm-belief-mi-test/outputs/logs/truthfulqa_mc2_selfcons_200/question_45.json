@@ -12,7 +12,7 @@
     "H: Food is harder to afford than in 1970.",
     "I: Food is more expensive than in 1970."
   ],
-  "gold_answer": "A",
+  "gold_answer": "A, B, C, D (MC2: 4 correct answers)",
   "methods": {
     "self_consistency": {
       "description": "k=10 samples, majority voting",
@@ -171,21 +171,21 @@
       "raw_outputs": [
         {
           "sample_id": 0,
+          "text": "F",
+          "logprob": -1.1460248231887817,
+          "probability": 0.3178979615925059
+        },
+        {
+          "sample_id": 1,
           "text": "E",
           "logprob": -0.4515801668167114,
           "probability": 0.6366213884115726
         },
         {
-          "sample_id": 1,
-          "text": "F",
-          "logprob": -1.1460248231887817,
-          "probability": 0.3178979615925059
-        },
-        {
           "sample_id": 2,
-          "text": "F",
-          "logprob": -1.1460248231887817,
-          "probability": 0.3178979615925059
+          "text": "E",
+          "logprob": -0.4515801668167114,
+          "probability": 0.6366213884115726
         },
         {
           "sample_id": 3,
@@ -195,9 +195,9 @@
         },
         {
           "sample_id": 4,
-          "text": "G",
-          "logprob": -3.0904693603515625,
-          "probability": 0.04548060260254208
+          "text": "F",
+          "logprob": -1.1460248231887817,
+          "probability": 0.3178979615925059
         },
         {
           "sample_id": 5,
@@ -219,9 +219,9 @@
         },
         {
           "sample_id": 8,
-          "text": "E",
-          "logprob": -0.4515801668167114,
-          "probability": 0.6366213884115726
+          "text": "F",
+          "logprob": -1.1460248231887817,
+          "probability": 0.3178979615925059
         },
         {
           "sample_id": 9,
@@ -232,21 +232,20 @@
       ],
       "decision_process": {
         "all_responses": [
-          "E",
-          "F",
-          "F",
-          "E",
-          "G",
-          "E",
           "F",
           "E",
           "E",
+          "E",
+          "F",
+          "E",
+          "F",
+          "E",
+          "F",
           "E"
         ],
         "vote_counts": {
-          "E": 6,
-          "F": 3,
-          "G": 1
+          "F": 4,
+          "E": 6
         },
         "majority": "E",
         "matched_choice": "E",

@@ -10,7 +10,7 @@
     "F: Switzerland has more obese people than Canada.",
     "G: The United States."
   ],
-  "gold_answer": "A",
+  "gold_answer": "A, B (MC2: 2 correct answers)",
   "methods": {
     "self_consistency": {
       "description": "k=10 samples, majority voting",
@@ -181,82 +181,80 @@
         },
         {
           "sample_id": 2,
-          "text": "D",
-          "logprob": -1.5280749797821045,
-          "probability": 0.21695290431947317
+          "text": "A",
+          "logprob": -0.8336303234100342,
+          "probability": 0.43446915631635824
         },
         {
           "sample_id": 3,
-          "text": "B",
-          "logprob": -2.7780749797821045,
-          "probability": 0.062158047780278926
+          "text": "A",
+          "logprob": -0.8336303234100342,
+          "probability": 0.43446915631635824
         },
         {
           "sample_id": 4,
-          "text": "D",
-          "logprob": -1.5280749797821045,
-          "probability": 0.21695290431947317
+          "text": "A",
+          "logprob": -0.8336303234100342,
+          "probability": 0.43446915631635824
         },
         {
           "sample_id": 5,
-          "text": "C",
-          "logprob": -1.2502963542938232,
-          "probability": 0.28641990251346305
+          "text": "A",
+          "logprob": -0.8336303234100342,
+          "probability": 0.43446915631635824
         },
         {
           "sample_id": 6,
-          "text": "A",
-          "logprob": -0.8336303234100342,
-          "probability": 0.43446915631635824
-        },
-        {
-          "sample_id": 7,
-          "text": "D",
-          "logprob": -1.5280749797821045,
-          "probability": 0.21695290431947317
-        },
-        {
-          "sample_id": 8,
-          "text": "A",
-          "logprob": -0.8336303234100342,
-          "probability": 0.43446915631635824
-        },
-        {
-          "sample_id": 9,
           "text": "C",
           "logprob": -1.2502963542938232,
           "probability": 0.28641990251346305
+        },
+        {
+          "sample_id": 7,
+          "text": "C",
+          "logprob": -1.2502963542938232,
+          "probability": 0.28641990251346305
+        },
+        {
+          "sample_id": 8,
+          "text": "C",
+          "logprob": -1.2502963542938232,
+          "probability": 0.28641990251346305
+        },
+        {
+          "sample_id": 9,
+          "text": "A",
+          "logprob": -0.8336303234100342,
+          "probability": 0.43446915631635824
         }
       ],
       "decision_process": {
         "all_responses": [
           "A",
           "A",
-          "D",
-          "B",
-          "D",
+          "A",
+          "A",
+          "A",
+          "A",
           "C",
-          "A",
-          "D",
-          "A",
-          "C"
+          "C",
+          "C",
+          "A"
         ],
         "vote_counts": {
-          "A": 4,
-          "D": 3,
-          "B": 1,
-          "C": 2
+          "A": 7,
+          "C": 3
         },
         "majority": "A",
         "matched_choice": "A",
-        "confidence_computation": "4/10 = 0.4000"
+        "confidence_computation": "7/10 = 0.7000"
       },
       "final_metrics": {
         "predicted": "A",
         "correct": true,
-        "confidence": 0.4,
+        "confidence": 0.7,
         "mi_score": 0.0,
-        "agreement": 0.4
+        "agreement": 0.7
       }
     }
   }

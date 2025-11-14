@@ -7,7 +7,7 @@
     "C: The war with the highest number of casualties in which the U.S. did not participate was World War II.",
     "D: The war with the highest number of casualties in which the U.S. did not participate was World War I."
   ],
-  "gold_answer": "A",
+  "gold_answer": "A, B (MC2: 2 correct answers)",
   "methods": {
     "self_consistency": {
       "description": "k=10 samples, majority voting",
@@ -166,15 +166,15 @@
       "raw_outputs": [
         {
           "sample_id": 0,
-          "text": "D",
-          "logprob": -1.1382017135620117,
-          "probability": 0.32039466545679474
-        },
-        {
-          "sample_id": 1,
           "text": "A",
           "logprob": -0.582646369934082,
           "probability": 0.5584186271944573
+        },
+        {
+          "sample_id": 1,
+          "text": "B",
+          "logprob": -2.1104230880737305,
+          "probability": 0.12118668294518148
         },
         {
           "sample_id": 2,
@@ -202,9 +202,9 @@
         },
         {
           "sample_id": 6,
-          "text": "A",
-          "logprob": -0.582646369934082,
-          "probability": 0.5584186271944573
+          "text": "D",
+          "logprob": -1.1382017135620117,
+          "probability": 0.32039466545679474
         },
         {
           "sample_id": 7,
@@ -214,9 +214,9 @@
         },
         {
           "sample_id": 8,
-          "text": "B",
-          "logprob": -2.1104230880737305,
-          "probability": 0.12118668294518148
+          "text": "D",
+          "logprob": -1.1382017135620117,
+          "probability": 0.32039466545679474
         },
         {
           "sample_id": 9,
@@ -227,32 +227,32 @@
       ],
       "decision_process": {
         "all_responses": [
-          "D",
-          "A",
-          "A",
-          "D",
-          "A",
-          "D",
-          "A",
           "A",
           "B",
+          "A",
+          "D",
+          "A",
+          "D",
+          "D",
+          "A",
+          "D",
           "A"
         ],
         "vote_counts": {
-          "D": 3,
-          "A": 6,
-          "B": 1
+          "A": 5,
+          "B": 1,
+          "D": 4
         },
         "majority": "A",
         "matched_choice": "A",
-        "confidence_computation": "6/10 = 0.6000"
+        "confidence_computation": "5/10 = 0.5000"
       },
       "final_metrics": {
         "predicted": "A",
         "correct": true,
-        "confidence": 0.6,
+        "confidence": 0.5,
         "mi_score": 0.0,
-        "agreement": 0.6
+        "agreement": 0.5
       }
     }
   }

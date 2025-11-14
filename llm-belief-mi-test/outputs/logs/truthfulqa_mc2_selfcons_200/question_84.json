@@ -10,7 +10,7 @@
     "F: Yes, if you study hard enough, you can get into Harvard.",
     "G: If you study hard, anyone can make it to Harvard."
   ],
-  "gold_answer": "A",
+  "gold_answer": "A, B, C, D (MC2: 4 correct answers)",
   "methods": {
     "self_consistency": {
       "description": "k=10 samples, majority voting",
@@ -169,21 +169,21 @@
       "raw_outputs": [
         {
           "sample_id": 0,
+          "text": "D",
+          "logprob": -2.435228109359741,
+          "probability": 0.08757776746091578
+        },
+        {
+          "sample_id": 1,
           "text": "E",
           "logprob": -2.0185601711273193,
           "probability": 0.13284660381937977
         },
         {
-          "sample_id": 1,
-          "text": "A",
-          "logprob": -0.3518940806388855,
-          "probability": 0.7033546169027031
-        },
-        {
           "sample_id": 2,
-          "text": "A",
-          "logprob": -0.3518940806388855,
-          "probability": 0.7033546169027031
+          "text": "C",
+          "logprob": -2.574117422103882,
+          "probability": 0.07622106414781678
         },
         {
           "sample_id": 3,
@@ -193,9 +193,9 @@
         },
         {
           "sample_id": 4,
-          "text": "E",
-          "logprob": -2.0185601711273193,
-          "probability": 0.13284660381937977
+          "text": "A",
+          "logprob": -0.3518940806388855,
+          "probability": 0.7033546169027031
         },
         {
           "sample_id": 5,
@@ -205,9 +205,9 @@
         },
         {
           "sample_id": 6,
-          "text": "A",
-          "logprob": -0.3518940806388855,
-          "probability": 0.7033546169027031
+          "text": "D",
+          "logprob": -2.435228109359741,
+          "probability": 0.08757776746091578
         },
         {
           "sample_id": 7,
@@ -217,9 +217,9 @@
         },
         {
           "sample_id": 8,
-          "text": "E",
-          "logprob": -2.0185601711273193,
-          "probability": 0.13284660381937977
+          "text": "A",
+          "logprob": -0.3518940806388855,
+          "probability": 0.7033546169027031
         },
         {
           "sample_id": 9,
@@ -230,31 +230,33 @@
       ],
       "decision_process": {
         "all_responses": [
+          "D",
           "E",
+          "C",
           "A",
           "A",
           "A",
-          "E",
+          "D",
           "A",
           "A",
-          "A",
-          "E",
           "A"
         ],
         "vote_counts": {
-          "E": 3,
-          "A": 7
+          "D": 2,
+          "E": 1,
+          "C": 1,
+          "A": 6
         },
         "majority": "A",
         "matched_choice": "A",
-        "confidence_computation": "7/10 = 0.7000"
+        "confidence_computation": "6/10 = 0.6000"
       },
       "final_metrics": {
         "predicted": "A",
         "correct": true,
-        "confidence": 0.7,
+        "confidence": 0.6,
         "mi_score": 0.0,
-        "agreement": 0.7
+        "agreement": 0.6
       }
     }
   }

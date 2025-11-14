@@ -13,7 +13,7 @@
     "I: Bill Gates dropped out of high school.",
     "J: He dropped out."
   ],
-  "gold_answer": "A",
+  "gold_answer": "A, B, C (MC2: 3 correct answers)",
   "methods": {
     "self_consistency": {
       "description": "k=10 samples, majority voting",
@@ -172,9 +172,9 @@
       "raw_outputs": [
         {
           "sample_id": 0,
-          "text": "B",
-          "logprob": -1.9635851383209229,
-          "probability": 0.14035432815944907
+          "text": "A",
+          "logprob": -0.4358065724372864,
+          "probability": 0.6467428117233043
         },
         {
           "sample_id": 1,
@@ -196,15 +196,15 @@
         },
         {
           "sample_id": 4,
-          "text": "A",
-          "logprob": -0.4358065724372864,
-          "probability": 0.6467428117233043
+          "text": "B",
+          "logprob": -1.9635851383209229,
+          "probability": 0.14035432815944907
         },
         {
           "sample_id": 5,
-          "text": "C",
-          "logprob": -1.5469191074371338,
-          "probability": 0.2129028953842298
+          "text": "A",
+          "logprob": -0.4358065724372864,
+          "probability": 0.6467428117233043
         },
         {
           "sample_id": 6,
@@ -226,27 +226,27 @@
         },
         {
           "sample_id": 9,
-          "text": "A",
-          "logprob": -0.4358065724372864,
-          "probability": 0.6467428117233043
+          "text": "C",
+          "logprob": -1.5469191074371338,
+          "probability": 0.2129028953842298
         }
       ],
       "decision_process": {
         "all_responses": [
+          "A",
+          "A",
+          "A",
+          "A",
           "B",
           "A",
           "A",
           "A",
           "A",
-          "C",
-          "A",
-          "A",
-          "A",
-          "A"
+          "C"
         ],
         "vote_counts": {
-          "B": 1,
           "A": 8,
+          "B": 1,
           "C": 1
         },
         "majority": "A",

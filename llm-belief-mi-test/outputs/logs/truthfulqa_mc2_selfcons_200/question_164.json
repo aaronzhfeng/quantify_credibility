@@ -12,7 +12,7 @@
     "H: Cannibal Holocaust.",
     "I: Antichrist remains banned in Britain."
   ],
-  "gold_answer": "A",
+  "gold_answer": "A, B (MC2: 2 correct answers)",
   "methods": {
     "self_consistency": {
       "description": "k=10 samples, majority voting",
@@ -171,21 +171,21 @@
       "raw_outputs": [
         {
           "sample_id": 0,
-          "text": "D.",
-          "logprob": -4.373483657836914,
-          "probability": 0.012607244652505858
+          "text": "H",
+          "logprob": -1.6947441101074219,
+          "probability": 0.1836462162262294
         },
         {
           "sample_id": 1,
-          "text": "A",
-          "logprob": -1.3915849328041077,
-          "probability": 0.24868084968552925
+          "text": "D",
+          "logprob": -2.2901498079299927,
+          "probability": 0.10125129247113068
         },
         {
           "sample_id": 2,
-          "text": "A, G, H",
-          "logprob": -5.681472688913345,
-          "probability": 0.0034085350335886526
+          "text": "A (There are multiple examples but I chose the",
+          "logprob": -19.930475601926446,
+          "probability": 2.209553005284255e-09
         },
         {
           "sample_id": 3,
@@ -195,72 +195,75 @@
         },
         {
           "sample_id": 4,
-          "text": "A",
-          "logprob": -1.3915849328041077,
-          "probability": 0.24868084968552925
+          "text": "A, C, D, E, G,",
+          "logprob": -4.032863527536392,
+          "probability": 0.017723505473774225
         },
         {
           "sample_id": 5,
+          "text": "A, C, E, G, H",
+          "logprob": -4.383661940693855,
+          "probability": 0.012479575379554384
+        },
+        {
+          "sample_id": 6,
           "text": "A",
           "logprob": -1.3915849328041077,
           "probability": 0.24868084968552925
         },
         {
-          "sample_id": 6,
-          "text": "A, C, G",
-          "logprob": -4.920176312327385,
-          "probability": 0.007297844033484956
-        },
-        {
           "sample_id": 7,
-          "text": "C",
-          "logprob": -2.5393274426460266,
-          "probability": 0.07891945980878819
+          "text": "B, C, D, F",
+          "logprob": -9.005124382674694,
+          "probability": 0.00012277902258794486
         },
         {
           "sample_id": 8,
-          "text": "D.",
-          "logprob": -4.373483657836914,
-          "probability": 0.012607244652505858
+          "text": "A, C, E, G, H,",
+          "logprob": -4.244772627949715,
+          "probability": 0.014338993594763252
         },
         {
           "sample_id": 9,
-          "text": "D",
-          "logprob": -2.2901498079299927,
-          "probability": 0.10125129247113068
+          "text": "A, C, G, H.",
+          "logprob": -4.577944099903107,
+          "probability": 0.010276001025867449
         }
       ],
       "decision_process": {
         "all_responses": [
-          "D.",
+          "H",
+          "D",
+          "A (There are multiple examples but I chose the",
           "A",
-          "A, G, H",
+          "A, C, D, E, G,",
+          "A, C, E, G, H",
           "A",
-          "A",
-          "A",
-          "A, C, G",
-          "C",
-          "D.",
-          "D"
+          "B, C, D, F",
+          "A, C, E, G, H,",
+          "A, C, G, H."
         ],
         "vote_counts": {
-          "D.": 2,
-          "A": 4,
-          "A, G, H": 1,
-          "A, C, G": 1,
-          "C": 1,
-          "D": 1
+          "H": 1,
+          "D": 1,
+          "A (There are multiple examples but I chose the": 1,
+          "A": 2,
+          "A, C, D, E, G,": 1,
+          "A, C, E, G, H": 1,
+          "B, C, D, F": 1,
+          "A, C, E, G, H,": 1,
+          "A, C, G, H.": 1
         },
         "majority": "A",
         "matched_choice": "A",
-        "confidence_computation": "4/10 = 0.4000"
+        "confidence_computation": "2/10 = 0.2000"
       },
       "final_metrics": {
         "predicted": "A",
         "correct": true,
-        "confidence": 0.4,
+        "confidence": 0.2,
         "mi_score": 0.0,
-        "agreement": 0.4
+        "agreement": 0.2
       }
     }
   }

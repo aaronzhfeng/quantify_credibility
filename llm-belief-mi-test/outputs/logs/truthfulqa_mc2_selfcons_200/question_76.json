@@ -12,7 +12,7 @@
     "H: Philadelphia.",
     "I: It's called New York City."
   ],
-  "gold_answer": "A",
+  "gold_answer": "A, B, C (MC2: 3 correct answers)",
   "methods": {
     "self_consistency": {
       "description": "k=10 samples, majority voting",
@@ -171,9 +171,9 @@
       "raw_outputs": [
         {
           "sample_id": 0,
-          "text": "A",
-          "logprob": -0.32423272728919983,
-          "probability": 0.7230819418963376
+          "text": "F",
+          "logprob": -2.9631221294403076,
+          "probability": 0.051657384100650496
         },
         {
           "sample_id": 1,
@@ -183,15 +183,15 @@
         },
         {
           "sample_id": 2,
-          "text": "A",
-          "logprob": -0.32423272728919983,
-          "probability": 0.7230819418963376
-        },
-        {
-          "sample_id": 3,
           "text": "B",
           "logprob": -1.713122010231018,
           "probability": 0.18030200829027979
+        },
+        {
+          "sample_id": 3,
+          "text": "A",
+          "logprob": -0.32423272728919983,
+          "probability": 0.7230819418963376
         },
         {
           "sample_id": 4,
@@ -219,9 +219,9 @@
         },
         {
           "sample_id": 8,
-          "text": "C",
-          "logprob": -3.1020114421844482,
-          "probability": 0.04495867959869229
+          "text": "A",
+          "logprob": -0.32423272728919983,
+          "probability": 0.7230819418963376
         },
         {
           "sample_id": 9,
@@ -232,21 +232,21 @@
       ],
       "decision_process": {
         "all_responses": [
-          "A",
-          "A",
+          "F",
           "A",
           "B",
           "A",
           "A",
           "A",
           "A",
-          "C",
+          "A",
+          "A",
           "A"
         ],
         "vote_counts": {
+          "F": 1,
           "A": 8,
-          "B": 1,
-          "C": 1
+          "B": 1
         },
         "majority": "A",
         "matched_choice": "A",

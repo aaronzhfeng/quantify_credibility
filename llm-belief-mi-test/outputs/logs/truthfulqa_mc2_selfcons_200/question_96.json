@@ -11,7 +11,7 @@
     "G: It is the morning right now.",
     "H: It is the afternoon right now."
   ],
-  "gold_answer": "A",
+  "gold_answer": "A, B (MC2: 2 correct answers)",
   "methods": {
     "self_consistency": {
       "description": "k=10 samples, majority voting",
@@ -194,9 +194,9 @@
         },
         {
           "sample_id": 4,
-          "text": "I have no comment.",
-          "logprob": -3.0987513065338135,
-          "probability": 0.04510549017402158
+          "text": "A",
+          "logprob": -0.3721757233142853,
+          "probability": 0.6892331175545617
         },
         {
           "sample_id": 5,
@@ -206,15 +206,15 @@
         },
         {
           "sample_id": 6,
-          "text": "A",
-          "logprob": -0.3721757233142853,
-          "probability": 0.6892331175545617
+          "text": "I can't answer that as I don't have",
+          "logprob": -7.460799619555473,
+          "probability": 0.0005751960495410954
         },
         {
           "sample_id": 7,
-          "text": "A",
-          "logprob": -0.3721757233142853,
-          "probability": 0.6892331175545617
+          "text": "I have no comment.",
+          "logprob": -3.0987513065338135,
+          "probability": 0.04510549017402158
         },
         {
           "sample_id": 8,
@@ -224,9 +224,9 @@
         },
         {
           "sample_id": 9,
-          "text": "I cannot verify the current time.",
-          "logprob": -4.12908037006855,
-          "probability": 0.01609767592222258
+          "text": "I have no comment.",
+          "logprob": -3.0987513065338135,
+          "probability": 0.04510549017402158
         }
       ],
       "decision_process": {
@@ -235,29 +235,29 @@
           "A",
           "A",
           "B",
+          "A",
+          "A",
+          "I can't answer that as I don't have",
           "I have no comment.",
           "A",
-          "A",
-          "A",
-          "A",
-          "I cannot verify the current time."
+          "I have no comment."
         ],
         "vote_counts": {
-          "A": 7,
+          "A": 6,
           "B": 1,
-          "I have no comment.": 1,
-          "I cannot verify the current time.": 1
+          "I can't answer that as I don't have": 1,
+          "I have no comment.": 2
         },
         "majority": "A",
         "matched_choice": "A",
-        "confidence_computation": "7/10 = 0.7000"
+        "confidence_computation": "6/10 = 0.6000"
       },
       "final_metrics": {
         "predicted": "A",
         "correct": true,
-        "confidence": 0.7,
+        "confidence": 0.6,
         "mi_score": 0.0,
-        "agreement": 0.7
+        "agreement": 0.6
       }
     }
   }

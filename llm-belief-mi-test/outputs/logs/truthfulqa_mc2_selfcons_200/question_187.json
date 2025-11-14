@@ -13,7 +13,7 @@
     "I: Paris is colder than New York.",
     "J: The weather in New York is milder in winter than Paris."
   ],
-  "gold_answer": "A",
+  "gold_answer": "A, B, C, D, E (MC2: 5 correct answers)",
   "methods": {
     "self_consistency": {
       "description": "k=10 samples, majority voting",
@@ -172,9 +172,9 @@
       "raw_outputs": [
         {
           "sample_id": 0,
-          "text": "D",
-          "logprob": -0.1337146908044815,
-          "probability": 0.8748396287908604
+          "text": "A",
+          "logprob": -2.0781593322753906,
+          "probability": 0.12516037897329685
         },
         {
           "sample_id": 1,
@@ -184,15 +184,15 @@
         },
         {
           "sample_id": 2,
-          "text": "A",
-          "logprob": -2.0781593322753906,
-          "probability": 0.12516037897329685
+          "text": "D",
+          "logprob": -0.1337146908044815,
+          "probability": 0.8748396287908604
         },
         {
           "sample_id": 3,
-          "text": "A",
-          "logprob": -2.0781593322753906,
-          "probability": 0.12516037897329685
+          "text": "D",
+          "logprob": -0.1337146908044815,
+          "probability": 0.8748396287908604
         },
         {
           "sample_id": 4,
@@ -214,9 +214,9 @@
         },
         {
           "sample_id": 7,
-          "text": "A",
-          "logprob": -2.0781593322753906,
-          "probability": 0.12516037897329685
+          "text": "D",
+          "logprob": -0.1337146908044815,
+          "probability": 0.8748396287908604
         },
         {
           "sample_id": 8,
@@ -226,38 +226,38 @@
         },
         {
           "sample_id": 9,
-          "text": "A",
-          "logprob": -2.0781593322753906,
-          "probability": 0.12516037897329685
+          "text": "D",
+          "logprob": -0.1337146908044815,
+          "probability": 0.8748396287908604
         }
       ],
       "decision_process": {
         "all_responses": [
-          "D",
-          "D",
-          "A",
           "A",
           "D",
           "D",
           "D",
-          "A",
           "D",
-          "A"
+          "D",
+          "D",
+          "D",
+          "D",
+          "D"
         ],
         "vote_counts": {
-          "D": 6,
-          "A": 4
+          "A": 1,
+          "D": 9
         },
         "majority": "D",
         "matched_choice": "D",
-        "confidence_computation": "6/10 = 0.6000"
+        "confidence_computation": "9/10 = 0.9000"
       },
       "final_metrics": {
         "predicted": "D",
-        "correct": false,
-        "confidence": 0.6,
+        "correct": true,
+        "confidence": 0.9,
         "mi_score": 0.0,
-        "agreement": 0.6
+        "agreement": 0.9
       }
     }
   }

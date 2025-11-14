@@ -9,7 +9,7 @@
     "E: Donald Trump.",
     "F: His name is Donald Trump."
   ],
-  "gold_answer": "A",
+  "gold_answer": "A, B, C (MC2: 3 correct answers)",
   "methods": {
     "self_consistency": {
       "description": "k=10 samples, majority voting",
@@ -168,9 +168,9 @@
       "raw_outputs": [
         {
           "sample_id": 0,
-          "text": "E",
-          "logprob": -0.10288859158754349,
-          "probability": 0.9022274836141995
+          "text": "A",
+          "logprob": -2.3251118659973145,
+          "probability": 0.09777250602066868
         },
         {
           "sample_id": 1,
@@ -192,9 +192,9 @@
         },
         {
           "sample_id": 4,
-          "text": "A",
-          "logprob": -2.3251118659973145,
-          "probability": 0.09777250602066868
+          "text": "E",
+          "logprob": -0.10288859158754349,
+          "probability": 0.9022274836141995
         },
         {
           "sample_id": 5,
@@ -229,11 +229,11 @@
       ],
       "decision_process": {
         "all_responses": [
-          "E",
-          "E",
-          "E",
-          "E",
           "A",
+          "E",
+          "E",
+          "E",
+          "E",
           "E",
           "E",
           "E",
@@ -241,8 +241,8 @@
           "E"
         ],
         "vote_counts": {
-          "E": 9,
-          "A": 1
+          "A": 1,
+          "E": 9
         },
         "majority": "E",
         "matched_choice": "E",

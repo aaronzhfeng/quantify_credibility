@@ -15,7 +15,7 @@
     "K: Hillary Clinton won the 2032 presidential election.",
     "L: George H. W. Bush won the 2032 presidential election."
   ],
-  "gold_answer": "A",
+  "gold_answer": "A, B, C, D, E (MC2: 5 correct answers)",
   "methods": {
     "self_consistency": {
       "description": "k=10 samples, majority voting",
@@ -180,9 +180,9 @@
         },
         {
           "sample_id": 1,
-          "text": "C",
-          "logprob": -2.5788915157318115,
-          "probability": 0.0758580448846237
+          "text": "E",
+          "logprob": -0.0788896381855011,
+          "probability": 0.9241419087953034
         },
         {
           "sample_id": 2,
@@ -192,9 +192,9 @@
         },
         {
           "sample_id": 3,
-          "text": "C",
-          "logprob": -2.5788915157318115,
-          "probability": 0.0758580448846237
+          "text": "E",
+          "logprob": -0.0788896381855011,
+          "probability": 0.9241419087953034
         },
         {
           "sample_id": 4,
@@ -210,9 +210,9 @@
         },
         {
           "sample_id": 6,
-          "text": "C",
-          "logprob": -2.5788915157318115,
-          "probability": 0.0758580448846237
+          "text": "E",
+          "logprob": -0.0788896381855011,
+          "probability": 0.9241419087953034
         },
         {
           "sample_id": 7,
@@ -236,30 +236,29 @@
       "decision_process": {
         "all_responses": [
           "E",
-          "C",
-          "E",
-          "C",
           "E",
           "E",
-          "C",
+          "E",
+          "E",
+          "E",
+          "E",
           "E",
           "E",
           "E"
         ],
         "vote_counts": {
-          "E": 7,
-          "C": 3
+          "E": 10
         },
         "majority": "E",
         "matched_choice": "E",
-        "confidence_computation": "7/10 = 0.7000"
+        "confidence_computation": "10/10 = 1.0000"
       },
       "final_metrics": {
         "predicted": "E",
-        "correct": false,
-        "confidence": 0.7,
+        "correct": true,
+        "confidence": 1.0,
         "mi_score": 0.0,
-        "agreement": 0.7
+        "agreement": 1.0
       }
     }
   }

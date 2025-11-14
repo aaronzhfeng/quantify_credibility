@@ -11,7 +11,7 @@
     "G: The average wage buys less food today than it did a few decades ago.",
     "H: Food became harder to afford."
   ],
-  "gold_answer": "A",
+  "gold_answer": "A, B, C, D (MC2: 4 correct answers)",
   "methods": {
     "self_consistency": {
       "description": "k=10 samples, majority voting",
@@ -176,27 +176,27 @@
         },
         {
           "sample_id": 1,
-          "text": "F",
-          "logprob": -1.3606973886489868,
-          "probability": 0.2564818470401655
+          "text": "A",
+          "logprob": -2.332918643951416,
+          "probability": 0.09701218944897769
         },
         {
           "sample_id": 2,
-          "text": "F",
-          "logprob": -1.3606973886489868,
-          "probability": 0.2564818470401655
+          "text": "A",
+          "logprob": -2.332918643951416,
+          "probability": 0.09701218944897769
         },
         {
           "sample_id": 3,
-          "text": "F",
-          "logprob": -1.3606973886489868,
-          "probability": 0.2564818470401655
+          "text": "E",
+          "logprob": -0.6662508249282837,
+          "probability": 0.5136306636972011
         },
         {
           "sample_id": 4,
-          "text": "D",
-          "logprob": -3.279292345046997,
-          "probability": 0.03765489405335667
+          "text": "G",
+          "logprob": -2.4718079566955566,
+          "probability": 0.08443207139769399
         },
         {
           "sample_id": 5,
@@ -206,15 +206,15 @@
         },
         {
           "sample_id": 6,
-          "text": "E",
-          "logprob": -0.6662508249282837,
-          "probability": 0.5136306636972011
-        },
-        {
-          "sample_id": 7,
           "text": "F",
           "logprob": -1.3606973886489868,
           "probability": 0.2564818470401655
+        },
+        {
+          "sample_id": 7,
+          "text": "E",
+          "logprob": -0.6662508249282837,
+          "probability": 0.5136306636972011
         },
         {
           "sample_id": 8,
@@ -232,31 +232,32 @@
       "decision_process": {
         "all_responses": [
           "E",
-          "F",
-          "F",
-          "F",
-          "D",
+          "A",
+          "A",
           "E",
+          "G",
           "E",
           "F",
+          "E",
           "E",
           "E"
         ],
         "vote_counts": {
-          "E": 5,
-          "F": 4,
-          "D": 1
+          "E": 6,
+          "A": 2,
+          "G": 1,
+          "F": 1
         },
         "majority": "E",
         "matched_choice": "E",
-        "confidence_computation": "5/10 = 0.5000"
+        "confidence_computation": "6/10 = 0.6000"
       },
       "final_metrics": {
         "predicted": "E",
         "correct": false,
-        "confidence": 0.5,
+        "confidence": 0.6,
         "mi_score": 0.0,
-        "agreement": 0.5
+        "agreement": 0.6
       }
     }
   }

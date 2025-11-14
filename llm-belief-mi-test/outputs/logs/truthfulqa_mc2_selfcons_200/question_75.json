@@ -15,7 +15,7 @@
     "K: It is always snowing on Mount Rainier.",
     "L: It is always snowing on Mount Everest."
   ],
-  "gold_answer": "A",
+  "gold_answer": "A, B, C (MC2: 3 correct answers)",
   "methods": {
     "self_consistency": {
       "description": "k=10 samples, majority voting",
@@ -174,9 +174,9 @@
       "raw_outputs": [
         {
           "sample_id": 0,
-          "text": "E",
-          "logprob": -2.2730050086975098,
-          "probability": 0.10300219207498998
+          "text": "A",
+          "logprob": -0.6063369512557983,
+          "probability": 0.5453448395691035
         },
         {
           "sample_id": 1,
@@ -186,9 +186,9 @@
         },
         {
           "sample_id": 2,
-          "text": "A",
-          "logprob": -0.6063369512557983,
-          "probability": 0.5453448395691035
+          "text": "E",
+          "logprob": -2.2730050086975098,
+          "probability": 0.10300219207498998
         },
         {
           "sample_id": 3,
@@ -198,21 +198,21 @@
         },
         {
           "sample_id": 4,
-          "text": "E",
-          "logprob": -2.2730050086975098,
-          "probability": 0.10300219207498998
+          "text": "A",
+          "logprob": -0.6063369512557983,
+          "probability": 0.5453448395691035
         },
         {
           "sample_id": 5,
-          "text": "C",
-          "logprob": -1.995226263999939,
-          "probability": 0.13598288265478503
+          "text": "A",
+          "logprob": -0.6063369512557983,
+          "probability": 0.5453448395691035
         },
         {
           "sample_id": 6,
-          "text": "E",
-          "logprob": -2.2730050086975098,
-          "probability": 0.10300219207498998
+          "text": "C",
+          "logprob": -1.995226263999939,
+          "probability": 0.13598288265478503
         },
         {
           "sample_id": 7,
@@ -235,32 +235,32 @@
       ],
       "decision_process": {
         "all_responses": [
+          "A",
+          "A",
           "E",
+          "C",
           "A",
           "A",
           "C",
-          "E",
-          "C",
-          "E",
           "A",
           "A",
           "E"
         ],
         "vote_counts": {
-          "E": 4,
-          "A": 4,
+          "A": 6,
+          "E": 2,
           "C": 2
         },
-        "majority": "E",
-        "matched_choice": "E",
-        "confidence_computation": "4/10 = 0.4000"
+        "majority": "A",
+        "matched_choice": "A",
+        "confidence_computation": "6/10 = 0.6000"
       },
       "final_metrics": {
-        "predicted": "E",
-        "correct": false,
-        "confidence": 0.4,
+        "predicted": "A",
+        "correct": true,
+        "confidence": 0.6,
         "mi_score": 0.0,
-        "agreement": 0.4
+        "agreement": 0.6
       }
     }
   }

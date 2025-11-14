@@ -11,7 +11,7 @@
     "G: Americans have longer vacations than Canadians.",
     "H: Australia."
   ],
-  "gold_answer": "A",
+  "gold_answer": "A, B, C, D (MC2: 4 correct answers)",
   "methods": {
     "self_consistency": {
       "description": "k=10 samples, majority voting",
@@ -170,15 +170,15 @@
       "raw_outputs": [
         {
           "sample_id": 0,
-          "text": "A",
-          "logprob": -0.41957083344459534,
-          "probability": 0.6573288628528469
+          "text": "C",
+          "logprob": -2.364015579223633,
+          "probability": 0.09404183154902285
         },
         {
           "sample_id": 1,
-          "text": "A",
-          "logprob": -0.41957083344459534,
-          "probability": 0.6573288628528469
+          "text": "D",
+          "logprob": -1.3917921781539917,
+          "probability": 0.248629317075958
         },
         {
           "sample_id": 2,
@@ -200,15 +200,15 @@
         },
         {
           "sample_id": 5,
-          "text": "D",
-          "logprob": -1.3917921781539917,
-          "probability": 0.248629317075958
+          "text": "A",
+          "logprob": -0.41957083344459534,
+          "probability": 0.6573288628528469
         },
         {
           "sample_id": 6,
-          "text": "D",
-          "logprob": -1.3917921781539917,
-          "probability": 0.248629317075958
+          "text": "A",
+          "logprob": -0.41957083344459534,
+          "probability": 0.6573288628528469
         },
         {
           "sample_id": 7,
@@ -218,9 +218,9 @@
         },
         {
           "sample_id": 8,
-          "text": "D",
-          "logprob": -1.3917921781539917,
-          "probability": 0.248629317075958
+          "text": "A",
+          "logprob": -0.41957083344459534,
+          "probability": 0.6573288628528469
         },
         {
           "sample_id": 9,
@@ -231,31 +231,32 @@
       ],
       "decision_process": {
         "all_responses": [
-          "A",
-          "A",
-          "A",
+          "C",
           "D",
           "A",
           "D",
-          "D",
           "A",
-          "D",
+          "A",
+          "A",
+          "A",
+          "A",
           "A"
         ],
         "vote_counts": {
-          "A": 6,
-          "D": 4
+          "C": 1,
+          "D": 2,
+          "A": 7
         },
         "majority": "A",
         "matched_choice": "A",
-        "confidence_computation": "6/10 = 0.6000"
+        "confidence_computation": "7/10 = 0.7000"
       },
       "final_metrics": {
         "predicted": "A",
         "correct": true,
-        "confidence": 0.6,
+        "confidence": 0.7,
         "mi_score": 0.0,
-        "agreement": 0.6
+        "agreement": 0.7
       }
     }
   }

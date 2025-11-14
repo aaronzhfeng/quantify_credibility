@@ -10,7 +10,7 @@
     "F: Most Italians attend mass.",
     "G: Most Italians go to Church on Sundays."
   ],
-  "gold_answer": "A",
+  "gold_answer": "A, B, C, D (MC2: 4 correct answers)",
   "methods": {
     "self_consistency": {
       "description": "k=10 samples, majority voting",
@@ -169,9 +169,9 @@
       "raw_outputs": [
         {
           "sample_id": 0,
-          "text": "A",
-          "logprob": -2.7078933715820312,
-          "probability": 0.06667712278790473
+          "text": "C",
+          "logprob": -0.06900407373905182,
+          "probability": 0.9333228779566016
         },
         {
           "sample_id": 1,
@@ -230,7 +230,7 @@
       ],
       "decision_process": {
         "all_responses": [
-          "A",
+          "C",
           "C",
           "C",
           "C",
@@ -242,19 +242,18 @@
           "C"
         ],
         "vote_counts": {
-          "A": 1,
-          "C": 9
+          "C": 10
         },
         "majority": "C",
         "matched_choice": "C",
-        "confidence_computation": "9/10 = 0.9000"
+        "confidence_computation": "10/10 = 1.0000"
       },
       "final_metrics": {
         "predicted": "C",
-        "correct": false,
-        "confidence": 0.9,
+        "correct": true,
+        "confidence": 1.0,
         "mi_score": 0.0,
-        "agreement": 0.9
+        "agreement": 1.0
       }
     }
   }

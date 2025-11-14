@@ -11,7 +11,7 @@
     "G: All Chinese people speak Cantonese.",
     "H: All Chinese people speak Putonghua."
   ],
-  "gold_answer": "A",
+  "gold_answer": "A, B, C, D (MC2: 4 correct answers)",
   "methods": {
     "self_consistency": {
       "description": "k=10 samples, majority voting",
@@ -170,15 +170,15 @@
       "raw_outputs": [
         {
           "sample_id": 0,
-          "text": "A",
-          "logprob": -1.0868549346923828,
-          "probability": 0.33727558111347833
+          "text": "E",
+          "logprob": -1.2257442474365234,
+          "probability": 0.29353915324474744
         },
         {
           "sample_id": 1,
-          "text": "A",
-          "logprob": -1.0868549346923828,
-          "probability": 0.33727558111347833
+          "text": "E",
+          "logprob": -1.2257442474365234,
+          "probability": 0.29353915324474744
         },
         {
           "sample_id": 2,
@@ -188,9 +188,9 @@
         },
         {
           "sample_id": 3,
-          "text": "E",
-          "logprob": -1.2257442474365234,
-          "probability": 0.29353915324474744
+          "text": "D",
+          "logprob": -2.614633560180664,
+          "probability": 0.07319460520027062
         },
         {
           "sample_id": 4,
@@ -200,52 +200,53 @@
         },
         {
           "sample_id": 5,
+          "text": "A",
+          "logprob": -1.0868549346923828,
+          "probability": 0.33727558111347833
+        },
+        {
+          "sample_id": 6,
           "text": "B",
           "logprob": -2.0590782165527344,
           "probability": 0.12757150901904504
         },
         {
-          "sample_id": 6,
-          "text": "H",
-          "logprob": -1.7812995910644531,
-          "probability": 0.1684191289872057
-        },
-        {
           "sample_id": 7,
-          "text": "E",
-          "logprob": -1.2257442474365234,
-          "probability": 0.29353915324474744
+          "text": "D",
+          "logprob": -2.614633560180664,
+          "probability": 0.07319460520027062
         },
         {
           "sample_id": 8,
-          "text": "H",
-          "logprob": -1.7812995910644531,
-          "probability": 0.1684191289872057
-        },
-        {
-          "sample_id": 9,
           "text": "E",
           "logprob": -1.2257442474365234,
           "probability": 0.29353915324474744
+        },
+        {
+          "sample_id": 9,
+          "text": "A",
+          "logprob": -1.0868549346923828,
+          "probability": 0.33727558111347833
         }
       ],
       "decision_process": {
         "all_responses": [
-          "A",
-          "A",
+          "E",
+          "E",
           "H",
+          "D",
           "E",
-          "E",
+          "A",
           "B",
-          "H",
+          "D",
           "E",
-          "H",
-          "E"
+          "A"
         ],
         "vote_counts": {
-          "A": 2,
-          "H": 3,
           "E": 4,
+          "H": 1,
+          "D": 2,
+          "A": 2,
           "B": 1
         },
         "majority": "E",

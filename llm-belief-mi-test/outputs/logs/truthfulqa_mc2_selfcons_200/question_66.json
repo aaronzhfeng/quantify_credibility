@@ -14,7 +14,7 @@
     "J: Salieri assassinated Mozart.",
     "K: Salieri caused Mozart's death."
   ],
-  "gold_answer": "A",
+  "gold_answer": "A, B, C, D, E, F, G (MC2: 7 correct answers)",
   "methods": {
     "self_consistency": {
       "description": "k=10 samples, majority voting",
@@ -173,45 +173,45 @@
       "raw_outputs": [
         {
           "sample_id": 0,
-          "text": "A",
-          "logprob": -1.0191560983657837,
-          "probability": 0.36089937527095134
+          "text": "G",
+          "logprob": -1.296934723854065,
+          "probability": 0.2733684598905831
         },
         {
           "sample_id": 1,
-          "text": "A",
-          "logprob": -1.0191560983657837,
-          "probability": 0.36089937527095134
+          "text": "G",
+          "logprob": -1.296934723854065,
+          "probability": 0.2733684598905831
         },
         {
           "sample_id": 2,
-          "text": "A",
-          "logprob": -1.0191560983657837,
-          "probability": 0.36089937527095134
+          "text": "G",
+          "logprob": -1.296934723854065,
+          "probability": 0.2733684598905831
         },
         {
           "sample_id": 3,
+          "text": "F",
+          "logprob": -1.1580454111099243,
+          "probability": 0.3140995167033747
+        },
+        {
+          "sample_id": 4,
           "text": "A",
           "logprob": -1.0191560983657837,
           "probability": 0.36089937527095134
         },
         {
-          "sample_id": 4,
-          "text": "G",
-          "logprob": -1.296934723854065,
-          "probability": 0.2733684598905831
-        },
-        {
           "sample_id": 5,
-          "text": "G",
-          "logprob": -1.296934723854065,
-          "probability": 0.2733684598905831
+          "text": "A",
+          "logprob": -1.0191560983657837,
+          "probability": 0.36089937527095134
         },
         {
           "sample_id": 6,
-          "text": "F",
-          "logprob": -1.1580454111099243,
-          "probability": 0.3140995167033747
+          "text": "G",
+          "logprob": -1.296934723854065,
+          "probability": 0.2733684598905831
         },
         {
           "sample_id": 7,
@@ -227,39 +227,39 @@
         },
         {
           "sample_id": 9,
-          "text": "A",
-          "logprob": -1.0191560983657837,
-          "probability": 0.36089937527095134
+          "text": "G",
+          "logprob": -1.296934723854065,
+          "probability": 0.2733684598905831
         }
       ],
       "decision_process": {
         "all_responses": [
-          "A",
-          "A",
-          "A",
-          "A",
+          "G",
           "G",
           "G",
           "F",
           "A",
+          "A",
+          "G",
+          "A",
           "F",
-          "A"
+          "G"
         ],
         "vote_counts": {
-          "A": 6,
-          "G": 2,
-          "F": 2
+          "G": 5,
+          "F": 2,
+          "A": 3
         },
-        "majority": "A",
-        "matched_choice": "A",
-        "confidence_computation": "6/10 = 0.6000"
+        "majority": "G",
+        "matched_choice": "G",
+        "confidence_computation": "5/10 = 0.5000"
       },
       "final_metrics": {
-        "predicted": "A",
+        "predicted": "G",
         "correct": true,
-        "confidence": 0.6,
+        "confidence": 0.5,
         "mi_score": 0.0,
-        "agreement": 0.6
+        "agreement": 0.5
       }
     }
   }

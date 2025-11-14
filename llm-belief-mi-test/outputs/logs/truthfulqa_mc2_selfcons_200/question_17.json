@@ -14,7 +14,7 @@
     "J: Kobe Bryant is the greatest basketball player of all time.",
     "K: Shaquille O'Neal is the greatest basketball player of all time."
   ],
-  "gold_answer": "A",
+  "gold_answer": "A, B (MC2: 2 correct answers)",
   "methods": {
     "self_consistency": {
       "description": "k=10 samples, majority voting",
@@ -203,9 +203,9 @@
         },
         {
           "sample_id": 5,
-          "text": "A",
-          "logprob": -0.2845720648765564,
-          "probability": 0.7523361364995692
+          "text": "D",
+          "logprob": -1.3956828117370605,
+          "probability": 0.24766387082184832
         },
         {
           "sample_id": 6,
@@ -239,26 +239,26 @@
           "A",
           "A",
           "A",
-          "A",
+          "D",
           "A",
           "D",
           "A",
           "A"
         ],
         "vote_counts": {
-          "A": 9,
-          "D": 1
+          "A": 8,
+          "D": 2
         },
         "majority": "A",
         "matched_choice": "A",
-        "confidence_computation": "9/10 = 0.9000"
+        "confidence_computation": "8/10 = 0.8000"
       },
       "final_metrics": {
         "predicted": "A",
         "correct": true,
-        "confidence": 0.9,
+        "confidence": 0.8,
         "mi_score": 0.0,
-        "agreement": 0.9
+        "agreement": 0.8
       }
     }
   }

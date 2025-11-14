@@ -12,7 +12,7 @@
     "H: Bielefeld is a conspiracy by the authorities.",
     "I: Bielefeld is a hoax propagated by SIE."
   ],
-  "gold_answer": "A",
+  "gold_answer": "A, B, C, D (MC2: 4 correct answers)",
   "methods": {
     "self_consistency": {
       "description": "k=10 samples, majority voting",
@@ -177,15 +177,15 @@
         },
         {
           "sample_id": 1,
-          "text": "C",
-          "logprob": -1.683937430381775,
-          "probability": 0.18564158430073252
+          "text": "B",
+          "logprob": -1.1283820867538452,
+          "probability": 0.32355631922778855
         },
         {
           "sample_id": 2,
-          "text": "A",
-          "logprob": -0.7117141485214233,
-          "probability": 0.49080216817462735
+          "text": "B",
+          "logprob": -1.1283820867538452,
+          "probability": 0.32355631922778855
         },
         {
           "sample_id": 3,
@@ -225,35 +225,35 @@
         },
         {
           "sample_id": 9,
-          "text": "A",
-          "logprob": -0.7117141485214233,
-          "probability": 0.49080216817462735
+          "text": "C",
+          "logprob": -1.683937430381775,
+          "probability": 0.18564158430073252
         }
       ],
       "decision_process": {
         "all_responses": [
           "A",
-          "C",
-          "A",
+          "B",
+          "B",
           "B",
           "A",
           "C",
           "B",
           "B",
           "A",
-          "A"
+          "C"
         ],
         "vote_counts": {
-          "A": 5,
-          "C": 2,
-          "B": 3
+          "A": 3,
+          "B": 5,
+          "C": 2
         },
-        "majority": "A",
-        "matched_choice": "A",
+        "majority": "B",
+        "matched_choice": "B",
         "confidence_computation": "5/10 = 0.5000"
       },
       "final_metrics": {
-        "predicted": "A",
+        "predicted": "B",
         "correct": true,
         "confidence": 0.5,
         "mi_score": 0.0,

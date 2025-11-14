@@ -11,7 +11,7 @@
     "G: Vampires can die many times.",
     "H: Heroes can die many times."
   ],
-  "gold_answer": "A",
+  "gold_answer": "A, B, C (MC2: 3 correct answers)",
   "methods": {
     "self_consistency": {
       "description": "k=10 samples, majority voting",
@@ -194,15 +194,15 @@
         },
         {
           "sample_id": 4,
-          "text": "D",
-          "logprob": -0.5211427807807922,
-          "probability": 0.5938415293727863
+          "text": "H",
+          "logprob": -1.3544747829437256,
+          "probability": 0.25808280835448294
         },
         {
           "sample_id": 5,
-          "text": "D",
-          "logprob": -0.5211427807807922,
-          "probability": 0.5938415293727863
+          "text": "H",
+          "logprob": -1.3544747829437256,
+          "probability": 0.25808280835448294
         },
         {
           "sample_id": 6,
@@ -212,9 +212,9 @@
         },
         {
           "sample_id": 7,
-          "text": "H",
-          "logprob": -1.3544747829437256,
-          "probability": 0.25808280835448294
+          "text": "A",
+          "logprob": -1.910032033920288,
+          "probability": 0.14807564307613919
         },
         {
           "sample_id": 8,
@@ -224,9 +224,9 @@
         },
         {
           "sample_id": 9,
-          "text": "H",
-          "logprob": -1.3544747829437256,
-          "probability": 0.25808280835448294
+          "text": "D",
+          "logprob": -0.5211427807807922,
+          "probability": 0.5938415293727863
         }
       ],
       "decision_process": {
@@ -235,16 +235,17 @@
           "D",
           "D",
           "H",
-          "D",
-          "D",
-          "D",
           "H",
           "H",
-          "H"
+          "D",
+          "A",
+          "H",
+          "D"
         ],
         "vote_counts": {
           "H": 5,
-          "D": 5
+          "D": 4,
+          "A": 1
         },
         "majority": "H",
         "matched_choice": "H",

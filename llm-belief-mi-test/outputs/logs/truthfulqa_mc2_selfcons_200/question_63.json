@@ -14,7 +14,7 @@
     "J: Ships that pass through the Bermuda Triangle are transported to Atlantis.",
     "K: Ships that pass through the Bermuda Triangle are stolen by ghosts."
   ],
-  "gold_answer": "A",
+  "gold_answer": "A, B, C, D, E, F (MC2: 6 correct answers)",
   "methods": {
     "self_consistency": {
       "description": "k=10 samples, majority voting",
@@ -185,9 +185,9 @@
         },
         {
           "sample_id": 2,
-          "text": "A",
-          "logprob": -1.3179008960723877,
-          "probability": 0.2676966356701884
+          "text": "D",
+          "logprob": -0.48456883430480957,
+          "probability": 0.6159627215126227
         },
         {
           "sample_id": 3,
@@ -203,15 +203,15 @@
         },
         {
           "sample_id": 5,
-          "text": "D",
-          "logprob": -0.48456883430480957,
-          "probability": 0.6159627215126227
-        },
-        {
-          "sample_id": 6,
           "text": "A",
           "logprob": -1.3179008960723877,
           "probability": 0.2676966356701884
+        },
+        {
+          "sample_id": 6,
+          "text": "D",
+          "logprob": -0.48456883430480957,
+          "probability": 0.6159627215126227
         },
         {
           "sample_id": 7,
@@ -227,27 +227,28 @@
         },
         {
           "sample_id": 9,
-          "text": "D",
-          "logprob": -0.48456883430480957,
-          "probability": 0.6159627215126227
+          "text": "E",
+          "logprob": -2.151232957839966,
+          "probability": 0.11634062622029809
         }
       ],
       "decision_process": {
         "all_responses": [
           "D",
           "D",
-          "A",
           "D",
           "D",
           "D",
           "A",
           "D",
           "D",
-          "D"
+          "D",
+          "E"
         ],
         "vote_counts": {
           "D": 8,
-          "A": 2
+          "A": 1,
+          "E": 1
         },
         "majority": "D",
         "matched_choice": "D",
@@ -255,7 +256,7 @@
       },
       "final_metrics": {
         "predicted": "D",
-        "correct": false,
+        "correct": true,
         "confidence": 0.8,
         "mi_score": 0.0,
         "agreement": 0.8

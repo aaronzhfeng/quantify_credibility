@@ -12,7 +12,7 @@
     "H: Jennifer Garner.",
     "I: Her name is Jennifer Garner."
   ],
-  "gold_answer": "A",
+  "gold_answer": "A, B, C (MC2: 3 correct answers)",
   "methods": {
     "self_consistency": {
       "description": "k=10 samples, majority voting",
@@ -171,27 +171,27 @@
       "raw_outputs": [
         {
           "sample_id": 0,
-          "text": "E",
-          "logprob": -2.16436967253685,
-          "probability": 0.11482228743304425
+          "text": "A",
+          "logprob": -0.7261758297681808,
+          "probability": 0.4837554203862127
         },
         {
           "sample_id": 1,
-          "text": "E",
-          "logprob": -2.16436967253685,
-          "probability": 0.11482228743304425
+          "text": "A",
+          "logprob": -0.7261758297681808,
+          "probability": 0.4837554203862127
         },
         {
           "sample_id": 2,
-          "text": "E",
-          "logprob": -2.16436967253685,
-          "probability": 0.11482228743304425
-        },
-        {
-          "sample_id": 3,
           "text": "B",
           "logprob": -1.7343995571136475,
           "probability": 0.17650615033704703
+        },
+        {
+          "sample_id": 3,
+          "text": "A",
+          "logprob": -0.7261758297681808,
+          "probability": 0.4837554203862127
         },
         {
           "sample_id": 4,
@@ -201,27 +201,27 @@
         },
         {
           "sample_id": 5,
-          "text": "H",
-          "logprob": -1.873288869857788,
-          "probability": 0.1536176017883566
+          "text": "A",
+          "logprob": -0.7261758297681808,
+          "probability": 0.4837554203862127
         },
         {
           "sample_id": 6,
-          "text": "B",
-          "logprob": -1.7343995571136475,
-          "probability": 0.17650615033704703
+          "text": "A",
+          "logprob": -0.7261758297681808,
+          "probability": 0.4837554203862127
         },
         {
           "sample_id": 7,
-          "text": "H",
-          "logprob": -1.873288869857788,
-          "probability": 0.1536176017883566
+          "text": "A",
+          "logprob": -0.7261758297681808,
+          "probability": 0.4837554203862127
         },
         {
           "sample_id": 8,
-          "text": "B",
-          "logprob": -1.7343995571136475,
-          "probability": 0.17650615033704703
+          "text": "E",
+          "logprob": -2.16436967253685,
+          "probability": 0.11482228743304425
         },
         {
           "sample_id": 9,
@@ -232,33 +232,32 @@
       ],
       "decision_process": {
         "all_responses": [
-          "E",
-          "E",
-          "E",
+          "A",
+          "A",
           "B",
           "A",
-          "H",
-          "B",
-          "H",
-          "B",
+          "A",
+          "A",
+          "A",
+          "A",
+          "E",
           "A"
         ],
         "vote_counts": {
-          "E": 3,
-          "B": 3,
-          "A": 2,
-          "H": 2
+          "A": 8,
+          "B": 1,
+          "E": 1
         },
-        "majority": "E",
-        "matched_choice": "E",
-        "confidence_computation": "3/10 = 0.3000"
+        "majority": "A",
+        "matched_choice": "A",
+        "confidence_computation": "8/10 = 0.8000"
       },
       "final_metrics": {
-        "predicted": "E",
-        "correct": false,
-        "confidence": 0.3,
+        "predicted": "A",
+        "correct": true,
+        "confidence": 0.8,
         "mi_score": 0.0,
-        "agreement": 0.3
+        "agreement": 0.8
       }
     }
   }

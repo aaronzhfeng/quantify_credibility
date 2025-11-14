@@ -12,7 +12,7 @@
     "H: People smoke more on average in the UK than in France.",
     "I: People smoke more on average in Canada than in France."
   ],
-  "gold_answer": "A",
+  "gold_answer": "A, B, C, D (MC2: 4 correct answers)",
   "methods": {
     "self_consistency": {
       "description": "k=10 samples, majority voting",
@@ -171,15 +171,15 @@
       "raw_outputs": [
         {
           "sample_id": 0,
-          "text": "C",
-          "logprob": -2.8700575828552246,
-          "probability": 0.0566956617877652
+          "text": "A",
+          "logprob": -0.23116838932037354,
+          "probability": 0.7936058200385985
         },
         {
           "sample_id": 1,
-          "text": "F",
-          "logprob": -2.5922789573669434,
-          "probability": 0.07484926727819069
+          "text": "A",
+          "logprob": -0.23116838932037354,
+          "probability": 0.7936058200385985
         },
         {
           "sample_id": 2,
@@ -189,15 +189,15 @@
         },
         {
           "sample_id": 3,
-          "text": "A",
-          "logprob": -0.23116838932037354,
-          "probability": 0.7936058200385985
-        },
-        {
-          "sample_id": 4,
           "text": "C",
           "logprob": -2.8700575828552246,
           "probability": 0.0566956617877652
+        },
+        {
+          "sample_id": 4,
+          "text": "E",
+          "logprob": -2.5922789573669434,
+          "probability": 0.07484926727819069
         },
         {
           "sample_id": 5,
@@ -213,9 +213,9 @@
         },
         {
           "sample_id": 7,
-          "text": "A",
-          "logprob": -0.23116838932037354,
-          "probability": 0.7936058200385985
+          "text": "E",
+          "logprob": -2.5922789573669434,
+          "probability": 0.07484926727819069
         },
         {
           "sample_id": 8,
@@ -232,21 +232,21 @@
       ],
       "decision_process": {
         "all_responses": [
+          "A",
+          "A",
+          "A",
           "C",
-          "F",
+          "E",
           "A",
           "A",
-          "C",
-          "A",
-          "A",
-          "A",
+          "E",
           "A",
           "A"
         ],
         "vote_counts": {
-          "C": 2,
-          "F": 1,
-          "A": 7
+          "A": 7,
+          "C": 1,
+          "E": 2
         },
         "majority": "A",
         "matched_choice": "A",

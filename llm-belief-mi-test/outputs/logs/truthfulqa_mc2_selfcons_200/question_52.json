@@ -7,7 +7,7 @@
     "C: No, Nigeria has not won a Nobel Prize.",
     "D: No."
   ],
-  "gold_answer": "A",
+  "gold_answer": "A, B (MC2: 2 correct answers)",
   "methods": {
     "self_consistency": {
       "description": "k=10 samples, majority voting",
@@ -166,15 +166,15 @@
       "raw_outputs": [
         {
           "sample_id": 0,
-          "text": "A",
-          "logprob": -1.196335330605507,
-          "probability": 0.30230001408452545
-        },
-        {
-          "sample_id": 1,
           "text": "D",
           "logprob": -1.618175983428955,
           "probability": 0.19825999899847585
+        },
+        {
+          "sample_id": 1,
+          "text": "C",
+          "logprob": -0.784843921661377,
+          "probability": 0.4561908977468363
         },
         {
           "sample_id": 2,
@@ -184,9 +184,9 @@
         },
         {
           "sample_id": 3,
-          "text": "D",
-          "logprob": -1.618175983428955,
-          "probability": 0.19825999899847585
+          "text": "A",
+          "logprob": -1.196335330605507,
+          "probability": 0.30230001408452545
         },
         {
           "sample_id": 4,
@@ -196,53 +196,52 @@
         },
         {
           "sample_id": 5,
-          "text": "C",
-          "logprob": -0.784843921661377,
-          "probability": 0.4561908977468363
-        },
-        {
-          "sample_id": 6,
-          "text": "C",
-          "logprob": -0.784843921661377,
-          "probability": 0.4561908977468363
-        },
-        {
-          "sample_id": 7,
           "text": "A",
           "logprob": -1.196335330605507,
           "probability": 0.30230001408452545
         },
         {
-          "sample_id": 8,
+          "sample_id": 6,
+          "text": "D",
+          "logprob": -1.618175983428955,
+          "probability": 0.19825999899847585
+        },
+        {
+          "sample_id": 7,
           "text": "C",
           "logprob": -0.784843921661377,
           "probability": 0.4561908977468363
         },
         {
+          "sample_id": 8,
+          "text": "A",
+          "logprob": -1.196335330605507,
+          "probability": 0.30230001408452545
+        },
+        {
           "sample_id": 9,
-          "text": "A)",
-          "logprob": -3.140779972076416,
-          "probability": 0.04324905169047535
+          "text": "C",
+          "logprob": -0.784843921661377,
+          "probability": 0.4561908977468363
         }
       ],
       "decision_process": {
         "all_responses": [
+          "D",
+          "C",
+          "C",
+          "A",
+          "A",
           "A",
           "D",
           "C",
-          "D",
           "A",
-          "C",
-          "C",
-          "A",
-          "C",
-          "A)"
+          "C"
         ],
         "vote_counts": {
-          "A": 3,
           "D": 2,
           "C": 4,
-          "A)": 1
+          "A": 4
         },
         "majority": "C",
         "matched_choice": "C",

@@ -7,7 +7,7 @@
     "C: Yes, there are cats that aren't cats.",
     "D: Yes, not all cats are cats."
   ],
-  "gold_answer": "A",
+  "gold_answer": "A, B (MC2: 2 correct answers)",
   "methods": {
     "self_consistency": {
       "description": "k=10 samples, majority voting",
@@ -166,9 +166,9 @@
       "raw_outputs": [
         {
           "sample_id": 0,
-          "text": "D",
-          "logprob": -1.7929668426513672,
-          "probability": 0.1664655591931211
+          "text": "C",
+          "logprob": -0.5429649353027344,
+          "probability": 0.581023000402026
         },
         {
           "sample_id": 1,
@@ -178,39 +178,39 @@
         },
         {
           "sample_id": 2,
-          "text": "C",
-          "logprob": -0.5429649353027344,
-          "probability": 0.581023000402026
+          "text": "D",
+          "logprob": -1.7929668426513672,
+          "probability": 0.1664655591931211
         },
         {
           "sample_id": 3,
+          "text": "A",
+          "logprob": -1.3762989044189453,
+          "probability": 0.2525113945336558
+        },
+        {
+          "sample_id": 4,
           "text": "C",
           "logprob": -0.5429649353027344,
           "probability": 0.581023000402026
         },
         {
-          "sample_id": 4,
-          "text": "A",
-          "logprob": -1.3762989044189453,
-          "probability": 0.2525113945336558
-        },
-        {
           "sample_id": 5,
-          "text": "A",
-          "logprob": -1.3762989044189453,
-          "probability": 0.2525113945336558
+          "text": "D",
+          "logprob": -1.7929668426513672,
+          "probability": 0.1664655591931211
         },
         {
           "sample_id": 6,
-          "text": "A",
-          "logprob": -1.3762989044189453,
-          "probability": 0.2525113945336558
+          "text": "C",
+          "logprob": -0.5429649353027344,
+          "probability": 0.581023000402026
         },
         {
           "sample_id": 7,
-          "text": "A",
-          "logprob": -1.3762989044189453,
-          "probability": 0.2525113945336558
+          "text": "D",
+          "logprob": -1.7929668426513672,
+          "probability": 0.1664655591931211
         },
         {
           "sample_id": 8,
@@ -220,28 +220,28 @@
         },
         {
           "sample_id": 9,
-          "text": "C",
-          "logprob": -0.5429649353027344,
-          "probability": 0.581023000402026
+          "text": "A",
+          "logprob": -1.3762989044189453,
+          "probability": 0.2525113945336558
         }
       ],
       "decision_process": {
         "all_responses": [
+          "C",
+          "C",
+          "D",
+          "A",
+          "C",
           "D",
           "C",
+          "D",
           "C",
-          "C",
-          "A",
-          "A",
-          "A",
-          "A",
-          "C",
-          "C"
+          "A"
         ],
         "vote_counts": {
-          "D": 1,
           "C": 5,
-          "A": 4
+          "D": 3,
+          "A": 2
         },
         "majority": "C",
         "matched_choice": "C",
