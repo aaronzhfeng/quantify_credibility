@@ -31,6 +31,15 @@ from llm_belief_mi_test.mi_estimator import estimate_mi_listing_nats, nats_to_bi
 from llm_belief_mi_test.datasets import compute_exact_match, compute_f1_score
 
 
+def safe_percent_change(new_val, old_val):
+    """Safely compute percentage change, handling zero/nan cases."""
+    if np.isnan(new_val) or np.isnan(old_val):
+        return 0.0
+    if old_val == 0:
+        return 0.0 if new_val == 0 else float('inf')
+    return (new_val - old_val) / old_val * 100
+
+
 def extract_chains_from_log(log_data: dict, method_key: str = "mi_method") -> Tuple[List[List[str]], Dict]:
     """
     Extract chains of text responses from log file.
@@ -65,22 +74,37 @@ def extract_chains_from_log(log_data: dict, method_key: str = "mi_method") -> Tu
     if not raw_outputs:
         raise ValueError("No raw_outputs found in log data")
     
-    # Organize by chain_id and step
-    chains_dict = {}
-    for output in raw_outputs:
-        chain_id = output["chain_id"]
-        step = output["step"]
-        text = output["text"]
-        
-        if chain_id not in chains_dict:
-            chains_dict[chain_id] = {}
-        chains_dict[chain_id][step] = text
+    # Detect method type by checking first output
+    first_output = raw_outputs[0]
+    is_mi_method = "chain_id" in first_output and "step" in first_output
+    is_self_consistency = "sample_id" in first_output
     
-    # Convert to list of chains
-    chains = []
-    for chain_id in sorted(chains_dict.keys()):
-        chain = [chains_dict[chain_id][step] for step in sorted(chains_dict[chain_id].keys())]
-        chains.append(chain)
+    if is_mi_method:
+        # MI method: Organize by chain_id and step
+        chains_dict = {}
+        for output in raw_outputs:
+            chain_id = output["chain_id"]
+            step = output["step"]
+            text = output["text"]
+            
+            if chain_id not in chains_dict:
+                chains_dict[chain_id] = {}
+            chains_dict[chain_id][step] = text
+        
+        # Convert to list of chains
+        chains = []
+        for chain_id in sorted(chains_dict.keys()):
+            chain = [chains_dict[chain_id][step] for step in sorted(chains_dict[chain_id].keys())]
+            chains.append(chain)
+    
+    elif is_self_consistency:
+        # Self-consistency: Each sample is an independent single-step "chain"
+        chains = []
+        for output in sorted(raw_outputs, key=lambda x: x["sample_id"]):
+            chains.append([output["text"]])  # Single-element chain
+    
+    else:
+        raise ValueError(f"Unknown method format. First output keys: {list(first_output.keys())}")
     
     # Extract metadata
     metadata = {
@@ -323,15 +347,17 @@ def main():
     nli_f1 = np.mean([r["nli_adapted"]["f1"] for r in results])
     
     # Calculate ECE for both
-    orig_preds = np.array([r["original"]["exact_match"] for r in results])
+    # Note: We use correctness (exact_match) as labels, and confidence thresholding as predictions
+    # This measures calibration: do high-confidence answers have higher accuracy?
+    orig_correctness = np.array([r["original"]["exact_match"] for r in results])
     orig_confs = np.array([r["original"]["confidence"] for r in results])
-    orig_labels = np.array([r["original"]["exact_match"] for r in results])  # binary correctness
-    orig_ece = compute_ece(orig_preds, orig_confs, orig_labels)
+    orig_preds = (orig_confs > 0.5).astype(float)  # Binary prediction: confident or not
+    orig_ece = compute_ece(orig_preds, orig_confs, orig_correctness)
     
-    nli_preds = np.array([r["nli_adapted"]["exact_match"] for r in results])
+    nli_correctness = np.array([r["nli_adapted"]["exact_match"] for r in results])
     nli_confs = np.array([r["nli_adapted"]["confidence"] for r in results])
-    nli_labels = np.array([r["nli_adapted"]["exact_match"] for r in results])
-    nli_ece = compute_ece(nli_preds, nli_confs, nli_labels)
+    nli_preds = (nli_confs > 0.5).astype(float)  # Binary prediction: confident or not
+    nli_ece = compute_ece(nli_preds, nli_confs, nli_correctness)
     
     # Changes
     predictions_changed = sum(1 for r in results if r["changes"]["prediction_changed"])
@@ -396,11 +422,11 @@ def main():
     print(f"  ECE             : {orig_ece:.4f}")
     
     print(f"\nNLI-Adapted (With Semantic Clustering):")
-    print(f"  Avg MI          : {nli_mi:.4f} bits ({nli_mi - orig_mi:+.4f}, {(nli_mi - orig_mi) / orig_mi * 100:+.1f}%)")
-    print(f"  Avg Confidence  : {nli_conf:.4f} ({nli_conf - orig_conf:+.4f}, {(nli_conf - orig_conf) / orig_conf * 100:+.1f}%)")
+    print(f"  Avg MI          : {nli_mi:.4f} bits ({nli_mi - orig_mi:+.4f}, {safe_percent_change(nli_mi, orig_mi):+.1f}%)")
+    print(f"  Avg Confidence  : {nli_conf:.4f} ({nli_conf - orig_conf:+.4f}, {safe_percent_change(nli_conf, orig_conf):+.1f}%)")
     print(f"  Exact Match     : {nli_em:.4f} ({nli_em - orig_em:+.4f})")
     print(f"  F1 Score        : {nli_f1:.4f} ({nli_f1 - orig_f1:+.4f})")
-    print(f"  ECE             : {nli_ece:.4f} ({nli_ece - orig_ece:+.4f}, {(nli_ece - orig_ece) / orig_ece * 100:+.1f}%)")
+    print(f"  ECE             : {nli_ece:.4f} ({nli_ece - orig_ece:+.4f}, {safe_percent_change(nli_ece, orig_ece):+.1f}%)")
     
     print(f"\nPrediction Changes:")
     print(f"  Changed         : {predictions_changed}/{n} ({predictions_changed/n*100:.1f}%)")

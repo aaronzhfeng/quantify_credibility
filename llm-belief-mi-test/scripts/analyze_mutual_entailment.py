@@ -65,57 +65,84 @@ class ClusterComparison:
 
 
 class MutualEntailmentChecker:
-    """Check mutual entailment using NLI model."""
+    """Check mutual entailment using NLI model or semantic similarity."""
     
     def __init__(self, model_name: str = "microsoft/deberta-v2-xlarge-mnli", device: str = None):
         """
-        Initialize NLI model.
+        Initialize NLI or semantic similarity model.
         
         Args:
-            model_name: HuggingFace model name
+            model_name: HuggingFace model name or sentence-transformers model
             device: Device to use ('cuda' or 'cpu'). Auto-detect if None.
         """
-        print(f"Loading NLI model: {model_name}")
-        self.tokenizer = AutoTokenizer.from_pretrained(model_name)
-        self.model = AutoModelForSequenceClassification.from_pretrained(model_name)
+        print(f"Loading model: {model_name}")
+        
+        # Detect model type
+        self.is_sentence_transformer = model_name.startswith('sentence-transformers/')
+        self.model_name = model_name
         
         if device is None:
             self.device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
         else:
             self.device = torch.device(device)
         
-        self.model.to(self.device)
-        self.model.eval()
-        
-        # Get label mapping (DeBERTa-MNLI: 0=contradiction, 1=neutral, 2=entailment)
-        self.label2id = self.model.config.label2id
-        self.entailment_id = self.label2id.get('entailment', 2)
-        
-        print(f"Model loaded on {self.device}")
-        print(f"Label mapping: {self.label2id}")
-        print(f"Entailment label ID: {self.entailment_id}")
+        if self.is_sentence_transformer:
+            # Semantic similarity approach
+            from sentence_transformers import SentenceTransformer
+            self.model = SentenceTransformer(model_name, device=str(self.device))
+            self.tokenizer = None  # Not needed for sentence-transformers
+            self.entailment_id = None  # Not applicable
+            
+            print(f"Model loaded on {self.device} (semantic similarity mode)")
+        else:
+            # NLI classification approach (original code)
+            self.tokenizer = AutoTokenizer.from_pretrained(model_name)
+            self.model = AutoModelForSequenceClassification.from_pretrained(model_name)
+            
+            self.model.to(self.device)
+            self.model.eval()
+            
+            # Get label mapping (DeBERTa-MNLI: 0=contradiction, 1=neutral, 2=entailment)
+            self.label2id = self.model.config.label2id
+            self.entailment_id = self.label2id.get('entailment', self.label2id.get('ENTAILMENT', 2))
+            
+            print(f"Model loaded on {self.device}")
+            print(f"Label mapping: {self.label2id}")
+            print(f"Entailment label ID: {self.entailment_id}")
     
     def check_entailment(self, premise: str, hypothesis: str) -> float:
         """
-        Check if premise entails hypothesis.
+        Check if premise entails hypothesis (or compute semantic similarity).
         
         Returns:
-            P(entailment) between 0 and 1
+            NLI mode: P(entailment) between 0 and 1
+            Semantic mode: Cosine similarity between 0 and 1
         """
-        inputs = self.tokenizer(
-            premise, hypothesis, 
-            return_tensors="pt", 
-            truncation=True, 
-            max_length=512
-        )
-        inputs = {k: v.to(self.device) for k, v in inputs.items()}
-        
-        with torch.no_grad():
-            outputs = self.model(**inputs)
-            probs = torch.softmax(outputs.logits, dim=-1)
-            entailment_prob = probs[0][self.entailment_id].item()
-        
-        return entailment_prob
+        if self.is_sentence_transformer:
+            # Semantic similarity approach
+            from sentence_transformers import util
+            emb1 = self.model.encode(premise, convert_to_tensor=True)
+            emb2 = self.model.encode(hypothesis, convert_to_tensor=True)
+            similarity = util.cos_sim(emb1, emb2).item()
+            # Ensure it's in [0, 1] range (cosine similarity is [-1, 1], but embeddings are normalized)
+            similarity = max(0.0, min(1.0, similarity))
+            return float(similarity)
+        else:
+            # NLI classification approach (original code)
+            inputs = self.tokenizer(
+                premise, hypothesis, 
+                return_tensors="pt", 
+                truncation=True, 
+                max_length=512
+            )
+            inputs = {k: v.to(self.device) for k, v in inputs.items()}
+            
+            with torch.no_grad():
+                outputs = self.model(**inputs)
+                probs = torch.softmax(outputs.logits, dim=-1)
+                entailment_prob = probs[0][self.entailment_id].item()
+            
+            return entailment_prob
     
     def check_mutual_entailment(
         self, 
@@ -344,65 +371,76 @@ def analyze_question(
     seen = set()
     predicted_answer = None
     current_correct = False
+    method_data = None
     
     if 'mi_method' in question_data.get('methods', {}):
         method_data = question_data['methods']['mi_method']
-        # Get predicted answer from method
-        predicted_answer = method_data.get('predicted_answer', '')
-        current_correct = method_data.get('is_correct', False)
     elif 'self_consistency' in question_data.get('methods', {}):
         method_data = question_data['methods']['self_consistency']
-        predicted_answer = method_data.get('predicted_answer', '')
-        current_correct = method_data.get('is_correct', False)
+    elif 'greedy' in question_data.get('methods', {}):
+        method_data = question_data['methods']['greedy']
     else:
-        # Greedy method - only 1 answer, skip
+        # No supported method found
         return None
     
+    # Extract predicted answer and correctness from final_metrics (correct location)
+    final_metrics = method_data.get('final_metrics', {})
+    predicted_answer = final_metrics.get('predicted', '')
+    current_correct = final_metrics.get('exact_match', 0.0) == 1.0
+    
+    # Extract raw outputs for clustering (if available)
     for output in method_data.get('raw_outputs', []):
         text = output['text'].strip().strip('"').strip("'")
         if text not in seen:
             answers.append(text)
             seen.add(text)
     
-    if len(answers) < 2:
-        # Need at least 2 answers for clustering
-        return None
+    # Check if we can do clustering analysis (need at least 2 answers)
+    can_cluster = len(answers) >= 2
     
-    # Cluster by F1
-    f1_clusters = cluster_by_f1(answers, threshold=f1_threshold)
-    
-    # Cluster by NLI
-    nli_clusters = cluster_by_nli(answers, checker, threshold=nli_threshold)
-    
-    # Compute pairwise scores for all pairs
+    # Initialize clustering variables
+    f1_clusters = {}
+    nli_clusters = {}
     pairwise_f1 = {}
     pairwise_nli_fwd = {}
     pairwise_nli_bwd = {}
     pairwise_mutual = {}
-    
-    for i, ans1 in enumerate(answers):
-        for j, ans2 in enumerate(answers):
-            if i >= j:
-                continue
-            
-            pair_key = f"{ans1}|||{ans2}"
-            
-            # F1 score
-            f1_score = compute_f1_similarity(ans1, ans2)
-            pairwise_f1[pair_key] = f1_score
-            
-            # NLI scores
-            is_mutual, fwd, bwd = checker.check_mutual_entailment(ans1, ans2, nli_threshold)
-            pairwise_nli_fwd[pair_key] = fwd
-            pairwise_nli_bwd[pair_key] = bwd
-            pairwise_mutual[pair_key] = is_mutual
-    
-    # Compute clustering agreement
-    agreement = compute_clustering_agreement(f1_clusters, nli_clusters)
-    
-    # TODO: Compute purity metrics
+    agreement = 0.0
     f1_purity = 0.0
     nli_purity = 0.0
+    
+    # Only perform clustering analysis if we have multiple answers
+    if can_cluster:
+        # Cluster by F1
+        f1_clusters = cluster_by_f1(answers, threshold=f1_threshold)
+        
+        # Cluster by NLI
+        nli_clusters = cluster_by_nli(answers, checker, threshold=nli_threshold)
+        
+        # Compute pairwise scores for all pairs
+        for i, ans1 in enumerate(answers):
+            for j, ans2 in enumerate(answers):
+                if i >= j:
+                    continue
+                
+                pair_key = f"{ans1}|||{ans2}"
+                
+                # F1 score
+                f1_score = compute_f1_similarity(ans1, ans2)
+                pairwise_f1[pair_key] = f1_score
+                
+                # NLI scores
+                is_mutual, fwd, bwd = checker.check_mutual_entailment(ans1, ans2, nli_threshold)
+                pairwise_nli_fwd[pair_key] = fwd
+                pairwise_nli_bwd[pair_key] = bwd
+                pairwise_mutual[pair_key] = is_mutual
+        
+        # Compute clustering agreement
+        agreement = compute_clustering_agreement(f1_clusters, nli_clusters)
+        
+        # TODO: Compute purity metrics
+        f1_purity = 0.0
+        nli_purity = 0.0
     
     # NEW: Check NLI-based evaluation (predicted vs gold)
     nli_correct = False
@@ -447,8 +485,8 @@ def main():
                        choices=['triviaqa', 'squad_v2', 'truthfulqa_mc1', 'truthfulqa_mc2'],
                        help='Dataset name')
     parser.add_argument('--method', type=str, required=True,
-                       choices=['mi', 'self-consistency', 'selfcons'],
-                       help='Method name (mi or self-consistency)')
+                       choices=['mi', 'self-consistency', 'selfcons', 'greedy'],
+                       help='Method name (mi, self-consistency, or greedy)')
     parser.add_argument('--limit', type=int, default=200,
                        help='Number of questions to analyze')
     parser.add_argument('--f1-threshold', type=float, default=0.25,
@@ -465,7 +503,12 @@ def main():
     args = parser.parse_args()
     
     # Normalize method name
-    method_name = 'selfcons' if 'cons' in args.method else 'mi'
+    if 'cons' in args.method:
+        method_name = 'selfcons'
+    elif args.method == 'greedy':
+        method_name = 'greedy'
+    else:
+        method_name = 'mi'
     
     # Find log files
     log_dir = f'outputs/logs/{args.dataset}_{method_name}_200'
@@ -517,15 +560,21 @@ def main():
     
     # Compute summary statistics
     n_analyzed = len(results)
-    avg_unique = np.mean([r.n_unique for r in results]) if results else 0
-    avg_f1_clusters = np.mean([r.f1_n_clusters for r in results]) if results else 0
-    avg_nli_clusters = np.mean([r.nli_n_clusters for r in results]) if results else 0
-    avg_agreement = np.mean([r.clustering_agreement for r in results]) if results else 0
     
-    # Count where NLI found more/fewer clusters
-    nli_more = sum(1 for r in results if r.nli_n_clusters > r.f1_n_clusters)
-    nli_fewer = sum(1 for r in results if r.nli_n_clusters < r.f1_n_clusters)
-    nli_same = sum(1 for r in results if r.nli_n_clusters == r.f1_n_clusters)
+    # Separate questions with clustering (n_unique >= 2) from all questions
+    clusterable = [r for r in results if r.n_unique >= 2]
+    n_clusterable = len(clusterable)
+    
+    # Clustering stats (only for questions with multiple answers)
+    avg_unique = np.mean([r.n_unique for r in clusterable]) if clusterable else 0
+    avg_f1_clusters = np.mean([r.f1_n_clusters for r in clusterable]) if clusterable else 0
+    avg_nli_clusters = np.mean([r.nli_n_clusters for r in clusterable]) if clusterable else 0
+    avg_agreement = np.mean([r.clustering_agreement for r in clusterable]) if clusterable else 0
+    
+    # Count where NLI found more/fewer clusters (only for clusterable questions)
+    nli_more = sum(1 for r in clusterable if r.nli_n_clusters > r.f1_n_clusters)
+    nli_fewer = sum(1 for r in clusterable if r.nli_n_clusters < r.f1_n_clusters)
+    nli_same = sum(1 for r in clusterable if r.nli_n_clusters == r.f1_n_clusters)
     
     # NEW: Compute evaluation metrics (accuracy with NLI vs current)
     current_correct = sum(1 for r in results if r.current_correct)
@@ -545,11 +594,12 @@ def main():
         'method': args.method,
         'n_questions_analyzed': n_analyzed,
         'n_questions_skipped': skipped,
+        'n_questions_clusterable': n_clusterable,
         'f1_threshold': args.f1_threshold,
         'nli_threshold': args.nli_threshold,
         'nli_model': args.model,
         'elapsed_seconds': elapsed,
-        # Clustering metrics
+        # Clustering metrics (only for questions with n_unique >= 2)
         'avg_unique_answers': avg_unique,
         'avg_f1_clusters': avg_f1_clusters,
         'avg_nli_clusters': avg_nli_clusters,
@@ -557,7 +607,7 @@ def main():
         'nli_more_clusters': nli_more,
         'nli_fewer_clusters': nli_fewer,
         'nli_same_clusters': nli_same,
-        # NEW: Evaluation metrics
+        # Evaluation metrics (all questions)
         'current_accuracy': current_accuracy,
         'nli_accuracy': nli_accuracy,
         'accuracy_improvement': accuracy_improvement,
@@ -585,17 +635,24 @@ def main():
     print(f"Questions skipped    : {skipped}")
     print(f"Time elapsed         : {elapsed:.1f}s ({elapsed/n_analyzed:.2f}s per question)")
     
-    print(f"\n{'='*80}")
-    print("CLUSTERING ANALYSIS")
-    print(f"{'='*80}")
-    print(f"Avg unique answers   : {avg_unique:.1f}")
-    print(f"Avg F1 clusters      : {avg_f1_clusters:.1f}")
-    print(f"Avg NLI clusters     : {avg_nli_clusters:.1f}")
-    print(f"Clustering agreement : {avg_agreement:.3f}")
-    print(f"\nNLI vs F1 clustering:")
-    print(f"  NLI more clusters  : {nli_more} ({100*nli_more/n_analyzed:.1f}%)")
-    print(f"  NLI fewer clusters : {nli_fewer} ({100*nli_fewer/n_analyzed:.1f}%)")
-    print(f"  NLI same clusters  : {nli_same} ({100*nli_same/n_analyzed:.1f}%)")
+    if n_clusterable > 0:
+        print(f"\n{'='*80}")
+        print("CLUSTERING ANALYSIS")
+        print(f"{'='*80}")
+        print(f"Questions clusterable: {n_clusterable} ({100*n_clusterable/n_analyzed:.1f}%)")
+        print(f"Avg unique answers   : {avg_unique:.1f}")
+        print(f"Avg F1 clusters      : {avg_f1_clusters:.1f}")
+        print(f"Avg NLI clusters     : {avg_nli_clusters:.1f}")
+        print(f"Clustering agreement : {avg_agreement:.3f}")
+        print(f"\nNLI vs F1 clustering:")
+        print(f"  NLI more clusters  : {nli_more} ({100*nli_more/n_clusterable:.1f}%)")
+        print(f"  NLI fewer clusters : {nli_fewer} ({100*nli_fewer/n_clusterable:.1f}%)")
+        print(f"  NLI same clusters  : {nli_same} ({100*nli_same/n_clusterable:.1f}%)")
+    else:
+        print(f"\n{'='*80}")
+        print("CLUSTERING ANALYSIS")
+        print(f"{'='*80}")
+        print("No questions with multiple answers - clustering analysis skipped.")
     
     print(f"\n{'='*80}")
     print("EVALUATION ANALYSIS (Predicted vs Gold Answer)")

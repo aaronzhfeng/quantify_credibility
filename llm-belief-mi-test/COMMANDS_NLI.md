@@ -8,28 +8,33 @@ Two types of NLI enhancement for **sampling-based methods** (Self-Consistency & 
 
 | Enhancement Type | What It Does | Works For | Output Location |
 |-----------------|--------------|-----------|-----------------|
-| **Part 1: Accuracy Evaluation** | Compares F1 vs NLI clustering quality + NLI-based accuracy checking | ❌ Greedy (not supported)<br>✅ Self-Consistency<br>✅ MI | `outputs/nli_analysis/` |
+| **Part 1: Accuracy Evaluation** | Compares F1 vs NLI clustering quality + NLI-based accuracy checking | ✅ Greedy (accuracy only)<br>✅ Self-Consistency<br>✅ MI | `outputs/nli_analysis/` |
 | **Part 2: Clustering Recalculation** | Groups semantically similar answers, recalculates MI/confidence/ECE | ❌ Greedy (not supported)<br>✅ Self-Consistency<br>✅ MI | `outputs/nli_adapted/` |
 
-**Note:** Greedy method is not supported by NLI analysis scripts (designed for sampling-based methods only).
+**Note:** 
+- **Part 1**: All methods supported. Greedy gets accuracy evaluation only (no clustering analysis).
+- **Part 2**: Only sampling-based methods (Self-Consistency, MI) can use NLI clustering recalculation.
+- **SQuAD v2 Issue**: Both NLI and semantic models reduce accuracy (-8% to -12%). Stick with F1 evaluation. See "Alternative Models" section for test results.
 
 ---
 
-## 🎯 Part 1: NLI Clustering Analysis & Accuracy Evaluation (Sampling Methods)
+## 🎯 Part 1: NLI Clustering Analysis & Accuracy Evaluation
 
 **What this does:** 
-1. Compares F1-based vs NLI-based clustering quality
-2. Uses NLI to check if predicted answers semantically match gold answers
+1. Compares F1-based vs NLI-based clustering quality (sampling methods only)
+2. Uses NLI to check if predicted answers semantically match gold answers (all methods)
 
-**Works for:** Self-Consistency, MI (both generate multiple answers for clustering analysis)
+**Works for:** 
+- **Clustering + Accuracy**: Self-Consistency, MI (generate multiple answers)
+- **Accuracy only**: Greedy (single answer, no clustering)
 
-### 📋 All 4 Commands (2 methods × 2 datasets)
+### 📋 All 6 Commands (3 methods × 2 datasets)
 
 ```bash
 # Create output directory
 mkdir -p outputs/nli_analysis
 
-# ===== TriviaQA (2 methods) =====
+# ===== TriviaQA (3 methods) =====
 
 # 1. TriviaQA - Self-Consistency (NLI clustering + accuracy)
 python scripts/analyze_mutual_entailment.py \
@@ -41,49 +46,107 @@ python scripts/analyze_mutual_entailment.py \
   --dataset triviaqa --method mi --limit 200 \
   --output outputs/nli_analysis/triviaqa_mi_200_analysis.json
 
-# ===== SQuAD v2 (2 methods) =====
+# 3. TriviaQA - Greedy (NLI accuracy only, no clustering)
+python scripts/analyze_mutual_entailment.py \
+  --dataset triviaqa --method greedy --limit 200 \
+  --output outputs/nli_analysis/triviaqa_greedy_200_analysis.json
 
-# 3. SQuAD v2 - Self-Consistency (NLI clustering + accuracy)
+# ===== SQuAD v2 (3 methods) =====
+
+# 4. SQuAD v2 - Self-Consistency (NLI clustering + accuracy)
 python scripts/analyze_mutual_entailment.py \
   --dataset squad_v2 --method self-consistency --limit 200 \
   --output outputs/nli_analysis/squad_v2_selfcons_200_analysis.json
 
-# 4. SQuAD v2 - MI (NLI clustering + accuracy)
+# 5. SQuAD v2 - MI (NLI clustering + accuracy)
 python scripts/analyze_mutual_entailment.py \
   --dataset squad_v2 --method mi --limit 200 \
   --output outputs/nli_analysis/squad_v2_mi_200_analysis.json
+
+# 6. SQuAD v2 - Greedy (NLI accuracy only, no clustering)
+python scripts/analyze_mutual_entailment.py \
+  --dataset squad_v2 --method greedy --limit 200 \
+  --output outputs/nli_analysis/squad_v2_greedy_200_analysis.json
 ```
 
 **One command to run all:**
 ```bash
-cd /teamspace/studios/this_studio/quantify_credibility/llm-belief-mi-test && \
+cd quantify_credibility/llm-belief-mi-test && \
 mkdir -p outputs/nli_analysis && \
 echo "=== TriviaQA ===" && \
 python scripts/analyze_mutual_entailment.py --dataset triviaqa --method self-consistency --limit 200 --output outputs/nli_analysis/triviaqa_selfcons_200_analysis.json && \
 python scripts/analyze_mutual_entailment.py --dataset triviaqa --method mi --limit 200 --output outputs/nli_analysis/triviaqa_mi_200_analysis.json && \
+python scripts/analyze_mutual_entailment.py --dataset triviaqa --method greedy --limit 200 --output outputs/nli_analysis/triviaqa_greedy_200_analysis.json && \
 echo "=== SQuAD v2 ===" && \
 python scripts/analyze_mutual_entailment.py --dataset squad_v2 --method self-consistency --limit 200 --output outputs/nli_analysis/squad_v2_selfcons_200_analysis.json && \
 python scripts/analyze_mutual_entailment.py --dataset squad_v2 --method mi --limit 200 --output outputs/nli_analysis/squad_v2_mi_200_analysis.json && \
+python scripts/analyze_mutual_entailment.py --dataset squad_v2 --method greedy --limit 200 --output outputs/nli_analysis/squad_v2_greedy_200_analysis.json && \
 echo "=== All NLI analyses complete! ==="
 ```
 
-### ⏱️ Time: ~8 minutes total
-- Each method: ~2 minutes
+### ⏱️ Time: ~10-12 minutes total
+- Sampling methods (Self-Consistency, MI): ~2 minutes each (4 runs = ~8 min)
+- Greedy method: ~1 minute each (2 runs = ~2 min)
 - First run: +2-5 min for model download (one-time)
 
 ### 📊 Expected Results
 
-**Clustering Quality:**
+**Clustering Quality (Self-Consistency & MI only):**
 - F1 vs NLI agreement: 0.70-0.85
 - NLI typically creates fewer, more semantically coherent clusters
 
-**Accuracy Improvement:**
+**Accuracy Improvement (All methods):**
 | Method | Original Accuracy | NLI Accuracy | Improvement |
 |--------|------------------|--------------|-------------|
+| Greedy | 0.38 | 0.42-0.44 | +4-6% |
 | Self-Consistency | 0.48 | 0.53-0.55 | +5-7% |
 | MI | 0.45 | 0.50-0.52 | +5-7% |
 
 **Key insight:** NLI captures semantic equivalence missed by F1 token overlap.
+
+**Note:** Greedy output will show "No questions with multiple answers - clustering analysis skipped."
+
+---
+
+## 🧪 Alternative Models for SQuAD v2 (Tested - Not Recommended)
+
+**Problem:** DeBERTa-MNLI decreases SQuAD v2 accuracy by ~12% (entailment model incompatible with extractive QA).
+
+**Hypothesis:** Semantic similarity models might work better for extractive QA.
+
+**Result:** ❌ **Still decreases accuracy** (best: -8% at threshold 0.65)
+
+### Test Commands (SQuAD v2 only)
+
+```bash
+cd /root/quantify_credibility/llm-belief-mi-test
+mkdir -p outputs/nli_analysis/semantic_models
+
+# Multi-QA MPNet with optimized threshold
+python scripts/analyze_mutual_entailment.py \
+  --dataset squad_v2 --method greedy --limit 200 \
+  --model sentence-transformers/multi-qa-mpnet-base-cos-v1 \
+  --nli-threshold 0.65 \
+  --output outputs/nli_analysis/semantic_models/squad_v2_greedy_multiqa_0.65.json
+```
+
+### Results Summary
+
+| Model | Threshold | Wrong→Right | Right→Wrong | Net | Accuracy Loss |
+|-------|-----------|-------------|-------------|-----|---------------|
+| DeBERTa-MNLI | 0.5 | 3 | 27 | -24 | **-12.0%** |
+| Multi-QA MPNet | 0.85 | 4 | 31 | -27 | **-13.5%** |
+| Multi-QA MPNet | 0.75 | 6 | 27 | -21 | **-10.5%** |
+| Multi-QA MPNet | **0.65** | 11 | 27 | -16 | **-8.0%** ✓ Best |
+
+### Conclusion
+
+**All semantic/NLI models hurt SQuAD v2 accuracy.** The issue is fundamental:
+- **F1 evaluation**: Rewards token overlap (appropriate for extractive spans)
+- **Semantic models**: Require full semantic equivalence (too strict for partial spans)
+- **27 questions** consistently fail across all models/thresholds
+
+**Recommendation: Use standard F1 evaluation for SQuAD v2.** NLI/semantic enhancements are only beneficial for TriviaQA.
 
 ---
 

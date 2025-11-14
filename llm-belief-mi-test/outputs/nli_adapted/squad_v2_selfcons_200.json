@@ -1,0 +1,5607 @@
+{
+  "summary": {
+    "dataset_info": {
+      "log_directory": "outputs/logs/squad_v2_selfcons_200",
+      "n_questions": 200,
+      "nli_threshold": 0.5,
+      "nli_model": "microsoft/deberta-v2-xlarge-mnli",
+      "correctness_based": false
+    },
+    "original_metrics": {
+      "avg_mi_bits": 0.0,
+      "avg_confidence": 0.843,
+      "exact_match": 0.51,
+      "f1": 0.5572499999999999,
+      "ece": 0.321
+    },
+    "nli_adapted_metrics": {
+      "avg_mi_bits": 0.0,
+      "avg_confidence": 1.0,
+      "exact_match": 0.515,
+      "f1": 0.5622499999999999,
+      "ece": 0.485
+    },
+    "improvements": {
+      "mi_reduction": 0.0,
+      "mi_reduction_pct": 0,
+      "confidence_increase": 0.15700000000000003,
+      "confidence_increase_pct": 18.623962040332152,
+      "ece_improvement": 0.16399999999999998,
+      "ece_improvement_pct": 51.09034267912772,
+      "accuracy_change": 0.0050000000000000044,
+      "predictions_changed": 36,
+      "predictions_changed_pct": 18.0
+    }
+  },
+  "per_question": [
+    {
+      "question_id": 0,
+      "question_text": "In what country is Normandy located?",
+      "gold_answers": [
+        "France",
+        "France",
+        "France",
+        "France"
+      ],
+      "original": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "France.",
+        "exact_match": 1.0,
+        "f1": 1.0
+      },
+      "nli_adapted": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "France.",
+        "exact_match": 1.0,
+        "f1": 1.0,
+        "unique_clusters": 2
+      },
+      "changes": {
+        "mi_reduction": 0.0,
+        "confidence_increase": 0.0,
+        "accuracy_change": 0.0,
+        "prediction_changed": false
+      }
+    },
+    {
+      "question_id": 1,
+      "question_text": "When were the Normans in Normandy?",
+      "gold_answers": [
+        "10th and 11th centuries",
+        "in the 10th and 11th centuries",
+        "10th and 11th centuries",
+        "10th and 11th centuries"
+      ],
+      "original": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "The 10th and 11th centuries.",
+        "exact_match": 1.0,
+        "f1": 1.0
+      },
+      "nli_adapted": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "The 10th and 11th centuries.",
+        "exact_match": 1.0,
+        "f1": 1.0,
+        "unique_clusters": 4
+      },
+      "changes": {
+        "mi_reduction": 0.0,
+        "confidence_increase": 0.0,
+        "accuracy_change": 0.0,
+        "prediction_changed": false
+      }
+    },
+    {
+      "question_id": 10,
+      "question_text": "Who ruled the duchy of Normandy",
+      "gold_answers": [
+        "Richard I",
+        "Richard I",
+        "Richard I"
+      ],
+      "original": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "Richard I of Normandy",
+        "exact_match": 0.0,
+        "f1": 0.6666666666666666
+      },
+      "nli_adapted": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "Richard I of Normandy",
+        "exact_match": 0.0,
+        "f1": 0.6666666666666666,
+        "unique_clusters": 2
+      },
+      "changes": {
+        "mi_reduction": 0.0,
+        "confidence_increase": 0.0,
+        "accuracy_change": 0.0,
+        "prediction_changed": false
+      }
+    },
+    {
+      "question_id": 100,
+      "question_text": "What battle took place in the 10th century?",
+      "gold_answers": [],
+      "original": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "UNANSWERABLE",
+        "exact_match": 1.0,
+        "f1": 1.0
+      },
+      "nli_adapted": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "UNANSWERABLE",
+        "exact_match": 1.0,
+        "f1": 1.0,
+        "unique_clusters": 1
+      },
+      "changes": {
+        "mi_reduction": 0.0,
+        "confidence_increase": 0.0,
+        "accuracy_change": 0.0,
+        "prediction_changed": false
+      }
+    },
+    {
+      "question_id": 101,
+      "question_text": "Who replaced the Normans as the ruling class?",
+      "gold_answers": [],
+      "original": {
+        "mi_bits": 0.0,
+        "confidence": 0.5,
+        "predicted": "The Anglo-Saxons",
+        "exact_match": 0.0,
+        "f1": 0.0
+      },
+      "nli_adapted": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "UNANSWERABLE",
+        "exact_match": 1.0,
+        "f1": 1.0,
+        "unique_clusters": 4
+      },
+      "changes": {
+        "mi_reduction": 0.0,
+        "confidence_increase": 0.5,
+        "accuracy_change": 1.0,
+        "prediction_changed": true
+      }
+    },
+    {
+      "question_id": 102,
+      "question_text": "Who considered their land on the continent their most important holding?",
+      "gold_answers": [],
+      "original": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "The early Norman kings of England.",
+        "exact_match": 0.0,
+        "f1": 0.0
+      },
+      "nli_adapted": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "The early Norman kings of England.",
+        "exact_match": 0.0,
+        "f1": 0.0,
+        "unique_clusters": 2
+      },
+      "changes": {
+        "mi_reduction": 0.0,
+        "confidence_increase": 0.0,
+        "accuracy_change": 0.0,
+        "prediction_changed": false
+      }
+    },
+    {
+      "question_id": 103,
+      "question_text": "What was the Anglo-Norman language's final form?",
+      "gold_answers": [
+        "Modern English",
+        "Modern English",
+        "Modern English"
+      ],
+      "original": {
+        "mi_bits": 0.0,
+        "confidence": 0.7,
+        "predicted": "Modern English.",
+        "exact_match": 1.0,
+        "f1": 1.0
+      },
+      "nli_adapted": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "Modern English.",
+        "exact_match": 1.0,
+        "f1": 1.0,
+        "unique_clusters": 2
+      },
+      "changes": {
+        "mi_reduction": 0.0,
+        "confidence_increase": 0.30000000000000004,
+        "accuracy_change": 0.0,
+        "prediction_changed": false
+      }
+    },
+    {
+      "question_id": 104,
+      "question_text": "Who identified themselves as French during the Hundred Years War?",
+      "gold_answers": [],
+      "original": {
+        "mi_bits": 0.0,
+        "confidence": 0.5,
+        "predicted": "The Normans",
+        "exact_match": 0.0,
+        "f1": 0.0
+      },
+      "nli_adapted": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "The Normans",
+        "exact_match": 0.0,
+        "f1": 0.0,
+        "unique_clusters": 3
+      },
+      "changes": {
+        "mi_reduction": 0.0,
+        "confidence_increase": 0.5,
+        "accuracy_change": 0.0,
+        "prediction_changed": false
+      }
+    },
+    {
+      "question_id": 105,
+      "question_text": "What was absorbed into the Anglo-Norman language?",
+      "gold_answers": [],
+      "original": {
+        "mi_bits": 0.0,
+        "confidence": 0.4,
+        "predicted": "The Anglo-Saxon language of their subjects.",
+        "exact_match": 0.0,
+        "f1": 0.0
+      },
+      "nli_adapted": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "The Anglo-Saxon language of their subjects.",
+        "exact_match": 0.0,
+        "f1": 0.0,
+        "unique_clusters": 4
+      },
+      "changes": {
+        "mi_reduction": 0.0,
+        "confidence_increase": 0.6,
+        "accuracy_change": 0.0,
+        "prediction_changed": false
+      }
+    },
+    {
+      "question_id": 106,
+      "question_text": "Who made fun of the Latin language?",
+      "gold_answers": [],
+      "original": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "Geoffrey Chaucer",
+        "exact_match": 0.0,
+        "f1": 0.0
+      },
+      "nli_adapted": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "Geoffrey Chaucer",
+        "exact_match": 0.0,
+        "f1": 0.0,
+        "unique_clusters": 2
+      },
+      "changes": {
+        "mi_reduction": 0.0,
+        "confidence_increase": 0.0,
+        "accuracy_change": 0.0,
+        "prediction_changed": false
+      }
+    },
+    {
+      "question_id": 107,
+      "question_text": "In what year did the Norman's invade at Bannow Bay?",
+      "gold_answers": [
+        "1169",
+        "1169",
+        "1169"
+      ],
+      "original": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "1169",
+        "exact_match": 1.0,
+        "f1": 1.0
+      },
+      "nli_adapted": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "1169",
+        "exact_match": 1.0,
+        "f1": 1.0,
+        "unique_clusters": 1
+      },
+      "changes": {
+        "mi_reduction": 0.0,
+        "confidence_increase": 0.0,
+        "accuracy_change": 0.0,
+        "prediction_changed": false
+      }
+    },
+    {
+      "question_id": 108,
+      "question_text": "What country did the Normans invade in 1169?",
+      "gold_answers": [
+        "Ireland",
+        "Ireland",
+        "Ireland"
+      ],
+      "original": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "Ireland.",
+        "exact_match": 1.0,
+        "f1": 1.0
+      },
+      "nli_adapted": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "Ireland",
+        "exact_match": 1.0,
+        "f1": 1.0,
+        "unique_clusters": 2
+      },
+      "changes": {
+        "mi_reduction": 0.0,
+        "confidence_increase": 0.0,
+        "accuracy_change": 0.0,
+        "prediction_changed": true
+      }
+    },
+    {
+      "question_id": 109,
+      "question_text": "What culture did the Normans combine with in Ireland?",
+      "gold_answers": [
+        "Irish",
+        "Irish",
+        "Irish"
+      ],
+      "original": {
+        "mi_bits": 0.0,
+        "confidence": 0.8,
+        "predicted": "Irish culture.",
+        "exact_match": 0.0,
+        "f1": 0.6666666666666666
+      },
+      "nli_adapted": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "Irish culture.",
+        "exact_match": 0.0,
+        "f1": 0.6666666666666666,
+        "unique_clusters": 2
+      },
+      "changes": {
+        "mi_reduction": 0.0,
+        "confidence_increase": 0.19999999999999996,
+        "accuracy_change": 0.0,
+        "prediction_changed": false
+      }
+    },
+    {
+      "question_id": 11,
+      "question_text": "What religion were the Normans",
+      "gold_answers": [
+        "Catholic",
+        "Catholic orthodoxy",
+        "Catholic"
+      ],
+      "original": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "Catholic",
+        "exact_match": 1.0,
+        "f1": 1.0
+      },
+      "nli_adapted": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "Catholic",
+        "exact_match": 1.0,
+        "f1": 1.0,
+        "unique_clusters": 2
+      },
+      "changes": {
+        "mi_reduction": 0.0,
+        "confidence_increase": 0.0,
+        "accuracy_change": 0.0,
+        "prediction_changed": false
+      }
+    },
+    {
+      "question_id": 110,
+      "question_text": "Where did the Normans invade in the 11th century?",
+      "gold_answers": [],
+      "original": {
+        "mi_bits": 0.0,
+        "confidence": 0.6,
+        "predicted": "UNANSWERABLE",
+        "exact_match": 1.0,
+        "f1": 1.0
+      },
+      "nli_adapted": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "UNANSWERABLE",
+        "exact_match": 1.0,
+        "f1": 1.0,
+        "unique_clusters": 3
+      },
+      "changes": {
+        "mi_reduction": 0.0,
+        "confidence_increase": 0.4,
+        "accuracy_change": 0.0,
+        "prediction_changed": false
+      }
+    },
+    {
+      "question_id": 111,
+      "question_text": "Who did the Irish culture have a profound effect on?",
+      "gold_answers": [],
+      "original": {
+        "mi_bits": 0.0,
+        "confidence": 0.8,
+        "predicted": "The Normans",
+        "exact_match": 0.0,
+        "f1": 0.0
+      },
+      "nli_adapted": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "The Normans",
+        "exact_match": 0.0,
+        "f1": 0.0,
+        "unique_clusters": 3
+      },
+      "changes": {
+        "mi_reduction": 0.0,
+        "confidence_increase": 0.19999999999999996,
+        "accuracy_change": 0.0,
+        "prediction_changed": false
+      }
+    },
+    {
+      "question_id": 112,
+      "question_text": "What castles were built by the Irish?",
+      "gold_answers": [],
+      "original": {
+        "mi_bits": 0.0,
+        "confidence": 0.6,
+        "predicted": "UNANSWERABLE",
+        "exact_match": 1.0,
+        "f1": 1.0
+      },
+      "nli_adapted": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "Trim Castle and Dublin Castle.",
+        "exact_match": 0.0,
+        "f1": 0.0,
+        "unique_clusters": 1
+      },
+      "changes": {
+        "mi_reduction": 0.0,
+        "confidence_increase": 0.4,
+        "accuracy_change": -1.0,
+        "prediction_changed": true
+      }
+    },
+    {
+      "question_id": 113,
+      "question_text": "Who was Margaret's brother?",
+      "gold_answers": [
+        "Edgar",
+        "Edgar",
+        "Edgar Atheling"
+      ],
+      "original": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "Edgar Atheling.",
+        "exact_match": 1.0,
+        "f1": 1.0
+      },
+      "nli_adapted": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "Edgar Atheling.",
+        "exact_match": 1.0,
+        "f1": 1.0,
+        "unique_clusters": 2
+      },
+      "changes": {
+        "mi_reduction": 0.0,
+        "confidence_increase": 0.0,
+        "accuracy_change": 0.0,
+        "prediction_changed": false
+      }
+    },
+    {
+      "question_id": 114,
+      "question_text": "Who was Margaret's husband?",
+      "gold_answers": [
+        "King Malcolm III of Scotland",
+        "King Malcolm III",
+        "King Malcolm III"
+      ],
+      "original": {
+        "mi_bits": 0.0,
+        "confidence": 0.5,
+        "predicted": "King Malcolm III of Scotland.",
+        "exact_match": 1.0,
+        "f1": 1.0
+      },
+      "nli_adapted": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "King Malcolm III of Scotland",
+        "exact_match": 1.0,
+        "f1": 1.0,
+        "unique_clusters": 6
+      },
+      "changes": {
+        "mi_reduction": 0.0,
+        "confidence_increase": 0.5,
+        "accuracy_change": 0.0,
+        "prediction_changed": true
+      }
+    },
+    {
+      "question_id": 115,
+      "question_text": "When was Scotland invaded by William?",
+      "gold_answers": [
+        "1072",
+        "1072",
+        "1072"
+      ],
+      "original": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "1072",
+        "exact_match": 1.0,
+        "f1": 1.0
+      },
+      "nli_adapted": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "1072",
+        "exact_match": 1.0,
+        "f1": 1.0,
+        "unique_clusters": 1
+      },
+      "changes": {
+        "mi_reduction": 0.0,
+        "confidence_increase": 0.0,
+        "accuracy_change": 0.0,
+        "prediction_changed": false
+      }
+    },
+    {
+      "question_id": 116,
+      "question_text": "Who was the hostage?",
+      "gold_answers": [
+        "Duncan",
+        "Duncan",
+        "Duncan"
+      ],
+      "original": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "Duncan",
+        "exact_match": 1.0,
+        "f1": 1.0
+      },
+      "nli_adapted": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "Duncan",
+        "exact_match": 1.0,
+        "f1": 1.0,
+        "unique_clusters": 1
+      },
+      "changes": {
+        "mi_reduction": 0.0,
+        "confidence_increase": 0.0,
+        "accuracy_change": 0.0,
+        "prediction_changed": false
+      }
+    },
+    {
+      "question_id": 117,
+      "question_text": "Who did Edgar marry?",
+      "gold_answers": [],
+      "original": {
+        "mi_bits": 0.0,
+        "confidence": 0.9,
+        "predicted": "UNANSWERABLE",
+        "exact_match": 1.0,
+        "f1": 1.0
+      },
+      "nli_adapted": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "UNANSWERABLE",
+        "exact_match": 1.0,
+        "f1": 1.0,
+        "unique_clusters": 2
+      },
+      "changes": {
+        "mi_reduction": 0.0,
+        "confidence_increase": 0.09999999999999998,
+        "accuracy_change": 0.0,
+        "prediction_changed": false
+      }
+    },
+    {
+      "question_id": 118,
+      "question_text": "Who invaded Scotland in the 10th century?",
+      "gold_answers": [],
+      "original": {
+        "mi_bits": 0.0,
+        "confidence": 0.7,
+        "predicted": "UNANSWERABLE",
+        "exact_match": 1.0,
+        "f1": 1.0
+      },
+      "nli_adapted": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "UNANSWERABLE",
+        "exact_match": 1.0,
+        "f1": 1.0,
+        "unique_clusters": 2
+      },
+      "changes": {
+        "mi_reduction": 0.0,
+        "confidence_increase": 0.30000000000000004,
+        "accuracy_change": 0.0,
+        "prediction_changed": false
+      }
+    },
+    {
+      "question_id": 119,
+      "question_text": "Who did the Scotish king take hostage?",
+      "gold_answers": [],
+      "original": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "Duncan",
+        "exact_match": 0.0,
+        "f1": 0.0
+      },
+      "nli_adapted": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "Duncan",
+        "exact_match": 0.0,
+        "f1": 0.0,
+        "unique_clusters": 1
+      },
+      "changes": {
+        "mi_reduction": 0.0,
+        "confidence_increase": 0.0,
+        "accuracy_change": 0.0,
+        "prediction_changed": false
+      }
+    },
+    {
+      "question_id": 12,
+      "question_text": "What type of major impact did the Norman dynasty have on modern Europe?",
+      "gold_answers": [],
+      "original": {
+        "mi_bits": 0.0,
+        "confidence": 0.5,
+        "predicted": "political, cultural and military",
+        "exact_match": 0.0,
+        "f1": 0.0
+      },
+      "nli_adapted": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "political, cultural and military",
+        "exact_match": 0.0,
+        "f1": 0.0,
+        "unique_clusters": 8
+      },
+      "changes": {
+        "mi_reduction": 0.0,
+        "confidence_increase": 0.5,
+        "accuracy_change": 0.0,
+        "prediction_changed": false
+      }
+    },
+    {
+      "question_id": 120,
+      "question_text": "Who did Alexander I marry?",
+      "gold_answers": [
+        "Sybilla of Normandy",
+        "Sybilla of Normandy",
+        "Sybilla"
+      ],
+      "original": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "Sybilla of Normandy.",
+        "exact_match": 1.0,
+        "f1": 1.0
+      },
+      "nli_adapted": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "Sybilla of Normandy.",
+        "exact_match": 1.0,
+        "f1": 1.0,
+        "unique_clusters": 2
+      },
+      "changes": {
+        "mi_reduction": 0.0,
+        "confidence_increase": 0.0,
+        "accuracy_change": 0.0,
+        "prediction_changed": false
+      }
+    },
+    {
+      "question_id": 121,
+      "question_text": "What culture's arrival in Scotland is know as the \"Davidian Revolution\"?",
+      "gold_answers": [
+        "Norman",
+        "Norman",
+        "Norman"
+      ],
+      "original": {
+        "mi_bits": 0.0,
+        "confidence": 0.4,
+        "predicted": "Norman culture.",
+        "exact_match": 0.0,
+        "f1": 0.6666666666666666
+      },
+      "nli_adapted": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "Norman culture.",
+        "exact_match": 0.0,
+        "f1": 0.6666666666666666,
+        "unique_clusters": 6
+      },
+      "changes": {
+        "mi_reduction": 0.0,
+        "confidence_increase": 0.6,
+        "accuracy_change": 0.0,
+        "prediction_changed": false
+      }
+    },
+    {
+      "question_id": 122,
+      "question_text": "Who did King David I of Scotland Marry?",
+      "gold_answers": [],
+      "original": {
+        "mi_bits": 0.0,
+        "confidence": 0.6,
+        "predicted": "Sybilla of Normandy",
+        "exact_match": 0.0,
+        "f1": 0.0
+      },
+      "nli_adapted": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "Maud of Scotland",
+        "exact_match": 0.0,
+        "f1": 0.0,
+        "unique_clusters": 2
+      },
+      "changes": {
+        "mi_reduction": 0.0,
+        "confidence_increase": 0.4,
+        "accuracy_change": 0.0,
+        "prediction_changed": true
+      }
+    },
+    {
+      "question_id": 123,
+      "question_text": "What did Sybilla of Normandy introduce to Scotland?",
+      "gold_answers": [],
+      "original": {
+        "mi_bits": 0.0,
+        "confidence": 0.4,
+        "predicted": "UNANSWERABLE",
+        "exact_match": 1.0,
+        "f1": 1.0
+      },
+      "nli_adapted": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "UNANSWERABLE",
+        "exact_match": 1.0,
+        "f1": 1.0,
+        "unique_clusters": 2
+      },
+      "changes": {
+        "mi_reduction": 0.0,
+        "confidence_increase": 0.6,
+        "accuracy_change": 0.0,
+        "prediction_changed": false
+      }
+    },
+    {
+      "question_id": 124,
+      "question_text": "Where was Ralph earl of?",
+      "gold_answers": [
+        "Hereford",
+        "Hereford",
+        "Hereford"
+      ],
+      "original": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "Hereford",
+        "exact_match": 1.0,
+        "f1": 1.0
+      },
+      "nli_adapted": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "Hereford",
+        "exact_match": 1.0,
+        "f1": 1.0,
+        "unique_clusters": 1
+      },
+      "changes": {
+        "mi_reduction": 0.0,
+        "confidence_increase": 0.0,
+        "accuracy_change": 0.0,
+        "prediction_changed": false
+      }
+    },
+    {
+      "question_id": 125,
+      "question_text": "Who was Ralph in charge of being at war with?",
+      "gold_answers": [
+        "the Welsh",
+        "the Welsh",
+        "the Welsh"
+      ],
+      "original": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "The Welsh.",
+        "exact_match": 1.0,
+        "f1": 1.0
+      },
+      "nli_adapted": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "The Welsh.",
+        "exact_match": 1.0,
+        "f1": 1.0,
+        "unique_clusters": 1
+      },
+      "changes": {
+        "mi_reduction": 0.0,
+        "confidence_increase": 0.0,
+        "accuracy_change": 0.0,
+        "prediction_changed": false
+      }
+    },
+    {
+      "question_id": 126,
+      "question_text": "Who made Ralph earl?",
+      "gold_answers": [
+        "Edward the Confessor",
+        "Edward the Confessor",
+        "Edward the Confessor"
+      ],
+      "original": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "Edward the Confessor",
+        "exact_match": 1.0,
+        "f1": 1.0
+      },
+      "nli_adapted": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "Edward the Confessor",
+        "exact_match": 1.0,
+        "f1": 1.0,
+        "unique_clusters": 1
+      },
+      "changes": {
+        "mi_reduction": 0.0,
+        "confidence_increase": 0.0,
+        "accuracy_change": 0.0,
+        "prediction_changed": false
+      }
+    },
+    {
+      "question_id": 127,
+      "question_text": "Who came into contact with Wales after the conquest of England?",
+      "gold_answers": [],
+      "original": {
+        "mi_bits": 0.0,
+        "confidence": 0.9,
+        "predicted": "The Normans",
+        "exact_match": 0.0,
+        "f1": 0.0
+      },
+      "nli_adapted": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "The Normans.",
+        "exact_match": 0.0,
+        "f1": 0.0,
+        "unique_clusters": 3
+      },
+      "changes": {
+        "mi_reduction": 0.0,
+        "confidence_increase": 0.09999999999999998,
+        "accuracy_change": 0.0,
+        "prediction_changed": true
+      }
+    },
+    {
+      "question_id": 128,
+      "question_text": "Who made Edward the Confessor Earl?",
+      "gold_answers": [],
+      "original": {
+        "mi_bits": 0.0,
+        "confidence": 0.5,
+        "predicted": "Edward the Confessor",
+        "exact_match": 0.0,
+        "f1": 0.0
+      },
+      "nli_adapted": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "Edward the Confessor",
+        "exact_match": 0.0,
+        "f1": 0.0,
+        "unique_clusters": 1
+      },
+      "changes": {
+        "mi_reduction": 0.0,
+        "confidence_increase": 0.5,
+        "accuracy_change": 0.0,
+        "prediction_changed": false
+      }
+    },
+    {
+      "question_id": 129,
+      "question_text": "What country was under the control of Norman barons?",
+      "gold_answers": [
+        "Wales",
+        "Wales",
+        "Wales"
+      ],
+      "original": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "Wales",
+        "exact_match": 1.0,
+        "f1": 1.0
+      },
+      "nli_adapted": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "Wales",
+        "exact_match": 1.0,
+        "f1": 1.0,
+        "unique_clusters": 1
+      },
+      "changes": {
+        "mi_reduction": 0.0,
+        "confidence_increase": 0.0,
+        "accuracy_change": 0.0,
+        "prediction_changed": false
+      }
+    },
+    {
+      "question_id": 13,
+      "question_text": "Who was famed for their Christian spirit?",
+      "gold_answers": [],
+      "original": {
+        "mi_bits": 0.0,
+        "confidence": 0.6,
+        "predicted": "The Normans.",
+        "exact_match": 0.0,
+        "f1": 0.0
+      },
+      "nli_adapted": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "The Normans.",
+        "exact_match": 0.0,
+        "f1": 0.0,
+        "unique_clusters": 4
+      },
+      "changes": {
+        "mi_reduction": 0.0,
+        "confidence_increase": 0.4,
+        "accuracy_change": 0.0,
+        "prediction_changed": false
+      }
+    },
+    {
+      "question_id": 130,
+      "question_text": "What came under Williams dominace before the conquest?",
+      "gold_answers": [],
+      "original": {
+        "mi_bits": 0.0,
+        "confidence": 0.8,
+        "predicted": "UNANSWERABLE",
+        "exact_match": 1.0,
+        "f1": 1.0
+      },
+      "nli_adapted": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "UNANSWERABLE",
+        "exact_match": 1.0,
+        "f1": 1.0,
+        "unique_clusters": 3
+      },
+      "changes": {
+        "mi_reduction": 0.0,
+        "confidence_increase": 0.19999999999999996,
+        "accuracy_change": 0.0,
+        "prediction_changed": false
+      }
+    },
+    {
+      "question_id": 131,
+      "question_text": "What Welsh lords did William conquer?",
+      "gold_answers": [],
+      "original": {
+        "mi_bits": 0.0,
+        "confidence": 0.6,
+        "predicted": "UNANSWERABLE",
+        "exact_match": 1.0,
+        "f1": 1.0
+      },
+      "nli_adapted": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "UNANSWERABLE",
+        "exact_match": 1.0,
+        "f1": 1.0,
+        "unique_clusters": 5
+      },
+      "changes": {
+        "mi_reduction": 0.0,
+        "confidence_increase": 0.4,
+        "accuracy_change": 0.0,
+        "prediction_changed": false
+      }
+    },
+    {
+      "question_id": 132,
+      "question_text": "What year did Roger de Tosny fail to accomplish what he set out to do?",
+      "gold_answers": [
+        "1018",
+        "1064",
+        "1018"
+      ],
+      "original": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "1018",
+        "exact_match": 1.0,
+        "f1": 1.0
+      },
+      "nli_adapted": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "1018",
+        "exact_match": 1.0,
+        "f1": 1.0,
+        "unique_clusters": 1
+      },
+      "changes": {
+        "mi_reduction": 0.0,
+        "confidence_increase": 0.0,
+        "accuracy_change": 0.0,
+        "prediction_changed": false
+      }
+    },
+    {
+      "question_id": 133,
+      "question_text": "Who was in charge of the papal army in the War of Barbastro?",
+      "gold_answers": [
+        "William of Montreuil",
+        "William of Montreuil",
+        "William of Montreuil"
+      ],
+      "original": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "William of Montreuil",
+        "exact_match": 1.0,
+        "f1": 1.0
+      },
+      "nli_adapted": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "William of Montreuil",
+        "exact_match": 1.0,
+        "f1": 1.0,
+        "unique_clusters": 2
+      },
+      "changes": {
+        "mi_reduction": 0.0,
+        "confidence_increase": 0.0,
+        "accuracy_change": 0.0,
+        "prediction_changed": false
+      }
+    },
+    {
+      "question_id": 134,
+      "question_text": "Where did the Normans carve out a principality before the First Crusade?",
+      "gold_answers": [],
+      "original": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "Antioch",
+        "exact_match": 0.0,
+        "f1": 0.0
+      },
+      "nli_adapted": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "Antioch.",
+        "exact_match": 0.0,
+        "f1": 0.0,
+        "unique_clusters": 2
+      },
+      "changes": {
+        "mi_reduction": 0.0,
+        "confidence_increase": 0.0,
+        "accuracy_change": 0.0,
+        "prediction_changed": true
+      }
+    },
+    {
+      "question_id": 135,
+      "question_text": "What did the Normans take part in in the 10th century?",
+      "gold_answers": [],
+      "original": {
+        "mi_bits": 0.0,
+        "confidence": 0.7,
+        "predicted": "The Reconquista in Iberia.",
+        "exact_match": 0.0,
+        "f1": 0.0
+      },
+      "nli_adapted": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "The Reconquista in Iberia.",
+        "exact_match": 0.0,
+        "f1": 0.0,
+        "unique_clusters": 3
+      },
+      "changes": {
+        "mi_reduction": 0.0,
+        "confidence_increase": 0.30000000000000004,
+        "accuracy_change": 0.0,
+        "prediction_changed": false
+      }
+    },
+    {
+      "question_id": 136,
+      "question_text": "Who carved out a state for himself from Moorish lands?",
+      "gold_answers": [],
+      "original": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "Roger de Tosny.",
+        "exact_match": 0.0,
+        "f1": 0.0
+      },
+      "nli_adapted": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "Roger de Tosny",
+        "exact_match": 0.0,
+        "f1": 0.0,
+        "unique_clusters": 2
+      },
+      "changes": {
+        "mi_reduction": 0.0,
+        "confidence_increase": 0.0,
+        "accuracy_change": 0.0,
+        "prediction_changed": true
+      }
+    },
+    {
+      "question_id": 137,
+      "question_text": "What war occured in the 1oth century?",
+      "gold_answers": [],
+      "original": {
+        "mi_bits": 0.0,
+        "confidence": 0.4,
+        "predicted": "Reconquista",
+        "exact_match": 0.0,
+        "f1": 0.0
+      },
+      "nli_adapted": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "The Reconquista in Iberia occurred in the 11th century.",
+        "exact_match": 0.0,
+        "f1": 0.0,
+        "unique_clusters": 6
+      },
+      "changes": {
+        "mi_reduction": 0.0,
+        "confidence_increase": 0.6,
+        "accuracy_change": 0.0,
+        "prediction_changed": true
+      }
+    },
+    {
+      "question_id": 138,
+      "question_text": "When did the Siege of Antioch take place?",
+      "gold_answers": [
+        "1097",
+        "1097",
+        "1097"
+      ],
+      "original": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "1097",
+        "exact_match": 1.0,
+        "f1": 1.0
+      },
+      "nli_adapted": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "1097",
+        "exact_match": 1.0,
+        "f1": 1.0,
+        "unique_clusters": 1
+      },
+      "changes": {
+        "mi_reduction": 0.0,
+        "confidence_increase": 0.0,
+        "accuracy_change": 0.0,
+        "prediction_changed": false
+      }
+    },
+    {
+      "question_id": 139,
+      "question_text": "What was the name of Bohemond's nephew?",
+      "gold_answers": [
+        "Tancred",
+        "Tancred",
+        "Tancred"
+      ],
+      "original": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "Tancred",
+        "exact_match": 1.0,
+        "f1": 1.0
+      },
+      "nli_adapted": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "Tancred",
+        "exact_match": 1.0,
+        "f1": 1.0,
+        "unique_clusters": 2
+      },
+      "changes": {
+        "mi_reduction": 0.0,
+        "confidence_increase": 0.0,
+        "accuracy_change": 0.0,
+        "prediction_changed": false
+      }
+    },
+    {
+      "question_id": 14,
+      "question_text": "Who assimilted the Roman language?",
+      "gold_answers": [],
+      "original": {
+        "mi_bits": 0.0,
+        "confidence": 0.6,
+        "predicted": "The Normans.",
+        "exact_match": 0.0,
+        "f1": 0.0
+      },
+      "nli_adapted": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "The Normans.",
+        "exact_match": 0.0,
+        "f1": 0.0,
+        "unique_clusters": 5
+      },
+      "changes": {
+        "mi_reduction": 0.0,
+        "confidence_increase": 0.4,
+        "accuracy_change": 0.0,
+        "prediction_changed": false
+      }
+    },
+    {
+      "question_id": 140,
+      "question_text": "What major conquest did Tancred play a roll in?",
+      "gold_answers": [
+        "Jerusalem",
+        "Jerusalem",
+        "Jerusalem"
+      ],
+      "original": {
+        "mi_bits": 0.0,
+        "confidence": 0.8,
+        "predicted": "The conquest of Jerusalem.",
+        "exact_match": 0.0,
+        "f1": 0.5
+      },
+      "nli_adapted": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "The conquest of Jerusalem.",
+        "exact_match": 0.0,
+        "f1": 0.5,
+        "unique_clusters": 3
+      },
+      "changes": {
+        "mi_reduction": 0.0,
+        "confidence_increase": 0.19999999999999996,
+        "accuracy_change": 0.0,
+        "prediction_changed": false
+      }
+    },
+    {
+      "question_id": 141,
+      "question_text": "When did Tancred lay siege to Antioch?",
+      "gold_answers": [],
+      "original": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "UNANSWERABLE",
+        "exact_match": 1.0,
+        "f1": 1.0
+      },
+      "nli_adapted": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "UNANSWERABLE",
+        "exact_match": 1.0,
+        "f1": 1.0,
+        "unique_clusters": 1
+      },
+      "changes": {
+        "mi_reduction": 0.0,
+        "confidence_increase": 0.0,
+        "accuracy_change": 0.0,
+        "prediction_changed": false
+      }
+    },
+    {
+      "question_id": 142,
+      "question_text": "What was the name of Tancred's nephew?",
+      "gold_answers": [],
+      "original": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "Bohemond",
+        "exact_match": 0.0,
+        "f1": 0.0
+      },
+      "nli_adapted": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "Bohemond",
+        "exact_match": 0.0,
+        "f1": 0.0,
+        "unique_clusters": 2
+      },
+      "changes": {
+        "mi_reduction": 0.0,
+        "confidence_increase": 0.0,
+        "accuracy_change": 0.0,
+        "prediction_changed": false
+      }
+    },
+    {
+      "question_id": 143,
+      "question_text": "How long did Western Europe control Cyprus?",
+      "gold_answers": [
+        "380 years",
+        "380 years",
+        "380 years"
+      ],
+      "original": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "380 years.",
+        "exact_match": 1.0,
+        "f1": 1.0
+      },
+      "nli_adapted": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "380 years",
+        "exact_match": 1.0,
+        "f1": 1.0,
+        "unique_clusters": 2
+      },
+      "changes": {
+        "mi_reduction": 0.0,
+        "confidence_increase": 0.0,
+        "accuracy_change": 0.0,
+        "prediction_changed": true
+      }
+    },
+    {
+      "question_id": 144,
+      "question_text": "Who defeated Anglo-Norman forces during the third Crusade?",
+      "gold_answers": [],
+      "original": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "UNANSWERABLE",
+        "exact_match": 1.0,
+        "f1": 1.0
+      },
+      "nli_adapted": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "UNANSWERABLE",
+        "exact_match": 1.0,
+        "f1": 1.0,
+        "unique_clusters": 1
+      },
+      "changes": {
+        "mi_reduction": 0.0,
+        "confidence_increase": 0.0,
+        "accuracy_change": 0.0,
+        "prediction_changed": false
+      }
+    },
+    {
+      "question_id": 145,
+      "question_text": "Who dominated Western Europe for 380 years?",
+      "gold_answers": [],
+      "original": {
+        "mi_bits": 0.0,
+        "confidence": 0.6,
+        "predicted": "The Anglo-Normans.",
+        "exact_match": 0.0,
+        "f1": 0.0
+      },
+      "nli_adapted": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "The Anglo-Normans.",
+        "exact_match": 0.0,
+        "f1": 0.0,
+        "unique_clusters": 5
+      },
+      "changes": {
+        "mi_reduction": 0.0,
+        "confidence_increase": 0.4,
+        "accuracy_change": 0.0,
+        "prediction_changed": false
+      }
+    },
+    {
+      "question_id": 146,
+      "question_text": "What ruined Richard's plans to reach Acre?",
+      "gold_answers": [
+        "a storm",
+        "a storm",
+        "a storm"
+      ],
+      "original": {
+        "mi_bits": 0.0,
+        "confidence": 0.8,
+        "predicted": "A storm.",
+        "exact_match": 1.0,
+        "f1": 1.0
+      },
+      "nli_adapted": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "A storm.",
+        "exact_match": 1.0,
+        "f1": 1.0,
+        "unique_clusters": 3
+      },
+      "changes": {
+        "mi_reduction": 0.0,
+        "confidence_increase": 0.19999999999999996,
+        "accuracy_change": 0.0,
+        "prediction_changed": false
+      }
+    },
+    {
+      "question_id": 147,
+      "question_text": "Who was Richard's fiancee?",
+      "gold_answers": [
+        "Berengaria",
+        "Berengaria",
+        "Berengaria"
+      ],
+      "original": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "Berengaria",
+        "exact_match": 1.0,
+        "f1": 1.0
+      },
+      "nli_adapted": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "Berengaria",
+        "exact_match": 1.0,
+        "f1": 1.0,
+        "unique_clusters": 1
+      },
+      "changes": {
+        "mi_reduction": 0.0,
+        "confidence_increase": 0.0,
+        "accuracy_change": 0.0,
+        "prediction_changed": false
+      }
+    },
+    {
+      "question_id": 148,
+      "question_text": "What year did the storm hit Richard's fleet?",
+      "gold_answers": [
+        "1191",
+        "1191",
+        "1191"
+      ],
+      "original": {
+        "mi_bits": 0.0,
+        "confidence": 0.9,
+        "predicted": "1191",
+        "exact_match": 1.0,
+        "f1": 1.0
+      },
+      "nli_adapted": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "1191",
+        "exact_match": 1.0,
+        "f1": 1.0,
+        "unique_clusters": 2
+      },
+      "changes": {
+        "mi_reduction": 0.0,
+        "confidence_increase": 0.09999999999999998,
+        "accuracy_change": 0.0,
+        "prediction_changed": false
+      }
+    },
+    {
+      "question_id": 149,
+      "question_text": "Who ruled Cyprus in 1191?",
+      "gold_answers": [
+        "Isaac Komnenos",
+        "Isaac",
+        "Isaac Komnenos"
+      ],
+      "original": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "Isaac Komnenos",
+        "exact_match": 1.0,
+        "f1": 1.0
+      },
+      "nli_adapted": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "Isaac Komnenos",
+        "exact_match": 1.0,
+        "f1": 1.0,
+        "unique_clusters": 2
+      },
+      "changes": {
+        "mi_reduction": 0.0,
+        "confidence_increase": 0.0,
+        "accuracy_change": 0.0,
+        "prediction_changed": false
+      }
+    },
+    {
+      "question_id": 15,
+      "question_text": "Who ruled the country of Normandy?",
+      "gold_answers": [],
+      "original": {
+        "mi_bits": 0.0,
+        "confidence": 0.9,
+        "predicted": "Richard I of Normandy",
+        "exact_match": 0.0,
+        "f1": 0.0
+      },
+      "nli_adapted": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "Richard I of Normandy",
+        "exact_match": 0.0,
+        "f1": 0.0,
+        "unique_clusters": 3
+      },
+      "changes": {
+        "mi_reduction": 0.0,
+        "confidence_increase": 0.09999999999999998,
+        "accuracy_change": 0.0,
+        "prediction_changed": false
+      }
+    },
+    {
+      "question_id": 150,
+      "question_text": "Who left Messina in the 11th century?",
+      "gold_answers": [],
+      "original": {
+        "mi_bits": 0.0,
+        "confidence": 0.6,
+        "predicted": "Richard the Lion-hearted",
+        "exact_match": 0.0,
+        "f1": 0.0
+      },
+      "nli_adapted": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "Richard the Lion-hearted",
+        "exact_match": 0.0,
+        "f1": 0.0,
+        "unique_clusters": 2
+      },
+      "changes": {
+        "mi_reduction": 0.0,
+        "confidence_increase": 0.4,
+        "accuracy_change": 0.0,
+        "prediction_changed": false
+      }
+    },
+    {
+      "question_id": 151,
+      "question_text": "What year did Richards fleet avoid a storm?",
+      "gold_answers": [],
+      "original": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "1191",
+        "exact_match": 0.0,
+        "f1": 0.0
+      },
+      "nli_adapted": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "1191",
+        "exact_match": 0.0,
+        "f1": 0.0,
+        "unique_clusters": 1
+      },
+      "changes": {
+        "mi_reduction": 0.0,
+        "confidence_increase": 0.0,
+        "accuracy_change": 0.0,
+        "prediction_changed": false
+      }
+    },
+    {
+      "question_id": 152,
+      "question_text": "Who ruled Cyprus in the 11th century?",
+      "gold_answers": [],
+      "original": {
+        "mi_bits": 0.0,
+        "confidence": 0.6,
+        "predicted": "UNANSWERABLE",
+        "exact_match": 1.0,
+        "f1": 1.0
+      },
+      "nli_adapted": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "UNANSWERABLE",
+        "exact_match": 1.0,
+        "f1": 1.0,
+        "unique_clusters": 3
+      },
+      "changes": {
+        "mi_reduction": 0.0,
+        "confidence_increase": 0.4,
+        "accuracy_change": 0.0,
+        "prediction_changed": false
+      }
+    },
+    {
+      "question_id": 153,
+      "question_text": "Who was Guy's Rival?",
+      "gold_answers": [
+        "Conrad of Montferrat",
+        "Conrad of Montferrat",
+        "Conrad of Montferrat"
+      ],
+      "original": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "Conrad of Montferrat.",
+        "exact_match": 1.0,
+        "f1": 1.0
+      },
+      "nli_adapted": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "Conrad of Montferrat.",
+        "exact_match": 1.0,
+        "f1": 1.0,
+        "unique_clusters": 2
+      },
+      "changes": {
+        "mi_reduction": 0.0,
+        "confidence_increase": 0.0,
+        "accuracy_change": 0.0,
+        "prediction_changed": false
+      }
+    },
+    {
+      "question_id": 154,
+      "question_text": "What were Isaac's chains made out of?",
+      "gold_answers": [
+        "silver",
+        "silver",
+        "silver"
+      ],
+      "original": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "silver",
+        "exact_match": 1.0,
+        "f1": 1.0
+      },
+      "nli_adapted": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "silver",
+        "exact_match": 1.0,
+        "f1": 1.0,
+        "unique_clusters": 1
+      },
+      "changes": {
+        "mi_reduction": 0.0,
+        "confidence_increase": 0.0,
+        "accuracy_change": 0.0,
+        "prediction_changed": false
+      }
+    },
+    {
+      "question_id": 155,
+      "question_text": "Who led Richard's troops when Cyprus was conquered?",
+      "gold_answers": [
+        "Guy de Lusignan",
+        "Guy de Lusignan",
+        "Guy de Lusignan"
+      ],
+      "original": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "Guy de Lusignan.",
+        "exact_match": 1.0,
+        "f1": 1.0
+      },
+      "nli_adapted": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "Guy de Lusignan.",
+        "exact_match": 1.0,
+        "f1": 1.0,
+        "unique_clusters": 2
+      },
+      "changes": {
+        "mi_reduction": 0.0,
+        "confidence_increase": 0.0,
+        "accuracy_change": 0.0,
+        "prediction_changed": false
+      }
+    },
+    {
+      "question_id": 156,
+      "question_text": "Who's chains were made out of copper?",
+      "gold_answers": [],
+      "original": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "UNANSWERABLE",
+        "exact_match": 1.0,
+        "f1": 1.0
+      },
+      "nli_adapted": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "UNANSWERABLE",
+        "exact_match": 1.0,
+        "f1": 1.0,
+        "unique_clusters": 1
+      },
+      "changes": {
+        "mi_reduction": 0.0,
+        "confidence_increase": 0.0,
+        "accuracy_change": 0.0,
+        "prediction_changed": false
+      }
+    },
+    {
+      "question_id": 157,
+      "question_text": "Who led Issacs troops to Cyprus?",
+      "gold_answers": [],
+      "original": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "UNANSWERABLE",
+        "exact_match": 1.0,
+        "f1": 1.0
+      },
+      "nli_adapted": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "UNANSWERABLE",
+        "exact_match": 1.0,
+        "f1": 1.0,
+        "unique_clusters": 1
+      },
+      "changes": {
+        "mi_reduction": 0.0,
+        "confidence_increase": 0.0,
+        "accuracy_change": 0.0,
+        "prediction_changed": false
+      }
+    },
+    {
+      "question_id": 158,
+      "question_text": "Who offered Issac his daughter?",
+      "gold_answers": [],
+      "original": {
+        "mi_bits": 0.0,
+        "confidence": 0.7,
+        "predicted": "Richard",
+        "exact_match": 0.0,
+        "f1": 0.0
+      },
+      "nli_adapted": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "Isaac.",
+        "exact_match": 0.0,
+        "f1": 0.0,
+        "unique_clusters": 2
+      },
+      "changes": {
+        "mi_reduction": 0.0,
+        "confidence_increase": 0.30000000000000004,
+        "accuracy_change": 0.0,
+        "prediction_changed": true
+      }
+    },
+    {
+      "question_id": 159,
+      "question_text": "What continent are the Canarian Islands off the coast of?",
+      "gold_answers": [
+        "Africa",
+        "Africa",
+        "Africa"
+      ],
+      "original": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "Africa",
+        "exact_match": 1.0,
+        "f1": 1.0
+      },
+      "nli_adapted": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "Africa",
+        "exact_match": 1.0,
+        "f1": 1.0,
+        "unique_clusters": 2
+      },
+      "changes": {
+        "mi_reduction": 0.0,
+        "confidence_increase": 0.0,
+        "accuracy_change": 0.0,
+        "prediction_changed": false
+      }
+    },
+    {
+      "question_id": 16,
+      "question_text": "What principality did William the conquerer found?",
+      "gold_answers": [],
+      "original": {
+        "mi_bits": 0.0,
+        "confidence": 0.6,
+        "predicted": "UNANSWERABLE",
+        "exact_match": 1.0,
+        "f1": 1.0
+      },
+      "nli_adapted": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "UNANSWERABLE",
+        "exact_match": 1.0,
+        "f1": 1.0,
+        "unique_clusters": 3
+      },
+      "changes": {
+        "mi_reduction": 0.0,
+        "confidence_increase": 0.4,
+        "accuracy_change": 0.0,
+        "prediction_changed": false
+      }
+    },
+    {
+      "question_id": 160,
+      "question_text": "Who conquered the Canary Island in the 14th century?",
+      "gold_answers": [],
+      "original": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "Jean de Bethencourt and Gadifer de la Salle",
+        "exact_match": 0.0,
+        "f1": 0.0
+      },
+      "nli_adapted": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "Jean de Bethencourt and Gadifer de la Salle.",
+        "exact_match": 0.0,
+        "f1": 0.0,
+        "unique_clusters": 2
+      },
+      "changes": {
+        "mi_reduction": 0.0,
+        "confidence_increase": 0.0,
+        "accuracy_change": 0.0,
+        "prediction_changed": true
+      }
+    },
+    {
+      "question_id": 161,
+      "question_text": "What Islands are of the coast of Asia?",
+      "gold_answers": [],
+      "original": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "UNANSWERABLE",
+        "exact_match": 1.0,
+        "f1": 1.0
+      },
+      "nli_adapted": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "UNANSWERABLE",
+        "exact_match": 1.0,
+        "f1": 1.0,
+        "unique_clusters": 1
+      },
+      "changes": {
+        "mi_reduction": 0.0,
+        "confidence_increase": 0.0,
+        "accuracy_change": 0.0,
+        "prediction_changed": false
+      }
+    },
+    {
+      "question_id": 162,
+      "question_text": "Who became the King of the Canary Islands?",
+      "gold_answers": [
+        "Bethencourt",
+        "Bethencourt",
+        "Bethencourt"
+      ],
+      "original": {
+        "mi_bits": 0.0,
+        "confidence": 0.6,
+        "predicted": "Bethencourt",
+        "exact_match": 1.0,
+        "f1": 1.0
+      },
+      "nli_adapted": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "Bethencourt",
+        "exact_match": 1.0,
+        "f1": 1.0,
+        "unique_clusters": 4
+      },
+      "changes": {
+        "mi_reduction": 0.0,
+        "confidence_increase": 0.4,
+        "accuracy_change": 0.0,
+        "prediction_changed": false
+      }
+    },
+    {
+      "question_id": 163,
+      "question_text": "Who bought the rights?",
+      "gold_answers": [
+        "Enrique P\u00e9rez de Guzm\u00e1n",
+        "Enrique P\u00e9rez de Guzm\u00e1n",
+        "Enrique P\u00e9rez de Guzm\u00e1n"
+      ],
+      "original": {
+        "mi_bits": 0.0,
+        "confidence": 0.9,
+        "predicted": "Enrique P\u00e9rez de Guzm\u00e1n, 2nd Count de Niebla.",
+        "exact_match": 0.0,
+        "f1": 0.6666666666666666
+      },
+      "nli_adapted": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "Enrique P\u00e9rez de Guzm\u00e1n, 2nd Count de Niebla.",
+        "exact_match": 0.0,
+        "f1": 0.6666666666666666,
+        "unique_clusters": 2
+      },
+      "changes": {
+        "mi_reduction": 0.0,
+        "confidence_increase": 0.09999999999999998,
+        "accuracy_change": 0.0,
+        "prediction_changed": false
+      }
+    },
+    {
+      "question_id": 164,
+      "question_text": "Who sold the rights?",
+      "gold_answers": [
+        "Maciot de Bethencourt",
+        "Maciot de Bethencourt",
+        "Maciot de Bethencourt"
+      ],
+      "original": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "Maciot de Bethencourt",
+        "exact_match": 1.0,
+        "f1": 1.0
+      },
+      "nli_adapted": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "Maciot de Bethencourt",
+        "exact_match": 1.0,
+        "f1": 1.0,
+        "unique_clusters": 1
+      },
+      "changes": {
+        "mi_reduction": 0.0,
+        "confidence_increase": 0.0,
+        "accuracy_change": 0.0,
+        "prediction_changed": false
+      }
+    },
+    {
+      "question_id": 165,
+      "question_text": "What title did Henry II take in the Canary Island?",
+      "gold_answers": [],
+      "original": {
+        "mi_bits": 0.0,
+        "confidence": 0.3,
+        "predicted": "King",
+        "exact_match": 0.0,
+        "f1": 0.0
+      },
+      "nli_adapted": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "Vassal",
+        "exact_match": 0.0,
+        "f1": 0.0,
+        "unique_clusters": 4
+      },
+      "changes": {
+        "mi_reduction": 0.0,
+        "confidence_increase": 0.7,
+        "accuracy_change": 0.0,
+        "prediction_changed": true
+      }
+    },
+    {
+      "question_id": 166,
+      "question_text": "Who sold the rights to the island in the 14th century?",
+      "gold_answers": [],
+      "original": {
+        "mi_bits": 0.0,
+        "confidence": 0.5,
+        "predicted": "Jean's nephew Maciot de Bethencourt.",
+        "exact_match": 0.0,
+        "f1": 0.0
+      },
+      "nli_adapted": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "Jean's nephew Maciot de Bethencourt",
+        "exact_match": 0.0,
+        "f1": 0.0,
+        "unique_clusters": 4
+      },
+      "changes": {
+        "mi_reduction": 0.0,
+        "confidence_increase": 0.5,
+        "accuracy_change": 0.0,
+        "prediction_changed": true
+      }
+    },
+    {
+      "question_id": 167,
+      "question_text": "Where are Jersey and Guernsey",
+      "gold_answers": [
+        "Channel Islands",
+        "the Channel Islands",
+        "the Channel Islands"
+      ],
+      "original": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "The Channel Islands.",
+        "exact_match": 1.0,
+        "f1": 1.0
+      },
+      "nli_adapted": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "The Channel Islands.",
+        "exact_match": 1.0,
+        "f1": 1.0,
+        "unique_clusters": 1
+      },
+      "changes": {
+        "mi_reduction": 0.0,
+        "confidence_increase": 0.0,
+        "accuracy_change": 0.0,
+        "prediction_changed": false
+      }
+    },
+    {
+      "question_id": 168,
+      "question_text": "How many customaries does Norman customary law have?",
+      "gold_answers": [
+        "two",
+        "two",
+        "two"
+      ],
+      "original": {
+        "mi_bits": 0.0,
+        "confidence": 0.5,
+        "predicted": "2",
+        "exact_match": 0.0,
+        "f1": 0.0
+      },
+      "nli_adapted": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "2",
+        "exact_match": 0.0,
+        "f1": 0.0,
+        "unique_clusters": 3
+      },
+      "changes": {
+        "mi_reduction": 0.0,
+        "confidence_increase": 0.5,
+        "accuracy_change": 0.0,
+        "prediction_changed": false
+      }
+    },
+    {
+      "question_id": 169,
+      "question_text": "What Norman law wasdeveloped between 1000 and 1300?",
+      "gold_answers": [],
+      "original": {
+        "mi_bits": 0.0,
+        "confidence": 0.3,
+        "predicted": "Norman customary law",
+        "exact_match": 0.0,
+        "f1": 0.0
+      },
+      "nli_adapted": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "The customary law of Normandy.",
+        "exact_match": 0.0,
+        "f1": 0.0,
+        "unique_clusters": 6
+      },
+      "changes": {
+        "mi_reduction": 0.0,
+        "confidence_increase": 0.7,
+        "accuracy_change": 0.0,
+        "prediction_changed": true
+      }
+    },
+    {
+      "question_id": 17,
+      "question_text": "What is the original meaning of the word Norman?",
+      "gold_answers": [
+        "Viking",
+        "Norseman, Viking",
+        "Norseman, Viking"
+      ],
+      "original": {
+        "mi_bits": 0.0,
+        "confidence": 0.4,
+        "predicted": "Norseman, Viking.",
+        "exact_match": 1.0,
+        "f1": 1.0
+      },
+      "nli_adapted": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "Northman",
+        "exact_match": 0.0,
+        "f1": 0.0,
+        "unique_clusters": 6
+      },
+      "changes": {
+        "mi_reduction": 0.0,
+        "confidence_increase": 0.6,
+        "accuracy_change": -1.0,
+        "prediction_changed": true
+      }
+    },
+    {
+      "question_id": 170,
+      "question_text": "What law has 3 customeries?",
+      "gold_answers": [],
+      "original": {
+        "mi_bits": 0.0,
+        "confidence": 0.6,
+        "predicted": "UNANSWERABLE",
+        "exact_match": 1.0,
+        "f1": 1.0
+      },
+      "nli_adapted": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "UNANSWERABLE",
+        "exact_match": 1.0,
+        "f1": 1.0,
+        "unique_clusters": 3
+      },
+      "changes": {
+        "mi_reduction": 0.0,
+        "confidence_increase": 0.4,
+        "accuracy_change": 0.0,
+        "prediction_changed": false
+      }
+    },
+    {
+      "question_id": 171,
+      "question_text": "What was authored in the 12th century?",
+      "gold_answers": [],
+      "original": {
+        "mi_bits": 0.0,
+        "confidence": 0.7,
+        "predicted": "The Tr\u00e8s ancien coutumier.",
+        "exact_match": 0.0,
+        "f1": 0.0
+      },
+      "nli_adapted": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "The Tr\u00e8s ancien coutumier.",
+        "exact_match": 0.0,
+        "f1": 0.0,
+        "unique_clusters": 4
+      },
+      "changes": {
+        "mi_reduction": 0.0,
+        "confidence_increase": 0.30000000000000004,
+        "accuracy_change": 0.0,
+        "prediction_changed": false
+      }
+    },
+    {
+      "question_id": 172,
+      "question_text": "What is the Norman architecture idiom?",
+      "gold_answers": [
+        "Romanesque",
+        "Romanesque",
+        "Romanesque"
+      ],
+      "original": {
+        "mi_bits": 0.0,
+        "confidence": 0.7,
+        "predicted": "Romanesque",
+        "exact_match": 1.0,
+        "f1": 1.0
+      },
+      "nli_adapted": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "Romanesque",
+        "exact_match": 1.0,
+        "f1": 1.0,
+        "unique_clusters": 4
+      },
+      "changes": {
+        "mi_reduction": 0.0,
+        "confidence_increase": 0.30000000000000004,
+        "accuracy_change": 0.0,
+        "prediction_changed": false
+      }
+    },
+    {
+      "question_id": 173,
+      "question_text": "What kind of arches does Norman architecture have?",
+      "gold_answers": [
+        "rounded",
+        "rounded",
+        "rounded"
+      ],
+      "original": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "Rounded arches.",
+        "exact_match": 0.0,
+        "f1": 0.6666666666666666
+      },
+      "nli_adapted": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "Rounded arches.",
+        "exact_match": 0.0,
+        "f1": 0.6666666666666666,
+        "unique_clusters": 1
+      },
+      "changes": {
+        "mi_reduction": 0.0,
+        "confidence_increase": 0.0,
+        "accuracy_change": 0.0,
+        "prediction_changed": false
+      }
+    },
+    {
+      "question_id": 174,
+      "question_text": "What type of arch did the Normans invent?",
+      "gold_answers": [],
+      "original": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "Rounded arches.",
+        "exact_match": 0.0,
+        "f1": 0.0
+      },
+      "nli_adapted": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "Rounded arches.",
+        "exact_match": 0.0,
+        "f1": 0.0,
+        "unique_clusters": 1
+      },
+      "changes": {
+        "mi_reduction": 0.0,
+        "confidence_increase": 0.0,
+        "accuracy_change": 0.0,
+        "prediction_changed": false
+      }
+    },
+    {
+      "question_id": 175,
+      "question_text": "What architecture type came after Norman in England?",
+      "gold_answers": [
+        "Early Gothic",
+        "Early Gothic",
+        "Early Gothic"
+      ],
+      "original": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "Early Gothic.",
+        "exact_match": 1.0,
+        "f1": 1.0
+      },
+      "nli_adapted": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "Early Gothic.",
+        "exact_match": 1.0,
+        "f1": 1.0,
+        "unique_clusters": 2
+      },
+      "changes": {
+        "mi_reduction": 0.0,
+        "confidence_increase": 0.0,
+        "accuracy_change": 0.0,
+        "prediction_changed": false
+      }
+    },
+    {
+      "question_id": 176,
+      "question_text": "What architecture type came before Norman in England?",
+      "gold_answers": [
+        "Anglo-Saxon",
+        "Anglo-Saxon",
+        "Anglo-Saxon"
+      ],
+      "original": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "Anglo-Saxon",
+        "exact_match": 1.0,
+        "f1": 1.0
+      },
+      "nli_adapted": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "Anglo-Saxon.",
+        "exact_match": 1.0,
+        "f1": 1.0,
+        "unique_clusters": 2
+      },
+      "changes": {
+        "mi_reduction": 0.0,
+        "confidence_increase": 0.0,
+        "accuracy_change": 0.0,
+        "prediction_changed": true
+      }
+    },
+    {
+      "question_id": 177,
+      "question_text": "What place had the Norman Arab architectural style?",
+      "gold_answers": [
+        "Sicily",
+        "Sicily",
+        "Kingdom of Sicily"
+      ],
+      "original": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "The Kingdom of Sicily.",
+        "exact_match": 1.0,
+        "f1": 1.0
+      },
+      "nli_adapted": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "The Kingdom of Sicily.",
+        "exact_match": 1.0,
+        "f1": 1.0,
+        "unique_clusters": 1
+      },
+      "changes": {
+        "mi_reduction": 0.0,
+        "confidence_increase": 0.0,
+        "accuracy_change": 0.0,
+        "prediction_changed": false
+      }
+    },
+    {
+      "question_id": 178,
+      "question_text": "What precedes the period of Anglo-Saxon architecture?",
+      "gold_answers": [],
+      "original": {
+        "mi_bits": 0.0,
+        "confidence": 0.9,
+        "predicted": "UNANSWERABLE",
+        "exact_match": 1.0,
+        "f1": 1.0
+      },
+      "nli_adapted": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "UNANSWERABLE",
+        "exact_match": 1.0,
+        "f1": 1.0,
+        "unique_clusters": 2
+      },
+      "changes": {
+        "mi_reduction": 0.0,
+        "confidence_increase": 0.09999999999999998,
+        "accuracy_change": 0.0,
+        "prediction_changed": false
+      }
+    },
+    {
+      "question_id": 179,
+      "question_text": "What architecture type came after Early Gothic?",
+      "gold_answers": [],
+      "original": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "UNANSWERABLE",
+        "exact_match": 1.0,
+        "f1": 1.0
+      },
+      "nli_adapted": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "UNANSWERABLE",
+        "exact_match": 1.0,
+        "f1": 1.0,
+        "unique_clusters": 1
+      },
+      "changes": {
+        "mi_reduction": 0.0,
+        "confidence_increase": 0.0,
+        "accuracy_change": 0.0,
+        "prediction_changed": false
+      }
+    },
+    {
+      "question_id": 18,
+      "question_text": "When was the Latin version of the word Norman first recorded?",
+      "gold_answers": [
+        "9th century",
+        "9th century",
+        "9th century"
+      ],
+      "original": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "9th century",
+        "exact_match": 1.0,
+        "f1": 1.0
+      },
+      "nli_adapted": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "9th century",
+        "exact_match": 1.0,
+        "f1": 1.0,
+        "unique_clusters": 2
+      },
+      "changes": {
+        "mi_reduction": 0.0,
+        "confidence_increase": 0.0,
+        "accuracy_change": 0.0,
+        "prediction_changed": false
+      }
+    },
+    {
+      "question_id": 180,
+      "question_text": "Who incorperated Islamic, LOmbard, and Byzantine building techniques in England?",
+      "gold_answers": [],
+      "original": {
+        "mi_bits": 0.0,
+        "confidence": 0.8,
+        "predicted": "UNANSWERABLE",
+        "exact_match": 1.0,
+        "f1": 1.0
+      },
+      "nli_adapted": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "UNANSWERABLE",
+        "exact_match": 1.0,
+        "f1": 1.0,
+        "unique_clusters": 2
+      },
+      "changes": {
+        "mi_reduction": 0.0,
+        "confidence_increase": 0.19999999999999996,
+        "accuracy_change": 0.0,
+        "prediction_changed": false
+      }
+    },
+    {
+      "question_id": 181,
+      "question_text": "When did the church reform begin?",
+      "gold_answers": [
+        "early 11th century",
+        "11th century",
+        "in the early 11th century"
+      ],
+      "original": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "The early 11th century.",
+        "exact_match": 1.0,
+        "f1": 1.0
+      },
+      "nli_adapted": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "The early 11th century.",
+        "exact_match": 1.0,
+        "f1": 1.0,
+        "unique_clusters": 1
+      },
+      "changes": {
+        "mi_reduction": 0.0,
+        "confidence_increase": 0.0,
+        "accuracy_change": 0.0,
+        "prediction_changed": false
+      }
+    },
+    {
+      "question_id": 182,
+      "question_text": "Who used the church to unify themselves?",
+      "gold_answers": [
+        "dukes",
+        "the dukes",
+        "dukes"
+      ],
+      "original": {
+        "mi_bits": 0.0,
+        "confidence": 0.7,
+        "predicted": "The dukes.",
+        "exact_match": 1.0,
+        "f1": 1.0
+      },
+      "nli_adapted": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "The dukes.",
+        "exact_match": 1.0,
+        "f1": 1.0,
+        "unique_clusters": 1
+      },
+      "changes": {
+        "mi_reduction": 0.0,
+        "confidence_increase": 0.30000000000000004,
+        "accuracy_change": 0.0,
+        "prediction_changed": false
+      }
+    },
+    {
+      "question_id": 183,
+      "question_text": "What kind of art did the Normans have a rich tradition of?",
+      "gold_answers": [],
+      "original": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "UNANSWERABLE",
+        "exact_match": 1.0,
+        "f1": 1.0
+      },
+      "nli_adapted": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "UNANSWERABLE",
+        "exact_match": 1.0,
+        "f1": 1.0,
+        "unique_clusters": 1
+      },
+      "changes": {
+        "mi_reduction": 0.0,
+        "confidence_increase": 0.0,
+        "accuracy_change": 0.0,
+        "prediction_changed": false
+      }
+    },
+    {
+      "question_id": 184,
+      "question_text": "Who began a program of church reform in the 1100s",
+      "gold_answers": [],
+      "original": {
+        "mi_bits": 0.0,
+        "confidence": 0.7,
+        "predicted": "The dukes.",
+        "exact_match": 0.0,
+        "f1": 0.0
+      },
+      "nli_adapted": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "The dukes.",
+        "exact_match": 0.0,
+        "f1": 0.0,
+        "unique_clusters": 1
+      },
+      "changes": {
+        "mi_reduction": 0.0,
+        "confidence_increase": 0.30000000000000004,
+        "accuracy_change": 0.0,
+        "prediction_changed": false
+      }
+    },
+    {
+      "question_id": 185,
+      "question_text": "Who was divided by the church?",
+      "gold_answers": [],
+      "original": {
+        "mi_bits": 0.0,
+        "confidence": 0.5,
+        "predicted": "The dukes.",
+        "exact_match": 0.0,
+        "f1": 0.0
+      },
+      "nli_adapted": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "The dukes.",
+        "exact_match": 0.0,
+        "f1": 0.0,
+        "unique_clusters": 3
+      },
+      "changes": {
+        "mi_reduction": 0.0,
+        "confidence_increase": 0.5,
+        "accuracy_change": 0.0,
+        "prediction_changed": false
+      }
+    },
+    {
+      "question_id": 186,
+      "question_text": "Who experienced aa golden age in the 1100s and 1200s",
+      "gold_answers": [],
+      "original": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "Normandy",
+        "exact_match": 0.0,
+        "f1": 0.0
+      },
+      "nli_adapted": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "Normandy",
+        "exact_match": 0.0,
+        "f1": 0.0,
+        "unique_clusters": 2
+      },
+      "changes": {
+        "mi_reduction": 0.0,
+        "confidence_increase": 0.0,
+        "accuracy_change": 0.0,
+        "prediction_changed": false
+      }
+    },
+    {
+      "question_id": 187,
+      "question_text": "When were the French wars of religion?",
+      "gold_answers": [
+        "16th century",
+        "the 16th century",
+        "in the 16th century"
+      ],
+      "original": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "The 16th century.",
+        "exact_match": 1.0,
+        "f1": 1.0
+      },
+      "nli_adapted": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "The 16th century.",
+        "exact_match": 1.0,
+        "f1": 1.0,
+        "unique_clusters": 3
+      },
+      "changes": {
+        "mi_reduction": 0.0,
+        "confidence_increase": 0.0,
+        "accuracy_change": 0.0,
+        "prediction_changed": false
+      }
+    },
+    {
+      "question_id": 188,
+      "question_text": "What wars did France fight in the 1600s?",
+      "gold_answers": [],
+      "original": {
+        "mi_bits": 0.0,
+        "confidence": 0.8,
+        "predicted": "The French Wars of Religion.",
+        "exact_match": 0.0,
+        "f1": 0.0
+      },
+      "nli_adapted": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "The French Wars of Religion.",
+        "exact_match": 0.0,
+        "f1": 0.0,
+        "unique_clusters": 4
+      },
+      "changes": {
+        "mi_reduction": 0.0,
+        "confidence_increase": 0.19999999999999996,
+        "accuracy_change": 0.0,
+        "prediction_changed": false
+      }
+    },
+    {
+      "question_id": 189,
+      "question_text": "What revolution was fought in the 1899's?",
+      "gold_answers": [],
+      "original": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "UNANSWERABLE",
+        "exact_match": 1.0,
+        "f1": 1.0
+      },
+      "nli_adapted": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "UNANSWERABLE",
+        "exact_match": 1.0,
+        "f1": 1.0,
+        "unique_clusters": 1
+      },
+      "changes": {
+        "mi_reduction": 0.0,
+        "confidence_increase": 0.0,
+        "accuracy_change": 0.0,
+        "prediction_changed": false
+      }
+    },
+    {
+      "question_id": 19,
+      "question_text": "What name comes from the English words Normans/Normanz?",
+      "gold_answers": [],
+      "original": {
+        "mi_bits": 0.0,
+        "confidence": 0.8,
+        "predicted": "Normans/Normanz",
+        "exact_match": 0.0,
+        "f1": 0.0
+      },
+      "nli_adapted": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "Normans/Normanz",
+        "exact_match": 0.0,
+        "f1": 0.0,
+        "unique_clusters": 3
+      },
+      "changes": {
+        "mi_reduction": 0.0,
+        "confidence_increase": 0.19999999999999996,
+        "accuracy_change": 0.0,
+        "prediction_changed": false
+      }
+    },
+    {
+      "question_id": 190,
+      "question_text": "What kind of needlework was used in the creation of the Bayeux Tapestry?",
+      "gold_answers": [
+        "embroidery",
+        "embroidery",
+        "embroidery"
+      ],
+      "original": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "Embroidery.",
+        "exact_match": 1.0,
+        "f1": 1.0
+      },
+      "nli_adapted": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "Embroidery.",
+        "exact_match": 1.0,
+        "f1": 1.0,
+        "unique_clusters": 2
+      },
+      "changes": {
+        "mi_reduction": 0.0,
+        "confidence_increase": 0.0,
+        "accuracy_change": 0.0,
+        "prediction_changed": false
+      }
+    },
+    {
+      "question_id": 191,
+      "question_text": "What is Norman art's most well known piece?",
+      "gold_answers": [
+        "Bayeux Tapestry",
+        "the Bayeux Tapestry",
+        "the Bayeux Tapestry"
+      ],
+      "original": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "The Bayeux Tapestry.",
+        "exact_match": 1.0,
+        "f1": 1.0
+      },
+      "nli_adapted": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "The Bayeux Tapestry.",
+        "exact_match": 1.0,
+        "f1": 1.0,
+        "unique_clusters": 1
+      },
+      "changes": {
+        "mi_reduction": 0.0,
+        "confidence_increase": 0.0,
+        "accuracy_change": 0.0,
+        "prediction_changed": false
+      }
+    },
+    {
+      "question_id": 192,
+      "question_text": "Who commissioned the Tapestry?",
+      "gold_answers": [
+        "Odo",
+        "Odo",
+        "Odo"
+      ],
+      "original": {
+        "mi_bits": 0.0,
+        "confidence": 0.9,
+        "predicted": "Odo, the Bishop of Bayeux and first Earl of Kent.",
+        "exact_match": 0.0,
+        "f1": 0.19999999999999998
+      },
+      "nli_adapted": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "Odo, the Bishop of Bayeux and first Earl of Kent.",
+        "exact_match": 0.0,
+        "f1": 0.19999999999999998,
+        "unique_clusters": 2
+      },
+      "changes": {
+        "mi_reduction": 0.0,
+        "confidence_increase": 0.09999999999999998,
+        "accuracy_change": 0.0,
+        "prediction_changed": false
+      }
+    },
+    {
+      "question_id": 193,
+      "question_text": "What is the oldest work of Norman art?",
+      "gold_answers": [],
+      "original": {
+        "mi_bits": 0.0,
+        "confidence": 0.7,
+        "predicted": "The Bayeux Tapestry.",
+        "exact_match": 0.0,
+        "f1": 0.0
+      },
+      "nli_adapted": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "The Bayeux Tapestry.",
+        "exact_match": 0.0,
+        "f1": 0.0,
+        "unique_clusters": 2
+      },
+      "changes": {
+        "mi_reduction": 0.0,
+        "confidence_increase": 0.30000000000000004,
+        "accuracy_change": 0.0,
+        "prediction_changed": false
+      }
+    },
+    {
+      "question_id": 194,
+      "question_text": "Who commissioned Danish vikings to create the Bayeux Tapestry?",
+      "gold_answers": [],
+      "original": {
+        "mi_bits": 0.0,
+        "confidence": 0.4,
+        "predicted": "UNANSWERABLE",
+        "exact_match": 1.0,
+        "f1": 1.0
+      },
+      "nli_adapted": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "UNANSWERABLE",
+        "exact_match": 1.0,
+        "f1": 1.0,
+        "unique_clusters": 5
+      },
+      "changes": {
+        "mi_reduction": 0.0,
+        "confidence_increase": 0.6,
+        "accuracy_change": 0.0,
+        "prediction_changed": false
+      }
+    },
+    {
+      "question_id": 195,
+      "question_text": "What is the most important type of Norman art preserved in churches?",
+      "gold_answers": [
+        "mosaics",
+        "mosaics",
+        "mosaics"
+      ],
+      "original": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "mosaics",
+        "exact_match": 1.0,
+        "f1": 1.0
+      },
+      "nli_adapted": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "mosaics",
+        "exact_match": 1.0,
+        "f1": 1.0,
+        "unique_clusters": 2
+      },
+      "changes": {
+        "mi_reduction": 0.0,
+        "confidence_increase": 0.0,
+        "accuracy_change": 0.0,
+        "prediction_changed": false
+      }
+    },
+    {
+      "question_id": 196,
+      "question_text": "How has British art survived in Normandy?",
+      "gold_answers": [],
+      "original": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "UNANSWERABLE",
+        "exact_match": 1.0,
+        "f1": 1.0
+      },
+      "nli_adapted": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "UNANSWERABLE",
+        "exact_match": 1.0,
+        "f1": 1.0,
+        "unique_clusters": 1
+      },
+      "changes": {
+        "mi_reduction": 0.0,
+        "confidence_increase": 0.0,
+        "accuracy_change": 0.0,
+        "prediction_changed": false
+      }
+    },
+    {
+      "question_id": 197,
+      "question_text": "What is the most common form of Norman art in churches?",
+      "gold_answers": [],
+      "original": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "mosaics",
+        "exact_match": 0.0,
+        "f1": 0.0
+      },
+      "nli_adapted": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "mosaics",
+        "exact_match": 0.0,
+        "f1": 0.0,
+        "unique_clusters": 2
+      },
+      "changes": {
+        "mi_reduction": 0.0,
+        "confidence_increase": 0.0,
+        "accuracy_change": 0.0,
+        "prediction_changed": false
+      }
+    },
+    {
+      "question_id": 198,
+      "question_text": "What was a centre of ivorywork in the 1100s?",
+      "gold_answers": [],
+      "original": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "Lombard Salerno.",
+        "exact_match": 0.0,
+        "f1": 0.0
+      },
+      "nli_adapted": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "Lombard Salerno.",
+        "exact_match": 0.0,
+        "f1": 0.0,
+        "unique_clusters": 2
+      },
+      "changes": {
+        "mi_reduction": 0.0,
+        "confidence_increase": 0.0,
+        "accuracy_change": 0.0,
+        "prediction_changed": false
+      }
+    },
+    {
+      "question_id": 199,
+      "question_text": "In what century did important classical music developments occur in Normandy?",
+      "gold_answers": [
+        "11th",
+        "the 11th",
+        "11th"
+      ],
+      "original": {
+        "mi_bits": 0.0,
+        "confidence": 0.6,
+        "predicted": "11th",
+        "exact_match": 1.0,
+        "f1": 1.0
+      },
+      "nli_adapted": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "11th",
+        "exact_match": 1.0,
+        "f1": 1.0,
+        "unique_clusters": 2
+      },
+      "changes": {
+        "mi_reduction": 0.0,
+        "confidence_increase": 0.4,
+        "accuracy_change": 0.0,
+        "prediction_changed": false
+      }
+    },
+    {
+      "question_id": 2,
+      "question_text": "From which countries did the Norse originate?",
+      "gold_answers": [
+        "Denmark, Iceland and Norway",
+        "Denmark, Iceland and Norway",
+        "Denmark, Iceland and Norway",
+        "Denmark, Iceland and Norway"
+      ],
+      "original": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "Denmark, Iceland, and Norway.",
+        "exact_match": 1.0,
+        "f1": 1.0
+      },
+      "nli_adapted": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "Denmark, Iceland, and Norway.",
+        "exact_match": 1.0,
+        "f1": 1.0,
+        "unique_clusters": 2
+      },
+      "changes": {
+        "mi_reduction": 0.0,
+        "confidence_increase": 0.0,
+        "accuracy_change": 0.0,
+        "prediction_changed": false
+      }
+    },
+    {
+      "question_id": 20,
+      "question_text": "When was the French version of the word Norman first recorded?",
+      "gold_answers": [],
+      "original": {
+        "mi_bits": 0.0,
+        "confidence": 0.8,
+        "predicted": "9th century",
+        "exact_match": 0.0,
+        "f1": 0.0
+      },
+      "nli_adapted": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "9th century",
+        "exact_match": 0.0,
+        "f1": 0.0,
+        "unique_clusters": 1
+      },
+      "changes": {
+        "mi_reduction": 0.0,
+        "confidence_increase": 0.19999999999999996,
+        "accuracy_change": 0.0,
+        "prediction_changed": false
+      }
+    },
+    {
+      "question_id": 21,
+      "question_text": "When was the Duchy of Normandy founded?",
+      "gold_answers": [
+        "911",
+        "911",
+        "911"
+      ],
+      "original": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "911",
+        "exact_match": 1.0,
+        "f1": 1.0
+      },
+      "nli_adapted": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "911",
+        "exact_match": 1.0,
+        "f1": 1.0,
+        "unique_clusters": 1
+      },
+      "changes": {
+        "mi_reduction": 0.0,
+        "confidence_increase": 0.0,
+        "accuracy_change": 0.0,
+        "prediction_changed": false
+      }
+    },
+    {
+      "question_id": 22,
+      "question_text": "Who did Rollo sign the treaty of Saint-Clair-sur-Epte with?",
+      "gold_answers": [
+        "King Charles III",
+        "King Charles III",
+        "King Charles III"
+      ],
+      "original": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "King Charles III of West Francia",
+        "exact_match": 0.0,
+        "f1": 0.6666666666666666
+      },
+      "nli_adapted": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "King Charles III of West Francia.",
+        "exact_match": 0.0,
+        "f1": 0.6666666666666666,
+        "unique_clusters": 2
+      },
+      "changes": {
+        "mi_reduction": 0.0,
+        "confidence_increase": 0.0,
+        "accuracy_change": 0.0,
+        "prediction_changed": true
+      }
+    },
+    {
+      "question_id": 23,
+      "question_text": "What river originally bounded the Duchy",
+      "gold_answers": [
+        "Seine",
+        "Epte",
+        "Seine"
+      ],
+      "original": {
+        "mi_bits": 0.0,
+        "confidence": 0.8,
+        "predicted": "The river Epte.",
+        "exact_match": 0.0,
+        "f1": 0.6666666666666666
+      },
+      "nli_adapted": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "The river Epte.",
+        "exact_match": 0.0,
+        "f1": 0.6666666666666666,
+        "unique_clusters": 2
+      },
+      "changes": {
+        "mi_reduction": 0.0,
+        "confidence_increase": 0.19999999999999996,
+        "accuracy_change": 0.0,
+        "prediction_changed": false
+      }
+    },
+    {
+      "question_id": 24,
+      "question_text": "when did Nors encampments ivolve into destructive incursions?",
+      "gold_answers": [],
+      "original": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "In the course of the 10th century.",
+        "exact_match": 0.0,
+        "f1": 0.0
+      },
+      "nli_adapted": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "In the course of the 10th century.",
+        "exact_match": 0.0,
+        "f1": 0.0,
+        "unique_clusters": 2
+      },
+      "changes": {
+        "mi_reduction": 0.0,
+        "confidence_increase": 0.0,
+        "accuracy_change": 0.0,
+        "prediction_changed": false
+      }
+    },
+    {
+      "question_id": 25,
+      "question_text": "What treaty was established in the 9th century?",
+      "gold_answers": [],
+      "original": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "The treaty of Saint-Clair-sur-Epte.",
+        "exact_match": 0.0,
+        "f1": 0.0
+      },
+      "nli_adapted": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "The treaty of Saint-Clair-sur-Epte.",
+        "exact_match": 0.0,
+        "f1": 0.0,
+        "unique_clusters": 1
+      },
+      "changes": {
+        "mi_reduction": 0.0,
+        "confidence_increase": 0.0,
+        "accuracy_change": 0.0,
+        "prediction_changed": false
+      }
+    },
+    {
+      "question_id": 26,
+      "question_text": "Who established a treaty with King Charles the third of France?",
+      "gold_answers": [],
+      "original": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "Rollo",
+        "exact_match": 0.0,
+        "f1": 0.0
+      },
+      "nli_adapted": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "Rollo",
+        "exact_match": 0.0,
+        "f1": 0.0,
+        "unique_clusters": 2
+      },
+      "changes": {
+        "mi_reduction": 0.0,
+        "confidence_increase": 0.0,
+        "accuracy_change": 0.0,
+        "prediction_changed": false
+      }
+    },
+    {
+      "question_id": 27,
+      "question_text": "What did the French promises to protect Rollo and his men from?",
+      "gold_answers": [],
+      "original": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "Further Viking incursions.",
+        "exact_match": 0.0,
+        "f1": 0.0
+      },
+      "nli_adapted": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "Further Viking incursions.",
+        "exact_match": 0.0,
+        "f1": 0.0,
+        "unique_clusters": 2
+      },
+      "changes": {
+        "mi_reduction": 0.0,
+        "confidence_increase": 0.0,
+        "accuracy_change": 0.0,
+        "prediction_changed": false
+      }
+    },
+    {
+      "question_id": 28,
+      "question_text": "Who upon arriving gave the original viking settlers a common identity?",
+      "gold_answers": [
+        "Rollo",
+        "Rollo",
+        "Rollo"
+      ],
+      "original": {
+        "mi_bits": 0.0,
+        "confidence": 0.8,
+        "predicted": "Rollo",
+        "exact_match": 1.0,
+        "f1": 1.0
+      },
+      "nli_adapted": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "Rollo",
+        "exact_match": 1.0,
+        "f1": 1.0,
+        "unique_clusters": 3
+      },
+      "changes": {
+        "mi_reduction": 0.0,
+        "confidence_increase": 0.19999999999999996,
+        "accuracy_change": 0.0,
+        "prediction_changed": false
+      }
+    },
+    {
+      "question_id": 29,
+      "question_text": "When did Rollo begin to arrive in Normandy?",
+      "gold_answers": [],
+      "original": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "UNANSWERABLE",
+        "exact_match": 1.0,
+        "f1": 1.0
+      },
+      "nli_adapted": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "UNANSWERABLE",
+        "exact_match": 1.0,
+        "f1": 1.0,
+        "unique_clusters": 1
+      },
+      "changes": {
+        "mi_reduction": 0.0,
+        "confidence_increase": 0.0,
+        "accuracy_change": 0.0,
+        "prediction_changed": false
+      }
+    },
+    {
+      "question_id": 3,
+      "question_text": "Who was the Norse leader?",
+      "gold_answers": [
+        "Rollo",
+        "Rollo",
+        "Rollo",
+        "Rollo"
+      ],
+      "original": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "Rollo",
+        "exact_match": 1.0,
+        "f1": 1.0
+      },
+      "nli_adapted": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "Rollo",
+        "exact_match": 1.0,
+        "f1": 1.0,
+        "unique_clusters": 2
+      },
+      "changes": {
+        "mi_reduction": 0.0,
+        "confidence_increase": 0.0,
+        "accuracy_change": 0.0,
+        "prediction_changed": false
+      }
+    },
+    {
+      "question_id": 30,
+      "question_text": "What Viking groups were conquered by Rollo?",
+      "gold_answers": [],
+      "original": {
+        "mi_bits": 0.0,
+        "confidence": 0.2,
+        "predicted": "Danes, Norwegians, Norse\u2013Gaels, Orkney Vikings, possibly Swedes, and Anglo-Danes from the English Danelaw under Norse control.",
+        "exact_match": 0.0,
+        "f1": 0.0
+      },
+      "nli_adapted": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "Danes, Norwegians, Norse\u2013Gaels, Orkney Vikings, possibly Swedes, and Anglo-Danes from the English Danelaw under Norse control.",
+        "exact_match": 0.0,
+        "f1": 0.0,
+        "unique_clusters": 9
+      },
+      "changes": {
+        "mi_reduction": 0.0,
+        "confidence_increase": 0.8,
+        "accuracy_change": 0.0,
+        "prediction_changed": false
+      }
+    },
+    {
+      "question_id": 31,
+      "question_text": "What was the Norman religion?",
+      "gold_answers": [
+        "Catholicism",
+        "Catholicism",
+        "Catholicism"
+      ],
+      "original": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "Catholicism (Christianity)",
+        "exact_match": 0.0,
+        "f1": 0.6666666666666666
+      },
+      "nli_adapted": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "Catholicism (Christianity)",
+        "exact_match": 0.0,
+        "f1": 0.6666666666666666,
+        "unique_clusters": 1
+      },
+      "changes": {
+        "mi_reduction": 0.0,
+        "confidence_increase": 0.0,
+        "accuracy_change": 0.0,
+        "prediction_changed": false
+      }
+    },
+    {
+      "question_id": 32,
+      "question_text": "What part of France were the Normans located?",
+      "gold_answers": [
+        "north",
+        "the north",
+        "north"
+      ],
+      "original": {
+        "mi_bits": 0.0,
+        "confidence": 0.9,
+        "predicted": "The north of France.",
+        "exact_match": 0.0,
+        "f1": 0.5
+      },
+      "nli_adapted": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "The north of France.",
+        "exact_match": 0.0,
+        "f1": 0.5,
+        "unique_clusters": 3
+      },
+      "changes": {
+        "mi_reduction": 0.0,
+        "confidence_increase": 0.09999999999999998,
+        "accuracy_change": 0.0,
+        "prediction_changed": false
+      }
+    },
+    {
+      "question_id": 33,
+      "question_text": "What was replace with the Norse religion?",
+      "gold_answers": [],
+      "original": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "Catholicism (Christianity)",
+        "exact_match": 0.0,
+        "f1": 0.0
+      },
+      "nli_adapted": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "Catholicism (Christianity)",
+        "exact_match": 0.0,
+        "f1": 0.0,
+        "unique_clusters": 1
+      },
+      "changes": {
+        "mi_reduction": 0.0,
+        "confidence_increase": 0.0,
+        "accuracy_change": 0.0,
+        "prediction_changed": false
+      }
+    },
+    {
+      "question_id": 34,
+      "question_text": "What did maternal Old Norse traditions merge with?",
+      "gold_answers": [],
+      "original": {
+        "mi_bits": 0.0,
+        "confidence": 0.4,
+        "predicted": "the Gallo-Romance language of the local people",
+        "exact_match": 0.0,
+        "f1": 0.0
+      },
+      "nli_adapted": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "Frankish heritage",
+        "exact_match": 0.0,
+        "f1": 0.0,
+        "unique_clusters": 8
+      },
+      "changes": {
+        "mi_reduction": 0.0,
+        "confidence_increase": 0.6,
+        "accuracy_change": 0.0,
+        "prediction_changed": true
+      }
+    },
+    {
+      "question_id": 35,
+      "question_text": "What language replaced the Gallo-Romance language?",
+      "gold_answers": [],
+      "original": {
+        "mi_bits": 0.0,
+        "confidence": 0.5,
+        "predicted": "Norman language",
+        "exact_match": 0.0,
+        "f1": 0.0
+      },
+      "nli_adapted": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "Old Norse",
+        "exact_match": 0.0,
+        "f1": 0.0,
+        "unique_clusters": 3
+      },
+      "changes": {
+        "mi_reduction": 0.0,
+        "confidence_increase": 0.5,
+        "accuracy_change": 0.0,
+        "prediction_changed": true
+      }
+    },
+    {
+      "question_id": 36,
+      "question_text": "What was one of the Norman's major exports?",
+      "gold_answers": [
+        "fighting horsemen",
+        "fighting horsemen",
+        "fighting horsemen"
+      ],
+      "original": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "fighting horsemen",
+        "exact_match": 1.0,
+        "f1": 1.0
+      },
+      "nli_adapted": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "Fighting horsemen",
+        "exact_match": 1.0,
+        "f1": 1.0,
+        "unique_clusters": 2
+      },
+      "changes": {
+        "mi_reduction": 0.0,
+        "confidence_increase": 0.0,
+        "accuracy_change": 0.0,
+        "prediction_changed": true
+      }
+    },
+    {
+      "question_id": 37,
+      "question_text": "Who adopted the fuedel doctrines of the Normans?",
+      "gold_answers": [],
+      "original": {
+        "mi_bits": 0.0,
+        "confidence": 0.8,
+        "predicted": "The rest of France.",
+        "exact_match": 0.0,
+        "f1": 0.0
+      },
+      "nli_adapted": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "The rest of France.",
+        "exact_match": 0.0,
+        "f1": 0.0,
+        "unique_clusters": 2
+      },
+      "changes": {
+        "mi_reduction": 0.0,
+        "confidence_increase": 0.19999999999999996,
+        "accuracy_change": 0.0,
+        "prediction_changed": false
+      }
+    },
+    {
+      "question_id": 38,
+      "question_text": "What was one of the Norman's major imports?",
+      "gold_answers": [],
+      "original": {
+        "mi_bits": 0.0,
+        "confidence": 0.7,
+        "predicted": "Fighting horsemen",
+        "exact_match": 0.0,
+        "f1": 0.0
+      },
+      "nli_adapted": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "fighting horsemen",
+        "exact_match": 0.0,
+        "f1": 0.0,
+        "unique_clusters": 5
+      },
+      "changes": {
+        "mi_reduction": 0.0,
+        "confidence_increase": 0.30000000000000004,
+        "accuracy_change": 0.0,
+        "prediction_changed": true
+      }
+    },
+    {
+      "question_id": 39,
+      "question_text": "Who's arristocracy eventually served as avid Crusaders?",
+      "gold_answers": [],
+      "original": {
+        "mi_bits": 0.0,
+        "confidence": 0.6,
+        "predicted": "The old French.",
+        "exact_match": 0.0,
+        "f1": 0.0
+      },
+      "nli_adapted": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "The old French.",
+        "exact_match": 0.0,
+        "f1": 0.0,
+        "unique_clusters": 4
+      },
+      "changes": {
+        "mi_reduction": 0.0,
+        "confidence_increase": 0.4,
+        "accuracy_change": 0.0,
+        "prediction_changed": false
+      }
+    },
+    {
+      "question_id": 4,
+      "question_text": "What century did the Normans first gain their separate identity?",
+      "gold_answers": [
+        "10th century",
+        "the first half of the 10th century",
+        "10th",
+        "10th"
+      ],
+      "original": {
+        "mi_bits": 0.0,
+        "confidence": 0.5,
+        "predicted": "The first half of the 10th century.",
+        "exact_match": 1.0,
+        "f1": 1.0
+      },
+      "nli_adapted": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "The first half of the 10th century.",
+        "exact_match": 1.0,
+        "f1": 1.0,
+        "unique_clusters": 3
+      },
+      "changes": {
+        "mi_reduction": 0.0,
+        "confidence_increase": 0.5,
+        "accuracy_change": 0.0,
+        "prediction_changed": false
+      }
+    },
+    {
+      "question_id": 40,
+      "question_text": "Who was the Normans' main enemy in Italy, the Byzantine Empire and Armenia?",
+      "gold_answers": [
+        "Seljuk Turks",
+        "the Pechenegs, the Bulgars, and especially the Seljuk Turks",
+        "the Seljuk Turks"
+      ],
+      "original": {
+        "mi_bits": 0.0,
+        "confidence": 0.4,
+        "predicted": "The Seljuk Turks.",
+        "exact_match": 1.0,
+        "f1": 1.0
+      },
+      "nli_adapted": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "The Seljuk Turks.",
+        "exact_match": 1.0,
+        "f1": 1.0,
+        "unique_clusters": 6
+      },
+      "changes": {
+        "mi_reduction": 0.0,
+        "confidence_increase": 0.6,
+        "accuracy_change": 0.0,
+        "prediction_changed": false
+      }
+    },
+    {
+      "question_id": 41,
+      "question_text": "Who entered Italy soon after the Byzantine Empire?",
+      "gold_answers": [],
+      "original": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "The Normans.",
+        "exact_match": 0.0,
+        "f1": 0.0
+      },
+      "nli_adapted": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "The Normans.",
+        "exact_match": 0.0,
+        "f1": 0.0,
+        "unique_clusters": 2
+      },
+      "changes": {
+        "mi_reduction": 0.0,
+        "confidence_increase": 0.0,
+        "accuracy_change": 0.0,
+        "prediction_changed": false
+      }
+    },
+    {
+      "question_id": 42,
+      "question_text": "Who did the Normans fight in Italy?",
+      "gold_answers": [],
+      "original": {
+        "mi_bits": 0.0,
+        "confidence": 0.8,
+        "predicted": "The Pechenegs, the Bulgars, and the Seljuk Turks.",
+        "exact_match": 0.0,
+        "f1": 0.0
+      },
+      "nli_adapted": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "The Pechenegs, the Bulgars, and the Seljuk Turks.",
+        "exact_match": 0.0,
+        "f1": 0.0,
+        "unique_clusters": 2
+      },
+      "changes": {
+        "mi_reduction": 0.0,
+        "confidence_increase": 0.19999999999999996,
+        "accuracy_change": 0.0,
+        "prediction_changed": false
+      }
+    },
+    {
+      "question_id": 43,
+      "question_text": "Who did the Normans encourage to come to the south?",
+      "gold_answers": [],
+      "original": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "The Lombards.",
+        "exact_match": 0.0,
+        "f1": 0.0
+      },
+      "nli_adapted": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "The Lombards.",
+        "exact_match": 0.0,
+        "f1": 0.0,
+        "unique_clusters": 1
+      },
+      "changes": {
+        "mi_reduction": 0.0,
+        "confidence_increase": 0.0,
+        "accuracy_change": 0.0,
+        "prediction_changed": false
+      }
+    },
+    {
+      "question_id": 44,
+      "question_text": "During what campaign did the Vargian and Lombard fight?",
+      "gold_answers": [],
+      "original": {
+        "mi_bits": 0.0,
+        "confidence": 0.7,
+        "predicted": "the Sicilian campaign of George Maniaces in 1038\u201340",
+        "exact_match": 0.0,
+        "f1": 0.0
+      },
+      "nli_adapted": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "The Sicilian campaign of George Maniaces in 1038\u201340.",
+        "exact_match": 0.0,
+        "f1": 0.0,
+        "unique_clusters": 4
+      },
+      "changes": {
+        "mi_reduction": 0.0,
+        "confidence_increase": 0.30000000000000004,
+        "accuracy_change": 0.0,
+        "prediction_changed": true
+      }
+    },
+    {
+      "question_id": 45,
+      "question_text": "When did Herve serve as a Byzantine general?",
+      "gold_answers": [
+        "1050s",
+        "in the 1050s",
+        "in the 1050s"
+      ],
+      "original": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "The 1050s.",
+        "exact_match": 1.0,
+        "f1": 1.0
+      },
+      "nli_adapted": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "The 1050s.",
+        "exact_match": 1.0,
+        "f1": 1.0,
+        "unique_clusters": 2
+      },
+      "changes": {
+        "mi_reduction": 0.0,
+        "confidence_increase": 0.0,
+        "accuracy_change": 0.0,
+        "prediction_changed": false
+      }
+    },
+    {
+      "question_id": 46,
+      "question_text": "When did Robert Crispin go up against the Turks?",
+      "gold_answers": [
+        "1060s",
+        "In the 1060s",
+        "In the 1060s"
+      ],
+      "original": {
+        "mi_bits": 0.0,
+        "confidence": 0.8,
+        "predicted": "The 1060s.",
+        "exact_match": 1.0,
+        "f1": 1.0
+      },
+      "nli_adapted": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "The 1060s.",
+        "exact_match": 1.0,
+        "f1": 1.0,
+        "unique_clusters": 3
+      },
+      "changes": {
+        "mi_reduction": 0.0,
+        "confidence_increase": 0.19999999999999996,
+        "accuracy_change": 0.0,
+        "prediction_changed": false
+      }
+    },
+    {
+      "question_id": 47,
+      "question_text": "Who ruined Roussel de Bailleul's plans for an independent state?",
+      "gold_answers": [
+        "Alexius Komnenos",
+        "Alexius Komnenos",
+        "Alexius Komnenos"
+      ],
+      "original": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "Alexius Komnenos.",
+        "exact_match": 1.0,
+        "f1": 1.0
+      },
+      "nli_adapted": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "Alexius Komnenos.",
+        "exact_match": 1.0,
+        "f1": 1.0,
+        "unique_clusters": 1
+      },
+      "changes": {
+        "mi_reduction": 0.0,
+        "confidence_increase": 0.0,
+        "accuracy_change": 0.0,
+        "prediction_changed": false
+      }
+    },
+    {
+      "question_id": 48,
+      "question_text": "Who was the first Byzantine mercenary to serve with the Normans?",
+      "gold_answers": [],
+      "original": {
+        "mi_bits": 0.0,
+        "confidence": 0.6,
+        "predicted": "Herv\u00e9",
+        "exact_match": 0.0,
+        "f1": 0.0
+      },
+      "nli_adapted": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "Herv\u00e9",
+        "exact_match": 0.0,
+        "f1": 0.0,
+        "unique_clusters": 2
+      },
+      "changes": {
+        "mi_reduction": 0.0,
+        "confidence_increase": 0.4,
+        "accuracy_change": 0.0,
+        "prediction_changed": false
+      }
+    },
+    {
+      "question_id": 49,
+      "question_text": "When did Herve serve as a Norman general?",
+      "gold_answers": [],
+      "original": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "The 1050s.",
+        "exact_match": 0.0,
+        "f1": 0.0
+      },
+      "nli_adapted": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "The 1050s.",
+        "exact_match": 0.0,
+        "f1": 0.0,
+        "unique_clusters": 2
+      },
+      "changes": {
+        "mi_reduction": 0.0,
+        "confidence_increase": 0.0,
+        "accuracy_change": 0.0,
+        "prediction_changed": false
+      }
+    },
+    {
+      "question_id": 5,
+      "question_text": "Who gave their name to Normandy in the 1000's and 1100's",
+      "gold_answers": [],
+      "original": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "The Normans",
+        "exact_match": 0.0,
+        "f1": 0.0
+      },
+      "nli_adapted": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "The Normans",
+        "exact_match": 0.0,
+        "f1": 0.0,
+        "unique_clusters": 2
+      },
+      "changes": {
+        "mi_reduction": 0.0,
+        "confidence_increase": 0.0,
+        "accuracy_change": 0.0,
+        "prediction_changed": false
+      }
+    },
+    {
+      "question_id": 50,
+      "question_text": "Who ruined Alexius Komnenos plans for an independent state?",
+      "gold_answers": [],
+      "original": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "Roussel de Bailleul",
+        "exact_match": 0.0,
+        "f1": 0.0
+      },
+      "nli_adapted": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "Roussel de Bailleul",
+        "exact_match": 0.0,
+        "f1": 0.0,
+        "unique_clusters": 2
+      },
+      "changes": {
+        "mi_reduction": 0.0,
+        "confidence_increase": 0.0,
+        "accuracy_change": 0.0,
+        "prediction_changed": false
+      }
+    },
+    {
+      "question_id": 51,
+      "question_text": "When did Herve go up against the Turks?",
+      "gold_answers": [],
+      "original": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "UNANSWERABLE",
+        "exact_match": 1.0,
+        "f1": 1.0
+      },
+      "nli_adapted": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "UNANSWERABLE",
+        "exact_match": 1.0,
+        "f1": 1.0,
+        "unique_clusters": 1
+      },
+      "changes": {
+        "mi_reduction": 0.0,
+        "confidence_increase": 0.0,
+        "accuracy_change": 0.0,
+        "prediction_changed": false
+      }
+    },
+    {
+      "question_id": 52,
+      "question_text": "What was the name of the Norman castle?",
+      "gold_answers": [
+        "Afranji",
+        "Afranji",
+        "Afranji"
+      ],
+      "original": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "Afranji",
+        "exact_match": 1.0,
+        "f1": 1.0
+      },
+      "nli_adapted": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "Afranji",
+        "exact_match": 1.0,
+        "f1": 1.0,
+        "unique_clusters": 2
+      },
+      "changes": {
+        "mi_reduction": 0.0,
+        "confidence_increase": 0.0,
+        "accuracy_change": 0.0,
+        "prediction_changed": false
+      }
+    },
+    {
+      "question_id": 53,
+      "question_text": "Who was the leader when the Franks entered the Euphrates valley?",
+      "gold_answers": [
+        "Oursel",
+        "Oursel",
+        "Oursel"
+      ],
+      "original": {
+        "mi_bits": 0.0,
+        "confidence": 0.8,
+        "predicted": "Raimbaud",
+        "exact_match": 0.0,
+        "f1": 0.0
+      },
+      "nli_adapted": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "Oursel",
+        "exact_match": 1.0,
+        "f1": 1.0,
+        "unique_clusters": 1
+      },
+      "changes": {
+        "mi_reduction": 0.0,
+        "confidence_increase": 0.19999999999999996,
+        "accuracy_change": 1.0,
+        "prediction_changed": true
+      }
+    },
+    {
+      "question_id": 54,
+      "question_text": "Who did the Normans team up with in Anatolia?",
+      "gold_answers": [
+        "Turkish forces",
+        "Turkish forces",
+        "Turkish forces"
+      ],
+      "original": {
+        "mi_bits": 0.0,
+        "confidence": 0.7,
+        "predicted": "The Turkish forces.",
+        "exact_match": 1.0,
+        "f1": 1.0
+      },
+      "nli_adapted": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "The Turkish forces.",
+        "exact_match": 1.0,
+        "f1": 1.0,
+        "unique_clusters": 3
+      },
+      "changes": {
+        "mi_reduction": 0.0,
+        "confidence_increase": 0.30000000000000004,
+        "accuracy_change": 0.0,
+        "prediction_changed": false
+      }
+    },
+    {
+      "question_id": 55,
+      "question_text": "Who joined Norman forces in the destruction of the Armenians?",
+      "gold_answers": [],
+      "original": {
+        "mi_bits": 0.0,
+        "confidence": 0.6,
+        "predicted": "The Turks.",
+        "exact_match": 0.0,
+        "f1": 0.0
+      },
+      "nli_adapted": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "The Turks.",
+        "exact_match": 0.0,
+        "f1": 0.0,
+        "unique_clusters": 5
+      },
+      "changes": {
+        "mi_reduction": 0.0,
+        "confidence_increase": 0.4,
+        "accuracy_change": 0.0,
+        "prediction_changed": false
+      }
+    },
+    {
+      "question_id": 56,
+      "question_text": "Who did the Turks take up service with?",
+      "gold_answers": [],
+      "original": {
+        "mi_bits": 0.0,
+        "confidence": 0.5,
+        "predicted": "The Armenians.",
+        "exact_match": 0.0,
+        "f1": 0.0
+      },
+      "nli_adapted": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "The Armenians.",
+        "exact_match": 0.0,
+        "f1": 0.0,
+        "unique_clusters": 2
+      },
+      "changes": {
+        "mi_reduction": 0.0,
+        "confidence_increase": 0.5,
+        "accuracy_change": 0.0,
+        "prediction_changed": false
+      }
+    },
+    {
+      "question_id": 57,
+      "question_text": "What Frank led Norman forces?",
+      "gold_answers": [],
+      "original": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "Oursel",
+        "exact_match": 0.0,
+        "f1": 0.0
+      },
+      "nli_adapted": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "Oursel",
+        "exact_match": 0.0,
+        "f1": 0.0,
+        "unique_clusters": 2
+      },
+      "changes": {
+        "mi_reduction": 0.0,
+        "confidence_increase": 0.0,
+        "accuracy_change": 0.0,
+        "prediction_changed": false
+      }
+    },
+    {
+      "question_id": 58,
+      "question_text": "Where did Oursel lead the Franks?",
+      "gold_answers": [],
+      "original": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "the upper Euphrates valley in northern Syria.",
+        "exact_match": 0.0,
+        "f1": 0.0
+      },
+      "nli_adapted": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "The upper Euphrates valley in northern Syria.",
+        "exact_match": 0.0,
+        "f1": 0.0,
+        "unique_clusters": 1
+      },
+      "changes": {
+        "mi_reduction": 0.0,
+        "confidence_increase": 0.0,
+        "accuracy_change": 0.0,
+        "prediction_changed": true
+      }
+    },
+    {
+      "question_id": 59,
+      "question_text": "What were the origins of the Raouliii family?",
+      "gold_answers": [
+        "Norman mercenary",
+        "an Italo-Norman named Raoul",
+        "descended from an Italo-Norman named Raoul"
+      ],
+      "original": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "Italo-Norman.",
+        "exact_match": 0.0,
+        "f1": 0.6666666666666666
+      },
+      "nli_adapted": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "Italo-Norman.",
+        "exact_match": 0.0,
+        "f1": 0.6666666666666666,
+        "unique_clusters": 1
+      },
+      "changes": {
+        "mi_reduction": 0.0,
+        "confidence_increase": 0.0,
+        "accuracy_change": 0.0,
+        "prediction_changed": false
+      }
+    },
+    {
+      "question_id": 6,
+      "question_text": "What is France a region of?",
+      "gold_answers": [],
+      "original": {
+        "mi_bits": 0.0,
+        "confidence": 0.8,
+        "predicted": "Normandy.",
+        "exact_match": 0.0,
+        "f1": 0.0
+      },
+      "nli_adapted": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "West Francia.",
+        "exact_match": 0.0,
+        "f1": 0.0,
+        "unique_clusters": 1
+      },
+      "changes": {
+        "mi_reduction": 0.0,
+        "confidence_increase": 0.19999999999999996,
+        "accuracy_change": 0.0,
+        "prediction_changed": true
+      }
+    },
+    {
+      "question_id": 60,
+      "question_text": "Where were several Norman mercenary familes originate from?",
+      "gold_answers": [],
+      "original": {
+        "mi_bits": 0.0,
+        "confidence": 0.7,
+        "predicted": "Western Europe.",
+        "exact_match": 0.0,
+        "f1": 0.0
+      },
+      "nli_adapted": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "Western Europe.",
+        "exact_match": 0.0,
+        "f1": 0.0,
+        "unique_clusters": 3
+      },
+      "changes": {
+        "mi_reduction": 0.0,
+        "confidence_increase": 0.30000000000000004,
+        "accuracy_change": 0.0,
+        "prediction_changed": false
+      }
+    },
+    {
+      "question_id": 61,
+      "question_text": "Who did the Normans serve under in the 10th century?",
+      "gold_answers": [],
+      "original": {
+        "mi_bits": 0.0,
+        "confidence": 0.8,
+        "predicted": "George Maniaces.",
+        "exact_match": 0.0,
+        "f1": 0.0
+      },
+      "nli_adapted": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "George Maniaces.",
+        "exact_match": 0.0,
+        "f1": 0.0,
+        "unique_clusters": 2
+      },
+      "changes": {
+        "mi_reduction": 0.0,
+        "confidence_increase": 0.19999999999999996,
+        "accuracy_change": 0.0,
+        "prediction_changed": false
+      }
+    },
+    {
+      "question_id": 62,
+      "question_text": "What expedition did George Maniaces lead in the 10th century?",
+      "gold_answers": [],
+      "original": {
+        "mi_bits": 0.0,
+        "confidence": 0.6,
+        "predicted": "The Sicilian expedition of 1038.",
+        "exact_match": 0.0,
+        "f1": 0.0
+      },
+      "nli_adapted": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "The Sicilian expedition of 1038.",
+        "exact_match": 0.0,
+        "f1": 0.0,
+        "unique_clusters": 6
+      },
+      "changes": {
+        "mi_reduction": 0.0,
+        "confidence_increase": 0.4,
+        "accuracy_change": 0.0,
+        "prediction_changed": false
+      }
+    },
+    {
+      "question_id": 63,
+      "question_text": "What was the name of the count of Apulia ",
+      "gold_answers": [
+        "Robert Guiscard",
+        "Robert Guiscard",
+        "Robert Guiscard"
+      ],
+      "original": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "Robert Guiscard",
+        "exact_match": 1.0,
+        "f1": 1.0
+      },
+      "nli_adapted": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "Robert Guiscard",
+        "exact_match": 1.0,
+        "f1": 1.0,
+        "unique_clusters": 2
+      },
+      "changes": {
+        "mi_reduction": 0.0,
+        "confidence_increase": 0.0,
+        "accuracy_change": 0.0,
+        "prediction_changed": false
+      }
+    },
+    {
+      "question_id": 64,
+      "question_text": "When did Dyrrachium  fall to the Normans?",
+      "gold_answers": [
+        "1082",
+        "February 1082",
+        "February 1082"
+      ],
+      "original": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "February 1082",
+        "exact_match": 1.0,
+        "f1": 1.0
+      },
+      "nli_adapted": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "February 1082",
+        "exact_match": 1.0,
+        "f1": 1.0,
+        "unique_clusters": 2
+      },
+      "changes": {
+        "mi_reduction": 0.0,
+        "confidence_increase": 0.0,
+        "accuracy_change": 0.0,
+        "prediction_changed": false
+      }
+    },
+    {
+      "question_id": 65,
+      "question_text": "How many men were in Robert's army?",
+      "gold_answers": [
+        "30,000",
+        "30,000",
+        "30,000"
+      ],
+      "original": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "30,000",
+        "exact_match": 1.0,
+        "f1": 1.0
+      },
+      "nli_adapted": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "30,000",
+        "exact_match": 1.0,
+        "f1": 1.0,
+        "unique_clusters": 1
+      },
+      "changes": {
+        "mi_reduction": 0.0,
+        "confidence_increase": 0.0,
+        "accuracy_change": 0.0,
+        "prediction_changed": false
+      }
+    },
+    {
+      "question_id": 66,
+      "question_text": "Who ultimatly drove the Byzantines out of Europe?",
+      "gold_answers": [],
+      "original": {
+        "mi_bits": 0.0,
+        "confidence": 0.7,
+        "predicted": "Robert Guiscard",
+        "exact_match": 0.0,
+        "f1": 0.0
+      },
+      "nli_adapted": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "Robert Guiscard",
+        "exact_match": 0.0,
+        "f1": 0.0,
+        "unique_clusters": 5
+      },
+      "changes": {
+        "mi_reduction": 0.0,
+        "confidence_increase": 0.30000000000000004,
+        "accuracy_change": 0.0,
+        "prediction_changed": false
+      }
+    },
+    {
+      "question_id": 67,
+      "question_text": "What pope opposed Roberts campaign?",
+      "gold_answers": [],
+      "original": {
+        "mi_bits": 0.0,
+        "confidence": 0.6,
+        "predicted": "Gregory VII",
+        "exact_match": 0.0,
+        "f1": 0.0
+      },
+      "nli_adapted": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "Gregory VII",
+        "exact_match": 0.0,
+        "f1": 0.0,
+        "unique_clusters": 3
+      },
+      "changes": {
+        "mi_reduction": 0.0,
+        "confidence_increase": 0.4,
+        "accuracy_change": 0.0,
+        "prediction_changed": false
+      }
+    },
+    {
+      "question_id": 68,
+      "question_text": "What fell to the Normans in the 10th century?",
+      "gold_answers": [],
+      "original": {
+        "mi_bits": 0.0,
+        "confidence": 0.9,
+        "predicted": "UNANSWERABLE",
+        "exact_match": 1.0,
+        "f1": 1.0
+      },
+      "nli_adapted": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "UNANSWERABLE",
+        "exact_match": 1.0,
+        "f1": 1.0,
+        "unique_clusters": 2
+      },
+      "changes": {
+        "mi_reduction": 0.0,
+        "confidence_increase": 0.09999999999999998,
+        "accuracy_change": 0.0,
+        "prediction_changed": false
+      }
+    },
+    {
+      "question_id": 69,
+      "question_text": "How many men did Roberts army face?",
+      "gold_answers": [],
+      "original": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "30,000",
+        "exact_match": 0.0,
+        "f1": 0.0
+      },
+      "nli_adapted": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "30,000",
+        "exact_match": 0.0,
+        "f1": 0.0,
+        "unique_clusters": 1
+      },
+      "changes": {
+        "mi_reduction": 0.0,
+        "confidence_increase": 0.0,
+        "accuracy_change": 0.0,
+        "prediction_changed": false
+      }
+    },
+    {
+      "question_id": 7,
+      "question_text": "Who did King Charles III swear fealty to?",
+      "gold_answers": [],
+      "original": {
+        "mi_bits": 0.0,
+        "confidence": 0.9,
+        "predicted": "Rollo",
+        "exact_match": 0.0,
+        "f1": 0.0
+      },
+      "nli_adapted": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "Rollo.",
+        "exact_match": 0.0,
+        "f1": 0.0,
+        "unique_clusters": 2
+      },
+      "changes": {
+        "mi_reduction": 0.0,
+        "confidence_increase": 0.09999999999999998,
+        "accuracy_change": 0.0,
+        "prediction_changed": true
+      }
+    },
+    {
+      "question_id": 70,
+      "question_text": "Where did the Normans and Byzantines sign the peace treaty?",
+      "gold_answers": [
+        "Deabolis",
+        "Deabolis",
+        "Deabolis"
+      ],
+      "original": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "Deabolis.",
+        "exact_match": 1.0,
+        "f1": 1.0
+      },
+      "nli_adapted": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "Deabolis.",
+        "exact_match": 1.0,
+        "f1": 1.0,
+        "unique_clusters": 1
+      },
+      "changes": {
+        "mi_reduction": 0.0,
+        "confidence_increase": 0.0,
+        "accuracy_change": 0.0,
+        "prediction_changed": false
+      }
+    },
+    {
+      "question_id": 71,
+      "question_text": "Who was Robert's son?",
+      "gold_answers": [
+        "Bohemond",
+        "Bohemond",
+        "Bohemond"
+      ],
+      "original": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "Bohemond",
+        "exact_match": 1.0,
+        "f1": 1.0
+      },
+      "nli_adapted": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "Bohemond",
+        "exact_match": 1.0,
+        "f1": 1.0,
+        "unique_clusters": 2
+      },
+      "changes": {
+        "mi_reduction": 0.0,
+        "confidence_increase": 0.0,
+        "accuracy_change": 0.0,
+        "prediction_changed": false
+      }
+    },
+    {
+      "question_id": 72,
+      "question_text": "What river was Petrela located by?",
+      "gold_answers": [
+        "Deabolis",
+        "the river Deabolis",
+        "Deabolis"
+      ],
+      "original": {
+        "mi_bits": 0.0,
+        "confidence": 0.5,
+        "predicted": "The river Deabolis.",
+        "exact_match": 1.0,
+        "f1": 1.0
+      },
+      "nli_adapted": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "The river Deabolis.",
+        "exact_match": 1.0,
+        "f1": 1.0,
+        "unique_clusters": 3
+      },
+      "changes": {
+        "mi_reduction": 0.0,
+        "confidence_increase": 0.5,
+        "accuracy_change": 0.0,
+        "prediction_changed": false
+      }
+    },
+    {
+      "question_id": 73,
+      "question_text": "Who did the Normans besiege in the 11th century?",
+      "gold_answers": [],
+      "original": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "Dyrrachium",
+        "exact_match": 0.0,
+        "f1": 0.0
+      },
+      "nli_adapted": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "Dyrrachium",
+        "exact_match": 0.0,
+        "f1": 0.0,
+        "unique_clusters": 2
+      },
+      "changes": {
+        "mi_reduction": 0.0,
+        "confidence_increase": 0.0,
+        "accuracy_change": 0.0,
+        "prediction_changed": false
+      }
+    },
+    {
+      "question_id": 74,
+      "question_text": "Who did Robert lead agains Dyrrachium in 1107?",
+      "gold_answers": [],
+      "original": {
+        "mi_bits": 0.0,
+        "confidence": 0.9,
+        "predicted": "Bohemond",
+        "exact_match": 0.0,
+        "f1": 0.0
+      },
+      "nli_adapted": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "Bohemond",
+        "exact_match": 0.0,
+        "f1": 0.0,
+        "unique_clusters": 3
+      },
+      "changes": {
+        "mi_reduction": 0.0,
+        "confidence_increase": 0.09999999999999998,
+        "accuracy_change": 0.0,
+        "prediction_changed": false
+      }
+    },
+    {
+      "question_id": 75,
+      "question_text": "Who was Bohemond's son?",
+      "gold_answers": [],
+      "original": {
+        "mi_bits": 0.0,
+        "confidence": 0.4,
+        "predicted": "Robert's son.",
+        "exact_match": 0.0,
+        "f1": 0.0
+      },
+      "nli_adapted": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "Bohemond",
+        "exact_match": 0.0,
+        "f1": 0.0,
+        "unique_clusters": 3
+      },
+      "changes": {
+        "mi_reduction": 0.0,
+        "confidence_increase": 0.6,
+        "accuracy_change": 0.0,
+        "prediction_changed": true
+      }
+    },
+    {
+      "question_id": 76,
+      "question_text": "When did the Normans attack Dyrrachium?",
+      "gold_answers": [
+        "1185",
+        "in 1185",
+        "1185"
+      ],
+      "original": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "1185",
+        "exact_match": 1.0,
+        "f1": 1.0
+      },
+      "nli_adapted": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "1185",
+        "exact_match": 1.0,
+        "f1": 1.0,
+        "unique_clusters": 1
+      },
+      "changes": {
+        "mi_reduction": 0.0,
+        "confidence_increase": 0.0,
+        "accuracy_change": 0.0,
+        "prediction_changed": false
+      }
+    },
+    {
+      "question_id": 77,
+      "question_text": "What was the naval base called?",
+      "gold_answers": [
+        "Dyrrachium",
+        "Dyrrachium",
+        "Dyrrachium"
+      ],
+      "original": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "Dyrrachium",
+        "exact_match": 1.0,
+        "f1": 1.0
+      },
+      "nli_adapted": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "Dyrrachium",
+        "exact_match": 1.0,
+        "f1": 1.0,
+        "unique_clusters": 1
+      },
+      "changes": {
+        "mi_reduction": 0.0,
+        "confidence_increase": 0.0,
+        "accuracy_change": 0.0,
+        "prediction_changed": false
+      }
+    },
+    {
+      "question_id": 78,
+      "question_text": "Where was Dyrrachium located?",
+      "gold_answers": [
+        "the Adriatic",
+        "the Adriatic",
+        "Adriatic"
+      ],
+      "original": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "The Adriatic",
+        "exact_match": 1.0,
+        "f1": 1.0
+      },
+      "nli_adapted": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "The Adriatic.",
+        "exact_match": 1.0,
+        "f1": 1.0,
+        "unique_clusters": 2
+      },
+      "changes": {
+        "mi_reduction": 0.0,
+        "confidence_increase": 0.0,
+        "accuracy_change": 0.0,
+        "prediction_changed": true
+      }
+    },
+    {
+      "question_id": 79,
+      "question_text": "Who attacked Dyrrachium in the 11th century?",
+      "gold_answers": [],
+      "original": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "Normans",
+        "exact_match": 0.0,
+        "f1": 0.0
+      },
+      "nli_adapted": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "Normans",
+        "exact_match": 0.0,
+        "f1": 0.0,
+        "unique_clusters": 3
+      },
+      "changes": {
+        "mi_reduction": 0.0,
+        "confidence_increase": 0.0,
+        "accuracy_change": 0.0,
+        "prediction_changed": false
+      }
+    },
+    {
+      "question_id": 8,
+      "question_text": "When did the Frankish identity emerge?",
+      "gold_answers": [],
+      "original": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "UNANSWERABLE",
+        "exact_match": 1.0,
+        "f1": 1.0
+      },
+      "nli_adapted": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "UNANSWERABLE",
+        "exact_match": 1.0,
+        "f1": 1.0,
+        "unique_clusters": 1
+      },
+      "changes": {
+        "mi_reduction": 0.0,
+        "confidence_increase": 0.0,
+        "accuracy_change": 0.0,
+        "prediction_changed": false
+      }
+    },
+    {
+      "question_id": 80,
+      "question_text": "Who betrayed the Normans?",
+      "gold_answers": [],
+      "original": {
+        "mi_bits": 0.0,
+        "confidence": 0.8,
+        "predicted": "High Byzantine officials.",
+        "exact_match": 0.0,
+        "f1": 0.0
+      },
+      "nli_adapted": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "High Byzantine officials.",
+        "exact_match": 0.0,
+        "f1": 0.0,
+        "unique_clusters": 2
+      },
+      "changes": {
+        "mi_reduction": 0.0,
+        "confidence_increase": 0.19999999999999996,
+        "accuracy_change": 0.0,
+        "prediction_changed": false
+      }
+    },
+    {
+      "question_id": 81,
+      "question_text": "What naval base fell to the Normans?",
+      "gold_answers": [],
+      "original": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "Dyrrachium",
+        "exact_match": 0.0,
+        "f1": 0.0
+      },
+      "nli_adapted": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "Dyrrachium",
+        "exact_match": 0.0,
+        "f1": 0.0,
+        "unique_clusters": 2
+      },
+      "changes": {
+        "mi_reduction": 0.0,
+        "confidence_increase": 0.0,
+        "accuracy_change": 0.0,
+        "prediction_changed": false
+      }
+    },
+    {
+      "question_id": 82,
+      "question_text": "Who did Emma Marry?",
+      "gold_answers": [
+        "King Ethelred II",
+        "Ethelred II",
+        "King Ethelred II"
+      ],
+      "original": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "King Ethelred II of England",
+        "exact_match": 0.0,
+        "f1": 0.7499999999999999
+      },
+      "nli_adapted": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "King Ethelred II of England.",
+        "exact_match": 0.0,
+        "f1": 0.7499999999999999,
+        "unique_clusters": 2
+      },
+      "changes": {
+        "mi_reduction": 0.0,
+        "confidence_increase": 0.0,
+        "accuracy_change": 0.0,
+        "prediction_changed": true
+      }
+    },
+    {
+      "question_id": 83,
+      "question_text": "Who was Emma's brother?",
+      "gold_answers": [
+        "Duke Richard II",
+        "Duke Richard II",
+        "Duke Richard II"
+      ],
+      "original": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "Duke Richard II of Normandy.",
+        "exact_match": 0.0,
+        "f1": 0.7499999999999999
+      },
+      "nli_adapted": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "Duke Richard II of Normandy",
+        "exact_match": 0.0,
+        "f1": 0.7499999999999999,
+        "unique_clusters": 2
+      },
+      "changes": {
+        "mi_reduction": 0.0,
+        "confidence_increase": 0.0,
+        "accuracy_change": 0.0,
+        "prediction_changed": true
+      }
+    },
+    {
+      "question_id": 84,
+      "question_text": "To where did Ethelred flee?",
+      "gold_answers": [
+        "Normandy",
+        "Normandy",
+        "Normandy"
+      ],
+      "original": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "Normandy.",
+        "exact_match": 1.0,
+        "f1": 1.0
+      },
+      "nli_adapted": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "Normandy",
+        "exact_match": 1.0,
+        "f1": 1.0,
+        "unique_clusters": 2
+      },
+      "changes": {
+        "mi_reduction": 0.0,
+        "confidence_increase": 0.0,
+        "accuracy_change": 0.0,
+        "prediction_changed": true
+      }
+    },
+    {
+      "question_id": 85,
+      "question_text": "Who kicked Ethelred out?",
+      "gold_answers": [
+        "Sweyn Forkbeard",
+        "Sweyn Forkbeard",
+        "Sweyn Forkbeard"
+      ],
+      "original": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "Sweyn Forkbeard",
+        "exact_match": 1.0,
+        "f1": 1.0
+      },
+      "nli_adapted": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "Sweyn Forkbeard.",
+        "exact_match": 1.0,
+        "f1": 1.0,
+        "unique_clusters": 2
+      },
+      "changes": {
+        "mi_reduction": 0.0,
+        "confidence_increase": 0.0,
+        "accuracy_change": 0.0,
+        "prediction_changed": true
+      }
+    },
+    {
+      "question_id": 86,
+      "question_text": "Who married Cnut the Great?",
+      "gold_answers": [],
+      "original": {
+        "mi_bits": 0.0,
+        "confidence": 0.3,
+        "predicted": "Emma (sister of Duke Richard II of Normandy)",
+        "exact_match": 0.0,
+        "f1": 0.0
+      },
+      "nli_adapted": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "UNANSWERABLE",
+        "exact_match": 1.0,
+        "f1": 1.0,
+        "unique_clusters": 7
+      },
+      "changes": {
+        "mi_reduction": 0.0,
+        "confidence_increase": 0.7,
+        "accuracy_change": 1.0,
+        "prediction_changed": true
+      }
+    },
+    {
+      "question_id": 87,
+      "question_text": "When did Richard II flee to Normandy?",
+      "gold_answers": [],
+      "original": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "UNANSWERABLE",
+        "exact_match": 1.0,
+        "f1": 1.0
+      },
+      "nli_adapted": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "UNANSWERABLE",
+        "exact_match": 1.0,
+        "f1": 1.0,
+        "unique_clusters": 1
+      },
+      "changes": {
+        "mi_reduction": 0.0,
+        "confidence_increase": 0.0,
+        "accuracy_change": 0.0,
+        "prediction_changed": false
+      }
+    },
+    {
+      "question_id": 88,
+      "question_text": "Who's major ports were controlled by the English?",
+      "gold_answers": [],
+      "original": {
+        "mi_bits": 0.0,
+        "confidence": 0.6,
+        "predicted": "The Normans.",
+        "exact_match": 0.0,
+        "f1": 0.0
+      },
+      "nli_adapted": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "The Normans.",
+        "exact_match": 0.0,
+        "f1": 0.0,
+        "unique_clusters": 3
+      },
+      "changes": {
+        "mi_reduction": 0.0,
+        "confidence_increase": 0.4,
+        "accuracy_change": 0.0,
+        "prediction_changed": false
+      }
+    },
+    {
+      "question_id": 89,
+      "question_text": "Who was Edward the Confessor's half-brother?",
+      "gold_answers": [
+        "Harthacnut",
+        "Harthacnut",
+        "Harthacnut"
+      ],
+      "original": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "Harthacnut.",
+        "exact_match": 1.0,
+        "f1": 1.0
+      },
+      "nli_adapted": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "Harthacnut",
+        "exact_match": 1.0,
+        "f1": 1.0,
+        "unique_clusters": 2
+      },
+      "changes": {
+        "mi_reduction": 0.0,
+        "confidence_increase": 0.0,
+        "accuracy_change": 0.0,
+        "prediction_changed": true
+      }
+    },
+    {
+      "question_id": 9,
+      "question_text": "Who was the duke in the battle of Hastings?",
+      "gold_answers": [
+        "William the Conqueror",
+        "William the Conqueror",
+        "William the Conqueror"
+      ],
+      "original": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "William the Conqueror.",
+        "exact_match": 1.0,
+        "f1": 1.0
+      },
+      "nli_adapted": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "William the Conqueror.",
+        "exact_match": 1.0,
+        "f1": 1.0,
+        "unique_clusters": 2
+      },
+      "changes": {
+        "mi_reduction": 0.0,
+        "confidence_increase": 0.0,
+        "accuracy_change": 0.0,
+        "prediction_changed": false
+      }
+    },
+    {
+      "question_id": 90,
+      "question_text": "When did Edward return?",
+      "gold_answers": [
+        "1041",
+        "in 1041",
+        "1041"
+      ],
+      "original": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "1041",
+        "exact_match": 1.0,
+        "f1": 1.0
+      },
+      "nli_adapted": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "1041",
+        "exact_match": 1.0,
+        "f1": 1.0,
+        "unique_clusters": 1
+      },
+      "changes": {
+        "mi_reduction": 0.0,
+        "confidence_increase": 0.0,
+        "accuracy_change": 0.0,
+        "prediction_changed": false
+      }
+    },
+    {
+      "question_id": 91,
+      "question_text": "Who did Edward make archbishop of Canterbury?",
+      "gold_answers": [
+        "Robert of Jumi\u00e8ges",
+        "Robert of Jumi\u00e8ges",
+        "Robert of Jumi\u00e8ges"
+      ],
+      "original": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "Robert of Jumi\u00e8ges",
+        "exact_match": 1.0,
+        "f1": 1.0
+      },
+      "nli_adapted": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "Robert of Jumi\u00e8ges",
+        "exact_match": 1.0,
+        "f1": 1.0,
+        "unique_clusters": 2
+      },
+      "changes": {
+        "mi_reduction": 0.0,
+        "confidence_increase": 0.0,
+        "accuracy_change": 0.0,
+        "prediction_changed": false
+      }
+    },
+    {
+      "question_id": 92,
+      "question_text": "When did Edward the Confessor's son return from his fathers refuge?",
+      "gold_answers": [],
+      "original": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "1041",
+        "exact_match": 0.0,
+        "f1": 0.0
+      },
+      "nli_adapted": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "1041",
+        "exact_match": 0.0,
+        "f1": 0.0,
+        "unique_clusters": 1
+      },
+      "changes": {
+        "mi_reduction": 0.0,
+        "confidence_increase": 0.0,
+        "accuracy_change": 0.0,
+        "prediction_changed": false
+      }
+    },
+    {
+      "question_id": 93,
+      "question_text": "What kind of force did Harthacnut establish?",
+      "gold_answers": [],
+      "original": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "English cavalry force.",
+        "exact_match": 0.0,
+        "f1": 0.0
+      },
+      "nli_adapted": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "English cavalry force.",
+        "exact_match": 0.0,
+        "f1": 0.0,
+        "unique_clusters": 3
+      },
+      "changes": {
+        "mi_reduction": 0.0,
+        "confidence_increase": 0.0,
+        "accuracy_change": 0.0,
+        "prediction_changed": false
+      }
+    },
+    {
+      "question_id": 94,
+      "question_text": "Who made Robert of Jumieges earl of Hereford?",
+      "gold_answers": [],
+      "original": {
+        "mi_bits": 0.0,
+        "confidence": 0.7,
+        "predicted": "Ralph the Timid",
+        "exact_match": 0.0,
+        "f1": 0.0
+      },
+      "nli_adapted": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "Ralph made Robert of Jumi\u00e8ges earl of Hereford was incorrect.  Robert of Jumi\u00e8ges was made archbishop of Canterbury and Ralph the Timid was made earl of Hereford.",
+        "exact_match": 0.0,
+        "f1": 0.0,
+        "unique_clusters": 3
+      },
+      "changes": {
+        "mi_reduction": 0.0,
+        "confidence_increase": 0.30000000000000004,
+        "accuracy_change": 0.0,
+        "prediction_changed": true
+      }
+    },
+    {
+      "question_id": 95,
+      "question_text": "Where did Harold II die?",
+      "gold_answers": [
+        "Battle of Hastings",
+        "the Battle of Hastings",
+        "at the Battle of Hastings"
+      ],
+      "original": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "The Battle of Hastings.",
+        "exact_match": 1.0,
+        "f1": 1.0
+      },
+      "nli_adapted": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "The Battle of Hastings.",
+        "exact_match": 1.0,
+        "f1": 1.0,
+        "unique_clusters": 1
+      },
+      "changes": {
+        "mi_reduction": 0.0,
+        "confidence_increase": 0.0,
+        "accuracy_change": 0.0,
+        "prediction_changed": false
+      }
+    },
+    {
+      "question_id": 96,
+      "question_text": "Who killed Harold II? ",
+      "gold_answers": [
+        "William II",
+        "Duke William II",
+        "Duke William II"
+      ],
+      "original": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "Duke William II of Normandy.",
+        "exact_match": 0.0,
+        "f1": 0.7499999999999999
+      },
+      "nli_adapted": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "Duke William II of Normandy.",
+        "exact_match": 0.0,
+        "f1": 0.7499999999999999,
+        "unique_clusters": 2
+      },
+      "changes": {
+        "mi_reduction": 0.0,
+        "confidence_increase": 0.0,
+        "accuracy_change": 0.0,
+        "prediction_changed": false
+      }
+    },
+    {
+      "question_id": 97,
+      "question_text": "When was the Battle of Hastings?",
+      "gold_answers": [
+        "1066",
+        "In 1066",
+        "1066"
+      ],
+      "original": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "1066",
+        "exact_match": 1.0,
+        "f1": 1.0
+      },
+      "nli_adapted": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "1066",
+        "exact_match": 1.0,
+        "f1": 1.0,
+        "unique_clusters": 1
+      },
+      "changes": {
+        "mi_reduction": 0.0,
+        "confidence_increase": 0.0,
+        "accuracy_change": 0.0,
+        "prediction_changed": false
+      }
+    },
+    {
+      "question_id": 98,
+      "question_text": "Who was the ruling class ahead of the Normans?",
+      "gold_answers": [
+        "Anglo-Saxons",
+        "the Anglo-Saxons",
+        "Anglo-Saxons"
+      ],
+      "original": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "The Anglo-Saxons.",
+        "exact_match": 1.0,
+        "f1": 1.0
+      },
+      "nli_adapted": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "The Anglo-Saxons.",
+        "exact_match": 1.0,
+        "f1": 1.0,
+        "unique_clusters": 4
+      },
+      "changes": {
+        "mi_reduction": 0.0,
+        "confidence_increase": 0.0,
+        "accuracy_change": 0.0,
+        "prediction_changed": false
+      }
+    },
+    {
+      "question_id": 99,
+      "question_text": "When did King Harold II conquer England?",
+      "gold_answers": [],
+      "original": {
+        "mi_bits": 0.0,
+        "confidence": 0.7,
+        "predicted": "1066",
+        "exact_match": 0.0,
+        "f1": 0.0
+      },
+      "nli_adapted": {
+        "mi_bits": 0.0,
+        "confidence": 1.0,
+        "predicted": "1066",
+        "exact_match": 0.0,
+        "f1": 0.0,
+        "unique_clusters": 2
+      },
+      "changes": {
+        "mi_reduction": 0.0,
+        "confidence_increase": 0.30000000000000004,
+        "accuracy_change": 0.0,
+        "prediction_changed": false
+      }
+    }
+  ]
+}
