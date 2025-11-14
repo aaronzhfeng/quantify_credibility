@@ -33,8 +33,9 @@ The paper's method is designed for **uncertainty quantification**, not accuracy 
 
 ### Command Reference Guides (Quick Access):
 
-- **[MCQ_DATASETS_COMMANDS.md](MCQ_DATASETS_COMMANDS.md)**: 📋 **MCQ datasets** - ARC-Challenge, ARC-Easy, OpenBookQA (all 5 methods)
-- **[OPEN_ENDED_DATASETS_COMMANDS.md](OPEN_ENDED_DATASETS_COMMANDS.md)**: 📋 **Open-ended datasets** - TruthfulQA, SQuAD v2, TriviaQA (3 methods)
+- **[COMMANDS_MCQ.md](COMMANDS_MCQ.md)**: 📋 **MCQ datasets** - ARC-Challenge, ARC-Easy, OpenBookQA (all 5 methods)
+- **[COMMANDS_OPENENDED.md](COMMANDS_OPENENDED.md)**: 📋 **Open-ended datasets** - TruthfulQA, SQuAD v2, TriviaQA (3 methods)
+- **[COMMANDS_NLI.md](COMMANDS_NLI.md)**: 🔬 **NLI analysis** - Semantic equivalence & mutual entailment (post-hoc analysis)
 
 ### Detailed Guides:
 

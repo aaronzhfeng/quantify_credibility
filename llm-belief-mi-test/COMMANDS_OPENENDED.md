@@ -318,6 +318,51 @@ bash scripts/visualize_all.sh
 
 ---
 
+## 🔬 NLI Semantic Clustering & Analysis
+
+### 🚀 NEW: Live NLI Clustering for MI Method
+
+**MI method now supports semantic clustering during evaluation!**
+
+Add `--use-nli-clustering` to measure **semantic uncertainty** instead of string variation:
+
+```bash
+python -m llm_belief_mi_test.cli \
+  --method mi \
+  --dataset squad-v2 --split validation --limit 200 \
+  --k 10 --n 2 --temperature 0.9 \
+  --use-nli-clustering --nli-threshold 0.5 \
+  --load-in-4bit --max-tokens 50 \
+  --output outputs/results/squad_v2/mi_semantic_200.csv \
+  --multi-gpu
+```
+
+**What this does:**
+- Clusters semantically equivalent answers before MI computation
+- Lower MI when answers are semantically similar (even if strings differ)
+- Better calibrated confidence (semantic consistency → higher confidence)
+- Expected: ~0.02-0.05 ECE improvement
+
+**See [COMMANDS_NLI.md](COMMANDS_NLI.md) for complete details and research rationale**
+
+---
+
+### Post-hoc NLI Analysis
+
+After running evaluations, you can also analyze semantic equivalence using NLI-based mutual entailment.
+
+**For complete documentation and commands, see: [COMMANDS_NLI.md](COMMANDS_NLI.md)**
+
+**Quick summary:**
+- **Post-hoc analysis**: Works on existing log files (no re-inference needed)
+- **Two use cases**: 
+  1. Clustering analysis (compare F1 vs NLI grouping of equivalent answers)
+  2. Evaluation enhancement (semantic correctness checking vs exact match)
+- **Time**: ~8 minutes total for all datasets
+- **Expected improvements**: +5-10% accuracy, better clustering → better calibration
+
+---
+
 ## 🔑 Key Differences by Dataset
 
 ### **TruthfulQA MC1 vs MC2**
