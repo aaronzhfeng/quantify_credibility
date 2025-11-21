@@ -1,0 +1,546 @@
+{
+  "question_id": 128,
+  "question_text": "In baseball, where do the Orioles come from?",
+  "choices": [],
+  "gold_answer": "['Ballermore, Murdaland', 'Baltimore, Maryland, US', 'B.More', 'Bmore', 'City of Baltimore, Maryland', 'Baltimore (City)', 'Baseball in Baltimore', 'Ballamore, Murderland', 'Mobtown', 'Baltimore, US-MD', 'Baltimore md', 'Baltamore', 'Baltimore (Md.)', 'Ballermore, Murderland', 'B-More', 'Baltimore City', 'Ballamore', 'Baltimore, Md.', 'Baltimore, Maryland', 'Baltimore, Maryland, USA', 'Baltimore, Maryland, United States', 'Economy of Baltimore', 'Baltimore, MD', 'Charm City', 'Balitmore', 'Baltimore', 'Baltimore, United States', 'Baltimore, Md', 'Baltimore (MD)', 'Ballermore', 'Baltimore Department of Transportation', 'Transportation in Baltimore', 'Charm city', 'B. More', 'Baltimore City, MD', 'Ballamore, Murdaland', 'Baltimore, Maryland, United States of America', 'Department of Transportation (Baltimore)', 'Baltimore City, Maryland', 'City of Baltimore', 'Baltimore, USA', 'Baltimore City Department of Transportation', 'B More', 'Baltimore DOT', \"B'More\", \"Baltimore City Sheriff's Office\", 'UN/LOCODE:USBAL', 'Baltimoreans', 'Baltimore, MD, United States']",
+  "methods": {
+    "mi_method": {
+      "method_name": "triviaqa_correctness_mi",
+      "method_description": "k=10 chains of length n=2, correctness-based MI (TriviaQA)",
+      "raw_inputs": [
+        {
+          "chain_id": 0,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a trivia question. Your response MUST be ONLY the answer to the question. Do NOT include explanations, reasoning, or additional text. Provide a concise, direct answer."
+            },
+            {
+              "role": "user",
+              "content": "Question: In baseball, where do the Orioles come from?\n\nProvide a direct answer to the question.\n\nAnswer:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 50
+        },
+        {
+          "chain_id": 0,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a trivia question. Your response MUST be ONLY the answer to the question. Do NOT include explanations, reasoning, or additional text. Provide a concise, direct answer."
+            },
+            {
+              "role": "user",
+              "content": "Question: In baseball, where do the Orioles come from?\n\nOne answer to this question is: Baltimore\n\nProvide a direct answer to the question.\n\nAnswer:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 50
+        },
+        {
+          "chain_id": 1,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a trivia question. Your response MUST be ONLY the answer to the question. Do NOT include explanations, reasoning, or additional text. Provide a concise, direct answer."
+            },
+            {
+              "role": "user",
+              "content": "Question: In baseball, where do the Orioles come from?\n\nProvide a direct answer to the question.\n\nAnswer:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 50
+        },
+        {
+          "chain_id": 1,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a trivia question. Your response MUST be ONLY the answer to the question. Do NOT include explanations, reasoning, or additional text. Provide a concise, direct answer."
+            },
+            {
+              "role": "user",
+              "content": "Question: In baseball, where do the Orioles come from?\n\nOne answer to this question is: Baltimore.\n\nProvide a direct answer to the question.\n\nAnswer:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 50
+        },
+        {
+          "chain_id": 2,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a trivia question. Your response MUST be ONLY the answer to the question. Do NOT include explanations, reasoning, or additional text. Provide a concise, direct answer."
+            },
+            {
+              "role": "user",
+              "content": "Question: In baseball, where do the Orioles come from?\n\nProvide a direct answer to the question.\n\nAnswer:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 50
+        },
+        {
+          "chain_id": 2,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a trivia question. Your response MUST be ONLY the answer to the question. Do NOT include explanations, reasoning, or additional text. Provide a concise, direct answer."
+            },
+            {
+              "role": "user",
+              "content": "Question: In baseball, where do the Orioles come from?\n\nOne answer to this question is: Baltimore, Maryland.\n\nProvide a direct answer to the question.\n\nAnswer:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 50
+        },
+        {
+          "chain_id": 3,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a trivia question. Your response MUST be ONLY the answer to the question. Do NOT include explanations, reasoning, or additional text. Provide a concise, direct answer."
+            },
+            {
+              "role": "user",
+              "content": "Question: In baseball, where do the Orioles come from?\n\nProvide a direct answer to the question.\n\nAnswer:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 50
+        },
+        {
+          "chain_id": 3,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a trivia question. Your response MUST be ONLY the answer to the question. Do NOT include explanations, reasoning, or additional text. Provide a concise, direct answer."
+            },
+            {
+              "role": "user",
+              "content": "Question: In baseball, where do the Orioles come from?\n\nOne answer to this question is: Baltimore.\n\nProvide a direct answer to the question.\n\nAnswer:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 50
+        },
+        {
+          "chain_id": 4,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a trivia question. Your response MUST be ONLY the answer to the question. Do NOT include explanations, reasoning, or additional text. Provide a concise, direct answer."
+            },
+            {
+              "role": "user",
+              "content": "Question: In baseball, where do the Orioles come from?\n\nProvide a direct answer to the question.\n\nAnswer:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 50
+        },
+        {
+          "chain_id": 4,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a trivia question. Your response MUST be ONLY the answer to the question. Do NOT include explanations, reasoning, or additional text. Provide a concise, direct answer."
+            },
+            {
+              "role": "user",
+              "content": "Question: In baseball, where do the Orioles come from?\n\nOne answer to this question is: Baltimore.\n\nProvide a direct answer to the question.\n\nAnswer:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 50
+        },
+        {
+          "chain_id": 5,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a trivia question. Your response MUST be ONLY the answer to the question. Do NOT include explanations, reasoning, or additional text. Provide a concise, direct answer."
+            },
+            {
+              "role": "user",
+              "content": "Question: In baseball, where do the Orioles come from?\n\nProvide a direct answer to the question.\n\nAnswer:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 50
+        },
+        {
+          "chain_id": 5,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a trivia question. Your response MUST be ONLY the answer to the question. Do NOT include explanations, reasoning, or additional text. Provide a concise, direct answer."
+            },
+            {
+              "role": "user",
+              "content": "Question: In baseball, where do the Orioles come from?\n\nOne answer to this question is: Baltimore.\n\nProvide a direct answer to the question.\n\nAnswer:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 50
+        },
+        {
+          "chain_id": 6,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a trivia question. Your response MUST be ONLY the answer to the question. Do NOT include explanations, reasoning, or additional text. Provide a concise, direct answer."
+            },
+            {
+              "role": "user",
+              "content": "Question: In baseball, where do the Orioles come from?\n\nProvide a direct answer to the question.\n\nAnswer:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 50
+        },
+        {
+          "chain_id": 6,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a trivia question. Your response MUST be ONLY the answer to the question. Do NOT include explanations, reasoning, or additional text. Provide a concise, direct answer."
+            },
+            {
+              "role": "user",
+              "content": "Question: In baseball, where do the Orioles come from?\n\nOne answer to this question is: Baltimore.\n\nProvide a direct answer to the question.\n\nAnswer:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 50
+        },
+        {
+          "chain_id": 7,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a trivia question. Your response MUST be ONLY the answer to the question. Do NOT include explanations, reasoning, or additional text. Provide a concise, direct answer."
+            },
+            {
+              "role": "user",
+              "content": "Question: In baseball, where do the Orioles come from?\n\nProvide a direct answer to the question.\n\nAnswer:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 50
+        },
+        {
+          "chain_id": 7,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a trivia question. Your response MUST be ONLY the answer to the question. Do NOT include explanations, reasoning, or additional text. Provide a concise, direct answer."
+            },
+            {
+              "role": "user",
+              "content": "Question: In baseball, where do the Orioles come from?\n\nOne answer to this question is: Baltimore.\n\nProvide a direct answer to the question.\n\nAnswer:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 50
+        },
+        {
+          "chain_id": 8,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a trivia question. Your response MUST be ONLY the answer to the question. Do NOT include explanations, reasoning, or additional text. Provide a concise, direct answer."
+            },
+            {
+              "role": "user",
+              "content": "Question: In baseball, where do the Orioles come from?\n\nProvide a direct answer to the question.\n\nAnswer:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 50
+        },
+        {
+          "chain_id": 8,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a trivia question. Your response MUST be ONLY the answer to the question. Do NOT include explanations, reasoning, or additional text. Provide a concise, direct answer."
+            },
+            {
+              "role": "user",
+              "content": "Question: In baseball, where do the Orioles come from?\n\nOne answer to this question is: Baltimore.\n\nProvide a direct answer to the question.\n\nAnswer:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 50
+        },
+        {
+          "chain_id": 9,
+          "step": 0,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a trivia question. Your response MUST be ONLY the answer to the question. Do NOT include explanations, reasoning, or additional text. Provide a concise, direct answer."
+            },
+            {
+              "role": "user",
+              "content": "Question: In baseball, where do the Orioles come from?\n\nProvide a direct answer to the question.\n\nAnswer:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 50
+        },
+        {
+          "chain_id": 9,
+          "step": 1,
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a trivia question. Your response MUST be ONLY the answer to the question. Do NOT include explanations, reasoning, or additional text. Provide a concise, direct answer."
+            },
+            {
+              "role": "user",
+              "content": "Question: In baseball, where do the Orioles come from?\n\nOne answer to this question is: Baltimore.\n\nProvide a direct answer to the question.\n\nAnswer:"
+            }
+          ],
+          "temperature": 0.9,
+          "max_tokens": 50
+        }
+      ],
+      "raw_outputs": [
+        {
+          "chain_id": 0,
+          "step": 0,
+          "text": "Baltimore",
+          "logprob": -1.7199316024780273,
+          "probability": 0.1790783960111446
+        },
+        {
+          "chain_id": 0,
+          "step": 1,
+          "text": "Baltimore",
+          "logprob": 0.0,
+          "probability": 0.5
+        },
+        {
+          "chain_id": 1,
+          "step": 0,
+          "text": "Baltimore.",
+          "logprob": -0.3310423493385315,
+          "probability": 0.7181747541707608
+        },
+        {
+          "chain_id": 1,
+          "step": 1,
+          "text": "Baltimore.",
+          "logprob": -0.3208087086677551,
+          "probability": 0.7255620314435902
+        },
+        {
+          "chain_id": 2,
+          "step": 0,
+          "text": "Baltimore, Maryland.",
+          "logprob": -2.4276784360408783,
+          "probability": 0.08824145314793326
+        },
+        {
+          "chain_id": 2,
+          "step": 1,
+          "text": "Baltimore, Maryland.",
+          "logprob": 0.0,
+          "probability": 0.5
+        },
+        {
+          "chain_id": 3,
+          "step": 0,
+          "text": "Baltimore.",
+          "logprob": -0.3310423493385315,
+          "probability": 0.7181747541707608
+        },
+        {
+          "chain_id": 3,
+          "step": 1,
+          "text": "Baltimore.",
+          "logprob": -0.3208087086677551,
+          "probability": 0.7255620314435902
+        },
+        {
+          "chain_id": 4,
+          "step": 0,
+          "text": "Baltimore.",
+          "logprob": -0.3310423493385315,
+          "probability": 0.7181747541707608
+        },
+        {
+          "chain_id": 4,
+          "step": 1,
+          "text": "Baltimore.",
+          "logprob": -0.3208087086677551,
+          "probability": 0.7255620314435902
+        },
+        {
+          "chain_id": 5,
+          "step": 0,
+          "text": "Baltimore.",
+          "logprob": -0.3310423493385315,
+          "probability": 0.7181747541707608
+        },
+        {
+          "chain_id": 5,
+          "step": 1,
+          "text": "Baltimore.",
+          "logprob": -0.3208087086677551,
+          "probability": 0.7255620314435902
+        },
+        {
+          "chain_id": 6,
+          "step": 0,
+          "text": "Baltimore.",
+          "logprob": -0.3310423493385315,
+          "probability": 0.7181747541707608
+        },
+        {
+          "chain_id": 6,
+          "step": 1,
+          "text": "Baltimore.",
+          "logprob": -0.3208087086677551,
+          "probability": 0.7255620314435902
+        },
+        {
+          "chain_id": 7,
+          "step": 0,
+          "text": "Baltimore.",
+          "logprob": -0.3310423493385315,
+          "probability": 0.7181747541707608
+        },
+        {
+          "chain_id": 7,
+          "step": 1,
+          "text": "Baltimore",
+          "logprob": -1.293030023574829,
+          "probability": 0.2744379684886416
+        },
+        {
+          "chain_id": 8,
+          "step": 0,
+          "text": "Baltimore.",
+          "logprob": -0.3310423493385315,
+          "probability": 0.7181747541707608
+        },
+        {
+          "chain_id": 8,
+          "step": 1,
+          "text": "Baltimore.",
+          "logprob": -0.3208087086677551,
+          "probability": 0.7255620314435902
+        },
+        {
+          "chain_id": 9,
+          "step": 0,
+          "text": "Baltimore.",
+          "logprob": -0.3310423493385315,
+          "probability": 0.7181747541707608
+        },
+        {
+          "chain_id": 9,
+          "step": 1,
+          "text": "Baltimore",
+          "logprob": -1.293030023574829,
+          "probability": 0.2744379684886416
+        }
+      ],
+      "decision_process": {
+        "num_chains": 10,
+        "chain_length": 2,
+        "total_inferences": 20,
+        "mi_method": "listing",
+        "mi_nats": 0.0,
+        "mi_bits": 0.0,
+        "selected_answer": "Baltimore.",
+        "confidence_computation": "MI-based (inverse): 1.0000",
+        "correctness_agreement": "100.00% (10/10 chains agree on correctness)"
+      },
+      "final_metrics": {
+        "predicted": "Baltimore.",
+        "gold_answers": [
+          "Ballermore, Murdaland",
+          "Baltimore, Maryland, US",
+          "B.More",
+          "Bmore",
+          "City of Baltimore, Maryland",
+          "Baltimore (City)",
+          "Baseball in Baltimore",
+          "Ballamore, Murderland",
+          "Mobtown",
+          "Baltimore, US-MD",
+          "Baltimore md",
+          "Baltamore",
+          "Baltimore (Md.)",
+          "Ballermore, Murderland",
+          "B-More",
+          "Baltimore City",
+          "Ballamore",
+          "Baltimore, Md.",
+          "Baltimore, Maryland",
+          "Baltimore, Maryland, USA",
+          "Baltimore, Maryland, United States",
+          "Economy of Baltimore",
+          "Baltimore, MD",
+          "Charm City",
+          "Balitmore",
+          "Baltimore",
+          "Baltimore, United States",
+          "Baltimore, Md",
+          "Baltimore (MD)",
+          "Ballermore",
+          "Baltimore Department of Transportation",
+          "Transportation in Baltimore",
+          "Charm city",
+          "B. More",
+          "Baltimore City, MD",
+          "Ballamore, Murdaland",
+          "Baltimore, Maryland, United States of America",
+          "Department of Transportation (Baltimore)",
+          "Baltimore City, Maryland",
+          "City of Baltimore",
+          "Baltimore, USA",
+          "Baltimore City Department of Transportation",
+          "B More",
+          "Baltimore DOT",
+          "B'More",
+          "Baltimore City Sheriff's Office",
+          "UN/LOCODE:USBAL",
+          "Baltimoreans",
+          "Baltimore, MD, United States"
+        ],
+        "exact_match": 1.0,
+        "f1": 1.0,
+        "confidence": 1.0,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}
