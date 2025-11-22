@@ -1,0 +1,53 @@
+{
+  "question_id": 18,
+  "question_text": "Who had an 80s No 1 hit with Hold On To The Nights?",
+  "choices": [],
+  "gold_answer": "['Richard Noel Marx', 'Richard Marx']",
+  "methods": {
+    "greedy": {
+      "method_name": "triviaqa_greedy",
+      "method_description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a trivia question. Your response MUST be ONLY the answer to the question. Do NOT include explanations, reasoning, or additional text. Provide a concise, direct answer."
+            },
+            {
+              "role": "user",
+              "content": "Question: Who had an 80s No 1 hit with Hold On To The Nights?\n\nProvide a direct answer to the question.\n\nAnswer:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 50
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "Bryan Adams",
+          "logprob": -2.314489456359297,
+          "probability": 0.09881662132342157
+        }
+      ],
+      "decision_process": {
+        "method": "greedy",
+        "temperature": 0.0,
+        "selected_answer": "Bryan Adams",
+        "confidence_from_logprob": "0.0988"
+      },
+      "final_metrics": {
+        "predicted": "Bryan Adams",
+        "gold_answers": [
+          "Richard Noel Marx",
+          "Richard Marx"
+        ],
+        "exact_match": 0.0,
+        "f1": 0.0,
+        "confidence": 0.09881662132342157,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

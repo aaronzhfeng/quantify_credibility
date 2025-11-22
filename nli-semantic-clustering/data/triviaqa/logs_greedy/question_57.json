@@ -1,0 +1,53 @@
+{
+  "question_id": 57,
+  "question_text": "River Phoenix died during the making of which movie?",
+  "choices": [],
+  "gold_answer": "['Dark Blood (film)', 'Dark Blood']",
+  "methods": {
+    "greedy": {
+      "method_name": "triviaqa_greedy",
+      "method_description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a trivia question. Your response MUST be ONLY the answer to the question. Do NOT include explanations, reasoning, or additional text. Provide a concise, direct answer."
+            },
+            {
+              "role": "user",
+              "content": "Question: River Phoenix died during the making of which movie?\n\nProvide a direct answer to the question.\n\nAnswer:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 50
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "Darkness",
+          "logprob": -1.1469752304255962,
+          "probability": 0.31759597259823413
+        }
+      ],
+      "decision_process": {
+        "method": "greedy",
+        "temperature": 0.0,
+        "selected_answer": "Darkness",
+        "confidence_from_logprob": "0.3176"
+      },
+      "final_metrics": {
+        "predicted": "Darkness",
+        "gold_answers": [
+          "Dark Blood (film)",
+          "Dark Blood"
+        ],
+        "exact_match": 0.0,
+        "f1": 0.0,
+        "confidence": 0.31759597259823413,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

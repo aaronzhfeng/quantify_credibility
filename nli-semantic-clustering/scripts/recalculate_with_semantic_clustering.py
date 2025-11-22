@@ -132,7 +132,8 @@ def recalculate_with_nli(
     gold_answers: List[str],
     nli_checker: NLIClusteringCache,
     nli_threshold: float,
-    is_correctness_based: bool = False
+    is_correctness_based: bool = False,
+    use_nli_grading: bool = False
 ) -> Dict:
     """
     Recalculate MI and confidence with NLI clustering applied.
@@ -174,9 +175,18 @@ def recalculate_with_nli(
     from collections import Counter
     predicted_answer = Counter(final_answers).most_common(1)[0][0] if final_answers else ""
     
-    # Evaluate
-    exact_match = compute_exact_match(predicted_answer, gold_answers)
-    f1 = compute_f1_score(predicted_answer, gold_answers)
+    # Evaluate accuracy
+    if use_nli_grading:
+        # NEW: Use NLI-based grading (loose, unidirectional)
+        # This accepts verbose but correct answers
+        # Pass ALL gold answers AND threshold to check against any acceptable answer
+        exact_match = 1.0 if nli_checker.is_correct(predicted_answer, gold_answers, threshold=nli_threshold) else 0.0
+        # Still compute F1 for comparison
+        f1 = compute_f1_score(predicted_answer, gold_answers)
+    else:
+        # ORIGINAL: Use F1-based grading (baseline)
+        exact_match = compute_exact_match(predicted_answer, gold_answers)
+        f1 = compute_f1_score(predicted_answer, gold_answers)
     
     # Calculate agreement
     from llm_belief_mi_test.evaluation import compute_agreement_fraction
@@ -220,7 +230,7 @@ def main():
     parser.add_argument(
         "--nli-model",
         type=str,
-        default="microsoft/deberta-v2-xlarge-mnli",
+        default="MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli",
         help="NLI model to use"
     )
     parser.add_argument(
@@ -233,6 +243,13 @@ def main():
         "--correctness-based",
         action="store_true",
         help="Use correctness-based MI (for TriviaQA)"
+    )
+    parser.add_argument(
+        "--use-nli-grading",
+        action="store_true",
+        help="Use NLI for accuracy checking (not just clustering). "
+             "This uses loose unidirectional entailment for grading, "
+             "which should improve accuracy on verbose answers."
     )
     
     args = parser.parse_args()
@@ -288,7 +305,8 @@ def main():
                 gold_answers=metadata["gold_answers"],
                 nli_checker=nli_checker,
                 nli_threshold=args.nli_threshold,
-                is_correctness_based=args.correctness_based
+                is_correctness_based=args.correctness_based,
+                use_nli_grading=args.use_nli_grading
             )
             
             # Combine results

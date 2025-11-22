@@ -1,0 +1,78 @@
+{
+  "question_id": 48,
+  "question_text": "In which state was Gene Vincent born?",
+  "choices": [],
+  "gold_answer": "['US-VA', 'State of Virginia', 'Virginia, USA', 'Tenth State', 'Religion in Virginia', 'Virginia (USA state)', 'Virginia (state)', 'Commonwealth of VA', 'Rest of Virginia', 'Virginia', 'Mother of Presidents', 'Virginia (USA State)', 'The Old Dominion', 'VA (state)', 'Commonwealth of Virginia', 'Virginian Commonwealth', 'The Mother of Presidents', 'Virginia, United States', 'Council of Virginia', 'Sports in Virginia', 'Viginia', 'Virginia (U.S. state)', '10th State', 'Virgina', 'The Commonwealth of Virginia', 'VA, USA', 'Virginia (State)']",
+  "methods": {
+    "greedy": {
+      "method_name": "triviaqa_greedy",
+      "method_description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a trivia question. Your response MUST be ONLY the answer to the question. Do NOT include explanations, reasoning, or additional text. Provide a concise, direct answer."
+            },
+            {
+              "role": "user",
+              "content": "Question: In which state was Gene Vincent born?\n\nProvide a direct answer to the question.\n\nAnswer:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 50
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "Virginia",
+          "logprob": -0.7996348738670349,
+          "probability": 0.44949305581958027
+        }
+      ],
+      "decision_process": {
+        "method": "greedy",
+        "temperature": 0.0,
+        "selected_answer": "Virginia",
+        "confidence_from_logprob": "0.4495"
+      },
+      "final_metrics": {
+        "predicted": "Virginia",
+        "gold_answers": [
+          "US-VA",
+          "State of Virginia",
+          "Virginia, USA",
+          "Tenth State",
+          "Religion in Virginia",
+          "Virginia (USA state)",
+          "Virginia (state)",
+          "Commonwealth of VA",
+          "Rest of Virginia",
+          "Virginia",
+          "Mother of Presidents",
+          "Virginia (USA State)",
+          "The Old Dominion",
+          "VA (state)",
+          "Commonwealth of Virginia",
+          "Virginian Commonwealth",
+          "The Mother of Presidents",
+          "Virginia, United States",
+          "Council of Virginia",
+          "Sports in Virginia",
+          "Viginia",
+          "Virginia (U.S. state)",
+          "10th State",
+          "Virgina",
+          "The Commonwealth of Virginia",
+          "VA, USA",
+          "Virginia (State)"
+        ],
+        "exact_match": 1.0,
+        "f1": 1.0,
+        "confidence": 0.44949305581958027,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

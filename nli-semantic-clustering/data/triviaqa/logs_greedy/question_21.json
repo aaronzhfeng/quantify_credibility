@@ -1,0 +1,53 @@
+{
+  "question_id": 21,
+  "question_text": "Which highway was Revisited in a classic 60s album by Bob Dylan?",
+  "choices": [],
+  "gold_answer": "['61', 'sixty-one']",
+  "methods": {
+    "greedy": {
+      "method_name": "triviaqa_greedy",
+      "method_description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a trivia question. Your response MUST be ONLY the answer to the question. Do NOT include explanations, reasoning, or additional text. Provide a concise, direct answer."
+            },
+            {
+              "role": "user",
+              "content": "Question: Which highway was Revisited in a classic 60s album by Bob Dylan?\n\nProvide a direct answer to the question.\n\nAnswer:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 50
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "Highway 61.",
+          "logprob": -0.7856240424425778,
+          "probability": 0.4558351525274704
+        }
+      ],
+      "decision_process": {
+        "method": "greedy",
+        "temperature": 0.0,
+        "selected_answer": "Highway 61.",
+        "confidence_from_logprob": "0.4558"
+      },
+      "final_metrics": {
+        "predicted": "Highway 61.",
+        "gold_answers": [
+          "61",
+          "sixty-one"
+        ],
+        "exact_match": 0.0,
+        "f1": 0.6666666666666666,
+        "confidence": 0.4558351525274704,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

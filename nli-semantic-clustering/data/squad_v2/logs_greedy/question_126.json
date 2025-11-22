@@ -1,0 +1,54 @@
+{
+  "question_id": 126,
+  "question_text": "Who made Ralph earl?",
+  "choices": [],
+  "gold_answer": "['Edward the Confessor', 'Edward the Confessor', 'Edward the Confessor']",
+  "methods": {
+    "greedy": {
+      "method_name": "squad-v2_greedy",
+      "method_description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a question based on a given context. Your response MUST be ONLY the direct answer from the context. Do NOT include explanations, reasoning, or additional text. If the question cannot be answered from the context, respond with: UNANSWERABLE"
+            },
+            {
+              "role": "user",
+              "content": "Context:\nEven before the Norman Conquest of England, the Normans had come into contact with Wales. Edward the Confessor had set up the aforementioned Ralph as earl of Hereford and charged him with defending the Marches and warring with the Welsh. In these original ventures, the Normans failed to make any headway into Wales.\n\nQuestion: Who made Ralph earl?\n\nProvide a direct answer to the question based on the context above.\n\nAnswer:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 50
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "Edward the Confessor",
+          "logprob": -0.18028385207048814,
+          "probability": 0.8350331518788571
+        }
+      ],
+      "decision_process": {
+        "method": "greedy",
+        "temperature": 0.0,
+        "selected_answer": "Edward the Confessor",
+        "confidence_from_logprob": "0.8350"
+      },
+      "final_metrics": {
+        "predicted": "Edward the Confessor",
+        "gold_answers": [
+          "Edward the Confessor",
+          "Edward the Confessor",
+          "Edward the Confessor"
+        ],
+        "exact_match": 1.0,
+        "f1": 1.0,
+        "confidence": 0.8350331518788571,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

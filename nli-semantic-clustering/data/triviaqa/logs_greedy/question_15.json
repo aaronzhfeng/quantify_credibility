@@ -1,0 +1,64 @@
+{
+  "question_id": 15,
+  "question_text": "Who was the director of the CIA from 1976-81?",
+  "choices": [],
+  "gold_answer": "['George Bush', 'George bush', 'Goerge Bush', 'George W. Bush (disambiguation)', 'GeorgeBush', 'George Bushe', 'Georgebush', 'Georg bush', 'G Bush', 'George Bush, President', 'George Bush (disambiguation)', 'Bush, George', 'Geroge Bush']",
+  "methods": {
+    "greedy": {
+      "method_name": "triviaqa_greedy",
+      "method_description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a trivia question. Your response MUST be ONLY the answer to the question. Do NOT include explanations, reasoning, or additional text. Provide a concise, direct answer."
+            },
+            {
+              "role": "user",
+              "content": "Question: Who was the director of the CIA from 1976-81?\n\nProvide a direct answer to the question.\n\nAnswer:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 50
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "Edward Heathall",
+          "logprob": -5.539811313152313,
+          "probability": 0.003927267792179029
+        }
+      ],
+      "decision_process": {
+        "method": "greedy",
+        "temperature": 0.0,
+        "selected_answer": "Edward Heathall",
+        "confidence_from_logprob": "0.0039"
+      },
+      "final_metrics": {
+        "predicted": "Edward Heathall",
+        "gold_answers": [
+          "George Bush",
+          "George bush",
+          "Goerge Bush",
+          "George W. Bush (disambiguation)",
+          "GeorgeBush",
+          "George Bushe",
+          "Georgebush",
+          "Georg bush",
+          "G Bush",
+          "George Bush, President",
+          "George Bush (disambiguation)",
+          "Bush, George",
+          "Geroge Bush"
+        ],
+        "exact_match": 0.0,
+        "f1": 0.0,
+        "confidence": 0.003927267792179029,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

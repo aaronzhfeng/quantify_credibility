@@ -279,12 +279,18 @@ def compute_ece(
     """
     Compute Expected Calibration Error (ECE).
     
-    ECE measures the difference between confidence and accuracy.
+    ECE measures the difference between confidence and accuracy in each bin.
+    
+    For calibration measurement, pass the correctness labels (0/1) as labels.
+    The bin accuracy is computed as the fraction of correct answers in each
+    confidence bin, NOT as (predictions == labels).mean().
     
     Args:
         predictions: Binary array of predictions (0 or 1)
+                    For calibration, typically pass the same as labels
         confidences: Confidence scores (0 to 1)
-        labels: Ground truth labels (0 or 1)
+        labels: Ground truth correctness labels (0 or 1)
+                This is the actual correctness (EM scores)
         n_bins: Number of calibration bins
         
     Returns:
@@ -304,7 +310,9 @@ def compute_ece(
         
         if n_in_bin > 0:
             # Compute accuracy in this bin
-            bin_accuracy = (predictions[in_bin] == labels[in_bin]).mean()
+            # CORRECTED: Use labels.mean() to get fraction of correct answers
+            # NOT (predictions == labels).mean() which would be 1.0 when pred==label
+            bin_accuracy = labels[in_bin].mean()
             # Compute average confidence in this bin
             bin_confidence = confidences[in_bin].mean()
             # Weight by fraction of samples in bin

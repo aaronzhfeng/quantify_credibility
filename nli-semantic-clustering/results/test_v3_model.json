@@ -1,0 +1,154 @@
+{
+  "config": {
+    "log_directory": "data/triviaqa/logs_mi",
+    "n_questions": 3,
+    "thresholds": [
+      0.5
+    ],
+    "nli_model": "MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli",
+    "correctness_based": true,
+    "dataset": "triviaqa"
+  },
+  "threshold_summary": {
+    "0.5": {
+      "avg_clustering_reduction": 0.16666666666666666,
+      "avg_n_unique_before": 5.0,
+      "avg_n_unique_after": 4.666666666666667,
+      "predictions_changed": 0,
+      "predictions_changed_pct": 0.0,
+      "accuracy_original": 0.3333333333333333,
+      "accuracy_clustered": 0.3333333333333333,
+      "accuracy_change": 0.0,
+      "f1_original": 0.3333333333333333,
+      "f1_clustered": 0.3333333333333333,
+      "f1_change": 0.0,
+      "avg_mi_bits": 0.0,
+      "avg_confidence": 1.0,
+      "em_improved": 0,
+      "em_degraded": 0,
+      "em_unchanged": 3
+    }
+  },
+  "per_question_results": [
+    {
+      "question_id": 0,
+      "question_text": "Who was the man behind The Chipmunks?",
+      "gold_answers": [
+        "David Seville"
+      ],
+      "original_metrics": {
+        "predicted": "Ross Bagdasarian Sr.",
+        "exact_match": 0.0,
+        "f1": 0.0,
+        "mi": 0.0,
+        "confidence": 1.0
+      },
+      "threshold_results": [
+        {
+          "threshold": 0.5,
+          "n_unique_before": 8,
+          "n_unique_after": 8,
+          "clustering_reduction": 0.0,
+          "predicted_original": "Ross Bagdasarian Sr.",
+          "predicted_clustered": "Ross Bagdasarian Sr.",
+          "prediction_changed": false,
+          "em_original": 0.0,
+          "em_clustered": 0.0,
+          "em_change": 0.0,
+          "f1_original": 0.0,
+          "f1_clustered": 0.0,
+          "f1_change": 0.0,
+          "mi_bits": 0.0,
+          "confidence": 1.0,
+          "agreement_original": 0.4,
+          "agreement_clustered": 0.4
+        }
+      ]
+    },
+    {
+      "question_id": 1,
+      "question_text": "Which Lloyd Webber musical premiered in the US on 10th December 1993?",
+      "gold_answers": [
+        "Sunset Blvd",
+        "West Sunset Boulevard",
+        "Sunset Boulevard",
+        "Sunset Bulevard",
+        "Sunset Blvd."
+      ],
+      "original_metrics": {
+        "predicted": "Sunset Boulevard",
+        "exact_match": 1.0,
+        "f1": 1.0,
+        "mi": 0.0,
+        "confidence": 1.0
+      },
+      "threshold_results": [
+        {
+          "threshold": 0.5,
+          "n_unique_before": 2,
+          "n_unique_after": 1,
+          "clustering_reduction": 0.5,
+          "predicted_original": "Sunset Boulevard",
+          "predicted_clustered": "Sunset Boulevard",
+          "prediction_changed": false,
+          "em_original": 1.0,
+          "em_clustered": 1.0,
+          "em_change": 0.0,
+          "f1_original": 1.0,
+          "f1_clustered": 1.0,
+          "f1_change": 0.0,
+          "mi_bits": 0.0,
+          "confidence": 1.0,
+          "agreement_original": 0.6,
+          "agreement_clustered": 1.0
+        }
+      ]
+    },
+    {
+      "question_id": 10,
+      "question_text": "In which decade did stereo records first go on sale?",
+      "gold_answers": [
+        "1930\u2019s",
+        "Thirties",
+        "1930s literature",
+        "Nineteen-thirties",
+        "1930\u20131939",
+        "1930-1939",
+        "'30s",
+        "1930s",
+        "1930's",
+        "%6030s",
+        "1930s (decade)",
+        "The Thirties"
+      ],
+      "original_metrics": {
+        "predicted": "1950s",
+        "exact_match": 0.0,
+        "f1": 0.0,
+        "mi": 0.0,
+        "confidence": 1.0
+      },
+      "threshold_results": [
+        {
+          "threshold": 0.5,
+          "n_unique_before": 5,
+          "n_unique_after": 5,
+          "clustering_reduction": 0.0,
+          "predicted_original": "1950s",
+          "predicted_clustered": "1950s",
+          "prediction_changed": false,
+          "em_original": 0.0,
+          "em_clustered": 0.0,
+          "em_change": 0.0,
+          "f1_original": 0.0,
+          "f1_clustered": 0.0,
+          "f1_change": 0.0,
+          "mi_bits": 0.0,
+          "confidence": 1.0,
+          "agreement_original": 0.4,
+          "agreement_clustered": 0.4
+        }
+      ]
+    }
+  ]
+}

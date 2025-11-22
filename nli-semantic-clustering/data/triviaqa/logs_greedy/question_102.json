@@ -1,0 +1,58 @@
+{
+  "question_id": 102,
+  "question_text": "Which much-loved actor won the Best Actor Oscar for The Philadelphia Story?",
+  "choices": [],
+  "gold_answer": "['James Stewart (actor)', 'Jimmy Stuart', 'James stewart (actor)', 'Jimmy Stewart', 'James Stewart', 'Jimmy stewart', 'Stewart, James']",
+  "methods": {
+    "greedy": {
+      "method_name": "triviaqa_greedy",
+      "method_description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a trivia question. Your response MUST be ONLY the answer to the question. Do NOT include explanations, reasoning, or additional text. Provide a concise, direct answer."
+            },
+            {
+              "role": "user",
+              "content": "Question: Which much-loved actor won the Best Actor Oscar for The Philadelphia Story?\n\nProvide a direct answer to the question.\n\nAnswer:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 50
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "James Stewart",
+          "logprob": -0.583753474522382,
+          "probability": 0.557800741465272
+        }
+      ],
+      "decision_process": {
+        "method": "greedy",
+        "temperature": 0.0,
+        "selected_answer": "James Stewart",
+        "confidence_from_logprob": "0.5578"
+      },
+      "final_metrics": {
+        "predicted": "James Stewart",
+        "gold_answers": [
+          "James Stewart (actor)",
+          "Jimmy Stuart",
+          "James stewart (actor)",
+          "Jimmy Stewart",
+          "James Stewart",
+          "Jimmy stewart",
+          "Stewart, James"
+        ],
+        "exact_match": 1.0,
+        "f1": 1.0,
+        "confidence": 0.557800741465272,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "question_id": 98,
+  "question_text": "Who was the ruling class ahead of the Normans?",
+  "choices": [],
+  "gold_answer": "['Anglo-Saxons', 'the Anglo-Saxons', 'Anglo-Saxons']",
+  "methods": {
+    "greedy": {
+      "method_name": "squad-v2_greedy",
+      "method_description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a question based on a given context. Your response MUST be ONLY the direct answer from the context. Do NOT include explanations, reasoning, or additional text. If the question cannot be answered from the context, respond with: UNANSWERABLE"
+            },
+            {
+              "role": "user",
+              "content": "Context:\nIn 1066, Duke William II of Normandy conquered England killing King Harold II at the Battle of Hastings. The invading Normans and their descendants replaced the Anglo-Saxons as the ruling class of England. The nobility of England were part of a single Normans culture and many had lands on both sides of the channel. Early Norman kings of England, as Dukes of Normandy, owed homage to the King of France for their land on the continent. They considered England to be their most important holding (it brought with it the title of King—an important status symbol).\n\nQuestion: Who was the ruling class ahead of the Normans?\n\nProvide a direct answer to the question based on the context above.\n\nAnswer:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 50
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "The Anglo-Saxons.",
+          "logprob": -0.5397772408217634,
+          "probability": 0.5828780793553463
+        }
+      ],
+      "decision_process": {
+        "method": "greedy",
+        "temperature": 0.0,
+        "selected_answer": "The Anglo-Saxons.",
+        "confidence_from_logprob": "0.5829"
+      },
+      "final_metrics": {
+        "predicted": "The Anglo-Saxons.",
+        "gold_answers": [
+          "Anglo-Saxons",
+          "the Anglo-Saxons",
+          "Anglo-Saxons"
+        ],
+        "exact_match": 1.0,
+        "f1": 1.0,
+        "confidence": 0.5828780793553463,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

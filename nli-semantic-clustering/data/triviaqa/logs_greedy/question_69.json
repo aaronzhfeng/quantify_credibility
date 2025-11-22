@@ -1,0 +1,60 @@
+{
+  "question_id": 69,
+  "question_text": "What is the name of Terence and Shirley Conran's dress designer son?",
+  "choices": [],
+  "gold_answer": "['Jaspis', 'Bruneau jasper', 'Egyptian jasper', 'Black Jasper', 'Lydian stone', 'Jasper (mineral)', 'Jasper', 'Youngite', 'Bruneau Jasper']",
+  "methods": {
+    "greedy": {
+      "method_name": "triviaqa_greedy",
+      "method_description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a trivia question. Your response MUST be ONLY the answer to the question. Do NOT include explanations, reasoning, or additional text. Provide a concise, direct answer."
+            },
+            {
+              "role": "user",
+              "content": "Question: What is the name of Terence and Shirley Conran's dress designer son?\n\nProvide a direct answer to the question.\n\nAnswer:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 50
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "Kim Conran",
+          "logprob": -2.934428242064314,
+          "probability": 0.05316110590285195
+        }
+      ],
+      "decision_process": {
+        "method": "greedy",
+        "temperature": 0.0,
+        "selected_answer": "Kim Conran",
+        "confidence_from_logprob": "0.0532"
+      },
+      "final_metrics": {
+        "predicted": "Kim Conran",
+        "gold_answers": [
+          "Jaspis",
+          "Bruneau jasper",
+          "Egyptian jasper",
+          "Black Jasper",
+          "Lydian stone",
+          "Jasper (mineral)",
+          "Jasper",
+          "Youngite",
+          "Bruneau Jasper"
+        ],
+        "exact_match": 0.0,
+        "f1": 0.0,
+        "confidence": 0.05316110590285195,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

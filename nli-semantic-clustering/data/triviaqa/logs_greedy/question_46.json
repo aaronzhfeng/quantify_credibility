@@ -1,0 +1,53 @@
+{
+  "question_id": 46,
+  "question_text": "How old was Jimi Hendrix when he died?",
+  "choices": [],
+  "gold_answer": "['27', 'twenty-seven']",
+  "methods": {
+    "greedy": {
+      "method_name": "triviaqa_greedy",
+      "method_description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a trivia question. Your response MUST be ONLY the answer to the question. Do NOT include explanations, reasoning, or additional text. Provide a concise, direct answer."
+            },
+            {
+              "role": "user",
+              "content": "Question: How old was Jimi Hendrix when he died?\n\nProvide a direct answer to the question.\n\nAnswer:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 50
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "27",
+          "logprob": -0.10727394837886095,
+          "probability": 0.8982795570518952
+        }
+      ],
+      "decision_process": {
+        "method": "greedy",
+        "temperature": 0.0,
+        "selected_answer": "27",
+        "confidence_from_logprob": "0.8983"
+      },
+      "final_metrics": {
+        "predicted": "27",
+        "gold_answers": [
+          "27",
+          "twenty-seven"
+        ],
+        "exact_match": 1.0,
+        "f1": 1.0,
+        "confidence": 0.8982795570518952,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

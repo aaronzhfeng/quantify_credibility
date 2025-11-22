@@ -1,0 +1,54 @@
+{
+  "question_id": 36,
+  "question_text": "What was one of the Norman's major exports?",
+  "choices": [],
+  "gold_answer": "['fighting horsemen', 'fighting horsemen', 'fighting horsemen']",
+  "methods": {
+    "greedy": {
+      "method_name": "squad-v2_greedy",
+      "method_description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a question based on a given context. Your response MUST be ONLY the direct answer from the context. Do NOT include explanations, reasoning, or additional text. If the question cannot be answered from the context, respond with: UNANSWERABLE"
+            },
+            {
+              "role": "user",
+              "content": "Context:\nThe Normans thereafter adopted the growing feudal doctrines of the rest of France, and worked them into a functional hierarchical system in both Normandy and in England. The new Norman rulers were culturally and ethnically distinct from the old French aristocracy, most of whom traced their lineage to Franks of the Carolingian dynasty. Most Norman knights remained poor and land-hungry, and by 1066 Normandy had been exporting fighting horsemen for more than a generation. Many Normans of Italy, France and England eventually served as avid Crusaders under the Italo-Norman prince Bohemund I and the Anglo-Norman king Richard the Lion-Heart.\n\nQuestion: What was one of the Norman's major exports?\n\nProvide a direct answer to the question based on the context above.\n\nAnswer:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 50
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "fighting horsemen",
+          "logprob": -0.5791184405952663,
+          "probability": 0.5603921678617515
+        }
+      ],
+      "decision_process": {
+        "method": "greedy",
+        "temperature": 0.0,
+        "selected_answer": "fighting horsemen",
+        "confidence_from_logprob": "0.5604"
+      },
+      "final_metrics": {
+        "predicted": "fighting horsemen",
+        "gold_answers": [
+          "fighting horsemen",
+          "fighting horsemen",
+          "fighting horsemen"
+        ],
+        "exact_match": 1.0,
+        "f1": 1.0,
+        "confidence": 0.5603921678617515,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

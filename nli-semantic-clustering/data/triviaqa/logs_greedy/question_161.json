@@ -1,0 +1,85 @@
+{
+  "question_id": 161,
+  "question_text": "In which North African country was Mohammed Al-Fayed, owner of Harrods department store in London, born?",
+  "choices": [],
+  "gold_answer": "['EGY', 'Arab Republic of Egypt', 'A .R . EGYPT', 'The Arab Republic of Egypt', 'Eygpt', 'Etymology of Egypt', 'مصر', 'Kemmet', 'Gift of the Nile', 'Arab Republic Of Egypt', 'Names of Egypt', 'Miṣr', 'A .R . Egypt', 'Eytp', 'National identity of Egyptians', \"Jumhuriyat Misr al'Arabiyah\", 'Eypt', 'Egyptian Republic', 'Ejipt', 'Name of Egypt', 'Egipto', 'Kimet', 'جمهوريّة مصرالعربيّة', 'Egypte', 'Egypt (name)', 'Egypt', 'جمهورية مصرالعربية', 'A.R. Egypt', 'Republic of Eygpt', 'Égypte', 'Second Egyptian Republic', 'Egipt', 'ISO 3166-1:EG', 'Egypt info']",
+  "methods": {
+    "greedy": {
+      "method_name": "triviaqa_greedy",
+      "method_description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a trivia question. Your response MUST be ONLY the answer to the question. Do NOT include explanations, reasoning, or additional text. Provide a concise, direct answer."
+            },
+            {
+              "role": "user",
+              "content": "Question: In which North African country was Mohammed Al-Fayed, owner of Harrods department store in London, born?\n\nProvide a direct answer to the question.\n\nAnswer:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 50
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "Egypt",
+          "logprob": -0.39108288154238835,
+          "probability": 0.6763240989317976
+        }
+      ],
+      "decision_process": {
+        "method": "greedy",
+        "temperature": 0.0,
+        "selected_answer": "Egypt",
+        "confidence_from_logprob": "0.6763"
+      },
+      "final_metrics": {
+        "predicted": "Egypt",
+        "gold_answers": [
+          "EGY",
+          "Arab Republic of Egypt",
+          "A .R . EGYPT",
+          "The Arab Republic of Egypt",
+          "Eygpt",
+          "Etymology of Egypt",
+          "مصر",
+          "Kemmet",
+          "Gift of the Nile",
+          "Arab Republic Of Egypt",
+          "Names of Egypt",
+          "Miṣr",
+          "A .R . Egypt",
+          "Eytp",
+          "National identity of Egyptians",
+          "Jumhuriyat Misr al'Arabiyah",
+          "Eypt",
+          "Egyptian Republic",
+          "Ejipt",
+          "Name of Egypt",
+          "Egipto",
+          "Kimet",
+          "جمهوريّة مصرالعربيّة",
+          "Egypte",
+          "Egypt (name)",
+          "Egypt",
+          "جمهورية مصرالعربية",
+          "A.R. Egypt",
+          "Republic of Eygpt",
+          "Égypte",
+          "Second Egyptian Republic",
+          "Egipt",
+          "ISO 3166-1:EG",
+          "Egypt info"
+        ],
+        "exact_match": 1.0,
+        "f1": 1.0,
+        "confidence": 0.6763240989317976,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

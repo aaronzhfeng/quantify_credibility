@@ -1,0 +1,56 @@
+{
+  "question_id": 30,
+  "question_text": "What was President Gerald Ford's middle name?",
+  "choices": [],
+  "gold_answer": "['Rudolph (disambiguation)', 'Rudolph', 'Rudolf', 'Rodolph', 'Rodolphe']",
+  "methods": {
+    "greedy": {
+      "method_name": "triviaqa_greedy",
+      "method_description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a trivia question. Your response MUST be ONLY the answer to the question. Do NOT include explanations, reasoning, or additional text. Provide a concise, direct answer."
+            },
+            {
+              "role": "user",
+              "content": "Question: What was President Gerald Ford's middle name?\n\nProvide a direct answer to the question.\n\nAnswer:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 50
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "Rudolph",
+          "logprob": -0.819094086997211,
+          "probability": 0.4408308280496085
+        }
+      ],
+      "decision_process": {
+        "method": "greedy",
+        "temperature": 0.0,
+        "selected_answer": "Rudolph",
+        "confidence_from_logprob": "0.4408"
+      },
+      "final_metrics": {
+        "predicted": "Rudolph",
+        "gold_answers": [
+          "Rudolph (disambiguation)",
+          "Rudolph",
+          "Rudolf",
+          "Rodolph",
+          "Rodolphe"
+        ],
+        "exact_match": 1.0,
+        "f1": 1.0,
+        "confidence": 0.4408308280496085,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

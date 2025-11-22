@@ -1,0 +1,55 @@
+{
+  "question_id": 66,
+  "question_text": "What was the Paramount Film Company originally called?",
+  "choices": [],
+  "gold_answer": "['Raleigh Studios', 'Famous Players Film Company', 'The Famous Players', 'Celebrated Players Film Corporation']",
+  "methods": {
+    "greedy": {
+      "method_name": "triviaqa_greedy",
+      "method_description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a trivia question. Your response MUST be ONLY the answer to the question. Do NOT include explanations, reasoning, or additional text. Provide a concise, direct answer."
+            },
+            {
+              "role": "user",
+              "content": "Question: What was the Paramount Film Company originally called?\n\nProvide a direct answer to the question.\n\nAnswer:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 50
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "Adolph Zukor's company, which later became Paramount Pictures, was originally called the \"Mutual Film Corporation\" but was also known as the \"Famous Players Film Company\" and \"The Paramount Pictures Corporation\" but was originally called \"The",
+          "logprob": -32.7717508106216,
+          "probability": 5.8534169473351964e-15
+        }
+      ],
+      "decision_process": {
+        "method": "greedy",
+        "temperature": 0.0,
+        "selected_answer": "Adolph Zukor's company, which later became Paramount Pictures, was originally called the \"Mutual Film Corporation\" but was also known as the \"Famous Players Film Company\" and \"The Paramount Pictures Corporation\" but was originally called \"The",
+        "confidence_from_logprob": "0.0000"
+      },
+      "final_metrics": {
+        "predicted": "Adolph Zukor's company, which later became Paramount Pictures, was originally called the \"Mutual Film Corporation\" but was also known as the \"Famous Players Film Company\" and \"The Paramount Pictures Corporation\" but was originally called \"The",
+        "gold_answers": [
+          "Raleigh Studios",
+          "Famous Players Film Company",
+          "The Famous Players",
+          "Celebrated Players Film Corporation"
+        ],
+        "exact_match": 0.0,
+        "f1": 0.2222222222222222,
+        "confidence": 5.8534169473351964e-15,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

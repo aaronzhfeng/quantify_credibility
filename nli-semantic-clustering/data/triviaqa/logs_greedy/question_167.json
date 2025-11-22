@@ -1,0 +1,54 @@
+{
+  "question_id": 167,
+  "question_text": "What percentage of the earth's surface is covered by Europe?",
+  "choices": [],
+  "gold_answer": "['eight  %', '8 %', '8%']",
+  "methods": {
+    "greedy": {
+      "method_name": "triviaqa_greedy",
+      "method_description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a trivia question. Your response MUST be ONLY the answer to the question. Do NOT include explanations, reasoning, or additional text. Provide a concise, direct answer."
+            },
+            {
+              "role": "user",
+              "content": "Question: What percentage of the earth's surface is covered by Europe?\n\nProvide a direct answer to the question.\n\nAnswer:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 50
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "7.7%",
+          "logprob": -1.8385635977610946,
+          "probability": 0.15904571573197057
+        }
+      ],
+      "decision_process": {
+        "method": "greedy",
+        "temperature": 0.0,
+        "selected_answer": "7.7%",
+        "confidence_from_logprob": "0.1590"
+      },
+      "final_metrics": {
+        "predicted": "7.7%",
+        "gold_answers": [
+          "eight  %",
+          "8 %",
+          "8%"
+        ],
+        "exact_match": 0.0,
+        "f1": 0.0,
+        "confidence": 0.15904571573197057,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

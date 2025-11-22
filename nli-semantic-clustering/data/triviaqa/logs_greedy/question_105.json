@@ -1,0 +1,58 @@
+{
+  "question_id": 105,
+  "question_text": "Who was the male star of the movie The Man of La Mancha?",
+  "choices": [],
+  "gold_answer": "['Peter o toole', \"Peter O' Toole\", \"Peter Seamus Lorcan O'Toole\", \"Peter Seamus O'Toole\", \"Peter O'Toole\", 'Peter O’Toole', 'Peter OToole']",
+  "methods": {
+    "greedy": {
+      "method_name": "triviaqa_greedy",
+      "method_description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a trivia question. Your response MUST be ONLY the answer to the question. Do NOT include explanations, reasoning, or additional text. Provide a concise, direct answer."
+            },
+            {
+              "role": "user",
+              "content": "Question: Who was the male star of the movie The Man of La Mancha?\n\nProvide a direct answer to the question.\n\nAnswer:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 50
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "Peter O'Toole",
+          "logprob": -0.05048393376455351,
+          "probability": 0.9507692038315034
+        }
+      ],
+      "decision_process": {
+        "method": "greedy",
+        "temperature": 0.0,
+        "selected_answer": "Peter O'Toole",
+        "confidence_from_logprob": "0.9508"
+      },
+      "final_metrics": {
+        "predicted": "Peter O'Toole",
+        "gold_answers": [
+          "Peter o toole",
+          "Peter O' Toole",
+          "Peter Seamus Lorcan O'Toole",
+          "Peter Seamus O'Toole",
+          "Peter O'Toole",
+          "Peter O’Toole",
+          "Peter OToole"
+        ],
+        "exact_match": 1.0,
+        "f1": 1.0,
+        "confidence": 0.9507692038315034,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

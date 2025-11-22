@@ -1,0 +1,52 @@
+{
+  "question_id": 134,
+  "question_text": "Mickey Braddock in the 50s series Circus Boy found fame with which surname in which pop band?",
+  "choices": [],
+  "gold_answer": "['Mickey Dolenz (The Monkees)']",
+  "methods": {
+    "greedy": {
+      "method_name": "triviaqa_greedy",
+      "method_description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a trivia question. Your response MUST be ONLY the answer to the question. Do NOT include explanations, reasoning, or additional text. Provide a concise, direct answer."
+            },
+            {
+              "role": "user",
+              "content": "Question: Mickey Braddock in the 50s series Circus Boy found fame with which surname in which pop band?\n\nProvide a direct answer to the question.\n\nAnswer:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 50
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "Cliff",
+          "logprob": -3.0028305649757385,
+          "probability": 0.04964634209728288
+        }
+      ],
+      "decision_process": {
+        "method": "greedy",
+        "temperature": 0.0,
+        "selected_answer": "Cliff",
+        "confidence_from_logprob": "0.0496"
+      },
+      "final_metrics": {
+        "predicted": "Cliff",
+        "gold_answers": [
+          "Mickey Dolenz (The Monkees)"
+        ],
+        "exact_match": 0.0,
+        "f1": 0.0,
+        "confidence": 0.04964634209728288,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

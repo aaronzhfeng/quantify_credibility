@@ -1,0 +1,54 @@
+{
+  "question_id": 191,
+  "question_text": "What is Norman art's most well known piece?",
+  "choices": [],
+  "gold_answer": "['Bayeux Tapestry', 'the Bayeux Tapestry', 'the Bayeux Tapestry']",
+  "methods": {
+    "greedy": {
+      "method_name": "squad-v2_greedy",
+      "method_description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a question based on a given context. Your response MUST be ONLY the direct answer from the context. Do NOT include explanations, reasoning, or additional text. If the question cannot be answered from the context, respond with: UNANSWERABLE"
+            },
+            {
+              "role": "user",
+              "content": "Context:\nBy far the most famous work of Norman art is the Bayeux Tapestry, which is not a tapestry but a work of embroidery. It was commissioned by Odo, the Bishop of Bayeux and first Earl of Kent, employing natives from Kent who were learned in the Nordic traditions imported in the previous half century by the Danish Vikings.\n\nQuestion: What is Norman art's most well known piece?\n\nProvide a direct answer to the question based on the context above.\n\nAnswer:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 50
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "The Bayeux Tapestry.",
+          "logprob": -0.0669744659837761,
+          "probability": 0.9352190809310896
+        }
+      ],
+      "decision_process": {
+        "method": "greedy",
+        "temperature": 0.0,
+        "selected_answer": "The Bayeux Tapestry.",
+        "confidence_from_logprob": "0.9352"
+      },
+      "final_metrics": {
+        "predicted": "The Bayeux Tapestry.",
+        "gold_answers": [
+          "Bayeux Tapestry",
+          "the Bayeux Tapestry",
+          "the Bayeux Tapestry"
+        ],
+        "exact_match": 1.0,
+        "f1": 1.0,
+        "confidence": 0.9352190809310896,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

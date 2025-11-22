@@ -1,0 +1,56 @@
+{
+  "question_id": 82,
+  "question_text": "Who was the Georgia Peach?",
+  "choices": [],
+  "gold_answer": "['Cobb, Ty', 'Ty Cobb', 'The Georgia Peach', 'Tyrus Raymond Cobb', 'Tyrus Cobb']",
+  "methods": {
+    "greedy": {
+      "method_name": "triviaqa_greedy",
+      "method_description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a trivia question. Your response MUST be ONLY the answer to the question. Do NOT include explanations, reasoning, or additional text. Provide a concise, direct answer."
+            },
+            {
+              "role": "user",
+              "content": "Question: Who was the Georgia Peach?\n\nProvide a direct answer to the question.\n\nAnswer:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 50
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "Ty Cobb",
+          "logprob": -1.6730843928817194,
+          "probability": 0.1876673322518587
+        }
+      ],
+      "decision_process": {
+        "method": "greedy",
+        "temperature": 0.0,
+        "selected_answer": "Ty Cobb",
+        "confidence_from_logprob": "0.1877"
+      },
+      "final_metrics": {
+        "predicted": "Ty Cobb",
+        "gold_answers": [
+          "Cobb, Ty",
+          "Ty Cobb",
+          "The Georgia Peach",
+          "Tyrus Raymond Cobb",
+          "Tyrus Cobb"
+        ],
+        "exact_match": 1.0,
+        "f1": 1.0,
+        "confidence": 0.1876673322518587,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

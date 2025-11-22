@@ -1,0 +1,100 @@
+{
+  "question_id": 88,
+  "question_text": "In which American state is the Isabella Stewart Gardner Museum?",
+  "choices": [],
+  "gold_answer": "['Masachusetts', 'Masshole Commonwealth', 'Massachusetts (state)', 'Massachusetts culture', 'Massachusetts, United States', 'Masachussetts', 'Commonwealth of Masachusetts', 'The Bay State', 'Commonwealth of Masachussets', 'Culture of Massachusetts', 'Commonwealth of Massachusetts', 'MA (state)', 'Massechusetts', 'Commonwealth of Masachusets', 'Commonwealth of Massachussets', 'Religion in Massachusetts', 'Masschusetts', 'Masachussets', 'Commonwealth of Massachussetts', 'Massachusetts', 'Transport in Massachusetts', 'Massachusite', 'Economy of Massachusetts', '6th State', 'Massitchusits', 'Massachsuetts', 'Commonwealth of Masachussetts', 'The Commonwealth of Massachusetts', 'Massachussets', 'Massachus', 'Massechussets', 'Transportation in Massachusetts', 'Massachusets', 'Masachusets', 'Mass.', 'Massachusetts state', 'Sixth State', 'Massachusites', 'Massacheusetts', 'Most Serene Commonwealth of Massachusetts', 'US-MA', 'Commonwealth of Massachusets', 'Massachussetts', 'Massachusetts (U.S. state)', 'Taxachusetts', 'State of Massachusetts', 'Massachusettes', 'Massachusettsan', 'Education in Massachusetts']",
+  "methods": {
+    "greedy": {
+      "method_name": "triviaqa_greedy",
+      "method_description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a trivia question. Your response MUST be ONLY the answer to the question. Do NOT include explanations, reasoning, or additional text. Provide a concise, direct answer."
+            },
+            {
+              "role": "user",
+              "content": "Question: In which American state is the Isabella Stewart Gardner Museum?\n\nProvide a direct answer to the question.\n\nAnswer:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 50
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "Massachusetts",
+          "logprob": -0.4746006591467449,
+          "probability": 0.622133450167671
+        }
+      ],
+      "decision_process": {
+        "method": "greedy",
+        "temperature": 0.0,
+        "selected_answer": "Massachusetts",
+        "confidence_from_logprob": "0.6221"
+      },
+      "final_metrics": {
+        "predicted": "Massachusetts",
+        "gold_answers": [
+          "Masachusetts",
+          "Masshole Commonwealth",
+          "Massachusetts (state)",
+          "Massachusetts culture",
+          "Massachusetts, United States",
+          "Masachussetts",
+          "Commonwealth of Masachusetts",
+          "The Bay State",
+          "Commonwealth of Masachussets",
+          "Culture of Massachusetts",
+          "Commonwealth of Massachusetts",
+          "MA (state)",
+          "Massechusetts",
+          "Commonwealth of Masachusets",
+          "Commonwealth of Massachussets",
+          "Religion in Massachusetts",
+          "Masschusetts",
+          "Masachussets",
+          "Commonwealth of Massachussetts",
+          "Massachusetts",
+          "Transport in Massachusetts",
+          "Massachusite",
+          "Economy of Massachusetts",
+          "6th State",
+          "Massitchusits",
+          "Massachsuetts",
+          "Commonwealth of Masachussetts",
+          "The Commonwealth of Massachusetts",
+          "Massachussets",
+          "Massachus",
+          "Massechussets",
+          "Transportation in Massachusetts",
+          "Massachusets",
+          "Masachusets",
+          "Mass.",
+          "Massachusetts state",
+          "Sixth State",
+          "Massachusites",
+          "Massacheusetts",
+          "Most Serene Commonwealth of Massachusetts",
+          "US-MA",
+          "Commonwealth of Massachusets",
+          "Massachussetts",
+          "Massachusetts (U.S. state)",
+          "Taxachusetts",
+          "State of Massachusetts",
+          "Massachusettes",
+          "Massachusettsan",
+          "Education in Massachusetts"
+        ],
+        "exact_match": 1.0,
+        "f1": 1.0,
+        "confidence": 0.622133450167671,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

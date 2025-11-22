@@ -6,7 +6,7 @@ models. It determines if two text answers are semantically equivalent by checkin
 bidirectional entailment (mutual entailment).
 """
 
-from typing import List, Dict
+from typing import List, Dict, Union
 import warnings
 
 
@@ -25,7 +25,7 @@ class NLIClusteringCache:
         _entailment_cache: Cache for pairwise entailment scores
     """
     
-    def __init__(self, model_name: str = "microsoft/deberta-v2-xlarge-mnli", device: str = None):
+    def __init__(self, model_name: str = "MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli", device: str = None):
         """
         Initialize NLI model for semantic clustering.
         
@@ -67,7 +67,8 @@ class NLIClusteringCache:
     def check_entailment(
         self,
         premise: str,
-        hypothesis: str
+        hypothesis: str,
+        use_argmax: bool = False
     ) -> float:
         """
         Check unidirectional entailment: does premise entail hypothesis?
@@ -75,9 +76,11 @@ class NLIClusteringCache:
         Args:
             premise: The premise text
             hypothesis: The hypothesis text
+            use_argmax: If True, return 1.0 if entailment is the argmax class, else 0.0
+                       If False, return the probability of entailment (default)
         
         Returns:
-            Probability of entailment (0.0 to 1.0)
+            Probability of entailment (0.0 to 1.0), or binary decision if use_argmax=True
         """
         import torch
         
@@ -86,7 +89,7 @@ class NLIClusteringCache:
         hypothesis = hypothesis.strip().lower()
         
         # Check cache
-        cache_key = (premise, hypothesis)
+        cache_key = (premise, hypothesis, use_argmax)
         if cache_key in self._entailment_cache:
             return self._entailment_cache[cache_key]
         
@@ -102,18 +105,26 @@ class NLIClusteringCache:
         with torch.no_grad():
             outputs = self.model(**inputs)
             probs = torch.softmax(outputs.logits, dim=-1)
-            entailment_prob = probs[0][self.entailment_id].item()
+            
+            if use_argmax:
+                # Argmax mode: return 1.0 if entailment is most likely, else 0.0
+                predicted_class = torch.argmax(probs[0]).item()
+                result = 1.0 if predicted_class == self.entailment_id else 0.0
+            else:
+                # Soft mode: return probability of entailment
+                result = probs[0][self.entailment_id].item()
         
         # Cache result
-        self._entailment_cache[cache_key] = entailment_prob
+        self._entailment_cache[cache_key] = result
         
-        return entailment_prob
+        return result
     
     def check_mutual_entailment(
         self, 
         text_a: str, 
         text_b: str, 
-        threshold: float = 0.5
+        threshold: float = 0.5,
+        use_argmax: bool = False
     ) -> bool:
         """
         Check if two texts are mutually entailed (semantically equivalent).
@@ -126,6 +137,9 @@ class NLIClusteringCache:
             text_a: First text
             text_b: Second text
             threshold: Minimum P(entailment) for mutual entailment (default: 0.5)
+                      Ignored if use_argmax=True
+            use_argmax: If True, use argmax classification (winner takes all)
+                       If False, use soft threshold on entailment probability (default)
         
         Returns:
             True if texts are mutually entailed, False otherwise
@@ -139,11 +153,90 @@ class NLIClusteringCache:
             return True
         
         # Check bidirectional entailment
-        fwd_score = self.check_entailment(text_a, text_b)
-        bwd_score = self.check_entailment(text_b, text_a)
+        fwd_score = self.check_entailment(text_a, text_b, use_argmax=use_argmax)
+        bwd_score = self.check_entailment(text_b, text_a, use_argmax=use_argmax)
         
         # Mutual entailment if both directions exceed threshold
+        # In argmax mode, scores are 0.0 or 1.0, so threshold is effectively ignored
         return fwd_score >= threshold and bwd_score >= threshold
+    
+    def is_correct(
+        self, 
+        prediction: str, 
+        gold_labels: Union[str, List[str]], 
+        threshold: float = 0.5,
+        use_argmax: bool = False
+    ) -> bool:
+        """
+        NLI-based Evaluation: Check if prediction is correct against gold label(s).
+        
+        This method uses UNIDIRECTIONAL NLI entailment for threshold-sensitive grading.
+        It is specifically designed for accuracy and ECE calculation, not clustering.
+        
+        The key difference from check_mutual_entailment():
+        - check_mutual_entailment(): STRICT bidirectional (A ↔ B) - for clustering
+        - is_correct(): LOOSE unidirectional (A → B) - for grading
+        
+        Returns True if prediction matches ANY of the gold labels via:
+        1. Exact match (case-insensitive, fast path)
+        2. Unidirectional NLI entailment (prediction → gold) with threshold or argmax
+        
+        NOTE: Substring matching removed to make threshold tuning effective.
+        The NLI model handles semantic equivalence including:
+        - Verbose answers: "The capital is Paris" → "Paris"
+        - Paraphrases: "James Stewart" ↔ "James Stewart (actor)"
+        - Nicknames: "Martina Hingis" ↔ "The Swiss Miss"
+        
+        Args:
+            prediction: The model's generated answer
+            gold_labels: Ground truth reference (string or list of acceptable answers)
+            threshold: Minimum P(entailment) for NLI check (default: 0.5)
+                      Lower threshold = more lenient (e.g., 0.3)
+                      Higher threshold = more strict (e.g., 0.7)
+                      Ignored if use_argmax=True
+            use_argmax: If True, use argmax classification (winner takes all)
+                       If False, use soft threshold on entailment probability (default)
+        
+        Returns:
+            True if prediction is considered correct against ANY gold label
+        
+        Example:
+            >>> nli = NLIClusteringCache()
+            >>> # Threshold-sensitive behavior:
+            >>> nli.is_correct("Paris", "The capital is Paris", threshold=0.3)  # True (lenient)
+            >>> nli.is_correct("Paris", "The capital is Paris", threshold=0.9)  # Maybe False (strict)
+            >>> # Argmax mode:
+            >>> nli.is_correct("Paris", "The capital is Paris", use_argmax=True)  # True if entailment wins
+            >>> # Multiple acceptable answers:
+            >>> nli.is_correct("Martina Hingis", ["The Swiss Miss", "Martina Hingis"])  # True
+        """
+        # Handle both single string and list of strings
+        if isinstance(gold_labels, str):
+            gold_labels = [gold_labels]
+        
+        # Try each gold label
+        for gold_label in gold_labels:
+            # Normalize
+            pred_norm = prediction.strip().lower()
+            gold_norm = gold_label.strip().lower()
+            
+            # Fast path: Exact match (case-insensitive)
+            if pred_norm == gold_norm:
+                return True
+            
+            # Unidirectional NLI check (threshold-sensitive or argmax)
+            # Check: Does prediction entail gold label?
+            # This handles:
+            # - Semantic equivalence: "James Stewart" ↔ "James Stewart (actor)"
+            # - Verbose answers: "The capital is Paris" → "Paris"
+            # - Nicknames/aliases: "Martina Hingis" ↔ "The Swiss Miss"
+            entailment_score = self.check_entailment(prediction, gold_label, use_argmax=use_argmax)
+            
+            if entailment_score >= threshold:
+                return True
+        
+        # No match found
+        return False
     
     def get_entailment_scores(
         self,
@@ -184,7 +277,8 @@ class NLIClusteringCache:
 def cluster_answers_by_nli(
     answers: List[str],
     nli_checker: NLIClusteringCache,
-    threshold: float = 0.5
+    threshold: float = 0.5,
+    use_argmax: bool = False
 ) -> Dict[str, str]:
     """
     Cluster answers by NLI mutual entailment, returning mapping to representatives.
@@ -196,6 +290,9 @@ def cluster_answers_by_nli(
         answers: List of answer strings to cluster
         nli_checker: NLI model cache for entailment checking
         threshold: Threshold for mutual entailment (default: 0.5)
+                  Ignored if use_argmax=True
+        use_argmax: If True, use argmax classification (winner takes all)
+                   If False, use soft threshold on entailment probability (default)
     
     Returns:
         Dictionary mapping each answer to its cluster representative
@@ -218,7 +315,7 @@ def cluster_answers_by_nli(
         # Find matching cluster
         matched = False
         for rep in cluster_representatives:
-            if nli_checker.check_mutual_entailment(answer, rep, threshold):
+            if nli_checker.check_mutual_entailment(answer, rep, threshold, use_argmax=use_argmax):
                 answer_to_representative[answer] = rep
                 matched = True
                 break
@@ -234,7 +331,8 @@ def cluster_answers_by_nli(
 def apply_nli_clustering_to_chains(
     chains: List[List[str]],
     nli_checker: NLIClusteringCache,
-    threshold: float = 0.5
+    threshold: float = 0.5,
+    use_argmax: bool = False
 ) -> List[List[str]]:
     """
     Apply NLI clustering to all answers in all chains.
@@ -263,7 +361,7 @@ def apply_nli_clustering_to_chains(
         all_answers.update(chain)
     
     # Build clustering mapping
-    answer_to_rep = cluster_answers_by_nli(list(all_answers), nli_checker, threshold)
+    answer_to_rep = cluster_answers_by_nli(list(all_answers), nli_checker, threshold, use_argmax=use_argmax)
     
     # Apply mapping to all chains
     clustered_chains = []
@@ -277,7 +375,8 @@ def apply_nli_clustering_to_chains(
 def apply_nli_clustering_to_marginal(
     marginal: Dict[str, float],
     nli_checker: NLIClusteringCache,
-    threshold: float = 0.5
+    threshold: float = 0.5,
+    use_argmax: bool = False
 ) -> Dict[str, float]:
     """
     Apply NLI clustering to marginal distribution before answer selection.
@@ -303,7 +402,7 @@ def apply_nli_clustering_to_marginal(
     
     # Build clustering
     answers = list(marginal.keys())
-    answer_to_rep = cluster_answers_by_nli(answers, nli_checker, threshold)
+    answer_to_rep = cluster_answers_by_nli(answers, nli_checker, threshold, use_argmax=use_argmax)
     
     # Merge probabilities by cluster
     clustered_marginal = {}

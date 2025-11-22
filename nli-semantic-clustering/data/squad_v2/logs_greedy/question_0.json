@@ -1,0 +1,55 @@
+{
+  "question_id": 0,
+  "question_text": "In what country is Normandy located?",
+  "choices": [],
+  "gold_answer": "['France', 'France', 'France', 'France']",
+  "methods": {
+    "greedy": {
+      "method_name": "squad-v2_greedy",
+      "method_description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a question based on a given context. Your response MUST be ONLY the direct answer from the context. Do NOT include explanations, reasoning, or additional text. If the question cannot be answered from the context, respond with: UNANSWERABLE"
+            },
+            {
+              "role": "user",
+              "content": "Context:\nThe Normans (Norman: Nourmands; French: Normands; Latin: Normanni) were the people who in the 10th and 11th centuries gave their name to Normandy, a region in France. They were descended from Norse (\"Norman\" comes from \"Norseman\") raiders and pirates from Denmark, Iceland and Norway who, under their leader Rollo, agreed to swear fealty to King Charles III of West Francia. Through generations of assimilation and mixing with the native Frankish and Roman-Gaulish populations, their descendants would gradually merge with the Carolingian-based cultures of West Francia. The distinct cultural and ethnic identity of the Normans emerged initially in the first half of the 10th century, and it continued to evolve over the succeeding centuries.\n\nQuestion: In what country is Normandy located?\n\nProvide a direct answer to the question based on the context above.\n\nAnswer:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 50
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "France.",
+          "logprob": -0.31433096578984987,
+          "probability": 0.7302772913577821
+        }
+      ],
+      "decision_process": {
+        "method": "greedy",
+        "temperature": 0.0,
+        "selected_answer": "France.",
+        "confidence_from_logprob": "0.7303"
+      },
+      "final_metrics": {
+        "predicted": "France.",
+        "gold_answers": [
+          "France",
+          "France",
+          "France",
+          "France"
+        ],
+        "exact_match": 1.0,
+        "f1": 1.0,
+        "confidence": 0.7302772913577821,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

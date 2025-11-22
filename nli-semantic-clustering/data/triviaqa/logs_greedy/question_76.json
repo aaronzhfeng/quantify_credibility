@@ -1,0 +1,57 @@
+{
+  "question_id": 76,
+  "question_text": "On what date in 1969 did Neil Armstrong first set foot on the Moon?",
+  "choices": [],
+  "gold_answer": "['July 20', '20 July', 'July 20th', 'Jul 20', '20th July', 'Historical anniversaries/July 20']",
+  "methods": {
+    "greedy": {
+      "method_name": "triviaqa_greedy",
+      "method_description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a trivia question. Your response MUST be ONLY the answer to the question. Do NOT include explanations, reasoning, or additional text. Provide a concise, direct answer."
+            },
+            {
+              "role": "user",
+              "content": "Question: On what date in 1969 did Neil Armstrong first set foot on the Moon?\n\nProvide a direct answer to the question.\n\nAnswer:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 50
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "July 20.",
+          "logprob": -0.8589811938145431,
+          "probability": 0.4235934221532015
+        }
+      ],
+      "decision_process": {
+        "method": "greedy",
+        "temperature": 0.0,
+        "selected_answer": "July 20.",
+        "confidence_from_logprob": "0.4236"
+      },
+      "final_metrics": {
+        "predicted": "July 20.",
+        "gold_answers": [
+          "July 20",
+          "20 July",
+          "July 20th",
+          "Jul 20",
+          "20th July",
+          "Historical anniversaries/July 20"
+        ],
+        "exact_match": 1.0,
+        "f1": 1.0,
+        "confidence": 0.4235934221532015,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

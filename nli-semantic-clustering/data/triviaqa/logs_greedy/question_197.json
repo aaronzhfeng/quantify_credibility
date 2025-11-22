@@ -1,0 +1,58 @@
+{
+  "question_id": 197,
+  "question_text": "How was President Kennedy assassinated?",
+  "choices": [],
+  "gold_answer": "['Shot (unit)', 'Shot', 'Shot (drink)', 'Shot (beverage)', 'Shot (disambiguation)', 'Shot (alcohol)', 'SHOT']",
+  "methods": {
+    "greedy": {
+      "method_name": "triviaqa_greedy",
+      "method_description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a trivia question. Your response MUST be ONLY the answer to the question. Do NOT include explanations, reasoning, or additional text. Provide a concise, direct answer."
+            },
+            {
+              "role": "user",
+              "content": "Question: How was President Kennedy assassinated?\n\nProvide a direct answer to the question.\n\nAnswer:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 50
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "He was shot by Lee Harvey Oswald.",
+          "logprob": -1.4306375033302174,
+          "probability": 0.23915641062737025
+        }
+      ],
+      "decision_process": {
+        "method": "greedy",
+        "temperature": 0.0,
+        "selected_answer": "He was shot by Lee Harvey Oswald.",
+        "confidence_from_logprob": "0.2392"
+      },
+      "final_metrics": {
+        "predicted": "He was shot by Lee Harvey Oswald.",
+        "gold_answers": [
+          "Shot (unit)",
+          "Shot",
+          "Shot (drink)",
+          "Shot (beverage)",
+          "Shot (disambiguation)",
+          "Shot (alcohol)",
+          "SHOT"
+        ],
+        "exact_match": 0.0,
+        "f1": 0.25,
+        "confidence": 0.23915641062737025,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

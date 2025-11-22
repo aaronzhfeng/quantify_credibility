@@ -1,0 +1,53 @@
+{
+  "question_id": 149,
+  "question_text": "In which year was the Juilliard School founded in New York?",
+  "choices": [],
+  "gold_answer": "['1905', 'one thousand, nine hundred and five']",
+  "methods": {
+    "greedy": {
+      "method_name": "triviaqa_greedy",
+      "method_description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a trivia question. Your response MUST be ONLY the answer to the question. Do NOT include explanations, reasoning, or additional text. Provide a concise, direct answer."
+            },
+            {
+              "role": "user",
+              "content": "Question: In which year was the Juilliard School founded in New York?\n\nProvide a direct answer to the question.\n\nAnswer:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 50
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "1905",
+          "logprob": -0.0241591134108603,
+          "probability": 0.9761303819663506
+        }
+      ],
+      "decision_process": {
+        "method": "greedy",
+        "temperature": 0.0,
+        "selected_answer": "1905",
+        "confidence_from_logprob": "0.9761"
+      },
+      "final_metrics": {
+        "predicted": "1905",
+        "gold_answers": [
+          "1905",
+          "one thousand, nine hundred and five"
+        ],
+        "exact_match": 1.0,
+        "f1": 1.0,
+        "confidence": 0.9761303819663506,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

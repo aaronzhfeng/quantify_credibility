@@ -1,0 +1,53 @@
+{
+  "question_id": 193,
+  "question_text": "In the 1904 Olympics, how many of the 23 track and field titles were won by Americans?",
+  "choices": [],
+  "gold_answer": "['21', 'twenty-one']",
+  "methods": {
+    "greedy": {
+      "method_name": "triviaqa_greedy",
+      "method_description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a trivia question. Your response MUST be ONLY the answer to the question. Do NOT include explanations, reasoning, or additional text. Provide a concise, direct answer."
+            },
+            {
+              "role": "user",
+              "content": "Question: In the 1904 Olympics, how many of the 23 track and field titles were won by Americans?\n\nProvide a direct answer to the question.\n\nAnswer:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 50
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "12",
+          "logprob": -2.419943228363991,
+          "probability": 0.08892666582838682
+        }
+      ],
+      "decision_process": {
+        "method": "greedy",
+        "temperature": 0.0,
+        "selected_answer": "12",
+        "confidence_from_logprob": "0.0889"
+      },
+      "final_metrics": {
+        "predicted": "12",
+        "gold_answers": [
+          "21",
+          "twenty-one"
+        ],
+        "exact_match": 0.0,
+        "f1": 0.0,
+        "confidence": 0.08892666582838682,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

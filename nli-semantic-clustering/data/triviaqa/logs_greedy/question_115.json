@@ -1,0 +1,56 @@
+{
+  "question_id": 115,
+  "question_text": "Who had a 60s No 1 hit with This Diamond Ring?",
+  "choices": [],
+  "gold_answer": "['Dave Gonzalez (Gary Lewis & the Playboys)', 'Gary Lewis & the Playboys', 'Gary Lewis and The Playboys', 'Gary Lewis & The Playboys', 'Gary Lewis and the Playboys']",
+  "methods": {
+    "greedy": {
+      "method_name": "triviaqa_greedy",
+      "method_description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a trivia question. Your response MUST be ONLY the answer to the question. Do NOT include explanations, reasoning, or additional text. Provide a concise, direct answer."
+            },
+            {
+              "role": "user",
+              "content": "Question: Who had a 60s No 1 hit with This Diamond Ring?\n\nProvide a direct answer to the question.\n\nAnswer:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 50
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "Gary Lewis & the Playboys",
+          "logprob": -1.8250148924416862,
+          "probability": 0.16121524322329048
+        }
+      ],
+      "decision_process": {
+        "method": "greedy",
+        "temperature": 0.0,
+        "selected_answer": "Gary Lewis & the Playboys",
+        "confidence_from_logprob": "0.1612"
+      },
+      "final_metrics": {
+        "predicted": "Gary Lewis & the Playboys",
+        "gold_answers": [
+          "Dave Gonzalez (Gary Lewis & the Playboys)",
+          "Gary Lewis & the Playboys",
+          "Gary Lewis and The Playboys",
+          "Gary Lewis & The Playboys",
+          "Gary Lewis and the Playboys"
+        ],
+        "exact_match": 1.0,
+        "f1": 1.0,
+        "confidence": 0.16121524322329048,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

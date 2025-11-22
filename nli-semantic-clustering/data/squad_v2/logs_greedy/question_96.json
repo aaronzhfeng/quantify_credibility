@@ -1,0 +1,54 @@
+{
+  "question_id": 96,
+  "question_text": "Who killed Harold II? ",
+  "choices": [],
+  "gold_answer": "['William II', 'Duke William II', 'Duke William II']",
+  "methods": {
+    "greedy": {
+      "method_name": "squad-v2_greedy",
+      "method_description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a question based on a given context. Your response MUST be ONLY the direct answer from the context. Do NOT include explanations, reasoning, or additional text. If the question cannot be answered from the context, respond with: UNANSWERABLE"
+            },
+            {
+              "role": "user",
+              "content": "Context:\nIn 1066, Duke William II of Normandy conquered England killing King Harold II at the Battle of Hastings. The invading Normans and their descendants replaced the Anglo-Saxons as the ruling class of England. The nobility of England were part of a single Normans culture and many had lands on both sides of the channel. Early Norman kings of England, as Dukes of Normandy, owed homage to the King of France for their land on the continent. They considered England to be their most important holding (it brought with it the title of King—an important status symbol).\n\nQuestion: Who killed Harold II? \n\nProvide a direct answer to the question based on the context above.\n\nAnswer:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 50
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "Duke William II of Normandy",
+          "logprob": -0.7042228790014633,
+          "probability": 0.49449270564370496
+        }
+      ],
+      "decision_process": {
+        "method": "greedy",
+        "temperature": 0.0,
+        "selected_answer": "Duke William II of Normandy",
+        "confidence_from_logprob": "0.4945"
+      },
+      "final_metrics": {
+        "predicted": "Duke William II of Normandy",
+        "gold_answers": [
+          "William II",
+          "Duke William II",
+          "Duke William II"
+        ],
+        "exact_match": 0.0,
+        "f1": 0.7499999999999999,
+        "confidence": 0.49449270564370496,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

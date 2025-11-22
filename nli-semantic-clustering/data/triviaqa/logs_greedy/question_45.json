@@ -1,0 +1,72 @@
+{
+  "question_id": 45,
+  "question_text": "Where did the Shinning Path terrorists operate?",
+  "choices": [],
+  "gold_answer": "['Lower Peru', 'Name of Peru', 'Republic of Peru', 'Etymology of Peru', 'ISO 3166-1:PE', 'Piruw', 'Peruano', 'República del Perú', 'El Perú', 'Republic of Perú', 'Peruvian Republic', 'Peru', 'Peruvian', 'Péru', 'Piruw Ripuwlika', 'El Peru', 'Perú', 'Perù', 'Piruw Suyu', 'Pérou', 'Peruvia']",
+  "methods": {
+    "greedy": {
+      "method_name": "triviaqa_greedy",
+      "method_description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a trivia question. Your response MUST be ONLY the answer to the question. Do NOT include explanations, reasoning, or additional text. Provide a concise, direct answer."
+            },
+            {
+              "role": "user",
+              "content": "Question: Where did the Shinning Path terrorists operate?\n\nProvide a direct answer to the question.\n\nAnswer:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 50
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "Peru.",
+          "logprob": -0.4590136589085887,
+          "probability": 0.6319066136858766
+        }
+      ],
+      "decision_process": {
+        "method": "greedy",
+        "temperature": 0.0,
+        "selected_answer": "Peru.",
+        "confidence_from_logprob": "0.6319"
+      },
+      "final_metrics": {
+        "predicted": "Peru.",
+        "gold_answers": [
+          "Lower Peru",
+          "Name of Peru",
+          "Republic of Peru",
+          "Etymology of Peru",
+          "ISO 3166-1:PE",
+          "Piruw",
+          "Peruano",
+          "República del Perú",
+          "El Perú",
+          "Republic of Perú",
+          "Peruvian Republic",
+          "Peru",
+          "Peruvian",
+          "Péru",
+          "Piruw Ripuwlika",
+          "El Peru",
+          "Perú",
+          "Perù",
+          "Piruw Suyu",
+          "Pérou",
+          "Peruvia"
+        ],
+        "exact_match": 1.0,
+        "f1": 1.0,
+        "confidence": 0.6319066136858766,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

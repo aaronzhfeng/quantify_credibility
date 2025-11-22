@@ -1,0 +1,107 @@
+{
+  "question_id": 176,
+  "question_text": "On which label did Chuck Berry record in the 1950s and 1960s?",
+  "choices": [],
+  "gold_answer": "['Chess match', 'Šachmatai', 'Sjakk', 'Ajedrez', 'Ahedres', 'Ficheall', 'Rank and file (chess)', 'Chess Revers', 'Chess', 'Xadrez', 'Chess publications', 'Satranç', 'Western chess', 'Šachy', 'Шахи', 'Chess game', 'European chess', 'Chess psychology', 'ChesS', 'Ŝako', 'ਸ਼ਤਰੰਜ', 'Chess games', 'शतरंज', 'Play chess', 'Skaak', 'Western Chess', 'Orthochess', 'Chesss', 'Game of chess', 'Šach', 'Echedoù', 'Échecs', 'שחמט', 'Chesse', 'Scacci', 'Шахмат', 'Escacs', 'Cög', 'Şah', 'Cờ vua', 'International Chess', 'Chess board game', 'Chess Board Game', 'Шахматы', 'Game of Chess', 'Skak', 'شطرنج', 'Шатар', 'Chess career', 'Σκάκι', 'Šahs', 'Cheess', 'Chess srategy and tactics', 'Chess (game)', 'Skák', 'International chess']",
+  "methods": {
+    "greedy": {
+      "method_name": "triviaqa_greedy",
+      "method_description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a trivia question. Your response MUST be ONLY the answer to the question. Do NOT include explanations, reasoning, or additional text. Provide a concise, direct answer."
+            },
+            {
+              "role": "user",
+              "content": "Question: On which label did Chuck Berry record in the 1950s and 1960s?\n\nProvide a direct answer to the question.\n\nAnswer:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 50
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "Chess Records.",
+          "logprob": -1.2873575797420926,
+          "probability": 0.2759991260537025
+        }
+      ],
+      "decision_process": {
+        "method": "greedy",
+        "temperature": 0.0,
+        "selected_answer": "Chess Records.",
+        "confidence_from_logprob": "0.2760"
+      },
+      "final_metrics": {
+        "predicted": "Chess Records.",
+        "gold_answers": [
+          "Chess match",
+          "Šachmatai",
+          "Sjakk",
+          "Ajedrez",
+          "Ahedres",
+          "Ficheall",
+          "Rank and file (chess)",
+          "Chess Revers",
+          "Chess",
+          "Xadrez",
+          "Chess publications",
+          "Satranç",
+          "Western chess",
+          "Šachy",
+          "Шахи",
+          "Chess game",
+          "European chess",
+          "Chess psychology",
+          "ChesS",
+          "Ŝako",
+          "ਸ਼ਤਰੰਜ",
+          "Chess games",
+          "शतरंज",
+          "Play chess",
+          "Skaak",
+          "Western Chess",
+          "Orthochess",
+          "Chesss",
+          "Game of chess",
+          "Šach",
+          "Echedoù",
+          "Échecs",
+          "שחמט",
+          "Chesse",
+          "Scacci",
+          "Шахмат",
+          "Escacs",
+          "Cög",
+          "Şah",
+          "Cờ vua",
+          "International Chess",
+          "Chess board game",
+          "Chess Board Game",
+          "Шахматы",
+          "Game of Chess",
+          "Skak",
+          "شطرنج",
+          "Шатар",
+          "Chess career",
+          "Σκάκι",
+          "Šahs",
+          "Cheess",
+          "Chess srategy and tactics",
+          "Chess (game)",
+          "Skák",
+          "International chess"
+        ],
+        "exact_match": 0.0,
+        "f1": 0.6666666666666666,
+        "confidence": 0.2759991260537025,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

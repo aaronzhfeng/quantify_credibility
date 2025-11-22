@@ -45,7 +45,7 @@ def extract_data_from_log(log_file: str) -> Dict:
     
     # Try to find method data
     method_data = None
-    for key in ["mi_method", "triviaqa_correctness_mi", "self_consistency"]:
+    for key in ["mi_method", "triviaqa_correctness_mi", "self_consistency", "greedy"]:
         if key in log_data.get("methods", {}):
             method_data = log_data["methods"][key]
             break
@@ -79,7 +79,8 @@ def extract_data_from_log(log_file: str) -> Dict:
             chain = [chains_dict[chain_id][step] for step in sorted(chains_dict[chain_id].keys())]
             chains.append(chain)
     else:
-        # Self-consistency: each sample is single-step chain
+        # Self-consistency or Greedy: each sample/output is a single-step chain
+        # For greedy, there's only 1 output
         chains = [[output["text"]] for output in sorted(raw_outputs, key=lambda x: x.get("sample_id", 0))]
     
     # Extract metadata
@@ -111,14 +112,17 @@ def evaluate_with_threshold(
     gold_answers: List[str],
     nli_checker: NLIClusteringCache,
     threshold: float,
-    is_correctness_based: bool = False
+    original_metrics: Dict,
+    is_correctness_based: bool = False,
+    use_nli_grading: bool = False,
+    use_argmax: bool = False
 ) -> Dict:
     """Evaluate clustering and metrics with specific threshold."""
     from nli_clustering.core import apply_nli_clustering_to_chains
     from collections import Counter
     
     # Apply NLI clustering
-    clustered_chains = apply_nli_clustering_to_chains(chains, nli_checker, threshold)
+    clustered_chains = apply_nli_clustering_to_chains(chains, nli_checker, threshold, use_argmax=use_argmax)
     
     # Count unique clusters
     n_unique_before = len(set(tuple(chain) for chain in chains))
@@ -147,14 +151,31 @@ def evaluate_with_threshold(
         mi_nats = estimate_mi_listing_nats(clustered_chains)
     
     mi_bits = nats_to_bits(mi_nats)
-    confidence = mi_to_confidence(mi_nats, method="inverse")
+    confidence_clustered = mi_to_confidence(mi_nats, method="inverse")
     
-    # Evaluate answers
-    em_original = compute_exact_match(predicted_original, gold_answers)
-    f1_original = compute_f1_score(predicted_original, gold_answers)
+    # IMPORTANT: Use ORIGINAL F1-based metrics as baseline
+    # These come from pre-computed log files
+    em_original = original_metrics.get("exact_match", 0.0)
+    f1_original = original_metrics.get("f1", 0.0)
+    confidence_original = original_metrics.get("confidence", 0.0)
+    mi_original = original_metrics.get("mi_score", 0.0)
     
-    em_clustered = compute_exact_match(predicted_clustered, gold_answers)
-    f1_clustered = compute_f1_score(predicted_clustered, gold_answers)
+    # For Greedy (single answer), confidence should come from logprob, not MI
+    # MI is always 0 for single answer, which gives confidence=1.0 (incorrect)
+    if len(chains) == 1 and len(chains[0]) == 1:
+        # Single answer: use original confidence (from model logprob)
+        confidence_clustered = confidence_original
+    
+    # Evaluate NLI-clustered answer
+    if use_nli_grading:
+        # NEW: Use NLI-based grading (loose, unidirectional)
+        # Pass ALL gold answers AND threshold to check against any acceptable answer
+        em_clustered = 1.0 if nli_checker.is_correct(predicted_clustered, gold_answers, threshold=threshold, use_argmax=use_argmax) else 0.0
+        f1_clustered = compute_f1_score(predicted_clustered, gold_answers)
+    else:
+        # ORIGINAL: Use F1-based grading (baseline)
+        em_clustered = compute_exact_match(predicted_clustered, gold_answers)
+        f1_clustered = compute_f1_score(predicted_clustered, gold_answers)
     
     # Agreement
     agreement_original = compute_agreement_fraction(final_answers_original)
@@ -168,14 +189,19 @@ def evaluate_with_threshold(
         "predicted_original": predicted_original,
         "predicted_clustered": predicted_clustered,
         "prediction_changed": predicted_original != predicted_clustered,
+        # Original metrics (F1-based, from pre-computed logs)
         "em_original": em_original,
-        "em_clustered": em_clustered,
-        "em_change": em_clustered - em_original,
         "f1_original": f1_original,
+        "confidence_original": confidence_original,
+        "mi_original": mi_original,
+        # NLI-clustered metrics
+        "em_clustered": em_clustered,
         "f1_clustered": f1_clustered,
+        "mi_clustered": mi_bits,
+        "confidence_clustered": confidence_clustered,
+        # Changes
+        "em_change": em_clustered - em_original,
         "f1_change": f1_clustered - f1_original,
-        "mi_bits": mi_bits,
-        "confidence": confidence,
         "agreement_original": agreement_original,
         "agreement_clustered": agreement_clustered,
     }
@@ -191,12 +217,20 @@ def main():
                        default=[0.3, 0.35, 0.4, 0.45, 0.5, 0.55, 0.6, 0.65, 0.7],
                        help="List of thresholds to test")
     parser.add_argument("--nli-model", type=str,
-                       default="microsoft/deberta-v2-xlarge-mnli",
+                       default="MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli",
                        help="NLI model to use")
     parser.add_argument("--limit", type=int, default=None,
                        help="Limit number of questions to process")
     parser.add_argument("--correctness-based", action="store_true",
                        help="Use correctness-based MI (for TriviaQA)")
+    parser.add_argument("--use-nli-grading", action="store_true",
+                       help="Use NLI for accuracy checking (not just clustering). "
+                            "This uses loose unidirectional entailment for grading, "
+                            "which should fix the accuracy drop issue.")
+    parser.add_argument("--use-argmax", action="store_true",
+                       help="Use argmax classification (winner takes all) instead of soft threshold. "
+                            "When enabled, entailment is accepted if it's the most likely class, "
+                            "regardless of the probability value. This ignores the threshold value.")
     parser.add_argument("--dataset", type=str, default="triviaqa",
                        choices=["triviaqa", "squad_v2"],
                        help="Dataset name (for reporting)")
@@ -262,7 +296,10 @@ def main():
                 data["gold_answers"],
                 nli_checker,
                 threshold,
-                is_correctness_based=args.correctness_based
+                original_metrics=question_results["original_metrics"],
+                is_correctness_based=args.correctness_based,
+                use_nli_grading=args.use_nli_grading,
+                use_argmax=args.use_argmax
             )
             question_results["threshold_results"].append(result)
         
@@ -295,13 +332,35 @@ def main():
             "f1_original": np.mean([m["f1_original"] for m in metrics]),
             "f1_clustered": np.mean([m["f1_clustered"] for m in metrics]),
             "f1_change": np.mean([m["f1_change"] for m in metrics]),
-            "avg_mi_bits": np.mean([m["mi_bits"] for m in metrics]),
-            "avg_confidence": np.mean([m["confidence"] for m in metrics]),
+            "avg_mi_original": np.mean([m["mi_original"] for m in metrics]),
+            "avg_mi_clustered": np.mean([m["mi_clustered"] for m in metrics]),
+            "avg_confidence_original": np.mean([m["confidence_original"] for m in metrics]),
+            "avg_confidence_clustered": np.mean([m["confidence_clustered"] for m in metrics]),
+            # Compute ECE (Expected Calibration Error)
+            # ECE measures |bin_accuracy - bin_confidence| weighted by bin size
+            # bin_accuracy = fraction of correct answers in each confidence bin
+            # This gives the mathematically correct calibration metric
+            "ece_original": compute_ece(
+                predictions=np.array([m["em_original"] for m in metrics]),  # Pass for API compatibility
+                confidences=np.array([m["confidence_original"] for m in metrics]),
+                labels=np.array([m["em_original"] for m in metrics])  # Actual correctness (0/1)
+            ),
+            "ece_clustered": compute_ece(
+                predictions=np.array([m["em_clustered"] for m in metrics]),  # Pass for API compatibility
+                confidences=np.array([m["confidence_clustered"] for m in metrics]),
+                labels=np.array([m["em_clustered"] for m in metrics])  # Actual correctness (0/1)
+            ),
             # Count improvements and degradations
             "em_improved": sum(1 for m in metrics if m["em_change"] > 0),
             "em_degraded": sum(1 for m in metrics if m["em_change"] < 0),
             "em_unchanged": sum(1 for m in metrics if m["em_change"] == 0),
         }
+        
+        # Compute ECE change
+        threshold_summary[threshold]["ece_change"] = (
+            threshold_summary[threshold]["ece_clustered"] - 
+            threshold_summary[threshold]["ece_original"]
+        )
     
     # Save results
     output_data = {
@@ -311,6 +370,8 @@ def main():
             "thresholds": args.thresholds,
             "nli_model": args.nli_model,
             "correctness_based": args.correctness_based,
+            "use_nli_grading": args.use_nli_grading,
+            "use_argmax": args.use_argmax,
             "dataset": args.dataset,
         },
         "threshold_summary": threshold_summary,
@@ -324,9 +385,9 @@ def main():
     # Print summary table
     print(f"\n{'='*80}")
     print("THRESHOLD SWEEP RESULTS")
-    print(f"{'='*80}\n")
-    print(f"{'Threshold':<12} {'Clusters':<10} {'Acc Orig':<10} {'Acc NLI':<10} {'Δ Acc':<10} {'Changed':<10}")
-    print("-" * 80)
+    print(f"{'='*120}\n")
+    print(f"{'Threshold':<12} {'Clusters':<10} {'Acc Orig':<10} {'Acc NLI':<10} {'Δ Acc':<10} {'ECE Orig':<10} {'ECE NLI':<10} {'Δ ECE':<10} {'Changed':<10}")
+    print("-" * 120)
     
     for threshold in sorted(args.thresholds):
         summary = threshold_summary.get(threshold, {})
@@ -337,14 +398,17 @@ def main():
         acc_orig = summary["accuracy_original"]
         acc_nli = summary["accuracy_clustered"]
         acc_change = summary["accuracy_change"]
+        ece_orig = summary["ece_original"]
+        ece_nli = summary["ece_clustered"]
+        ece_change = summary["ece_change"]
         changed_pct = summary["predictions_changed_pct"]
         
         print(f"{threshold:<12.2f} {reduction:<9.1f}% {acc_orig:<10.3f} {acc_nli:<10.3f} "
-              f"{acc_change:+.3f}    {changed_pct:>6.1f}%")
+              f"{acc_change:+10.3f} {ece_orig:<10.3f} {ece_nli:<10.3f} {ece_change:+10.3f} {changed_pct:>6.1f}%")
     
-    print(f"\n{'='*80}")
+    print(f"\n{'='*120}")
     print(f"Detailed results saved to: {args.output}")
-    print(f"{'='*80}\n")
+    print(f"{'='*120}\n")
 
 
 if __name__ == "__main__":

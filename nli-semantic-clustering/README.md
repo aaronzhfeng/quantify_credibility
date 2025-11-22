@@ -9,7 +9,13 @@ The NLI clustering approach groups semantically equivalent answers together to r
 - **Worse accuracy**: NLI clustering reduced accuracy by 8-12% on some datasets
 - **Worse ECE**: Calibration metrics degraded instead of improving
 
-This module provides tools to **debug and fix** these issues through threshold adjustment and detailed analysis.
+**Root Cause Identified**: Using strict bidirectional equivalence for BOTH clustering AND grading.
+
+**Solution Implemented**: Dual-mode NLI system:
+- **Clustering**: Strict bidirectional (A ↔ B) - preserves uncertainty measurement
+- **Grading**: Loose unidirectional (A → B) + substring - accepts verbose answers
+
+This module provides tools to **test and validate** this fix through threshold adjustment and detailed analysis.
 
 ## 📁 Structure
 

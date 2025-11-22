@@ -1,0 +1,77 @@
+{
+  "question_id": 112,
+  "question_text": "In which European city is the Belvederen Gallery?",
+  "choices": [],
+  "gold_answer": "['Capital of Austria', 'Wien', 'Architecture of Vienna', 'Vinarborg', 'Government of Vienna', 'Vienna', 'Viena', 'Demographics of Vienna', 'City of Vienna', 'Vienna (state)', 'Wienna', 'Vienna, AT-9', 'Habsburg, Austria', 'Vienna Porcelain', 'Wene', 'UN/LOCODE:ATVIE', 'Vienna (Austria)', 'Europe/Vienna', 'Vindabona', 'Vienna porcelain', 'Vínarborg', 'Wien, Austria', 'Vienna, Austria', 'Gemeinderat of Vienna', 'Vindobonensis', 'Bécs']",
+  "methods": {
+    "greedy": {
+      "method_name": "triviaqa_greedy",
+      "method_description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a trivia question. Your response MUST be ONLY the answer to the question. Do NOT include explanations, reasoning, or additional text. Provide a concise, direct answer."
+            },
+            {
+              "role": "user",
+              "content": "Question: In which European city is the Belvederen Gallery?\n\nProvide a direct answer to the question.\n\nAnswer:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 50
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "Vienna.",
+          "logprob": -1.0857568333376548,
+          "probability": 0.3376461473083995
+        }
+      ],
+      "decision_process": {
+        "method": "greedy",
+        "temperature": 0.0,
+        "selected_answer": "Vienna.",
+        "confidence_from_logprob": "0.3376"
+      },
+      "final_metrics": {
+        "predicted": "Vienna.",
+        "gold_answers": [
+          "Capital of Austria",
+          "Wien",
+          "Architecture of Vienna",
+          "Vinarborg",
+          "Government of Vienna",
+          "Vienna",
+          "Viena",
+          "Demographics of Vienna",
+          "City of Vienna",
+          "Vienna (state)",
+          "Wienna",
+          "Vienna, AT-9",
+          "Habsburg, Austria",
+          "Vienna Porcelain",
+          "Wene",
+          "UN/LOCODE:ATVIE",
+          "Vienna (Austria)",
+          "Europe/Vienna",
+          "Vindabona",
+          "Vienna porcelain",
+          "Vínarborg",
+          "Wien, Austria",
+          "Vienna, Austria",
+          "Gemeinderat of Vienna",
+          "Vindobonensis",
+          "Bécs"
+        ],
+        "exact_match": 1.0,
+        "f1": 1.0,
+        "confidence": 0.3376461473083995,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

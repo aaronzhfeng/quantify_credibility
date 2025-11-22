@@ -1,0 +1,66 @@
+{
+  "question_id": 97,
+  "question_text": "In which sci fi classic did the space ship Nostromo first appear?",
+  "choices": [],
+  "gold_answer": "['Alien (disambiguation)', 'The Alien', 'Alien (Alien)', 'The Aliens', 'Alien (fictional creature)', 'The Aliens (band)', 'Alien (alien)', 'Alien', 'Alians (disambiguation)', 'Aliens (novel)', 'Aliens (computer game)', 'Alien (song)', 'Aliens', 'Aliens (disambiguation)', 'The Alien (disambiguation)']",
+  "methods": {
+    "greedy": {
+      "method_name": "triviaqa_greedy",
+      "method_description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a trivia question. Your response MUST be ONLY the answer to the question. Do NOT include explanations, reasoning, or additional text. Provide a concise, direct answer."
+            },
+            {
+              "role": "user",
+              "content": "Question: In which sci fi classic did the space ship Nostromo first appear?\n\nProvide a direct answer to the question.\n\nAnswer:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 50
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "Alien.",
+          "logprob": -0.6429701593733625,
+          "probability": 0.5257286050527377
+        }
+      ],
+      "decision_process": {
+        "method": "greedy",
+        "temperature": 0.0,
+        "selected_answer": "Alien.",
+        "confidence_from_logprob": "0.5257"
+      },
+      "final_metrics": {
+        "predicted": "Alien.",
+        "gold_answers": [
+          "Alien (disambiguation)",
+          "The Alien",
+          "Alien (Alien)",
+          "The Aliens",
+          "Alien (fictional creature)",
+          "The Aliens (band)",
+          "Alien (alien)",
+          "Alien",
+          "Alians (disambiguation)",
+          "Aliens (novel)",
+          "Aliens (computer game)",
+          "Alien (song)",
+          "Aliens",
+          "Aliens (disambiguation)",
+          "The Alien (disambiguation)"
+        ],
+        "exact_match": 1.0,
+        "f1": 1.0,
+        "confidence": 0.5257286050527377,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

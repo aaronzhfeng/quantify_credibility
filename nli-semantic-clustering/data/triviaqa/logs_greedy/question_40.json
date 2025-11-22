@@ -1,0 +1,55 @@
+{
+  "question_id": 40,
+  "question_text": "Otis Barton was a pioneer in exploring where?",
+  "choices": [],
+  "gold_answer": "['Underwater', 'Under water', 'Underwater life', 'Undersea']",
+  "methods": {
+    "greedy": {
+      "method_name": "triviaqa_greedy",
+      "method_description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a trivia question. Your response MUST be ONLY the answer to the question. Do NOT include explanations, reasoning, or additional text. Provide a concise, direct answer."
+            },
+            {
+              "role": "user",
+              "content": "Question: Otis Barton was a pioneer in exploring where?\n\nProvide a direct answer to the question.\n\nAnswer:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 50
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "Caves.",
+          "logprob": -2.6627536013547797,
+          "probability": 0.06975587716817289
+        }
+      ],
+      "decision_process": {
+        "method": "greedy",
+        "temperature": 0.0,
+        "selected_answer": "Caves.",
+        "confidence_from_logprob": "0.0698"
+      },
+      "final_metrics": {
+        "predicted": "Caves.",
+        "gold_answers": [
+          "Underwater",
+          "Under water",
+          "Underwater life",
+          "Undersea"
+        ],
+        "exact_match": 0.0,
+        "f1": 0.0,
+        "confidence": 0.06975587716817289,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

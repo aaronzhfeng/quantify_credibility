@@ -1,0 +1,54 @@
+{
+  "question_id": 185,
+  "question_text": "Who became Israel's head of state in 1993?",
+  "choices": [],
+  "gold_answer": "['עזר ויצמן', 'Ezer Weizmann', 'Ezer Weizman']",
+  "methods": {
+    "greedy": {
+      "method_name": "triviaqa_greedy",
+      "method_description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a trivia question. Your response MUST be ONLY the answer to the question. Do NOT include explanations, reasoning, or additional text. Provide a concise, direct answer."
+            },
+            {
+              "role": "user",
+              "content": "Question: Who became Israel's head of state in 1993?\n\nProvide a direct answer to the question.\n\nAnswer:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 50
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "Ezer Weizman",
+          "logprob": -0.12651588447624817,
+          "probability": 0.8811601526648334
+        }
+      ],
+      "decision_process": {
+        "method": "greedy",
+        "temperature": 0.0,
+        "selected_answer": "Ezer Weizman",
+        "confidence_from_logprob": "0.8812"
+      },
+      "final_metrics": {
+        "predicted": "Ezer Weizman",
+        "gold_answers": [
+          "עזר ויצמן",
+          "Ezer Weizmann",
+          "Ezer Weizman"
+        ],
+        "exact_match": 1.0,
+        "f1": 1.0,
+        "confidence": 0.8811601526648334,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

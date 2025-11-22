@@ -1,0 +1,54 @@
+{
+  "question_id": 53,
+  "question_text": "Who was the leader when the Franks entered the Euphrates valley?",
+  "choices": [],
+  "gold_answer": "['Oursel', 'Oursel', 'Oursel']",
+  "methods": {
+    "greedy": {
+      "method_name": "squad-v2_greedy",
+      "method_description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a question based on a given context. Your response MUST be ONLY the direct answer from the context. Do NOT include explanations, reasoning, or additional text. If the question cannot be answered from the context, respond with: UNANSWERABLE"
+            },
+            {
+              "role": "user",
+              "content": "Context:\nSome Normans joined Turkish forces to aid in the destruction of the Armenians vassal-states of Sassoun and Taron in far eastern Anatolia. Later, many took up service with the Armenian state further south in Cilicia and the Taurus Mountains. A Norman named Oursel led a force of \"Franks\" into the upper Euphrates valley in northern Syria. From 1073 to 1074, 8,000 of the 20,000 troops of the Armenian general Philaretus Brachamius were Normans—formerly of Oursel—led by Raimbaud. They even lent their ethnicity to the name of their castle: Afranji, meaning \"Franks.\" The known trade between Amalfi and Antioch and between Bari and Tarsus may be related to the presence of Italo-Normans in those cities while Amalfi and Bari were under Norman rule in Italy.\n\nQuestion: Who was the leader when the Franks entered the Euphrates valley?\n\nProvide a direct answer to the question based on the context above.\n\nAnswer:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 50
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "Raimbaud",
+          "logprob": -1.3058892480296436,
+          "probability": 0.27093150258781945
+        }
+      ],
+      "decision_process": {
+        "method": "greedy",
+        "temperature": 0.0,
+        "selected_answer": "Raimbaud",
+        "confidence_from_logprob": "0.2709"
+      },
+      "final_metrics": {
+        "predicted": "Raimbaud",
+        "gold_answers": [
+          "Oursel",
+          "Oursel",
+          "Oursel"
+        ],
+        "exact_match": 0.0,
+        "f1": 0.0,
+        "confidence": 0.27093150258781945,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

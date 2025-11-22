@@ -1,0 +1,71 @@
+{
+  "question_id": 52,
+  "question_text": "Who had a Too Legit To Quit Tour?",
+  "choices": [],
+  "gold_answer": "['M. C. Hammer', 'Hammer (rapper)', 'Family Affair(MC Hammer album)', 'Mc Hammer', 'Too Tight(MC Hammer album)', 'Stanley Burrell', 'Stanley Kirk Burrell', 'M c hammer', 'Mchammer', \"You Shouldn't Touch This\", 'Mc hammer', 'M.C. Hammer', 'Family Affair (MC Hammer album)', 'McHammer', 'MC Hammer', 'Stanley K. Burrell', 'Wiredoo', 'WireDoo', 'The hammer crew', 'Too Tight (MC Hammer album)']",
+  "methods": {
+    "greedy": {
+      "method_name": "triviaqa_greedy",
+      "method_description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a trivia question. Your response MUST be ONLY the answer to the question. Do NOT include explanations, reasoning, or additional text. Provide a concise, direct answer."
+            },
+            {
+              "role": "user",
+              "content": "Question: Who had a Too Legit To Quit Tour?\n\nProvide a direct answer to the question.\n\nAnswer:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 50
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "MC Hammer",
+          "logprob": -0.41716802793962415,
+          "probability": 0.658910195319449
+        }
+      ],
+      "decision_process": {
+        "method": "greedy",
+        "temperature": 0.0,
+        "selected_answer": "MC Hammer",
+        "confidence_from_logprob": "0.6589"
+      },
+      "final_metrics": {
+        "predicted": "MC Hammer",
+        "gold_answers": [
+          "M. C. Hammer",
+          "Hammer (rapper)",
+          "Family Affair(MC Hammer album)",
+          "Mc Hammer",
+          "Too Tight(MC Hammer album)",
+          "Stanley Burrell",
+          "Stanley Kirk Burrell",
+          "M c hammer",
+          "Mchammer",
+          "You Shouldn't Touch This",
+          "Mc hammer",
+          "M.C. Hammer",
+          "Family Affair (MC Hammer album)",
+          "McHammer",
+          "MC Hammer",
+          "Stanley K. Burrell",
+          "Wiredoo",
+          "WireDoo",
+          "The hammer crew",
+          "Too Tight (MC Hammer album)"
+        ],
+        "exact_match": 1.0,
+        "f1": 1.0,
+        "confidence": 0.658910195319449,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

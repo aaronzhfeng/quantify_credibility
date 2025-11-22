@@ -1,0 +1,50 @@
+{
+  "question_id": 112,
+  "question_text": "What castles were built by the Irish?",
+  "choices": [],
+  "gold_answer": "[]",
+  "methods": {
+    "greedy": {
+      "method_name": "squad-v2_greedy",
+      "method_description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a question based on a given context. Your response MUST be ONLY the direct answer from the context. Do NOT include explanations, reasoning, or additional text. If the question cannot be answered from the context, respond with: UNANSWERABLE"
+            },
+            {
+              "role": "user",
+              "content": "Context:\nThe Normans had a profound effect on Irish culture and history after their invasion at Bannow Bay in 1169. Initially the Normans maintained a distinct culture and ethnicity. Yet, with time, they came to be subsumed into Irish culture to the point that it has been said that they became \"more Irish than the Irish themselves.\" The Normans settled mostly in an area in the east of Ireland, later known as the Pale, and also built many fine castles and settlements, including Trim Castle and Dublin Castle. Both cultures intermixed, borrowing from each other's language, culture and outlook. Norman descendants today can be recognised by their surnames. Names such as French, (De) Roche, Devereux, D'Arcy, Treacy and Lacy are particularly common in the southeast of Ireland, especially in the southern part of County Wexford where the first Norman settlements were established. Other Norman names such as Furlong predominate there. Another common Norman-Irish name was Morell (Murrell) derived from the French Norman name Morel. Other names beginning with Fitz (from the Norman for son) indicate Norman ancestry. These included Fitzgerald, FitzGibbons (Gibbons) dynasty, Fitzmaurice. Other families bearing such surnames as Barry (de Barra) and De Búrca (Burke) are also of Norman extraction.\n\nQuestion: What castles were built by the Irish?\n\nProvide a direct answer to the question based on the context above.\n\nAnswer:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 50
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "UNANSWERABLE",
+          "logprob": -0.24486414946011337,
+          "probability": 0.7828108762988377
+        }
+      ],
+      "decision_process": {
+        "method": "greedy",
+        "temperature": 0.0,
+        "selected_answer": "UNANSWERABLE",
+        "confidence_from_logprob": "0.7828"
+      },
+      "final_metrics": {
+        "predicted": "UNANSWERABLE",
+        "gold_answers": [],
+        "exact_match": 1.0,
+        "f1": 1.0,
+        "confidence": 0.7828108762988377,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

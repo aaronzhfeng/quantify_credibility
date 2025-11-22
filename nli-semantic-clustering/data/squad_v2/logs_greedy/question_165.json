@@ -1,0 +1,50 @@
+{
+  "question_id": 165,
+  "question_text": "What title did Henry II take in the Canary Island?",
+  "choices": [],
+  "gold_answer": "[]",
+  "methods": {
+    "greedy": {
+      "method_name": "squad-v2_greedy",
+      "method_description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a question based on a given context. Your response MUST be ONLY the direct answer from the context. Do NOT include explanations, reasoning, or additional text. If the question cannot be answered from the context, respond with: UNANSWERABLE"
+            },
+            {
+              "role": "user",
+              "content": "Context:\nBethencourt took the title of King of the Canary Islands, as vassal to Henry III of Castile. In 1418, Jean's nephew Maciot de Bethencourt sold the rights to the islands to Enrique Pérez de Guzmán, 2nd Count de Niebla.\n\nQuestion: What title did Henry II take in the Canary Island?\n\nProvide a direct answer to the question based on the context above.\n\nAnswer:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 50
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "King of the Canary Islands",
+          "logprob": -1.0029263981723489,
+          "probability": 0.3668044531358305
+        }
+      ],
+      "decision_process": {
+        "method": "greedy",
+        "temperature": 0.0,
+        "selected_answer": "King of the Canary Islands",
+        "confidence_from_logprob": "0.3668"
+      },
+      "final_metrics": {
+        "predicted": "King of the Canary Islands",
+        "gold_answers": [],
+        "exact_match": 0.0,
+        "f1": 0.0,
+        "confidence": 0.3668044531358305,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

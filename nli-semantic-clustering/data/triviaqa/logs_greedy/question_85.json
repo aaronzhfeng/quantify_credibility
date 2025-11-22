@@ -1,0 +1,56 @@
+{
+  "question_id": 85,
+  "question_text": "In music, who was Sweet and Innocent and Too Young?",
+  "choices": [],
+  "gold_answer": "['Donny Osmond', 'Donny & Marie in Las Vegas', 'Donald Clark Osmond', 'Donald Osmond', 'Donnie Osmond']",
+  "methods": {
+    "greedy": {
+      "method_name": "triviaqa_greedy",
+      "method_description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a trivia question. Your response MUST be ONLY the answer to the question. Do NOT include explanations, reasoning, or additional text. Provide a concise, direct answer."
+            },
+            {
+              "role": "user",
+              "content": "Question: In music, who was Sweet and Innocent and Too Young?\n\nProvide a direct answer to the question.\n\nAnswer:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 50
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "The Everly Brothers",
+          "logprob": -4.450241715472657,
+          "probability": 0.011675744421200887
+        }
+      ],
+      "decision_process": {
+        "method": "greedy",
+        "temperature": 0.0,
+        "selected_answer": "The Everly Brothers",
+        "confidence_from_logprob": "0.0117"
+      },
+      "final_metrics": {
+        "predicted": "The Everly Brothers",
+        "gold_answers": [
+          "Donny Osmond",
+          "Donny & Marie in Las Vegas",
+          "Donald Clark Osmond",
+          "Donald Osmond",
+          "Donnie Osmond"
+        ],
+        "exact_match": 0.0,
+        "f1": 0.0,
+        "confidence": 0.011675744421200887,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

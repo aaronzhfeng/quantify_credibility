@@ -1,0 +1,59 @@
+{
+  "question_id": 26,
+  "question_text": "What was Truman Capote's last name before he was adopted by his stepfather?",
+  "choices": [],
+  "gold_answer": "['Perſons', 'Person', 'Person (philosophical)', 'Personhood Theory', 'Persons', 'Perſon', 'A person', 'Personhood theory']",
+  "methods": {
+    "greedy": {
+      "method_name": "triviaqa_greedy",
+      "method_description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a trivia question. Your response MUST be ONLY the answer to the question. Do NOT include explanations, reasoning, or additional text. Provide a concise, direct answer."
+            },
+            {
+              "role": "user",
+              "content": "Question: What was Truman Capote's last name before he was adopted by his stepfather?\n\nProvide a direct answer to the question.\n\nAnswer:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 50
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "Monroe.",
+          "logprob": -0.630720964516513,
+          "probability": 0.5322079596012286
+        }
+      ],
+      "decision_process": {
+        "method": "greedy",
+        "temperature": 0.0,
+        "selected_answer": "Monroe.",
+        "confidence_from_logprob": "0.5322"
+      },
+      "final_metrics": {
+        "predicted": "Monroe.",
+        "gold_answers": [
+          "Perſons",
+          "Person",
+          "Person (philosophical)",
+          "Personhood Theory",
+          "Persons",
+          "Perſon",
+          "A person",
+          "Personhood theory"
+        ],
+        "exact_match": 0.0,
+        "f1": 0.0,
+        "confidence": 0.5322079596012286,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

@@ -1,0 +1,67 @@
+{
+  "question_id": 139,
+  "question_text": "Which US president won the Nobel Peace Prize in 1920?",
+  "choices": [],
+  "gold_answer": "['Thomas W. Wilson', 'President wilson', 'Wilson, Woodrow', 'Thomas Woodrow Wilson', 'Woodrow wilson', 'Presidency of Woodrow Wilson', 'President Woodrow Wilson', \"President Wilson's\", 'T Woodrow Wilson', 'W. Wilson', \"Woodrow Wilson's\", 'Woodrow Wilson', 'Wildrow Woodson', 'President Wilson', '28th President of the United States', 'T. Woodrow Wilson']",
+  "methods": {
+    "greedy": {
+      "method_name": "triviaqa_greedy",
+      "method_description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a trivia question. Your response MUST be ONLY the answer to the question. Do NOT include explanations, reasoning, or additional text. Provide a concise, direct answer."
+            },
+            {
+              "role": "user",
+              "content": "Question: Which US president won the Nobel Peace Prize in 1920?\n\nProvide a direct answer to the question.\n\nAnswer:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 50
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "Woodrow Wilson",
+          "logprob": -0.23568881154187693,
+          "probability": 0.790026482807438
+        }
+      ],
+      "decision_process": {
+        "method": "greedy",
+        "temperature": 0.0,
+        "selected_answer": "Woodrow Wilson",
+        "confidence_from_logprob": "0.7900"
+      },
+      "final_metrics": {
+        "predicted": "Woodrow Wilson",
+        "gold_answers": [
+          "Thomas W. Wilson",
+          "President wilson",
+          "Wilson, Woodrow",
+          "Thomas Woodrow Wilson",
+          "Woodrow wilson",
+          "Presidency of Woodrow Wilson",
+          "President Woodrow Wilson",
+          "President Wilson's",
+          "T Woodrow Wilson",
+          "W. Wilson",
+          "Woodrow Wilson's",
+          "Woodrow Wilson",
+          "Wildrow Woodson",
+          "President Wilson",
+          "28th President of the United States",
+          "T. Woodrow Wilson"
+        ],
+        "exact_match": 1.0,
+        "f1": 1.0,
+        "confidence": 0.790026482807438,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

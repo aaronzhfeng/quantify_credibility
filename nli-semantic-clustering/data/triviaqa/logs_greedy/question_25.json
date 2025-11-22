@@ -1,0 +1,59 @@
+{
+  "question_id": 25,
+  "question_text": "Men Against the Sea and Pitcairn's Island were two sequels to what famous novel?",
+  "choices": [],
+  "gold_answer": "['HMS Bounty mutineers', 'Mutiny on the Bounty', 'Mutiny on Bounty', 'Mutiny On The Bounty', 'Mutiny on the Bounty (history)', 'Mutiny on the bounty', 'Bounty (vessel)', 'Thomas Ledward']",
+  "methods": {
+    "greedy": {
+      "method_name": "triviaqa_greedy",
+      "method_description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a trivia question. Your response MUST be ONLY the answer to the question. Do NOT include explanations, reasoning, or additional text. Provide a concise, direct answer."
+            },
+            {
+              "role": "user",
+              "content": "Question: Men Against the Sea and Pitcairn's Island were two sequels to what famous novel?\n\nProvide a direct answer to the question.\n\nAnswer:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 50
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "Treasure Island",
+          "logprob": -1.288015877828002,
+          "probability": 0.2758174961471778
+        }
+      ],
+      "decision_process": {
+        "method": "greedy",
+        "temperature": 0.0,
+        "selected_answer": "Treasure Island",
+        "confidence_from_logprob": "0.2758"
+      },
+      "final_metrics": {
+        "predicted": "Treasure Island",
+        "gold_answers": [
+          "HMS Bounty mutineers",
+          "Mutiny on the Bounty",
+          "Mutiny on Bounty",
+          "Mutiny On The Bounty",
+          "Mutiny on the Bounty (history)",
+          "Mutiny on the bounty",
+          "Bounty (vessel)",
+          "Thomas Ledward"
+        ],
+        "exact_match": 0.0,
+        "f1": 0.0,
+        "confidence": 0.2758174961471778,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

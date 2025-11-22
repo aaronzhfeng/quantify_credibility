@@ -1,0 +1,54 @@
+{
+  "question_id": 104,
+  "question_text": "What was the name of the brothel in The Best Little Whorehouse in Texas?",
+  "choices": [],
+  "gold_answer": "['Chicken Ranch', 'Chicken Ranch (disambiguation)', 'The Chicken Ranch']",
+  "methods": {
+    "greedy": {
+      "method_name": "triviaqa_greedy",
+      "method_description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a trivia question. Your response MUST be ONLY the answer to the question. Do NOT include explanations, reasoning, or additional text. Provide a concise, direct answer."
+            },
+            {
+              "role": "user",
+              "content": "Question: What was the name of the brothel in The Best Little Whorehouse in Texas?\n\nProvide a direct answer to the question.\n\nAnswer:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 50
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "Miss Mona's.",
+          "logprob": -2.5873375308292452,
+          "probability": 0.07522004476424028
+        }
+      ],
+      "decision_process": {
+        "method": "greedy",
+        "temperature": 0.0,
+        "selected_answer": "Miss Mona's.",
+        "confidence_from_logprob": "0.0752"
+      },
+      "final_metrics": {
+        "predicted": "Miss Mona's.",
+        "gold_answers": [
+          "Chicken Ranch",
+          "Chicken Ranch (disambiguation)",
+          "The Chicken Ranch"
+        ],
+        "exact_match": 0.0,
+        "f1": 0.0,
+        "confidence": 0.07522004476424028,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

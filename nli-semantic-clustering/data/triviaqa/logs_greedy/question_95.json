@@ -1,0 +1,58 @@
+{
+  "question_id": 95,
+  "question_text": "Which movie was a biopic about the life of David Helfgott?",
+  "choices": [],
+  "gold_answer": "['Shine', 'Shine (album)', 'Shine (EP)', 'Shine (song)', 'Shiné', 'Shine (disambiguation)', 'Shine(Album)']",
+  "methods": {
+    "greedy": {
+      "method_name": "triviaqa_greedy",
+      "method_description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a trivia question. Your response MUST be ONLY the answer to the question. Do NOT include explanations, reasoning, or additional text. Provide a concise, direct answer."
+            },
+            {
+              "role": "user",
+              "content": "Question: Which movie was a biopic about the life of David Helfgott?\n\nProvide a direct answer to the question.\n\nAnswer:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 50
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "Shine.",
+          "logprob": -0.4512976095847989,
+          "probability": 0.636801295804729
+        }
+      ],
+      "decision_process": {
+        "method": "greedy",
+        "temperature": 0.0,
+        "selected_answer": "Shine.",
+        "confidence_from_logprob": "0.6368"
+      },
+      "final_metrics": {
+        "predicted": "Shine.",
+        "gold_answers": [
+          "Shine",
+          "Shine (album)",
+          "Shine (EP)",
+          "Shine (song)",
+          "Shiné",
+          "Shine (disambiguation)",
+          "Shine(Album)"
+        ],
+        "exact_match": 1.0,
+        "f1": 1.0,
+        "confidence": 0.636801295804729,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

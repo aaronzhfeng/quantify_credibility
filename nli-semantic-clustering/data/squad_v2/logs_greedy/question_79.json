@@ -1,0 +1,50 @@
+{
+  "question_id": 79,
+  "question_text": "Who attacked Dyrrachium in the 11th century?",
+  "choices": [],
+  "gold_answer": "[]",
+  "methods": {
+    "greedy": {
+      "method_name": "squad-v2_greedy",
+      "method_description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a question based on a given context. Your response MUST be ONLY the direct answer from the context. Do NOT include explanations, reasoning, or additional text. If the question cannot be answered from the context, respond with: UNANSWERABLE"
+            },
+            {
+              "role": "user",
+              "content": "Context:\nThe further decline of Byzantine state-of-affairs paved the road to a third attack in 1185, when a large Norman army invaded Dyrrachium, owing to the betrayal of high Byzantine officials. Some time later, Dyrrachium—one of the most important naval bases of the Adriatic—fell again to Byzantine hands.\n\nQuestion: Who attacked Dyrrachium in the 11th century?\n\nProvide a direct answer to the question based on the context above.\n\nAnswer:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 50
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "The Normans.",
+          "logprob": -0.9077253049472347,
+          "probability": 0.40344088606270256
+        }
+      ],
+      "decision_process": {
+        "method": "greedy",
+        "temperature": 0.0,
+        "selected_answer": "The Normans.",
+        "confidence_from_logprob": "0.4034"
+      },
+      "final_metrics": {
+        "predicted": "The Normans.",
+        "gold_answers": [],
+        "exact_match": 0.0,
+        "f1": 0.0,
+        "confidence": 0.40344088606270256,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "question_id": 195,
+  "question_text": "In what year was the first in-flight movie shown on an internal flight in the USA.",
+  "choices": [],
+  "gold_answer": "['1929', 'one thousand, nine hundred and twenty-nine']",
+  "methods": {
+    "greedy": {
+      "method_name": "triviaqa_greedy",
+      "method_description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a trivia question. Your response MUST be ONLY the answer to the question. Do NOT include explanations, reasoning, or additional text. Provide a concise, direct answer."
+            },
+            {
+              "role": "user",
+              "content": "Question: In what year was the first in-flight movie shown on an internal flight in the USA.\n\nProvide a direct answer to the question.\n\nAnswer:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 50
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "1933",
+          "logprob": -0.2927128039300442,
+          "probability": 0.7462364260936187
+        }
+      ],
+      "decision_process": {
+        "method": "greedy",
+        "temperature": 0.0,
+        "selected_answer": "1933",
+        "confidence_from_logprob": "0.7462"
+      },
+      "final_metrics": {
+        "predicted": "1933",
+        "gold_answers": [
+          "1929",
+          "one thousand, nine hundred and twenty-nine"
+        ],
+        "exact_match": 0.0,
+        "f1": 0.0,
+        "confidence": 0.7462364260936187,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

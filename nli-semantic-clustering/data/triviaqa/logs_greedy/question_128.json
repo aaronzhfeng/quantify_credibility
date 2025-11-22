@@ -1,0 +1,100 @@
+{
+  "question_id": 128,
+  "question_text": "In baseball, where do the Orioles come from?",
+  "choices": [],
+  "gold_answer": "['Ballermore, Murdaland', 'Baltimore, Maryland, US', 'B.More', 'Bmore', 'City of Baltimore, Maryland', 'Baltimore (City)', 'Baseball in Baltimore', 'Ballamore, Murderland', 'Mobtown', 'Baltimore, US-MD', 'Baltimore md', 'Baltamore', 'Baltimore (Md.)', 'Ballermore, Murderland', 'B-More', 'Baltimore City', 'Ballamore', 'Baltimore, Md.', 'Baltimore, Maryland', 'Baltimore, Maryland, USA', 'Baltimore, Maryland, United States', 'Economy of Baltimore', 'Baltimore, MD', 'Charm City', 'Balitmore', 'Baltimore', 'Baltimore, United States', 'Baltimore, Md', 'Baltimore (MD)', 'Ballermore', 'Baltimore Department of Transportation', 'Transportation in Baltimore', 'Charm city', 'B. More', 'Baltimore City, MD', 'Ballamore, Murdaland', 'Baltimore, Maryland, United States of America', 'Department of Transportation (Baltimore)', 'Baltimore City, Maryland', 'City of Baltimore', 'Baltimore, USA', 'Baltimore City Department of Transportation', 'B More', 'Baltimore DOT', \"B'More\", \"Baltimore City Sheriff's Office\", 'UN/LOCODE:USBAL', 'Baltimoreans', 'Baltimore, MD, United States']",
+  "methods": {
+    "greedy": {
+      "method_name": "triviaqa_greedy",
+      "method_description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a trivia question. Your response MUST be ONLY the answer to the question. Do NOT include explanations, reasoning, or additional text. Provide a concise, direct answer."
+            },
+            {
+              "role": "user",
+              "content": "Question: In baseball, where do the Orioles come from?\n\nProvide a direct answer to the question.\n\nAnswer:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 50
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "Baltimore.",
+          "logprob": -0.42763889420621126,
+          "probability": 0.6520468301794442
+        }
+      ],
+      "decision_process": {
+        "method": "greedy",
+        "temperature": 0.0,
+        "selected_answer": "Baltimore.",
+        "confidence_from_logprob": "0.6520"
+      },
+      "final_metrics": {
+        "predicted": "Baltimore.",
+        "gold_answers": [
+          "Ballermore, Murdaland",
+          "Baltimore, Maryland, US",
+          "B.More",
+          "Bmore",
+          "City of Baltimore, Maryland",
+          "Baltimore (City)",
+          "Baseball in Baltimore",
+          "Ballamore, Murderland",
+          "Mobtown",
+          "Baltimore, US-MD",
+          "Baltimore md",
+          "Baltamore",
+          "Baltimore (Md.)",
+          "Ballermore, Murderland",
+          "B-More",
+          "Baltimore City",
+          "Ballamore",
+          "Baltimore, Md.",
+          "Baltimore, Maryland",
+          "Baltimore, Maryland, USA",
+          "Baltimore, Maryland, United States",
+          "Economy of Baltimore",
+          "Baltimore, MD",
+          "Charm City",
+          "Balitmore",
+          "Baltimore",
+          "Baltimore, United States",
+          "Baltimore, Md",
+          "Baltimore (MD)",
+          "Ballermore",
+          "Baltimore Department of Transportation",
+          "Transportation in Baltimore",
+          "Charm city",
+          "B. More",
+          "Baltimore City, MD",
+          "Ballamore, Murdaland",
+          "Baltimore, Maryland, United States of America",
+          "Department of Transportation (Baltimore)",
+          "Baltimore City, Maryland",
+          "City of Baltimore",
+          "Baltimore, USA",
+          "Baltimore City Department of Transportation",
+          "B More",
+          "Baltimore DOT",
+          "B'More",
+          "Baltimore City Sheriff's Office",
+          "UN/LOCODE:USBAL",
+          "Baltimoreans",
+          "Baltimore, MD, United States"
+        ],
+        "exact_match": 1.0,
+        "f1": 1.0,
+        "confidence": 0.6520468301794442,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

@@ -1,0 +1,93 @@
+{
+  "question_id": 178,
+  "question_text": "Which US city was named after a British Prime Minister?",
+  "choices": [],
+  "gold_answer": "['Smoky City', 'Pittsburgh (Pa.)', 'Pittsburgh, Pennsylvania.', 'Frick International Studies Academy Middle School', 'Pitsburgh', 'The Burgh', 'Pittsbrugh', 'Pittsburgh, Pa', 'Pittsburgh, USA', 'Glenwood, Pennsylvania', 'Pittsburgh (PA)', 'The Pittsburgh Style of Literature', 'Pittsburgh, Pennsylvania, U.S.', 'Pittsburgh, United States of America', 'Pittsburgh Pennsyvania', 'UN/LOCODE:USPIT', 'Da burgh', 'Pittsburgh (pgh)', 'Climate of Pittsburgh, Pennsylvania', 'Pittsburgh', 'City of Bridges', 'Pittsburgh Frick 6–8 Middle School', 'Pittsburgh, PA', \"St. Justin's High School\", 'East End (Pittsburgh)', 'Pittsburgh, Pennsylvania, USA', 'Pittsburgh, Allegheny County, Pennsylvania', 'The City of Bridges', 'Pittsburgh, Pennsylvania, US', 'Fort du Quesne', 'Pittsburgh Frick 6-8 Middle School', 'City of Pittsburgh', 'The Steel City', 'Pittsburgh, PA.', 'Pittsburgh Style', 'Pittsburgh, Pa.', 'Education in pittsburgh', 'Pittsburg, PA', 'Pittsburgh, Pennsylvania, U.S.A.', 'Education in Pittsburgh', 'Pittsburg, Pennsylvania', 'Pittsburgh, Pennsylvania']",
+  "methods": {
+    "greedy": {
+      "method_name": "triviaqa_greedy",
+      "method_description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a trivia question. Your response MUST be ONLY the answer to the question. Do NOT include explanations, reasoning, or additional text. Provide a concise, direct answer."
+            },
+            {
+              "role": "user",
+              "content": "Question: Which US city was named after a British Prime Minister?\n\nProvide a direct answer to the question.\n\nAnswer:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 50
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "Washington, D.C.",
+          "logprob": -2.753002136014402,
+          "probability": 0.06373622886935494
+        }
+      ],
+      "decision_process": {
+        "method": "greedy",
+        "temperature": 0.0,
+        "selected_answer": "Washington, D.C.",
+        "confidence_from_logprob": "0.0637"
+      },
+      "final_metrics": {
+        "predicted": "Washington, D.C.",
+        "gold_answers": [
+          "Smoky City",
+          "Pittsburgh (Pa.)",
+          "Pittsburgh, Pennsylvania.",
+          "Frick International Studies Academy Middle School",
+          "Pitsburgh",
+          "The Burgh",
+          "Pittsbrugh",
+          "Pittsburgh, Pa",
+          "Pittsburgh, USA",
+          "Glenwood, Pennsylvania",
+          "Pittsburgh (PA)",
+          "The Pittsburgh Style of Literature",
+          "Pittsburgh, Pennsylvania, U.S.",
+          "Pittsburgh, United States of America",
+          "Pittsburgh Pennsyvania",
+          "UN/LOCODE:USPIT",
+          "Da burgh",
+          "Pittsburgh (pgh)",
+          "Climate of Pittsburgh, Pennsylvania",
+          "Pittsburgh",
+          "City of Bridges",
+          "Pittsburgh Frick 6–8 Middle School",
+          "Pittsburgh, PA",
+          "St. Justin's High School",
+          "East End (Pittsburgh)",
+          "Pittsburgh, Pennsylvania, USA",
+          "Pittsburgh, Allegheny County, Pennsylvania",
+          "The City of Bridges",
+          "Pittsburgh, Pennsylvania, US",
+          "Fort du Quesne",
+          "Pittsburgh Frick 6-8 Middle School",
+          "City of Pittsburgh",
+          "The Steel City",
+          "Pittsburgh, PA.",
+          "Pittsburgh Style",
+          "Pittsburgh, Pa.",
+          "Education in pittsburgh",
+          "Pittsburg, PA",
+          "Pittsburgh, Pennsylvania, U.S.A.",
+          "Education in Pittsburgh",
+          "Pittsburg, Pennsylvania",
+          "Pittsburgh, Pennsylvania"
+        ],
+        "exact_match": 0.0,
+        "f1": 0.0,
+        "confidence": 0.06373622886935494,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "question_id": 187,
+  "question_text": "Which President of the Philippines was deposed in 1986?",
+  "choices": [],
+  "gold_answer": "['Marcos', 'Marcos (disambiguation)', 'Markos']",
+  "methods": {
+    "greedy": {
+      "method_name": "triviaqa_greedy",
+      "method_description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a trivia question. Your response MUST be ONLY the answer to the question. Do NOT include explanations, reasoning, or additional text. Provide a concise, direct answer."
+            },
+            {
+              "role": "user",
+              "content": "Question: Which President of the Philippines was deposed in 1986?\n\nProvide a direct answer to the question.\n\nAnswer:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 50
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "Ferdinand Marcos",
+          "logprob": -0.0704882834570526,
+          "probability": 0.9319386585611509
+        }
+      ],
+      "decision_process": {
+        "method": "greedy",
+        "temperature": 0.0,
+        "selected_answer": "Ferdinand Marcos",
+        "confidence_from_logprob": "0.9319"
+      },
+      "final_metrics": {
+        "predicted": "Ferdinand Marcos",
+        "gold_answers": [
+          "Marcos",
+          "Marcos (disambiguation)",
+          "Markos"
+        ],
+        "exact_match": 0.0,
+        "f1": 0.6666666666666666,
+        "confidence": 0.9319386585611509,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

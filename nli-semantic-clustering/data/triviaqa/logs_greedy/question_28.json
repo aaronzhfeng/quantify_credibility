@@ -1,0 +1,103 @@
+{
+  "question_id": 28,
+  "question_text": "In the Bible, who did the sun and moon stand still before?",
+  "choices": [],
+  "gold_answer": "['Joshua of ephraim', \"Y'hosheya\", 'Yehoshea', 'Yahushua', 'Yoshea', 'Yehoshua%60', 'Yūsha', 'Yhoshoa', 'Joshua bin Nun', 'Joshua Ben Nun', 'Yehosha', 'Jehoshua', 'Yahusha', 'Yhoshua', 'Joshua Bin-Nun', 'Yhoshua Ben Nun', 'Yoshia', 'Yehoshua Ben Nun', \"Y'hoshiya\", 'Yhoshea', \"Y'hoshea\", 'Yhosheya', 'Yoshoa', 'Joshua ben Nun', 'Josue', 'Yhoshia', \"Y'hoshua\", 'Yhosha', \"Yusha'\", 'Yhoshiya', \"Y'hoshia\", \"Joshua's Prayer\", 'Ieshua', \"Y'hoshoa\", 'Yoshua', \"Y'hosha\", 'Joshuah', 'يوشع', 'Joshua', 'Yehoshia', 'Jesus Navin', 'Joshua in Islam', \"Joshua's conquests\", 'Yosheya', 'Joshua son of Nun', 'Yehoshoa', 'Yehoshiya', 'Yĕhōshūa‘', 'Yehosheya', 'Yosha', 'Jehoshuah', 'יְהוֹשֻׁעַ']",
+  "methods": {
+    "greedy": {
+      "method_name": "triviaqa_greedy",
+      "method_description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a trivia question. Your response MUST be ONLY the answer to the question. Do NOT include explanations, reasoning, or additional text. Provide a concise, direct answer."
+            },
+            {
+              "role": "user",
+              "content": "Question: In the Bible, who did the sun and moon stand still before?\n\nProvide a direct answer to the question.\n\nAnswer:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 50
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "Joshua.",
+          "logprob": -0.1194436902835605,
+          "probability": 0.8874139764415557
+        }
+      ],
+      "decision_process": {
+        "method": "greedy",
+        "temperature": 0.0,
+        "selected_answer": "Joshua.",
+        "confidence_from_logprob": "0.8874"
+      },
+      "final_metrics": {
+        "predicted": "Joshua.",
+        "gold_answers": [
+          "Joshua of ephraim",
+          "Y'hosheya",
+          "Yehoshea",
+          "Yahushua",
+          "Yoshea",
+          "Yehoshua%60",
+          "Yūsha",
+          "Yhoshoa",
+          "Joshua bin Nun",
+          "Joshua Ben Nun",
+          "Yehosha",
+          "Jehoshua",
+          "Yahusha",
+          "Yhoshua",
+          "Joshua Bin-Nun",
+          "Yhoshua Ben Nun",
+          "Yoshia",
+          "Yehoshua Ben Nun",
+          "Y'hoshiya",
+          "Yhoshea",
+          "Y'hoshea",
+          "Yhosheya",
+          "Yoshoa",
+          "Joshua ben Nun",
+          "Josue",
+          "Yhoshia",
+          "Y'hoshua",
+          "Yhosha",
+          "Yusha'",
+          "Yhoshiya",
+          "Y'hoshia",
+          "Joshua's Prayer",
+          "Ieshua",
+          "Y'hoshoa",
+          "Yoshua",
+          "Y'hosha",
+          "Joshuah",
+          "يوشع",
+          "Joshua",
+          "Yehoshia",
+          "Jesus Navin",
+          "Joshua in Islam",
+          "Joshua's conquests",
+          "Yosheya",
+          "Joshua son of Nun",
+          "Yehoshoa",
+          "Yehoshiya",
+          "Yĕhōshūa‘",
+          "Yehosheya",
+          "Yosha",
+          "Jehoshuah",
+          "יְהוֹשֻׁעַ"
+        ],
+        "exact_match": 1.0,
+        "f1": 1.0,
+        "confidence": 0.8874139764415557,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

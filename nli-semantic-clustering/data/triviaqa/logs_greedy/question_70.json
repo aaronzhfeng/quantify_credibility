@@ -1,0 +1,113 @@
+{
+  "question_id": 70,
+  "question_text": "Which drink did The Spice Girls promote?",
+  "choices": [],
+  "gold_answer": "['Pep.si', 'Pepsey', 'Pepsi Convoy', 'Pepsi Lime', 'Pepsi: summer Mix', 'Pepsi Si', \"Brad's drink\", 'Cherry Pepsi', 'Pepsi Sí', 'Pepsi edge', 'Joy of Cola', 'Pepsi Summer mix', 'Pepsi tarik', 'Pepsi cino', 'Pepsi Holiday Spice', 'Pepsi Perfect', 'PepsiCola', 'Pepsi: Summer mix', 'Pepsi: summer mix', 'Pepsi Gold', 'Pepsi Samba', 'Pepsi Vanilla', 'Pepsi Avantage', 'Vanilla Pepsi', 'Pepsi cola', 'Pepsi Tarik', 'Pepsi (Summer Mix)', 'Pepsi', 'Mandarin Orange Slice', 'Pepsi advantage', 'Pepsi (summer mix)', 'Wildcherrypepsi', 'Cokesi', 'Pepsi-Cola', 'Pepsi Fire', 'Pepsi EDGE', 'Pepsi Cola', 'Pepsiman', 'Pepsi avantage', 'Pepsi AM', 'Pepsi: Summer Mix', 'Diet Wild Cherry Pepsi', 'Pepsi Man', 'Pepsi-cola', 'Pepsi Cappuccino', 'Pepsi summer Mix', 'Pepsi Ice', 'Pepsi lime', 'Peppsey', 'Diet Cherry Pepsi', 'Pepsi Edge', 'Pepsi summer mix', \"Brad's Drink\", 'Pepsi B', 'Pepsi Summer Mix', 'Pepsi Limited Edition Summer Mix', 'Pepsi X', 'PEPSI', 'Brads drink', 'Homemade Pepsi', 'Diet Pepsi Vanilla', 'Pepsi (Summer mix)']",
+  "methods": {
+    "greedy": {
+      "method_name": "triviaqa_greedy",
+      "method_description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a trivia question. Your response MUST be ONLY the answer to the question. Do NOT include explanations, reasoning, or additional text. Provide a concise, direct answer."
+            },
+            {
+              "role": "user",
+              "content": "Question: Which drink did The Spice Girls promote?\n\nProvide a direct answer to the question.\n\nAnswer:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 50
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "Pepsi",
+          "logprob": -1.9476307461827673,
+          "probability": 0.1426115546073129
+        }
+      ],
+      "decision_process": {
+        "method": "greedy",
+        "temperature": 0.0,
+        "selected_answer": "Pepsi",
+        "confidence_from_logprob": "0.1426"
+      },
+      "final_metrics": {
+        "predicted": "Pepsi",
+        "gold_answers": [
+          "Pep.si",
+          "Pepsey",
+          "Pepsi Convoy",
+          "Pepsi Lime",
+          "Pepsi: summer Mix",
+          "Pepsi Si",
+          "Brad's drink",
+          "Cherry Pepsi",
+          "Pepsi Sí",
+          "Pepsi edge",
+          "Joy of Cola",
+          "Pepsi Summer mix",
+          "Pepsi tarik",
+          "Pepsi cino",
+          "Pepsi Holiday Spice",
+          "Pepsi Perfect",
+          "PepsiCola",
+          "Pepsi: Summer mix",
+          "Pepsi: summer mix",
+          "Pepsi Gold",
+          "Pepsi Samba",
+          "Pepsi Vanilla",
+          "Pepsi Avantage",
+          "Vanilla Pepsi",
+          "Pepsi cola",
+          "Pepsi Tarik",
+          "Pepsi (Summer Mix)",
+          "Pepsi",
+          "Mandarin Orange Slice",
+          "Pepsi advantage",
+          "Pepsi (summer mix)",
+          "Wildcherrypepsi",
+          "Cokesi",
+          "Pepsi-Cola",
+          "Pepsi Fire",
+          "Pepsi EDGE",
+          "Pepsi Cola",
+          "Pepsiman",
+          "Pepsi avantage",
+          "Pepsi AM",
+          "Pepsi: Summer Mix",
+          "Diet Wild Cherry Pepsi",
+          "Pepsi Man",
+          "Pepsi-cola",
+          "Pepsi Cappuccino",
+          "Pepsi summer Mix",
+          "Pepsi Ice",
+          "Pepsi lime",
+          "Peppsey",
+          "Diet Cherry Pepsi",
+          "Pepsi Edge",
+          "Pepsi summer mix",
+          "Brad's Drink",
+          "Pepsi B",
+          "Pepsi Summer Mix",
+          "Pepsi Limited Edition Summer Mix",
+          "Pepsi X",
+          "PEPSI",
+          "Brads drink",
+          "Homemade Pepsi",
+          "Diet Pepsi Vanilla",
+          "Pepsi (Summer mix)"
+        ],
+        "exact_match": 1.0,
+        "f1": 1.0,
+        "confidence": 0.1426115546073129,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

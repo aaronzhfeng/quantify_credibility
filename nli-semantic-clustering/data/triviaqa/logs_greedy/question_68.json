@@ -1,0 +1,61 @@
+{
+  "question_id": 68,
+  "question_text": "Which journalist first told the world about the My Lai massacre?",
+  "choices": [],
+  "gold_answer": "['Seymour Hersch', 'The Dark Side of Camelot', 'Seymour M. Hersh', 'Chain of Command: The Road from 9/11 to Abu Ghraib', 'Hersh, Seymour M.', 'Seymour Hersh', 'Sy Hersh', 'Chain of Command (book)', 'Seymour (Sy) Myron Hersh', 'Seymour Hirsch']",
+  "methods": {
+    "greedy": {
+      "method_name": "triviaqa_greedy",
+      "method_description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a trivia question. Your response MUST be ONLY the answer to the question. Do NOT include explanations, reasoning, or additional text. Provide a concise, direct answer."
+            },
+            {
+              "role": "user",
+              "content": "Question: Which journalist first told the world about the My Lai massacre?\n\nProvide a direct answer to the question.\n\nAnswer:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 50
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "Seymour Hersh",
+          "logprob": -1.00498929915193,
+          "probability": 0.36604855181299684
+        }
+      ],
+      "decision_process": {
+        "method": "greedy",
+        "temperature": 0.0,
+        "selected_answer": "Seymour Hersh",
+        "confidence_from_logprob": "0.3660"
+      },
+      "final_metrics": {
+        "predicted": "Seymour Hersh",
+        "gold_answers": [
+          "Seymour Hersch",
+          "The Dark Side of Camelot",
+          "Seymour M. Hersh",
+          "Chain of Command: The Road from 9/11 to Abu Ghraib",
+          "Hersh, Seymour M.",
+          "Seymour Hersh",
+          "Sy Hersh",
+          "Chain of Command (book)",
+          "Seymour (Sy) Myron Hersh",
+          "Seymour Hirsch"
+        ],
+        "exact_match": 1.0,
+        "f1": 1.0,
+        "confidence": 0.36604855181299684,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

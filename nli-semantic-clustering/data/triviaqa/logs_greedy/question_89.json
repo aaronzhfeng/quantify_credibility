@@ -1,0 +1,72 @@
+{
+  "question_id": 89,
+  "question_text": "Benina international airport is in which country?",
+  "choices": [],
+  "gold_answer": "['Free Democratic Libya', 'LIBYA', 'Islamic Republic of Libya', 'Libya (National Transitional Council)', 'Republic of Libya', 'Libya', 'State of Libya', 'Libyan Republic (2011)', 'Libyan Republic', 'ⵍⵉⴱⵢⴰ', 'ليبيا', 'Libiyah', 'LBY', 'Etymology of Libya', 'Al-Jamahiriya al-%60Arabiyah al-Libiyah ash-Sha%60biyah al-Ishtirakiyah al-Uzma', 'Largest cities in Libya', 'Lībiyā', 'Lybya', 'Free Libya', 'Libiya', 'ISO 3166-1:LY']",
+  "methods": {
+    "greedy": {
+      "method_name": "triviaqa_greedy",
+      "method_description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a trivia question. Your response MUST be ONLY the answer to the question. Do NOT include explanations, reasoning, or additional text. Provide a concise, direct answer."
+            },
+            {
+              "role": "user",
+              "content": "Question: Benina international airport is in which country?\n\nProvide a direct answer to the question.\n\nAnswer:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 50
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "Libya.",
+          "logprob": -1.9871535017555289,
+          "probability": 0.13708508305082479
+        }
+      ],
+      "decision_process": {
+        "method": "greedy",
+        "temperature": 0.0,
+        "selected_answer": "Libya.",
+        "confidence_from_logprob": "0.1371"
+      },
+      "final_metrics": {
+        "predicted": "Libya.",
+        "gold_answers": [
+          "Free Democratic Libya",
+          "LIBYA",
+          "Islamic Republic of Libya",
+          "Libya (National Transitional Council)",
+          "Republic of Libya",
+          "Libya",
+          "State of Libya",
+          "Libyan Republic (2011)",
+          "Libyan Republic",
+          "ⵍⵉⴱⵢⴰ",
+          "ليبيا",
+          "Libiyah",
+          "LBY",
+          "Etymology of Libya",
+          "Al-Jamahiriya al-%60Arabiyah al-Libiyah ash-Sha%60biyah al-Ishtirakiyah al-Uzma",
+          "Largest cities in Libya",
+          "Lībiyā",
+          "Lybya",
+          "Free Libya",
+          "Libiya",
+          "ISO 3166-1:LY"
+        ],
+        "exact_match": 1.0,
+        "f1": 1.0,
+        "confidence": 0.13708508305082479,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "question_id": 138,
+  "question_text": "Who was the only female victim to be killed off in the opening credit sequence in Police Squad?",
+  "choices": [],
+  "gold_answer": "['Florence Agnes Henderson', 'Florence Henderson', 'Florence Hendersen', 'Flo Henderson']",
+  "methods": {
+    "greedy": {
+      "method_name": "triviaqa_greedy",
+      "method_description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a trivia question. Your response MUST be ONLY the answer to the question. Do NOT include explanations, reasoning, or additional text. Provide a concise, direct answer."
+            },
+            {
+              "role": "user",
+              "content": "Question: Who was the only female victim to be killed off in the opening credit sequence in Police Squad?\n\nProvide a direct answer to the question.\n\nAnswer:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 50
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "Liz Fraser",
+          "logprob": -4.297799967229366,
+          "probability": 0.013598443147663094
+        }
+      ],
+      "decision_process": {
+        "method": "greedy",
+        "temperature": 0.0,
+        "selected_answer": "Liz Fraser",
+        "confidence_from_logprob": "0.0136"
+      },
+      "final_metrics": {
+        "predicted": "Liz Fraser",
+        "gold_answers": [
+          "Florence Agnes Henderson",
+          "Florence Henderson",
+          "Florence Hendersen",
+          "Flo Henderson"
+        ],
+        "exact_match": 0.0,
+        "f1": 0.0,
+        "confidence": 0.013598443147663094,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

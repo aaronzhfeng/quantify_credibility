@@ -1,0 +1,62 @@
+{
+  "question_id": 32,
+  "question_text": "Who was the last inmate of Spandau jail in Berlin?",
+  "choices": [],
+  "gold_answer": "['Hess, Rudolf', 'Rudolf hess', 'Rudolf W. Hess', 'Rudolph Hess', 'Walther Richard Rudolf Hess', 'Rudolf Walter Richard Hess', 'Rudolf Hess', 'Rudolf Walter Richard Heß', 'Rudolph Heß', 'Rudolf Heß', 'Rudolf Hesse']",
+  "methods": {
+    "greedy": {
+      "method_name": "triviaqa_greedy",
+      "method_description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a trivia question. Your response MUST be ONLY the answer to the question. Do NOT include explanations, reasoning, or additional text. Provide a concise, direct answer."
+            },
+            {
+              "role": "user",
+              "content": "Question: Who was the last inmate of Spandau jail in Berlin?\n\nProvide a direct answer to the question.\n\nAnswer:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 50
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "Rudolf Hess",
+          "logprob": -2.400494762463495,
+          "probability": 0.09067308055294798
+        }
+      ],
+      "decision_process": {
+        "method": "greedy",
+        "temperature": 0.0,
+        "selected_answer": "Rudolf Hess",
+        "confidence_from_logprob": "0.0907"
+      },
+      "final_metrics": {
+        "predicted": "Rudolf Hess",
+        "gold_answers": [
+          "Hess, Rudolf",
+          "Rudolf hess",
+          "Rudolf W. Hess",
+          "Rudolph Hess",
+          "Walther Richard Rudolf Hess",
+          "Rudolf Walter Richard Hess",
+          "Rudolf Hess",
+          "Rudolf Walter Richard Heß",
+          "Rudolph Heß",
+          "Rudolf Heß",
+          "Rudolf Hesse"
+        ],
+        "exact_match": 1.0,
+        "f1": 1.0,
+        "confidence": 0.09067308055294798,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

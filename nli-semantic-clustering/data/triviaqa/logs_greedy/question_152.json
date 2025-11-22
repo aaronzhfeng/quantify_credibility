@@ -1,0 +1,69 @@
+{
+  "question_id": 152,
+  "question_text": "In baseball, where do the Royals come from?",
+  "choices": [],
+  "gold_answer": "['Kansas City Metro', 'Kansas city', 'Kansas City Metropolitan Area', 'Metropolitan Kansas City', 'Kansas City metro area', 'Kansas City metropolitan area', 'Greater Kansas City', 'KC Metropolitan Area', 'Kansas City', 'Kansas City, Missouri metropolitan area', 'Kansas City metropolitan Area', 'Kansas City-Overland Park-Kansas City, MO-KS CSA', 'Kansas City-Overland Park-Kansas City, MO-KS Combined Statistical Area', 'Kansas City Metro Area', 'K.C. Metropolitan Area', 'Kansas City, MO-KS MSA', 'Kansas City, MO-KS Metropolitan Statistical Area', 'Kansas City, USA']",
+  "methods": {
+    "greedy": {
+      "method_name": "triviaqa_greedy",
+      "method_description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a trivia question. Your response MUST be ONLY the answer to the question. Do NOT include explanations, reasoning, or additional text. Provide a concise, direct answer."
+            },
+            {
+              "role": "user",
+              "content": "Question: In baseball, where do the Royals come from?\n\nProvide a direct answer to the question.\n\nAnswer:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 50
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "Kansas City.",
+          "logprob": -0.15757308727916097,
+          "probability": 0.8542143791221337
+        }
+      ],
+      "decision_process": {
+        "method": "greedy",
+        "temperature": 0.0,
+        "selected_answer": "Kansas City.",
+        "confidence_from_logprob": "0.8542"
+      },
+      "final_metrics": {
+        "predicted": "Kansas City.",
+        "gold_answers": [
+          "Kansas City Metro",
+          "Kansas city",
+          "Kansas City Metropolitan Area",
+          "Metropolitan Kansas City",
+          "Kansas City metro area",
+          "Kansas City metropolitan area",
+          "Greater Kansas City",
+          "KC Metropolitan Area",
+          "Kansas City",
+          "Kansas City, Missouri metropolitan area",
+          "Kansas City metropolitan Area",
+          "Kansas City-Overland Park-Kansas City, MO-KS CSA",
+          "Kansas City-Overland Park-Kansas City, MO-KS Combined Statistical Area",
+          "Kansas City Metro Area",
+          "K.C. Metropolitan Area",
+          "Kansas City, MO-KS MSA",
+          "Kansas City, MO-KS Metropolitan Statistical Area",
+          "Kansas City, USA"
+        ],
+        "exact_match": 1.0,
+        "f1": 1.0,
+        "confidence": 0.8542143791221337,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

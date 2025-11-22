@@ -1,0 +1,100 @@
+{
+  "question_id": 182,
+  "question_text": "Where was the American venue of the Live Aid concert?",
+  "choices": [],
+  "gold_answer": "['Philedelphia', 'City of brotherly love', 'City of Brotherly Love', 'The Quaker City', 'Philadelphia', 'Philadelphia, Pennsylvania', 'Philadelphia, Pennsylvania, U.S.A.', 'Philadelphia, Pa.', 'List of nicknames for Philadelphia', 'Philidalphia', 'Philadelphia, United States', 'Philadelphia, Pennsylvania, U.S.', 'Philadelphia PA', 'Philadelphia Suburban Rail', 'Philadelphi', 'Philadelphia, U.S.', 'Philadelphia Regional Rail', 'The City of Brotherly Love', 'City of Philadelphia', 'Philadelphia (Pennsylvania)', 'Wiccacoa', 'Philadelpia, Pennsylvania', 'Philadelphia, USA', 'Philadelphia, Philadelphia County, Pennsylvania', 'Government of Philadelphia', 'Philadelphia (PA)', 'Philadelphia, Pennsylvania, USA', 'Philadelphia (City)', 'UN/LOCODE:USPHL', 'The City That Loves You Back', 'Philadelphia (Pa.)', 'Phila.', 'The Cradle of Liberty', 'The city of brotherly love', 'Philadelphia (city, Pennsylvania)', 'Philidelphia', 'Philadelphia, Pennsylvania, US', 'Philadelphia Commuter Rail', 'The City and County of Philadelphia, Pennsylvania', 'Philadephia, Pennsylvania', 'Philadelphia City', 'Philadelphia Pennsylvania', 'Philadelphia City Controller', 'Philladelphia', 'Political families of Philadelphia', 'Philadelphia, Pa', 'Philadelphia, PA', 'The Birthplace of America', 'Philadelpia, PA']",
+  "methods": {
+    "greedy": {
+      "method_name": "triviaqa_greedy",
+      "method_description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a trivia question. Your response MUST be ONLY the answer to the question. Do NOT include explanations, reasoning, or additional text. Provide a concise, direct answer."
+            },
+            {
+              "role": "user",
+              "content": "Question: Where was the American venue of the Live Aid concert?\n\nProvide a direct answer to the question.\n\nAnswer:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 50
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "John F. Kennedy Stadium in Philadelphia.",
+          "logprob": -1.0247145791527146,
+          "probability": 0.35889888801318914
+        }
+      ],
+      "decision_process": {
+        "method": "greedy",
+        "temperature": 0.0,
+        "selected_answer": "John F. Kennedy Stadium in Philadelphia.",
+        "confidence_from_logprob": "0.3589"
+      },
+      "final_metrics": {
+        "predicted": "John F. Kennedy Stadium in Philadelphia.",
+        "gold_answers": [
+          "Philedelphia",
+          "City of brotherly love",
+          "City of Brotherly Love",
+          "The Quaker City",
+          "Philadelphia",
+          "Philadelphia, Pennsylvania",
+          "Philadelphia, Pennsylvania, U.S.A.",
+          "Philadelphia, Pa.",
+          "List of nicknames for Philadelphia",
+          "Philidalphia",
+          "Philadelphia, United States",
+          "Philadelphia, Pennsylvania, U.S.",
+          "Philadelphia PA",
+          "Philadelphia Suburban Rail",
+          "Philadelphi",
+          "Philadelphia, U.S.",
+          "Philadelphia Regional Rail",
+          "The City of Brotherly Love",
+          "City of Philadelphia",
+          "Philadelphia (Pennsylvania)",
+          "Wiccacoa",
+          "Philadelpia, Pennsylvania",
+          "Philadelphia, USA",
+          "Philadelphia, Philadelphia County, Pennsylvania",
+          "Government of Philadelphia",
+          "Philadelphia (PA)",
+          "Philadelphia, Pennsylvania, USA",
+          "Philadelphia (City)",
+          "UN/LOCODE:USPHL",
+          "The City That Loves You Back",
+          "Philadelphia (Pa.)",
+          "Phila.",
+          "The Cradle of Liberty",
+          "The city of brotherly love",
+          "Philadelphia (city, Pennsylvania)",
+          "Philidelphia",
+          "Philadelphia, Pennsylvania, US",
+          "Philadelphia Commuter Rail",
+          "The City and County of Philadelphia, Pennsylvania",
+          "Philadephia, Pennsylvania",
+          "Philadelphia City",
+          "Philadelphia Pennsylvania",
+          "Philadelphia City Controller",
+          "Philladelphia",
+          "Political families of Philadelphia",
+          "Philadelphia, Pa",
+          "Philadelphia, PA",
+          "The Birthplace of America",
+          "Philadelpia, PA"
+        ],
+        "exact_match": 0.0,
+        "f1": 0.2857142857142857,
+        "confidence": 0.35889888801318914,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}

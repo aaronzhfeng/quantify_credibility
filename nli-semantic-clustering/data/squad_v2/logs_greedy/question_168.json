@@ -1,0 +1,54 @@
+{
+  "question_id": 168,
+  "question_text": "How many customaries does Norman customary law have?",
+  "choices": [],
+  "gold_answer": "['two', 'two', 'two']",
+  "methods": {
+    "greedy": {
+      "method_name": "squad-v2_greedy",
+      "method_description": "Single greedy decode (temperature=0)",
+      "raw_inputs": [
+        {
+          "prompt": [
+            {
+              "role": "system",
+              "content": "You are answering a question based on a given context. Your response MUST be ONLY the direct answer from the context. Do NOT include explanations, reasoning, or additional text. If the question cannot be answered from the context, respond with: UNANSWERABLE"
+            },
+            {
+              "role": "user",
+              "content": "Context:\nThe customary law of Normandy was developed between the 10th and 13th centuries and survives today through the legal systems of Jersey and Guernsey in the Channel Islands. Norman customary law was transcribed in two customaries in Latin by two judges for use by them and their colleagues: These are the Très ancien coutumier (Very ancient customary), authored between 1200 and 1245; and the Grand coutumier de Normandie (Great customary of Normandy, originally Summa de legibus Normanniae in curia laïcali), authored between 1235 and 1245.\n\nQuestion: How many customaries does Norman customary law have?\n\nProvide a direct answer to the question based on the context above.\n\nAnswer:"
+            }
+          ],
+          "temperature": 0.0,
+          "max_tokens": 50
+        }
+      ],
+      "raw_outputs": [
+        {
+          "text": "2",
+          "logprob": -0.6014033239334822,
+          "probability": 0.5480420157297629
+        }
+      ],
+      "decision_process": {
+        "method": "greedy",
+        "temperature": 0.0,
+        "selected_answer": "2",
+        "confidence_from_logprob": "0.5480"
+      },
+      "final_metrics": {
+        "predicted": "2",
+        "gold_answers": [
+          "two",
+          "two",
+          "two"
+        ],
+        "exact_match": 0.0,
+        "f1": 0.0,
+        "confidence": 0.5480420157297629,
+        "mi_score": 0.0,
+        "agreement": 1.0
+      }
+    }
+  }
+}
