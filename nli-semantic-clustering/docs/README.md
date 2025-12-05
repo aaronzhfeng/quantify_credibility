@@ -20,6 +20,12 @@ This folder contains chronologically numbered documentation following the projec
 | **03** | [nli_clustering_accuracy_ece_diagnosis.md](03_nli_clustering_accuracy_ece_diagnosis.md) | Root cause analysis: why accuracy drops and ECE spikes, the bidirectional vs unidirectional issue |
 | **04** | [using_nli_grading_mode.md](04_using_nli_grading_mode.md) | How to use the fix: `--use-nli-grading` flag, testing, expected results |
 
+### Phase 3: Experiments & Analysis (05+)
+
+| # | Document | Description |
+|---|----------|-------------|
+| **05** | [argmax_mode_experiment_results.md](05_argmax_mode_experiment_results.md) | Argmax mode experiments on TriviaQA vs SQuAD v2, root cause analysis of dataset differences |
+
 ---
 
 ## 🎯 Quick Navigation
@@ -41,10 +47,11 @@ This folder contains chronologically numbered documentation following the projec
 
 ## 📝 Numbering Convention
 
-Documents are numbered chronologically (01-04, etc.) in the order they were created. This provides a historical timeline of the project's development:
+Documents are numbered chronologically (01-05, etc.) in the order they were created. This provides a historical timeline of the project's development:
 
 - **01-02**: Initial setup and data preparation
 - **03-04**: Problem diagnosis and solution implementation
+- **05+**: Experiments and analysis results
 
 When adding new documentation:
 1. Assign the next sequential number (05, 06, etc.)
@@ -84,7 +91,12 @@ When adding new documentation:
 **Key Topics**: Usage examples, expected results, testing, migration path  
 **When to Read**: Ready to test the solution
 
+### 05 - Argmax Mode Experiment Results
+**Purpose**: Document argmax mode experiments comparing TriviaQA vs SQuAD v2  
+**Key Topics**: Argmax vs soft threshold, unanswerable questions issue, dataset characteristics, recommendations  
+**When to Read**: Understanding why NLI helps some datasets but not others
+
 ---
 
-**Last Updated**: November 21, 2024
+**Last Updated**: December 5, 2024
 
